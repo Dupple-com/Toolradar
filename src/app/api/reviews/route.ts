@@ -16,30 +16,37 @@ export async function POST(request: NextRequest) {
   });
 
   if (existingReview) {
-    return NextResponse.json({ error: "You already reviewed this tool" }, { status: 400 });
+    return NextResponse.json(
+      { error: "You have already reviewed this tool" },
+      { status: 400 }
+    );
   }
 
-  // Auto-verify if user connected via LinkedIn
-  const linkedinAccount = await prisma.account.findFirst({
-    where: { userId: user.id, provider: "linkedin" },
+  // Check if user is verified (e.g., via LinkedIn)
+  const dbUser = await prisma.user.findUnique({
+    where: { id: user.id },
+    include: { accounts: true },
   });
+
+  const isVerified = dbUser?.verified || 
+    dbUser?.accounts.some(a => a.provider === "linkedin");
 
   const review = await prisma.review.create({
     data: {
       toolId: data.toolId,
       userId: user.id,
-      title: data.title,
       overallRating: data.overallRating,
       easeOfUse: data.easeOfUse,
       valueForMoney: data.valueForMoney,
-      customerSupport: data.customerSupport || null,
       features: data.features,
+      customerSupport: data.customerSupport || null,
+      title: data.title,
       pros: data.pros,
       cons: data.cons,
       useCases: data.useCases || null,
-      verified: !!linkedinAccount,
-      verifiedBy: linkedinAccount ? "linkedin" : null,
-      verifiedAt: linkedinAccount ? new Date() : null,
+      verified: isVerified,
+      verifiedAt: isVerified ? new Date() : null,
+      verifiedBy: isVerified ? "linkedin" : null,
       status: "pending",
     },
   });

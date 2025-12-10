@@ -12,12 +12,12 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    title: "",
     overallRating: 5,
     easeOfUse: 5,
     valueForMoney: 5,
-    customerSupport: 5,
     features: 5,
+    customerSupport: 5,
+    title: "",
     pros: "",
     cons: "",
     useCases: "",
@@ -34,24 +34,32 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
     });
 
     if (res.ok) {
-      router.push(`/tools/${toolSlug}/reviews?submitted=true`);
+      router.push(`/tools/${toolSlug}?review=submitted`);
     } else {
       alert("Error submitting review");
     }
     setIsLoading(false);
   };
 
-  const RatingInput = ({ label, field }: { label: string; field: keyof typeof formData }) => (
+  const RatingInput = ({
+    label,
+    name,
+    value,
+  }: {
+    label: string;
+    name: keyof typeof formData;
+    value: number;
+  }) => (
     <div>
       <label className="block text-sm font-medium mb-2">{label}</label>
       <div className="flex gap-2">
-        {[1, 2, 3, 4, 5].map((value) => (
+        {[1, 2, 3, 4, 5].map((star) => (
           <button
-            key={value}
+            key={star}
             type="button"
-            onClick={() => setFormData({ ...formData, [field]: value })}
-            className={`text-2xl ${
-              value <= (formData[field] as number) ? "text-yellow-500" : "text-gray-300"
+            onClick={() => setFormData({ ...formData, [name]: star })}
+            className={`text-2xl transition ${
+              star <= value ? "text-yellow-400" : "text-gray-300"
             }`}
           >
             ★
@@ -62,9 +70,17 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
   );
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-card rounded-xl border p-6">
+    <form onSubmit={handleSubmit} className="space-y-6 bg-card p-6 rounded-xl border">
+      <div className="grid grid-cols-2 gap-6">
+        <RatingInput label="Overall Rating *" name="overallRating" value={formData.overallRating} />
+        <RatingInput label="Ease of Use *" name="easeOfUse" value={formData.easeOfUse} />
+        <RatingInput label="Value for Money *" name="valueForMoney" value={formData.valueForMoney} />
+        <RatingInput label="Features *" name="features" value={formData.features} />
+        <RatingInput label="Customer Support" name="customerSupport" value={formData.customerSupport} />
+      </div>
+
       <div>
-        <label className="block text-sm font-medium mb-1">Review Title *</label>
+        <label className="block text-sm font-medium mb-2">Review Title *</label>
         <input
           type="text"
           value={formData.title}
@@ -75,55 +91,58 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
         />
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <RatingInput label="Overall Rating *" field="overallRating" />
-        <RatingInput label="Ease of Use *" field="easeOfUse" />
-        <RatingInput label="Value for Money *" field="valueForMoney" />
-        <RatingInput label="Features *" field="features" />
-        <RatingInput label="Customer Support" field="customerSupport" />
-      </div>
-
       <div>
-        <label className="block text-sm font-medium mb-1">What do you like? *</label>
+        <label className="block text-sm font-medium mb-2">
+          What do you like? *
+          <span className="text-muted-foreground font-normal"> (Pros)</span>
+        </label>
         <textarea
           value={formData.pros}
           onChange={(e) => setFormData({ ...formData, pros: e.target.value })}
           required
           rows={3}
-          placeholder="What are the best features? What problems does it solve?"
+          placeholder="What are the best features? What problem does it solve?"
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">What could be improved? *</label>
+        <label className="block text-sm font-medium mb-2">
+          What could be improved? *
+          <span className="text-muted-foreground font-normal"> (Cons)</span>
+        </label>
         <textarea
           value={formData.cons}
           onChange={(e) => setFormData({ ...formData, cons: e.target.value })}
           required
           rows={3}
-          placeholder="What are the drawbacks? What's missing?"
+          placeholder="What limitations or issues have you encountered?"
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium mb-1">Use Cases (optional)</label>
+        <label className="block text-sm font-medium mb-2">
+          Use Cases
+          <span className="text-muted-foreground font-normal"> (Optional)</span>
+        </label>
         <textarea
           value={formData.useCases}
           onChange={(e) => setFormData({ ...formData, useCases: e.target.value })}
           rows={2}
-          placeholder="How do you use this tool?"
+          placeholder="How do you use this tool? What workflows?"
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
         />
       </div>
 
-      <div className="bg-muted/50 rounded-lg p-4 text-sm">
-        <p className="font-medium mb-1">🔒 Review Verification</p>
-        <p className="text-muted-foreground">
-          Your review will be verified before publishing. Reviews from LinkedIn-connected accounts
-          or professional email domains get a "Verified" badge.
-        </p>
+      <div className="bg-muted/50 p-4 rounded-lg text-sm text-muted-foreground">
+        <p className="font-medium text-foreground mb-1">Review Guidelines</p>
+        <ul className="list-disc list-inside space-y-1">
+          <li>Be honest and specific about your experience</li>
+          <li>Focus on features, not personal opinions about the company</li>
+          <li>Your review will be moderated before publishing</li>
+          <li>Verified users get a badge on their reviews</li>
+        </ul>
       </div>
 
       <button

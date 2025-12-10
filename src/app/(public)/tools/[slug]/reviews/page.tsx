@@ -2,7 +2,11 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-export default async function ToolReviewsPage({ params }: { params: { slug: string } }) {
+export default async function ToolReviewsPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const tool = await prisma.tool.findUnique({
     where: { slug: params.slug },
     include: {
@@ -14,7 +18,9 @@ export default async function ToolReviewsPage({ params }: { params: { slug: stri
     },
   });
 
-  if (!tool) notFound();
+  if (!tool) {
+    notFound();
+  }
 
   const avgRatings = tool.reviews.length > 0 ? {
     overall: tool.reviews.reduce((s, r) => s + r.overallRating, 0) / tool.reviews.length,
@@ -30,10 +36,10 @@ export default async function ToolReviewsPage({ params }: { params: { slug: stri
           <Link href={`/tools/${tool.slug}`} className="text-primary hover:underline text-sm">
             ← Back to {tool.name}
           </Link>
-          <h1 className="text-3xl font-bold mt-2">Reviews for {tool.name}</h1>
+          <h1 className="text-2xl font-bold mt-2">Reviews for {tool.name}</h1>
         </div>
         <Link
-          href={`/tools/${tool.slug}/reviews/new`}
+          href={`/tools/${tool.slug}/review`}
           className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
         >
           Write a Review
@@ -51,11 +57,8 @@ export default async function ToolReviewsPage({ params }: { params: { slug: stri
               { label: "Features", value: avgRatings.features },
             ].map((item) => (
               <div key={item.label} className="text-center">
-                <p className="text-2xl font-bold text-yellow-500">
-                  {"★".repeat(Math.round(item.value))}
-                </p>
+                <p className="text-3xl font-bold text-yellow-500">{item.value.toFixed(1)}</p>
                 <p className="text-sm text-muted-foreground">{item.label}</p>
-                <p className="font-medium">{item.value.toFixed(1)}/5</p>
               </div>
             ))}
           </div>
@@ -73,50 +76,63 @@ export default async function ToolReviewsPage({ params }: { params: { slug: stri
                 {review.user.image ? (
                   <img src={review.user.image} alt="" className="w-10 h-10 rounded-full" />
                 ) : (
-                  <div className="w-10 h-10 rounded-full bg-muted" />
+                  <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center font-medium">
+                    {review.user.name?.[0] || "U"}
+                  </div>
                 )}
                 <div>
                   <p className="font-medium">{review.user.name || "Anonymous"}</p>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                     {new Date(review.createdAt).toLocaleDateString()}
                   </p>
                 </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-yellow-500 text-lg">{"★".repeat(review.overallRating)}</span>
                 {review.verified && (
-                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">Verified</span>
+                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
+                    Verified User
+                  </span>
                 )}
               </div>
+              <div className="text-right">
+                <p className="text-yellow-500 text-lg">{"★".repeat(review.overallRating)}</p>
+              </div>
             </div>
-            <h3 className="font-semibold text-lg mb-2">{review.title}</h3>
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              <div>
-                <p className="text-sm font-medium text-green-600 mb-1">👍 Pros</p>
+
+            <h3 className="font-semibold text-lg mb-3">{review.title}</h3>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-green-50 rounded-lg p-4">
+                <p className="text-green-700 font-medium text-sm mb-1">👍 Pros</p>
                 <p className="text-sm">{review.pros}</p>
               </div>
-              <div>
-                <p className="text-sm font-medium text-red-600 mb-1">👎 Cons</p>
+              <div className="bg-red-50 rounded-lg p-4">
+                <p className="text-red-700 font-medium text-sm mb-1">👎 Cons</p>
                 <p className="text-sm">{review.cons}</p>
               </div>
             </div>
+
             {review.useCases && (
-              <div>
-                <p className="text-sm font-medium text-muted-foreground mb-1">Use Cases</p>
-                <p className="text-sm">{review.useCases}</p>
+              <div className="mt-4 bg-muted/50 rounded-lg p-4">
+                <p className="font-medium text-sm mb-1">Use Cases</p>
+                <p className="text-sm text-muted-foreground">{review.useCases}</p>
               </div>
             )}
+
+            <div className="flex gap-4 mt-4 pt-4 border-t text-sm">
+              <span>Ease of Use: <span className="text-yellow-500">{"★".repeat(review.easeOfUse)}</span></span>
+              <span>Value: <span className="text-yellow-500">{"★".repeat(review.valueForMoney)}</span></span>
+              <span>Features: <span className="text-yellow-500">{"★".repeat(review.features)}</span></span>
+            </div>
           </div>
         ))}
 
         {tool.reviews.length === 0 && (
-          <div className="text-center py-12 bg-card rounded-xl border">
-            <p className="text-muted-foreground mb-4">No reviews yet</p>
+          <div className="text-center py-16 bg-card rounded-xl border">
+            <p className="text-muted-foreground mb-4">No reviews yet. Be the first!</p>
             <Link
-              href={`/tools/${tool.slug}/reviews/new`}
-              className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
+              href={`/tools/${tool.slug}/review`}
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
             >
-              Be the first to review
+              Write a Review
             </Link>
           </div>
         )}
