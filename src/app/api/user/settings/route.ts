@@ -1,22 +1,25 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { requireAuth } from "@/lib/auth-utils";
+import { getCurrentUser } from "@/lib/auth-utils";
 
 export async function PUT(request: NextRequest) {
-  const user = await requireAuth();
+  const user = await getCurrentUser();
+  if (!user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   const data = await request.json();
 
-  const updated = await prisma.user.update({
+  await prisma.user.update({
     where: { id: user.id },
     data: {
-      name: data.name || null,
+      name: data.name,
       username: data.username || null,
       bio: data.bio || null,
-      linkedinUrl: data.linkedinUrl || null,
       emailNewTools: data.emailNewTools,
       emailWeeklyDigest: data.emailWeeklyDigest,
     },
   });
 
-  return NextResponse.json(updated);
+  return NextResponse.json({ success: true });
 }
