@@ -7,11 +7,8 @@ export async function GET(
 ) {
   const tool = await prisma.tool.findUnique({
     where: { slug: params.slug },
-    select: {
-      name: true,
-      editorialScore: true,
-      communityScore: true,
-      badges: { select: { type: true } },
+    include: {
+      badges: { orderBy: { createdAt: "desc" }, take: 1 },
     },
   });
 
@@ -20,22 +17,21 @@ export async function GET(
   }
 
   const badge = tool.badges[0];
-  const badgeType = badge?.type || "rated";
-  const score = tool.editorialScore || Math.round((tool.communityScore || 0) * 20);
+  const badgeType = badge?.type || "selected";
 
-  const js = `
+  const script = `
 (function() {
   var container = document.currentScript.parentElement;
   var badge = document.createElement('a');
-  badge.href = 'https://toolradar.com/tools/${params.slug}';
+  badge.href = 'https://toolradar.com/tools/${tool.slug}';
   badge.target = '_blank';
-  badge.style.cssText = 'display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:white;text-decoration:none;border-radius:8px;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;';
-  badge.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span>Toolradar ${badgeType === 'selected' ? 'Selected' : badgeType === 'top-rated' ? 'Top Rated' : 'Rated'} ${score ? score + '/100' : ''}</span>';
+  badge.style.cssText = 'display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#f8f9fa;border:1px solid #e9ecef;border-radius:8px;text-decoration:none;font-family:system-ui,sans-serif;';
+  badge.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="#7c3aed"><circle cx="12" cy="12" r="10"/><path fill="white" d="M9 12l2 2 4-4"/></svg><span style="color:#333;font-size:14px;font-weight:500;">${badgeType === "top-rated" ? "Top Rated on" : badgeType === "trending" ? "Trending on" : "Featured on"} Toolradar</span>';
   container.appendChild(badge);
 })();
 `;
 
-  return new NextResponse(js, {
+  return new NextResponse(script, {
     headers: {
       "Content-Type": "application/javascript",
       "Cache-Control": "public, max-age=3600",
