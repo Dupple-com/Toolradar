@@ -1,0 +1,101 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: toolradar-app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=postgresql://toolradar:${DB_PASSWORD}@db:5432/toolradar?schema=public
+      - REDIS_URL=redis://redis:6379
+      - MEILISEARCH_HOST=http://meilisearch:7700
+      - MEILISEARCH_API_KEY=${MEILI_KEY}
+      - NEXTAUTH_URL=${NEXTAUTH_URL}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      meilisearch:
+        condition: service_started
+    networks:
+      - toolradar
+
+  db:
+    image: postgres:16-alpine
+    container_name: toolradar-db
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=toolradar
+      - POSTGRES_USER=toolradar
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U toolradar"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - toolradar
+
+  redis:
+    image: redis:7-alpine
+    container_name: toolradar-redis
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - toolradar
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.11
+    container_name: toolradar-meilisearch
+    restart: unless-stopped
+    volumes:
+      - meilisearch_data:/meili_data
+    environment:
+      - MEILI_MASTER_KEY=${MEILI_KEY}
+      - MEILI_ENV=production
+    networks:
+      - toolradar
+
+  nginx:
+    image: nginx:alpine
+    container_name: toolradar-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
+    depends_on:
+      - app
+    networks:
+      - toolradar
+
+  certbot:
+    image: certbot/certbot
+    container_name: toolradar-certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    networks:
+      - toolradar
+
+volumes:
+  postgres_data:
+  redis_data:
+  meilisearch_data:
+
+networks:
+  toolradar:
+    driver: bridge
