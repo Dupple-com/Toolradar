@@ -1,75 +1,83 @@
-import { searchTools } from "@/lib/meilisearch";
+"use client";
+
+import { useState, useEffect } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
 import { ToolCard } from "@/components/tools/tool-card";
-import { SearchBar } from "@/components/search/search-bar";
 
-export default async function SearchPage({
-  searchParams,
-}: {
-  searchParams: { q?: string; pricing?: string };
-}) {
-  const { q = "", pricing } = searchParams;
+export default function SearchPage() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const [query, setQuery] = useState(searchParams.get("q") || "");
+  const [results, setResults] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  let tools: any[] = [];
-  let totalHits = 0;
-
-  if (q) {
-    try {
-      const filters = pricing ? `pricing = "${pricing}"` : undefined;
-      const results = await searchTools(q, {
-        filters: filters ? `${filters} AND status = "published"` : 'status = "published"',
-        limit: 30,
-      });
-      tools = results.hits;
-      totalHits = results.estimatedTotalHits || 0;
-    } catch (error) {
-      console.error("Search error:", error);
+  const handleSearch = async (searchQuery: string) => {
+    if (!searchQuery.trim()) {
+      setResults([]);
+      return;
     }
-  }
+
+    setIsLoading(true);
+    const res = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`);
+    const data = await res.json();
+    setResults(data.hits || []);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) {
+      setQuery(q);
+      handleSearch(q);
+    }
+  }, [searchParams]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    router.push(`/search?q=${encodeURIComponent(query)}`);
+    handleSearch(query);
+  };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-8">Search Tools</h1>
 
-      <SearchBar initialQuery={q} />
+      <form onSubmit={handleSubmit} className="mb-8">
+        <div className="flex gap-4">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search for tools..."
+            className="flex-1 px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary outline-none text-lg"
+          />
+          <button
+            type="submit"
+            className="px-8 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 font-medium"
+          >
+            Search
+          </button>
+        </div>
+      </form>
 
-      {q && (
-        <div className="mt-8">
-          <p className="text-muted-foreground mb-6">
-            {totalHits} results for &quot;{q}&quot;
-          </p>
-
-          <div className="flex gap-2 mb-6">
-            {[
-              { value: "", label: "All" },
-              { value: "free", label: "Free" },
-              { value: "freemium", label: "Freemium" },
-              { value: "paid", label: "Paid" },
-            ].map((option) => (
-              <a
-                key={option.value}
-                href={`/search?q=${encodeURIComponent(q)}${option.value ? `&pricing=${option.value}` : ""}`}
-                className={`px-4 py-2 rounded-lg text-sm ${
-                  (pricing || "") === option.value
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-muted hover:bg-muted/80"
-                }`}
-              >
-                {option.label}
-              </a>
+      {isLoading ? (
+        <div className="text-center py-12 text-muted-foreground">Searching...</div>
+      ) : results.length > 0 ? (
+        <div className="space-y-4">
+          <p className="text-muted-foreground">{results.length} results found</p>
+          <div className="grid gap-4">
+            {results.map((tool) => (
+              <ToolCard key={tool.id} tool={tool} showVotes />
             ))}
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tools.map((tool) => (
-              <ToolCard key={tool.id} tool={tool} />
-            ))}
-          </div>
-
-          {tools.length === 0 && (
-            <div className="text-center py-12 text-muted-foreground">
-              No tools found for &quot;{q}&quot;
-            </div>
-          )}
+        </div>
+      ) : query ? (
+        <div className="text-center py-12 text-muted-foreground">
+          No tools found for "{query}"
+        </div>
+      ) : (
+        <div className="text-center py-12 text-muted-foreground">
+          Enter a search term to find tools
         </div>
       )}
     </div>

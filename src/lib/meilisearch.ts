@@ -11,11 +11,19 @@ export async function initMeilisearch() {
   try {
     await toolsIndex.updateSettings({
       searchableAttributes: ["name", "tagline", "description"],
-      filterableAttributes: ["pricing", "status", "categoryIds"],
-      sortableAttributes: ["upvotes", "communityScore", "editorialScore", "createdAt"],
-      rankingRules: ["words", "typo", "proximity", "attribute", "sort", "exactness"],
+      filterableAttributes: ["pricing", "categoryIds", "status"],
+      sortableAttributes: ["editorialScore", "communityScore", "upvotes", "weeklyUpvotes", "createdAt"],
+      rankingRules: [
+        "words",
+        "typo",
+        "proximity",
+        "attribute",
+        "sort",
+        "exactness",
+        "editorialScore:desc",
+      ],
     });
-    console.log("Meilisearch initialized");
+    console.log("Meilisearch index configured");
   } catch (error) {
     console.error("Meilisearch init error:", error);
   }
@@ -29,12 +37,12 @@ export async function indexTool(tool: {
   description: string;
   pricing: string;
   status: string;
-  logo: string | null;
-  upvotes: number;
-  communityScore: number | null;
   editorialScore: number | null;
-  categoryIds?: string[];
+  communityScore: number | null;
+  upvotes: number;
+  weeklyUpvotes: number;
   createdAt: Date;
+  categoryIds?: string[];
 }) {
   await toolsIndex.addDocuments([
     {
@@ -44,8 +52,8 @@ export async function indexTool(tool: {
   ]);
 }
 
-export async function removeTool(id: string) {
-  await toolsIndex.deleteDocument(id);
+export async function removeTool(toolId: string) {
+  await toolsIndex.deleteDocument(toolId);
 }
 
 export async function searchTools(query: string, options?: {
@@ -62,4 +70,4 @@ export async function searchTools(query: string, options?: {
   });
 }
 
-export { client as meilisearchClient };
+export default client;
