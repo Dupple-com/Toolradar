@@ -3,60 +3,92 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-interface CompareSelectorProps {
-  tools: { id: string; name: string; slug: string; logo: string | null }[];
-  selected: string[];
+interface Tool {
+  id: string;
+  name: string;
+  slug: string;
+  logo: string | null;
+  tagline: string;
 }
 
-export function CompareSelector({ tools, selected }: CompareSelectorProps) {
+export function CompareSelector({ tools }: { tools: Tool[] }) {
   const router = useRouter();
-  const [selection, setSelection] = useState<string[]>(selected);
+  const [selected, setSelected] = useState<Tool[]>([]);
 
-  const toggleTool = (slug: string) => {
-    const newSelection = selection.includes(slug)
-      ? selection.filter((s) => s !== slug)
-      : selection.length < 4
-      ? [...selection, slug]
-      : selection;
+  const toggleTool = (tool: Tool) => {
+    if (selected.find((t) => t.id === tool.id)) {
+      setSelected(selected.filter((t) => t.id !== tool.id));
+    } else if (selected.length < 4) {
+      setSelected([...selected, tool]);
+    }
+  };
 
-    setSelection(newSelection);
-    if (newSelection.length >= 2) {
-      router.push(`/compare?tools=${newSelection.join(",")}`);
-    } else if (newSelection.length > 0) {
-      router.push(`/compare?tools=${newSelection.join(",")}`);
-    } else {
-      router.push("/compare");
+  const handleCompare = () => {
+    if (selected.length >= 2) {
+      const slugs = selected.map((t) => t.slug).join("-vs-");
+      router.push(`/compare/${slugs}`);
     }
   };
 
   return (
-    <div className="bg-card rounded-xl border p-6">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="font-semibold">Select tools to compare (max 4)</h2>
-        <span className="text-sm text-muted-foreground">{selection.length}/4 selected</span>
-      </div>
+    <div className="space-y-6">
       <div className="flex flex-wrap gap-2">
-        {tools.map((tool) => (
-          <button
+        {selected.map((tool) => (
+          <div
             key={tool.id}
-            onClick={() => toggleTool(tool.slug)}
-            disabled={selection.length >= 4 && !selection.includes(tool.slug)}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition ${
-              selection.includes(tool.slug)
-                ? "bg-primary/10 border-primary text-primary"
-                : "hover:bg-muted disabled:opacity-50"
-            }`}
+            className="flex items-center gap-2 px-3 py-2 bg-primary/10 rounded-lg"
           >
-            {tool.logo ? (
-              <img src={tool.logo} alt="" className="w-5 h-5 rounded" />
-            ) : (
-              <span className="w-5 h-5 rounded bg-muted text-xs flex items-center justify-center">
-                {tool.name[0]}
-              </span>
-            )}
-            <span className="text-sm">{tool.name}</span>
-          </button>
+            {tool.logo && <img src={tool.logo} alt="" className="w-6 h-6 rounded" />}
+            <span className="font-medium">{tool.name}</span>
+            <button
+              onClick={() => toggleTool(tool)}
+              className="text-muted-foreground hover:text-foreground"
+            >
+              ×
+            </button>
+          </div>
         ))}
+        {selected.length === 0 && (
+          <p className="text-muted-foreground">Select tools below to compare</p>
+        )}
+      </div>
+
+      {selected.length >= 2 && (
+        <button
+          onClick={handleCompare}
+          className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
+        >
+          Compare {selected.length} Tools
+        </button>
+      )}
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        {tools.map((tool) => {
+          const isSelected = selected.find((t) => t.id === tool.id);
+          return (
+            <button
+              key={tool.id}
+              onClick={() => toggleTool(tool)}
+              disabled={!isSelected && selected.length >= 4}
+              className={`p-3 rounded-xl border text-left transition ${
+                isSelected
+                  ? "border-primary bg-primary/5"
+                  : "hover:border-primary/50 disabled:opacity-50"
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                {tool.logo ? (
+                  <img src={tool.logo} alt="" className="w-8 h-8 rounded" />
+                ) : (
+                  <div className="w-8 h-8 rounded bg-muted flex items-center justify-center text-sm font-bold">
+                    {tool.name[0]}
+                  </div>
+                )}
+                <span className="font-medium text-sm truncate">{tool.name}</span>
+              </div>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
