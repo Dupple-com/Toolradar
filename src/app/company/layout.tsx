@@ -1,45 +1,43 @@
 import { requireCompany } from "@/lib/auth-utils";
 import Link from "next/link";
+import { Header } from "@/components/layout/header";
 
 export default async function CompanyLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  await requireCompany();
+  const user = await requireCompany();
 
   return (
-    <div className="min-h-screen bg-muted/30">
-      <nav className="bg-card border-b">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-8">
-              <Link href="/" className="font-bold text-xl">
-                Tool<span className="text-primary">radar</span>
-                <span className="text-xs ml-2 px-2 py-1 bg-blue-100 text-blue-700 rounded">Company</span>
-              </Link>
-              <div className="flex gap-6">
-                <Link href="/company" className="text-muted-foreground hover:text-foreground transition">
-                  Overview
-                </Link>
-                <Link href="/company/tools" className="text-muted-foreground hover:text-foreground transition">
-                  My Tools
-                </Link>
-                <Link href="/company/analytics" className="text-muted-foreground hover:text-foreground transition">
-                  Analytics
-                </Link>
-                <Link href="/company/badges" className="text-muted-foreground hover:text-foreground transition">
-                  Badges
-                </Link>
-                <Link href="/company/submit" className="text-muted-foreground hover:text-foreground transition">
-                  Submit Tool
-                </Link>
-              </div>
+    <>
+      <Header />
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="flex gap-8">
+          <aside className="w-64 shrink-0">
+            <div className="bg-card rounded-xl border p-4 sticky top-24">
+              <p className="font-semibold mb-4">Company Dashboard</p>
+              <nav className="space-y-1">
+                {[
+                  { href: "/company", label: "Overview" },
+                  { href: "/company/analytics", label: "Analytics" },
+                  { href: "/company/badges", label: "Badges" },
+                  { href: "/company/submit", label: "Submit Tool" },
+                ].map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-3 py-2 rounded-lg hover:bg-muted transition text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </nav>
             </div>
-          </div>
+          </aside>
+          <main className="flex-1">{children}</main>
         </div>
-      </nav>
-      <main className="max-w-7xl mx-auto px-4 py-8">{children}</main>
-    </div>
+      </div>
+    </>
   );
 }

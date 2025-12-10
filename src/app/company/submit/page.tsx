@@ -1,18 +1,17 @@
-import { requireCompany } from "@/lib/auth-utils";
-import { SubmissionForm } from "@/components/company/submission-form";
+import { getCurrentUser } from "@/lib/auth-utils";
+import { SubmitToolForm } from "@/components/company/submit-form";
 
 export default async function SubmitToolPage() {
-  await requireCompany();
+  const user = await getCurrentUser();
+  if (!user) return null;
 
   return (
-    <div className="max-w-2xl space-y-6">
-      <div>
-        <h1 className="text-2xl font-bold">Submit a Tool</h1>
-        <p className="text-muted-foreground mt-1">
-          Submit your tool for review. We&apos;ll evaluate it and add it to Toolradar if it meets our quality standards.
-        </p>
-      </div>
-      <SubmissionForm />
+    <div className="max-w-2xl">
+      <h1 className="text-2xl font-bold mb-6">Submit a Tool</h1>
+      <p className="text-muted-foreground mb-8">
+        Submit your tool for review. Our team will evaluate it and add it to Toolradar if it meets our quality standards.
+      </p>
+      <SubmitToolForm />
     </div>
   );
 }
