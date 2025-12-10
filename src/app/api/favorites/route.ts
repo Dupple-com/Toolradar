@@ -10,15 +10,24 @@ export async function POST(request: NextRequest) {
 
   const { toolId } = await request.json();
 
-  const existing = await prisma.favorite.findUnique({
+  await prisma.favorite.create({
+    data: { toolId, userId: user.id },
+  });
+
+  return NextResponse.json({ success: true });
+}
+
+export async function DELETE(request: NextRequest) {
+  const user = await getCurrentUser();
+  if (!user) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  const { toolId } = await request.json();
+
+  await prisma.favorite.delete({
     where: { userId_toolId: { userId: user.id, toolId } },
   });
 
-  if (existing) {
-    await prisma.favorite.delete({ where: { id: existing.id } });
-    return NextResponse.json({ favorited: false });
-  } else {
-    await prisma.favorite.create({ data: { userId: user.id, toolId } });
-    return NextResponse.json({ favorited: true });
-  }
+  return NextResponse.json({ success: true });
 }

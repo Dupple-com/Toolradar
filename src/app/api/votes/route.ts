@@ -14,36 +14,23 @@ export async function POST(request: NextRequest) {
     where: { toolId_userId: { toolId, userId: user.id } },
   });
 
-  let voted: boolean;
-
   if (existingVote) {
     await prisma.vote.delete({ where: { id: existingVote.id } });
     await prisma.tool.update({
       where: { id: toolId },
-      data: {
-        upvotes: { decrement: 1 },
-        weeklyUpvotes: { decrement: 1 },
-      },
+      data: { upvotes: { decrement: 1 }, weeklyUpvotes: { decrement: 1 } },
     });
-    voted = false;
-  } else {
-    await prisma.vote.create({
-      data: { toolId, userId: user.id },
-    });
-    await prisma.tool.update({
-      where: { id: toolId },
-      data: {
-        upvotes: { increment: 1 },
-        weeklyUpvotes: { increment: 1 },
-      },
-    });
-    voted = true;
+
+    const tool = await prisma.tool.findUnique({ where: { id: toolId } });
+    return NextResponse.json({ voted: false, votes: tool?.upvotes || 0 });
   }
 
-  const tool = await prisma.tool.findUnique({
+  await prisma.vote.create({ data: { toolId, userId: user.id } });
+  await prisma.tool.update({
     where: { id: toolId },
-    select: { upvotes: true },
+    data: { upvotes: { increment: 1 }, weeklyUpvotes: { increment: 1 } },
   });
 
-  return NextResponse.json({ votes: tool?.upvotes || 0, voted });
+  const tool = await prisma.tool.findUnique({ where: { id: toolId } });
+  return NextResponse.json({ voted: true, votes: tool?.upvotes || 0 });
 }
