@@ -1,0 +1,398 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// === TOOLS ===
+model Tool {
+  id          String    @id @default(cuid())
+  name        String
+  slug        String    @unique
+  tagline     String
+  description String    @db.Text
+  logo        String?
+  website     String
+  pricing     String    // free, freemium, paid
+  pricingDetails Json?  // { tiers: [...], hasFreeTrial: true }
+
+  // Editorial scoring (by Toolradar team)
+  editorialScore        Int?
+  editorialScoreDetails Json?   // { utility, ux, value, support, innovation }
+
+  // Community scoring (calculated from reviews)
+  communityScore Float?  @default(0)
+  reviewCount    Int     @default(0)
+
+  // Trending & featuring
+  upvotes       Int       @default(0)
+  weeklyUpvotes Int       @default(0)
+  launchDate    DateTime?
+  featured      Boolean   @default(false)
+  toolOfTheDay  DateTime?
+
+  status String @default("draft") // draft, published, archived
+
+  // Relations
+  categories   CategoryTool[]
+  alternatives ToolAlternative[] @relation("ToolAlternatives")
+  alternativeOf ToolAlternative[] @relation("AlternativeOf")
+  reviews      Review[]
+  votes        Vote[]
+  comments     Comment[]
+  favorites    Favorite[]
+  listTools    ListTool[]
+  analytics    ToolAnalytics[]
+  badges       Badge[]
+
+  company   Company? @relation(fields: [companyId], references: [id])
+  companyId String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([communityScore])
+  @@index([weeklyUpvotes])
+  @@index([launchDate])
+}
+
+model ToolAlternative {
+  id            String @id @default(cuid())
+  tool          Tool   @relation("ToolAlternatives", fields: [toolId], references: [id], onDelete: Cascade)
+  toolId        String
+  alternative   Tool   @relation("AlternativeOf", fields: [alternativeId], references: [id], onDelete: Cascade)
+  alternativeId String
+
+  @@unique([toolId, alternativeId])
+}
+
+// === CATEGORIES ===
+model Category {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  icon        String?
+
+  parentId String?
+  parent   Category?  @relation("SubCategories", fields: [parentId], references: [id])
+  children Category[] @relation("SubCategories")
+
+  tools CategoryTool[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CategoryTool {
+  id         String   @id @default(cuid())
+  tool       Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId     String
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String
+
+  @@unique([toolId, categoryId])
+}
+
+// === REVIEWS (G2 style) ===
+model Review {
+  id     String @id @default(cuid())
+  tool   Tool   @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  // Ratings (1-5)
+  overallRating   Int
+  easeOfUse       Int
+  valueForMoney   Int
+  customerSupport Int?
+  features        Int
+
+  // Content
+  title    String
+  pros     String  @db.Text
+  cons     String  @db.Text
+  useCases String? @db.Text
+
+  // Verification
+  verified   Boolean   @default(false)
+  verifiedAt DateTime?
+  verifiedBy String?   // linkedin, email_domain, manual
+
+  // Engagement
+  helpfulCount Int @default(0)
+
+  status String @default("pending") // pending, approved, rejected
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  helpfulVotes ReviewHelpful[]
+
+  @@index([toolId])
+  @@index([userId])
+  @@index([status])
+}
+
+model ReviewHelpful {
+  id       String @id @default(cuid())
+  review   Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  reviewId String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId   String
+
+  @@unique([reviewId, userId])
+}
+
+// === VOTES (Product Hunt style) ===
+model Vote {
+  id        String   @id @default(cuid())
+  tool      Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  createdAt DateTime @default(now())
+
+  @@unique([toolId, userId])
+  @@index([toolId])
+  @@index([createdAt])
+}
+
+// === COMMENTS/DISCUSSIONS ===
+model Comment {
+  id      String @id @default(cuid())
+  content String @db.Text
+  tool    Tool   @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId  String
+  user    User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId  String
+
+  parentId String?
+  parent   Comment?  @relation("Replies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies  Comment[] @relation("Replies")
+
+  upvotes Int @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  commentVotes CommentVote[]
+
+  @@index([toolId])
+  @@index([parentId])
+}
+
+model CommentVote {
+  id        String  @id @default(cuid())
+  comment   Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  value     Int     // 1 or -1
+
+  @@unique([commentId, userId])
+}
+
+// === USERS ===
+model User {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime?
+  name          String?
+  username      String?   @unique
+  image         String?
+  bio           String?   @db.Text
+  linkedinUrl   String?
+
+  role     String  @default("user") // user, maker, admin
+  verified Boolean @default(false)
+
+  // Relations
+  accounts Account[]
+  sessions Session[]
+  reviews  Review[]
+  votes    Vote[]
+  comments Comment[]
+  favorites Favorite[]
+  lists     List[]
+  company   Company?
+  commentVotes CommentVote[]
+  reviewHelpful ReviewHelpful[]
+  subscriber Subscriber?
+
+  // Notification preferences
+  emailNewTools     Boolean @default(true)
+  emailWeeklyDigest Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([username])
+}
+
+// === AUTH (NextAuth) ===
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// === FAVORITES & LISTS ===
+model Favorite {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+  tool      Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId    String
+  createdAt DateTime @default(now())
+
+  @@unique([userId, toolId])
+}
+
+model List {
+  id          String  @id @default(cuid())
+  name        String
+  description String? @db.Text
+  public      Boolean @default(false)
+  slug        String?
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String
+
+  tools ListTool[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([userId])
+  @@index([public])
+}
+
+model ListTool {
+  id     String @id @default(cuid())
+  list   List   @relation(fields: [listId], references: [id], onDelete: Cascade)
+  listId String
+  tool   Tool   @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId String
+  order  Int    @default(0)
+
+  @@unique([listId, toolId])
+}
+
+// === COMPANIES (B2B) ===
+model Company {
+  id     String  @id @default(cuid())
+  name   String
+  domain String  @unique
+  logo   String?
+
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @unique
+
+  tools       Tool[]
+  submissions Submission[]
+  badges      Badge[]
+
+  // Analytics access tier
+  analyticsEnabled Boolean @default(false)
+  analyticsTier    String  @default("free") // free, pro, enterprise
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Submission {
+  id        String  @id @default(cuid())
+  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String
+  data      Json    // Tool data submitted
+  status    String  @default("pending") // pending, approved, rejected
+  feedback  String? @db.Text
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Badge {
+  id      String  @id @default(cuid())
+  type    String  // selected, top-rated, trending, totd
+  tool    Tool    @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId  String
+  company Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String
+  year    Int
+  quarter Int?
+  month   Int?
+
+  createdAt DateTime @default(now())
+
+  @@index([toolId])
+  @@index([type])
+}
+
+// === ANALYTICS (B2B) ===
+model ToolAnalytics {
+  id            String   @id @default(cuid())
+  tool          Tool     @relation(fields: [toolId], references: [id], onDelete: Cascade)
+  toolId        String
+  date          DateTime @db.Date
+  views         Int      @default(0)
+  uniqueViews   Int      @default(0)
+  clicks        Int      @default(0) // Clicks to website
+  comparisons   Int      @default(0) // Appeared in comparisons
+  searchAppears Int      @default(0)
+
+  @@unique([toolId, date])
+  @@index([date])
+}
+
+// === NEWSLETTER ===
+model Subscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  user         User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  userId       String?  @unique
+  verified     Boolean  @default(false)
+  verifyToken  String?
+  categories   String[] // Categories of interest
+  frequency    String   @default("weekly") // daily, weekly
+  unsubscribed Boolean  @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
