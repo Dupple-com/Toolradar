@@ -13,7 +13,7 @@ export default async function TrendingPage() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold">🔥 Trending This Week</h1>
         <p className="text-muted-foreground mt-2">
-          Tools with the most votes this week
+          The most upvoted tools by the community this week.
         </p>
       </div>
 
@@ -31,12 +31,6 @@ export default async function TrendingPage() {
           </div>
         ))}
       </div>
-
-      {tools.length === 0 && (
-        <div className="text-center py-12 text-muted-foreground">
-          No trending tools yet. Be the first to vote!
-        </div>
-      )}
     </div>
   );
 }

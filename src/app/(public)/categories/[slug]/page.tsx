@@ -13,11 +13,17 @@ export default async function CategoryPage({
       tools: {
         include: { tool: true },
       },
-      children: true,
+      children: {
+        include: {
+          _count: { select: { tools: true } },
+        },
+      },
     },
   });
 
-  if (!category) notFound();
+  if (!category) {
+    notFound();
+  }
 
   const tools = category.tools
     .map((ct) => ct.tool)
@@ -36,27 +42,30 @@ export default async function CategoryPage({
       </div>
 
       {category.children.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-8">
-          {category.children.map((child) => (
-            <a
-              key={child.id}
-              href={`/categories/${child.slug}`}
-              className="px-4 py-2 bg-muted rounded-lg text-sm hover:bg-muted/80"
-            >
-              {child.name}
-            </a>
-          ))}
+        <div className="mb-8">
+          <h2 className="font-semibold mb-4">Subcategories</h2>
+          <div className="flex flex-wrap gap-2">
+            {category.children.map((child) => (
+              <a
+                key={child.id}
+                href={`/categories/${child.slug}`}
+                className="px-4 py-2 bg-muted rounded-lg text-sm hover:bg-muted/80"
+              >
+                {child.name} ({child._count.tools})
+              </a>
+            ))}
+          </div>
         </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {tools.map((tool) => (
-          <ToolCard key={tool.id} tool={tool} />
+          <ToolCard key={tool.id} tool={tool} showVotes />
         ))}
       </div>
 
       {tools.length === 0 && (
-        <div className="text-center py-12 text-muted-foreground">
+        <div className="text-center py-16 text-muted-foreground">
           No tools in this category yet.
         </div>
       )}
