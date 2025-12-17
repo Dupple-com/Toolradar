@@ -53,7 +53,7 @@ export async function Header() {
                 href="/login"
                 className="hidden md:block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-100 text-sm font-medium"
               >
-                Log in
+                Join or Log In
               </Link>
             )}
             <Link

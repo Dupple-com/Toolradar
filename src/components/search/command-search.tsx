@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,6 +17,8 @@ interface SearchResult {
 
 export function CommandSearch() {
   const router = useRouter();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -123,19 +125,21 @@ export function CommandSearch() {
 
   return (
     <>
-      {/* Search trigger button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-gray-500 bg-gray-100/50 hover:bg-gray-100 rounded-xl border border-gray-200 transition-colors"
-      >
-        <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
-        <span className="flex-1 text-left hidden sm:inline">Search tools...</span>
-        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs bg-white rounded-md border border-gray-200 font-medium text-gray-600">
-          <span className="text-xs">⌘</span>K
-        </kbd>
-      </button>
+      {/* Search trigger button - hidden on homepage since hero has search */}
+      {!isHomePage && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="w-full flex items-center gap-3 px-4 py-2 text-sm text-gray-500 bg-gray-100/50 hover:bg-gray-100 rounded-xl border border-gray-200 transition-colors"
+        >
+          <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <span className="flex-1 text-left hidden sm:inline">Search tools...</span>
+          <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs bg-white rounded-md border border-gray-200 font-medium text-gray-600">
+            <span className="text-xs">⌘</span>K
+          </kbd>
+        </button>
+      )}
 
       {/* Modal overlay */}
       {isOpen && (
