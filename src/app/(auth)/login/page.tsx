@@ -2,6 +2,8 @@
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { RadarLogo } from "@/components/ui/radar-logo";
+import Link from "next/link";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -15,19 +17,20 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-muted/30">
-      <div className="w-full max-w-md p-8 space-y-6 bg-card rounded-xl shadow-lg border">
+    <div className="min-h-screen flex items-center justify-center bg-slate-50">
+      <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-xl shadow-lg border border-slate-200">
         <div className="text-center">
-          <h1 className="text-2xl font-bold">
-            Tool<span className="text-primary">radar</span>
-          </h1>
-          <p className="text-muted-foreground mt-2">Sign in to your account</p>
+          <Link href="/" className="inline-flex items-center justify-center gap-2">
+            <RadarLogo className="w-8 h-8" color="#2563EB" />
+            <span className="text-xl font-bold text-slate-800">Toolradar</span>
+          </Link>
+          <p className="text-slate-500 mt-3">Sign in to your account</p>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           <button
             onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 border rounded-lg hover:bg-muted transition"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition text-slate-700 font-medium"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -40,7 +43,7 @@ export default function LoginPage() {
 
           <button
             onClick={() => signIn("linkedin", { callbackUrl: "/dashboard" })}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 border rounded-lg hover:bg-muted transition"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-slate-200 rounded-lg hover:bg-slate-50 transition text-slate-700 font-medium"
           >
             <svg className="w-5 h-5 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -51,10 +54,10 @@ export default function LoginPage() {
 
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t"></div>
+            <div className="w-full border-t border-slate-200"></div>
           </div>
           <div className="relative flex justify-center text-sm">
-            <span className="px-2 bg-card text-muted-foreground">Or continue with email</span>
+            <span className="px-3 bg-white text-slate-400">Or continue with email</span>
           </div>
         </div>
 
@@ -65,18 +68,18 @@ export default function LoginPage() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none"
+            className="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-slate-900 placeholder:text-slate-400"
           />
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition disabled:opacity-50"
+            className="w-full px-4 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition disabled:opacity-50 font-medium"
           >
             {isLoading ? "Sending link..." : "Send magic link"}
           </button>
         </form>
 
-        <p className="text-center text-sm text-muted-foreground">
+        <p className="text-center text-sm text-slate-400">
           By signing in, you agree to our Terms of Service and Privacy Policy.
         </p>
       </div>
