@@ -10,42 +10,60 @@ export async function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="font-bold text-xl">
-              Tool<span className="text-primary">radar</span>
+        <div className="flex items-center justify-between h-16 gap-4">
+          {/* Logo */}
+          <Link href="/" className="font-bold text-xl flex-shrink-0">
+            Tool<span className="text-primary">radar</span>
+          </Link>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center gap-1">
+            <Link
+              href="/tools"
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
+            >
+              Browse
             </Link>
-            <nav className="hidden md:flex items-center gap-6">
-              <Link href="/tools" className="text-muted-foreground hover:text-foreground transition">
-                Browse
-              </Link>
-              <Link href="/trending" className="text-muted-foreground hover:text-foreground transition">
-                Trending
-              </Link>
-              <Link href="/categories" className="text-muted-foreground hover:text-foreground transition">
-                Categories
-              </Link>
-              <Link href="/compare" className="text-muted-foreground hover:text-foreground transition">
-                Compare
-              </Link>
-            </nav>
-          </div>
-          <div className="flex items-center gap-2 md:gap-4">
+            <Link
+              href="/trending"
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
+            >
+              Trending
+            </Link>
+            <Link
+              href="/categories"
+              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
+            >
+              Categories
+            </Link>
+          </nav>
+
+          {/* Search - centered and wider */}
+          <div className="flex-1 max-w-md mx-4 hidden sm:block">
             <CommandSearch />
-            <div className="hidden md:flex items-center gap-4">
-              <Link
-                href="/review"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition font-medium"
-              >
-                Leave a Review
-              </Link>
+          </div>
+
+          {/* Actions */}
+          <div className="flex items-center gap-2 md:gap-3">
+            {/* Mobile search */}
+            <div className="sm:hidden">
+              <CommandSearch />
+            </div>
+
+            <div className="hidden md:flex items-center gap-3">
               {session?.user ? (
                 <>
-                  <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition">
+                  <Link
+                    href="/dashboard"
+                    className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
+                  >
                     Dashboard
                   </Link>
                   {session.user.role === "admin" && (
-                    <Link href="/admin" className="text-muted-foreground hover:text-foreground transition">
+                    <Link
+                      href="/admin"
+                      className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
+                    >
                       Admin
                     </Link>
                   )}
@@ -53,12 +71,19 @@ export async function Header() {
               ) : (
                 <Link
                   href="/login"
-                  className="px-4 py-2 border rounded-lg hover:bg-muted transition"
+                  className="px-4 py-2 border rounded-lg hover:bg-muted transition text-sm font-medium"
                 >
                   Sign In
                 </Link>
               )}
+              <Link
+                href="/review"
+                className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-all"
+              >
+                Leave a Review
+              </Link>
             </div>
+
             <MobileMenu
               isLoggedIn={!!session?.user}
               isAdmin={session?.user?.role === "admin"}
