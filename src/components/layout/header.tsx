@@ -11,7 +11,7 @@ export async function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center h-16 gap-4">
+        <div className="flex items-center justify-between h-16 gap-4">
           {/* Left: Logo & Navigation */}
           <div className="flex items-center gap-6 flex-shrink-0">
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
@@ -31,13 +31,13 @@ export async function Header() {
             </nav>
           </div>
 
-          {/* Center: Search Bar */}
-          <div className="flex-1 max-w-xl mx-auto hidden md:block">
+          {/* Center: Search Bar - only takes space when visible */}
+          <div className="hidden md:block flex-1 max-w-xl">
             <CommandSearch />
           </div>
 
           {/* Right: CTAs */}
-          <div className="flex items-center justify-end gap-2 flex-shrink-0 ml-auto">
+          <div className="flex items-center gap-2 flex-shrink-0">
             <div className="md:hidden">
               <CommandSearch />
             </div>
