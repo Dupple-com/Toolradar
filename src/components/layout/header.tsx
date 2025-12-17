@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RadarLogo } from "@/components/ui/radar-logo";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { CommandSearch } from "@/components/search/command-search";
@@ -8,86 +9,59 @@ export async function Header() {
   const session = await getServerSession(authOptions);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16 gap-4">
-          {/* Logo */}
-          <Link href="/" className="font-bold text-xl flex-shrink-0">
-            Tool<span className="text-primary">radar</span>
-          </Link>
+        <div className="flex items-center h-16 gap-4">
+          {/* Left: Logo & Navigation */}
+          <div className="flex items-center gap-6 flex-shrink-0">
+            <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+              <RadarLogo className="w-8 h-8 text-blue-600" color="#2563EB" />
+              <span className="font-bold text-xl text-gray-900 hidden sm:block">Toolradar</span>
+            </Link>
+            <nav className="hidden lg:flex items-center gap-1">
+              <Link href="/tools" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
+                Browse
+              </Link>
+              <Link href="/trending" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
+                Trending
+              </Link>
+              <Link href="/categories" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
+                Categories
+              </Link>
+            </nav>
+          </div>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
-            <Link
-              href="/tools"
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
-            >
-              Browse
-            </Link>
-            <Link
-              href="/trending"
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
-            >
-              Trending
-            </Link>
-            <Link
-              href="/categories"
-              className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
-            >
-              Categories
-            </Link>
-          </nav>
-
-          {/* Search - centered and wider */}
-          <div className="flex-1 max-w-md mx-4 hidden sm:block">
+          {/* Center: Search Bar */}
+          <div className="flex-1 max-w-lg hidden md:block">
             <CommandSearch />
           </div>
 
-          {/* Actions */}
-          <div className="flex items-center gap-2 md:gap-3">
-            {/* Mobile search */}
-            <div className="sm:hidden">
+          {/* Right: CTAs */}
+          <div className="flex items-center justify-end gap-3 flex-shrink-0">
+            <div className="md:hidden">
               <CommandSearch />
             </div>
-
-            <div className="hidden md:flex items-center gap-3">
-              {session?.user ? (
-                <>
-                  <Link
-                    href="/dashboard"
-                    className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
-                  >
-                    Dashboard
-                  </Link>
-                  {session.user.role === "admin" && (
-                    <Link
-                      href="/admin"
-                      className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-lg transition-all"
-                    >
-                      Admin
-                    </Link>
-                  )}
-                </>
-              ) : (
-                <Link
-                  href="/login"
-                  className="px-4 py-2 border rounded-lg hover:bg-muted transition text-sm font-medium"
-                >
-                  Sign In
-                </Link>
-              )}
+            {session ? (
               <Link
-                href="/review"
-                className="px-4 py-2 bg-primary text-primary-foreground text-sm font-medium rounded-lg hover:bg-primary/90 transition-all"
+                href="/dashboard"
+                className="hidden md:block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 text-sm font-medium"
               >
-                Leave a Review
+                Dashboard
               </Link>
-            </div>
-
-            <MobileMenu
-              isLoggedIn={!!session?.user}
-              isAdmin={session?.user?.role === "admin"}
-            />
+            ) : null}
+            <Link
+              href="/review"
+              className="hidden md:block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-100 text-sm font-bold shadow-sm"
+            >
+              Leave a Review
+            </Link>
+            <Link
+              href="/vendors"
+              className="hidden md:block px-4 py-2 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-100 text-sm font-medium"
+            >
+              List Your Product
+            </Link>
+            <MobileMenu isLoggedIn={!!session} isAdmin={false} />
           </div>
         </div>
       </div>
