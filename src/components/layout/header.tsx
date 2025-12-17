@@ -37,27 +37,34 @@ export async function Header() {
           </div>
 
           {/* Right: CTAs */}
-          <div className="flex items-center justify-end gap-3 flex-shrink-0">
+          <div className="flex items-center justify-end gap-2 flex-shrink-0">
             <div className="md:hidden">
               <CommandSearch />
             </div>
             {session ? (
               <Link
                 href="/dashboard"
-                className="hidden md:block px-4 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 text-sm font-medium"
+                className="hidden md:block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-100 text-sm font-medium"
               >
                 Dashboard
               </Link>
-            ) : null}
+            ) : (
+              <Link
+                href="/login"
+                className="hidden md:block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-100 text-sm font-medium"
+              >
+                Log in
+              </Link>
+            )}
             <Link
               href="/review"
-              className="hidden md:block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-100 text-sm font-bold shadow-sm"
+              className="hidden md:block px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors duration-100 text-sm font-medium"
             >
               Leave a Review
             </Link>
             <Link
               href="/vendors"
-              className="hidden md:block px-4 py-2 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-100 text-sm font-medium"
+              className="hidden lg:block px-4 py-2 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-100 text-sm font-medium"
             >
               List Your Product
             </Link>
