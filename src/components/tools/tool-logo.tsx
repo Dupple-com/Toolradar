@@ -46,7 +46,7 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
   }
 
   return (
-    <div className={cn("bg-white flex items-center justify-center overflow-hidden", className)}>
+    <div className={cn("relative bg-white flex items-center justify-center overflow-hidden", className)}>
       {!loaded && (
         <div className={cn("absolute inset-0 bg-gradient-to-br flex items-center justify-center text-white font-semibold", getColorFromName(name))}>
           <span className="text-lg">{name[0].toUpperCase()}</span>
