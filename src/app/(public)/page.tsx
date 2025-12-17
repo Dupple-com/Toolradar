@@ -105,23 +105,15 @@ export default async function HomePage() {
                         <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
-                    <div className="flex items-center gap-6 mt-6">
-                      {toolOfTheDay.communityScore && toolOfTheDay.communityScore > 0 && (
-                        <div className="flex items-center gap-2">
-                          <div className="flex items-center gap-1">
-                            <span className="text-amber-500">★</span>
-                            <span className="font-semibold text-slate-900">{toolOfTheDay.communityScore.toFixed(1)}</span>
-                          </div>
-                          <span className="text-slate-400 text-sm">rating</span>
+                    {toolOfTheDay.communityScore !== null && toolOfTheDay.communityScore > 0 && (
+                      <div className="flex items-center gap-2 mt-6">
+                        <div className="flex items-center gap-1">
+                          <span className="text-amber-500">★</span>
+                          <span className="font-semibold text-slate-900">{toolOfTheDay.communityScore.toFixed(1)}</span>
                         </div>
-                      )}
-                      {toolOfTheDay.editorialScore && (
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-slate-900">{toolOfTheDay.editorialScore}</span>
-                          <span className="text-slate-400 text-sm">score</span>
-                        </div>
-                      )}
-                    </div>
+                        <span className="text-slate-400 text-sm">rating</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
