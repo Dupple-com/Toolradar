@@ -33,46 +33,53 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-24 border-b border-slate-100 bg-gradient-to-br from-slate-50 to-blue-50/30">
-        <div className="max-w-7xl mx-auto px-6 relative text-center">
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">The World's Largest Software Marketplace</span>
-          <h1 className="text-4xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.1]">
-            Find the Best Software <br />
-            <span className="text-blue-600">for Your Business</span>
+      {/* Hero Section - Linear style */}
+      <section className="relative py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
+        <div className="max-w-4xl mx-auto px-6 relative text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+            <span className="text-blue-600 font-medium text-sm">Software Discovery Platform</span>
+          </div>
+          <h1 className="text-5xl md:text-7xl font-semibold text-slate-900 tracking-[-0.02em] leading-[1.05]">
+            Find the best tools
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">for your stack</span>
           </h1>
-          <p className="text-lg text-slate-500 mt-8 max-w-2xl mx-auto leading-relaxed">
-            Join the community of professionals sharing real reviews to help you choose the right tools. Community-driven, verified insights.
+          <p className="text-lg text-slate-500 mt-6 max-w-xl mx-auto leading-relaxed">
+            Real reviews from professionals. Community-driven insights to help you make the right choice.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
             <Link
               href="/tools"
-              className="px-8 py-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold shadow-lg shadow-blue-500/20 transition-all duration-100"
+              className="group px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium transition-all duration-150 flex items-center justify-center gap-2"
             >
               Browse Software
+              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
               href="/trending"
-              className="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-lg hover:bg-slate-50 font-semibold transition-all duration-100"
+              className="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300 font-medium transition-all duration-150"
             >
-              Trending Now
+              View Trending
             </Link>
           </div>
 
-          <div className="mt-14 flex items-center justify-center gap-8 text-slate-400">
+          <div className="mt-16 flex items-center justify-center gap-12 text-slate-400">
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-semibold text-slate-700">2,000+</span>
-              <span className="text-xs uppercase tracking-widest font-medium mt-1">Tools</span>
+              <span className="text-3xl font-semibold text-slate-900 tabular-nums">2,000+</span>
+              <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Tools</span>
             </div>
-            <div className="w-px h-8 bg-slate-200" />
+            <div className="w-px h-10 bg-slate-200" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-semibold text-slate-700">10k+</span>
-              <span className="text-xs uppercase tracking-widest font-medium mt-1">Reviews</span>
+              <span className="text-3xl font-semibold text-slate-900 tabular-nums">10k+</span>
+              <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Reviews</span>
             </div>
-            <div className="w-px h-8 bg-slate-200" />
+            <div className="w-px h-10 bg-slate-200" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl font-semibold text-slate-700">100%</span>
-              <span className="text-xs uppercase tracking-widest font-medium mt-1">Verified</span>
+              <span className="text-3xl font-semibold text-slate-900 tabular-nums">100%</span>
+              <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Verified</span>
             </div>
           </div>
         </div>
