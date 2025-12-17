@@ -4,7 +4,8 @@ import { requireAdmin } from "@/lib/auth-utils";
 import { initMeilisearch, indexTools, clearIndex, getIndexStats } from "@/lib/meilisearch";
 
 export async function POST() {
-  await requireAdmin();
+  const auth = await requireAdmin();
+  if ("error" in auth) return auth.error;
 
   try {
     // Initialize MeiliSearch settings

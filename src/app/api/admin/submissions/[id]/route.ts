@@ -16,7 +16,8 @@ export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  await requireAdmin();
+  const auth = await requireAdmin();
+  if ("error" in auth) return auth.error;
 
   const { action, feedback } = await request.json();
 
@@ -107,7 +108,8 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  await requireAdmin();
+  const auth = await requireAdmin();
+  if ("error" in auth) return auth.error;
 
   const submission = await prisma.submission.findUnique({
     where: { id: params.id },

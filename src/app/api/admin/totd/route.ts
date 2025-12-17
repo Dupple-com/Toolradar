@@ -3,7 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth-utils";
 
 export async function POST(request: NextRequest) {
-  await requireAdmin();
+  const auth = await requireAdmin();
+  if ("error" in auth) return auth.error;
 
   const { toolId } = await request.json();
 
