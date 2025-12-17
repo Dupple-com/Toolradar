@@ -7,7 +7,14 @@ import EmailProvider from "next-auth/providers/email";
 import { prisma } from "./prisma";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build-time errors
+let resend: Resend | null = null;
+function getResend() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
@@ -16,7 +23,7 @@ export const authOptions: NextAuthOptions = {
       from: "Toolradar <noreply@toolradar.com>",
       sendVerificationRequest: async ({ identifier: email, url }) => {
         try {
-          await resend.emails.send({
+          await getResend().emails.send({
             from: "Toolradar <noreply@toolradar.com>",
             to: email,
             subject: "Sign in to Toolradar",
