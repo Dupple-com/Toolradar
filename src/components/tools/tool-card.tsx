@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ToolLogo } from "./tool-logo";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Star } from "lucide-react";
 
 interface ToolCardProps {
   tool: {
@@ -57,9 +57,29 @@ export function ToolCard({ tool, showVotes = false, rank }: ToolCardProps) {
           {tool.communityScore !== null && tool.communityScore > 0 && (
             <>
               <span className="text-slate-200">·</span>
-              <span className="text-xs text-slate-500">
-                <span className="text-amber-500">★</span> {tool.communityScore.toFixed(1)}
-              </span>
+              <div className="flex items-center gap-1">
+                <div className="flex items-center">
+                  {[1, 2, 3, 4, 5].map((star) => {
+                    const filled = tool.communityScore! >= star;
+                    const partial = !filled && tool.communityScore! > star - 1;
+                    const percentage = partial ? (tool.communityScore! - (star - 1)) * 100 : 0;
+                    return (
+                      <div key={star} className="relative w-3 h-3">
+                        <Star size={12} className="text-slate-200" fill="currentColor" />
+                        {(filled || partial) && (
+                          <div
+                            className="absolute inset-0 overflow-hidden"
+                            style={{ width: filled ? '100%' : `${percentage}%` }}
+                          >
+                            <Star size={12} className="text-amber-400" fill="currentColor" />
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                <span className="text-xs text-slate-500">{tool.communityScore.toFixed(1)}</span>
+              </div>
             </>
           )}
           {tool.reviewCount > 0 && (
