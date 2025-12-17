@@ -129,7 +129,7 @@ export function CommandSearch() {
   }
 
   return (
-    <>
+    <div className="hidden md:block flex-1 max-w-xl">
       {/* Search trigger button */}
       <button
         onClick={() => setIsOpen(true)}
@@ -274,6 +274,6 @@ export function CommandSearch() {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }

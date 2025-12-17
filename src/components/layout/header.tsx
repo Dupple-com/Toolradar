@@ -31,16 +31,11 @@ export async function Header() {
             </nav>
           </div>
 
-          {/* Center: Search Bar - only takes space when visible */}
-          <div className="hidden md:block flex-1 max-w-xl">
-            <CommandSearch />
-          </div>
+          {/* Center: Search Bar - hidden on homepage */}
+          <CommandSearch />
 
           {/* Right: CTAs */}
           <div className="flex items-center gap-2 flex-shrink-0">
-            <div className="md:hidden">
-              <CommandSearch />
-            </div>
             <Link
               href="/review"
               className="hidden md:block px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors duration-100 text-sm font-medium"
