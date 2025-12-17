@@ -86,52 +86,52 @@ export default async function HomePage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-6 py-20 space-y-24">
-        {/* Tool of the Day */}
+        {/* Tool of the Day - Linear style */}
         {toolOfTheDay && (
           <section>
-            <div className="flex items-center gap-3 mb-10">
-              <div className="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center border border-amber-100 text-amber-600">
-                <Trophy size={20} />
-              </div>
-              <div>
-                <h2 className="text-2xl font-semibold text-slate-900">Tool of the Day</h2>
-                <p className="text-sm text-slate-400 font-medium uppercase tracking-wider">Editor's Choice</p>
-              </div>
+            <div className="flex items-center gap-2 mb-6">
+              <Trophy size={18} className="text-amber-500" />
+              <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wider">Featured Today</h2>
             </div>
 
             <Link href={`/tools/${toolOfTheDay.slug}`} className="group block">
-              <div className="relative bg-white border border-slate-200 rounded-2xl p-10 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                <div className="absolute top-0 right-0 p-6">
-                  <span className="px-4 py-1 bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-widest rounded-full border border-blue-100">Featured</span>
-                </div>
-                <div className="flex flex-col md:flex-row gap-10 items-center">
+              <div className="relative bg-gradient-to-br from-slate-50/80 to-white border border-slate-200 rounded-xl p-8 hover:border-slate-300 hover:shadow-lg transition-all duration-200">
+                <div className="flex flex-col md:flex-row gap-8 items-start">
                   <ToolLogo
                     src={toolOfTheDay.logo}
                     name={toolOfTheDay.name}
-                    className="w-28 h-28 rounded-2xl border border-slate-100 shadow-sm group-hover:scale-105 transition-transform duration-300"
+                    className="w-20 h-20 rounded-xl border border-slate-200 shadow-sm"
                   />
-                  <div className="flex-1 text-center md:text-left">
-                    <h3 className="text-3xl font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
-                      {toolOfTheDay.name}
-                    </h3>
-                    <p className="text-xl text-slate-500 mt-4 leading-relaxed">{toolOfTheDay.tagline}</p>
-                    <div className="flex items-center justify-center md:justify-start gap-6 mt-8">
-                      <div className="flex items-center gap-2">
-                        <span className="text-2xl font-semibold text-slate-900">{toolOfTheDay.communityScore?.toFixed(1) || '4.8'}</span>
-                        <div className="flex flex-col">
-                          <div className="flex text-amber-400 text-xs">★★★★★</div>
-                          <span className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">User Rating</span>
-                        </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-2xl font-semibold text-slate-900 group-hover:text-slate-700 transition-colors">
+                          {toolOfTheDay.name}
+                        </h3>
+                        <p className="text-slate-500 mt-2 leading-relaxed max-w-xl">{toolOfTheDay.tagline}</p>
                       </div>
-                      <div className="w-px h-8 bg-slate-100" />
-                      <div className="flex flex-col">
-                        <span className="text-lg font-semibold text-blue-600">{toolOfTheDay.editorialScore || '94'}/100</span>
-                        <span className="text-[10px] text-slate-400 font-medium uppercase tracking-wider text-center">Score</span>
+                      <div className="hidden md:flex items-center gap-2 text-slate-400 group-hover:text-slate-600 transition-colors">
+                        <span className="text-sm font-medium">View</span>
+                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
-                  </div>
-                  <div className="shrink-0 flex items-center gap-2 text-blue-600 font-semibold group-hover:translate-x-2 transition-transform">
-                    Check it out <ArrowRight size={20} />
+                    <div className="flex items-center gap-6 mt-6">
+                      {toolOfTheDay.communityScore && toolOfTheDay.communityScore > 0 && (
+                        <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1">
+                            <span className="text-amber-500">★</span>
+                            <span className="font-semibold text-slate-900">{toolOfTheDay.communityScore.toFixed(1)}</span>
+                          </div>
+                          <span className="text-slate-400 text-sm">rating</span>
+                        </div>
+                      )}
+                      {toolOfTheDay.editorialScore && (
+                        <div className="flex items-center gap-2">
+                          <span className="font-semibold text-slate-900">{toolOfTheDay.editorialScore}</span>
+                          <span className="text-slate-400 text-sm">score</span>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -139,23 +139,18 @@ export default async function HomePage() {
           </section>
         )}
 
-        {/* Trending Section */}
+        {/* Trending Section - Linear style */}
         <section>
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 bg-blue-50 rounded-lg flex items-center justify-center border border-blue-100 text-blue-600">
-                  <TrendingUp size={16} />
-                </div>
-                <h2 className="text-2xl font-semibold text-slate-900 tracking-tight">Trending Software</h2>
-              </div>
-              <p className="text-slate-500 text-sm">Top performing tools this week based on community engagement</p>
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-2">
+              <TrendingUp size={18} className="text-slate-400" />
+              <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wider">Trending this week</h2>
             </div>
-            <Link href="/trending" className="group flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-blue-600 transition-colors">
-              See all trending <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <Link href="/trending" className="group flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-slate-600 transition-colors">
+              View all <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {trendingTools.map((tool, index) => (
               <ToolCard
                 key={tool.id}
@@ -169,23 +164,18 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* Recently Added */}
+        {/* Recently Added - Linear style */}
         <section>
-          <div className="flex items-end justify-between mb-12">
-            <div>
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-8 h-8 bg-emerald-50 rounded-lg flex items-center justify-center border border-emerald-100 text-emerald-600">
-                  <Sparkles size={16} />
-                </div>
-                <h2 className="text-2xl font-semibold text-slate-900 tracking-tight">Recently Added</h2>
-              </div>
-              <p className="text-slate-500 text-sm">Newly listed tools curated by our editorial team</p>
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-2">
+              <Sparkles size={18} className="text-slate-400" />
+              <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wider">Recently added</h2>
             </div>
-            <Link href="/tools" className="group flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-emerald-600 transition-colors">
-              Explore all <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <Link href="/tools" className="group flex items-center gap-1.5 text-sm font-medium text-slate-400 hover:text-slate-600 transition-colors">
+              Browse all <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {recentTools.map((tool) => (
               <ToolCard
                 key={tool.id}

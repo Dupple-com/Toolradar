@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ToolLogo } from "./tool-logo";
-import { Star, ChevronUp } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 interface ToolCardProps {
   tool: {
@@ -20,77 +20,55 @@ interface ToolCardProps {
 }
 
 export function ToolCard({ tool, showVotes = false, rank }: ToolCardProps) {
-  const pricingConfig = {
-    free: { bg: "bg-emerald-50", text: "text-emerald-700", border: "border-emerald-200" },
-    freemium: { bg: "bg-blue-50", text: "text-blue-700", border: "border-blue-200" },
-    paid: { bg: "bg-slate-50", text: "text-slate-700", border: "border-slate-200" },
-  };
-
-  const pricing = pricingConfig[tool.pricing as keyof typeof pricingConfig] || pricingConfig.paid;
-
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className="block bg-white rounded-lg border border-slate-200 hover:border-blue-500 hover:shadow-md transition-all duration-100 group"
+      className="group flex items-start gap-4 p-4 rounded-lg border border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/50 transition-all duration-150"
     >
-      <div className="p-4">
-        <div className="flex items-start gap-4">
-          {/* Rank Badge - Subtler */}
-          {rank && (
-            <div className="flex-shrink-0 flex items-center justify-center w-6 h-6 text-xs font-bold text-slate-400 border border-slate-100 rounded bg-slate-50">
-              {rank}
-            </div>
-          )}
+      {/* Rank */}
+      {rank && (
+        <span className="text-sm font-medium text-slate-300 tabular-nums w-4 shrink-0 pt-1">
+          {rank}
+        </span>
+      )}
 
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <ToolLogo
-              src={tool.logo}
-              name={tool.name}
-              className="w-11 h-11 rounded-lg border border-slate-100"
-            />
-          </div>
+      {/* Logo */}
+      <ToolLogo
+        src={tool.logo}
+        name={tool.name}
+        className="w-10 h-10 rounded-lg border border-slate-200 shrink-0"
+      />
 
-          {/* Content */}
-          <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2">
-              <h3 className="font-bold text-slate-900 group-hover:text-blue-600 transition-colors truncate">
-                {tool.name}
-              </h3>
-              {showVotes && (
-                <div className="flex items-center gap-0.5 text-xs font-bold text-slate-500">
-                  <ChevronUp size={14} className="text-blue-600" />
-                  {tool.upvotes}
-                </div>
-              )}
-            </div>
-            <p className="text-xs text-slate-500 mt-1 line-clamp-2 leading-relaxed">
-              {tool.tagline}
-            </p>
-          </div>
+      {/* Content */}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="font-semibold text-slate-900 group-hover:text-slate-700 transition-colors truncate">
+            {tool.name}
+          </h3>
+          <ArrowUpRight size={14} className="text-slate-300 group-hover:text-slate-400 shrink-0 mt-1 transition-colors" />
         </div>
-      </div>
-
-      {/* Footer - Professional Stats */}
-      <div className="px-4 py-2 bg-slate-50/50 border-t border-slate-100 flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className={`px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border ${pricing.bg} ${pricing.text} ${pricing.border}`}>
+        <p className="text-sm text-slate-500 mt-0.5 line-clamp-1">
+          {tool.tagline}
+        </p>
+        <div className="flex items-center gap-3 mt-3">
+          <span className="text-xs font-medium text-slate-400 uppercase tracking-wide">
             {tool.pricing}
           </span>
           {tool.communityScore && tool.communityScore > 0 && (
-            <div className="flex items-center gap-1 text-xs font-semibold text-slate-600">
-              <Star size={12} className="text-amber-500 fill-amber-500" />
-              <span>{tool.communityScore.toFixed(1)}</span>
-              <span className="text-slate-400 font-normal">({tool.reviewCount})</span>
-            </div>
+            <>
+              <span className="text-slate-200">·</span>
+              <span className="text-xs text-slate-500">
+                <span className="text-amber-500">★</span> {tool.communityScore.toFixed(1)}
+              </span>
+            </>
+          )}
+          {tool.editorialScore && (
+            <>
+              <span className="text-slate-200">·</span>
+              <span className="text-xs font-medium text-slate-600">{tool.editorialScore}</span>
+            </>
           )}
         </div>
-        {tool.editorialScore && (
-          <div className="flex items-center gap-1.5">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Score</span>
-            <span className="text-xs font-bold text-blue-600">{tool.editorialScore}</span>
-          </div>
-        )}
       </div>
     </Link>
   );
