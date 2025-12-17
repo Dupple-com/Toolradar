@@ -6,8 +6,7 @@ export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const auth = await requireAdmin();
-  if ("error" in auth) return auth.error;
+  await requireAdmin();
 
   const { status } = await request.json();
 

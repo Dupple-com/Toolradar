@@ -4,8 +4,7 @@ import { requireAdmin } from "@/lib/auth-utils";
 import { indexTool } from "@/lib/meilisearch";
 
 export async function POST(request: NextRequest) {
-  const auth = await requireAdmin();
-  if ("error" in auth) return auth.error;
+  await requireAdmin();
 
   const data = await request.json();
 

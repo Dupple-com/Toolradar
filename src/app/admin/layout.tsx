@@ -1,4 +1,4 @@
-import { requireAdminPage } from "@/lib/auth-utils";
+import { requireAdmin } from "@/lib/auth-utils";
 import Link from "next/link";
 
 export default async function AdminLayout({
@@ -6,7 +6,7 @@ export default async function AdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  await requireAdminPage();
+  await requireAdmin();
 
   return (
     <div className="min-h-screen bg-muted/30">

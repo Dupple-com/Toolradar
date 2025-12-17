@@ -16,8 +16,7 @@ export async function PUT(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const auth = await requireAdmin();
-  if ("error" in auth) return auth.error;
+  await requireAdmin();
 
   const { action, feedback } = await request.json();
 
@@ -35,7 +34,7 @@ export async function PUT(
   }
 
   if (action === "approve") {
-    const data = submission.data as unknown as SubmissionData;
+    const data = submission.data as SubmissionData;
 
     // Generate slug from name
     const baseSlug = data.name
@@ -108,8 +107,7 @@ export async function GET(
   _request: NextRequest,
   { params }: { params: { id: string } }
 ) {
-  const auth = await requireAdmin();
-  if ("error" in auth) return auth.error;
+  await requireAdmin();
 
   const submission = await prisma.submission.findUnique({
     where: { id: params.id },
