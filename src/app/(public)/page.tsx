@@ -3,6 +3,7 @@ import { ToolCard } from "@/components/tools/tool-card";
 import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { Trophy, TrendingUp, Sparkles, ArrowRight } from "lucide-react";
+import { HeroSearch } from "@/components/search/hero-search";
 
 export default async function HomePage() {
   const [toolOfTheDay, trendingTools, recentTools] = await Promise.all([
@@ -50,20 +51,9 @@ export default async function HomePage() {
           <p className="text-lg text-slate-500 mt-6 max-w-xl mx-auto leading-relaxed">
             Real reviews from professionals. Community-driven insights to help you make the right choice.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
-            <Link
-              href="/tools"
-              className="group px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium transition-all duration-150 flex items-center justify-center gap-2"
-            >
-              Browse Software
-              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-            <Link
-              href="/trending"
-              className="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300 font-medium transition-all duration-150"
-            >
-              View Trending
-            </Link>
+
+          <div className="mt-10">
+            <HeroSearch />
           </div>
 
           <div className="mt-16 flex items-center justify-center gap-12 text-slate-400">

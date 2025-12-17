@@ -47,13 +47,15 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-slate-200;
   }
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: white;
   }
   body {
     @apply bg-white text-slate-900;
+    background-color: white;
   }
 }
