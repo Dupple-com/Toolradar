@@ -54,6 +54,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-slate-900;
   }
 }
