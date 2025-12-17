@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { RadarLogo } from "@/components/ui/radar-logo";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { CommandSearch } from "@/components/search/command-search";
@@ -14,7 +15,8 @@ export async function Header() {
           {/* Left: Logo & Navigation */}
           <div className="flex items-center gap-6 flex-shrink-0">
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-              <span className="font-bold text-xl text-gray-900">Tool<span className="text-blue-600">radar</span></span>
+              <RadarLogo className="w-8 h-8 text-blue-600" color="#2563EB" />
+              <span className="font-bold text-xl text-gray-900 hidden sm:block">Toolradar</span>
             </Link>
             <nav className="hidden lg:flex items-center gap-1">
               <Link href="/tools" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">

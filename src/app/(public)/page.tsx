@@ -33,22 +33,8 @@ export default async function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Radar Background */}
-      <section className="relative py-24 border-b border-slate-100 bg-gradient-to-br from-slate-50 to-blue-50/30 overflow-hidden">
-        {/* Radar Background */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/3 opacity-[0.07]">
-          <svg width="800" height="800" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" stroke="#2563EB" strokeWidth="1" fill="none" />
-            <circle cx="50" cy="50" r="35" stroke="#2563EB" strokeWidth="1" fill="none" />
-            <circle cx="50" cy="50" r="25" stroke="#2563EB" strokeWidth="1" fill="none" />
-            <circle cx="50" cy="50" r="15" stroke="#2563EB" strokeWidth="1" fill="none" />
-            <line x1="50" y1="5" x2="50" y2="95" stroke="#2563EB" strokeWidth="0.5" />
-            <line x1="5" y1="50" x2="95" y2="50" stroke="#2563EB" strokeWidth="0.5" />
-            <path d="M50 50 L85 15" stroke="#2563EB" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="50" cy="50" r="3" fill="#2563EB" />
-          </svg>
-        </div>
-
+      {/* Hero Section */}
+      <section className="relative py-24 border-b border-slate-100 bg-gradient-to-br from-slate-50 to-blue-50/30">
         <div className="max-w-7xl mx-auto px-6 relative text-center">
           <span className="text-blue-600 font-semibold text-sm uppercase tracking-[0.2em] mb-4 block">The World's Largest Software Marketplace</span>
           <h1 className="text-4xl md:text-6xl font-semibold text-slate-900 tracking-tight leading-[1.1]">
