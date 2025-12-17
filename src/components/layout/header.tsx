@@ -32,15 +32,27 @@ export async function Header() {
           </div>
 
           {/* Center: Search Bar */}
-          <div className="flex-1 max-w-lg hidden md:block">
+          <div className="flex-1 max-w-xl mx-auto hidden md:block">
             <CommandSearch />
           </div>
 
           {/* Right: CTAs */}
-          <div className="flex items-center justify-end gap-2 flex-shrink-0">
+          <div className="flex items-center justify-end gap-2 flex-shrink-0 ml-auto">
             <div className="md:hidden">
               <CommandSearch />
             </div>
+            <Link
+              href="/review"
+              className="hidden md:block px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors duration-100 text-sm font-medium"
+            >
+              Leave a Review
+            </Link>
+            <Link
+              href="/vendors"
+              className="hidden lg:block px-4 py-2 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-100 text-sm font-medium"
+            >
+              List Your Product
+            </Link>
             {session ? (
               <Link
                 href="/dashboard"
@@ -56,18 +68,6 @@ export async function Header() {
                 Join or Log In
               </Link>
             )}
-            <Link
-              href="/review"
-              className="hidden md:block px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors duration-100 text-sm font-medium"
-            >
-              Leave a Review
-            </Link>
-            <Link
-              href="/vendors"
-              className="hidden lg:block px-4 py-2 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-100 text-sm font-medium"
-            >
-              List Your Product
-            </Link>
             <MobileMenu isLoggedIn={!!session} isAdmin={false} />
           </div>
         </div>
