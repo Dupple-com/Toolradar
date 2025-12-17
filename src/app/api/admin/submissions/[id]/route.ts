@@ -34,7 +34,7 @@ export async function PUT(
   }
 
   if (action === "approve") {
-    const data = submission.data as SubmissionData;
+    const data = submission.data as unknown as SubmissionData;
 
     // Generate slug from name
     const baseSlug = data.name
