@@ -191,23 +191,29 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="bg-slate-900 rounded-3xl p-12 md:p-20 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-blue-600/10" />
+        {/* CTA Section - Linear style */}
+        <section className="relative rounded-2xl border border-slate-200 bg-gradient-to-br from-slate-50 via-white to-blue-50/50 p-12 md:p-16 text-center overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-100/40 via-transparent to-transparent" />
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-5xl font-semibold text-white leading-tight tracking-tight">
-              Ready to grow your business? <br />
-              <span className="text-blue-400">List your tool today.</span>
+            <p className="text-sm font-medium text-blue-600 uppercase tracking-wider mb-4">For Vendors</p>
+            <h2 className="text-3xl md:text-4xl font-semibold text-slate-900 leading-tight tracking-tight">
+              Get your product discovered
             </h2>
-            <p className="text-lg text-slate-300 mt-8 max-w-2xl mx-auto">
-              Get in front of 5+ million professionals looking for the software you've built. Join Toolradar's marketplace.
+            <p className="text-lg text-slate-500 mt-4 max-w-xl mx-auto">
+              Join thousands of companies reaching millions of professionals on Toolradar.
             </p>
-            <div className="mt-10">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
                 href="/vendors"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 font-semibold shadow-2xl shadow-blue-500/20 transition-all hover:-translate-y-1"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium transition-all"
               >
-                Get Started for Free <ArrowRight size={20} />
+                List your product <ArrowRight size={16} />
+              </Link>
+              <Link
+                href="/company"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 font-medium transition-all"
+              >
+                Learn more
               </Link>
             </div>
           </div>
