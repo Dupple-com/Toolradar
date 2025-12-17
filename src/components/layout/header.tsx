@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import { CommandSearch } from "@/components/search/command-search";
 
 export async function Header() {
   const session = await getServerSession(authOptions);
@@ -29,6 +30,7 @@ export async function Header() {
             </nav>
           </div>
           <div className="flex items-center gap-4">
+            <CommandSearch />
             {session?.user ? (
               <>
                 <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition">

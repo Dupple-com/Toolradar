@@ -7,11 +7,31 @@ const client = new MeiliSearch({
 
 export const toolsIndex = client.index("tools");
 
+export interface MeilisearchTool {
+  id: string;
+  name: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  logo: string | null;
+  website: string;
+  pricing: string;
+  status: string;
+  editorialScore: number | null;
+  communityScore: number | null;
+  upvotes: number;
+  weeklyUpvotes: number;
+  createdAt: number;
+  categoryIds: string[];
+  categoryNames: string[];
+  categorySlugs: string[];
+}
+
 export async function initMeilisearch() {
   try {
     await toolsIndex.updateSettings({
-      searchableAttributes: ["name", "tagline", "description"],
-      filterableAttributes: ["pricing", "categoryIds", "status"],
+      searchableAttributes: ["name", "tagline", "description", "categoryNames"],
+      filterableAttributes: ["pricing", "categoryIds", "categorySlugs", "status"],
       sortableAttributes: ["editorialScore", "communityScore", "upvotes", "weeklyUpvotes", "createdAt"],
       rankingRules: [
         "words",
@@ -24,8 +44,10 @@ export async function initMeilisearch() {
       ],
     });
     console.log("Meilisearch index configured");
+    return { success: true };
   } catch (error) {
     console.error("Meilisearch init error:", error);
+    return { success: false, error };
   }
 }
 
@@ -35,21 +57,68 @@ export async function indexTool(tool: {
   slug: string;
   tagline: string;
   description: string;
+  logo?: string | null;
+  website: string;
   pricing: string;
   status: string;
-  editorialScore: number | null;
-  communityScore: number | null;
-  upvotes: number;
-  weeklyUpvotes: number;
+  editorialScore?: number | null;
+  communityScore?: number | null;
+  upvotes?: number;
+  weeklyUpvotes?: number;
   createdAt: Date;
-  categoryIds?: string[];
+  categories?: Array<{
+    category: {
+      id: string;
+      name: string;
+      slug: string;
+    };
+  }>;
 }) {
-  await toolsIndex.addDocuments([
-    {
-      ...tool,
-      createdAt: tool.createdAt.getTime(),
-    },
-  ]);
+  const doc: MeilisearchTool = {
+    id: tool.id,
+    name: tool.name,
+    slug: tool.slug,
+    tagline: tool.tagline,
+    description: tool.description,
+    logo: tool.logo || null,
+    website: tool.website,
+    pricing: tool.pricing,
+    status: tool.status,
+    editorialScore: tool.editorialScore || null,
+    communityScore: tool.communityScore || null,
+    upvotes: tool.upvotes || 0,
+    weeklyUpvotes: tool.weeklyUpvotes || 0,
+    createdAt: tool.createdAt.getTime(),
+    categoryIds: tool.categories?.map((c) => c.category.id) || [],
+    categoryNames: tool.categories?.map((c) => c.category.name) || [],
+    categorySlugs: tool.categories?.map((c) => c.category.slug) || [],
+  };
+
+  await toolsIndex.addDocuments([doc]);
+}
+
+export async function indexTools(tools: Parameters<typeof indexTool>[0][]) {
+  const docs: MeilisearchTool[] = tools.map((tool) => ({
+    id: tool.id,
+    name: tool.name,
+    slug: tool.slug,
+    tagline: tool.tagline,
+    description: tool.description,
+    logo: tool.logo || null,
+    website: tool.website,
+    pricing: tool.pricing,
+    status: tool.status,
+    editorialScore: tool.editorialScore || null,
+    communityScore: tool.communityScore || null,
+    upvotes: tool.upvotes || 0,
+    weeklyUpvotes: tool.weeklyUpvotes || 0,
+    createdAt: tool.createdAt.getTime(),
+    categoryIds: tool.categories?.map((c) => c.category.id) || [],
+    categoryNames: tool.categories?.map((c) => c.category.name) || [],
+    categorySlugs: tool.categories?.map((c) => c.category.slug) || [],
+  }));
+
+  await toolsIndex.addDocuments(docs);
 }
 
 export async function removeTool(toolId: string) {
@@ -68,6 +137,14 @@ export async function searchTools(query: string, options?: {
     limit: options?.limit || 20,
     offset: options?.offset || 0,
   });
+}
+
+export async function clearIndex() {
+  await toolsIndex.deleteAllDocuments();
+}
+
+export async function getIndexStats() {
+  return toolsIndex.getStats();
 }
 
 export default client;
