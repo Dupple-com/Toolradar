@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface MobileMenuProps {
   isLoggedIn: boolean;
@@ -43,8 +44,8 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
           <div className="flex flex-col h-full">
             {/* Header */}
             <div className="flex items-center justify-between h-16 px-4 border-b">
-              <Link href="/" className="font-bold text-xl" onClick={() => setIsOpen(false)}>
-                Tool<span className="text-primary">radar</span>
+              <Link href="/" onClick={() => setIsOpen(false)}>
+                <Image src="/logo.svg" alt="Toolradar" width={140} height={32} />
               </Link>
               <button
                 onClick={() => setIsOpen(false)}

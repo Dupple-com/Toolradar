@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { CommandSearch } from "@/components/search/command-search";
@@ -12,8 +13,8 @@ export async function Header() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <Link href="/" className="font-bold text-xl">
-              Tool<span className="text-primary">radar</span>
+            <Link href="/" className="flex items-center">
+              <Image src="/logo.svg" alt="Toolradar" width={140} height={32} priority />
             </Link>
             <nav className="hidden md:flex items-center gap-6">
               <Link href="/tools" className="text-muted-foreground hover:text-foreground transition">
