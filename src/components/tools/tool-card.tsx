@@ -62,10 +62,10 @@ export function ToolCard({ tool, showVotes = false, rank }: ToolCardProps) {
               </span>
             </>
           )}
-          {tool.editorialScore !== null && tool.editorialScore > 0 && (
+          {tool.reviewCount > 0 && (
             <>
               <span className="text-slate-200">·</span>
-              <span className="text-xs font-medium text-slate-600">{tool.editorialScore}</span>
+              <span className="text-xs text-slate-500">{tool.reviewCount} review{tool.reviewCount > 1 ? 's' : ''}</span>
             </>
           )}
         </div>
