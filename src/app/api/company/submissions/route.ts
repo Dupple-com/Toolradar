@@ -3,10 +3,11 @@ import { prisma } from "@/lib/prisma";
 import { requireCompany } from "@/lib/auth-utils";
 
 export async function POST(request: NextRequest) {
-  const user = await requireCompany();
+  const auth = await requireCompany();
+  if ("error" in auth) return auth.error;
 
   const company = await prisma.company.findUnique({
-    where: { userId: user.id },
+    where: { userId: auth.user.id },
   });
 
   if (!company) {

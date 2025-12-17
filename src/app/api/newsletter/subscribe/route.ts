@@ -2,7 +2,14 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy initialization to avoid build-time errors
+let resend: Resend | null = null;
+function getResend() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 export async function POST(request: NextRequest) {
   const { email } = await request.json();
@@ -24,7 +31,7 @@ export async function POST(request: NextRequest) {
 
   // Send verification email
   try {
-    await resend.emails.send({
+    await getResend().emails.send({
       from: "Toolradar <newsletter@toolradar.com>",
       to: email,
       subject: "Confirm your subscription to Toolradar",
