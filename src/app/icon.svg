@@ -1,0 +1,19 @@
+<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.02" />
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="46" fill="url(#radarGlow)" />
+  <path d="M50 50 L82 18 A45 45 0 0 0 68 8 L50 50" fill="#2563EB" opacity="0.35" />
+  <path d="M50 50 L68 8 A45 45 0 0 0 50 5 L50 50" fill="#2563EB" opacity="0.28" />
+  <path d="M50 50 L50 5 A45 45 0 0 0 32 8 L50 50" fill="#2563EB" opacity="0.21" />
+  <path d="M50 50 L32 8 A45 45 0 0 0 18 18 L50 50" fill="#2563EB" opacity="0.14" />
+  <path d="M50 50 L18 18 A45 45 0 0 0 8 32 L50 50" fill="#2563EB" opacity="0.07" />
+  <circle cx="50" cy="50" r="44" stroke="#2563EB" stroke-width="5" fill="none" />
+  <circle cx="50" cy="50" r="28" stroke="#2563EB" stroke-width="3" fill="none" opacity="0.5" />
+  <circle cx="50" cy="50" r="12" stroke="#2563EB" stroke-width="2.5" fill="none" opacity="0.35" />
+  <line x1="50" y1="50" x2="82" y2="18" stroke="#2563EB" stroke-width="5" stroke-linecap="round" />
+  <circle cx="50" cy="50" r="6" fill="#2563EB" />
+</svg>
