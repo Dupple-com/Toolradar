@@ -126,13 +126,13 @@ export function CommandSearch() {
       {/* Search trigger button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-muted-foreground bg-muted/50 hover:bg-muted rounded-xl border transition-colors"
+        className="w-full flex items-center gap-3 px-4 py-2 text-sm text-gray-500 bg-gray-100/50 hover:bg-gray-100 rounded-xl border border-gray-200 transition-colors"
       >
         <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
         <span className="flex-1 text-left hidden sm:inline">Search tools...</span>
-        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs bg-background rounded-md border font-medium">
+        <kbd className="hidden sm:inline-flex items-center gap-1 px-2 py-1 text-xs bg-white rounded-md border border-gray-200 font-medium text-gray-600">
           <span className="text-xs">⌘</span>K
         </kbd>
       </button>
@@ -142,11 +142,11 @@ export function CommandSearch() {
         <div className="fixed inset-0 z-50 bg-black/50 flex items-start justify-center pt-[15vh]">
           <div
             ref={containerRef}
-            className="w-full max-w-xl bg-background rounded-xl shadow-2xl border overflow-hidden"
+            className="w-full max-w-xl bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden"
           >
             {/* Search input */}
-            <div className="flex items-center gap-3 px-4 border-b">
-              <svg className="w-5 h-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex items-center gap-3 px-4 border-b border-gray-200">
+              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
               </svg>
               <input
@@ -156,30 +156,30 @@ export function CommandSearch() {
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Search for tools..."
-                className="flex-1 py-4 text-lg bg-transparent outline-none placeholder:text-muted-foreground"
+                className="flex-1 py-4 text-lg bg-transparent outline-none placeholder:text-gray-400 text-gray-900"
               />
               {isLoading && (
-                <div className="w-5 h-5 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
               )}
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-1 text-muted-foreground hover:text-foreground"
+                className="p-1 text-gray-400 hover:text-gray-700"
               >
-                <kbd className="px-1.5 py-0.5 text-xs bg-muted rounded">ESC</kbd>
+                <kbd className="px-1.5 py-0.5 text-xs bg-gray-100 rounded text-gray-600">ESC</kbd>
               </button>
             </div>
 
             {/* Results */}
             <div className="max-h-[400px] overflow-y-auto">
               {query.trim() === "" ? (
-                <div className="px-4 py-8 text-center text-muted-foreground">
+                <div className="px-4 py-8 text-center text-gray-500">
                   <p>Start typing to search tools...</p>
-                  <p className="text-sm mt-2">Try "AI", "productivity", "design"</p>
+                  <p className="text-sm mt-2 text-gray-400">Try "AI", "productivity", "design"</p>
                 </div>
               ) : results.length === 0 && !isLoading ? (
-                <div className="px-4 py-8 text-center text-muted-foreground">
+                <div className="px-4 py-8 text-center text-gray-500">
                   <p>No tools found for "{query}"</p>
-                  <p className="text-sm mt-2">Try a different search term</p>
+                  <p className="text-sm mt-2 text-gray-400">Try a different search term</p>
                 </div>
               ) : (
                 <div className="py-2">
@@ -188,11 +188,11 @@ export function CommandSearch() {
                       key={tool.id}
                       href={`/tools/${tool.slug}`}
                       onClick={() => setIsOpen(false)}
-                      className={`flex items-center gap-3 px-4 py-3 hover:bg-muted/50 transition-colors ${
-                        index === selectedIndex ? "bg-muted/50" : ""
+                      className={`flex items-center gap-3 px-4 py-3 hover:bg-gray-50 transition-colors ${
+                        index === selectedIndex ? "bg-gray-50" : ""
                       }`}
                     >
-                      <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center overflow-hidden flex-shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
                         {tool.logo ? (
                           <Image
                             src={tool.logo}
@@ -202,26 +202,26 @@ export function CommandSearch() {
                             className="object-cover"
                           />
                         ) : (
-                          <span className="text-lg font-bold text-muted-foreground">
+                          <span className="text-lg font-bold text-gray-400">
                             {tool.name.charAt(0)}
                           </span>
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
-                          <span className="font-medium truncate">{tool.name}</span>
+                          <span className="font-medium truncate text-gray-900">{tool.name}</span>
                           <span className={`px-1.5 py-0.5 text-xs rounded ${pricingColors[tool.pricing] || "bg-gray-100 text-gray-700"}`}>
                             {tool.pricing}
                           </span>
                         </div>
-                        <p className="text-sm text-muted-foreground truncate">{tool.tagline}</p>
+                        <p className="text-sm text-gray-500 truncate">{tool.tagline}</p>
                         {tool.categoryNames?.length > 0 && (
-                          <p className="text-xs text-muted-foreground/70 mt-0.5">
+                          <p className="text-xs text-gray-400 mt-0.5">
                             {tool.categoryNames.slice(0, 2).join(" · ")}
                           </p>
                         )}
                       </div>
-                      <svg className="w-4 h-4 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
                     </Link>
@@ -234,8 +234,8 @@ export function CommandSearch() {
                         router.push(`/search?q=${encodeURIComponent(query)}`);
                         setIsOpen(false);
                       }}
-                      className={`w-full flex items-center justify-center gap-2 px-4 py-3 text-primary hover:bg-muted/50 transition-colors border-t ${
-                        selectedIndex === results.length ? "bg-muted/50" : ""
+                      className={`w-full flex items-center justify-center gap-2 px-4 py-3 text-blue-600 hover:bg-gray-50 transition-colors border-t border-gray-200 ${
+                        selectedIndex === results.length ? "bg-gray-50" : ""
                       }`}
                     >
                       <span>See all results for "{query}"</span>
@@ -249,18 +249,18 @@ export function CommandSearch() {
             </div>
 
             {/* Footer hints */}
-            <div className="px-4 py-2 border-t bg-muted/30 flex items-center gap-4 text-xs text-muted-foreground">
+            <div className="px-4 py-2 border-t border-gray-200 bg-gray-50 flex items-center gap-4 text-xs text-gray-500">
               <span className="flex items-center gap-1">
-                <kbd className="px-1 py-0.5 bg-background rounded border">↑</kbd>
-                <kbd className="px-1 py-0.5 bg-background rounded border">↓</kbd>
+                <kbd className="px-1 py-0.5 bg-white rounded border border-gray-200">↑</kbd>
+                <kbd className="px-1 py-0.5 bg-white rounded border border-gray-200">↓</kbd>
                 to navigate
               </span>
               <span className="flex items-center gap-1">
-                <kbd className="px-1.5 py-0.5 bg-background rounded border">↵</kbd>
+                <kbd className="px-1.5 py-0.5 bg-white rounded border border-gray-200">↵</kbd>
                 to select
               </span>
               <span className="flex items-center gap-1">
-                <kbd className="px-1.5 py-0.5 bg-background rounded border">esc</kbd>
+                <kbd className="px-1.5 py-0.5 bg-white rounded border border-gray-200">esc</kbd>
                 to close
               </span>
             </div>
