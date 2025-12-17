@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { ToolCard } from "@/components/tools/tool-card";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { CategoryIcon } from "@/components/categories/category-icon";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const category = await prisma.category.findUnique({
@@ -105,11 +106,9 @@ export default async function CategoryPage({
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
             <div className="flex-1">
               <div className="flex items-center gap-4">
-                {category.icon && (
-                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-3xl">
-                    {category.icon}
-                  </div>
-                )}
+                <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary">
+                  <CategoryIcon icon={category.icon} size="lg" />
+                </div>
                 <div>
                   <h1 className="text-2xl md:text-3xl font-bold">{category.name} Software</h1>
                   <p className="text-muted-foreground mt-1">

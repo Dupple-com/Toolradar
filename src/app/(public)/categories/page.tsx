@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { CategorySearch } from "@/components/categories/category-search";
+import { CategoryIcon } from "@/components/categories/category-icon";
 
 export const dynamic = "force-dynamic";
 
@@ -73,8 +74,8 @@ export default async function CategoriesPage() {
                 href={`/categories/${category.slug}`}
                 className="bg-white rounded-xl border p-4 hover:border-primary/50 hover:shadow-md transition text-center group"
               >
-                <div className="w-12 h-12 mx-auto mb-3 bg-primary/5 rounded-xl flex items-center justify-center text-2xl group-hover:scale-110 transition">
-                  {category.icon || "📁"}
+                <div className="w-12 h-12 mx-auto mb-3 bg-primary/5 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition">
+                  <CategoryIcon icon={category.icon} size="lg" />
                 </div>
                 <h3 className="font-medium text-sm mb-1 group-hover:text-primary transition">
                   {category.name}
@@ -104,7 +105,9 @@ export default async function CategoriesPage() {
                 >
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">{category.icon || "📁"}</span>
+                      <div className="w-10 h-10 bg-primary/5 rounded-lg flex items-center justify-center text-primary">
+                        <CategoryIcon icon={category.icon} size="md" />
+                      </div>
                       <div>
                         <h3 className="font-semibold text-lg">{category.name}</h3>
                         <p className="text-sm text-muted-foreground">{totalInCategory} products</p>
