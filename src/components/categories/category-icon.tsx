@@ -20,10 +20,11 @@ export function CategoryIcon({ icon, size = "md", className = "" }: CategoryIcon
     return <Folder className={`${sizeClasses[size]} ${className}`} />;
   }
 
-  // Check if it's an emoji (starts with emoji or contains emoji characters)
-  const isEmoji = /[\u{1F300}-\u{1F9FF}]|[\u{2600}-\u{26FF}]|[\u{2700}-\u{27BF}]/u.test(icon);
+  // Check if it's an emoji (not a valid Lucide icon name - icons are lowercase with dashes)
+  const isLucideIcon = /^[a-z0-9-]+$/.test(icon);
 
-  if (isEmoji) {
+  if (!isLucideIcon) {
+    // It's an emoji or other non-icon text
     return <span className={className}>{icon}</span>;
   }
 
