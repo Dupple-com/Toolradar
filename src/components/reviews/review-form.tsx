@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface ReviewFormProps {
   toolId: string;
@@ -34,9 +35,10 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
     });
 
     if (res.ok) {
+      toast.success("Review submitted successfully!");
       router.push(`/tools/${toolSlug}?review=submitted`);
     } else {
-      alert("Error submitting review");
+      toast.error("Error submitting review");
     }
     setIsLoading(false);
   };

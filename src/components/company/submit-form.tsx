@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export function SubmitToolForm() {
   const router = useRouter();
@@ -27,9 +28,10 @@ export function SubmitToolForm() {
     });
 
     if (res.ok) {
+      toast.success("Tool submitted for review!");
       setSubmitted(true);
     } else {
-      alert("Error submitting tool");
+      toast.error("Error submitting tool");
     }
     setIsLoading(false);
   };

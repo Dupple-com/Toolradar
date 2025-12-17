@@ -39,18 +39,28 @@ export default async function ToolPage({ params }: { params: { slug: string } })
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
           {/* Header */}
-          <div className="flex items-start gap-6">
-            {tool.logo ? (
-              <img src={tool.logo} alt={tool.name} className="w-20 h-20 rounded-2xl" />
-            ) : (
-              <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-3xl font-bold text-primary">
-                {tool.name[0]}
+          <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+            <div className="flex items-start gap-4 w-full sm:w-auto">
+              {tool.logo ? (
+                <img src={tool.logo} alt={tool.name} className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl flex-shrink-0" />
+              ) : (
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-2xl sm:text-3xl font-bold text-primary flex-shrink-0">
+                  {tool.name[0]}
+                </div>
+              )}
+              <div className="flex-1 min-w-0 sm:hidden">
+                <h1 className="text-2xl font-bold truncate">{tool.name}</h1>
+                <p className="text-muted-foreground mt-1 line-clamp-2">{tool.tagline}</p>
               </div>
-            )}
-            <div className="flex-1">
+              <div className="flex sm:hidden flex-col gap-2">
+                <VoteButton toolId={tool.id} initialVotes={tool.upvotes} />
+                <FavoriteButton toolId={tool.id} />
+              </div>
+            </div>
+            <div className="flex-1 min-w-0 hidden sm:block">
               <h1 className="text-3xl font-bold">{tool.name}</h1>
               <p className="text-lg text-muted-foreground mt-1">{tool.tagline}</p>
-              <div className="flex items-center gap-3 mt-4">
+              <div className="flex flex-wrap items-center gap-2 mt-4">
                 {tool.categories.map((ct) => (
                   <Link
                     key={ct.category.id}
@@ -62,9 +72,21 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                 ))}
               </div>
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="hidden sm:flex flex-col gap-2">
               <VoteButton toolId={tool.id} initialVotes={tool.upvotes} />
               <FavoriteButton toolId={tool.id} />
+            </div>
+            {/* Mobile categories */}
+            <div className="flex flex-wrap items-center gap-2 sm:hidden w-full">
+              {tool.categories.map((ct) => (
+                <Link
+                  key={ct.category.id}
+                  href={`/categories/${ct.category.slug}`}
+                  className="px-3 py-1 bg-muted rounded-full text-sm hover:bg-muted/80"
+                >
+                  {ct.category.name}
+                </Link>
+              ))}
             </div>
           </div>
 

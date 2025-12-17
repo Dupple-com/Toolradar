@@ -1,21 +1,48 @@
 import { prisma } from "@/lib/prisma";
 import { ToolCard } from "@/components/tools/tool-card";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const category = await prisma.category.findUnique({
+    where: { slug: params.slug },
+    select: { name: true, description: true },
+  });
+  if (!category) return { title: "Category not found" };
+  return {
+    title: `Best ${category.name} Software - Toolradar`,
+    description: category.description || `Discover and compare the best ${category.name} tools and software.`,
+  };
+}
 
 export default async function CategoryPage({
   params,
+  searchParams,
 }: {
   params: { slug: string };
+  searchParams: { sort?: string; pricing?: string };
 }) {
+  const { sort = "score", pricing } = searchParams;
+
   const category = await prisma.category.findUnique({
     where: { slug: params.slug },
     include: {
-      tools: {
-        include: { tool: true },
+      parent: {
+        include: {
+          children: {
+            select: { id: true, name: true, slug: true },
+          },
+        },
       },
       children: {
         include: {
           _count: { select: { tools: true } },
+        },
+        orderBy: { name: "asc" },
+      },
+      tools: {
+        include: {
+          tool: true,
         },
       },
     },
@@ -25,49 +52,209 @@ export default async function CategoryPage({
     notFound();
   }
 
-  const tools = category.tools
+  // Filter and sort tools
+  let tools = category.tools
     .map((ct) => ct.tool)
     .filter((t) => t.status === "published");
 
-  return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <div className="mb-8">
-        <div className="flex items-center gap-3">
-          {category.icon && <span className="text-3xl">{category.icon}</span>}
-          <h1 className="text-3xl font-bold">{category.name}</h1>
-        </div>
-        {category.description && (
-          <p className="text-muted-foreground mt-2">{category.description}</p>
-        )}
-      </div>
+  // Apply pricing filter
+  if (pricing && pricing !== "all") {
+    tools = tools.filter((t) => t.pricing === pricing);
+  }
 
-      {category.children.length > 0 && (
-        <div className="mb-8">
-          <h2 className="font-semibold mb-4">Subcategories</h2>
-          <div className="flex flex-wrap gap-2">
-            {category.children.map((child) => (
-              <a
-                key={child.id}
-                href={`/categories/${child.slug}`}
-                className="px-4 py-2 bg-muted rounded-lg text-sm hover:bg-muted/80"
-              >
-                {child.name} ({child._count.tools})
-              </a>
-            ))}
+  // Apply sorting
+  tools = tools.sort((a, b) => {
+    if (sort === "score") return (b.editorialScore || 0) - (a.editorialScore || 0);
+    if (sort === "reviews") return b.reviewCount - a.reviewCount;
+    if (sort === "trending") return b.weeklyUpvotes - a.weeklyUpvotes;
+    if (sort === "recent") return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+    return 0;
+  });
+
+  // Get stats
+  const stats = {
+    totalTools: tools.length,
+    freeTools: tools.filter((t) => t.pricing === "free").length,
+    avgScore: tools.length > 0
+      ? Math.round(tools.reduce((s, t) => s + (t.editorialScore || 0), 0) / tools.length)
+      : 0,
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-50/50">
+      {/* Breadcrumb & Header */}
+      <section className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-4">
+            <Link href="/categories" className="hover:text-foreground transition">
+              Categories
+            </Link>
+            {category.parent && (
+              <>
+                <span>/</span>
+                <Link href={`/categories/${category.parent.slug}`} className="hover:text-foreground transition">
+                  {category.parent.name}
+                </Link>
+              </>
+            )}
+            <span>/</span>
+            <span className="text-foreground">{category.name}</span>
+          </nav>
+
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+            <div className="flex-1">
+              <div className="flex items-center gap-4">
+                {category.icon && (
+                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-3xl">
+                    {category.icon}
+                  </div>
+                )}
+                <div>
+                  <h1 className="text-2xl md:text-3xl font-bold">{category.name} Software</h1>
+                  <p className="text-muted-foreground mt-1">
+                    {stats.totalTools} products available
+                  </p>
+                </div>
+              </div>
+              {category.description && (
+                <p className="text-muted-foreground mt-4 max-w-2xl">
+                  {category.description}
+                </p>
+              )}
+            </div>
+
+            {/* Quick Stats */}
+            <div className="flex gap-6 md:gap-8">
+              <div className="text-center">
+                <p className="text-2xl font-bold text-primary">{stats.totalTools}</p>
+                <p className="text-xs text-muted-foreground">Products</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-green-600">{stats.freeTools}</p>
+                <p className="text-xs text-muted-foreground">Free Tools</p>
+              </div>
+              {stats.avgScore > 0 && (
+                <div className="text-center">
+                  <p className="text-2xl font-bold">{stats.avgScore}</p>
+                  <p className="text-xs text-muted-foreground">Avg Score</p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
+      </section>
+
+      {/* Subcategories */}
+      {category.children.length > 0 && (
+        <section className="bg-white border-b">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <div className="flex items-center gap-4 overflow-x-auto pb-2 scrollbar-hide">
+              <span className="text-sm text-muted-foreground whitespace-nowrap">Browse:</span>
+              {category.children.map((child) => (
+                <Link
+                  key={child.id}
+                  href={`/categories/${child.slug}`}
+                  className="px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-full text-sm font-medium whitespace-nowrap transition"
+                >
+                  {child.name}
+                  <span className="text-muted-foreground ml-1">({child._count.tools})</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {tools.map((tool) => (
-          <ToolCard key={tool.id} tool={tool} showVotes />
-        ))}
-      </div>
+      {/* Filters & Tools */}
+      <section className="max-w-7xl mx-auto px-4 py-8">
+        {/* Filter Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 bg-white p-4 rounded-xl border">
+          <div className="flex items-center gap-4">
+            <span className="text-sm text-muted-foreground">Filter:</span>
+            <div className="flex gap-2">
+              {[
+                { value: "all", label: "All" },
+                { value: "free", label: "Free" },
+                { value: "freemium", label: "Freemium" },
+                { value: "paid", label: "Paid" },
+              ].map((option) => (
+                <Link
+                  key={option.value}
+                  href={`/categories/${category.slug}?sort=${sort}${option.value !== "all" ? `&pricing=${option.value}` : ""}`}
+                  className={`px-3 py-1.5 rounded-lg text-sm transition ${
+                    (pricing || "all") === option.value
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-gray-100 hover:bg-gray-200"
+                  }`}
+                >
+                  {option.label}
+                </Link>
+              ))}
+            </div>
+          </div>
 
-      {tools.length === 0 && (
-        <div className="text-center py-16 text-muted-foreground">
-          No tools in this category yet.
+          <div className="flex items-center gap-4">
+            <span className="text-sm text-muted-foreground">Sort:</span>
+            <select
+              defaultValue={sort}
+              onChange={(e) => {
+                const url = new URL(window.location.href);
+                url.searchParams.set("sort", e.target.value);
+                window.location.href = url.toString();
+              }}
+              className="px-3 py-1.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-primary/20 outline-none"
+            >
+              <option value="score">Highest Score</option>
+              <option value="reviews">Most Reviews</option>
+              <option value="trending">Trending</option>
+              <option value="recent">Recently Added</option>
+            </select>
+          </div>
         </div>
+
+        {/* Results count */}
+        <p className="text-sm text-muted-foreground mb-4">
+          Showing {tools.length} {tools.length === 1 ? "result" : "results"}
+          {pricing && pricing !== "all" && ` for ${pricing} tools`}
+        </p>
+
+        {/* Tools Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {tools.map((tool, index) => (
+            <ToolCard key={tool.id} tool={tool} showVotes rank={index + 1} />
+          ))}
+        </div>
+
+        {tools.length === 0 && (
+          <div className="text-center py-16 bg-white rounded-xl border">
+            <p className="text-muted-foreground mb-4">No tools found matching your criteria.</p>
+            <Link
+              href={`/categories/${category.slug}`}
+              className="text-primary hover:underline"
+            >
+              Clear filters
+            </Link>
+          </div>
+        )}
+      </section>
+
+      {/* Related Categories */}
+      {category.parent && (
+        <section className="max-w-7xl mx-auto px-4 pb-16">
+          <h2 className="text-lg font-bold mb-4">Related Categories</h2>
+          <div className="flex flex-wrap gap-2">
+            {category.parent.children?.filter((c: { id: string }) => c.id !== category.id).slice(0, 8).map((sibling: { id: string; slug: string; name: string }) => (
+              <Link
+                key={sibling.id}
+                href={`/categories/${sibling.slug}`}
+                className="px-4 py-2 bg-white border rounded-lg text-sm hover:border-primary hover:text-primary transition"
+              >
+                {sibling.name}
+              </Link>
+            ))}
+          </div>
+        </section>
       )}
     </div>
   );

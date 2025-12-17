@@ -2,6 +2,7 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { CommandSearch } from "@/components/search/command-search";
+import { MobileMenu } from "./mobile-menu";
 
 export async function Header() {
   const session = await getServerSession(authOptions);
@@ -29,27 +30,33 @@ export async function Header() {
               </Link>
             </nav>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 md:gap-4">
             <CommandSearch />
-            {session?.user ? (
-              <>
-                <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition">
-                  Dashboard
-                </Link>
-                {session.user.role === "admin" && (
-                  <Link href="/admin" className="text-muted-foreground hover:text-foreground transition">
-                    Admin
+            <div className="hidden md:flex items-center gap-4">
+              {session?.user ? (
+                <>
+                  <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition">
+                    Dashboard
                   </Link>
-                )}
-              </>
-            ) : (
-              <Link
-                href="/login"
-                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition"
-              >
-                Sign In
-              </Link>
-            )}
+                  {session.user.role === "admin" && (
+                    <Link href="/admin" className="text-muted-foreground hover:text-foreground transition">
+                      Admin
+                    </Link>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href="/login"
+                  className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition"
+                >
+                  Sign In
+                </Link>
+              )}
+            </div>
+            <MobileMenu
+              isLoggedIn={!!session?.user}
+              isAdmin={session?.user?.role === "admin"}
+            />
           </div>
         </div>
       </div>

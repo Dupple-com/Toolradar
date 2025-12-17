@@ -4,15 +4,25 @@ import Link from "next/link";
 
 export default async function ToolReviewsPage({
   params,
+  searchParams,
 }: {
   params: { slug: string };
+  searchParams: { sort?: string };
 }) {
+  const sort = searchParams.sort || "recent";
+
+  // Define sort order based on param
+  const orderBy = sort === "highest" ? { overallRating: "desc" as const } :
+                  sort === "lowest" ? { overallRating: "asc" as const } :
+                  sort === "helpful" ? { helpfulCount: "desc" as const } :
+                  { createdAt: "desc" as const };
+
   const tool = await prisma.tool.findUnique({
     where: { slug: params.slug },
     include: {
       reviews: {
         where: { status: "approved" },
-        orderBy: { createdAt: "desc" },
+        orderBy,
         include: { user: { select: { name: true, image: true } } },
       },
     },
@@ -67,6 +77,36 @@ export default async function ToolReviewsPage({
           </p>
         </div>
       )}
+
+      {/* Sort controls */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+        <p className="text-muted-foreground">
+          {tool.reviews.length} {tool.reviews.length === 1 ? "review" : "reviews"}
+        </p>
+        <div className="flex items-center gap-2">
+          <span className="text-sm text-muted-foreground hidden sm:inline">Sort by:</span>
+          <div className="flex flex-wrap gap-1">
+            {[
+              { value: "recent", label: "Recent" },
+              { value: "highest", label: "Highest" },
+              { value: "lowest", label: "Lowest" },
+              { value: "helpful", label: "Helpful" },
+            ].map((option) => (
+              <Link
+                key={option.value}
+                href={`/tools/${tool.slug}/reviews${option.value === "recent" ? "" : `?sort=${option.value}`}`}
+                className={`px-3 py-1.5 rounded-lg text-sm transition ${
+                  sort === option.value
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted hover:bg-muted/80"
+                }`}
+              >
+                {option.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <div className="space-y-6">
         {tool.reviews.map((review) => (

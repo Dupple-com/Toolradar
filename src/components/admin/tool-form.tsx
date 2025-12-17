@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 interface ToolFormProps {
   tool?: {
@@ -50,10 +51,11 @@ export function ToolForm({ tool }: ToolFormProps) {
     });
 
     if (res.ok) {
+      toast.success(tool ? "Tool updated successfully" : "Tool created successfully");
       router.push("/admin/tools");
       router.refresh();
     } else {
-      alert("Error saving tool");
+      toast.error("Error saving tool");
     }
     setIsLoading(false);
   };

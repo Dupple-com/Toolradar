@@ -26,19 +26,21 @@ export async function PUT(
     }
   }
 
+  // Build update data object with only provided fields
+  const updateData: Record<string, unknown> = {};
+  if (data.name !== undefined) updateData.name = data.name;
+  if (data.slug !== undefined) updateData.slug = data.slug;
+  if (data.tagline !== undefined) updateData.tagline = data.tagline;
+  if (data.description !== undefined) updateData.description = data.description;
+  if (data.logo !== undefined) updateData.logo = data.logo || null;
+  if (data.website !== undefined) updateData.website = data.website;
+  if (data.pricing !== undefined) updateData.pricing = data.pricing;
+  if (data.status !== undefined) updateData.status = data.status;
+  if (data.editorialScore !== undefined) updateData.editorialScore = data.editorialScore;
+
   const tool = await prisma.tool.update({
     where: { id: params.id },
-    data: {
-      name: data.name,
-      slug: data.slug,
-      tagline: data.tagline,
-      description: data.description,
-      logo: data.logo || null,
-      website: data.website,
-      pricing: data.pricing,
-      status: data.status,
-      editorialScore: data.editorialScore,
-    },
+    data: updateData,
     include: {
       categories: {
         include: {
