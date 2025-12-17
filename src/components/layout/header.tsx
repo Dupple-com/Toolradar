@@ -33,6 +33,12 @@ export async function Header() {
           <div className="flex items-center gap-2 md:gap-4">
             <CommandSearch />
             <div className="hidden md:flex items-center gap-4">
+              <Link
+                href="/review"
+                className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition font-medium"
+              >
+                Leave a Review
+              </Link>
               {session?.user ? (
                 <>
                   <Link href="/dashboard" className="text-muted-foreground hover:text-foreground transition">
@@ -47,7 +53,7 @@ export async function Header() {
               ) : (
                 <Link
                   href="/login"
-                  className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition"
+                  className="px-4 py-2 border rounded-lg hover:bg-muted transition"
                 >
                   Sign In
                 </Link>

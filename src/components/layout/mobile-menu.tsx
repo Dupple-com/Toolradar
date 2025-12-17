@@ -93,7 +93,14 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
             </nav>
 
             {/* Footer */}
-            <div className="px-4 py-6 border-t">
+            <div className="px-4 py-6 border-t space-y-3">
+              <Link
+                href="/review"
+                onClick={() => setIsOpen(false)}
+                className="block w-full px-4 py-3 text-center bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 font-medium"
+              >
+                Leave a Review
+              </Link>
               {isLoggedIn ? (
                 <Link
                   href="/api/auth/signout"
@@ -106,7 +113,7 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
                 <Link
                   href="/login"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full px-4 py-3 text-center bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
+                  className="block w-full px-4 py-3 text-center border rounded-lg hover:bg-muted"
                 >
                   Sign In
                 </Link>

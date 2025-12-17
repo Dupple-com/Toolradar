@@ -113,11 +113,20 @@ model Review {
   customerSupport Int?
   features        Int
 
+  // NPS-style recommendation score (1-10)
+  recommendScore Int?
+
   // Content
   title    String
   pros     String  @db.Text
   cons     String  @db.Text
   useCases String? @db.Text
+
+  // Verification context
+  usageDuration String?  // less_than_month, 1_6_months, 6_12_months, 1_2_years, more_than_2_years
+  companySize   String?  // self_employed, 1_10, 11_50, 51_200, 201_1000, 1000_plus
+  userRole      String?  // founder, executive, manager, individual, freelancer, student, other
+  linkedinUrl   String?
 
   // Verification
   verified   Boolean   @default(false)
