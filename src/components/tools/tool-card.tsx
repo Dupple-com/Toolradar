@@ -54,7 +54,7 @@ export function ToolCard({ tool, showVotes = false, rank }: ToolCardProps) {
           <span className="text-xs font-medium text-slate-400 uppercase tracking-wide">
             {tool.pricing}
           </span>
-          {tool.communityScore && tool.communityScore > 0 && (
+          {tool.communityScore !== null && tool.communityScore > 0 && (
             <>
               <span className="text-slate-200">·</span>
               <span className="text-xs text-slate-500">
@@ -62,7 +62,7 @@ export function ToolCard({ tool, showVotes = false, rank }: ToolCardProps) {
               </span>
             </>
           )}
-          {tool.editorialScore && (
+          {tool.editorialScore !== null && tool.editorialScore > 0 && (
             <>
               <span className="text-slate-200">·</span>
               <span className="text-xs font-medium text-slate-600">{tool.editorialScore}</span>
