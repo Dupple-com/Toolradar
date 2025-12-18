@@ -139,7 +139,7 @@ export function CommandSearch() {
 
       {/* Modal overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-start justify-center pt-[15vh]">
+        <div className="fixed inset-0 z-50 flex items-start justify-center pt-[15vh]">
           <div
             ref={containerRef}
             className="w-full max-w-xl bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden"

@@ -172,9 +172,9 @@ export default function TermsOfServicePage() {
               <p className="mb-3">France</p>
               <p>
                 <span className="text-slate-500">Email:</span>{" "}
-                <a href="mailto:legal@toolradar.com" className="text-blue-600 hover:underline">
-                  legal@toolradar.com
-                </a>
+                <span className="text-blue-600">
+                  legal[at]toolradar.com
+                </span>
               </p>
             </div>
           </Section>

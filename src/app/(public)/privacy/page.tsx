@@ -120,9 +120,9 @@ export default function PrivacyPolicyPage() {
               <p className="mb-3">France</p>
               <p>
                 <span className="text-slate-500">Email:</span>{" "}
-                <a href="mailto:privacy@toolradar.com" className="text-blue-600 hover:underline">
-                  privacy@toolradar.com
-                </a>
+                <span className="text-blue-600">
+                  privacy[at]toolradar.com
+                </span>
               </p>
             </div>
           </Section>
