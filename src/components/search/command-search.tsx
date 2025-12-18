@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -17,8 +17,6 @@ interface SearchResult {
 
 export function CommandSearch() {
   const router = useRouter();
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
@@ -122,11 +120,6 @@ export function CommandSearch() {
     freemium: "bg-blue-100 text-blue-700",
     paid: "bg-orange-100 text-orange-700",
   };
-
-  // On homepage, don't render anything (hero has its own search)
-  if (isHomePage) {
-    return null;
-  }
 
   return (
     <div className="hidden md:block flex-1 max-w-xl">
