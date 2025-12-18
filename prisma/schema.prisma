@@ -231,6 +231,8 @@ model User {
   favorites Favorite[]
   lists     List[]
   company   Company?
+  companyMemberships CompanyMember[]
+  claimRequests      ClaimRequest[]
   commentVotes CommentVote[]
   reviewHelpful ReviewHelpful[]
   subscriber Subscriber?
@@ -326,13 +328,26 @@ model ListTool {
 
 // === COMPANIES (B2B) ===
 model Company {
-  id     String  @id @default(cuid())
-  name   String
-  domain String  @unique
-  logo   String?
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  domain      String  @unique
+  logo        String?
+  description String? @db.Text
+  website     String?
 
-  user   User   @relation(fields: [userId], references: [id])
-  userId String @unique
+  // Claim status
+  claimedAt DateTime?
+  claimedBy String?   // User ID who first claimed (audit trail)
+
+  // Legacy relation (nullable for unclaimed companies)
+  user   User?   @relation(fields: [userId], references: [id])
+  userId String? @unique
+
+  // New relations
+  members       CompanyMember[]
+  claimRequests ClaimRequest[]
+  invites       CompanyInvite[]
 
   tools       Tool[]
   submissions Submission[]
@@ -344,6 +359,72 @@ model Company {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([slug])
+  @@index([domain])
+}
+
+model CompanyMember {
+  id        String   @id @default(cuid())
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+
+  role   String  @default("member") // owner, admin, member
+  title  String?                     // Job title at company
+
+  invitedBy String? // User ID who invited them
+  joinedAt  DateTime @default(now())
+
+  @@unique([companyId, userId])
+  @@index([userId])
+  @@index([companyId])
+}
+
+model ClaimRequest {
+  id        String  @id @default(cuid())
+  company   Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    String
+
+  // Verification info provided by claimant
+  workEmail       String?
+  jobTitle        String?
+  linkedinUrl     String?
+  additionalNotes String? @db.Text
+
+  // Status tracking
+  status     String    @default("pending") // pending, approved, rejected
+  reviewedBy String?                        // Admin user ID
+  reviewedAt DateTime?
+  feedback   String?   @db.Text             // Admin feedback on rejection
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([companyId, userId]) // One claim per user per company
+  @@index([status])
+  @@index([companyId])
+}
+
+model CompanyInvite {
+  id        String   @id @default(cuid())
+  company   Company  @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  companyId String
+  email     String
+  role      String   @default("member") // admin, member
+  token     String   @unique @default(cuid())
+  expiresAt DateTime
+  usedAt    DateTime?
+
+  invitedBy String? // User ID who created invite
+
+  createdAt DateTime @default(now())
+
+  @@index([token])
+  @@index([companyId])
 }
 
 model Submission {
