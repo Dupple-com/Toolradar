@@ -3,8 +3,62 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-// No external logos - use fallback initials until companies upload their own
-const getLogo = (_domain: string) => null;
+// Logo URLs from Wikipedia Commons and official sources
+const logos: Record<string, string> = {
+  "notion.so": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
+  "slack.com": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg",
+  "figma.com": "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+  "github.com": "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg",
+  "linear.app": "https://asset.brandfetch.io/iduDa181eM/idYYbqOlKi.png",
+  "stripe.com": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg",
+  "vercel.com": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Vercel_logo_black.svg",
+  "airtable.com": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Airtable_Logo.svg",
+  "zoom.us": "https://upload.wikimedia.org/wikipedia/commons/1/11/Zoom_Logo_2022.svg",
+  "asana.com": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Asana_logo.svg",
+  "atlassian.com": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Atlassian-logo.svg",
+  "trello.com": "https://upload.wikimedia.org/wikipedia/commons/1/17/Trello-logo-blue.svg",
+  "miro.com": "https://asset.brandfetch.io/idfUrjbMQP/idSKZjqLsL.svg",
+  "canva.com": "https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg",
+  "hubspot.com": "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg",
+  "salesforce.com": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg",
+  "mailchimp.com": "https://upload.wikimedia.org/wikipedia/commons/b/be/MailChimp_Logo.svg",
+  "dropbox.com": "https://upload.wikimedia.org/wikipedia/commons/7/78/Dropbox_Icon.svg",
+  "1password.com": "https://upload.wikimedia.org/wikipedia/commons/e/e3/1password-logo.svg",
+  "calendly.com": "https://asset.brandfetch.io/idLhJfWKfn/idPKdmFPPr.svg",
+  "monday.com": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Monday_logo.svg",
+  "clickup.com": "https://asset.brandfetch.io/idBEwT5KTe/idAjuPgJOt.svg",
+  "zapier.com": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Zapier_logo.svg",
+  "webflow.com": "https://upload.wikimedia.org/wikipedia/commons/9/92/Webflow_logo.svg",
+  "framer.com": "https://asset.brandfetch.io/idXDDBLyEC/idIg2NRvMX.svg",
+  "openai.com": "https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg",
+  "anthropic.com": "https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg",
+  "cursor.sh": "https://asset.brandfetch.io/idMSymdCAz/id-ypxMPKq.jpeg",
+  "supabase.com": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Supabase_logo.svg",
+  "railway.app": "https://asset.brandfetch.io/idDfRMnNMC/idrXvGOiQa.svg",
+  "render.com": "https://asset.brandfetch.io/idN8Z2xMIB/idS4VKgr4u.svg",
+  "cloudflare.com": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cloudflare_Logo.svg",
+  "retool.com": "https://asset.brandfetch.io/idG71e5A0E/id3GZMZjHP.svg",
+  "n8n.io": "https://asset.brandfetch.io/idO3h2MLVK/idlhOz9WyD.svg",
+  "make.com": "https://asset.brandfetch.io/idhou_LQGR/idjbgAilqI.svg",
+  "resend.com": "https://asset.brandfetch.io/idSgNWAvAz/idw5_cJ4G5.svg",
+  "posthog.com": "https://asset.brandfetch.io/idedYtSL1h/idF3_Ede5O.svg",
+  "plausible.io": "https://asset.brandfetch.io/id7oEDcoaB/idAWLDpIEi.svg",
+  "raycast.com": "https://asset.brandfetch.io/idqodYNASL/id_PfcyYHD.svg",
+  "obsidian.md": "https://upload.wikimedia.org/wikipedia/commons/1/10/2023_Obsidian_logo.svg",
+  "grammarly.com": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Grammarly_logo.svg",
+  "loom.com": "https://asset.brandfetch.io/ideMvjC5Tn/idHqTWYuZM.svg",
+  "zendesk.com": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Zendesk_logo.svg",
+  "intercom.com": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Intercom_logo.svg",
+  "crisp.chat": "https://asset.brandfetch.io/idW5vNF3n_/idPpFrj8ms.svg",
+  "shopify.com": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Shopify_logo_2018.svg",
+  "gumroad.com": "https://asset.brandfetch.io/idtTWF4clZ/id9Q1bXUWM.svg",
+  "prisma.io": "https://asset.brandfetch.io/idGboMPSsr/idTnGv_Hce.svg",
+  "docker.com": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg",
+  "visualstudio.com": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Visual_Studio_Code_1.35_icon.svg",
+  "postman.com": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Postman_%28software%29.png",
+};
+
+const getLogo = (domain: string): string | null => logos[domain] || null;
 
 const categories = [
   { name: "Project Management", slug: "project-management", icon: "Kanban", description: "Tools for managing projects, tasks, and workflows" },
