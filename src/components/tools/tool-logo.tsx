@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 interface ToolLogoProps {
@@ -12,58 +9,52 @@ interface ToolLogoProps {
 // Generate a consistent color based on name
 function getColorFromName(name: string): string {
   const colors = [
-    "from-blue-500 to-blue-600",
-    "from-purple-500 to-purple-600",
-    "from-emerald-500 to-emerald-600",
-    "from-orange-500 to-orange-600",
-    "from-pink-500 to-pink-600",
-    "from-cyan-500 to-cyan-600",
-    "from-indigo-500 to-indigo-600",
-    "from-rose-500 to-rose-600",
+    "bg-gradient-to-br from-blue-500 to-blue-600",
+    "bg-gradient-to-br from-purple-500 to-purple-600",
+    "bg-gradient-to-br from-emerald-500 to-emerald-600",
+    "bg-gradient-to-br from-orange-500 to-orange-600",
+    "bg-gradient-to-br from-pink-500 to-pink-600",
+    "bg-gradient-to-br from-cyan-500 to-cyan-600",
+    "bg-gradient-to-br from-indigo-500 to-indigo-600",
+    "bg-gradient-to-br from-rose-500 to-rose-600",
   ];
   const index = name.charCodeAt(0) % colors.length;
   return colors[index];
 }
 
 export function ToolLogo({ src, name, className }: ToolLogoProps) {
-  const [error, setError] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  // No src = show fallback
+  if (!src) {
+    return (
+      <div
+        className={cn(
+          "flex items-center justify-center text-white font-semibold",
+          getColorFromName(name),
+          className
+        )}
+      >
+        <span className="text-lg">{name[0]?.toUpperCase()}</span>
+      </div>
+    );
+  }
 
-  const fallback = (
+  // With src = show image with fallback background (visible if image fails)
+  return (
     <div
       className={cn(
-        "bg-gradient-to-br flex items-center justify-center text-white font-semibold",
+        "relative flex items-center justify-center text-white font-semibold overflow-hidden",
         getColorFromName(name),
         className
       )}
     >
-      <span className="text-lg">{name[0].toUpperCase()}</span>
-    </div>
-  );
-
-  // Show fallback only if no src, or if error occurred before loading
-  if (!src || (error && !loaded)) {
-    return fallback;
-  }
-
-  return (
-    <div className={cn("relative bg-white flex items-center justify-center overflow-hidden", className)}>
-      {!loaded && !error && (
-        <div className={cn("absolute inset-0 bg-gradient-to-br flex items-center justify-center text-white font-semibold", getColorFromName(name))}>
-          <span className="text-lg">{name[0].toUpperCase()}</span>
-        </div>
-      )}
+      {/* Fallback initial - always visible behind image */}
+      <span className="text-lg absolute">{name[0]?.toUpperCase()}</span>
+      {/* Image on top - if loads, covers the fallback */}
       <img
         src={src}
         alt={name}
-        className={cn("w-full h-full object-contain", loaded ? "opacity-100" : "opacity-0")}
-        onLoad={() => {
-          setLoaded(true);
-          setError(false);
-        }}
-        onError={() => {
-          if (!loaded) setError(true);
-        }}
+        className="w-full h-full object-contain relative z-10 bg-white"
+        loading="lazy"
       />
     </div>
   );
