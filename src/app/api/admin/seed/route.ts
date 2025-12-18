@@ -3,63 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-// All logos - use official sources to avoid ad blocker issues
-const logos: Record<string, string> = {
-  "notion.so": "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
-  "slack.com": "https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png",
-  "figma.com": "https://static.figma.com/app/icon/1/favicon.png",
-  "github.com": "https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
-  "linear.app": "https://linear.app/static/apple-touch-icon.png",
-  "stripe.com": "https://b.stripecdn.com/site-statics/assets/icons/apple-touch-icon.png",
-  "vercel.com": "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
-  "airtable.com": "https://airtable.com/images/favicon/baymax/apple-touch-icon.png",
-  "zoom.us": "https://st1.zoom.us/zoom.ico",
-  "asana.com": "https://luna1.co/apple-touch-icon.png",
-  "atlassian.com": "https://wac-cdn.atlassian.com/assets/img/favicons/atlassian/apple-touch-icon.png",
-  "trello.com": "https://trello.com/assets/apple-touch-icon.png",
-  "miro.com": "https://miro.com/static/favicons/apple-touch-icon.png",
-  "canva.com": "https://static.canva.com/static/images/iOS-app-icon-180x180.png",
-  "hubspot.com": "https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png",
-  "salesforce.com": "https://www.salesforce.com/favicon.ico",
-  "mailchimp.com": "https://eep.io/images/yzco4xsimv0y/KZD0BZjgSCigJYOzNKSjq/7d6dded8b01bf6b03e7dc0e1e91e30b5/mailchimp-freddie-icon-wink.png",
-  "dropbox.com": "https://cfl.dropboxstatic.com/static/images/logo_catalog/dropbox_logo_glyph_m1.png",
-  "1password.com": "https://1password.com/apple-touch-icon.png",
-  "calendly.com": "https://assets.calendly.com/assets/apple-touch-icon.png",
-  "monday.com": "https://cdn.monday.com/images/logos/monday_logo_icon.png",
-  "clickup.com": "https://clickup.com/apple-touch-icon.png",
-  "zapier.com": "https://cdn.zapier.com/zapier/images/favicon.png",
-  "webflow.com": "https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5d5595354de4fbdd8c554dcc_Webflow-Favicon.png",
-  "framer.com": "https://framerusercontent.com/images/3gTbUnrg5iRTLGLCrEb6pZ7gI.png",
-  "openai.com": "https://cdn.oaistatic.com/assets/apple-touch-icon-mz9nytnj.webp",
-  "anthropic.com": "https://www.anthropic.com/images/icons/apple-touch-icon.png",
-  "cursor.sh": "https://cursor.sh/apple-touch-icon.png",
-  "supabase.com": "https://supabase.com/favicon/apple-touch-icon.png",
-  "railway.app": "https://railway.app/apple-touch-icon.png",
-  "render.com": "https://render.com/apple-touch-icon.png",
-  "cloudflare.com": "https://www.cloudflare.com/apple-touch-icon.png",
-  "retool.com": "https://retool.com/apple-touch-icon.png",
-  "n8n.io": "https://n8n.io/favicon/apple-touch-icon.png",
-  "make.com": "https://www.make.com/apple-touch-icon.png",
-  "resend.com": "https://resend.com/static/apple-touch-icon.png",
-  "posthog.com": "https://posthog.com/images/favicon/apple-touch-icon.png",
-  "plausible.io": "https://plausible.io/apple-touch-icon.png",
-  "raycast.com": "https://raycast.com/apple-touch-icon.png",
-  "obsidian.md": "https://obsidian.md/images/obsidian-logo-512.png",
-  "grammarly.com": "https://static.grammarly.com/assets/files/efe57d016d9efff36da7884c193b646b/apple-touch-icon.png",
-  "loom.com": "https://cdn.loom.com/assets/favicons/apple-touch-icon.png",
-  "zendesk.com": "https://www.zendesk.com/apple-touch-icon.png",
-  "intercom.com": "https://www.intercom.com/apple-touch-icon.png",
-  "crisp.chat": "https://crisp.chat/apple-touch-icon.png",
-  "shopify.com": "https://www.shopify.com/apple-touch-icon.png",
-  "gumroad.com": "https://gumroad.com/favicon.ico",
-  "prisma.io": "https://www.prisma.io/apple-touch-icon.png",
-  "docker.com": "https://www.docker.com/wp-content/uploads/2023/04/cropped-Docker-favicon-192x192.png",
-  "visualstudio.com": "https://code.visualstudio.com/apple-touch-icon.png",
-  "postman.com": "https://www.postman.com/apple-touch-icon.png",
-};
-
-// Fallback to Google favicon service
-const getLogo = (domain: string) => logos[domain] || `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+// Use Logo.dev for reliable, high-quality logos (free tier: 1000/month)
+const getLogo = (domain: string) => `https://img.logo.dev/${domain}?token=pk_VAZ4JR5pSWml7GByJsLLkA`;
 
 const categories = [
   { name: "Project Management", slug: "project-management", icon: "Kanban", description: "Tools for managing projects, tasks, and workflows" },
