@@ -55,7 +55,7 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
       <img
         src={src}
         alt={name}
-        className={cn("w-full h-full object-contain p-1", loaded ? "opacity-100" : "opacity-0")}
+        className={cn("w-full h-full object-contain", loaded ? "opacity-100" : "opacity-0")}
         onLoad={() => setLoaded(true)}
         onError={() => setError(true)}
       />
