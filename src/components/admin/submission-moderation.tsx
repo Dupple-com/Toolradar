@@ -23,7 +23,7 @@ interface SubmissionModerationProps {
     company: {
       name: string;
       domain: string;
-      user: { name: string | null; email: string };
+      user: { name: string | null; email: string } | null;
     };
   };
 }
@@ -72,7 +72,7 @@ export function SubmissionModeration({ submission }: SubmissionModerationProps) 
         <div>
           <h3 className="font-semibold text-lg">{data.name}</h3>
           <p className="text-sm text-muted-foreground">
-            Submitted by {submission.company.name} ({submission.company.user.email})
+            Submitted by {submission.company.name} {submission.company.user ? `(${submission.company.user.email})` : ""}
           </p>
           <p className="text-xs text-muted-foreground mt-1">
             {new Date(submission.createdAt).toLocaleDateString("en-US", {
