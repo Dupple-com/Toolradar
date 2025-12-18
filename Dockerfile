@@ -8,7 +8,7 @@ FROM base AS deps
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm ci --loglevel verbose 2>&1 || (cat /root/.npm/_logs/*.log && exit 1)
 
 # Rebuild the source code only when needed
 FROM base AS builder
