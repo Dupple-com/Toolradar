@@ -161,10 +161,10 @@ export async function POST(request: Request) {
       const logoUrl = customLogos[tool.domain] || getLogo(tool.domain);
 
       if (existingTool) {
-        // Update logo if needed
+        // Update logo and reset fake scores
         await prisma.tool.update({
           where: { slug: tool.slug },
-          data: { logo: logoUrl },
+          data: { logo: logoUrl, communityScore: 0 },
         });
       } else {
         const createdTool = await prisma.tool.create({
@@ -180,7 +180,7 @@ export async function POST(request: Request) {
             companyId: company.id,
             upvotes: Math.floor(Math.random() * 500) + 50,
             weeklyUpvotes: Math.floor(Math.random() * 100) + 10,
-            communityScore: parseFloat((Math.random() * 2 + 3).toFixed(1)),
+            communityScore: 0,
           },
         });
 
