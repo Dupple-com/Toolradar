@@ -38,22 +38,18 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
     );
   }
 
-  // With src = show image with fallback background (visible if image fails)
+  // With src = show image with white background
   return (
     <div
       className={cn(
-        "relative flex items-center justify-center text-white font-semibold overflow-hidden",
-        getColorFromName(name),
+        "relative flex items-center justify-center overflow-hidden bg-white",
         className
       )}
     >
-      {/* Fallback initial - always visible behind image */}
-      <span className="text-lg absolute">{name[0]?.toUpperCase()}</span>
-      {/* Image on top - if loads, covers the fallback */}
       <img
         src={src}
         alt={name}
-        className="w-full h-full object-contain relative z-10 bg-white"
+        className="w-full h-full object-contain"
         loading="lazy"
       />
     </div>
