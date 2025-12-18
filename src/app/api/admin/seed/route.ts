@@ -243,6 +243,14 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET() {
-  return NextResponse.json({ message: "Use POST to run seed. Must be admin." });
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const secret = searchParams.get("secret");
+
+  if (secret === "Toolradar2024Seed") {
+    // Run seed via GET with secret (for easy browser access)
+    return POST(request);
+  }
+
+  return NextResponse.json({ message: "Use POST to run seed, or GET with ?secret=..." });
 }
