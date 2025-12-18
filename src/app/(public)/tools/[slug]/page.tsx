@@ -128,37 +128,39 @@ export default async function ToolPage({ params }: { params: { slug: string } })
 
         {/* Sidebar */}
         <div className="space-y-6">
-          {/* Scores */}
-          <div className="bg-card rounded-xl border p-6">
-            <h3 className="font-semibold mb-4">Scores</h3>
-            <div className="space-y-4">
-              {tool.editorialScore && (
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>Editorial Score</span>
-                    <span className="font-bold text-primary">{tool.editorialScore}/100</span>
+          {/* Scores - only show if there's data */}
+          {(tool.editorialScore || (tool.communityScore && tool.communityScore > 0)) && (
+            <div className="bg-card rounded-xl border p-6">
+              <h3 className="font-semibold mb-4">Scores</h3>
+              <div className="space-y-4">
+                {tool.editorialScore && (
+                  <div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span>Editorial Score</span>
+                      <span className="font-bold text-primary">{tool.editorialScore}/100</span>
+                    </div>
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-primary rounded-full"
+                        style={{ width: `${tool.editorialScore}%` }}
+                      />
+                    </div>
                   </div>
-                  <div className="h-2 bg-muted rounded-full overflow-hidden">
-                    <div
-                      className="h-full bg-primary rounded-full"
-                      style={{ width: `${tool.editorialScore}%` }}
-                    />
+                )}
+                {tool.communityScore && tool.communityScore > 0 && (
+                  <div>
+                    <div className="flex justify-between text-sm mb-1">
+                      <span>Community Score</span>
+                      <span className="font-bold">
+                        <span className="text-yellow-500">★</span> {tool.communityScore.toFixed(1)}/5
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">{tool.reviewCount} reviews</p>
                   </div>
-                </div>
-              )}
-              {tool.communityScore && tool.communityScore > 0 && (
-                <div>
-                  <div className="flex justify-between text-sm mb-1">
-                    <span>Community Score</span>
-                    <span className="font-bold">
-                      <span className="text-yellow-500">★</span> {tool.communityScore.toFixed(1)}/5
-                    </span>
-                  </div>
-                  <p className="text-xs text-muted-foreground">{tool.reviewCount} reviews</p>
-                </div>
-              )}
+                )}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Info */}
           <div className="bg-card rounded-xl border p-6">
