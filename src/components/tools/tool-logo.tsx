@@ -41,13 +41,14 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
     </div>
   );
 
-  if (!src || error) {
+  // Show fallback only if no src, or if error occurred before loading
+  if (!src || (error && !loaded)) {
     return fallback;
   }
 
   return (
     <div className={cn("relative bg-white flex items-center justify-center overflow-hidden", className)}>
-      {!loaded && (
+      {!loaded && !error && (
         <div className={cn("absolute inset-0 bg-gradient-to-br flex items-center justify-center text-white font-semibold", getColorFromName(name))}>
           <span className="text-lg">{name[0].toUpperCase()}</span>
         </div>
@@ -56,8 +57,13 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
         src={src}
         alt={name}
         className={cn("w-full h-full object-contain", loaded ? "opacity-100" : "opacity-0")}
-        onLoad={() => setLoaded(true)}
-        onError={() => setError(true)}
+        onLoad={() => {
+          setLoaded(true);
+          setError(false);
+        }}
+        onError={() => {
+          if (!loaded) setError(true);
+        }}
       />
     </div>
   );
