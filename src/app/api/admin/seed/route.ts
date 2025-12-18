@@ -194,10 +194,10 @@ export async function POST(request: Request) {
       const logoUrl = getLogo(tool.domain);
 
       if (existingTool) {
-        // Update logo and reset fake scores
+        // Update logo, status, and reset fake scores
         await prisma.tool.update({
           where: { slug: tool.slug },
-          data: { logo: logoUrl, communityScore: 0 },
+          data: { logo: logoUrl, communityScore: 0, status: "published" },
         });
       } else {
         const createdTool = await prisma.tool.create({
