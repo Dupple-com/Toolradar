@@ -37,6 +37,9 @@ export default async function AdminLayout({
                 <Link href="/admin/totd" className="text-muted-foreground hover:text-foreground transition">
                   Tool of the Day
                 </Link>
+                <Link href="/admin/seed" className="text-muted-foreground hover:text-foreground transition">
+                  Seed
+                </Link>
               </div>
             </div>
             <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
