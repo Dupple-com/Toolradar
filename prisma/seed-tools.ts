@@ -2286,7 +2286,7 @@ async function main() {
           companyId: company.id,
           upvotes: Math.floor(Math.random() * 500) + 50,
           weeklyUpvotes: Math.floor(Math.random() * 100) + 10,
-          communityScore: (Math.random() * 2 + 3).toFixed(1),
+          communityScore: parseFloat((Math.random() * 2 + 3).toFixed(1)),
         },
       });
 
