@@ -3,8 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-// Helper: Use Google's favicon service for consistent square logos (128px)
-const getLogo = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+// Helper: Use Clearbit for high-quality logos
+const getLogo = (domain: string) => `https://logo.clearbit.com/${domain}`;
 
 // Custom high-quality logos for major tools
 const customLogos: Record<string, string> = {
@@ -153,13 +153,20 @@ export async function POST(request: Request) {
         results.companies++;
       }
 
-      // Create tool if not exists
+      // Create or update tool
       const existingTool = await prisma.tool.findUnique({
         where: { slug: tool.slug },
       });
 
-      if (!existingTool) {
-        const logoUrl = customLogos[tool.domain] || getLogo(tool.domain);
+      const logoUrl = customLogos[tool.domain] || getLogo(tool.domain);
+
+      if (existingTool) {
+        // Update logo if needed
+        await prisma.tool.update({
+          where: { slug: tool.slug },
+          data: { logo: logoUrl },
+        });
+      } else {
         const createdTool = await prisma.tool.create({
           data: {
             name: tool.name,
