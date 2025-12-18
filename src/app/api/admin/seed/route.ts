@@ -3,8 +3,8 @@ import { prisma } from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 
-// Use Logo.dev for reliable, high-quality logos (free tier: 1000/month)
-const getLogo = (domain: string) => `https://img.logo.dev/${domain}?token=pk_VAZ4JR5pSWml7GByJsLLkA`;
+// No external logos - use fallback initials until companies upload their own
+const getLogo = (_domain: string) => null;
 
 const categories = [
   { name: "Project Management", slug: "project-management", icon: "Kanban", description: "Tools for managing projects, tasks, and workflows" },
