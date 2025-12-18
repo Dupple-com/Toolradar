@@ -129,7 +129,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Rating - only show if there are reviews */}
-          {tool.communityScore && tool.communityScore > 0 && (
+          {tool.communityScore !== null && tool.communityScore > 0 && (
             <div className="bg-card rounded-xl border p-6">
               <h3 className="font-semibold mb-4">Rating</h3>
               <div className="flex items-center gap-3">
