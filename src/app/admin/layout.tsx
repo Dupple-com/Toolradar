@@ -31,6 +31,9 @@ export default async function AdminLayout({
                 <Link href="/admin/submissions" className="text-muted-foreground hover:text-foreground transition">
                   Submissions
                 </Link>
+                <Link href="/admin/claims" className="text-muted-foreground hover:text-foreground transition">
+                  Claims
+                </Link>
                 <Link href="/admin/totd" className="text-muted-foreground hover:text-foreground transition">
                   Tool of the Day
                 </Link>
