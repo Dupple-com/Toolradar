@@ -3,6 +3,7 @@ import { ToolCard } from "@/components/tools/tool-card";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CategoryIcon } from "@/components/categories/category-icon";
+import { SortSelect } from "@/components/filters/sort-select";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const category = await prisma.category.findUnique({
@@ -195,20 +196,15 @@ export default async function CategoryPage({
 
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">Sort:</span>
-            <select
+            <SortSelect
               defaultValue={sort}
-              onChange={(e) => {
-                const url = new URL(window.location.href);
-                url.searchParams.set("sort", e.target.value);
-                window.location.href = url.toString();
-              }}
-              className="px-3 py-1.5 border rounded-lg text-sm bg-white focus:ring-2 focus:ring-primary/20 outline-none"
-            >
-              <option value="score">Highest Score</option>
-              <option value="reviews">Most Reviews</option>
-              <option value="trending">Trending</option>
-              <option value="recent">Recently Added</option>
-            </select>
+              options={[
+                { value: "score", label: "Highest Score" },
+                { value: "reviews", label: "Most Reviews" },
+                { value: "trending", label: "Trending" },
+                { value: "recent", label: "Recently Added" },
+              ]}
+            />
           </div>
         </div>
 
