@@ -16,11 +16,30 @@ export async function POST(request: NextRequest) {
   if (!company) {
     // Create company from website domain
     const url = new URL(data.website);
+    const domain = url.hostname.replace(/^www\./, "");
+    const slug = domain
+      .replace(/\.[^.]+$/, "") // Remove TLD
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
     company = await prisma.company.create({
       data: {
         name: data.name,
-        domain: url.hostname,
+        slug,
+        domain,
         userId: user.id,
+        claimedAt: new Date(),
+        claimedBy: user.id,
+      },
+    });
+
+    // Create owner membership
+    await prisma.companyMember.create({
+      data: {
+        companyId: company.id,
+        userId: user.id,
+        role: "owner",
       },
     });
   }
