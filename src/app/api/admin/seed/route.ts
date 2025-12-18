@@ -106,10 +106,15 @@ const tools = [
 
 export async function POST(request: Request) {
   try {
-    // Check admin auth
-    const session = await getServerSession(authOptions);
-    if (!session?.user || session.user.role !== "admin") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    // Check secret key OR admin auth
+    const { searchParams } = new URL(request.url);
+    const secret = searchParams.get("secret");
+
+    if (secret !== "Toolradar2024Seed") {
+      const session = await getServerSession(authOptions);
+      if (!session?.user || session.user.role !== "admin") {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
     }
 
     const results = { categories: 0, companies: 0, tools: 0 };
