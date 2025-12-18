@@ -170,7 +170,7 @@ export async function POST(request: Request) {
       });
 
       if (!company) {
-        const companyLogoUrl = customLogos[tool.domain] || getLogo(tool.domain);
+        const companyLogoUrl = getLogo(tool.domain);
         company = await prisma.company.create({
           data: {
             name: tool.name.includes(" ") ? tool.name.split(" ")[0] : tool.name,
