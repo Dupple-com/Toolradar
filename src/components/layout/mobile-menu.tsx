@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { RadarLogo } from "@/components/ui/radar-logo";
 
 interface MobileMenuProps {
   isLoggedIn: boolean;
@@ -19,11 +20,11 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
   ];
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       {/* Hamburger button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 text-muted-foreground hover:text-foreground"
+        className="p-2 text-gray-600 hover:text-gray-900"
         aria-label="Toggle menu"
       >
         {isOpen ? (
@@ -39,16 +40,17 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
 
       {/* Mobile menu overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-background">
+        <div className="fixed inset-0 z-[100] bg-white">
           <div className="flex flex-col h-full">
             {/* Header */}
             <div className="flex items-center justify-between h-16 px-4 border-b">
-              <Link href="/" className="font-bold text-xl" onClick={() => setIsOpen(false)}>
-                Tool<span className="text-primary">radar</span>
+              <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+                <RadarLogo className="w-8 h-8" color="#2563EB" />
+                <span className="font-bold text-xl text-slate-800">Toolradar</span>
               </Link>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 text-muted-foreground hover:text-foreground"
+                className="p-2 text-gray-600 hover:text-gray-900"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -57,13 +59,13 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
             </div>
 
             {/* Nav links */}
-            <nav className="flex-1 px-4 py-6 space-y-1">
+            <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 text-lg font-medium hover:bg-muted rounded-lg transition"
+                  className="block px-4 py-3 text-lg font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition"
                 >
                   {link.label}
                 </Link>
@@ -71,11 +73,11 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
 
               {isLoggedIn && (
                 <>
-                  <hr className="my-4" />
+                  <hr className="my-4 border-gray-200" />
                   <Link
                     href="/dashboard"
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 text-lg font-medium hover:bg-muted rounded-lg transition"
+                    className="block px-4 py-3 text-lg font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition"
                   >
                     Dashboard
                   </Link>
@@ -83,7 +85,7 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
                     <Link
                       href="/admin"
                       onClick={() => setIsOpen(false)}
-                      className="block px-4 py-3 text-lg font-medium hover:bg-muted rounded-lg transition"
+                      className="block px-4 py-3 text-lg font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition"
                     >
                       Admin
                     </Link>
@@ -93,11 +95,11 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
             </nav>
 
             {/* Footer */}
-            <div className="px-4 py-6 border-t space-y-3">
+            <div className="px-4 py-6 border-t border-gray-200 space-y-3">
               <Link
                 href="/review"
                 onClick={() => setIsOpen(false)}
-                className="block w-full px-4 py-3 text-center bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 font-medium"
+                className="block w-full px-4 py-3 text-center bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium"
               >
                 Leave a Review
               </Link>
@@ -105,7 +107,7 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
                 <Link
                   href="/api/auth/signout"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full px-4 py-3 text-center border rounded-lg hover:bg-muted"
+                  className="block w-full px-4 py-3 text-center border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50"
                 >
                   Sign Out
                 </Link>
@@ -113,7 +115,7 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
                 <Link
                   href="/login"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full px-4 py-3 text-center border rounded-lg hover:bg-muted"
+                  className="block w-full px-4 py-3 text-center border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50"
                 >
                   Sign In
                 </Link>

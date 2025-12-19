@@ -183,13 +183,13 @@ export default async function HomePage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center">
               <Link
-                href="/vendors"
+                href="/company/submit"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium transition-all"
               >
                 List your product <ArrowRight size={16} />
               </Link>
               <Link
-                href="/company"
+                href="/vendors"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 font-medium transition-all"
               >
                 Learn more
