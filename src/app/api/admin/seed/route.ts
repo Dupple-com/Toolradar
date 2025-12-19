@@ -19,7 +19,7 @@ const logos: Record<string, string> = {
   "trello.com": "https://cdn.simpleicons.org/trello/0052CC",
   "miro.com": "https://cdn.simpleicons.org/miro/050038",
   "canva.com": "https://static.canva.com/static/images/apple-touch-icon.png",
-  "hubspot.com": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/HubSpot_Logo.svg/200px-HubSpot_Logo.svg.png",
+  "hubspot.com": "https://www.hubspot.com/hubfs/HubSpot_Logos/HubSpot-Inversed-Favicon.png",
   "salesforce.com": "https://cdn.simpleicons.org/salesforce/00A1E0",
   "mailchimp.com": "https://cdn.simpleicons.org/mailchimp/FFE01B",
   "dropbox.com": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/200px-Dropbox_Icon.svg.png",
