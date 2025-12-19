@@ -36,7 +36,7 @@ export function ToolCard({ tool, showVotes = false, rank }: ToolCardProps) {
       <ToolLogo
         src={tool.logo}
         name={tool.name}
-        className="w-10 h-10 rounded-lg border border-slate-200 shrink-0"
+        className="w-10 h-10 rounded-lg shrink-0"
       />
 
       {/* Content */}

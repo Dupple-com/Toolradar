@@ -90,7 +90,7 @@ export default async function HomePage() {
                   <ToolLogo
                     src={toolOfTheDay.logo}
                     name={toolOfTheDay.name}
-                    className="w-20 h-20 rounded-xl border border-slate-200 shadow-sm"
+                    className="w-20 h-20 rounded-xl"
                   />
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-4">
