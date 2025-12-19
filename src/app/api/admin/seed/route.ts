@@ -12,7 +12,7 @@ const logos: Record<string, string> = {
   "linear.app": "https://cdn.simpleicons.org/linear/5E6AD2",
   "stripe.com": "https://images.ctfassets.net/fzn2n1nzq965/HTTOloNPhisV9P4hlMPNA/cacf1bb88b9fc492dfad34378d844280/Stripe_icon_-_square.svg",
   "vercel.com": "https://cdn.simpleicons.org/vercel/000000",
-  "airtable.com": "https://cdn.simpleicons.org/airtable/18BFFF",
+  "airtable.com": "https://static.airtable.com/images/favicon/baymax/apple-touch-icon.png",
   "zoom.us": "https://cdn.simpleicons.org/zoom/0B5CFF",
   "asana.com": "https://cdn.simpleicons.org/asana/F06A6A",
   "atlassian.com": "https://cdn.simpleicons.org/atlassian/0052CC",
