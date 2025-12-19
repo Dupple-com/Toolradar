@@ -6,8 +6,8 @@ import { authOptions } from "@/lib/auth";
 // Logo URLs - using cdn.simpleicons.org (reliable CDN for brand icons)
 const logos: Record<string, string> = {
   "notion.so": "https://cdn.simpleicons.org/notion/000000",
-  "slack.com": "https://cdn.simpleicons.org/slack",
-  "figma.com": "https://cdn.simpleicons.org/figma",
+  "slack.com": "https://a.slack-edge.com/80588/marketing/img/icons/icon_slack_hash_colored.png",
+  "figma.com": "https://static.figma.com/app/icon/1/favicon.png",
   "github.com": "https://cdn.simpleicons.org/github/000000",
   "linear.app": "https://cdn.simpleicons.org/linear/5E6AD2",
   "stripe.com": "https://images.ctfassets.net/fzn2n1nzq965/HTTOloNPhisV9P4hlMPNA/cacf1bb88b9fc492dfad34378d844280/Stripe_icon_-_square.svg",
