@@ -2,9 +2,6 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
-import { ReviewCard } from "@/components/reviews/review-card";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const tool = await prisma.tool.findUnique({ where: { slug: params.slug } });
@@ -16,38 +13,24 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default async function ToolPage({ params }: { params: { slug: string } }) {
-  const [tool, session] = await Promise.all([
-    prisma.tool.findUnique({
-      where: { slug: params.slug },
-      include: {
-        categories: { include: { category: true } },
-        alternatives: { include: { alternative: true } },
-        reviews: {
-          where: { status: "approved" },
-          take: 5,
-          orderBy: { createdAt: "desc" },
-          include: {
-            user: { select: { name: true, image: true } },
-            replies: {
-              orderBy: { createdAt: "asc" },
-              include: {
-                user: { select: { id: true, name: true, image: true } },
-              },
-            },
-            _count: { select: { replies: true } },
-          },
-        },
-        _count: { select: { reviews: true, votes: true, comments: true } },
+  const tool = await prisma.tool.findUnique({
+    where: { slug: params.slug },
+    include: {
+      categories: { include: { category: true } },
+      alternatives: { include: { alternative: true } },
+      reviews: {
+        where: { status: "approved" },
+        take: 5,
+        orderBy: { createdAt: "desc" },
+        include: { user: { select: { name: true, image: true } } },
       },
-    }),
-    getServerSession(authOptions),
-  ]);
+      _count: { select: { reviews: true, votes: true, comments: true } },
+    },
+  });
 
   if (!tool || tool.status !== "published") {
     notFound();
   }
-
-  const isLoggedIn = !!session;
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
@@ -96,14 +79,37 @@ export default async function ToolPage({ params }: { params: { slug: string } })
               </Link>
             </div>
             {tool.reviews.length > 0 ? (
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {tool.reviews.map((review) => (
-                  <ReviewCard
-                    key={review.id}
-                    review={review}
-                    toolSlug={tool.slug}
-                    isLoggedIn={isLoggedIn}
-                  />
+                  <div key={review.id} className="border-b last:border-0 pb-4 last:pb-0">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
+                        {review.user.image ? (
+                          <img src={review.user.image} alt="" className="w-8 h-8 rounded-full" />
+                        ) : (
+                          <span className="text-sm font-medium">{review.user.name?.[0] || "U"}</span>
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-medium text-sm">{review.user.name || "Anonymous"}</p>
+                        <p className="text-yellow-500 text-sm">{"★".repeat(review.overallRating)}</p>
+                      </div>
+                      {review.verified && (
+                        <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Verified</span>
+                      )}
+                    </div>
+                    <h4 className="font-medium">{review.title}</h4>
+                    <div className="grid grid-cols-2 gap-4 mt-2 text-sm">
+                      <div>
+                        <span className="text-green-600 font-medium">Pros: </span>
+                        <span className="text-muted-foreground">{review.pros}</span>
+                      </div>
+                      <div>
+                        <span className="text-red-600 font-medium">Cons: </span>
+                        <span className="text-muted-foreground">{review.cons}</span>
+                      </div>
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : (
