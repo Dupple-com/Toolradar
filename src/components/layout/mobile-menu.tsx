@@ -43,7 +43,7 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
       style={{ zIndex: 99999 }}
     >
       {/* Header */}
-      <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200 bg-white">
+      <div className="flex items-center justify-between h-16 px-4 border-b border-gray-100 bg-white">
         <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
           <RadarLogo className="w-8 h-8" color="#2563EB" />
           <span className="font-bold text-xl text-slate-800">Toolradar</span>
