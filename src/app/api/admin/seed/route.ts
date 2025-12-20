@@ -30,7 +30,7 @@ const logos: Record<string, string> = {
   "zapier.com": "https://cdn.simpleicons.org/zapier/FF4A00",
   "webflow.com": "https://cdn.simpleicons.org/webflow/4353FF",
   "framer.com": "https://cdn.simpleicons.org/framer/0055FF",
-  "openai.com": "https://cdn.simpleicons.org/openai/000000",
+  "openai.com": "https://cdn.oaistatic.com/assets/apple-touch-icon-mz9nytnj.webp",
   "anthropic.com": "https://cdn.simpleicons.org/anthropic/000000",
   "cursor.sh": "https://cdn.simpleicons.org/cursor/000000",
   "supabase.com": "https://cdn.simpleicons.org/supabase/3FCF8E",
