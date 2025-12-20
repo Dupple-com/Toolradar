@@ -40,8 +40,11 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
 
       {/* Mobile menu overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-[100] bg-white">
-          <div className="flex flex-col h-full">
+        <div className="fixed inset-0 z-[9999]">
+          {/* Backdrop */}
+          <div className="absolute inset-0 bg-black/20" onClick={() => setIsOpen(false)} />
+          {/* Menu panel */}
+          <div className="absolute inset-0 bg-white flex flex-col">
             {/* Header */}
             <div className="flex items-center justify-between h-16 px-4 border-b">
               <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
@@ -102,6 +105,13 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
                 className="block w-full px-4 py-3 text-center bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium"
               >
                 Leave a Review
+              </Link>
+              <Link
+                href="/vendors"
+                onClick={() => setIsOpen(false)}
+                className="block w-full px-4 py-3 text-center border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 font-medium"
+              >
+                For Software Companies
               </Link>
               {isLoggedIn ? (
                 <Link
