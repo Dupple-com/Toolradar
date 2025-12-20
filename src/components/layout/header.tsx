@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { CommandSearch } from "@/components/search/command-search";
 import { MobileMenu } from "./mobile-menu";
+import { UserMenu } from "./user-menu";
 
 export async function Header() {
   const session = await getServerSession(authOptions);
@@ -49,12 +50,12 @@ export async function Header() {
               List Your Product
             </Link>
             {session ? (
-              <Link
-                href="/dashboard"
-                className="hidden md:block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-100 text-sm font-medium"
-              >
-                Dashboard
-              </Link>
+              <div className="hidden md:block">
+                <UserMenu
+                  userName={session.user?.name || null}
+                  userImage={session.user?.image || null}
+                />
+              </div>
             ) : (
               <Link
                 href="/login"
