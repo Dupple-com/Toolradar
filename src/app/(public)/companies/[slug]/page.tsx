@@ -71,7 +71,7 @@ export default async function CompanyPage({ params }: { params: { slug: string }
               <img
                 src={company.logo}
                 alt={company.name}
-                className="w-20 h-20 object-cover"
+                className="w-full h-full object-contain p-1"
               />
             ) : (
               <Building2 className="w-10 h-10 text-slate-400" />
@@ -84,10 +84,14 @@ export default async function CompanyPage({ params }: { params: { slug: string }
               <h1 className="text-2xl md:text-3xl font-bold text-slate-900">
                 {company.name}
               </h1>
-              {isClaimed && (
+              {isClaimed ? (
                 <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">
                   <CheckCircle className="w-3 h-3" />
                   Verified
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1 px-2 py-1 bg-slate-100 text-slate-500 text-xs font-medium rounded-full">
+                  Unclaimed
                 </span>
               )}
             </div>

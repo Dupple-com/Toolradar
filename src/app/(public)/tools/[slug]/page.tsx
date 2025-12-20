@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
+import { CheckCircle } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const tool = await prisma.tool.findUnique({ where: { slug: params.slug } });
@@ -18,6 +19,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
     include: {
       categories: { include: { category: true } },
       alternatives: { include: { alternative: true } },
+      company: { select: { id: true, name: true, slug: true, claimedAt: true } },
       reviews: {
         where: { status: "approved" },
         take: 5,
@@ -52,7 +54,19 @@ export default async function ToolPage({ params }: { params: { slug: string } })
               className="w-20 h-20 rounded-2xl flex-shrink-0"
             />
             <div className="flex-1 min-w-0">
-              <h1 className="text-3xl font-bold">{tool.name}</h1>
+              <div className="flex items-center gap-3 flex-wrap">
+                <h1 className="text-3xl font-bold">{tool.name}</h1>
+                {tool.company?.claimedAt ? (
+                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">
+                    <CheckCircle className="w-3 h-3" />
+                    Verified
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-slate-100 text-slate-500 text-xs font-medium rounded-full">
+                    Unclaimed
+                  </span>
+                )}
+              </div>
               <p className="text-lg text-muted-foreground mt-1">{tool.tagline}</p>
               <div className="flex flex-wrap items-center gap-2 mt-4">
                 {tool.categories.map((ct) => (

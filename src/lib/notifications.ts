@@ -1,4 +1,18 @@
 import { prisma } from "./prisma";
+import { Resend } from "resend";
+
+// Lazy initialization for Resend
+let resend: Resend | null = null;
+function getResend() {
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
+
+// Admin email (or fetch from env)
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "louis@dupple.com";
+const BASE_URL = process.env.NEXTAUTH_URL || "https://toolradar.com";
 
 type NotificationType =
   | "new_review"
@@ -79,4 +93,120 @@ export async function notifyClaimStatus(
       : `Your claim for ${companyName} was not approved. Please contact support for more information.`,
     link: approved ? `/company` : undefined,
   });
+}
+
+// ==========================================
+// ADMIN EMAIL NOTIFICATIONS
+// ==========================================
+
+// Notify admin when a new submission is created
+export async function notifyAdminNewSubmission(
+  companyName: string,
+  productName: string,
+  submittedBy: string
+) {
+  try {
+    await getResend().emails.send({
+      from: "Toolradar <noreply@toolradar.com>",
+      to: ADMIN_EMAIL,
+      subject: `[Toolradar] New submission: ${productName}`,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 500px; background-color: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <tr>
+            <td style="padding: 24px 32px; border-bottom: 1px solid #f1f5f9;">
+              <span style="font-size: 18px; font-weight: 600; color: #0f172a;">New Product Submission</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 24px 32px;">
+              <p style="margin: 0 0 16px 0; font-size: 15px; color: #334155;">
+                A new product has been submitted for review:
+              </p>
+              <div style="background: #f8fafc; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                <p style="margin: 0 0 8px 0;"><strong>Product:</strong> ${productName}</p>
+                <p style="margin: 0 0 8px 0;"><strong>Company:</strong> ${companyName}</p>
+                <p style="margin: 0;"><strong>Submitted by:</strong> ${submittedBy}</p>
+              </div>
+              <a href="${BASE_URL}/admin/submissions" style="display: inline-block; background-color: #0f172a; color: #ffffff; font-size: 14px; font-weight: 500; text-decoration: none; padding: 12px 24px; border-radius: 8px;">
+                Review Submission
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+      `,
+    });
+  } catch (error) {
+    console.error("Failed to send admin notification email:", error);
+  }
+}
+
+// Notify admin when a new claim request is created
+export async function notifyAdminNewClaim(
+  companyName: string,
+  claimantName: string,
+  claimantEmail: string,
+  workEmail: string | null
+) {
+  try {
+    await getResend().emails.send({
+      from: "Toolradar <noreply@toolradar.com>",
+      to: ADMIN_EMAIL,
+      subject: `[Toolradar] New claim request: ${companyName}`,
+      html: `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 500px; background-color: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <tr>
+            <td style="padding: 24px 32px; border-bottom: 1px solid #f1f5f9;">
+              <span style="font-size: 18px; font-weight: 600; color: #0f172a;">New Company Claim Request</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 24px 32px;">
+              <p style="margin: 0 0 16px 0; font-size: 15px; color: #334155;">
+                Someone wants to claim a company profile:
+              </p>
+              <div style="background: #f8fafc; padding: 16px; border-radius: 8px; margin-bottom: 16px;">
+                <p style="margin: 0 0 8px 0;"><strong>Company:</strong> ${companyName}</p>
+                <p style="margin: 0 0 8px 0;"><strong>Claimant:</strong> ${claimantName}</p>
+                <p style="margin: 0 0 8px 0;"><strong>Account Email:</strong> ${claimantEmail}</p>
+                ${workEmail ? `<p style="margin: 0;"><strong>Work Email:</strong> ${workEmail}</p>` : ""}
+              </div>
+              <a href="${BASE_URL}/admin/claims" style="display: inline-block; background-color: #0f172a; color: #ffffff; font-size: 14px; font-weight: 500; text-decoration: none; padding: 12px 24px; border-radius: 8px;">
+                Review Claim
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+      `,
+    });
+  } catch (error) {
+    console.error("Failed to send admin notification email:", error);
+  }
 }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { notifyAdminNewClaim } from "@/lib/notifications";
 
 export async function POST(request: NextRequest) {
   const user = await getCurrentUser();
@@ -74,6 +75,14 @@ export async function POST(request: NextRequest) {
       company: { select: { name: true, domain: true } },
     },
   });
+
+  // Send admin notification email
+  notifyAdminNewClaim(
+    company.name,
+    user.name || "Unknown",
+    user.email || "",
+    workEmail
+  ).catch(console.error);
 
   return NextResponse.json(claim, { status: 201 });
 }

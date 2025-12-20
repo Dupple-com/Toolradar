@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { notifyAdminNewSubmission } from "@/lib/notifications";
 
 export async function POST(request: NextRequest) {
   const user = await getCurrentUser();
@@ -58,6 +59,13 @@ export async function POST(request: NextRequest) {
       status: "pending",
     },
   });
+
+  // Send admin notification email
+  notifyAdminNewSubmission(
+    company.name,
+    data.name,
+    user.email || user.name || "Unknown"
+  ).catch(console.error);
 
   return NextResponse.json(submission);
 }
