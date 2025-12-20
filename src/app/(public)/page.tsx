@@ -56,19 +56,19 @@ export default async function HomePage() {
             <HeroSearch />
           </div>
 
-          <div className="mt-16 flex items-center justify-center gap-12 text-slate-400">
+          <div className="mt-16 flex items-center justify-center gap-6 sm:gap-12 text-slate-400">
             <div className="flex flex-col items-center">
-              <span className="text-3xl font-semibold text-slate-900 tabular-nums">2,000+</span>
+              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">2,000+</span>
               <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Tools</span>
             </div>
-            <div className="w-px h-10 bg-slate-200" />
+            <div className="w-px h-8 sm:h-10 bg-slate-200" />
             <div className="flex flex-col items-center">
-              <span className="text-3xl font-semibold text-slate-900 tabular-nums">10k+</span>
+              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">10k+</span>
               <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Reviews</span>
             </div>
-            <div className="w-px h-10 bg-slate-200" />
+            <div className="w-px h-8 sm:h-10 bg-slate-200" />
             <div className="flex flex-col items-center">
-              <span className="text-3xl font-semibold text-slate-900 tabular-nums">100%</span>
+              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">100%</span>
               <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Verified</span>
             </div>
           </div>

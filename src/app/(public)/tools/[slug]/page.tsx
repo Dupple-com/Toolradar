@@ -47,15 +47,15 @@ export default async function ToolPage({ params }: { params: { slug: string } })
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
           {/* Header */}
-          <div className="flex items-start gap-6">
+          <div className="flex items-start gap-4 sm:gap-6">
             <ToolLogo
               src={tool.logo}
               name={tool.name}
-              className="w-20 h-20 rounded-2xl flex-shrink-0"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl flex-shrink-0"
             />
             <div className="flex-1 min-w-0">
-              <div className="flex items-center gap-3 flex-wrap">
-                <h1 className="text-3xl font-bold">{tool.name}</h1>
+              <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+                <h1 className="text-2xl sm:text-3xl font-bold">{tool.name}</h1>
                 {tool.company?.claimedAt ? (
                   <span className="inline-flex items-center gap-1 px-2 py-1 bg-blue-50 text-blue-600 text-xs font-medium rounded-full">
                     <CheckCircle className="w-3 h-3" />

@@ -63,8 +63,8 @@ export default async function CompanyPage({ params }: { params: { slug: string }
   return (
     <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Header */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-8 mb-8">
-        <div className="flex flex-col md:flex-row gap-6 items-start">
+      <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-8 mb-8">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-start">
           {/* Logo */}
           <div className="w-20 h-20 rounded-xl bg-slate-100 flex items-center justify-center overflow-hidden flex-shrink-0">
             {company.logo ? (
@@ -98,7 +98,7 @@ export default async function CompanyPage({ params }: { params: { slug: string }
             {company.description && (
               <p className="text-slate-500 mt-2 max-w-2xl">{company.description}</p>
             )}
-            <div className="flex items-center gap-4 mt-4 text-sm text-slate-500">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-4 text-sm text-slate-500">
               {company.website && (
                 <a
                   href={company.website}
@@ -107,7 +107,7 @@ export default async function CompanyPage({ params }: { params: { slug: string }
                   className="flex items-center gap-1 hover:text-slate-700"
                 >
                   <Globe className="w-4 h-4" />
-                  {company.domain}
+                  <span className="truncate max-w-[150px] sm:max-w-none">{company.domain}</span>
                 </a>
               )}
               <span className="flex items-center gap-1">
