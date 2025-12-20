@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const errorMessages: Record<string, string> = {
   Configuration: "There is a problem with the server configuration.",
@@ -19,41 +20,49 @@ const errorMessages: Record<string, string> = {
   Default: "An unexpected error occurred.",
 };
 
-export default function AuthErrorPage() {
+function ErrorContent() {
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
 
   const errorMessage = error ? errorMessages[error] || errorMessages.Default : errorMessages.Default;
 
   return (
+    <div className="bg-card rounded-xl border p-8">
+      <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+        <span className="text-red-600 text-xl">!</span>
+      </div>
+      <h1 className="text-xl font-bold mb-2">Authentication Error</h1>
+      <p className="text-muted-foreground mb-4">{errorMessage}</p>
+      {error && (
+        <p className="text-xs text-muted-foreground mb-4 font-mono bg-muted p-2 rounded">
+          Error code: {error}
+        </p>
+      )}
+      <div className="space-y-2">
+        <Link
+          href="/login"
+          className="block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
+        >
+          Try Again
+        </Link>
+        <Link
+          href="/"
+          className="block w-full px-4 py-2 text-muted-foreground hover:text-foreground"
+        >
+          Go Home
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export default function AuthErrorPage() {
+  return (
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="max-w-md w-full text-center">
-        <div className="bg-card rounded-xl border p-8">
-          <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-red-600 text-xl">!</span>
-          </div>
-          <h1 className="text-xl font-bold mb-2">Authentication Error</h1>
-          <p className="text-muted-foreground mb-4">{errorMessage}</p>
-          {error && (
-            <p className="text-xs text-muted-foreground mb-4 font-mono bg-muted p-2 rounded">
-              Error code: {error}
-            </p>
-          )}
-          <div className="space-y-2">
-            <Link
-              href="/login"
-              className="block w-full px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90"
-            >
-              Try Again
-            </Link>
-            <Link
-              href="/"
-              className="block w-full px-4 py-2 text-muted-foreground hover:text-foreground"
-            >
-              Go Home
-            </Link>
-          </div>
-        </div>
+        <Suspense fallback={<div className="animate-pulse bg-muted rounded-xl h-64" />}>
+          <ErrorContent />
+        </Suspense>
       </div>
     </div>
   );
