@@ -18,7 +18,7 @@ export async function Header() {
           <div className="flex items-center gap-6 flex-shrink-0">
             <Link href="/" className="flex items-center gap-2 flex-shrink-0">
               <RadarLogo className="w-8 h-8" color="#2563EB" />
-              <span className="font-bold text-xl text-slate-800 hidden sm:block">Toolradar</span>
+              <span className="font-bold text-xl text-slate-800">Toolradar</span>
             </Link>
             <nav className="hidden lg:flex items-center gap-1">
               <Link href="/tools" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
