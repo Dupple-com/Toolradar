@@ -5,6 +5,7 @@ import { authOptions } from "@/lib/auth";
 import { CommandSearch } from "@/components/search/command-search";
 import { MobileMenu } from "./mobile-menu";
 import { UserMenu } from "./user-menu";
+import { NotificationBell } from "./notification-bell";
 
 export async function Header() {
   const session = await getServerSession(authOptions);
@@ -50,7 +51,8 @@ export async function Header() {
               List Your Product
             </Link>
             {session ? (
-              <div className="hidden md:block">
+              <div className="hidden md:flex items-center gap-1">
+                <NotificationBell />
                 <UserMenu
                   userName={session.user?.name || null}
                   userImage={session.user?.image || null}

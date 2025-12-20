@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth-utils";
+import { notifyClaimStatus } from "@/lib/notifications";
 
 export async function PUT(
   request: NextRequest,
@@ -78,6 +79,9 @@ export async function PUT(
       }
     });
 
+    // Notify user about approval
+    notifyClaimStatus(claim.userId, claim.company.name, true, claim.company.slug).catch(console.error);
+
     return NextResponse.json({ success: true, message: "Claim approved" });
   } else {
     // Reject claim
@@ -90,6 +94,9 @@ export async function PUT(
         feedback,
       },
     });
+
+    // Notify user about rejection
+    notifyClaimStatus(claim.userId, claim.company.name, false).catch(console.error);
 
     return NextResponse.json({ success: true, message: "Claim rejected" });
   }

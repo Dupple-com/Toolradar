@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { notifyNewReview } from "@/lib/notifications";
 
 export async function POST(request: NextRequest) {
   const user = await getCurrentUser();
@@ -66,7 +67,7 @@ export async function POST(request: NextRequest) {
   // Get tool to check email domain verification
   const tool = await prisma.tool.findUnique({
     where: { id: data.toolId },
-    select: { website: true },
+    select: { id: true, name: true, slug: true, website: true },
   });
 
   // Check work email domain match
@@ -111,6 +112,12 @@ export async function POST(request: NextRequest) {
       status: "pending",
     },
   });
+
+  // Notify company members about new review
+  if (tool) {
+    const reviewerName = dbUser?.name || "Someone";
+    notifyNewReview(tool.id, tool.name, reviewerName).catch(console.error);
+  }
 
   return NextResponse.json(review);
 }
