@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ReviewCard } from "@/components/reviews/review-card";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
 
 export default async function ToolReviewsPage({
   params,
@@ -17,20 +20,34 @@ export default async function ToolReviewsPage({
                   sort === "helpful" ? { helpfulCount: "desc" as const } :
                   { createdAt: "desc" as const };
 
-  const tool = await prisma.tool.findUnique({
-    where: { slug: params.slug },
-    include: {
-      reviews: {
-        where: { status: "approved" },
-        orderBy,
-        include: { user: { select: { name: true, image: true } } },
+  const [tool, session] = await Promise.all([
+    prisma.tool.findUnique({
+      where: { slug: params.slug },
+      include: {
+        reviews: {
+          where: { status: "approved" },
+          orderBy,
+          include: {
+            user: { select: { name: true, image: true } },
+            replies: {
+              orderBy: { createdAt: "asc" },
+              include: {
+                user: { select: { id: true, name: true, image: true } },
+              },
+            },
+            _count: { select: { replies: true } },
+          },
+        },
       },
-    },
-  });
+    }),
+    getServerSession(authOptions),
+  ]);
 
   if (!tool) {
     notFound();
   }
+
+  const isLoggedIn = !!session;
 
   const avgRatings = tool.reviews.length > 0 ? {
     overall: tool.reviews.reduce((s, r) => s + r.overallRating, 0) / tool.reviews.length,
@@ -111,44 +128,11 @@ export default async function ToolReviewsPage({
       <div className="space-y-6">
         {tool.reviews.map((review) => (
           <div key={review.id} className="bg-card rounded-xl border p-6">
-            <div className="flex items-start justify-between mb-4">
-              <div className="flex items-center gap-3">
-                {review.user.image ? (
-                  <img src={review.user.image} alt="" className="w-10 h-10 rounded-full" />
-                ) : (
-                  <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center font-medium">
-                    {review.user.name?.[0] || "U"}
-                  </div>
-                )}
-                <div>
-                  <p className="font-medium">{review.user.name || "Anonymous"}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {new Date(review.createdAt).toLocaleDateString()}
-                  </p>
-                </div>
-                {review.verified && (
-                  <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
-                    Verified User
-                  </span>
-                )}
-              </div>
-              <div className="text-right">
-                <p className="text-yellow-500 text-lg">{"★".repeat(review.overallRating)}</p>
-              </div>
-            </div>
-
-            <h3 className="font-semibold text-lg mb-3">{review.title}</h3>
-
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-green-50 rounded-lg p-4">
-                <p className="text-green-700 font-medium text-sm mb-1">👍 Pros</p>
-                <p className="text-sm">{review.pros}</p>
-              </div>
-              <div className="bg-red-50 rounded-lg p-4">
-                <p className="text-red-700 font-medium text-sm mb-1">👎 Cons</p>
-                <p className="text-sm">{review.cons}</p>
-              </div>
-            </div>
+            <ReviewCard
+              review={review}
+              toolSlug={tool.slug}
+              isLoggedIn={isLoggedIn}
+            />
 
             {review.useCases && (
               <div className="mt-4 bg-muted/50 rounded-lg p-4">
