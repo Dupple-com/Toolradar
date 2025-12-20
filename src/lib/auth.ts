@@ -72,9 +72,48 @@ export const authOptions: NextAuthOptions = {
       }
       return session;
     },
-    async signIn({ user, account }) {
-      // Verify LinkedIn users automatically
-      if (account?.provider === "linkedin") {
+    async signIn({ user, account, profile }) {
+      // Handle account linking - if user with same email exists, link the account
+      if (account?.provider && profile?.email) {
+        const existingUser = await prisma.user.findUnique({
+          where: { email: profile.email },
+          include: { accounts: true },
+        });
+
+        if (existingUser) {
+          // Check if this provider is already linked
+          const existingAccount = existingUser.accounts.find(
+            (acc) => acc.provider === account.provider
+          );
+
+          if (!existingAccount) {
+            // Link new provider to existing user
+            await prisma.account.create({
+              data: {
+                userId: existingUser.id,
+                type: account.type,
+                provider: account.provider,
+                providerAccountId: account.providerAccountId,
+                access_token: account.access_token,
+                token_type: account.token_type,
+                scope: account.scope,
+                id_token: account.id_token,
+              },
+            });
+          }
+
+          // Verify user if using LinkedIn
+          if (account.provider === "linkedin" && !existingUser.verified) {
+            await prisma.user.update({
+              where: { id: existingUser.id },
+              data: { verified: true },
+            });
+          }
+        }
+      }
+
+      // Verify LinkedIn users automatically (for new accounts)
+      if (account?.provider === "linkedin" && user.id) {
         await prisma.user.update({
           where: { id: user.id },
           data: { verified: true },

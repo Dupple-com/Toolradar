@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { SettingsForm } from "@/components/dashboard/settings-form";
+import { ConnectedAccounts } from "@/components/dashboard/connected-accounts";
 
 export default async function SettingsPage() {
   const user = await getCurrentUser();
@@ -15,8 +16,15 @@ export default async function SettingsPage() {
       emailNewTools: true,
       emailWeeklyDigest: true,
       nameChangedAt: true,
+      accounts: {
+        select: {
+          provider: true,
+        },
+      },
     },
   });
+
+  const connectedProviders = dbUser?.accounts.map((a) => a.provider) || [];
 
   return (
     <div className="space-y-6">
@@ -25,6 +33,7 @@ export default async function SettingsPage() {
         user={dbUser!}
         nameChangedAt={dbUser?.nameChangedAt?.toISOString() || null}
       />
+      <ConnectedAccounts connectedProviders={connectedProviders} />
     </div>
   );
 }
