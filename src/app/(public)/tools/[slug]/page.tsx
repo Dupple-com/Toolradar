@@ -22,7 +22,14 @@ export default async function ToolPage({ params }: { params: { slug: string } })
         where: { status: "approved" },
         take: 5,
         orderBy: { createdAt: "desc" },
-        include: { user: { select: { name: true, image: true } } },
+        include: {
+          user: { select: { name: true, image: true } },
+          replies: {
+            include: { user: { select: { id: true, name: true, image: true } } },
+            orderBy: { createdAt: "asc" },
+          },
+          _count: { select: { replies: true } },
+        },
       },
       _count: { select: { reviews: true, votes: true, comments: true } },
     },
