@@ -130,10 +130,14 @@ export const authOptions: NextAuthOptions = {
 
       // Verify LinkedIn users automatically (for new accounts)
       if (account?.provider === "linkedin" && user.id) {
-        await prisma.user.update({
-          where: { id: user.id },
-          data: { verified: true },
-        });
+        try {
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { verified: true },
+          });
+        } catch {
+          // User might not exist yet during first sign-up, that's ok
+        }
       }
       return true;
     },
