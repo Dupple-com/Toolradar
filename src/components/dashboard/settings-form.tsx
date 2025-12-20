@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Check } from "lucide-react";
 
 interface SettingsFormProps {
   user: {
@@ -16,6 +17,7 @@ interface SettingsFormProps {
 export function SettingsForm({ user }: SettingsFormProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
   const [formData, setFormData] = useState({
     name: user.name || "",
     username: user.username || "",
@@ -27,6 +29,7 @@ export function SettingsForm({ user }: SettingsFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setIsSaved(false);
 
     await fetch("/api/user/settings", {
       method: "PUT",
@@ -36,6 +39,10 @@ export function SettingsForm({ user }: SettingsFormProps) {
 
     router.refresh();
     setIsLoading(false);
+    setIsSaved(true);
+
+    // Reset saved state after 3 seconds
+    setTimeout(() => setIsSaved(false), 3000);
   };
 
   return (
@@ -95,10 +102,23 @@ export function SettingsForm({ user }: SettingsFormProps) {
 
       <button
         type="submit"
-        disabled={isLoading}
-        className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 disabled:opacity-50"
+        disabled={isLoading || isSaved}
+        className={`px-6 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
+          isSaved
+            ? "bg-green-500 text-white"
+            : "bg-primary text-primary-foreground hover:bg-primary/90"
+        } disabled:opacity-90`}
       >
-        {isLoading ? "Saving..." : "Save Settings"}
+        {isLoading ? (
+          "Saving..."
+        ) : isSaved ? (
+          <>
+            <Check size={16} />
+            Saved!
+          </>
+        ) : (
+          "Save Settings"
+        )}
       </button>
     </form>
   );
