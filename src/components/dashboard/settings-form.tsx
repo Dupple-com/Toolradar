@@ -25,8 +25,6 @@ export function SettingsForm({ user, nameChangedAt }: SettingsFormProps) {
   const [formData, setFormData] = useState({
     name: user.name || "",
     bio: user.bio || "",
-    emailNewTools: user.emailNewTools,
-    emailWeeklyDigest: user.emailWeeklyDigest,
   });
 
   // Calculate if name change is allowed
@@ -119,28 +117,6 @@ export function SettingsForm({ user, nameChangedAt }: SettingsFormProps) {
           rows={3}
           className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
         />
-      </div>
-
-      <div className="space-y-3">
-        <h3 className="font-medium">Email Notifications</h3>
-        <label className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            checked={formData.emailNewTools}
-            onChange={(e) => setFormData({ ...formData, emailNewTools: e.target.checked })}
-            className="w-4 h-4"
-          />
-          <span className="text-sm">New tools in my categories</span>
-        </label>
-        <label className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            checked={formData.emailWeeklyDigest}
-            onChange={(e) => setFormData({ ...formData, emailWeeklyDigest: e.target.checked })}
-            className="w-4 h-4"
-          />
-          <span className="text-sm">Weekly digest</span>
-        </label>
       </div>
 
       <button

@@ -28,16 +28,70 @@ export const authOptions: NextAuthOptions = {
             to: email,
             subject: "Sign in to Toolradar",
             html: `
-              <div style="font-family: sans-serif; max-width: 500px; margin: 0 auto;">
-                <h1 style="color: #7c3aed;">Toolradar</h1>
-                <p>Click the button below to sign in to your account:</p>
-                <a href="${url}" style="display: inline-block; background: #7c3aed; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 16px 0;">
-                  Sign In
-                </a>
-                <p style="color: #666; font-size: 14px;">
-                  If you didn't request this email, you can safely ignore it.
-                </p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #f8fafc; padding: 40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 460px; background-color: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;">
+          <!-- Header -->
+          <tr>
+            <td style="padding: 32px 32px 24px 32px; text-align: center; border-bottom: 1px solid #f1f5f9;">
+              <div style="display: inline-flex; align-items: center; gap: 10px;">
+                <svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="50" r="45" stroke="#3b82f6" stroke-width="6" fill="none"/>
+                  <circle cx="50" cy="50" r="8" fill="#3b82f6"/>
+                  <path d="M50 20 L50 35" stroke="#3b82f6" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M50 65 L50 80" stroke="#3b82f6" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M20 50 L35 50" stroke="#3b82f6" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M65 50 L80 50" stroke="#3b82f6" stroke-width="5" stroke-linecap="round"/>
+                </svg>
+                <span style="font-size: 22px; font-weight: 600; color: #0f172a;">Toolradar</span>
               </div>
+            </td>
+          </tr>
+          <!-- Content -->
+          <tr>
+            <td style="padding: 32px;">
+              <h1 style="margin: 0 0 16px 0; font-size: 20px; font-weight: 600; color: #0f172a; text-align: center;">
+                Sign in to your account
+              </h1>
+              <p style="margin: 0 0 24px 0; font-size: 15px; color: #64748b; line-height: 1.6; text-align: center;">
+                Click the button below to securely sign in to Toolradar. This link will expire in 24 hours.
+              </p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td align="center">
+                    <a href="${url}" style="display: inline-block; background-color: #0f172a; color: #ffffff; font-size: 15px; font-weight: 500; text-decoration: none; padding: 14px 32px; border-radius: 8px;">
+                      Sign in to Toolradar
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin: 24px 0 0 0; font-size: 13px; color: #94a3b8; line-height: 1.5; text-align: center;">
+                If you didn't request this email, you can safely ignore it.
+              </p>
+            </td>
+          </tr>
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 24px 32px; background-color: #f8fafc; border-top: 1px solid #f1f5f9;">
+              <p style="margin: 0; font-size: 12px; color: #94a3b8; text-align: center;">
+                Toolradar - Discover the best software tools
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
             `,
           });
         } catch (error) {
