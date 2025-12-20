@@ -1,13 +1,31 @@
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { redirect } from "next/navigation";
 import Link from "next/link";
 
 export default async function CompanyDashboardPage() {
   const user = await getCurrentUser();
-  if (!user) return null;
+  if (!user) redirect("/login");
+
+  // Check membership first, then legacy relation
+  const membership = await prisma.companyMember.findFirst({
+    where: { userId: user.id },
+    include: { company: true },
+  });
+
+  const companyId = membership?.companyId;
+
+  // If no membership, check legacy relation
+  const legacyCompany = !membership ? await prisma.company.findUnique({
+    where: { userId: user.id },
+  }) : null;
+
+  if (!membership && !legacyCompany) {
+    redirect("/company/setup");
+  }
 
   const company = await prisma.company.findUnique({
-    where: { userId: user.id },
+    where: { id: companyId || legacyCompany!.id },
     include: {
       tools: { select: { id: true, name: true, slug: true, upvotes: true, reviewCount: true } },
       submissions: { where: { status: "pending" } },
@@ -16,20 +34,7 @@ export default async function CompanyDashboardPage() {
   });
 
   if (!company) {
-    return (
-      <div className="text-center py-12 bg-card rounded-xl border">
-        <h1 className="text-2xl font-bold mb-4">Set Up Your Company Profile</h1>
-        <p className="text-muted-foreground mb-6">
-          Create a company profile to submit tools and access analytics.
-        </p>
-        <Link
-          href="/company/setup"
-          className="px-6 py-2 bg-primary text-primary-foreground rounded-lg"
-        >
-          Get Started
-        </Link>
-      </div>
-    );
+    redirect("/company/setup");
   }
 
   const totalViews = company.tools.reduce((sum, t) => sum + t.upvotes, 0);
