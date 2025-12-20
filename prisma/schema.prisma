@@ -241,6 +241,9 @@ model User {
   role     String  @default("user") // user, maker, admin
   verified Boolean @default(false)
 
+  // Name change tracking (1 change per month)
+  nameChangedAt DateTime?
+
   // Relations
   accounts Account[]
   sessions Session[]

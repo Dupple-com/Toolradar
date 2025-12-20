@@ -9,9 +9,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  const results: string[] = [];
+
   try {
-    // Check if ReviewReply table exists
-    const tableExists = await prisma.$queryRaw<{ exists: boolean }[]>`
+    // Migration 1: ReviewReply table
+    const reviewReplyExists = await prisma.$queryRaw<{ exists: boolean }[]>`
       SELECT EXISTS (
         SELECT FROM information_schema.tables
         WHERE table_schema = 'public'
@@ -19,57 +21,70 @@ export async function POST(request: NextRequest) {
       );
     `;
 
-    if (tableExists[0]?.exists) {
-      return NextResponse.json({
-        message: "ReviewReply table already exists",
-        status: "already_migrated"
-      });
+    if (!reviewReplyExists[0]?.exists) {
+      await prisma.$executeRaw`
+        CREATE TABLE "ReviewReply" (
+          "id" TEXT NOT NULL,
+          "reviewId" TEXT NOT NULL,
+          "userId" TEXT NOT NULL,
+          "content" TEXT NOT NULL,
+          "isVendorResponse" BOOLEAN NOT NULL DEFAULT false,
+          "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+          "updatedAt" TIMESTAMP(3) NOT NULL,
+          CONSTRAINT "ReviewReply_pkey" PRIMARY KEY ("id")
+        );
+      `;
+      await prisma.$executeRaw`
+        CREATE INDEX "ReviewReply_reviewId_idx" ON "ReviewReply"("reviewId");
+      `;
+      await prisma.$executeRaw`
+        ALTER TABLE "ReviewReply"
+        ADD CONSTRAINT "ReviewReply_reviewId_fkey"
+        FOREIGN KEY ("reviewId") REFERENCES "Review"("id")
+        ON DELETE CASCADE ON UPDATE CASCADE;
+      `;
+      await prisma.$executeRaw`
+        ALTER TABLE "ReviewReply"
+        ADD CONSTRAINT "ReviewReply_userId_fkey"
+        FOREIGN KEY ("userId") REFERENCES "User"("id")
+        ON DELETE CASCADE ON UPDATE CASCADE;
+      `;
+      results.push("ReviewReply table created");
+    } else {
+      results.push("ReviewReply table already exists");
     }
 
-    // Create ReviewReply table
-    await prisma.$executeRaw`
-      CREATE TABLE "ReviewReply" (
-        "id" TEXT NOT NULL,
-        "reviewId" TEXT NOT NULL,
-        "userId" TEXT NOT NULL,
-        "content" TEXT NOT NULL,
-        "isVendorResponse" BOOLEAN NOT NULL DEFAULT false,
-        "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-        "updatedAt" TIMESTAMP(3) NOT NULL,
-        CONSTRAINT "ReviewReply_pkey" PRIMARY KEY ("id")
+    // Migration 2: nameChangedAt column on User
+    const nameChangedAtExists = await prisma.$queryRaw<{ exists: boolean }[]>`
+      SELECT EXISTS (
+        SELECT FROM information_schema.columns
+        WHERE table_schema = 'public'
+        AND table_name = 'User'
+        AND column_name = 'nameChangedAt'
       );
     `;
 
-    // Create index
-    await prisma.$executeRaw`
-      CREATE INDEX "ReviewReply_reviewId_idx" ON "ReviewReply"("reviewId");
-    `;
-
-    // Add foreign keys
-    await prisma.$executeRaw`
-      ALTER TABLE "ReviewReply"
-      ADD CONSTRAINT "ReviewReply_reviewId_fkey"
-      FOREIGN KEY ("reviewId") REFERENCES "Review"("id")
-      ON DELETE CASCADE ON UPDATE CASCADE;
-    `;
-
-    await prisma.$executeRaw`
-      ALTER TABLE "ReviewReply"
-      ADD CONSTRAINT "ReviewReply_userId_fkey"
-      FOREIGN KEY ("userId") REFERENCES "User"("id")
-      ON DELETE CASCADE ON UPDATE CASCADE;
-    `;
+    if (!nameChangedAtExists[0]?.exists) {
+      await prisma.$executeRaw`
+        ALTER TABLE "User" ADD COLUMN "nameChangedAt" TIMESTAMP(3);
+      `;
+      results.push("nameChangedAt column added to User");
+    } else {
+      results.push("nameChangedAt column already exists");
+    }
 
     return NextResponse.json({
-      message: "Migration successful - ReviewReply table created",
-      status: "migrated"
+      message: "Migration completed",
+      results,
+      status: "success"
     });
 
   } catch (error) {
     console.error("Migration error:", error);
     return NextResponse.json({
       error: "Migration failed",
-      details: String(error)
+      details: String(error),
+      results
     }, { status: 500 });
   }
 }
