@@ -49,7 +49,7 @@ const logos: Record<string, string> = {
   "loom.com": "https://cdn.simpleicons.org/loom/625DF5",
   "zendesk.com": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Zendesk_logo.svg/200px-Zendesk_logo.svg.png",
   "intercom.com": "https://cdn.simpleicons.org/intercom/6AFDEF",
-  "crisp.chat": "https://crisp.chat/favicon.png",
+  "crisp.chat": "https://app.crisp.chat/static/img/logo/crisp-icon.png",
   "shopify.com": "https://cdn.simpleicons.org/shopify/7AB55C",
   "gumroad.com": "https://gumroad.com/favicon.ico",
   "prisma.io": "https://cdn.simpleicons.org/prisma/2D3748",
