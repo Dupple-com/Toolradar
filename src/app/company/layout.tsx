@@ -1,4 +1,5 @@
-import { requireCompanyMemberPage } from "@/lib/auth-utils";
+import { requireAuth } from "@/lib/auth-utils";
+import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 
@@ -7,7 +8,31 @@ export default async function CompanyLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { company } = await requireCompanyMemberPage();
+  const user = await requireAuth();
+
+  // Check if user has a company (via membership or old userId relation)
+  const membership = await prisma.companyMember.findFirst({
+    where: { userId: user.id },
+    include: { company: true },
+  });
+
+  const legacyCompany = !membership ? await prisma.company.findUnique({
+    where: { userId: user.id },
+  }) : null;
+
+  const company = membership?.company || legacyCompany;
+
+  // If no company, show simplified layout for setup/submit
+  if (!company) {
+    return (
+      <>
+        <Header />
+        <div className="max-w-3xl mx-auto px-4 py-8">
+          {children}
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
