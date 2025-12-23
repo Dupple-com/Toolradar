@@ -10,6 +10,8 @@ const logoFixes: Record<string, string> = {
   "trello": "https://logo.clearbit.com/trello.com",
   "1password": "https://logo.clearbit.com/1password.com",
   "clickup": "https://logo.clearbit.com/clickup.com",
+  "salesforce": "https://logo.clearbit.com/salesforce.com",
+  "crisp": "https://logo.clearbit.com/crisp.chat",
 };
 
 // POST /api/admin/fix-logos?secret=xxx
