@@ -4,21 +4,21 @@ import { RadarLogo } from "@/components/ui/radar-logo";
 // Popular categories for SEO footer links - must match database slugs
 const POPULAR_CATEGORIES = [
   { name: "Project Management", slug: "project-management" },
-  { name: "CRM Software", slug: "crm-software" },
-  { name: "Marketing & Sales", slug: "marketing-sales" },
-  { name: "Development & IT", slug: "development-it" },
-  { name: "Design & Creative", slug: "design-creative" },
-  { name: "Team Communication", slug: "team-communication" },
-  { name: "Analytics & BI", slug: "analytics-bi" },
-  { name: "Marketing Automation", slug: "marketing-automation" },
+  { name: "Developer Tools", slug: "developer-tools" },
+  { name: "Marketing", slug: "marketing" },
+  { name: "Design", slug: "design" },
+  { name: "Communication", slug: "communication" },
+  { name: "Analytics", slug: "analytics" },
+  { name: "Productivity", slug: "productivity" },
+  { name: "AI & Automation", slug: "ai-automation" },
 ];
 
 // Popular "Best of" pages - must match database slugs
 const BEST_OF_PAGES = [
   { name: "Best Project Management", slug: "project-management" },
-  { name: "Best CRM Software", slug: "crm-software" },
-  { name: "Best Marketing Tools", slug: "marketing-sales" },
-  { name: "Best Design Software", slug: "design-creative" },
+  { name: "Best Marketing Tools", slug: "marketing" },
+  { name: "Best Design Software", slug: "design" },
+  { name: "Best Developer Tools", slug: "developer-tools" },
 ];
 
 export function Footer() {
