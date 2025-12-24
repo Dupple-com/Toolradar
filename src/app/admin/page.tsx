@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
+// Force dynamic rendering - admin pages should never be static
+export const dynamic = "force-dynamic";
+
 export default async function AdminDashboard() {
   const [toolCount, reviewCount, pendingReviews, submissionCount] = await Promise.all([
     prisma.tool.count(),

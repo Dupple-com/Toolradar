@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import { ReviewModeration } from "@/components/admin/review-moderation";
 
+// Force dynamic rendering - admin pages should never be static
+export const dynamic = "force-dynamic";
+
 export default async function AdminReviewsPage({
   searchParams,
 }: {

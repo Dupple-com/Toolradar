@@ -6,6 +6,8 @@ import { CategoryIcon } from "@/components/categories/category-icon";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
+// Force dynamic rendering to avoid build-time DB access
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {

@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import Link from "next/link";
 
+// Force dynamic rendering - admin pages should never be static
+export const dynamic = "force-dynamic";
+
 export default async function AdminToolsPage() {
   const tools = await prisma.tool.findMany({
     orderBy: { createdAt: "desc" },

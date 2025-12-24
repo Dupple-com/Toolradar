@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import { ClaimModeration } from "@/components/admin/claim-moderation";
 
+// Force dynamic rendering - admin pages should never be static
+export const dynamic = "force-dynamic";
+
 export default async function AdminClaimsPage({
   searchParams,
 }: {

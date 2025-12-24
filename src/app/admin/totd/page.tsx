@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import { TotdSelector } from "@/components/admin/totd-selector";
 
+// Force dynamic rendering - admin pages should never be static
+export const dynamic = "force-dynamic";
+
 export default async function ToolOfTheDayPage() {
   const tools = await prisma.tool.findMany({
     where: { status: "published" },

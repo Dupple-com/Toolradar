@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://toolradar.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Static pages
+  // Static pages - always included
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
@@ -50,7 +50,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // Pricing filter pages (programmatic SEO)
+  // Pricing filter pages (programmatic SEO) - static, no DB needed
   const pricingPages: MetadataRoute.Sitemap = ["free", "freemium", "paid"].map((pricing) => ({
     url: `${SITE_URL}/pricing/${pricing}`,
     lastModified: new Date(),
@@ -58,73 +58,92 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // Tool pages
-  const tools = await prisma.tool.findMany({
-    where: { status: "published" },
-    select: { slug: true, updatedAt: true },
-    orderBy: { updatedAt: "desc" },
-  });
+  // Dynamic pages - wrapped in try-catch for build time when DB is unavailable
+  let toolPages: MetadataRoute.Sitemap = [];
+  let categoryPages: MetadataRoute.Sitemap = [];
+  let companyPages: MetadataRoute.Sitemap = [];
+  let alternativePages: MetadataRoute.Sitemap = [];
+  let bestCategoryPages: MetadataRoute.Sitemap = [];
+  let comparisonPages: MetadataRoute.Sitemap = [];
 
-  const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
-    url: `${SITE_URL}/tools/${tool.slug}`,
-    lastModified: tool.updatedAt,
-    changeFrequency: "weekly",
-    priority: 0.8,
-  }));
+  try {
+    // Tool pages
+    const tools = await prisma.tool.findMany({
+      where: { status: "published" },
+      select: { slug: true, updatedAt: true },
+      orderBy: { updatedAt: "desc" },
+    });
 
-  // Category pages
-  const categories = await prisma.category.findMany({
-    select: { slug: true, updatedAt: true },
-  });
+    toolPages = tools.map((tool) => ({
+      url: `${SITE_URL}/tools/${tool.slug}`,
+      lastModified: tool.updatedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    }));
 
-  const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `${SITE_URL}/categories/${category.slug}`,
-    lastModified: category.updatedAt,
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }));
+    // Alternatives pages (programmatic SEO)
+    alternativePages = tools.slice(0, 100).map((tool) => ({
+      url: `${SITE_URL}/tools/${tool.slug}/alternatives`,
+      lastModified: tool.updatedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    }));
 
-  // Company pages
-  const companies = await prisma.company.findMany({
-    where: { tools: { some: { status: "published" } } },
-    select: { slug: true, updatedAt: true },
-  });
-
-  const companyPages: MetadataRoute.Sitemap = companies.map((company) => ({
-    url: `${SITE_URL}/companies/${company.slug}`,
-    lastModified: company.updatedAt,
-    changeFrequency: "weekly",
-    priority: 0.6,
-  }));
-
-  // Alternatives pages (programmatic SEO)
-  const alternativePages: MetadataRoute.Sitemap = tools.slice(0, 100).map((tool) => ({
-    url: `${SITE_URL}/tools/${tool.slug}/alternatives`,
-    lastModified: tool.updatedAt,
-    changeFrequency: "weekly",
-    priority: 0.5,
-  }));
-
-  // Best category pages (programmatic SEO)
-  const bestCategoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `${SITE_URL}/best/${category.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
-  }));
-
-  // Comparison pages (programmatic SEO) - Top tool pairs
-  const topTools = tools.slice(0, 30);
-  const comparisonPages: MetadataRoute.Sitemap = [];
-  for (let i = 0; i < Math.min(topTools.length, 15); i++) {
-    for (let j = i + 1; j < Math.min(topTools.length, 15); j++) {
-      comparisonPages.push({
-        url: `${SITE_URL}/compare/${topTools[i].slug}-vs-${topTools[j].slug}`,
-        lastModified: new Date(),
-        changeFrequency: "weekly" as const,
-        priority: 0.6,
-      });
+    // Comparison pages (programmatic SEO) - Top tool pairs
+    const topTools = tools.slice(0, 30);
+    for (let i = 0; i < Math.min(topTools.length, 15); i++) {
+      for (let j = i + 1; j < Math.min(topTools.length, 15); j++) {
+        comparisonPages.push({
+          url: `${SITE_URL}/compare/${topTools[i].slug}-vs-${topTools[j].slug}`,
+          lastModified: new Date(),
+          changeFrequency: "weekly" as const,
+          priority: 0.6,
+        });
+      }
     }
+  } catch {
+    // Database unavailable during build - tool pages will be generated at runtime
+  }
+
+  try {
+    // Category pages
+    const categories = await prisma.category.findMany({
+      select: { slug: true, updatedAt: true },
+    });
+
+    categoryPages = categories.map((category) => ({
+      url: `${SITE_URL}/categories/${category.slug}`,
+      lastModified: category.updatedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
+
+    // Best category pages (programmatic SEO)
+    bestCategoryPages = categories.map((category) => ({
+      url: `${SITE_URL}/best/${category.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }));
+  } catch {
+    // Database unavailable during build - category pages will be generated at runtime
+  }
+
+  try {
+    // Company pages
+    const companies = await prisma.company.findMany({
+      where: { tools: { some: { status: "published" } } },
+      select: { slug: true, updatedAt: true },
+    });
+
+    companyPages = companies.map((company) => ({
+      url: `${SITE_URL}/companies/${company.slug}`,
+      lastModified: company.updatedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    }));
+  } catch {
+    // Database unavailable during build - company pages will be generated at runtime
   }
 
   return [

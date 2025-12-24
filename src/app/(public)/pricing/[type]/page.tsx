@@ -6,6 +6,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import Link from "next/link";
 
+// Force dynamic rendering to avoid build-time DB access
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 const VALID_PRICING = ["free", "freemium", "paid"] as const;

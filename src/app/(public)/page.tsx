@@ -8,6 +8,9 @@ import { generateOrganizationJsonLd, generateWebsiteJsonLd } from "@/lib/seo";
 import { Trophy, TrendingUp, Sparkles, ArrowRight } from "lucide-react";
 import { HeroSearch } from "@/components/search/hero-search";
 
+// Force dynamic rendering to avoid build-time DB access
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Toolradar - Discover & Compare the Best Software Tools",
   description: "Find the perfect software for your business. Compare 2,000+ tools with real user reviews, ratings, and alternatives. Make smarter software decisions.",

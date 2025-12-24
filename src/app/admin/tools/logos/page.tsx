@@ -1,6 +1,9 @@
 import { prisma } from "@/lib/prisma";
 import { LogoManager } from "@/components/admin/logo-manager";
 
+// Force dynamic rendering - admin pages should never be static
+export const dynamic = "force-dynamic";
+
 export default async function AdminLogosPage() {
   const tools = await prisma.tool.findMany({
     orderBy: [
