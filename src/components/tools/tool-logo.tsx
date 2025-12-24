@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 interface ToolLogoProps {
   src: string | null;
@@ -22,20 +25,26 @@ function getColorFromName(name: string): string {
   return colors[index];
 }
 
+function Fallback({ name, className }: { name: string; className?: string }) {
+  return (
+    <div
+      className={cn(
+        "flex items-center justify-center text-white font-semibold",
+        getColorFromName(name),
+        className
+      )}
+    >
+      <span className="text-lg">{name[0]?.toUpperCase()}</span>
+    </div>
+  );
+}
+
 export function ToolLogo({ src, name, className }: ToolLogoProps) {
-  // No src = show fallback
-  if (!src) {
-    return (
-      <div
-        className={cn(
-          "flex items-center justify-center text-white font-semibold",
-          getColorFromName(name),
-          className
-        )}
-      >
-        <span className="text-lg">{name[0]?.toUpperCase()}</span>
-      </div>
-    );
+  const [hasError, setHasError] = useState(false);
+
+  // No src or error loading = show fallback
+  if (!src || hasError) {
+    return <Fallback name={name} className={className} />;
   }
 
   // With src = show image with white background
@@ -51,6 +60,7 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
         alt={name}
         className="w-full h-full object-contain"
         loading="lazy"
+        onError={() => setHasError(true)}
       />
     </div>
   );
