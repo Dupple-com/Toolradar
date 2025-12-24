@@ -5,6 +5,24 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { ReviewCard } from "@/components/reviews/review-card";
 
+// ISR - revalidate every hour
+export const revalidate = 3600;
+
+// Generate static params for popular tools
+export async function generateStaticParams() {
+  try {
+    const tools = await prisma.tool.findMany({
+      where: { status: "published", reviewCount: { gt: 0 } },
+      select: { slug: true },
+      orderBy: { reviewCount: "desc" },
+      take: 50,
+    });
+    return tools.map((t) => ({ slug: t.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export default async function ToolReviewsPage({
   params,
   searchParams,
@@ -23,33 +41,50 @@ export default async function ToolReviewsPage({
   const session = await getServerSession(authOptions);
   const isLoggedIn = !!session?.user;
 
-  const tool = await prisma.tool.findUnique({
-    where: { slug: params.slug },
-    include: {
-      reviews: {
-        where: { status: "approved" },
-        orderBy,
-        include: {
-          user: { select: { name: true, image: true } },
-          replies: {
-            include: { user: { select: { id: true, name: true, image: true } } },
-            orderBy: { createdAt: "asc" },
+  // Run queries in parallel for better performance
+  const [tool, avgRatings] = await Promise.all([
+    prisma.tool.findUnique({
+      where: { slug: params.slug },
+      include: {
+        reviews: {
+          where: { status: "approved" },
+          orderBy,
+          include: {
+            user: { select: { name: true, image: true } },
+            replies: {
+              include: { user: { select: { id: true, name: true, image: true } } },
+              orderBy: { createdAt: "asc" },
+            },
+            _count: { select: { replies: true } },
           },
-          _count: { select: { replies: true } },
         },
       },
-    },
-  });
+    }),
+    // Use aggregate for rating averages - more efficient than JS reduce
+    prisma.review.aggregate({
+      where: {
+        tool: { slug: params.slug },
+        status: "approved",
+      },
+      _avg: {
+        overallRating: true,
+        easeOfUse: true,
+        valueForMoney: true,
+        features: true,
+      },
+      _count: true,
+    }),
+  ]);
 
   if (!tool) {
     notFound();
   }
 
-  const avgRatings = tool.reviews.length > 0 ? {
-    overall: tool.reviews.reduce((s, r) => s + r.overallRating, 0) / tool.reviews.length,
-    easeOfUse: tool.reviews.reduce((s, r) => s + r.easeOfUse, 0) / tool.reviews.length,
-    valueForMoney: tool.reviews.reduce((s, r) => s + r.valueForMoney, 0) / tool.reviews.length,
-    features: tool.reviews.reduce((s, r) => s + r.features, 0) / tool.reviews.length,
+  const ratingsSummary = avgRatings._count > 0 ? {
+    overall: avgRatings._avg.overallRating || 0,
+    easeOfUse: avgRatings._avg.easeOfUse || 0,
+    valueForMoney: avgRatings._avg.valueForMoney || 0,
+    features: avgRatings._avg.features || 0,
   } : null;
 
   return (
@@ -69,15 +104,15 @@ export default async function ToolReviewsPage({
         </Link>
       </div>
 
-      {avgRatings && (
+      {ratingsSummary && (
         <div className="bg-card rounded-xl border p-6 mb-8">
           <h2 className="font-semibold mb-4">Rating Summary</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { label: "Overall", value: avgRatings.overall },
-              { label: "Ease of Use", value: avgRatings.easeOfUse },
-              { label: "Value for Money", value: avgRatings.valueForMoney },
-              { label: "Features", value: avgRatings.features },
+              { label: "Overall", value: ratingsSummary.overall },
+              { label: "Ease of Use", value: ratingsSummary.easeOfUse },
+              { label: "Value for Money", value: ratingsSummary.valueForMoney },
+              { label: "Features", value: ratingsSummary.features },
             ].map((item) => (
               <div key={item.label} className="text-center">
                 <p className="text-3xl font-bold text-yellow-500">{item.value.toFixed(1)}</p>

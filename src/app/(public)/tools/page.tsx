@@ -55,10 +55,6 @@ export default async function ToolsPage({
     take: 50,
   });
 
-  const categories = await prisma.category.findMany({
-    orderBy: { name: "asc" },
-  });
-
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Tools", url: "/tools" },

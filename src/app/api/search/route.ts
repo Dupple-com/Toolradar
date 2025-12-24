@@ -35,7 +35,12 @@ export async function GET(request: NextRequest) {
       offset,
     });
 
-    return NextResponse.json(results);
+    // Cache search results for 5 minutes, stale-while-revalidate for 1 hour
+    return NextResponse.json(results, {
+      headers: {
+        "Cache-Control": "public, s-maxage=300, stale-while-revalidate=3600",
+      },
+    });
   } catch (error) {
     console.error("Search error:", error);
     return NextResponse.json({ hits: [], estimatedTotalHits: 0 });
@@ -59,7 +64,12 @@ export async function POST() {
       orderBy: { name: "asc" },
     });
 
-    return NextResponse.json({ categories });
+    // Cache categories for 1 hour
+    return NextResponse.json({ categories }, {
+      headers: {
+        "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+      },
+    });
   } catch (error) {
     console.error("Failed to fetch categories:", error);
     return NextResponse.json({ categories: [] });

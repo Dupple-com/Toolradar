@@ -18,21 +18,19 @@ export async function PUT(
 
   // Update tool community score if approved
   if (status === "approved") {
-    const tool = await prisma.tool.findUnique({
-      where: { id: review.toolId },
-      include: { reviews: { where: { status: "approved" } } },
+    // Use aggregate for better performance - single query instead of fetching all reviews
+    const stats = await prisma.review.aggregate({
+      where: { toolId: review.toolId, status: "approved" },
+      _avg: { overallRating: true },
+      _count: true,
     });
 
-    if (tool) {
-      const avgScore =
-        tool.reviews.reduce((sum, r) => sum + r.overallRating, 0) /
-        tool.reviews.length;
-
+    if (stats._count > 0) {
       await prisma.tool.update({
-        where: { id: tool.id },
+        where: { id: review.toolId },
         data: {
-          communityScore: avgScore,
-          reviewCount: tool.reviews.length,
+          communityScore: stats._avg.overallRating || 0,
+          reviewCount: stats._count,
         },
       });
     }

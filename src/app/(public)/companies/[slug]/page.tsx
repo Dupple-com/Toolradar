@@ -9,6 +9,20 @@ import { generateBreadcrumbJsonLd, generateCompanyMetadata } from "@/lib/seo";
 
 export const revalidate = 3600;
 
+// Generate static params for companies with published tools
+export async function generateStaticParams() {
+  try {
+    const companies = await prisma.company.findMany({
+      where: { tools: { some: { status: "published" } } },
+      select: { slug: true },
+      take: 100,
+    });
+    return companies.map((c) => ({ slug: c.slug }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const company = await prisma.company.findUnique({
     where: { slug: params.slug },
