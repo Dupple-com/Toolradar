@@ -24,10 +24,9 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
-  const { category: categorySlug } = await params;
+export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const category = await prisma.category.findUnique({
-    where: { slug: categorySlug },
+    where: { slug: params.category },
     select: { name: true, description: true },
   });
 
@@ -46,7 +45,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
     openGraph: {
       title,
       description,
-      url: `https://toolradar.com/best/${categorySlug}`,
+      url: `https://toolradar.com/best/${params.category}`,
       siteName: "Toolradar",
       type: "article",
     },
@@ -56,15 +55,14 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
       description,
     },
     alternates: {
-      canonical: `https://toolradar.com/best/${categorySlug}`,
+      canonical: `https://toolradar.com/best/${params.category}`,
     },
   };
 }
 
-export default async function BestCategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  const { category: categorySlug } = await params;
+export default async function BestCategoryPage({ params }: { params: { category: string } }) {
   const category = await prisma.category.findUnique({
-    where: { slug: categorySlug },
+    where: { slug: params.category },
     include: {
       tools: {
         where: { tool: { status: "published" } },

@@ -29,9 +29,8 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slugs: string }> }): Promise<Metadata> {
-  const { slugs: slugsParam } = await params;
-  const slugs = slugsParam.split("-vs-");
+export async function generateMetadata({ params }: { params: { slugs: string } }): Promise<Metadata> {
+  const slugs = params.slugs.split("-vs-");
   const tools = await prisma.tool.findMany({
     where: { slug: { in: slugs }, status: "published" },
     select: { name: true, slug: true },
@@ -52,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slugs: st
     openGraph: {
       title,
       description,
-      url: `https://toolradar.com/compare/${slugsParam}`,
+      url: `https://toolradar.com/compare/${params.slugs}`,
       siteName: "Toolradar",
       type: "article",
     },
@@ -62,7 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slugs: st
       description,
     },
     alternates: {
-      canonical: `https://toolradar.com/compare/${slugsParam}`,
+      canonical: `https://toolradar.com/compare/${params.slugs}`,
     },
   };
 }
@@ -70,10 +69,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slugs: st
 export default async function CompareResultPage({
   params,
 }: {
-  params: Promise<{ slugs: string }>;
+  params: { slugs: string };
 }) {
-  const { slugs: slugsParam } = await params;
-  const slugs = slugsParam.split("-vs-");
+  const slugs = params.slugs.split("-vs-");
 
   if (slugs.length < 2 || slugs.length > 4) {
     notFound();
@@ -113,7 +111,7 @@ export default async function CompareResultPage({
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Compare", url: "/compare" },
-    { name: toolNames.join(" vs "), url: `/compare/${slugsParam}` },
+    { name: toolNames.join(" vs "), url: `/compare/${params.slugs}` },
   ]);
 
   const comparisonJsonLd = {

@@ -27,11 +27,10 @@ export default async function ToolReviewsPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ sort?: string }>;
+  params: { slug: string };
+  searchParams: { sort?: string };
 }) {
-  const { slug } = await params;
-  const { sort = "recent" } = await searchParams;
+  const sort = searchParams.sort || "recent";
 
   // Define sort order based on param
   const orderBy = sort === "highest" ? { overallRating: "desc" as const } :
@@ -45,7 +44,7 @@ export default async function ToolReviewsPage({
   // Run queries in parallel for better performance
   const [tool, avgRatings] = await Promise.all([
     prisma.tool.findUnique({
-      where: { slug },
+      where: { slug: params.slug },
       include: {
         reviews: {
           where: { status: "approved" },
@@ -64,7 +63,7 @@ export default async function ToolReviewsPage({
     // Use aggregate for rating averages - more efficient than JS reduce
     prisma.review.aggregate({
       where: {
-        tool: { slug },
+        tool: { slug: params.slug },
         status: "approved",
       },
       _avg: {

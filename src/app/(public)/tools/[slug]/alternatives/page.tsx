@@ -25,10 +25,9 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const tool = await prisma.tool.findUnique({
-    where: { slug },
+    where: { slug: params.slug },
     select: { name: true, tagline: true },
   });
 
@@ -39,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return generateSeoMetadata({
     title: `Best ${tool.name} Alternatives & Competitors in 2025`,
     description: `Looking for ${tool.name} alternatives? Compare the top ${tool.name} competitors with real user reviews. Find the best alternative for your needs.`,
-    path: `/tools/${slug}/alternatives`,
+    path: `/tools/${params.slug}/alternatives`,
     keywords: [
       `${tool.name} alternatives`,
       `${tool.name} competitors`,
@@ -50,10 +49,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-export default async function AlternativesPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function AlternativesPage({ params }: { params: { slug: string } }) {
   const tool = await prisma.tool.findUnique({
-    where: { slug },
+    where: { slug: params.slug },
     include: {
       categories: {
         include: { category: true },
