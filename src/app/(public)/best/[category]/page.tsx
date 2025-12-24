@@ -8,6 +8,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { CategoryIcon } from "@/components/categories/category-icon";
 import { Star, ExternalLink, ArrowRight } from "lucide-react";
 
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export async function generateStaticParams() {

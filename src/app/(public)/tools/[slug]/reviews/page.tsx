@@ -5,7 +5,8 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { ReviewCard } from "@/components/reviews/review-card";
 
-// ISR - revalidate every hour
+// Force dynamic rendering to avoid build-time DB access
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 // Generate static params for popular tools
