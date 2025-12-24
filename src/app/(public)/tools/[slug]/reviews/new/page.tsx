@@ -4,11 +4,12 @@ import { requireAuth } from "@/lib/auth-utils";
 import { ReviewForm } from "@/components/reviews/review-form";
 import Link from "next/link";
 
-export default async function NewReviewPage({ params }: { params: { slug: string } }) {
+export default async function NewReviewPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   await requireAuth();
 
   const tool = await prisma.tool.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     select: { id: true, name: true, slug: true },
   });
 

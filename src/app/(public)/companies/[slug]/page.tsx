@@ -23,9 +23,10 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const company = await prisma.company.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     include: { _count: { select: { tools: true } } },
   });
   if (!company) return { title: "Company not found" };
@@ -37,11 +38,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   });
 }
 
-export default async function CompanyPage({ params }: { params: { slug: string } }) {
+export default async function CompanyPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const user = await getCurrentUser();
 
   const company = await prisma.company.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     include: {
       tools: {
         where: { status: "published" },

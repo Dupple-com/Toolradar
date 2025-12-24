@@ -6,12 +6,13 @@ import { ReviewForm } from "@/components/reviews/review-form";
 export default async function WriteReviewPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
+  const { slug } = await params;
   await requireAuth();
 
   const tool = await prisma.tool.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     select: { id: true, name: true, slug: true, logo: true },
   });
 

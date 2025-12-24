@@ -4,8 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Check, Lock, Info } from "lucide-react";
 import { toast } from "sonner";
-
-const DAYS_BETWEEN_NAME_CHANGES = 30;
+import { DAYS_BETWEEN_NAME_CHANGES } from "@/lib/constants";
 
 interface SettingsFormProps {
   user: {
