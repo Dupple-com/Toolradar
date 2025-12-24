@@ -1,8 +1,32 @@
 import { prisma } from "@/lib/prisma";
+import { Metadata } from "next";
 import Link from "next/link";
 import { CompareSelector } from "@/components/compare/compare-selector";
+import { JsonLd } from "@/components/seo/json-ld";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Compare Software Tools Side by Side | Toolradar",
+  description: "Compare 2-4 software tools side by side. See features, pricing, ratings, and reviews compared. Make informed decisions with our detailed tool comparison.",
+  keywords: "compare software, tool comparison, software comparison, side by side comparison, compare tools, software features comparison",
+  openGraph: {
+    title: "Compare Software Tools Side by Side | Toolradar",
+    description: "Compare 2-4 software tools side by side. See features, pricing, ratings, and reviews compared.",
+    url: "https://toolradar.com/compare",
+    siteName: "Toolradar",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Compare Software Tools Side by Side | Toolradar",
+    description: "Compare software tools side by side. Make informed decisions.",
+  },
+  alternates: {
+    canonical: "https://toolradar.com/compare",
+  },
+};
 
 export default async function ComparePage() {
   const [popularTools, categories] = await Promise.all([
@@ -19,8 +43,39 @@ export default async function ComparePage() {
     }),
   ]);
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Compare Tools", url: "/compare" },
+  ]);
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "How do I compare software tools on Toolradar?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Select 2-4 tools you want to compare from our database. You'll see features, pricing, scores, and reviews side by side in a clear comparison table.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What information is included in tool comparisons?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Our comparisons include pricing, features, community ratings, user reviews, and key differences to help you make an informed decision.",
+        },
+      },
+    ],
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={faqJsonLd} />
+      <div className="min-h-screen bg-gray-50/50">
       {/* Hero */}
       <section className="bg-white border-b">
         <div className="max-w-5xl mx-auto px-4 py-12">
@@ -92,6 +147,7 @@ export default async function ComparePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

@@ -1,9 +1,33 @@
 import { prisma } from "@/lib/prisma";
+import { Metadata } from "next";
 import Link from "next/link";
 import { CategorySearch } from "@/components/categories/category-search";
 import { CategoryIcon } from "@/components/categories/category-icon";
+import { JsonLd } from "@/components/seo/json-ld";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Software Categories | Browse by Category | Toolradar",
+  description: "Browse software by category. Explore project management, CRM, marketing, developer tools, and more. Find the best tools for your specific needs.",
+  keywords: "software categories, software types, tool categories, project management software, crm software, marketing tools, developer tools",
+  openGraph: {
+    title: "Software Categories | Toolradar",
+    description: "Browse software by category. Find the best tools for your specific needs across all categories.",
+    url: "https://toolradar.com/categories",
+    siteName: "Toolradar",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Categories | Toolradar",
+    description: "Browse software by category. Find the best tools for your specific needs.",
+  },
+  alternates: {
+    canonical: "https://toolradar.com/categories",
+  },
+};
 
 export default async function CategoriesPage() {
   const categories = await prisma.category.findMany({
@@ -44,8 +68,30 @@ export default async function CategoriesPage() {
     })
     .slice(0, 6);
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Categories", url: "/categories" },
+  ]);
+
+  const categoryListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Software Categories",
+    description: "Browse software by category on Toolradar",
+    numberOfItems: categories.length,
+    itemListElement: categories.map((cat, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: cat.name,
+      url: `https://toolradar.com/categories/${cat.slug}`,
+    })),
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={categoryListJsonLd} />
+      <div className="min-h-screen bg-gray-50/50">
       {/* Hero Section */}
       <section className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 py-12 md:py-16">
@@ -186,6 +232,7 @@ export default async function CategoriesPage() {
           })}
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

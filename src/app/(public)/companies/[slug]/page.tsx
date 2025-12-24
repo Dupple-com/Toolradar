@@ -4,17 +4,23 @@ import Link from "next/link";
 import { ToolCard } from "@/components/tools/tool-card";
 import { CheckCircle, Globe, Building2, Users, Package } from "lucide-react";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { generateBreadcrumbJsonLd, generateCompanyMetadata } from "@/lib/seo";
+
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const company = await prisma.company.findUnique({
     where: { slug: params.slug },
-    select: { name: true, description: true },
+    include: { _count: { select: { tools: true } } },
   });
   if (!company) return { title: "Company not found" };
-  return {
-    title: `${company.name} - Toolradar`,
-    description: company.description || `Discover ${company.name}'s software products on Toolradar`,
-  };
+  return generateCompanyMetadata({
+    name: company.name,
+    slug: company.slug,
+    description: company.description,
+    toolCount: company._count.tools,
+  });
 }
 
 export default async function CompanyPage({ params }: { params: { slug: string } }) {
@@ -60,8 +66,27 @@ export default async function CompanyPage({ params }: { params: { slug: string }
   const canClaim = user && !isClaimed && !userClaim;
   const isOwner = user && company.members.some((m) => m.userId === user.id);
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Companies", url: "/companies" },
+    { name: company.name, url: `/companies/${company.slug}` },
+  ]);
+
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: company.name,
+    url: company.website || `https://toolradar.com/companies/${company.slug}`,
+    ...(company.logo && { logo: company.logo }),
+    ...(company.description && { description: company.description }),
+    ...(company.domain && { sameAs: [`https://${company.domain}`] }),
+  };
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={organizationJsonLd} />
+      <div className="max-w-7xl mx-auto px-4 py-12">
       {/* Header */}
       <div className="bg-white rounded-2xl border border-slate-200 p-4 sm:p-8 mb-8">
         <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-start">
@@ -189,6 +214,7 @@ export default async function CompanyPage({ params }: { params: { slug: string }
           </div>
         )}
       </div>
-    </div>
+      </div>
+    </>
   );
 }

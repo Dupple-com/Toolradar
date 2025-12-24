@@ -50,6 +50,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
+  // Pricing filter pages (programmatic SEO)
+  const pricingPages: MetadataRoute.Sitemap = ["free", "freemium", "paid"].map((pricing) => ({
+    url: `${SITE_URL}/pricing/${pricing}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
   // Tool pages
   const tools = await prisma.tool.findMany({
     where: { status: "published" },
@@ -97,11 +105,36 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.5,
   }));
 
+  // Best category pages (programmatic SEO)
+  const bestCategoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${SITE_URL}/best/${category.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  // Comparison pages (programmatic SEO) - Top tool pairs
+  const topTools = tools.slice(0, 30);
+  const comparisonPages: MetadataRoute.Sitemap = [];
+  for (let i = 0; i < Math.min(topTools.length, 15); i++) {
+    for (let j = i + 1; j < Math.min(topTools.length, 15); j++) {
+      comparisonPages.push({
+        url: `${SITE_URL}/compare/${topTools[i].slug}-vs-${topTools[j].slug}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.6,
+      });
+    }
+  }
+
   return [
     ...staticPages,
+    ...pricingPages,
     ...toolPages,
     ...categoryPages,
     ...companyPages,
     ...alternativePages,
+    ...bestCategoryPages,
+    ...comparisonPages.slice(0, 100), // Limit to 100 comparison pages
   ];
 }

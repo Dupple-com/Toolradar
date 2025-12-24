@@ -1,17 +1,64 @@
 import { prisma } from "@/lib/prisma";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export async function generateMetadata({ params }: { params: { slugs: string } }) {
+export const revalidate = 3600;
+
+// Generate static params for popular comparisons
+export async function generateStaticParams() {
+  const tools = await prisma.tool.findMany({
+    where: { status: "published" },
+    orderBy: { weeklyUpvotes: "desc" },
+    take: 20,
+    select: { slug: true },
+  });
+
+  const comparisons: { slugs: string }[] = [];
+  for (let i = 0; i < Math.min(tools.length, 15); i++) {
+    for (let j = i + 1; j < Math.min(tools.length, 15); j++) {
+      comparisons.push({ slugs: `${tools[i].slug}-vs-${tools[j].slug}` });
+    }
+  }
+  return comparisons.slice(0, 50);
+}
+
+export async function generateMetadata({ params }: { params: { slugs: string } }): Promise<Metadata> {
   const slugs = params.slugs.split("-vs-");
   const tools = await prisma.tool.findMany({
-    where: { slug: { in: slugs } },
-    select: { name: true },
+    where: { slug: { in: slugs }, status: "published" },
+    select: { name: true, slug: true },
   });
-  const names = tools.map((t) => t.name).join(" vs ");
+
+  if (tools.length < 2) return { title: "Comparison not found" };
+
+  const sortedTools = slugs.map(slug => tools.find(t => t.slug === slug)).filter(Boolean);
+  const names = sortedTools.map(t => t!.name);
+  const year = new Date().getFullYear();
+  const title = `${names.join(" vs ")}: Which is Better in ${year}?`;
+  const description = `Compare ${names.join(" and ")} side by side. See features, pricing, ratings, and user reviews to help you choose the best option for your needs.`;
+
   return {
-    title: `${names} Comparison - Toolradar`,
-    description: `Compare ${names} - features, pricing, and reviews side by side.`,
+    title: `${title} | Toolradar`,
+    description,
+    keywords: `${names.join(" vs ")}, ${names[0]} alternative, ${names[1]} alternative, ${names.join(" comparison")}`,
+    openGraph: {
+      title,
+      description,
+      url: `https://toolradar.com/compare/${params.slugs}`,
+      siteName: "Toolradar",
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+    alternates: {
+      canonical: `https://toolradar.com/compare/${params.slugs}`,
+    },
   };
 }
 
@@ -54,8 +101,36 @@ export default async function CompareResultPage({
     (tool.editorialScore || 0) > (best.editorialScore || 0) ? tool : best
   );
 
+  const toolNames = sortedTools.map(t => t.name);
+  const year = new Date().getFullYear();
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Compare", url: "/compare" },
+    { name: toolNames.join(" vs "), url: `/compare/${params.slugs}` },
+  ]);
+
+  const comparisonJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${toolNames.join(" vs ")}: Which is Better in ${year}?`,
+    description: `Detailed comparison of ${toolNames.join(" and ")}`,
+    datePublished: new Date().toISOString(),
+    dateModified: new Date().toISOString(),
+    author: { "@type": "Organization", name: "Toolradar" },
+    publisher: { "@type": "Organization", name: "Toolradar", url: "https://toolradar.com" },
+    about: sortedTools.map(tool => ({
+      "@type": "SoftwareApplication",
+      name: tool.name,
+      applicationCategory: tool.categories[0]?.category.name || "Software",
+    })),
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50/50">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={comparisonJsonLd} />
+      <div className="min-h-screen bg-gray-50/50">
       {/* Header */}
       <section className="bg-white border-b">
         <div className="max-w-6xl mx-auto px-4 py-8">
@@ -341,6 +416,7 @@ export default async function CompareResultPage({
           Compare other tools
         </Link>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

@@ -1,5 +1,31 @@
 import { prisma } from "@/lib/prisma";
+import { Metadata } from "next";
 import { ToolCard } from "@/components/tools/tool-card";
+import { JsonLd } from "@/components/seo/json-ld";
+import { generateBreadcrumbJsonLd } from "@/lib/seo";
+
+export const revalidate = 3600;
+
+export const metadata: Metadata = {
+  title: "Browse Software Tools | Toolradar",
+  description: "Explore 2,000+ software tools across all categories. Filter by pricing, sort by trending, score, or reviews. Find the perfect tool for your stack.",
+  keywords: "software tools, best tools, software directory, tool comparison, free software, saas tools",
+  openGraph: {
+    title: "Browse Software Tools | Toolradar",
+    description: "Explore 2,000+ software tools across all categories. Filter by pricing, sort by trending, score, or reviews.",
+    url: "https://toolradar.com/tools",
+    siteName: "Toolradar",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Browse Software Tools | Toolradar",
+    description: "Explore 2,000+ software tools across all categories.",
+  },
+  alternates: {
+    canonical: "https://toolradar.com/tools",
+  },
+};
 
 export default async function ToolsPage({
   searchParams,
@@ -31,9 +57,16 @@ export default async function ToolsPage({
     orderBy: { name: "asc" },
   });
 
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Tools", url: "/tools" },
+  ]);
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-8">Browse Tools</h1>
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <h1 className="text-3xl font-bold mb-8">Browse Tools</h1>
 
       <div className="flex flex-col lg:flex-row gap-8">
         {/* Filters */}
@@ -107,6 +140,7 @@ export default async function ToolsPage({
           )}
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
