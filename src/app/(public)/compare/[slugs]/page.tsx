@@ -9,20 +9,24 @@ export const revalidate = 3600;
 
 // Generate static params for popular comparisons
 export async function generateStaticParams() {
-  const tools = await prisma.tool.findMany({
-    where: { status: "published" },
-    orderBy: { weeklyUpvotes: "desc" },
-    take: 20,
-    select: { slug: true },
-  });
+  try {
+    const tools = await prisma.tool.findMany({
+      where: { status: "published" },
+      orderBy: { weeklyUpvotes: "desc" },
+      take: 20,
+      select: { slug: true },
+    });
 
-  const comparisons: { slugs: string }[] = [];
-  for (let i = 0; i < Math.min(tools.length, 15); i++) {
-    for (let j = i + 1; j < Math.min(tools.length, 15); j++) {
-      comparisons.push({ slugs: `${tools[i].slug}-vs-${tools[j].slug}` });
+    const comparisons: { slugs: string }[] = [];
+    for (let i = 0; i < Math.min(tools.length, 15); i++) {
+      for (let j = i + 1; j < Math.min(tools.length, 15); j++) {
+        comparisons.push({ slugs: `${tools[i].slug}-vs-${tools[j].slug}` });
+      }
     }
+    return comparisons.slice(0, 50);
+  } catch {
+    return [];
   }
-  return comparisons.slice(0, 50);
 }
 
 export async function generateMetadata({ params }: { params: { slugs: string } }): Promise<Metadata> {

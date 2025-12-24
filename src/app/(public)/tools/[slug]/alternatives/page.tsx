@@ -12,13 +12,17 @@ export const revalidate = 3600;
 
 // Generate static params for popular tools
 export async function generateStaticParams() {
-  const tools = await prisma.tool.findMany({
-    where: { status: "published" },
-    select: { slug: true },
-    orderBy: { weeklyUpvotes: "desc" },
-    take: 50,
-  });
-  return tools.map((tool) => ({ slug: tool.slug }));
+  try {
+    const tools = await prisma.tool.findMany({
+      where: { status: "published" },
+      select: { slug: true },
+      orderBy: { weeklyUpvotes: "desc" },
+      take: 50,
+    });
+    return tools.map((tool) => ({ slug: tool.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {

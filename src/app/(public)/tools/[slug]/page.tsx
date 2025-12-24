@@ -5,20 +5,25 @@ import { Metadata } from "next";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateToolMetadata, generateToolJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
-import { CheckCircle, ExternalLink, Star } from "lucide-react";
+import { RelatedTools } from "@/components/seo/related-tools";
+import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
 // Revalidate every hour
 export const revalidate = 3600;
 
 // Generate static params for popular tools
 export async function generateStaticParams() {
-  const tools = await prisma.tool.findMany({
-    where: { status: "published" },
-    select: { slug: true },
-    orderBy: { weeklyUpvotes: "desc" },
-    take: 100,
-  });
-  return tools.map((tool) => ({ slug: tool.slug }));
+  try {
+    const tools = await prisma.tool.findMany({
+      where: { status: "published" },
+      select: { slug: true },
+      orderBy: { weeklyUpvotes: "desc" },
+      take: 100,
+    });
+    return tools.map((tool) => ({ slug: tool.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -68,6 +73,43 @@ export default async function ToolPage({ params }: { params: { slug: string } })
   if (!tool || tool.status !== "published") {
     notFound();
   }
+
+  // Get related tools from same category (for internal linking)
+  const relatedTools = tool.categories[0]
+    ? await prisma.tool.findMany({
+        where: {
+          status: "published",
+          id: { not: tool.id },
+          categories: { some: { categoryId: tool.categories[0].categoryId } },
+        },
+        select: {
+          id: true,
+          name: true,
+          slug: true,
+          tagline: true,
+          logo: true,
+          pricing: true,
+          editorialScore: true,
+          communityScore: true,
+        },
+        orderBy: { editorialScore: "desc" },
+        take: 5,
+      })
+    : [];
+
+  // Get popular tools for comparison suggestions
+  const comparisonTools = await prisma.tool.findMany({
+    where: {
+      status: "published",
+      id: { not: tool.id },
+      categories: tool.categories[0]
+        ? { some: { categoryId: tool.categories[0].categoryId } }
+        : undefined,
+    },
+    select: { slug: true, name: true },
+    orderBy: { weeklyUpvotes: "desc" },
+    take: 3,
+  });
 
   // Structured data
   const toolJsonLd = generateToolJsonLd({
@@ -339,6 +381,45 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                   ))}
                 </div>
               </div>
+            )}
+
+            {/* Compare With Others */}
+            {comparisonTools.length > 0 && (
+              <div className="bg-card rounded-xl border p-6">
+                <h3 className="font-semibold mb-4 flex items-center gap-2">
+                  <Scale className="w-4 h-4 text-muted-foreground" />
+                  Compare {tool.name}
+                </h3>
+                <div className="space-y-2">
+                  {comparisonTools.map((ct) => (
+                    <Link
+                      key={ct.slug}
+                      href={`/compare/${tool.slug}-vs-${ct.slug}`}
+                      className="flex items-center justify-between text-sm py-2 hover:text-primary transition"
+                    >
+                      <span>{tool.name} vs {ct.name}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  ))}
+                </div>
+                <Link
+                  href="/compare"
+                  className="text-xs text-primary hover:underline mt-4 block"
+                >
+                  Compare more tools →
+                </Link>
+              </div>
+            )}
+
+            {/* Related Tools */}
+            {relatedTools.length > 0 && (
+              <RelatedTools
+                tools={relatedTools}
+                title={`More ${tool.categories[0]?.category.name || ""} Tools`}
+                showViewAll
+                viewAllHref={tool.categories[0] ? `/categories/${tool.categories[0].category.slug}` : "/tools"}
+                viewAllLabel="View all"
+              />
             )}
           </aside>
         </div>

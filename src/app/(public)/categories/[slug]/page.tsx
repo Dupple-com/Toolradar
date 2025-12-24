@@ -12,10 +12,14 @@ export const revalidate = 3600;
 
 // Generate static params for all categories
 export async function generateStaticParams() {
-  const categories = await prisma.category.findMany({
-    select: { slug: true },
-  });
-  return categories.map((c) => ({ slug: c.slug }));
+  try {
+    const categories = await prisma.category.findMany({
+      select: { slug: true },
+    });
+    return categories.map((c) => ({ slug: c.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -279,7 +283,7 @@ export default async function CategoryPage({
 
       {/* Related Categories */}
       {category.parent && (
-        <section className="max-w-7xl mx-auto px-4 pb-16">
+        <section className="max-w-7xl mx-auto px-4 pb-8">
           <h2 className="text-lg font-bold mb-4">Related Categories</h2>
           <div className="flex flex-wrap gap-2">
             {category.parent.children?.filter((c: { id: string }) => c.id !== category.id).slice(0, 8).map((sibling: { id: string; slug: string; name: string }) => (
@@ -294,6 +298,54 @@ export default async function CategoryPage({
           </div>
         </section>
       )}
+
+      {/* Explore More - Internal Linking */}
+      <section className="max-w-7xl mx-auto px-4 pb-16">
+        <div className="bg-white rounded-xl border p-6">
+          <h2 className="text-lg font-bold mb-4">Explore More</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Best of Page */}
+            <Link
+              href={`/best/${category.slug}`}
+              className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
+            >
+              <span className="text-2xl mb-2 block">🏆</span>
+              <h3 className="font-medium text-sm">Best {category.name}</h3>
+              <p className="text-xs text-muted-foreground mt-1">Top 10 tools ranked</p>
+            </Link>
+
+            {/* Free Tools */}
+            <Link
+              href="/pricing/free"
+              className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
+            >
+              <span className="text-2xl mb-2 block">🆓</span>
+              <h3 className="font-medium text-sm">Free Tools</h3>
+              <p className="text-xs text-muted-foreground mt-1">Browse free software</p>
+            </Link>
+
+            {/* Compare */}
+            <Link
+              href="/compare"
+              className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
+            >
+              <span className="text-2xl mb-2 block">⚖️</span>
+              <h3 className="font-medium text-sm">Compare Tools</h3>
+              <p className="text-xs text-muted-foreground mt-1">Side-by-side comparison</p>
+            </Link>
+
+            {/* Trending */}
+            <Link
+              href="/trending"
+              className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
+            >
+              <span className="text-2xl mb-2 block">🔥</span>
+              <h3 className="font-medium text-sm">Trending Now</h3>
+              <p className="text-xs text-muted-foreground mt-1">Popular this week</p>
+            </Link>
+          </div>
+        </div>
+      </section>
       </div>
     </>
   );

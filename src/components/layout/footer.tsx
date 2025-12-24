@@ -1,10 +1,123 @@
 import Link from "next/link";
 import { RadarLogo } from "@/components/ui/radar-logo";
 
+// Popular categories for SEO footer links
+const POPULAR_CATEGORIES = [
+  { name: "Project Management", slug: "project-management" },
+  { name: "CRM", slug: "crm" },
+  { name: "Marketing", slug: "marketing" },
+  { name: "Developer Tools", slug: "developer-tools" },
+  { name: "Design", slug: "design" },
+  { name: "Communication", slug: "communication" },
+  { name: "Analytics", slug: "analytics" },
+  { name: "Automation", slug: "automation" },
+];
+
+// Popular "Best of" pages
+const BEST_OF_PAGES = [
+  { name: "Best Project Management", slug: "project-management" },
+  { name: "Best CRM Software", slug: "crm" },
+  { name: "Best Marketing Tools", slug: "marketing" },
+  { name: "Best Design Software", slug: "design" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
+        {/* SEO Links Section */}
+        <div className="mb-12 pb-12 border-b border-slate-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Popular Categories */}
+            <div>
+              <h4 className="font-semibold text-white mb-4 text-sm">Popular Categories</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                {POPULAR_CATEGORIES.slice(0, 8).map((cat) => (
+                  <li key={cat.slug}>
+                    <Link href={`/categories/${cat.slug}`} className="hover:text-white transition-colors">
+                      {cat.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Best of Lists */}
+            <div>
+              <h4 className="font-semibold text-white mb-4 text-sm">Best Software Lists</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                {BEST_OF_PAGES.map((page) => (
+                  <li key={page.slug}>
+                    <Link href={`/best/${page.slug}`} className="hover:text-white transition-colors">
+                      {page.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/categories" className="hover:text-white transition-colors text-primary">
+                    View all categories →
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Browse by Pricing */}
+            <div>
+              <h4 className="font-semibold text-white mb-4 text-sm">Browse by Pricing</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li>
+                  <Link href="/pricing/free" className="hover:text-white transition-colors">
+                    Free Software Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing/freemium" className="hover:text-white transition-colors">
+                    Freemium Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing/paid" className="hover:text-white transition-colors">
+                    Paid Software
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools" className="hover:text-white transition-colors text-primary">
+                    Browse all tools →
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Quick Actions */}
+            <div>
+              <h4 className="font-semibold text-white mb-4 text-sm">Quick Actions</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                <li>
+                  <Link href="/compare" className="hover:text-white transition-colors">
+                    Compare Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/trending" className="hover:text-white transition-colors">
+                    Trending This Week
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/reviews/write" className="hover:text-white transition-colors">
+                    Write a Review
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/vendors" className="hover:text-white transition-colors">
+                    Submit Your Tool
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Main Footer */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
