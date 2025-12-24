@@ -1,20 +1,37 @@
 import { prisma } from "@/lib/prisma";
+import { Metadata } from "next";
 import { ToolCard } from "@/components/tools/tool-card";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { CategoryIcon } from "@/components/categories/category-icon";
 import { SortSelect } from "@/components/filters/sort-select";
+import { JsonLd } from "@/components/seo/json-ld";
+import { generateCategoryMetadata, generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
+export const revalidate = 3600;
+
+// Generate static params for all categories
+export async function generateStaticParams() {
+  const categories = await prisma.category.findMany({
+    select: { slug: true },
+  });
+  return categories.map((c) => ({ slug: c.slug }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const category = await prisma.category.findUnique({
     where: { slug: params.slug },
-    select: { name: true, description: true },
+    include: { _count: { select: { tools: true } } },
   });
+
   if (!category) return { title: "Category not found" };
-  return {
-    title: `Best ${category.name} Software - Toolradar`,
-    description: category.description || `Discover and compare the best ${category.name} tools and software.`,
-  };
+
+  return generateCategoryMetadata({
+    name: category.name,
+    slug: category.slug,
+    description: category.description,
+    toolCount: category._count.tools,
+  });
 }
 
 export default async function CategoryPage({
@@ -82,9 +99,35 @@ export default async function CategoryPage({
       : 0,
   };
 
+  // Structured data
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Categories", url: "/categories" },
+    ...(category.parent ? [{ name: category.parent.name, url: `/categories/${category.parent.slug}` }] : []),
+    { name: category.name, url: `/categories/${category.slug}` },
+  ]);
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `Best ${category.name} Software`,
+    description: category.description || `Top ${category.name} tools`,
+    numberOfItems: tools.length,
+    itemListElement: tools.slice(0, 10).map((tool, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: tool.name,
+      url: `https://toolradar.com/tools/${tool.slug}`,
+    })),
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50/50">
-      {/* Breadcrumb & Header */}
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={itemListJsonLd} />
+
+      <div className="min-h-screen bg-gray-50/50">
+        {/* Breadcrumb & Header */}
       <section className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
           {/* Breadcrumb */}
@@ -251,6 +294,7 @@ export default async function CategoryPage({
           </div>
         </section>
       )}
-    </div>
+      </div>
+    </>
   );
 }

@@ -1,9 +1,35 @@
 import { prisma } from "@/lib/prisma";
+import { Metadata } from "next";
 import { ToolCard } from "@/components/tools/tool-card";
 import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
+import { JsonLd } from "@/components/seo/json-ld";
+import { generateOrganizationJsonLd, generateWebsiteJsonLd } from "@/lib/seo";
 import { Trophy, TrendingUp, Sparkles, ArrowRight } from "lucide-react";
 import { HeroSearch } from "@/components/search/hero-search";
+
+export const metadata: Metadata = {
+  title: "Toolradar - Discover & Compare the Best Software Tools",
+  description: "Find the perfect software for your business. Compare 2,000+ tools with real user reviews, ratings, and alternatives. Make smarter software decisions.",
+  keywords: "software tools, software comparison, software reviews, best tools, tool alternatives, SaaS tools",
+  openGraph: {
+    title: "Toolradar - Discover & Compare the Best Software Tools",
+    description: "Find the perfect software for your business. Compare 2,000+ tools with real user reviews.",
+    url: "https://toolradar.com",
+    siteName: "Toolradar",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Toolradar - Discover & Compare the Best Software Tools",
+    description: "Find the perfect software for your business. Compare 2,000+ tools with real user reviews.",
+  },
+  alternates: {
+    canonical: "https://toolradar.com",
+  },
+};
+
+export const revalidate = 3600; // Revalidate every hour
 
 export default async function HomePage() {
   const [toolOfTheDay, trendingTools, recentTools] = await Promise.all([
@@ -33,8 +59,12 @@ export default async function HomePage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section - Linear style */}
+    <>
+      <JsonLd data={generateOrganizationJsonLd()} />
+      <JsonLd data={generateWebsiteJsonLd()} />
+
+      <div className="min-h-screen bg-white">
+        {/* Hero Section - Linear style */}
       <section className="relative py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
@@ -198,6 +228,7 @@ export default async function HomePage() {
           </div>
         </section>
       </div>
-    </div>
+      </div>
+    </>
   );
 }
