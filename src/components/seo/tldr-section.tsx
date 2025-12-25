@@ -44,13 +44,13 @@ export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDR
       </div>
 
       <p className="text-muted-foreground mb-4">
-        <strong>{tool.name}</strong> is a {category?.toLowerCase() || "software"} tool that {tool.tagline.toLowerCase()}.
-        {tool.editorialScore && tool.editorialScore > 0 && (
+        <strong>{tool.name}</strong> is a {category?.toLowerCase() || "software"} tool: {tool.tagline}.
+        {tool.editorialScore && tool.editorialScore > 0 ? (
           <> It scores <strong>{tool.editorialScore}/100</strong> on our editorial assessment. </>
-        )}
-        {tool.communityScore && tool.reviewCount && tool.reviewCount > 0 && (
+        ) : null}
+        {tool.communityScore && tool.communityScore > 0 && tool.reviewCount && tool.reviewCount > 0 ? (
           <>Users rate it <strong>{tool.communityScore.toFixed(1)}/5</strong> based on {tool.reviewCount} reviews. </>
-        )}
+        ) : null}
         <strong>{getVerdict()}</strong> for {year}.
       </p>
 
