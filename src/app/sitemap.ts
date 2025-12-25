@@ -43,9 +43,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     {
-      url: `${SITE_URL}/login`,
+      url: `${SITE_URL}/best`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/companies`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${SITE_URL}/review`,
       lastModified: new Date(),
       changeFrequency: "monthly",
+      priority: 0.5,
+    },
+    {
+      url: `${SITE_URL}/search`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${SITE_URL}/terms`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
       priority: 0.3,
     },
   ];
@@ -60,6 +90,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Dynamic pages - wrapped in try-catch for build time when DB is unavailable
   let toolPages: MetadataRoute.Sitemap = [];
+  let toolReviewPages: MetadataRoute.Sitemap = [];
   let categoryPages: MetadataRoute.Sitemap = [];
   let companyPages: MetadataRoute.Sitemap = [];
   let alternativePages: MetadataRoute.Sitemap = [];
@@ -67,11 +98,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let comparisonPages: MetadataRoute.Sitemap = [];
 
   try {
-    // Tool pages
+    // Tool pages - all published tools
     const tools = await prisma.tool.findMany({
       where: { status: "published" },
-      select: { slug: true, updatedAt: true },
-      orderBy: { updatedAt: "desc" },
+      select: { slug: true, updatedAt: true, editorialScore: true },
+      orderBy: { editorialScore: "desc" },
     });
 
     toolPages = tools.map((tool) => ({
@@ -81,23 +112,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     }));
 
-    // Alternatives pages (programmatic SEO)
-    alternativePages = tools.slice(0, 100).map((tool) => ({
-      url: `${SITE_URL}/tools/${tool.slug}/alternatives`,
+    // Tool reviews pages - all tools
+    toolReviewPages = tools.map((tool) => ({
+      url: `${SITE_URL}/tools/${tool.slug}/reviews`,
       lastModified: tool.updatedAt,
       changeFrequency: "weekly" as const,
       priority: 0.5,
     }));
 
-    // Comparison pages (programmatic SEO) - Top tool pairs
-    const topTools = tools.slice(0, 30);
-    for (let i = 0; i < Math.min(topTools.length, 15); i++) {
-      for (let j = i + 1; j < Math.min(topTools.length, 15); j++) {
+    // Alternatives pages - all tools (programmatic SEO)
+    alternativePages = tools.map((tool) => ({
+      url: `${SITE_URL}/tools/${tool.slug}/alternatives`,
+      lastModified: tool.updatedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    }));
+
+    // Comparison pages (programmatic SEO) - Top 50 tools = 1225 comparisons
+    const topTools = tools.slice(0, 50);
+    for (let i = 0; i < topTools.length; i++) {
+      for (let j = i + 1; j < topTools.length; j++) {
         comparisonPages.push({
           url: `${SITE_URL}/compare/${topTools[i].slug}-vs-${topTools[j].slug}`,
           lastModified: new Date(),
-          changeFrequency: "weekly" as const,
-          priority: 0.6,
+          changeFrequency: "monthly" as const,
+          priority: 0.5,
         });
       }
     }
@@ -150,10 +189,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticPages,
     ...pricingPages,
     ...toolPages,
+    ...toolReviewPages,
     ...categoryPages,
     ...companyPages,
     ...alternativePages,
     ...bestCategoryPages,
-    ...comparisonPages.slice(0, 100), // Limit to 100 comparison pages
+    ...comparisonPages, // ~1225 comparison pages for top 50 tools
   ];
 }

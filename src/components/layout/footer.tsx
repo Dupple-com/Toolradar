@@ -19,6 +19,8 @@ const BEST_OF_PAGES = [
   { name: "Best Marketing Tools", slug: "marketing" },
   { name: "Best Design Software", slug: "design" },
   { name: "Best Developer Tools", slug: "developer-tools" },
+  { name: "Best AI Tools", slug: "ai-automation" },
+  { name: "Best Analytics Tools", slug: "analytics" },
 ];
 
 export function Footer() {
@@ -54,8 +56,8 @@ export function Footer() {
                   </li>
                 ))}
                 <li>
-                  <Link href="/categories" className="hover:text-white transition-colors text-primary">
-                    View all categories →
+                  <Link href="/best" className="hover:text-white transition-colors text-primary">
+                    View all best lists →
                   </Link>
                 </li>
               </ul>

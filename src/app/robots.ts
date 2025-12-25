@@ -13,16 +13,14 @@ export default function robots(): MetadataRoute.Robots {
           "/admin/",
           "/dashboard/",
           "/company/",
-          "/login/",
           "/_next/",
+          "/*/claim",
+          "/*/review",
+          "/*/reviews/new",
         ],
-      },
-      {
-        userAgent: "Googlebot",
-        allow: "/",
-        disallow: ["/api/", "/admin/", "/dashboard/", "/company/"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }
