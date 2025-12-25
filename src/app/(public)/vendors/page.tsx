@@ -1,65 +1,103 @@
 import Link from "next/link";
-import { ArrowRight, Users, TrendingUp, Star, Shield, Zap, BarChart3 } from "lucide-react";
+import { prisma } from "@/lib/prisma";
+import {
+  ArrowRight,
+  TrendingUp,
+  Star,
+  Zap,
+  BarChart3,
+  Search,
+  Globe,
+  MessageSquare,
+  Bot,
+  Target,
+  CheckCircle,
+  Building2
+} from "lucide-react";
 
 export const metadata = {
-  title: "List Your Product | Toolradar",
-  description: "Get your software discovered by thousands of professionals. Join Toolradar's marketplace.",
+  title: "List Your AI Tool | Toolradar - Get Discovered by Buyers",
+  description: "Get your AI tool discovered by thousands of buyers. Appear in Google, ChatGPT, and AI search results. Free listing with reviews and analytics.",
 };
 
-export default function VendorsPage() {
+export default async function VendorsPage() {
+  // Get real stats
+  const [toolCount, reviewCount, categoryCount] = await Promise.all([
+    prisma.tool.count({ where: { status: "published" } }),
+    prisma.review.count({ where: { status: "approved" } }),
+    prisma.category.count(),
+  ]);
+
   const benefits = [
     {
-      icon: Users,
-      title: "Reach your audience",
-      description: "Connect with professionals actively searching for tools like yours.",
+      icon: Bot,
+      title: "AI Search Visibility",
+      description: "Get discovered when users ask ChatGPT, Perplexity, or Claude for tool recommendations. AI assistants cite trusted review platforms.",
     },
     {
-      icon: TrendingUp,
-      title: "Boost visibility",
-      description: "Get featured in trending lists and category rankings.",
+      icon: Search,
+      title: "SEO & Organic Traffic",
+      description: "Rank in Google for \"best [category] tools\" and comparison searches. Our optimized pages drive high-intent traffic to your listing.",
     },
     {
       icon: Star,
-      title: "Build credibility",
-      description: "Collect verified reviews from real users to build trust.",
+      title: "Build Social Proof",
+      description: "Collect authentic reviews from real users. Verified reviews build trust and influence purchase decisions.",
+    },
+    {
+      icon: Target,
+      title: "Reach Active Buyers",
+      description: "Connect with decision-makers actively researching AI tools. High-intent visitors are ready to evaluate and buy.",
     },
     {
       icon: BarChart3,
-      title: "Track performance",
-      description: "Access analytics to understand how users engage with your listing.",
+      title: "Competitive Intelligence",
+      description: "See how you compare to alternatives. Understand what users value and where you stand in your category.",
     },
+    {
+      icon: Globe,
+      title: "Global Exposure",
+      description: "Reach an international audience of developers, marketers, founders, and enterprise buyers discovering AI tools.",
+    },
+  ];
+
+  const stats = [
+    { value: `${toolCount}+`, label: "AI Tools Listed" },
+    { value: `${reviewCount}+`, label: "User Reviews" },
+    { value: `${categoryCount}+`, label: "Categories" },
+    { value: "100%", label: "Free to List" },
   ];
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative py-24 overflow-hidden">
+      <section className="relative py-20 md:py-28 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white" />
         <div className="max-w-4xl mx-auto px-6 relative text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 mb-8">
-            <Zap size={14} className="text-slate-500" />
-            <span className="text-slate-600 font-medium text-sm">For Software Companies</span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-8">
+            <Zap size={14} className="text-blue-500" />
+            <span className="text-blue-600 font-medium text-sm">For AI Tool Companies</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-semibold text-slate-900 tracking-[-0.02em] leading-[1.1]">
-            Get your product
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 tracking-[-0.02em] leading-[1.1]">
+            Get Your AI Tool
             <br />
-            <span className="bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent">discovered</span>
+            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Discovered</span>
           </h1>
-          <p className="text-lg text-slate-500 mt-6 max-w-xl mx-auto leading-relaxed">
-            Join thousands of software companies reaching millions of professionals on Toolradar.
+          <p className="text-lg md:text-xl text-slate-500 mt-6 max-w-2xl mx-auto leading-relaxed">
+            Join {toolCount}+ AI tools on Toolradar. Get found by buyers searching on Google, ChatGPT, Perplexity, and other AI assistants.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
             <Link
               href="/company/submit"
-              className="group px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium transition-all duration-150 flex items-center justify-center gap-2"
+              className="group px-6 py-3.5 bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium transition-all duration-150 flex items-center justify-center gap-2"
             >
-              Submit your product
+              List Your Tool — Free
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
             <Link
               href="/company"
-              className="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300 font-medium transition-all duration-150"
+              className="px-6 py-3.5 bg-white text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 hover:border-slate-300 font-medium transition-all duration-150"
             >
               Company Dashboard
             </Link>
@@ -67,121 +105,234 @@ export default function VendorsPage() {
         </div>
       </section>
 
-      {/* Benefits */}
-      <section className="py-20 border-t border-slate-100">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-4">Why list on Toolradar</h2>
-            <p className="text-3xl font-semibold text-slate-900">Everything you need to grow</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefits.map((benefit) => (
-              <div key={benefit.title} className="flex gap-4 p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-colors">
-                <div className="shrink-0">
-                  <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center">
-                    <benefit.icon size={20} className="text-slate-600" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-semibold text-slate-900 mb-1">{benefit.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{benefit.description}</p>
-                </div>
+      {/* Stats Bar */}
+      <section className="border-y border-slate-100 bg-slate-50/50">
+        <div className="max-w-5xl mx-auto px-6 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-3xl font-bold text-slate-900">{stat.value}</div>
+                <div className="text-sm text-slate-500 mt-1">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing */}
-      <section className="py-20 bg-slate-50">
+      {/* AI Visibility Section */}
+      <section className="py-20 bg-gradient-to-b from-blue-50/50 to-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">
+              <Bot size={14} />
+              AI-Era Discovery
+            </div>
+            <h2 className="text-3xl font-semibold text-slate-900 mb-4">
+              Buyers Now Start with AI
+            </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              Over 50% of B2B buyers now use AI assistants to research tools. ChatGPT, Perplexity, and Claude recommend products from trusted review platforms like Toolradar.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <MessageSquare className="h-6 w-6 text-green-600" />
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">ChatGPT & Claude</h3>
+              <p className="text-sm text-slate-500">AI assistants cite Toolradar when recommending tools to users</p>
+            </div>
+            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
+                <Search className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Google & Perplexity</h3>
+              <p className="text-sm text-slate-500">Rank for high-intent searches like &quot;best AI tools for X&quot;</p>
+            </div>
+            <div className="bg-white rounded-xl border border-slate-200 p-6 text-center">
+              <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="h-6 w-6 text-purple-600" />
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Category Rankings</h3>
+              <p className="text-sm text-slate-500">Appear in &quot;Best of&quot; lists and comparison pages</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-20">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-4">Simple pricing</h2>
-            <p className="text-3xl font-semibold text-slate-900">Start for free</p>
+            <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-4">Why List on Toolradar</h2>
+            <p className="text-3xl font-semibold text-slate-900">Everything You Need to Grow</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((benefit) => (
+              <div key={benefit.title} className="p-6 rounded-xl border border-slate-200 hover:border-slate-300 hover:shadow-sm transition-all">
+                <div className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center mb-4">
+                  <benefit.icon size={20} className="text-slate-600" />
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">{benefit.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-semibold text-slate-900 mb-4">
+                Everything Included — Free
+              </h2>
+              <p className="text-slate-500 mb-8">
+                Get a complete profile with all the features you need to attract and convert buyers. No hidden fees.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Dedicated tool profile page",
+                  "Category and search placement",
+                  "User reviews and ratings",
+                  "Comparison with alternatives",
+                  "Profile analytics and insights",
+                  "Verified company badge",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <CheckCircle className="h-5 w-5 text-green-500 shrink-0" />
+                    <span className="text-slate-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl border border-slate-200 p-8">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                  <Building2 className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <div className="font-semibold text-slate-900">Your Tool Name</div>
+                  <div className="text-sm text-slate-500">yourcompany.com</div>
+                </div>
+              </div>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-2">
+                  <div className="flex">
+                    {[1,2,3,4,5].map(i => (
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                    ))}
+                  </div>
+                  <span className="text-sm text-slate-500">4.8 (124 reviews)</span>
+                </div>
+                <div className="text-sm text-slate-600">
+                  AI-powered solution for modern teams...
+                </div>
+              </div>
+              <div className="flex gap-2">
+                <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md">AI</span>
+                <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-md">Freemium</span>
+                <span className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md">Productivity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="py-20">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-4">Simple Pricing</h2>
+            <p className="text-3xl font-semibold text-slate-900">Start Free, Upgrade When Ready</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Free tier */}
-            <div className="bg-white rounded-xl border border-slate-200 p-8">
+            <div className="bg-white rounded-xl border-2 border-slate-200 p-8">
               <div className="mb-6">
                 <h3 className="text-lg font-semibold text-slate-900">Free</h3>
-                <p className="text-slate-500 text-sm mt-1">Get started with the basics</p>
+                <p className="text-slate-500 text-sm mt-1">Everything you need to get started</p>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-semibold text-slate-900">$0</span>
+                <span className="text-4xl font-bold text-slate-900">$0</span>
                 <span className="text-slate-500">/month</span>
               </div>
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-2 text-sm text-slate-600">
-                  <Shield size={16} className="text-emerald-500" />
-                  Basic listing
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-600">
-                  <Shield size={16} className="text-emerald-500" />
-                  Collect reviews
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-600">
-                  <Shield size={16} className="text-emerald-500" />
-                  Category placement
-                </li>
+                {[
+                  "Full tool profile page",
+                  "Category & search placement",
+                  "Collect unlimited reviews",
+                  "Basic analytics",
+                  "Claim company profile",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-slate-600">
+                    <CheckCircle size={16} className="text-green-500" />
+                    {item}
+                  </li>
+                ))}
               </ul>
               <Link
                 href="/company/submit"
                 className="block w-full py-3 text-center bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 font-medium transition-colors"
               >
-                Get started
+                Get Started Free
               </Link>
             </div>
 
             {/* Pro tier */}
-            <div className="bg-slate-900 rounded-xl p-8 text-white">
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold">Pro</h3>
-                <p className="text-slate-400 text-sm mt-1">For growing companies</p>
+            <div className="bg-slate-900 rounded-xl p-8 text-white relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="px-2 py-1 bg-blue-500 text-white text-xs font-medium rounded">Coming Soon</span>
               </div>
               <div className="mb-6">
-                <span className="text-4xl font-semibold">$99</span>
+                <h3 className="text-lg font-semibold">Pro</h3>
+                <p className="text-slate-400 text-sm mt-1">For companies ready to scale</p>
+              </div>
+              <div className="mb-6">
+                <span className="text-4xl font-bold">$99</span>
                 <span className="text-slate-400">/month</span>
               </div>
               <ul className="space-y-3 mb-8">
-                <li className="flex items-center gap-2 text-sm text-slate-300">
-                  <Shield size={16} className="text-blue-400" />
-                  Everything in Free
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-300">
-                  <Shield size={16} className="text-blue-400" />
-                  Featured placement
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-300">
-                  <Shield size={16} className="text-blue-400" />
-                  Advanced analytics
-                </li>
-                <li className="flex items-center gap-2 text-sm text-slate-300">
-                  <Shield size={16} className="text-blue-400" />
-                  Priority support
-                </li>
+                {[
+                  "Everything in Free",
+                  "Featured placement",
+                  "Advanced analytics & leads",
+                  "Competitor insights",
+                  "Priority support",
+                  "Custom integrations",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-sm text-slate-300">
+                    <CheckCircle size={16} className="text-blue-400" />
+                    {item}
+                  </li>
+                ))}
               </ul>
-              <Link
-                href="/company/submit"
-                className="block w-full py-3 text-center bg-white text-slate-900 rounded-lg hover:bg-slate-100 font-medium transition-colors"
+              <button
+                disabled
+                className="block w-full py-3 text-center bg-white/20 text-white/60 rounded-lg font-medium cursor-not-allowed"
               >
-                Contact sales
-              </Link>
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-20">
+      <section className="py-20 bg-slate-900">
         <div className="max-w-3xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-semibold text-slate-900 mb-4">Ready to get started?</h2>
-          <p className="text-slate-500 mb-8">Submit your product today and start reaching your audience.</p>
+          <h2 className="text-3xl font-semibold text-white mb-4">Ready to Get Discovered?</h2>
+          <p className="text-slate-400 mb-8 text-lg">
+            Join {toolCount}+ AI tools already on Toolradar. Free to list, takes 2 minutes.
+          </p>
           <Link
             href="/company/submit"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-lg hover:bg-slate-100 font-medium transition-all text-lg"
           >
-            Submit your product
-            <ArrowRight size={16} />
+            List Your Tool Now
+            <ArrowRight size={18} />
           </Link>
         </div>
       </section>
