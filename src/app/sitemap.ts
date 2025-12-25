@@ -78,11 +78,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: `${SITE_URL}/alternatives`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 
   // Pricing filter pages (programmatic SEO) - static, no DB needed
   const pricingPages: MetadataRoute.Sitemap = ["free", "freemium", "paid"].map((pricing) => ({
-    url: `${SITE_URL}/pricing/${pricing}`,
+    url: `${SITE_URL}/tools/${pricing}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  // Use case pages (programmatic SEO) - static
+  const useCasePages: MetadataRoute.Sitemap = [
+    "startups", "enterprises", "freelancers", "teams", "students", "remote"
+  ].map((usecase) => ({
+    url: `${SITE_URL}/tools/for/${usecase}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
     priority: 0.8,
@@ -96,6 +112,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let alternativePages: MetadataRoute.Sitemap = [];
   let bestCategoryPages: MetadataRoute.Sitemap = [];
   let comparisonPages: MetadataRoute.Sitemap = [];
+  let compareCategoryPages: MetadataRoute.Sitemap = [];
 
   try {
     // Tool pages - all published tools
@@ -164,6 +181,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     }));
+
+    // Compare category pages (programmatic SEO)
+    compareCategoryPages = categories.map((category) => ({
+      url: `${SITE_URL}/compare/category/${category.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    }));
   } catch {
     // Database unavailable during build - category pages will be generated at runtime
   }
@@ -188,12 +213,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticPages,
     ...pricingPages,
+    ...useCasePages,
     ...toolPages,
     ...toolReviewPages,
     ...categoryPages,
     ...companyPages,
     ...alternativePages,
     ...bestCategoryPages,
+    ...compareCategoryPages,
     ...comparisonPages, // ~1225 comparison pages for top 50 tools
   ];
 }

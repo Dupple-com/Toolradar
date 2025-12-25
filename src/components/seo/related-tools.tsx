@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
-import { Star, ArrowRight } from "lucide-react";
+import { Star, ArrowRight, Shuffle, Scale } from "lucide-react";
 
 interface RelatedTool {
   id: string;
@@ -19,6 +19,12 @@ interface RelatedToolsProps {
   showViewAll?: boolean;
   viewAllHref?: string;
   viewAllLabel?: string;
+  // SEO enhancement props
+  currentToolSlug?: string;
+  categorySlug?: string;
+  categoryName?: string;
+  showAlternativesLink?: boolean;
+  showCompareLink?: boolean;
 }
 
 export function RelatedTools({
@@ -27,8 +33,16 @@ export function RelatedTools({
   showViewAll = false,
   viewAllHref,
   viewAllLabel = "View all",
+  currentToolSlug,
+  categorySlug,
+  categoryName,
+  showAlternativesLink = false,
+  showCompareLink = false,
 }: RelatedToolsProps) {
-  if (tools.length === 0) return null;
+  // Filter out current tool
+  const displayTools = tools.filter((t) => t.slug !== currentToolSlug).slice(0, 5);
+
+  if (displayTools.length === 0) return null;
 
   return (
     <section className="bg-white rounded-xl border p-6">
@@ -45,7 +59,7 @@ export function RelatedTools({
       </div>
 
       <div className="space-y-3">
-        {tools.slice(0, 5).map((tool) => (
+        {displayTools.map((tool) => (
           <Link
             key={tool.id}
             href={`/tools/${tool.slug}`}
@@ -92,6 +106,41 @@ export function RelatedTools({
           </Link>
         ))}
       </div>
+
+      {/* SEO Quick Links */}
+      {(showAlternativesLink || showCompareLink || categorySlug) && (
+        <div className="mt-4 pt-4 border-t space-y-2">
+          {showAlternativesLink && currentToolSlug && (
+            <Link
+              href={`/tools/${currentToolSlug}/alternatives`}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition"
+            >
+              <Shuffle className="w-4 h-4" />
+              View all alternatives
+              <ArrowRight className="w-3 h-3 ml-auto" />
+            </Link>
+          )}
+          {showCompareLink && categorySlug && (
+            <Link
+              href={`/compare/category/${categorySlug}`}
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition"
+            >
+              <Scale className="w-4 h-4" />
+              Compare {categoryName || "tools"}
+              <ArrowRight className="w-3 h-3 ml-auto" />
+            </Link>
+          )}
+          {categorySlug && !showViewAll && (
+            <Link
+              href={`/categories/${categorySlug}`}
+              className="flex items-center gap-2 text-sm text-primary font-medium"
+            >
+              Browse all {categoryName}
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          )}
+        </div>
+      )}
     </section>
   );
 }

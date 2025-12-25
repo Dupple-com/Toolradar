@@ -20,6 +20,13 @@ model Tool {
   pricing     String    // free, freemium, paid
   pricingDetails Json?  // { tiers: [...], hasFreeTrial: true }
 
+  // Key features (for SEO and display)
+  features String[]
+
+  // Pros and cons (for SEO and GEO)
+  pros String[]
+  cons String[]
+
   // Editorial scoring (by Toolradar team)
   editorialScore        Int?
   editorialScoreDetails Json?   // { utility, ux, value, support, innovation }

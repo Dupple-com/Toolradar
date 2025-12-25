@@ -23,32 +23,55 @@ const BEST_OF_PAGES = [
   { name: "Best Analytics Tools", slug: "analytics" },
 ];
 
+// Tools for use cases
+const USE_CASE_PAGES = [
+  { name: "Tools for Startups", slug: "startups" },
+  { name: "Tools for Enterprises", slug: "enterprises" },
+  { name: "Tools for Freelancers", slug: "freelancers" },
+  { name: "Tools for Teams", slug: "teams" },
+  { name: "Tools for Students", slug: "students" },
+  { name: "Tools for Remote Work", slug: "remote" },
+];
+
+// Popular comparisons
+const POPULAR_COMPARISONS = [
+  { name: "Slack vs Teams", slug: "slack-vs-microsoft-teams" },
+  { name: "Notion vs Asana", slug: "notion-vs-asana" },
+  { name: "Figma vs Adobe XD", slug: "figma-vs-adobe-xd" },
+  { name: "GitHub vs GitLab", slug: "github-vs-gitlab" },
+];
+
 export function Footer() {
   return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         {/* SEO Links Section */}
         <div className="mb-12 pb-12 border-b border-slate-800">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {/* Popular Categories */}
             <div>
-              <h4 className="font-semibold text-white mb-4 text-sm">Popular Categories</h4>
+              <h4 className="font-semibold text-white mb-4 text-sm">Categories</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                {POPULAR_CATEGORIES.slice(0, 8).map((cat) => (
+                {POPULAR_CATEGORIES.slice(0, 6).map((cat) => (
                   <li key={cat.slug}>
                     <Link href={`/categories/${cat.slug}`} className="hover:text-white transition-colors">
                       {cat.name}
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <Link href="/categories" className="hover:text-white transition-colors text-primary">
+                    All categories →
+                  </Link>
+                </li>
               </ul>
             </div>
 
             {/* Best of Lists */}
             <div>
-              <h4 className="font-semibold text-white mb-4 text-sm">Best Software Lists</h4>
+              <h4 className="font-semibold text-white mb-4 text-sm">Best Software</h4>
               <ul className="space-y-2 text-sm text-slate-400">
-                {BEST_OF_PAGES.map((page) => (
+                {BEST_OF_PAGES.slice(0, 5).map((page) => (
                   <li key={page.slug}>
                     <Link href={`/best/${page.slug}`} className="hover:text-white transition-colors">
                       {page.name}
@@ -57,7 +80,40 @@ export function Footer() {
                 ))}
                 <li>
                   <Link href="/best" className="hover:text-white transition-colors text-primary">
-                    View all best lists →
+                    All best lists →
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Tools for Use Cases */}
+            <div>
+              <h4 className="font-semibold text-white mb-4 text-sm">Tools For</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                {USE_CASE_PAGES.map((page) => (
+                  <li key={page.slug}>
+                    <Link href={`/tools/for/${page.slug}`} className="hover:text-white transition-colors">
+                      {page.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Popular Comparisons */}
+            <div>
+              <h4 className="font-semibold text-white mb-4 text-sm">Compare</h4>
+              <ul className="space-y-2 text-sm text-slate-400">
+                {POPULAR_COMPARISONS.map((comp) => (
+                  <li key={comp.slug}>
+                    <Link href={`/compare/${comp.slug}`} className="hover:text-white transition-colors">
+                      {comp.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <Link href="/compare" className="hover:text-white transition-colors text-primary">
+                    All comparisons →
                   </Link>
                 </li>
               </ul>
@@ -65,26 +121,26 @@ export function Footer() {
 
             {/* Browse by Pricing */}
             <div>
-              <h4 className="font-semibold text-white mb-4 text-sm">Browse by Pricing</h4>
+              <h4 className="font-semibold text-white mb-4 text-sm">By Pricing</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <Link href="/pricing/free" className="hover:text-white transition-colors">
-                    Free Software Tools
+                  <Link href="/tools/free" className="hover:text-white transition-colors">
+                    Free Tools
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pricing/freemium" className="hover:text-white transition-colors">
+                  <Link href="/tools/freemium" className="hover:text-white transition-colors">
                     Freemium Tools
                   </Link>
                 </li>
                 <li>
-                  <Link href="/pricing/paid" className="hover:text-white transition-colors">
+                  <Link href="/tools/paid" className="hover:text-white transition-colors">
                     Paid Software
                   </Link>
                 </li>
                 <li>
-                  <Link href="/tools" className="hover:text-white transition-colors text-primary">
-                    Browse all tools →
+                  <Link href="/alternatives" className="hover:text-white transition-colors">
+                    Alternatives
                   </Link>
                 </li>
               </ul>
@@ -92,16 +148,11 @@ export function Footer() {
 
             {/* Quick Actions */}
             <div>
-              <h4 className="font-semibold text-white mb-4 text-sm">Quick Actions</h4>
+              <h4 className="font-semibold text-white mb-4 text-sm">Discover</h4>
               <ul className="space-y-2 text-sm text-slate-400">
                 <li>
-                  <Link href="/compare" className="hover:text-white transition-colors">
-                    Compare Tools
-                  </Link>
-                </li>
-                <li>
                   <Link href="/trending" className="hover:text-white transition-colors">
-                    Trending This Week
+                    Trending Tools
                   </Link>
                 </li>
                 <li>
@@ -112,6 +163,11 @@ export function Footer() {
                 <li>
                   <Link href="/vendors" className="hover:text-white transition-colors">
                     Submit Your Tool
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools" className="hover:text-white transition-colors text-primary">
+                    Browse all tools →
                   </Link>
                 </li>
               </ul>

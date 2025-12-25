@@ -6,6 +6,7 @@ import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { CategoryIcon } from "@/components/categories/category-icon";
+import { KeyTakeaways } from "@/components/seo/key-takeaways";
 import { Star, ExternalLink, ArrowRight } from "lucide-react";
 
 export const dynamic = "force-dynamic";
@@ -203,6 +204,20 @@ export default async function BestCategoryPage({ params }: { params: { category:
             </p>
           </div>
         </section>
+
+        {/* Key Takeaways for GEO */}
+        <div className="max-w-4xl mx-auto px-4 pt-8">
+          <KeyTakeaways
+            category={category.name}
+            topTool={{
+              name: topTools[0]?.name || "",
+              editorialScore: topTools[0]?.editorialScore,
+            }}
+            totalTools={category.tools.length}
+            freeToolsCount={topTools.filter(t => t.pricing === "free" || t.pricing === "freemium").length}
+            avgScore={topTools.reduce((sum, t) => sum + (t.editorialScore || 0), 0) / topTools.length}
+          />
+        </div>
 
         {/* Top 10 List */}
         <section className="max-w-4xl mx-auto px-4 py-8">

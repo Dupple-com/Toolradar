@@ -6,6 +6,7 @@ import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateToolMetadata, generateToolJsonLd, generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { RelatedTools } from "@/components/seo/related-tools";
+import { TLDRSection } from "@/components/seo/tldr-section";
 import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
 // Force dynamic rendering to avoid build-time DB access
@@ -234,6 +235,21 @@ export default async function ToolPage({ params }: { params: { slug: string } })
               </div>
             </header>
 
+            {/* TL;DR Section for GEO */}
+            <TLDRSection
+              tool={{
+                name: tool.name,
+                tagline: tool.tagline,
+                pricing: tool.pricing,
+                editorialScore: tool.editorialScore,
+                communityScore: tool.communityScore,
+                reviewCount: tool._count.reviews,
+              }}
+              category={tool.categories[0]?.category.name}
+              topPros={tool.reviews.slice(0, 3).map(r => r.pros.split('.')[0]).filter(Boolean)}
+              topCons={tool.reviews.slice(0, 3).map(r => r.cons.split('.')[0]).filter(Boolean)}
+            />
+
             {/* Description */}
             <section className="bg-card rounded-xl border p-6">
               <h2 className="font-semibold text-lg mb-4">About {tool.name}</h2>
@@ -455,9 +471,11 @@ export default async function ToolPage({ params }: { params: { slug: string } })
               <RelatedTools
                 tools={relatedTools}
                 title={`More ${tool.categories[0]?.category.name || ""} Tools`}
-                showViewAll
-                viewAllHref={tool.categories[0] ? `/categories/${tool.categories[0].category.slug}` : "/tools"}
-                viewAllLabel="View all"
+                currentToolSlug={tool.slug}
+                categorySlug={tool.categories[0]?.category.slug}
+                categoryName={tool.categories[0]?.category.name}
+                showAlternativesLink
+                showCompareLink
               />
             )}
           </aside>

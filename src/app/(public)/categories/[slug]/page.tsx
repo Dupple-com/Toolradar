@@ -303,7 +303,7 @@ export default async function CategoryPage({
       {/* Explore More - Internal Linking */}
       <section className="max-w-7xl mx-auto px-4 pb-16">
         <div className="bg-white rounded-xl border p-6">
-          <h2 className="text-lg font-bold mb-4">Explore More</h2>
+          <h2 className="text-lg font-bold mb-4">Explore {category.name}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Best of Page */}
             <Link
@@ -315,9 +315,19 @@ export default async function CategoryPage({
               <p className="text-xs text-muted-foreground mt-1">Top 10 tools ranked</p>
             </Link>
 
+            {/* Compare Category */}
+            <Link
+              href={`/compare/category/${category.slug}`}
+              className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
+            >
+              <span className="text-2xl mb-2 block">⚖️</span>
+              <h3 className="font-medium text-sm">Compare {category.name}</h3>
+              <p className="text-xs text-muted-foreground mt-1">Side-by-side comparison</p>
+            </Link>
+
             {/* Free Tools */}
             <Link
-              href="/pricing/free"
+              href="/tools/free"
               className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
             >
               <span className="text-2xl mb-2 block">🆓</span>
@@ -325,24 +335,14 @@ export default async function CategoryPage({
               <p className="text-xs text-muted-foreground mt-1">Browse free software</p>
             </Link>
 
-            {/* Compare */}
+            {/* Alternatives Hub */}
             <Link
-              href="/compare"
+              href="/alternatives"
               className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
             >
-              <span className="text-2xl mb-2 block">⚖️</span>
-              <h3 className="font-medium text-sm">Compare Tools</h3>
-              <p className="text-xs text-muted-foreground mt-1">Side-by-side comparison</p>
-            </Link>
-
-            {/* Trending */}
-            <Link
-              href="/trending"
-              className="p-4 border rounded-lg hover:border-primary hover:shadow-md transition"
-            >
-              <span className="text-2xl mb-2 block">🔥</span>
-              <h3 className="font-medium text-sm">Trending Now</h3>
-              <p className="text-xs text-muted-foreground mt-1">Popular this week</p>
+              <span className="text-2xl mb-2 block">🔄</span>
+              <h3 className="font-medium text-sm">Find Alternatives</h3>
+              <p className="text-xs text-muted-foreground mt-1">Switch from your current tool</p>
             </Link>
           </div>
         </div>
