@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateToolMetadata, generateToolJsonLd, generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { RelatedTools } from "@/components/seo/related-tools";
 import { TLDRSection } from "@/components/seo/tldr-section";
+import { PricingSection } from "@/components/tools/pricing-section";
 import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
 // Force dynamic rendering to avoid build-time DB access
@@ -248,6 +249,14 @@ export default async function ToolPage({ params }: { params: { slug: string } })
               category={tool.categories[0]?.category.name}
               topPros={tool.reviews.slice(0, 3).map(r => r.pros.split('.')[0]).filter(Boolean)}
               topCons={tool.reviews.slice(0, 3).map(r => r.cons.split('.')[0]).filter(Boolean)}
+            />
+
+            {/* Pricing Section */}
+            <PricingSection
+              pricing={tool.pricing}
+              pricingDetails={tool.pricingDetails as Record<string, unknown> | null}
+              toolName={tool.name}
+              website={tool.website}
             />
 
             {/* Description */}
