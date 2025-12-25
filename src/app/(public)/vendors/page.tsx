@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "List Your AI Tool | Toolradar - Get Discovered by Buyers",
-  description: "Get your AI tool discovered by thousands of buyers. Appear in Google, ChatGPT, and AI search results. Free listing with reviews and analytics.",
+  title: "List Your Software | Toolradar - Get Discovered by Buyers",
+  description: "Get your software discovered by thousands of buyers. Appear in Google and AI search results. Free listing with reviews and analytics.",
 };
 
 export default async function VendorsPage() {
@@ -47,7 +47,7 @@ export default async function VendorsPage() {
     {
       icon: Target,
       title: "Reach Active Buyers",
-      description: "Connect with decision-makers actively researching AI tools. High-intent visitors are ready to evaluate and buy.",
+      description: "Connect with decision-makers actively researching software tools. High-intent visitors are ready to evaluate and buy.",
     },
     {
       icon: BarChart3,
@@ -57,12 +57,12 @@ export default async function VendorsPage() {
     {
       icon: Globe,
       title: "Global Exposure",
-      description: "Reach an international audience of developers, marketers, founders, and enterprise buyers discovering AI tools.",
+      description: "Reach an international audience of developers, marketers, founders, and enterprise buyers discovering tools.",
     },
   ];
 
   const stats = [
-    { value: `${toolCount}+`, label: "AI Tools Listed" },
+    { value: `${toolCount}+`, label: "Tools Listed" },
     { value: `${reviewCount}+`, label: "User Reviews" },
     { value: `${categoryCount}+`, label: "Categories" },
     { value: "100%", label: "Free to List" },
@@ -77,15 +77,15 @@ export default async function VendorsPage() {
         <div className="max-w-4xl mx-auto px-6 relative text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 mb-8">
             <Zap size={14} className="text-blue-500" />
-            <span className="text-blue-600 font-medium text-sm">For AI Tool Companies</span>
+            <span className="text-blue-600 font-medium text-sm">For Software Companies</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-slate-900 tracking-[-0.02em] leading-[1.1]">
-            Get Your AI Tool
+            Get Your Software
             <br />
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">Discovered</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-500 mt-6 max-w-2xl mx-auto leading-relaxed">
-            Join {toolCount}+ AI tools on Toolradar. Get found by buyers searching on Google, ChatGPT, Perplexity, and other AI assistants.
+            Join {toolCount}+ tools on Toolradar. Get found by buyers searching on Google, ChatGPT, Perplexity, and other AI assistants.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-10">
             <Link
@@ -125,13 +125,13 @@ export default async function VendorsPage() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">
               <Bot size={14} />
-              AI-Era Discovery
+              Modern Discovery
             </div>
             <h2 className="text-3xl font-semibold text-slate-900 mb-4">
-              Buyers Now Start with AI
+              How Buyers Find Software Today
             </h2>
             <p className="text-slate-500 max-w-2xl mx-auto">
-              Over 50% of B2B buyers now use AI assistants to research tools. ChatGPT, Perplexity, and Claude recommend products from trusted review platforms like Toolradar.
+              Buyers use Google, AI assistants, and review platforms to research tools. ChatGPT, Perplexity, and Claude recommend products from trusted platforms like Toolradar.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -147,7 +147,7 @@ export default async function VendorsPage() {
                 <Search className="h-6 w-6 text-blue-600" />
               </div>
               <h3 className="font-semibold text-slate-900 mb-2">Google & Perplexity</h3>
-              <p className="text-sm text-slate-500">Rank for high-intent searches like &quot;best AI tools for X&quot;</p>
+              <p className="text-sm text-slate-500">Rank for high-intent searches like &quot;best tools for X&quot;</p>
             </div>
             <div className="bg-white rounded-xl border border-slate-200 p-6 text-center">
               <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
@@ -228,11 +228,11 @@ export default async function VendorsPage() {
                   <span className="text-sm text-slate-500">4.8 (124 reviews)</span>
                 </div>
                 <div className="text-sm text-slate-600">
-                  AI-powered solution for modern teams...
+                  Powerful solution for modern teams...
                 </div>
               </div>
               <div className="flex gap-2">
-                <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md">AI</span>
+                <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-md">SaaS</span>
                 <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-md">Freemium</span>
                 <span className="px-2 py-1 bg-slate-100 text-slate-600 text-xs rounded-md">Productivity</span>
               </div>
@@ -325,7 +325,7 @@ export default async function VendorsPage() {
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-semibold text-white mb-4">Ready to Get Discovered?</h2>
           <p className="text-slate-400 mb-8 text-lg">
-            Join {toolCount}+ AI tools already on Toolradar. Free to list, takes 2 minutes.
+            Join {toolCount}+ tools already on Toolradar. Free to list, takes 2 minutes.
           </p>
           <Link
             href="/company/submit"

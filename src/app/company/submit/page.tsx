@@ -40,9 +40,9 @@ export default async function SubmitToolPage() {
     <div className="max-w-4xl">
       {/* Hero Section */}
       <div className="mb-10">
-        <h1 className="text-3xl font-bold mb-4">List Your AI Tool on Toolradar</h1>
+        <h1 className="text-3xl font-bold mb-4">List Your Software on Toolradar</h1>
         <p className="text-lg text-muted-foreground">
-          Join {toolCount}+ AI tools and get discovered by thousands of buyers actively searching for solutions like yours.
+          Join {toolCount}+ tools and get discovered by thousands of buyers actively searching for solutions like yours.
         </p>
       </div>
 
@@ -56,7 +56,7 @@ export default async function SubmitToolPage() {
             <div className="grid sm:grid-cols-2 gap-6">
               <BenefitCard
                 icon={<Search className="h-5 w-5 text-blue-500" />}
-                title="AI & SEO Visibility"
+                title="Search & SEO Visibility"
                 description="Get discovered in Google searches and AI assistants like ChatGPT, Perplexity, and Claude that recommend tools to users."
               />
               <BenefitCard
@@ -67,7 +67,7 @@ export default async function SubmitToolPage() {
               <BenefitCard
                 icon={<Users className="h-5 w-5 text-green-500" />}
                 title="Reach Active Buyers"
-                description="Connect with decision-makers actively researching AI tools in your category, ready to buy."
+                description="Connect with decision-makers actively researching software tools in your category, ready to buy."
               />
               <BenefitCard
                 icon={<BarChart3 className="h-5 w-5 text-purple-500" />}
@@ -77,7 +77,7 @@ export default async function SubmitToolPage() {
               <BenefitCard
                 icon={<Globe className="h-5 w-5 text-cyan-500" />}
                 title="Global Exposure"
-                description="Reach an international audience of developers, marketers, and business leaders discovering AI tools."
+                description="Reach an international audience of developers, marketers, and business leaders discovering software tools."
               />
               <BenefitCard
                 icon={<Zap className="h-5 w-5 text-orange-500" />}
@@ -120,7 +120,7 @@ export default async function SubmitToolPage() {
           <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border p-6">
             <h3 className="font-semibold mb-4">Toolradar by the Numbers</h3>
             <div className="space-y-4">
-              <StatItem value={`${toolCount}+`} label="AI Tools Listed" />
+              <StatItem value={`${toolCount}+`} label="Tools Listed" />
               <StatItem value={`${reviewCount}+`} label="User Reviews" />
               <StatItem value="50+" label="Categories" />
               <StatItem value="Free" label="To Get Listed" />
@@ -133,7 +133,7 @@ export default async function SubmitToolPage() {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-blue-500" />
-                AI Startups & SaaS
+                SaaS Companies
               </li>
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-green-500" />
@@ -145,7 +145,7 @@ export default async function SubmitToolPage() {
               </li>
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-orange-500" />
-                Creative AI Tools
+                Creative Tools
               </li>
               <li className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-cyan-500" />
