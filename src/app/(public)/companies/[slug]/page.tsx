@@ -131,9 +131,12 @@ export default async function CompanyPage({ params }: { params: { slug: string }
                   Verified
                 </span>
               ) : (
-                <span className="inline-flex items-center gap-1 px-2 py-1 bg-slate-100 text-slate-500 text-xs font-medium rounded-full">
+                <Link
+                  href={`/companies/${company.slug}/claim`}
+                  className="inline-flex items-center gap-1 px-2 py-1 bg-slate-100 text-slate-500 text-xs font-medium rounded-full hover:bg-slate-200 transition-colors"
+                >
                   Unclaimed
-                </span>
+                </Link>
               )}
             </div>
             {company.description && (
