@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
-import { generateToolMetadata, generateToolJsonLd, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateToolMetadata, generateToolJsonLd, generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { RelatedTools } from "@/components/seo/related-tools";
 import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
@@ -125,10 +125,48 @@ export default async function ToolPage({ params }: { params: { slug: string } })
     { name: tool.name, url: `/tools/${tool.slug}` },
   ]);
 
+  // FAQ for GEO optimization (AI search engines like ChatGPT, Perplexity)
+  const year = new Date().getFullYear();
+  const categoryName = tool.categories[0]?.category.name || "software";
+  const avgRating = tool.communityScore?.toFixed(1) || "N/A";
+  const reviewCount = tool._count.reviews;
+
+  const faqJsonLd = generateFaqJsonLd([
+    {
+      question: `What is ${tool.name}?`,
+      answer: `${tool.name} is a ${categoryName.toLowerCase()} tool. ${tool.tagline}. ${tool.description?.slice(0, 200) || ""}`,
+    },
+    {
+      question: `Is ${tool.name} free?`,
+      answer: tool.pricing === "free"
+        ? `Yes, ${tool.name} is completely free to use.`
+        : tool.pricing === "freemium"
+        ? `${tool.name} offers a free plan with limited features. Paid plans are available for additional functionality.`
+        : `${tool.name} is a paid tool. Visit their website for current pricing information.`,
+    },
+    {
+      question: `What are the best alternatives to ${tool.name}?`,
+      answer: tool.alternatives.length > 0
+        ? `Popular alternatives to ${tool.name} include: ${tool.alternatives.slice(0, 5).map(a => a.alternative.name).join(", ")}. Compare features and pricing on Toolradar.`
+        : `View ${tool.name} alternatives and similar ${categoryName.toLowerCase()} tools on Toolradar.`,
+    },
+    {
+      question: `Is ${tool.name} good? What do users think?`,
+      answer: reviewCount > 0
+        ? `${tool.name} has a ${avgRating}/5 rating based on ${reviewCount} user reviews on Toolradar. Users appreciate ${tool.reviews[0]?.pros?.split('.')[0] || "its features"}.`
+        : `${tool.name} has not yet been reviewed on Toolradar. Be the first to share your experience!`,
+    },
+    {
+      question: `Who is ${tool.name} best for?`,
+      answer: `${tool.name} is ideal for users looking for ${categoryName.toLowerCase()} solutions. ${tool.pricing === "free" ? "It's free, making it accessible for individuals and small teams." : tool.pricing === "freemium" ? "The free tier is great for getting started, with paid options for teams." : "It's designed for professionals and businesses willing to invest in quality tools."}`,
+    },
+  ]);
+
   return (
     <>
       <JsonLd data={toolJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={faqJsonLd} />
 
       <div className="max-w-7xl mx-auto px-4 py-8 sm:py-12">
         {/* Breadcrumb */}

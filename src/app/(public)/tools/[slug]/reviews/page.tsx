@@ -4,10 +4,39 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
 import { ReviewCard } from "@/components/reviews/review-card";
+import { Metadata } from "next";
+import { generateReviewsMetadata, generateReviewsJsonLd, generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
+import { JsonLd } from "@/components/seo/json-ld";
 
 // Force dynamic rendering to avoid build-time DB access
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
+
+// Generate metadata for SEO
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  try {
+    const tool = await prisma.tool.findUnique({
+      where: { slug: params.slug, status: "published" },
+      select: {
+        name: true,
+        slug: true,
+        tagline: true,
+        reviewCount: true,
+        communityScore: true,
+      },
+    });
+
+    if (!tool) return { title: "Reviews Not Found" };
+
+    return generateReviewsMetadata(tool);
+  } catch {
+    return { title: "Reviews" };
+  }
+}
 
 // Generate static params for popular tools
 export async function generateStaticParams() {
@@ -59,6 +88,10 @@ export default async function ToolReviewsPage({
             _count: { select: { replies: true } },
           },
         },
+        categories: {
+          include: { category: { select: { name: true, slug: true } } },
+          take: 1,
+        },
       },
     }),
     // Use aggregate for rating averages - more efficient than JS reduce
@@ -88,8 +121,60 @@ export default async function ToolReviewsPage({
     features: avgRatings._avg.features || 0,
   } : null;
 
+  // Generate JSON-LD for SEO and GEO
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: "/" },
+    { name: "Tools", url: "/tools" },
+    { name: tool.name, url: `/tools/${tool.slug}` },
+    { name: "Reviews", url: `/tools/${tool.slug}/reviews` },
+  ]);
+
+  const reviewsJsonLd = generateReviewsJsonLd({
+    name: tool.name,
+    slug: tool.slug,
+    description: tool.description || undefined,
+    logo: tool.logo,
+    communityScore: tool.communityScore,
+    reviewCount: tool.reviewCount,
+    reviews: tool.reviews.map(r => ({
+      overallRating: r.overallRating,
+      title: r.title,
+      pros: r.pros,
+      cons: r.cons,
+      createdAt: r.createdAt,
+      user: r.user,
+    })),
+  });
+
+  // FAQ for GEO optimization
+  const faqJsonLd = generateFaqJsonLd([
+    {
+      question: `Is ${tool.name} worth it?`,
+      answer: ratingsSummary
+        ? `Based on ${tool.reviews.length} user reviews, ${tool.name} has an average rating of ${ratingsSummary.overall.toFixed(1)}/5. Users rate ease of use at ${ratingsSummary.easeOfUse.toFixed(1)}/5 and value for money at ${ratingsSummary.valueForMoney.toFixed(1)}/5.`
+        : `${tool.name} currently has no user reviews. Be the first to share your experience!`,
+    },
+    {
+      question: `What do users like about ${tool.name}?`,
+      answer: tool.reviews.length > 0
+        ? `Users commonly praise: ${tool.reviews.slice(0, 3).map(r => r.pros.split('.')[0]).join('. ')}.`
+        : `No user feedback available yet for ${tool.name}.`,
+    },
+    {
+      question: `What are the downsides of ${tool.name}?`,
+      answer: tool.reviews.length > 0
+        ? `Common concerns include: ${tool.reviews.slice(0, 3).map(r => r.cons.split('.')[0]).join('. ')}.`
+        : `No user feedback available yet for ${tool.name}.`,
+    },
+  ]);
+
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <>
+      <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={reviewsJsonLd} />
+      <JsonLd data={faqJsonLd} />
+
+      <div className="max-w-4xl mx-auto px-4 py-12">
       <div className="flex items-center justify-between mb-8">
         <div>
           <Link href={`/tools/${tool.slug}`} className="text-primary hover:underline text-sm">
@@ -208,5 +293,6 @@ export default async function ToolReviewsPage({
         )}
       </div>
     </div>
+    </>
   );
 }

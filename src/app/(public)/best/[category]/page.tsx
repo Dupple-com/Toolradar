@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
-import { generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { CategoryIcon } from "@/components/categories/category-icon";
 import { Star, ExternalLink, ArrowRight } from "lucide-react";
 
@@ -139,11 +139,37 @@ export default async function BestCategoryPage({ params }: { params: { category:
     },
   };
 
+  // FAQ for GEO optimization (AI search engines)
+  const top3 = topTools.slice(0, 3).map(t => t.name).join(", ");
+  const freeTools = topTools.filter(t => t.pricing === "free" || t.pricing === "freemium");
+
+  const faqJsonLd = generateFaqJsonLd([
+    {
+      question: `What is the best ${category.name.toLowerCase()} tool in ${year}?`,
+      answer: `Based on our analysis, ${topTools[0]?.name || "various tools"} ranks as the #1 ${category.name.toLowerCase()} tool in ${year}. It scores ${topTools[0]?.editorialScore || "highly"}/100 on our editorial assessment. Other top options include ${top3}.`,
+    },
+    {
+      question: `What are the top 3 ${category.name.toLowerCase()} tools?`,
+      answer: `The top 3 ${category.name.toLowerCase()} tools in ${year} are: 1) ${topTools[0]?.name} - ${topTools[0]?.tagline}, 2) ${topTools[1]?.name || "N/A"} - ${topTools[1]?.tagline || ""}, 3) ${topTools[2]?.name || "N/A"} - ${topTools[2]?.tagline || ""}.`,
+    },
+    {
+      question: `Are there free ${category.name.toLowerCase()} tools?`,
+      answer: freeTools.length > 0
+        ? `Yes! ${freeTools.slice(0, 3).map(t => t.name).join(", ")} offer free plans. ${freeTools.length} tools in our top ${topTools.length} have free or freemium options.`
+        : `Most ${category.name.toLowerCase()} tools are paid, but many offer free trials. Check individual tool pages for current pricing.`,
+    },
+    {
+      question: `How do I choose the right ${category.name.toLowerCase()} tool?`,
+      answer: `Consider your specific needs, budget, and team size. ${topTools[0]?.name} is great for most users, while ${topTools[1]?.name || "other options"} may be better for specific use cases. Read our detailed reviews and comparisons on Toolradar.`,
+    },
+  ]);
+
   return (
     <>
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={itemListJsonLd} />
       <JsonLd data={articleJsonLd} />
+      <JsonLd data={faqJsonLd} />
 
       <div className="min-h-screen bg-gray-50/50">
         {/* Header */}

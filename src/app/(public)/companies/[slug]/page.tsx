@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     name: company.name,
     slug: company.slug,
     description: company.description,
+    logo: company.logo,
     toolCount: company._count.tools,
   });
 }

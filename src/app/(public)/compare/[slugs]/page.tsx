@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
-import { generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
@@ -131,10 +131,42 @@ export default async function CompareResultPage({
     })),
   };
 
+  // FAQ for GEO optimization (AI search engines)
+  const tool1 = sortedTools[0];
+  const tool2 = sortedTools[1];
+  const winnerName = winner.name;
+  const winnerScore = winner.editorialScore || "high";
+
+  const faqJsonLd = generateFaqJsonLd([
+    {
+      question: `Is ${tool1.name} or ${tool2.name} better?`,
+      answer: `Based on our analysis, ${winnerName} scores higher with ${winnerScore}/100. ${tool1.name} is ${tool1.pricing} while ${tool2.name} is ${tool2.pricing}. The best choice depends on your specific needs and budget.`,
+    },
+    {
+      question: `What is the difference between ${tool1.name} and ${tool2.name}?`,
+      answer: `${tool1.name}: ${tool1.tagline}. ${tool2.name}: ${tool2.tagline}. ${tool1.name} is ${tool1.pricing} and ${tool2.name} is ${tool2.pricing}. Compare detailed features on Toolradar.`,
+    },
+    {
+      question: `Which is cheaper, ${tool1.name} or ${tool2.name}?`,
+      answer: tool1.pricing === "free" && tool2.pricing !== "free"
+        ? `${tool1.name} is free while ${tool2.name} is ${tool2.pricing}.`
+        : tool2.pricing === "free" && tool1.pricing !== "free"
+        ? `${tool2.name} is free while ${tool1.name} is ${tool1.pricing}.`
+        : tool1.pricing === tool2.pricing
+        ? `Both ${tool1.name} and ${tool2.name} have ${tool1.pricing} pricing. Visit their websites for detailed pricing.`
+        : `${tool1.name} is ${tool1.pricing} and ${tool2.name} is ${tool2.pricing}. Compare specific plans on their websites.`,
+    },
+    {
+      question: `Should I switch from ${tool1.name} to ${tool2.name}?`,
+      answer: `Consider switching if ${tool2.name}'s features better match your needs. ${winnerName} scores higher overall (${winnerScore}/100). Read user reviews on Toolradar to see what users think about each tool.`,
+    },
+  ]);
+
   return (
     <>
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={comparisonJsonLd} />
+      <JsonLd data={faqJsonLd} />
       <div className="min-h-screen bg-gray-50/50">
       {/* Header */}
       <section className="bg-white border-b">

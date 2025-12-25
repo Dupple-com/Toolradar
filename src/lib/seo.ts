@@ -138,6 +138,7 @@ export function generateCompanyMetadata(company: {
   name: string;
   slug: string;
   description?: string | null;
+  logo?: string | null;
   toolCount?: number;
 }): Metadata {
   const title = `${company.name} Products & Reviews`;
@@ -145,10 +146,20 @@ export function generateCompanyMetadata(company: {
     company.description ||
     `Explore ${company.name}'s software products. Read reviews and compare ${company.toolCount || ""} tools on Toolradar.`;
 
+  const keywords = [
+    company.name,
+    `${company.name} products`,
+    `${company.name} software`,
+    `${company.name} reviews`,
+    `${company.name} tools`,
+  ];
+
   return generateMetadata({
     title,
     description,
     path: `/companies/${company.slug}`,
+    image: company.logo || undefined,
+    keywords,
   });
 }
 
@@ -303,6 +314,143 @@ export function generateFaqJsonLd(
         "@type": "Answer",
         text: faq.answer,
       },
+    })),
+  };
+}
+
+// Reviews page metadata
+export function generateReviewsMetadata(tool: {
+  name: string;
+  slug: string;
+  tagline?: string;
+  reviewCount?: number;
+  communityScore?: number | null;
+}): Metadata {
+  const year = new Date().getFullYear();
+  const reviewText = tool.reviewCount === 1 ? "review" : "reviews";
+  const scoreText = tool.communityScore ? ` - ${tool.communityScore.toFixed(1)}/5 rating` : "";
+
+  const title = `${tool.name} Reviews ${year}${scoreText}`;
+  const description = tool.reviewCount && tool.reviewCount > 0
+    ? `Read ${tool.reviewCount} real user ${reviewText} for ${tool.name}. See ratings, pros & cons, and honest feedback from verified users on Toolradar.`
+    : `Read user reviews for ${tool.name}. Share your experience and help others make the right choice on Toolradar.`;
+
+  const keywords = [
+    `${tool.name} reviews`,
+    `${tool.name} review ${year}`,
+    `${tool.name} ratings`,
+    `${tool.name} pros and cons`,
+    `${tool.name} user reviews`,
+    `is ${tool.name} good`,
+    `${tool.name} feedback`,
+  ];
+
+  return generateMetadata({
+    title,
+    description,
+    path: `/tools/${tool.slug}/reviews`,
+    type: "article",
+    keywords,
+  });
+}
+
+// Reviews JSON-LD with aggregate rating
+export function generateReviewsJsonLd(tool: {
+  name: string;
+  slug: string;
+  description?: string;
+  logo?: string | null;
+  communityScore?: number | null;
+  reviewCount?: number;
+  reviews?: Array<{
+    overallRating: number;
+    title: string;
+    pros: string;
+    cons: string;
+    createdAt: Date;
+    user: { name: string | null };
+  }>;
+}) {
+  const jsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: tool.name,
+    description: tool.description || `${tool.name} software tool`,
+    url: `${SITE_URL}/tools/${tool.slug}`,
+    image: tool.logo || `${SITE_URL}/og-default.png`,
+  };
+
+  // Add aggregate rating
+  if (tool.communityScore && tool.reviewCount && tool.reviewCount > 0) {
+    jsonLd.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: Math.round(tool.communityScore * 10) / 10,
+      reviewCount: tool.reviewCount,
+      bestRating: 5,
+      worstRating: 1,
+    };
+  }
+
+  // Add individual reviews
+  if (tool.reviews && tool.reviews.length > 0) {
+    jsonLd.review = tool.reviews.slice(0, 10).map((review) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: review.user.name || "Anonymous User"
+      },
+      datePublished: review.createdAt.toISOString().split('T')[0],
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: review.overallRating,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      name: review.title,
+      reviewBody: `Pros: ${review.pros}. Cons: ${review.cons}`,
+    }));
+  }
+
+  return jsonLd;
+}
+
+// ItemList JSON-LD for list pages
+export function generateItemListJsonLd(
+  name: string,
+  description: string,
+  items: Array<{ name: string; url: string; position: number }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    description,
+    numberOfItems: items.length,
+    itemListElement: items.map((item) => ({
+      "@type": "ListItem",
+      position: item.position,
+      name: item.name,
+      url: `${SITE_URL}${item.url}`,
+    })),
+  };
+}
+
+// HowTo JSON-LD for GEO optimization
+export function generateHowToJsonLd(
+  name: string,
+  description: string,
+  steps: Array<{ name: string; text: string }>
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    step: steps.map((step, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: step.name,
+      text: step.text,
     })),
   };
 }
