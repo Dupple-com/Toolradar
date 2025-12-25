@@ -13,11 +13,11 @@ export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Toolradar - Discover & Compare the Best Software Tools",
-  description: "Find the perfect software for your business. Compare 2,000+ tools with real user reviews, ratings, and alternatives. Make smarter software decisions.",
+  description: "Find the perfect software for your business. Compare 1,000+ tools with ratings, alternatives, and detailed comparisons. Make smarter software decisions.",
   keywords: "software tools, software comparison, software reviews, best tools, tool alternatives, SaaS tools",
   openGraph: {
     title: "Toolradar - Discover & Compare the Best Software Tools",
-    description: "Find the perfect software for your business. Compare 2,000+ tools with real user reviews.",
+    description: "Find the perfect software for your business. Compare 1,000+ tools with ratings and alternatives.",
     url: "https://toolradar.com",
     siteName: "Toolradar",
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Toolradar - Discover & Compare the Best Software Tools",
-    description: "Find the perfect software for your business. Compare 2,000+ tools with real user reviews.",
+    description: "Find the perfect software for your business. Compare 1,000+ tools with ratings and alternatives.",
   },
   alternates: {
     canonical: "https://toolradar.com",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 export const revalidate = 3600; // Revalidate every hour
 
 export default async function HomePage() {
-  const [toolOfTheDay, trendingTools, recentTools] = await Promise.all([
+  const [toolOfTheDay, trendingTools, recentTools, stats] = await Promise.all([
     prisma.tool.findFirst({
       where: {
         status: "published",
@@ -59,6 +59,16 @@ export default async function HomePage() {
         _count: { select: { reviews: true } }
       }
     }),
+    // Get real stats
+    Promise.all([
+      prisma.tool.count({ where: { status: "published" } }),
+      prisma.category.count(),
+      prisma.review.count({ where: { status: "approved" } }),
+    ]).then(([toolCount, categoryCount, reviewCount]) => ({
+      toolCount,
+      categoryCount,
+      reviewCount,
+    })),
   ]);
 
   return (
@@ -91,18 +101,26 @@ export default async function HomePage() {
 
           <div className="mt-16 flex items-center justify-center gap-6 sm:gap-12 text-slate-400">
             <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">2,000+</span>
+              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">
+                {stats.toolCount.toLocaleString()}+
+              </span>
               <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Tools</span>
             </div>
             <div className="w-px h-8 sm:h-10 bg-slate-200" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">10k+</span>
-              <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Reviews</span>
+              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">
+                {stats.categoryCount}+
+              </span>
+              <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Categories</span>
             </div>
             <div className="w-px h-8 sm:h-10 bg-slate-200" />
             <div className="flex flex-col items-center">
-              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">100%</span>
-              <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">Verified</span>
+              <span className="text-2xl sm:text-3xl font-semibold text-slate-900 tabular-nums">
+                {stats.reviewCount > 0 ? `${stats.reviewCount.toLocaleString()}+` : "Free"}
+              </span>
+              <span className="text-xs uppercase tracking-wider font-medium mt-1 text-slate-400">
+                {stats.reviewCount > 0 ? "Reviews" : "To Use"}
+              </span>
             </div>
           </div>
         </div>

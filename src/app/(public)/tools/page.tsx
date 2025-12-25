@@ -10,11 +10,11 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Browse Software Tools | Toolradar",
-  description: "Explore 2,000+ software tools across all categories. Filter by pricing, sort by trending, score, or reviews. Find the perfect tool for your stack.",
+  description: "Explore 1,000+ software tools across all categories. Filter by pricing, sort by trending, score, or reviews. Find the perfect tool for your stack.",
   keywords: "software tools, best tools, software directory, tool comparison, free software, saas tools",
   openGraph: {
     title: "Browse Software Tools | Toolradar",
-    description: "Explore 2,000+ software tools across all categories. Filter by pricing, sort by trending, score, or reviews.",
+    description: "Explore 1,000+ software tools across all categories. Filter by pricing, sort by trending, score, or reviews.",
     url: "https://toolradar.com/tools",
     siteName: "Toolradar",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Browse Software Tools | Toolradar",
-    description: "Explore 2,000+ software tools across all categories.",
+    description: "Explore 1,000+ software tools across all categories.",
   },
   alternates: {
     canonical: "https://toolradar.com/tools",
