@@ -214,7 +214,7 @@ export default async function CategoriesPage() {
                           className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-gray-50 transition"
                         >
                           {ct.tool.logo ? (
-                            <img src={ct.tool.logo} alt="" className="w-8 h-8 rounded-lg object-cover" />
+                            <img src={ct.tool.logo} alt={`${ct.tool.name} logo`} className="w-8 h-8 rounded-lg object-cover" />
                           ) : (
                             <div className="w-8 h-8 rounded-lg bg-muted flex items-center justify-center text-sm font-bold text-muted-foreground">
                               {ct.tool.name[0]}

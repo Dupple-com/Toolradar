@@ -54,6 +54,7 @@ export default async function CompaniesPage({
       </div>
 
       {/* Companies grid */}
+      <h2 className="sr-only">All Companies</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {companies.map((company) => (
           <Link

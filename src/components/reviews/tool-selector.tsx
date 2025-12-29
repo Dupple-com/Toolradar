@@ -60,7 +60,7 @@ export function ToolSelector({ tools, onSelect }: ToolSelectorProps) {
               className="flex items-center gap-4 p-4 border rounded-xl hover:border-primary hover:bg-primary/5 transition text-left group"
             >
               {tool.logo ? (
-                <img src={tool.logo} alt="" className="w-12 h-12 rounded-xl flex-shrink-0" />
+                <img src={tool.logo} alt={`${tool.name} logo`} className="w-12 h-12 rounded-xl flex-shrink-0" />
               ) : (
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary font-bold flex-shrink-0">
                   {tool.name[0]}

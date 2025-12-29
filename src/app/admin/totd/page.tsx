@@ -33,7 +33,7 @@ export default async function ToolOfTheDayPage() {
           <p className="text-sm text-primary mb-2">Today&apos;s Tool of the Day</p>
           <div className="flex items-center gap-4">
             {currentTotd.logo && (
-              <img src={currentTotd.logo} alt="" className="w-12 h-12 rounded" />
+              <img src={currentTotd.logo} alt={`${currentTotd.name} logo`} className="w-12 h-12 rounded" />
             )}
             <div>
               <p className="font-semibold text-lg">{currentTotd.name}</p>

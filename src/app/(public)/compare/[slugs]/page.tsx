@@ -207,7 +207,7 @@ export default async function CompareResultPage({
                 )}
                 <Link href={`/tools/${tool.slug}`} className="block">
                   {tool.logo ? (
-                    <img src={tool.logo} alt="" className="w-16 h-16 rounded-xl mx-auto mb-4 object-cover" />
+                    <img src={tool.logo} alt={`${tool.name} logo`} className="w-16 h-16 rounded-xl mx-auto mb-4 object-cover" />
                   ) : (
                     <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-primary">
                       {tool.name[0]}

@@ -291,7 +291,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                       <div className="flex items-center gap-3 mb-2">
                         <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center overflow-hidden">
                           {review.user.image ? (
-                            <img src={review.user.image} alt="" className="w-8 h-8 rounded-full object-cover" />
+                            <img src={review.user.image} alt={`${review.user.name || "User"}'s profile picture`} className="w-8 h-8 rounded-full object-cover" />
                           ) : (
                             <span className="text-sm font-medium">{review.user.name?.[0] || "U"}</span>
                           )}

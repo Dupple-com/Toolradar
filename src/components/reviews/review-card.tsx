@@ -66,7 +66,7 @@ export function ReviewCard({ review, toolSlug, isLoggedIn }: ReviewCardProps) {
       <div className="flex items-center gap-3 mb-3">
         <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden">
           {review.user.image ? (
-            <img src={review.user.image} alt="" className="w-10 h-10 rounded-full" />
+            <img src={review.user.image} alt={`${review.user.name || "User"}'s profile picture`} className="w-10 h-10 rounded-full" />
           ) : (
             <span className="text-sm font-semibold text-slate-600">
               {review.user.name?.[0]?.toUpperCase() || "U"}
@@ -133,7 +133,7 @@ export function ReviewCard({ review, toolSlug, isLoggedIn }: ReviewCardProps) {
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center overflow-hidden shrink-0">
                   {reply.user.image ? (
-                    <img src={reply.user.image} alt="" className="w-8 h-8 rounded-full" />
+                    <img src={reply.user.image} alt={`${reply.user.name || "User"}'s profile picture`} className="w-8 h-8 rounded-full" />
                   ) : (
                     <span className="text-xs font-semibold text-slate-600">
                       {reply.user.name?.[0]?.toUpperCase() || "U"}

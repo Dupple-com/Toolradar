@@ -51,7 +51,7 @@ export default async function DashboardPage() {
                 className="flex items-center gap-3 bg-card rounded-xl border p-4 hover:border-primary transition"
               >
                 {fav.tool.logo ? (
-                  <img src={fav.tool.logo} alt="" className="w-10 h-10 rounded" />
+                  <img src={fav.tool.logo} alt={`${fav.tool.name} logo`} className="w-10 h-10 rounded" />
                 ) : (
                   <div className="w-10 h-10 rounded bg-muted flex items-center justify-center font-bold">
                     {fav.tool.name[0]}

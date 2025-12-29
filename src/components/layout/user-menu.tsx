@@ -32,7 +32,7 @@ export function UserMenu({ userName, userImage }: UserMenuProps) {
         className="flex items-center gap-2 px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all duration-100 text-sm font-medium"
       >
         {userImage ? (
-          <img src={userImage} alt="" className="w-6 h-6 rounded-full" />
+          <img src={userImage} alt={`${userName || "User"}'s profile picture`} className="w-6 h-6 rounded-full" />
         ) : (
           <User size={18} />
         )}

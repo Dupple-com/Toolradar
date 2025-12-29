@@ -139,7 +139,7 @@ export default async function BestToolsHubPage() {
                       style={{ zIndex: 3 - i }}
                     >
                       {ct.tool.logo ? (
-                        <img src={ct.tool.logo} alt="" className="w-full h-full object-cover" />
+                        <img src={ct.tool.logo} alt={`${ct.tool.name} logo`} className="w-full h-full object-cover" />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-xs font-bold text-gray-500">
                           {ct.tool.name[0]}

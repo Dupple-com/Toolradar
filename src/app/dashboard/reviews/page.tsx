@@ -26,7 +26,7 @@ export default async function MyReviewsPage() {
                   className="flex items-center gap-3 hover:text-primary"
                 >
                   {review.tool.logo ? (
-                    <img src={review.tool.logo} alt="" className="w-10 h-10 rounded" />
+                    <img src={review.tool.logo} alt={`${review.tool.name} logo`} className="w-10 h-10 rounded" />
                   ) : (
                     <div className="w-10 h-10 rounded bg-muted flex items-center justify-center font-bold">
                       {review.tool.name[0]}

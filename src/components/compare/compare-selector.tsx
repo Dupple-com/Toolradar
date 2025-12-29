@@ -76,7 +76,7 @@ export function CompareSelector({ tools }: { tools: Tool[] }) {
                     </button>
                     <div className="flex flex-col items-center text-center">
                       {tool.logo ? (
-                        <img src={tool.logo} alt="" className="w-12 h-12 rounded-xl mb-2" />
+                        <img src={tool.logo} alt={`${tool.name} logo`} className="w-12 h-12 rounded-xl mb-2" />
                       ) : (
                         <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary font-bold text-lg mb-2">
                           {tool.name[0]}
@@ -142,7 +142,7 @@ export function CompareSelector({ tools }: { tools: Tool[] }) {
               >
                 <div className="flex items-center gap-3">
                   {tool.logo ? (
-                    <img src={tool.logo} alt="" className="w-10 h-10 rounded-lg flex-shrink-0" />
+                    <img src={tool.logo} alt={`${tool.name} logo`} className="w-10 h-10 rounded-lg flex-shrink-0" />
                   ) : (
                     <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gray-100 to-gray-50 border border-gray-100 flex items-center justify-center text-sm font-bold text-gray-400 flex-shrink-0">
                       {tool.name[0]}

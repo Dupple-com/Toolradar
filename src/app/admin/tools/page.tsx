@@ -43,7 +43,7 @@ export default async function AdminToolsPage() {
                 <td className="px-4 py-3">
                   <div className="flex items-center gap-3">
                     {tool.logo && (
-                      <img src={tool.logo} alt="" className="w-8 h-8 rounded" />
+                      <img src={tool.logo} alt={`${tool.name} logo`} className="w-8 h-8 rounded" />
                     )}
                     <div>
                       <p className="font-medium">{tool.name}</p>

@@ -23,7 +23,7 @@ export default async function WriteReviewPage({
     <div className="max-w-2xl mx-auto px-4 py-12">
       <div className="flex items-center gap-4 mb-8">
         {tool.logo ? (
-          <img src={tool.logo} alt="" className="w-16 h-16 rounded-xl" />
+          <img src={tool.logo} alt={`${tool.name} logo`} className="w-16 h-16 rounded-xl" />
         ) : (
           <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center text-2xl font-bold text-primary">
             {tool.name[0]}

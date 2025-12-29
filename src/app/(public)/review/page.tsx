@@ -87,7 +87,7 @@ export default async function ReviewPage({
       {/* Trust indicators */}
       <section className="max-w-3xl mx-auto px-4 pb-12">
         <div className="bg-white rounded-xl border p-6">
-          <h3 className="font-semibold mb-4">Why reviews matter</h3>
+          <h2 className="font-semibold mb-4">Why reviews matter</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
             <div>
               <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-2">
