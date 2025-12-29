@@ -7076,16 +7076,24 @@ export async function GET(request: Request) {
     });
   }
 
+  // First, get all existing slugs in one query
+  const existingSlugs = new Set(
+    (await prisma.tool.findMany({
+      select: { slug: true }
+    })).map(t => t.slug)
+  );
+
   for (const tool of allTools) {
     try {
-      // Check if already exists
-      const existing = await prisma.tool.findUnique({
-        where: { slug: tool.slug }
-      });
+      // Check if slug exists in our pre-fetched set
+      if (existingSlugs.has(tool.slug)) {
+        // Tool exists - check if we need to update tagline
+        const existing = await prisma.tool.findUnique({
+          where: { slug: tool.slug },
+          select: { tagline: true }
+        });
 
-      if (existing) {
-        // Update tagline if tool has one and existing doesn't
-        if (tool.tagline && (!existing.tagline || existing.tagline.includes("Software tool"))) {
+        if (tool.tagline && existing && (!existing.tagline || existing.tagline.includes("Software tool"))) {
           await prisma.tool.update({
             where: { slug: tool.slug },
             data: { tagline: tool.tagline }
@@ -7130,6 +7138,7 @@ export async function GET(request: Request) {
       });
 
       created++;
+      existingSlugs.add(tool.slug); // Add to set to avoid duplicates
     } catch (error) {
       errors.push(`${tool.slug}: ${error instanceof Error ? error.message : "Unknown"}`);
     }
@@ -7142,6 +7151,7 @@ export async function GET(request: Request) {
     updated,
     skipped,
     total: allTools.length,
-    errors: errors.slice(0, 20)
+    existingCount: existingSlugs.size - created,
+    errors: errors.slice(0, 50)
   });
 }
