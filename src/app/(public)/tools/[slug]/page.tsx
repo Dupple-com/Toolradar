@@ -8,6 +8,7 @@ import { generateToolMetadata, generateToolJsonLd, generateBreadcrumbJsonLd, gen
 import { RelatedTools } from "@/components/seo/related-tools";
 import { TLDRSection } from "@/components/seo/tldr-section";
 import { PricingSection } from "@/components/tools/pricing-section";
+import { FAQSection } from "@/components/seo/faq-section";
 import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
 // Force dynamic rendering to avoid build-time DB access
@@ -133,7 +134,8 @@ export default async function ToolPage({ params }: { params: { slug: string } })
   const avgRating = tool.communityScore?.toFixed(1) || "N/A";
   const reviewCount = tool._count.reviews;
 
-  const faqJsonLd = generateFaqJsonLd([
+  // Create FAQ data array (used for both JSON-LD and visible section)
+  const faqs = [
     {
       question: `What is ${tool.name}?`,
       answer: `${tool.name} is a ${categoryName.toLowerCase()} tool. ${tool.tagline}. ${tool.description?.slice(0, 200) || ""}`,
@@ -162,7 +164,9 @@ export default async function ToolPage({ params }: { params: { slug: string } })
       question: `Who is ${tool.name} best for?`,
       answer: `${tool.name} is ideal for users looking for ${categoryName.toLowerCase()} solutions. ${tool.pricing === "free" ? "It's free, making it accessible for individuals and small teams." : tool.pricing === "freemium" ? "The free tier is great for getting started, with paid options for teams." : "It's designed for professionals and businesses willing to invest in quality tools."}`,
     },
-  ]);
+  ];
+
+  const faqJsonLd = generateFaqJsonLd(faqs);
 
   return (
     <>
@@ -356,6 +360,9 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                 </div>
               </section>
             )}
+
+            {/* FAQ Section - Visible for users and SEO */}
+            <FAQSection faqs={faqs} title={`${tool.name} FAQ`} />
           </div>
 
           {/* Sidebar */}

@@ -83,21 +83,39 @@ export function generateToolMetadata(tool: {
   communityScore?: number | null;
   reviewCount?: number;
 }): Metadata {
-  const title = `${tool.name} - ${tool.tagline}`;
-  const description = tool.description
-    ? tool.description.slice(0, 160)
-    : `${tool.name}: ${tool.tagline}. Read reviews, compare features, and find alternatives on Toolradar.`;
+  const year = new Date().getFullYear();
+
+  // SEO-optimized title: includes year, rating, and key terms
+  const ratingText = tool.communityScore && tool.reviewCount && tool.reviewCount > 0
+    ? ` - ${tool.communityScore.toFixed(1)}/5`
+    : "";
+  const title = `${tool.name} Reviews, Pricing & Alternatives (${year})${ratingText}`;
+
+  // SEO-optimized description with unique selling points
+  const pricingText = tool.pricing === "free"
+    ? "Free tool"
+    : tool.pricing === "freemium"
+    ? "Free plan available"
+    : "Paid tool";
+  const reviewText = tool.reviewCount && tool.reviewCount > 0
+    ? `${tool.reviewCount} user reviews, `
+    : "";
+  const description = `${tool.name}: ${tool.tagline}. ${pricingText}. ${reviewText}Compare features, pricing, pros & cons. Find the best alternatives on Toolradar.`.slice(0, 160);
 
   const keywords = [
     tool.name,
     `${tool.name} review`,
+    `${tool.name} review ${year}`,
     `${tool.name} alternatives`,
     `${tool.name} pricing`,
+    `${tool.name} vs`,
+    `is ${tool.name} good`,
+    `${tool.name} pros and cons`,
     tool.pricing || "software",
   ];
 
   return generateMetadata({
-    title: tool.name,
+    title,
     description,
     path: `/tools/${tool.slug}`,
     image: tool.logo || undefined,
@@ -113,16 +131,20 @@ export function generateCategoryMetadata(category: {
   description?: string | null;
   toolCount?: number;
 }): Metadata {
-  const title = `Best ${category.name} Software`;
+  const year = new Date().getFullYear();
+  const toolCountText = category.toolCount ? `${category.toolCount}+ ` : "";
+  const title = `Best ${category.name} Software & Tools (${year}) - ${toolCountText}Options Compared`;
   const description =
     category.description ||
-    `Discover the best ${category.name.toLowerCase()} tools. Compare ${category.toolCount || "top"} products with real user reviews on Toolradar.`;
+    `Compare ${toolCountText}${category.name.toLowerCase()} tools in ${year}. Read real user reviews, pricing, features & find the best ${category.name.toLowerCase()} software for your needs.`;
 
   const keywords = [
     `${category.name} software`,
-    `best ${category.name} tools`,
+    `best ${category.name} tools ${year}`,
     `${category.name} comparison`,
     `top ${category.name} apps`,
+    `${category.name} software reviews`,
+    `${category.name} tools comparison`,
   ];
 
   return generateMetadata({
