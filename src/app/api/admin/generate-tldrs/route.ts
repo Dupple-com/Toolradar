@@ -245,7 +245,7 @@ export async function GET(request: Request) {
 
       await prisma.tool.update({
         where: { slug },
-        data: { tldr }
+        data: { tagline: tldr }
       });
 
       updatedList.push(tool.name);
