@@ -16,18 +16,6 @@ interface TLDRSectionProps {
 }
 
 export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDRSectionProps) {
-  const year = new Date().getFullYear();
-
-  // Generate verdict based on score
-  const getVerdict = () => {
-    const score = tool.editorialScore || 0;
-    if (score >= 90) return "Excellent choice";
-    if (score >= 80) return "Highly recommended";
-    if (score >= 70) return "Good option";
-    if (score >= 60) return "Worth considering";
-    return "May suit specific needs";
-  };
-
   const getPricingLabel = () => {
     switch (tool.pricing) {
       case "free": return "Free forever";
@@ -37,22 +25,29 @@ export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDR
     }
   };
 
+  // Extract 3 key points from description
+  const getKeyPoints = () => {
+    const sentences = tool.description.split(/[.!]/).filter(s => s.trim().length > 10);
+    return sentences.slice(0, 3).map(s => s.trim());
+  };
+
+  const keyPoints = getKeyPoints();
+
   return (
     <section className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/20 p-6 mb-8">
       <div className="flex items-center gap-2 mb-4">
         <Zap className="w-5 h-5 text-primary" />
-        <h2 className="font-bold text-lg">TL;DR - {tool.name} in 30 Seconds</h2>
+        <h2 className="font-bold text-lg">TL;DR - {tool.name}</h2>
       </div>
 
-      <p className="text-muted-foreground mb-4">
-        {tool.description}
-        {tool.editorialScore && tool.editorialScore > 0 ? (
-          <> Our editorial score: <strong>{tool.editorialScore}/100</strong>. </>
-        ) : null}
-        {tool.communityScore && tool.communityScore > 0 && tool.reviewCount && tool.reviewCount > 0 ? (
-          <>User rating: <strong>{tool.communityScore.toFixed(1)}/5</strong> ({tool.reviewCount} reviews). </>
-        ) : null}
-      </p>
+      <ul className="text-muted-foreground space-y-2 mb-4">
+        {keyPoints.map((point, i) => (
+          <li key={i} className="flex items-start gap-2">
+            <span className="text-primary mt-1">•</span>
+            <span>{point}</span>
+          </li>
+        ))}
+      </ul>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
         {/* Pricing */}
