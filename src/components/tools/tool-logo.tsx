@@ -27,9 +27,9 @@ function getColorFromName(name: string): string {
 
 // Extract domain from various logo URL formats
 function extractDomain(src: string): string | null {
-  // Clearbit: https://logo.clearbit.com/domain.com
-  const clearbitMatch = src.match(/logo\.clearbit\.com\/([^/?]+)/);
-  if (clearbitMatch) return clearbitMatch[1];
+  // Unavatar: https://unavatar.io/domain.com
+  const unavatarMatch = src.match(/unavatar\.io\/([^/?]+)/);
+  if (unavatarMatch) return unavatarMatch[1];
 
   // Google favicon: https://www.google.com/s2/favicons?domain=domain.com
   const googleMatch = src.match(/domain=([^&]+)/);
@@ -38,7 +38,6 @@ function extractDomain(src: string): string | null {
   // Simple Icons or other CDN - try to extract from URL
   try {
     const url = new URL(src);
-    // If it's a CDN, the domain might be in the path
     const pathParts = url.pathname.split('/').filter(Boolean);
     if (pathParts.length > 0) {
       const lastPart = pathParts[pathParts.length - 1];
@@ -65,7 +64,7 @@ function Fallback({ name, className }: { name: string; className?: string }) {
 
 export function ToolLogo({ src, name, className }: ToolLogoProps) {
   const [fallbackLevel, setFallbackLevel] = useState(0);
-  // 0 = original src, 1 = unavatar, 2 = letter fallback
+  // 0 = original src, 1 = google favicon, 2 = letter fallback
 
   // No src = show letter fallback
   if (!src) {
@@ -82,7 +81,7 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
   if (fallbackLevel === 1) {
     const domain = extractDomain(src);
     if (domain) {
-      currentSrc = `https://unavatar.io/${domain}?fallback=false`;
+      currentSrc = `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
     } else {
       // Can't extract domain, skip to letter fallback
       return <Fallback name={name} className={className} />;
