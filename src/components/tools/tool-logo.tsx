@@ -25,6 +25,30 @@ function getColorFromName(name: string): string {
   return colors[index];
 }
 
+// Extract domain from various logo URL formats
+function extractDomain(src: string): string | null {
+  // Clearbit: https://logo.clearbit.com/domain.com
+  const clearbitMatch = src.match(/logo\.clearbit\.com\/([^/?]+)/);
+  if (clearbitMatch) return clearbitMatch[1];
+
+  // Google favicon: https://www.google.com/s2/favicons?domain=domain.com
+  const googleMatch = src.match(/domain=([^&]+)/);
+  if (googleMatch) return googleMatch[1];
+
+  // Simple Icons or other CDN - try to extract from URL
+  try {
+    const url = new URL(src);
+    // If it's a CDN, the domain might be in the path
+    const pathParts = url.pathname.split('/').filter(Boolean);
+    if (pathParts.length > 0) {
+      const lastPart = pathParts[pathParts.length - 1];
+      if (lastPart.includes('.')) return lastPart;
+    }
+  } catch {}
+
+  return null;
+}
+
 function Fallback({ name, className }: { name: string; className?: string }) {
   return (
     <div
@@ -40,14 +64,31 @@ function Fallback({ name, className }: { name: string; className?: string }) {
 }
 
 export function ToolLogo({ src, name, className }: ToolLogoProps) {
-  const [hasError, setHasError] = useState(false);
+  const [fallbackLevel, setFallbackLevel] = useState(0);
+  // 0 = original src, 1 = unavatar, 2 = letter fallback
 
-  // No src or error loading = show fallback
-  if (!src || hasError) {
+  // No src = show letter fallback
+  if (!src) {
     return <Fallback name={name} className={className} />;
   }
 
-  // With src = show image with white background
+  // All fallbacks failed = show letter fallback
+  if (fallbackLevel >= 2) {
+    return <Fallback name={name} className={className} />;
+  }
+
+  // Determine current image URL
+  let currentSrc = src;
+  if (fallbackLevel === 1) {
+    const domain = extractDomain(src);
+    if (domain) {
+      currentSrc = `https://unavatar.io/${domain}?fallback=false`;
+    } else {
+      // Can't extract domain, skip to letter fallback
+      return <Fallback name={name} className={className} />;
+    }
+  }
+
   return (
     <div
       className={cn(
@@ -56,11 +97,11 @@ export function ToolLogo({ src, name, className }: ToolLogoProps) {
       )}
     >
       <img
-        src={src}
+        src={currentSrc}
         alt={name}
         className="w-full h-full object-contain"
         loading="lazy"
-        onError={() => setHasError(true)}
+        onError={() => setFallbackLevel((prev) => prev + 1)}
       />
     </div>
   );
