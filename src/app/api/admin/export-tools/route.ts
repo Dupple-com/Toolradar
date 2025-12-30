@@ -18,6 +18,7 @@ export async function GET(request: Request) {
       name: true,
       website: true,
       description: true,
+      logo: true,
     },
     orderBy: { name: "asc" },
   });
