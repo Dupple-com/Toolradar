@@ -25676,9 +25676,6 @@ export async function GET(request: Request) {
         select: {
           id: true,
           pricingDetails: true,
-          startingPrice: true,
-          hasFreeTrial: true,
-          pricingUrl: true
         }
       });
 
@@ -25687,39 +25684,22 @@ export async function GET(request: Request) {
         continue;
       }
 
-      // Check if pricing needs update (no existing details or very minimal)
-      const existingDetails = tool.pricingDetails as Record<string, unknown> | null;
-      const hasDetailedPricing = existingDetails?.tiers && Array.isArray(existingDetails.tiers) && existingDetails.tiers.length > 0;
-
-      // Always update if we have better data
+      // Always update with our verified pricing data
       if (!dryRun) {
-        const updateData: Record<string, unknown> = {
-          pricingDetails: {
-            currency: pricing.currency || "USD",
-            billingPeriod: pricing.billingPeriod || "month",
-            tiers: pricing.tiers || [],
-            notes: pricing.notes,
-          },
-        };
-
-        // Update startingPrice if we have it
-        if (typeof pricing.startingPrice === 'number') {
-          updateData.startingPrice = pricing.startingPrice;
-        }
-
-        // Update hasFreeTrial
-        if (pricing.hasFreeTrial !== undefined) {
-          updateData.hasFreeTrial = pricing.hasFreeTrial;
-        }
-
-        // Update pricingUrl if we have it
-        if (pricing.pricingPageUrl) {
-          updateData.pricingUrl = pricing.pricingPageUrl;
-        }
-
         await prisma.tool.update({
           where: { slug },
-          data: updateData
+          data: {
+            pricingDetails: {
+              startingPrice: pricing.startingPrice,
+              currency: pricing.currency || "USD",
+              billingPeriod: pricing.billingPeriod || "month",
+              hasFreeTrial: pricing.hasFreeTrial || false,
+              freeTrialDays: pricing.freeTrialDays,
+              pricingPageUrl: pricing.pricingPageUrl,
+              tiers: pricing.tiers || [],
+              notes: pricing.notes,
+            },
+          }
         });
       }
 
