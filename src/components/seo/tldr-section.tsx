@@ -4,6 +4,7 @@ interface TLDRSectionProps {
   tool: {
     name: string;
     tagline: string;
+    description: string;
     pricing: string;
     editorialScore?: number | null;
     communityScore?: number | null;
@@ -44,14 +45,13 @@ export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDR
       </div>
 
       <p className="text-muted-foreground mb-4">
-        <strong>{tool.name}</strong> is a {category?.toLowerCase() || "software"} tool: {tool.tagline}.
+        {tool.description}
         {tool.editorialScore && tool.editorialScore > 0 ? (
-          <> It scores <strong>{tool.editorialScore}/100</strong> on our editorial assessment. </>
+          <> Our editorial score: <strong>{tool.editorialScore}/100</strong>. </>
         ) : null}
         {tool.communityScore && tool.communityScore > 0 && tool.reviewCount && tool.reviewCount > 0 ? (
-          <>Users rate it <strong>{tool.communityScore.toFixed(1)}/5</strong> based on {tool.reviewCount} reviews. </>
+          <>User rating: <strong>{tool.communityScore.toFixed(1)}/5</strong> ({tool.reviewCount} reviews). </>
         ) : null}
-        <strong>{getVerdict()}</strong> for {year}.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
