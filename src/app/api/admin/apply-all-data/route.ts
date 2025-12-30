@@ -10,6 +10,7 @@ const allPricing: Record<string, {
   currency?: string;
   billingPeriod?: string;
   hasFreeTrial?: boolean;
+  freeTrialDays?: number;
   pricingPageUrl?: string;
   notes?: string;
   tiers?: Array<{
