@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import * as cheerio from "cheerio";
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-const MODEL = "google/gemini-2.5-flash-preview";
+const MODEL = "google/gemini-2.5-flash";
 const COOLDOWN_MINUTES = 10;
 
 interface PageContent {
