@@ -368,6 +368,11 @@ model Company {
   description String? @db.Text
   website     String?
 
+  // Email verification
+  verificationEmail String?
+  verificationToken String? @unique
+  verifiedAt        DateTime?
+
   // Claim status
   claimedAt DateTime?
   claimedBy String?   // User ID who first claimed (audit trail)

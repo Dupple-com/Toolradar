@@ -11,14 +11,22 @@ export default async function CompanySetupPage() {
   // Check if user already has a company
   const existingMembership = await prisma.companyMember.findFirst({
     where: { userId: user.id },
+    include: { company: true },
   });
 
-  const existingCompany = !existingMembership
-    ? await prisma.company.findUnique({ where: { userId: user.id } })
-    : null;
+  // Get company from membership or direct relation
+  const existingCompany = existingMembership?.company ||
+    (!existingMembership ? await prisma.company.findUnique({ where: { userId: user.id } }) : null);
 
-  if (existingMembership || existingCompany) {
-    redirect("/company");
+  if (existingCompany) {
+    // If verified, go to dashboard
+    if (existingCompany.verifiedAt) {
+      redirect("/company");
+    }
+    // If pending verification, go to verify page
+    if (existingCompany.verificationToken) {
+      redirect(`/company/verify?token=${existingCompany.verificationToken}`);
+    }
   }
 
   const benefits = [

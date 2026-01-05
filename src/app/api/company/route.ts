@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { randomBytes } from "crypto";
 
 export async function POST(request: NextRequest) {
   const user = await getCurrentUser();
@@ -8,20 +9,26 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // Check if user already has a company
+  // Check if user already has a verified company
   const existingMembership = await prisma.companyMember.findFirst({
     where: { userId: user.id },
+    include: { company: true },
   });
 
-  if (existingMembership) {
+  if (existingMembership?.company?.verifiedAt) {
     return NextResponse.json({ error: "You already have a company" }, { status: 400 });
   }
 
+  // Check if user has a pending company (unverified)
   const existingCompany = await prisma.company.findUnique({
     where: { userId: user.id },
   });
 
-  if (existingCompany) {
+  // Delete existing unverified company if any
+  if (existingCompany && !existingCompany.verifiedAt) {
+    await prisma.companyMember.deleteMany({ where: { companyId: existingCompany.id } });
+    await prisma.company.delete({ where: { id: existingCompany.id } });
+  } else if (existingCompany?.verifiedAt) {
     return NextResponse.json({ error: "You already have a company" }, { status: 400 });
   }
 
@@ -42,11 +49,26 @@ export async function POST(request: NextRequest) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
+  // Check if domain already claimed by verified company
+  const existingDomain = await prisma.company.findUnique({ where: { domain } });
+  if (existingDomain?.verifiedAt) {
+    return NextResponse.json({ error: "This domain is already claimed" }, { status: 400 });
+  }
+
+  // Delete unverified company with same domain if exists
+  if (existingDomain && !existingDomain.verifiedAt) {
+    await prisma.companyMember.deleteMany({ where: { companyId: existingDomain.id } });
+    await prisma.company.delete({ where: { id: existingDomain.id } });
+  }
+
   // Check if slug already exists
   const existingSlug = await prisma.company.findUnique({ where: { slug } });
   const finalSlug = existingSlug ? `${slug}-${Date.now()}` : slug;
 
-  // Create company
+  // Generate verification token
+  const verificationToken = randomBytes(32).toString("hex");
+
+  // Create company (unverified)
   const company = await prisma.company.create({
     data: {
       name: data.name,
@@ -55,12 +77,12 @@ export async function POST(request: NextRequest) {
       website,
       description: data.description || null,
       userId: user.id,
-      claimedAt: new Date(),
-      claimedBy: user.id,
+      verificationToken,
+      // NOT setting claimedAt or verifiedAt - company is pending
     },
   });
 
-  // Create owner membership
+  // Create owner membership (but company is still unverified)
   await prisma.companyMember.create({
     data: {
       companyId: company.id,
@@ -69,11 +91,8 @@ export async function POST(request: NextRequest) {
     },
   });
 
-  // Update user role
-  await prisma.user.update({
-    where: { id: user.id },
-    data: { role: "company" },
+  return NextResponse.json({
+    company,
+    redirectTo: `/company/verify?token=${verificationToken}`,
   });
-
-  return NextResponse.json(company);
 }

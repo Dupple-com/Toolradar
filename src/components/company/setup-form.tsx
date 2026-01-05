@@ -73,8 +73,9 @@ export function CompanySetupForm() {
       });
 
       if (res.ok) {
+        const result = await res.json();
         toast.success("Company profile created!");
-        router.push("/company");
+        router.push(result.redirectTo || "/company");
         router.refresh();
       } else {
         const data = await res.json();

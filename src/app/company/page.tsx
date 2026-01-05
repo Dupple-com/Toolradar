@@ -37,6 +37,15 @@ export default async function CompanyDashboardPage() {
     redirect("/company/setup");
   }
 
+  // Check if company is verified
+  if (!company.verifiedAt) {
+    // Redirect to verify page with token
+    if (company.verificationToken) {
+      redirect(`/company/verify?token=${company.verificationToken}`);
+    }
+    redirect("/company/setup");
+  }
+
   const totalViews = company.tools.reduce((sum, t) => sum + t.upvotes, 0);
 
   return (
