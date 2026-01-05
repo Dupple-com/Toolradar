@@ -65,6 +65,7 @@ export async function Header() {
                   userName={session.user?.name || null}
                   userImage={session.user?.image || null}
                   hasCompany={hasVerifiedCompany}
+                  isAdmin={session.user?.role === "admin"}
                 />
               </div>
             ) : (
@@ -75,7 +76,7 @@ export async function Header() {
                 Join or Log In
               </Link>
             )}
-            <MobileMenu isLoggedIn={!!session} isAdmin={false} />
+            <MobileMenu isLoggedIn={!!session} isAdmin={session?.user?.role === "admin"} />
           </div>
         </div>
       </div>

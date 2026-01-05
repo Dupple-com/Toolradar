@@ -105,9 +105,34 @@ export async function notifyAdminNewSubmission(
   productName: string,
   submittedBy: string
 ) {
+  // Create in-app notification for all admins
+  try {
+    const admins = await prisma.user.findMany({
+      where: { role: "admin" },
+      select: { id: true },
+    });
+
+    await Promise.all(
+      admins.map((admin) =>
+        prisma.notification.create({
+          data: {
+            userId: admin.id,
+            type: "new_submission",
+            title: "New Tool Submission",
+            message: `${productName} submitted by ${companyName}`,
+            link: "/admin/submissions",
+          },
+        })
+      )
+    );
+  } catch (error) {
+    console.error("Failed to create admin notifications:", error);
+  }
+
+  // Send email notification
   try {
     await getResend().emails.send({
-      from: "Toolradar <noreply@toolradar.com>",
+      from: "Toolradar <hello@team.toolradar.com>",
       to: ADMIN_EMAIL,
       subject: `[Toolradar] New submission: ${productName}`,
       html: `
@@ -161,9 +186,34 @@ export async function notifyAdminNewClaim(
   claimantEmail: string,
   workEmail: string | null
 ) {
+  // Create in-app notification for all admins
+  try {
+    const admins = await prisma.user.findMany({
+      where: { role: "admin" },
+      select: { id: true },
+    });
+
+    await Promise.all(
+      admins.map((admin) =>
+        prisma.notification.create({
+          data: {
+            userId: admin.id,
+            type: "new_claim",
+            title: "New Company Claim",
+            message: `${claimantName} wants to claim ${companyName}`,
+            link: "/admin/claims",
+          },
+        })
+      )
+    );
+  } catch (error) {
+    console.error("Failed to create admin notifications:", error);
+  }
+
+  // Send email notification
   try {
     await getResend().emails.send({
-      from: "Toolradar <noreply@toolradar.com>",
+      from: "Toolradar <hello@team.toolradar.com>",
       to: ADMIN_EMAIL,
       subject: `[Toolradar] New claim request: ${companyName}`,
       html: `
