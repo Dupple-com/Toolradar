@@ -150,7 +150,10 @@ export function CompanySetupForm() {
       </button>
 
       <p className="text-xs text-center text-muted-foreground">
-        By creating a profile, you agree to our Terms of Service
+        By creating a profile, you agree to our{" "}
+        <a href="/terms" className="underline hover:text-foreground transition-colors">
+          Terms of Service
+        </a>
       </p>
     </form>
   );
