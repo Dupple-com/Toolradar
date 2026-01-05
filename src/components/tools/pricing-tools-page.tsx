@@ -32,6 +32,8 @@ interface PricingToolsPageProps {
   gradientClass: string;
   badgeText: string;
   pricing: string;
+  filterBgClass: string;
+  filterActiveClass: string;
 }
 
 const icons = {
@@ -51,6 +53,8 @@ export function PricingToolsPage({
   gradientClass,
   badgeText,
   pricing,
+  filterBgClass,
+  filterActiveClass,
 }: PricingToolsPageProps) {
   const Icon = icons[iconType];
   const searchParams = useSearchParams();
@@ -100,8 +104,8 @@ export function PricingToolsPage({
               onClick={() => handleCategoryClick(null)}
               className={`px-3 py-1.5 rounded-full text-sm transition ${
                 !selectedCategory
-                  ? "bg-primary text-white"
-                  : "bg-muted hover:bg-muted/80"
+                  ? filterActiveClass
+                  : `${filterBgClass} hover:opacity-80`
               }`}
             >
               All ({tools.length})
@@ -112,8 +116,8 @@ export function PricingToolsPage({
                 onClick={() => handleCategoryClick(cat.slug)}
                 className={`px-3 py-1.5 rounded-full text-sm transition ${
                   selectedCategory === cat.slug
-                    ? "bg-primary text-white"
-                    : "bg-muted hover:bg-muted/80"
+                    ? filterActiveClass
+                    : `${filterBgClass} hover:opacity-80`
                 }`}
               >
                 {cat.name} ({cat.count})

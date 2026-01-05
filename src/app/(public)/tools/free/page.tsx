@@ -69,6 +69,8 @@ async function FreeToolsContent() {
       gradientClass="from-green-50"
       badgeText="100% Free"
       pricing="free"
+      filterBgClass="bg-green-100 text-green-800"
+      filterActiveClass="bg-green-600 text-white"
     />
   );
 }

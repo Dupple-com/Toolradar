@@ -69,6 +69,8 @@ async function PaidToolsContent() {
       gradientClass="from-amber-50"
       badgeText="Premium"
       pricing="paid"
+      filterBgClass="bg-amber-100 text-amber-800"
+      filterActiveClass="bg-amber-600 text-white"
     />
   );
 }

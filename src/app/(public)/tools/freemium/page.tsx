@@ -69,6 +69,8 @@ async function FreemiumToolsContent() {
       gradientClass="from-purple-50"
       badgeText="Freemium"
       pricing="freemium"
+      filterBgClass="bg-purple-100 text-purple-800"
+      filterActiveClass="bg-purple-600 text-white"
     />
   );
 }
