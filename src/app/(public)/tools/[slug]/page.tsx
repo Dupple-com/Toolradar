@@ -138,7 +138,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
   const faqs = [
     {
       question: `What is ${tool.name}?`,
-      answer: `${tool.name} is a ${categoryName.toLowerCase()} tool. ${tool.tagline}. ${tool.description?.slice(0, 200) || ""}`,
+      answer: tool.description || `${tool.name} is a ${categoryName.toLowerCase()} tool. ${tool.tagline}`,
     },
     {
       question: `Is ${tool.name} free?`,
