@@ -7,12 +7,13 @@ import { Loader2, Send } from "lucide-react";
 interface VerifyFormProps {
   domain: string;
   token: string;
+  existingEmail?: string | null;
 }
 
-export function VerifyForm({ domain, token }: VerifyFormProps) {
-  const [email, setEmail] = useState("");
+export function VerifyForm({ domain, token, existingEmail }: VerifyFormProps) {
+  const [email, setEmail] = useState(existingEmail || "");
   const [isLoading, setIsLoading] = useState(false);
-  const [emailSent, setEmailSent] = useState(false);
+  const [emailSent, setEmailSent] = useState(!!existingEmail);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +46,27 @@ export function VerifyForm({ domain, token }: VerifyFormProps) {
     setIsLoading(false);
   };
 
+  const handleResend = async () => {
+    setIsLoading(true);
+    try {
+      const res = await fetch("/api/company/send-verification", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, token }),
+      });
+
+      if (res.ok) {
+        toast.success("Verification email resent!");
+      } else {
+        const data = await res.json();
+        toast.error(data.error || "Failed to resend email");
+      }
+    } catch {
+      toast.error("Something went wrong");
+    }
+    setIsLoading(false);
+  };
+
   if (emailSent) {
     return (
       <div className="text-center py-6">
@@ -55,12 +77,25 @@ export function VerifyForm({ domain, token }: VerifyFormProps) {
         <p className="text-muted-foreground mb-4">
           We sent a verification link to <strong>{email}</strong>
         </p>
-        <button
-          onClick={() => setEmailSent(false)}
-          className="text-sm text-primary hover:underline"
-        >
-          Use a different email
-        </button>
+        <p className="text-sm text-muted-foreground mb-4">
+          Check your spam folder if you don&apos;t see it.
+        </p>
+        <div className="flex items-center justify-center gap-4">
+          <button
+            onClick={handleResend}
+            disabled={isLoading}
+            className="text-sm text-primary hover:underline disabled:opacity-50"
+          >
+            {isLoading ? "Sending..." : "Resend email"}
+          </button>
+          <span className="text-muted-foreground">•</span>
+          <button
+            onClick={() => setEmailSent(false)}
+            className="text-sm text-muted-foreground hover:text-foreground"
+          >
+            Use different email
+          </button>
+        </div>
       </div>
     );
   }

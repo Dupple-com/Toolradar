@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { Resend } from "resend";
-import { randomBytes } from "crypto";
 
 // Lazy initialization to avoid build-time errors
 let resend: Resend | null = null;
@@ -52,21 +51,17 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Generate new verification token for the email
-  const emailVerificationToken = randomBytes(32).toString("hex");
-
-  // Update company with verification email and new token
+  // Update company with verification email (keep same token)
   await prisma.company.update({
     where: { id: company.id },
     data: {
       verificationEmail: email,
-      verificationToken: emailVerificationToken,
     },
   });
 
-  // Generate verification URL
+  // Generate verification URL using existing token
   const baseUrl = process.env.NEXTAUTH_URL || "https://toolradar.com";
-  const verifyUrl = `${baseUrl}/company/verify/confirm?token=${emailVerificationToken}`;
+  const verifyUrl = `${baseUrl}/company/verify/confirm?token=${company.verificationToken}`;
 
   // Send verification email
   try {

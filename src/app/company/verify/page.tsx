@@ -67,7 +67,11 @@ export default async function CompanyVerifyPage({
               </div>
             </div>
 
-            <VerifyForm domain={company.domain} token={token} />
+            <VerifyForm
+              domain={company.domain}
+              token={token}
+              existingEmail={company.verificationEmail}
+            />
 
             <div className="mt-8 space-y-3">
               <div className="flex items-start gap-3 text-sm text-muted-foreground">
