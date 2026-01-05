@@ -30,7 +30,7 @@ export async function POST(req: NextRequest) {
 
     const html = await response.text();
 
-    // Extract meta description
+    // Extract meta description (various formats)
     const metaDescMatch = html.match(
       /<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i
     ) || html.match(
@@ -44,11 +44,28 @@ export async function POST(req: NextRequest) {
       /<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:description["'][^>]*>/i
     );
 
-    // Extract title as fallback
+    // Extract twitter:description as another fallback
+    const twitterDescMatch = html.match(
+      /<meta[^>]*name=["']twitter:description["'][^>]*content=["']([^"']+)["'][^>]*>/i
+    ) || html.match(
+      /<meta[^>]*content=["']([^"']+)["'][^>]*name=["']twitter:description["'][^>]*>/i
+    );
+
+    // Extract h1 as last resort for description
+    const h1Match = html.match(/<h1[^>]*>([^<]+)<\/h1>/i);
+
+    // Extract title
     const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
 
-    const description = metaDescMatch?.[1] || ogDescMatch?.[1] || null;
-    const title = titleMatch?.[1]?.trim() || null;
+    // Extract og:title as fallback for title
+    const ogTitleMatch = html.match(
+      /<meta[^>]*property=["']og:title["'][^>]*content=["']([^"']+)["'][^>]*>/i
+    ) || html.match(
+      /<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:title["'][^>]*>/i
+    );
+
+    const description = metaDescMatch?.[1] || ogDescMatch?.[1] || twitterDescMatch?.[1] || h1Match?.[1]?.trim() || null;
+    const title = titleMatch?.[1]?.trim() || ogTitleMatch?.[1] || null;
 
     return NextResponse.json({
       description,
