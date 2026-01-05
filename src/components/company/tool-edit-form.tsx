@@ -234,10 +234,17 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
                 Website URL *
               </label>
               <input
-                type="url"
+                type="text"
                 value={website}
                 onChange={(e) => setWebsite(e.target.value)}
+                onBlur={(e) => {
+                  const val = e.target.value.trim();
+                  if (val && !val.startsWith("http")) {
+                    setWebsite(`https://${val}`);
+                  }
+                }}
                 required
+                placeholder="https://example.com"
                 className="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none"
               />
             </div>
