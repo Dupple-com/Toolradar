@@ -1,6 +1,5 @@
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
-import { Gift } from "lucide-react";
 import { PricingToolsPage } from "@/components/tools/pricing-tools-page";
 import { Suspense } from "react";
 
@@ -64,7 +63,7 @@ async function FreeToolsContent() {
       description="Completely free software with no hidden costs. No credit card required, no trial limitations."
       tools={tools}
       categories={categories}
-      icon={Gift}
+      iconType="free"
       iconBgClass="bg-green-100"
       iconTextClass="text-green-800"
       gradientClass="from-green-50"

@@ -1,6 +1,5 @@
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
-import { Crown } from "lucide-react";
 import { PricingToolsPage } from "@/components/tools/pricing-tools-page";
 import { Suspense } from "react";
 
@@ -64,7 +63,7 @@ async function PaidToolsContent() {
       description="Premium software solutions with professional support, advanced features, and enterprise-grade reliability."
       tools={tools}
       categories={categories}
-      icon={Crown}
+      iconType="paid"
       iconBgClass="bg-amber-100"
       iconTextClass="text-amber-800"
       gradientClass="from-amber-50"

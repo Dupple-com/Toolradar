@@ -1,6 +1,5 @@
 import { prisma } from "@/lib/prisma";
 import { Metadata } from "next";
-import { Sparkles } from "lucide-react";
 import { PricingToolsPage } from "@/components/tools/pricing-tools-page";
 import { Suspense } from "react";
 
@@ -64,7 +63,7 @@ async function FreemiumToolsContent() {
       description="Start free and upgrade when you need more. These tools offer generous free tiers with optional paid plans."
       tools={tools}
       categories={categories}
-      icon={Sparkles}
+      iconType="freemium"
       iconBgClass="bg-purple-100"
       iconTextClass="text-purple-800"
       gradientClass="from-purple-50"

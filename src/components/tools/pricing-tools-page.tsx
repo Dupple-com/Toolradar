@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ToolLogo } from "@/components/tools/tool-logo";
-import { Star, Filter, X } from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import { Star, Filter, X, Gift, Sparkles, Crown } from "lucide-react";
 
 interface Tool {
   id: string;
@@ -27,7 +26,7 @@ interface PricingToolsPageProps {
   description: string;
   tools: Tool[];
   categories: Category[];
-  icon: LucideIcon;
+  iconType: "free" | "freemium" | "paid";
   iconBgClass: string;
   iconTextClass: string;
   gradientClass: string;
@@ -35,18 +34,25 @@ interface PricingToolsPageProps {
   pricing: string;
 }
 
+const icons = {
+  free: Gift,
+  freemium: Sparkles,
+  paid: Crown,
+};
+
 export function PricingToolsPage({
   title,
   description,
   tools,
   categories,
-  icon: Icon,
+  iconType,
   iconBgClass,
   iconTextClass,
   gradientClass,
   badgeText,
   pricing,
 }: PricingToolsPageProps) {
+  const Icon = icons[iconType];
   const searchParams = useSearchParams();
   const router = useRouter();
   const selectedCategory = searchParams.get("category");
