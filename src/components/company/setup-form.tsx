@@ -92,11 +92,11 @@ export function CompanySetupForm() {
         <label className="block text-sm font-medium mb-2">Company Website *</label>
         <div className="flex gap-2">
           <input
-            type="url"
+            type="text"
             value={formData.website}
             onChange={(e) => setFormData({ ...formData, website: e.target.value })}
             required
-            placeholder="https://acme.com"
+            placeholder="acme.com"
             className="flex-1 px-4 py-2.5 border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
           />
           <button
