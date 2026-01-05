@@ -64,12 +64,45 @@ export async function POST(req: NextRequest) {
       /<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:title["'][^>]*>/i
     );
 
+    // Extract og:image for logo
+    const ogImageMatch = html.match(
+      /<meta[^>]*property=["']og:image["'][^>]*content=["']([^"']+)["'][^>]*>/i
+    ) || html.match(
+      /<meta[^>]*content=["']([^"']+)["'][^>]*property=["']og:image["'][^>]*>/i
+    );
+
+    // Extract apple-touch-icon for logo fallback
+    const appleIconMatch = html.match(
+      /<link[^>]*rel=["']apple-touch-icon["'][^>]*href=["']([^"']+)["'][^>]*>/i
+    );
+
+    // Extract favicon as last resort
+    const faviconMatch = html.match(
+      /<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href=["']([^"']+)["'][^>]*>/i
+    );
+
     const description = metaDescMatch?.[1] || ogDescMatch?.[1] || twitterDescMatch?.[1] || h1Match?.[1]?.trim() || null;
-    const title = titleMatch?.[1]?.trim() || ogTitleMatch?.[1] || null;
+    const rawTitle = titleMatch?.[1]?.trim() || ogTitleMatch?.[1] || null;
+
+    // Clean up title - remove common suffixes like " | Company" or " - Company"
+    let title = rawTitle;
+    if (title) {
+      title = title.split(/\s*[|\-–—]\s*/)[0].trim();
+    }
+
+    // Get logo URL, making it absolute if needed
+    let logo = ogImageMatch?.[1] || appleIconMatch?.[1] || faviconMatch?.[1] || null;
+    if (logo && !logo.startsWith("http")) {
+      const baseUrl = new URL(normalizedUrl);
+      logo = logo.startsWith("/")
+        ? `${baseUrl.origin}${logo}`
+        : `${baseUrl.origin}/${logo}`;
+    }
 
     return NextResponse.json({
       description,
       title,
+      logo,
     });
   } catch (error) {
     console.error("Error fetching meta:", error);
