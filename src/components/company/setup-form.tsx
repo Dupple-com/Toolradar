@@ -87,12 +87,7 @@ export function CompanySetupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 bg-card rounded-2xl border shadow-sm p-6">
-      <div className="pb-2 border-b mb-2">
-        <h2 className="font-semibold">Company Details</h2>
-        <p className="text-xs text-muted-foreground">Enter your website to auto-fill details</p>
-      </div>
-
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label className="block text-sm font-medium mb-2">Company Website *</label>
         <div className="flex gap-2">
@@ -102,24 +97,24 @@ export function CompanySetupForm() {
             onChange={(e) => setFormData({ ...formData, website: e.target.value })}
             required
             placeholder="https://acme.com"
-            className="flex-1 px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
+            className="flex-1 px-4 py-2.5 border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
           />
           <button
             type="button"
             onClick={fetchMetaDescription}
             disabled={isFetchingMeta || !formData.website}
-            className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 disabled:opacity-50 flex items-center gap-2 whitespace-nowrap"
+            className="px-4 py-2.5 bg-secondary text-secondary-foreground rounded-xl hover:bg-secondary/80 disabled:opacity-50 flex items-center gap-2 whitespace-nowrap transition-colors"
           >
             {isFetchingMeta ? (
               <Loader2 className="w-4 h-4 animate-spin" />
             ) : (
               <Sparkles className="w-4 h-4" />
             )}
-            Auto-fill
+            <span className="hidden sm:inline">Auto-fill</span>
           </button>
         </div>
-        <p className="text-xs text-muted-foreground mt-1">
-          This will be used to verify your company ownership
+        <p className="text-xs text-muted-foreground mt-1.5">
+          Click Auto-fill to import your company details
         </p>
       </div>
 
@@ -131,7 +126,7 @@ export function CompanySetupForm() {
           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           required
           placeholder="Acme Inc."
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
+          className="w-full px-4 py-2.5 border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all"
         />
       </div>
 
@@ -142,17 +137,21 @@ export function CompanySetupForm() {
           onChange={(e) => setFormData({ ...formData, description: e.target.value })}
           rows={3}
           placeholder="Tell us about your company..."
-          className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
+          className="w-full px-4 py-2.5 border rounded-xl focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all resize-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 disabled:opacity-50"
+        className="w-full px-4 py-3 bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 disabled:opacity-50 font-medium transition-colors"
       >
         {isLoading ? "Creating..." : "Create Company Profile"}
       </button>
+
+      <p className="text-xs text-center text-muted-foreground">
+        By creating a profile, you agree to our Terms of Service
+      </p>
     </form>
   );
 }
