@@ -27,8 +27,14 @@ export async function POST(request: NextRequest) {
 
   const data = await request.json();
 
+  // Normalize website URL
+  let website = data.website;
+  if (!website.startsWith("http://") && !website.startsWith("https://")) {
+    website = `https://${website}`;
+  }
+
   // Create slug from website domain
-  const url = new URL(data.website);
+  const url = new URL(website);
   const domain = url.hostname.replace(/^www\./, "");
   const slug = domain
     .replace(/\.[^.]+$/, "") // Remove TLD
@@ -46,7 +52,7 @@ export async function POST(request: NextRequest) {
       name: data.name,
       slug: finalSlug,
       domain,
-      website: data.website,
+      website,
       description: data.description || null,
       userId: user.id,
       claimedAt: new Date(),
