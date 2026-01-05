@@ -46,7 +46,7 @@ export function KeyTakeaways({ category, topTool, totalTools, freeToolsCount, av
           </li>
         )}
 
-        {avgScore && avgScore > 0 && (
+        {avgScore != null && avgScore > 0 && (
           <li className="flex items-start gap-3">
             <Lightbulb className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
             <span>
