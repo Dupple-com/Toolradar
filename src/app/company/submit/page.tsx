@@ -35,7 +35,7 @@ export default async function SubmitToolPage() {
       </div>
 
       {/* Info banner */}
-      <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-xl mb-8">
+      <div className="flex items-center justify-center gap-4 p-4 bg-muted/50 rounded-xl mb-8">
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Clock className="w-4 h-4" />
           <span>Review within 48h</span>
