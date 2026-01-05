@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
   // Send verification email
   try {
     await getResend().emails.send({
-      from: "Toolradar <noreply@toolradar.com>",
+      from: "Toolradar <onboarding@resend.dev>",
       to: email,
       subject: `Verify ${company.name} on Toolradar`,
       html: `
