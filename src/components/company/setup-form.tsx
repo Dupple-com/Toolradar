@@ -87,7 +87,12 @@ export function CompanySetupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6 bg-card rounded-xl border p-6">
+    <form onSubmit={handleSubmit} className="space-y-5 bg-card rounded-2xl border shadow-sm p-6">
+      <div className="pb-2 border-b mb-2">
+        <h2 className="font-semibold">Company Details</h2>
+        <p className="text-xs text-muted-foreground">Enter your website to auto-fill details</p>
+      </div>
+
       <div>
         <label className="block text-sm font-medium mb-2">Company Website *</label>
         <div className="flex gap-2">
