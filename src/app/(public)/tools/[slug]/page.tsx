@@ -135,14 +135,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
   const reviewCount = tool._count.reviews;
 
   // Create FAQ data array (used for both JSON-LD and visible section)
-  // Get first paragraph of description for FAQ (shorter answer)
-  const firstParagraph = tool.description?.split('\n\n')[0] || tool.description;
-
   const faqs = [
-    {
-      question: `What is ${tool.name}?`,
-      answer: firstParagraph || `${tool.name} is a ${categoryName.toLowerCase()} tool. ${tool.tagline}`,
-    },
     {
       question: `Is ${tool.name} free?`,
       answer: tool.pricing === "free"
