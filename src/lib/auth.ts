@@ -20,11 +20,11 @@ export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma) as Adapter,
   providers: [
     EmailProvider({
-      from: "Toolradar <noreply@team.toolradar.com>",
+      from: "Toolradar <hello@team.toolradar.com>",
       sendVerificationRequest: async ({ identifier: email, url }) => {
         try {
           await getResend().emails.send({
-            from: "Toolradar <noreply@team.toolradar.com>",
+            from: "Toolradar <hello@team.toolradar.com>",
             to: email,
             subject: "Sign in to Toolradar",
             html: `
