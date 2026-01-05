@@ -37,7 +37,6 @@ export default async function AlternativesHubPage() {
   const popularTools = await prisma.tool.findMany({
     where: {
       status: "published",
-      reviewCount: { gt: 0 },
     },
     select: {
       id: true,
