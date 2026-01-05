@@ -22,8 +22,8 @@ export default async function CompanyLayout({ children }: CompanyLayoutProps) {
   const user = await requireAuth();
   const company = await getCompanyForUser(user.id);
 
-  // No company - simplified layout (setup page will handle its own logic)
-  if (!company) {
+  // No company or not verified - simplified layout
+  if (!company || !company.verifiedAt) {
     return (
       <>
         <Header />
