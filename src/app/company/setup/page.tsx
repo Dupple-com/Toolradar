@@ -88,7 +88,7 @@ export default async function CompanySetupPage() {
           </div>
 
           {/* Right side - Form */}
-          <div className="lg:col-span-3 bg-card p-8 lg:p-10">
+          <div className="lg:col-span-3 bg-white p-8 lg:p-10">
             <div className="max-w-md mx-auto">
               <h2 className="text-xl font-semibold mb-1">Create your profile</h2>
               <p className="text-sm text-muted-foreground mb-6">
