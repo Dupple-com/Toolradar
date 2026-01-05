@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { getActiveCompany } from "@/lib/company-utils";
+import { indexTool } from "@/lib/meilisearch";
 
 export async function PATCH(
   request: NextRequest,
@@ -89,6 +90,28 @@ export async function PATCH(
         }
       }
     });
+
+    // Reindex in MeiliSearch
+    const updatedTool = await prisma.tool.findUnique({
+      where: { id },
+      include: {
+        categories: {
+          include: {
+            category: {
+              select: { id: true, name: true, slug: true },
+            },
+          },
+        },
+      },
+    });
+
+    if (updatedTool) {
+      try {
+        await indexTool(updatedTool);
+      } catch (e) {
+        console.error("Failed to reindex tool:", e);
+      }
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
