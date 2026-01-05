@@ -9,6 +9,8 @@ import { RelatedTools } from "@/components/seo/related-tools";
 import { TLDRSection } from "@/components/seo/tldr-section";
 import { PricingSection } from "@/components/tools/pricing-section";
 import { FAQSection } from "@/components/seo/faq-section";
+import { ViewTracker } from "@/components/analytics/view-tracker";
+import { TrackedLink } from "@/components/analytics/tracked-link";
 import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
 // Force dynamic rendering to avoid build-time DB access
@@ -166,6 +168,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
 
   return (
     <>
+      <ViewTracker toolId={tool.id} />
       <JsonLd data={toolJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={faqJsonLd} />
@@ -411,14 +414,11 @@ export default async function ToolPage({ params }: { params: { slug: string } })
                   </div>
                 )}
               </dl>
-              <a
+              <TrackedLink
+                toolId={tool.id}
                 href={tool.website}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="mt-4 flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 font-medium transition"
-              >
-                Visit Website <ExternalLink size={16} />
-              </a>
+              />
             </div>
 
             {/* Alternatives Card */}

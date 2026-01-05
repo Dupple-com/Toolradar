@@ -252,8 +252,14 @@ model User {
   role     String  @default("user") // user, maker, admin
   verified Boolean @default(false)
 
+  // Notification preferences (JSON: { new_review: true, submission_approved: true, ... })
+  notificationPrefs Json?
+
   // Name change tracking (1 change per month)
   nameChangedAt DateTime?
+
+  // AI autofill cooldown tracking
+  lastAiAutofillAt DateTime?
 
   // Relations
   accounts Account[]

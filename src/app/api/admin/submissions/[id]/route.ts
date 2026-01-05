@@ -2,8 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth-utils";
 import { indexTool } from "@/lib/meilisearch";
+import { createNotification } from "@/lib/notifications";
 
-// Notify company members about submission status
+// Notify company members about submission status (respects user preferences)
 async function notifySubmissionStatus(
   companyId: string,
   toolName: string,
@@ -26,19 +27,17 @@ async function notifySubmissionStatus(
   const userIds = new Set(members.map((m) => m.userId));
   if (company?.userId) userIds.add(company.userId);
 
-  // Create notification for each user
+  // Create notification for each user (respects their preferences)
   await Promise.all(
     Array.from(userIds).map((userId) =>
-      prisma.notification.create({
-        data: {
-          userId,
-          type: approved ? "submission_approved" : "submission_rejected",
-          title: approved ? "Tool Approved!" : "Submission Rejected",
-          message: approved
-            ? `Your tool "${toolName}" has been approved and is now live on Toolradar!`
-            : `Your submission for "${toolName}" was not approved. ${feedback || ""}`,
-          link: approved && toolSlug ? `/tools/${toolSlug}` : "/company/submissions",
-        },
+      createNotification({
+        userId,
+        type: approved ? "submission_approved" : "submission_rejected",
+        title: approved ? "Tool Approved!" : "Submission Rejected",
+        message: approved
+          ? `Your tool "${toolName}" has been approved and is now live on Toolradar!`
+          : `Your submission for "${toolName}" was not approved. ${feedback || ""}`,
+        link: approved && toolSlug ? `/tools/${toolSlug}` : "/company/submissions",
       })
     )
   );

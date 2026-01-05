@@ -14,6 +14,7 @@ import {
   ThumbsUp,
   ThumbsDown,
   HelpCircle,
+  Wand2,
 } from "lucide-react";
 
 interface FAQ {
@@ -43,6 +44,7 @@ interface ToolEditFormProps {
 export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [isAiLoading, setIsAiLoading] = useState(false);
 
   // Basic info
   const [name, setName] = useState(tool.name);
@@ -71,6 +73,63 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
       ? tool.faqs
       : [{ question: "", answer: "" }]
   );
+
+  const handleAiAutofill = async () => {
+    if (!website) {
+      toast.error("Please enter a website URL first");
+      return;
+    }
+
+    setIsAiLoading(true);
+    toast.info("Analyzing website... This may take a moment.");
+
+    try {
+      const res = await fetch("/api/ai/autofill-tool", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          websiteUrl: website,
+          categories: categories.map((c) => c.name),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to analyze website");
+      }
+
+      // Update form fields with AI-generated content
+      if (data.data.tagline) setTagline(data.data.tagline);
+      if (data.data.description) setDescription(data.data.description);
+      if (data.data.pricing) setPricing(data.data.pricing);
+      if (data.data.tldr?.length) setTldr(data.data.tldr.slice(0, 3));
+      if (data.data.features?.length) setFeatures(data.data.features);
+      if (data.data.pros?.length) setPros(data.data.pros);
+      if (data.data.cons?.length) setCons(data.data.cons);
+      if (data.data.faqs?.length) setFaqs(data.data.faqs);
+
+      // Match suggested categories
+      if (data.data.suggestedCategories?.length) {
+        const matchedIds = categories
+          .filter((c) =>
+            data.data.suggestedCategories.some(
+              (sc: string) => sc.toLowerCase() === c.name.toLowerCase()
+            )
+          )
+          .map((c) => c.id);
+        if (matchedIds.length) {
+          setSelectedCategories(matchedIds);
+        }
+      }
+
+      toast.success(`Analyzed ${data.pagesAnalyzed?.length || 1} pages successfully!`);
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Failed to analyze website");
+    }
+
+    setIsAiLoading(false);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,7 +194,27 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
     <form onSubmit={handleSubmit} className="space-y-8">
       {/* Basic Info Section */}
       <section className="bg-card rounded-xl border p-6">
-        <h2 className="font-semibold text-lg mb-6">Basic Information</h2>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="font-semibold text-lg">Basic Information</h2>
+          <button
+            type="button"
+            onClick={handleAiAutofill}
+            disabled={isAiLoading || !website}
+            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500 to-purple-500 text-white rounded-lg hover:from-violet-600 hover:to-purple-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium transition-all"
+          >
+            {isAiLoading ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Analyzing...
+              </>
+            ) : (
+              <>
+                <Wand2 className="w-4 h-4" />
+                Auto-fill with AI
+              </>
+            )}
+          </button>
+        </div>
         <div className="space-y-4">
           <div className="grid md:grid-cols-2 gap-4">
             <div>

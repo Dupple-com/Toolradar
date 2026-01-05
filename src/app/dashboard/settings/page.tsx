@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { SettingsForm } from "@/components/dashboard/settings-form";
 import { ConnectedAccounts } from "@/components/dashboard/connected-accounts";
+import { NotificationSettings } from "@/components/dashboard/notification-settings";
 
 export default async function SettingsPage() {
   const user = await getCurrentUser();
@@ -13,9 +14,11 @@ export default async function SettingsPage() {
       name: true,
       username: true,
       bio: true,
+      role: true,
       emailNewTools: true,
       emailWeeklyDigest: true,
       nameChangedAt: true,
+      notificationPrefs: true,
       accounts: {
         select: {
           provider: true,
@@ -32,6 +35,10 @@ export default async function SettingsPage() {
       <SettingsForm
         user={dbUser!}
         nameChangedAt={dbUser?.nameChangedAt?.toISOString() || null}
+      />
+      <NotificationSettings
+        currentPrefs={dbUser?.notificationPrefs as any}
+        isAdmin={dbUser?.role === "admin"}
       />
       <ConnectedAccounts connectedProviders={connectedProviders} />
     </div>

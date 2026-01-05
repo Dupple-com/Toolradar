@@ -19,7 +19,53 @@ type NotificationType =
   | "review_reply"
   | "claim_approved"
   | "claim_rejected"
+  | "submission_approved"
+  | "submission_rejected"
+  | "new_submission"
+  | "new_claim"
+  | "analytics_digest"
   | "new_tool_in_category";
+
+interface NotificationPrefs {
+  new_review?: boolean;
+  review_reply?: boolean;
+  submission_approved?: boolean;
+  submission_rejected?: boolean;
+  new_submission?: boolean;
+  new_claim?: boolean;
+  analytics_digest?: boolean;
+}
+
+// Check if user wants to receive a specific notification type
+async function shouldNotify(userId: string, type: NotificationType): Promise<boolean> {
+  // Map notification types to preference keys
+  const prefKeyMap: Record<string, keyof NotificationPrefs> = {
+    new_review: "new_review",
+    review_reply: "review_reply",
+    submission_approved: "submission_approved",
+    submission_rejected: "submission_rejected",
+    new_submission: "new_submission",
+    new_claim: "new_claim",
+    analytics_digest: "analytics_digest",
+  };
+
+  const prefKey = prefKeyMap[type];
+
+  // If no preference mapping exists, always notify (e.g., claim_approved, claim_rejected)
+  if (!prefKey) return true;
+
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: { notificationPrefs: true },
+  });
+
+  const prefs = user?.notificationPrefs as NotificationPrefs | null;
+
+  // Default to true if no preferences set or specific pref not set
+  if (!prefs || prefs[prefKey] === undefined) return true;
+
+  return prefs[prefKey] === true;
+}
 
 interface CreateNotificationParams {
   userId: string;
@@ -36,6 +82,10 @@ export async function createNotification({
   message,
   link,
 }: CreateNotificationParams) {
+  // Check if user wants this notification type
+  const shouldSend = await shouldNotify(userId, type);
+  if (!shouldSend) return null;
+
   return prisma.notification.create({
     data: {
       userId,
@@ -105,7 +155,7 @@ export async function notifyAdminNewSubmission(
   productName: string,
   submittedBy: string
 ) {
-  // Create in-app notification for all admins
+  // Create in-app notification for all admins (respecting their preferences)
   try {
     const admins = await prisma.user.findMany({
       where: { role: "admin" },
@@ -114,14 +164,12 @@ export async function notifyAdminNewSubmission(
 
     await Promise.all(
       admins.map((admin) =>
-        prisma.notification.create({
-          data: {
-            userId: admin.id,
-            type: "new_submission",
-            title: "New Tool Submission",
-            message: `${productName} submitted by ${companyName}`,
-            link: "/admin/submissions",
-          },
+        createNotification({
+          userId: admin.id,
+          type: "new_submission",
+          title: "New Tool Submission",
+          message: `${productName} submitted by ${companyName}`,
+          link: "/admin/submissions",
         })
       )
     );
@@ -186,7 +234,7 @@ export async function notifyAdminNewClaim(
   claimantEmail: string,
   workEmail: string | null
 ) {
-  // Create in-app notification for all admins
+  // Create in-app notification for all admins (respecting their preferences)
   try {
     const admins = await prisma.user.findMany({
       where: { role: "admin" },
@@ -195,14 +243,12 @@ export async function notifyAdminNewClaim(
 
     await Promise.all(
       admins.map((admin) =>
-        prisma.notification.create({
-          data: {
-            userId: admin.id,
-            type: "new_claim",
-            title: "New Company Claim",
-            message: `${claimantName} wants to claim ${companyName}`,
-            link: "/admin/claims",
-          },
+        createNotification({
+          userId: admin.id,
+          type: "new_claim",
+          title: "New Company Claim",
+          message: `${claimantName} wants to claim ${companyName}`,
+          link: "/admin/claims",
         })
       )
     );
