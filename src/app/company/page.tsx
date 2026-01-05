@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { getActiveCompany } from "@/lib/company-utils";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Pencil, ExternalLink } from "lucide-react";
@@ -8,25 +9,21 @@ export default async function CompanyDashboardPage() {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  // Check membership first, then legacy relation
-  const membership = await prisma.companyMember.findFirst({
-    where: { userId: user.id },
-    include: { company: true },
-  });
+  const activeCompany = await getActiveCompany(user.id);
 
-  const companyId = membership?.companyId;
+  if (!activeCompany) {
+    redirect("/company/setup");
+  }
 
-  // If no membership, check legacy relation
-  const legacyCompany = !membership ? await prisma.company.findUnique({
-    where: { userId: user.id },
-  }) : null;
-
-  if (!membership && !legacyCompany) {
+  if (!activeCompany.verifiedAt) {
+    if (activeCompany.verificationToken) {
+      redirect(`/company/verify?token=${activeCompany.verificationToken}`);
+    }
     redirect("/company/setup");
   }
 
   const company = await prisma.company.findUnique({
-    where: { id: companyId || legacyCompany!.id },
+    where: { id: activeCompany.id },
     include: {
       tools: { select: { id: true, name: true, slug: true, upvotes: true, reviewCount: true } },
       submissions: { where: { status: "pending" } },
@@ -38,16 +35,7 @@ export default async function CompanyDashboardPage() {
     redirect("/company/setup");
   }
 
-  // Check if company is verified
-  if (!company.verifiedAt) {
-    // Redirect to verify page with token
-    if (company.verificationToken) {
-      redirect(`/company/verify?token=${company.verificationToken}`);
-    }
-    redirect("/company/setup");
-  }
-
-  const totalViews = company.tools.reduce((sum, t) => sum + t.upvotes, 0);
+  const totalUpvotes = company.tools.reduce((sum, t) => sum + t.upvotes, 0);
 
   return (
     <div className="space-y-8">
@@ -56,7 +44,7 @@ export default async function CompanyDashboardPage() {
       <div className="grid grid-cols-4 gap-4">
         {[
           { label: "Tools", value: company.tools.length },
-          { label: "Total Upvotes", value: totalViews },
+          { label: "Total Upvotes", value: totalUpvotes },
           { label: "Badges", value: company.badges.length },
           { label: "Pending Submissions", value: company.submissions.length },
         ].map((stat) => (

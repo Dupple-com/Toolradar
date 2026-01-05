@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { getActiveCompany } from "@/lib/company-utils";
 
 export async function PATCH(
   request: NextRequest,
@@ -13,15 +14,7 @@ export async function PATCH(
 
   const { id } = await params;
 
-  // Get user's company
-  const membership = await prisma.companyMember.findFirst({
-    where: { userId: user.id },
-    include: { company: true },
-  });
-
-  const company = membership?.company || await prisma.company.findUnique({
-    where: { userId: user.id },
-  });
+  const company = await getActiveCompany(user.id);
 
   if (!company?.verifiedAt) {
     return NextResponse.json({ error: "Company not verified" }, { status: 403 });

@@ -1,19 +1,27 @@
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
+import { getActiveCompany } from "@/lib/company-utils";
+import { redirect } from "next/navigation";
 
 export default async function BadgesPage() {
   const user = await getCurrentUser();
-  if (!user) return null;
+  if (!user) redirect("/login");
+
+  const activeCompany = await getActiveCompany(user.id);
+
+  if (!activeCompany?.verifiedAt) {
+    redirect("/company/setup");
+  }
 
   const company = await prisma.company.findUnique({
-    where: { userId: user.id },
+    where: { id: activeCompany.id },
     include: {
       badges: { include: { tool: true } },
     },
   });
 
   if (!company) {
-    return <div>No company profile found.</div>;
+    redirect("/company/setup");
   }
 
   return (

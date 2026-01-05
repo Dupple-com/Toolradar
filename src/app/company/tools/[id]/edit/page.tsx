@@ -1,4 +1,5 @@
 import { getCurrentUser } from "@/lib/auth-utils";
+import { getActiveCompany } from "@/lib/company-utils";
 import { prisma } from "@/lib/prisma";
 import { redirect, notFound } from "next/navigation";
 import { ToolEditForm } from "@/components/company/tool-edit-form";
@@ -15,15 +16,7 @@ export default async function EditToolPage({
 
   const { id } = await params;
 
-  // Get user's company
-  const membership = await prisma.companyMember.findFirst({
-    where: { userId: user.id },
-    include: { company: true },
-  });
-
-  const company = membership?.company || await prisma.company.findUnique({
-    where: { userId: user.id },
-  });
+  const company = await getActiveCompany(user.id);
 
   if (!company?.verifiedAt) {
     redirect("/company/setup");

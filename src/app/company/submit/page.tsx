@@ -1,5 +1,5 @@
 import { getCurrentUser } from "@/lib/auth-utils";
-import { prisma } from "@/lib/prisma";
+import { getActiveCompany } from "@/lib/company-utils";
 import { redirect } from "next/navigation";
 import { SubmitToolForm } from "@/components/company/submit-form";
 import { Rocket, Clock, CheckCircle } from "lucide-react";
@@ -8,15 +8,7 @@ export default async function SubmitToolPage() {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  // Check if user has a verified company
-  const membership = await prisma.companyMember.findFirst({
-    where: { userId: user.id },
-    include: { company: true },
-  });
-
-  const company = membership?.company || await prisma.company.findUnique({
-    where: { userId: user.id },
-  });
+  const company = await getActiveCompany(user.id);
 
   if (!company) {
     redirect("/company/setup");

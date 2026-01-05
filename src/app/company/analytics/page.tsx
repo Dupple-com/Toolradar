@@ -1,4 +1,5 @@
 import { getCurrentUser } from "@/lib/auth-utils";
+import { getActiveCompany } from "@/lib/company-utils";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
 import { BarChart3, Eye, MousePointer, GitCompare, Search } from "lucide-react";
@@ -7,15 +8,7 @@ export default async function CompanyAnalyticsPage() {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  // Get user's company
-  const membership = await prisma.companyMember.findFirst({
-    where: { userId: user.id },
-    include: { company: true },
-  });
-
-  const company = membership?.company || await prisma.company.findUnique({
-    where: { userId: user.id },
-  });
+  const company = await getActiveCompany(user.id);
 
   if (!company?.verifiedAt) {
     redirect("/company/setup");

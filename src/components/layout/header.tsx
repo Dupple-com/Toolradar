@@ -2,7 +2,7 @@ import Link from "next/link";
 import { RadarLogo } from "@/components/ui/radar-logo";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import { prisma } from "@/lib/prisma";
+import { getActiveCompany } from "@/lib/company-utils";
 import { CommandSearch } from "@/components/search/command-search";
 import { MobileMenu } from "./mobile-menu";
 import { UserMenu } from "./user-menu";
@@ -14,13 +14,7 @@ export async function Header() {
   // Check if user has a verified company
   let hasVerifiedCompany = false;
   if (session?.user?.id) {
-    const membership = await prisma.companyMember.findFirst({
-      where: { userId: session.user.id },
-      include: { company: true },
-    });
-    const company = membership?.company || await prisma.company.findUnique({
-      where: { userId: session.user.id },
-    });
+    const company = await getActiveCompany(session.user.id);
     hasVerifiedCompany = !!company?.verifiedAt;
   }
 
