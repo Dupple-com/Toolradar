@@ -3,6 +3,47 @@ import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth-utils";
 import { indexTool } from "@/lib/meilisearch";
 
+// Notify company members about submission status
+async function notifySubmissionStatus(
+  companyId: string,
+  toolName: string,
+  approved: boolean,
+  toolSlug?: string,
+  feedback?: string
+) {
+  // Get all company members
+  const members = await prisma.companyMember.findMany({
+    where: { companyId },
+    select: { userId: true },
+  });
+
+  // Also get legacy company owner
+  const company = await prisma.company.findUnique({
+    where: { id: companyId },
+    select: { userId: true },
+  });
+
+  const userIds = new Set(members.map((m) => m.userId));
+  if (company?.userId) userIds.add(company.userId);
+
+  // Create notification for each user
+  await Promise.all(
+    Array.from(userIds).map((userId) =>
+      prisma.notification.create({
+        data: {
+          userId,
+          type: approved ? "submission_approved" : "submission_rejected",
+          title: approved ? "Tool Approved!" : "Submission Rejected",
+          message: approved
+            ? `Your tool "${toolName}" has been approved and is now live on Toolradar!`
+            : `Your submission for "${toolName}" was not approved. ${feedback || ""}`,
+          link: approved && toolSlug ? `/tools/${toolSlug}` : "/company/submissions",
+        },
+      })
+    )
+  );
+}
+
 interface SubmissionData {
   name: string;
   website: string;
@@ -88,8 +129,18 @@ export async function PUT(
       console.error("Failed to index tool:", error);
     }
 
+    // Notify company members
+    await notifySubmissionStatus(
+      submission.companyId,
+      data.name,
+      true,
+      tool.slug
+    );
+
     return NextResponse.json({ success: true, tool });
   } else if (action === "reject") {
+    const data = submission.data as unknown as SubmissionData;
+
     await prisma.submission.update({
       where: { id: params.id },
       data: {
@@ -97,6 +148,15 @@ export async function PUT(
         feedback: feedback || "Submission rejected",
       },
     });
+
+    // Notify company members
+    await notifySubmissionStatus(
+      submission.companyId,
+      data.name,
+      false,
+      undefined,
+      feedback
+    );
 
     return NextResponse.json({ success: true });
   }
