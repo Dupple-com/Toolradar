@@ -14,6 +14,7 @@ model Tool {
   name        String
   slug        String    @unique
   tagline     String
+  tldr        String[]  // 3 bullet points for TL;DR section
   description String    @db.Text
   logo        String?
   website     String

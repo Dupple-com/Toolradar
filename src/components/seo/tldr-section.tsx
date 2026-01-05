@@ -4,6 +4,7 @@ interface TLDRSectionProps {
   tool: {
     name: string;
     tagline: string;
+    tldr?: string[];
     description: string;
     pricing: string;
     editorialScore?: number | null;
@@ -25,8 +26,12 @@ export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDR
     }
   };
 
-  // Extract 3 key points from description
+  // Use tldr field if available, otherwise fallback to extracting from description
   const getKeyPoints = () => {
+    if (tool.tldr && tool.tldr.length > 0) {
+      return tool.tldr.slice(0, 3);
+    }
+    // Fallback: extract from description
     const sentences = tool.description.split(/[.!]/).filter(s => s.trim().length > 10);
     return sentences.slice(0, 3).map(s => s.trim());
   };

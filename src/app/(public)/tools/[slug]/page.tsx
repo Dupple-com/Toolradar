@@ -241,6 +241,7 @@ export default async function ToolPage({ params }: { params: { slug: string } })
               tool={{
                 name: tool.name,
                 tagline: tool.tagline,
+                tldr: tool.tldr,
                 description: tool.description,
                 pricing: tool.pricing,
                 editorialScore: tool.editorialScore,
