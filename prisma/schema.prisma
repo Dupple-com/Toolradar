@@ -28,6 +28,9 @@ model Tool {
   pros String[]
   cons String[]
 
+  // FAQs (array of {question, answer})
+  faqs Json?
+
   // Editorial scoring (by Toolradar team)
   editorialScore        Int?
   editorialScoreDetails Json?   // { utility, ux, value, support, innovation }

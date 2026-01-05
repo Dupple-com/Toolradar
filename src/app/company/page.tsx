@@ -2,6 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { Pencil, ExternalLink } from "lucide-react";
 
 export default async function CompanyDashboardPage() {
   const user = await getCurrentUser();
@@ -70,17 +71,35 @@ export default async function CompanyDashboardPage() {
         <h2 className="font-semibold mb-4">Your Tools</h2>
         <div className="space-y-3">
           {company.tools.map((tool) => (
-            <Link
+            <div
               key={tool.id}
-              href={`/tools/${tool.slug}`}
-              className="flex items-center justify-between bg-card rounded-xl border p-4 hover:border-primary transition"
+              className="flex items-center justify-between bg-card rounded-xl border p-4"
             >
               <span className="font-medium">{tool.name}</span>
-              <div className="flex gap-4 text-sm text-muted-foreground">
-                <span>{tool.upvotes} upvotes</span>
-                <span>{tool.reviewCount} reviews</span>
+              <div className="flex items-center gap-4">
+                <div className="flex gap-4 text-sm text-muted-foreground">
+                  <span>{tool.upvotes} upvotes</span>
+                  <span>{tool.reviewCount} reviews</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Link
+                    href={`/company/tools/${tool.id}/edit`}
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-sm bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                  >
+                    <Pencil className="w-3.5 h-3.5" />
+                    Edit
+                  </Link>
+                  <Link
+                    href={`/tools/${tool.slug}`}
+                    target="_blank"
+                    className="flex items-center gap-1.5 px-3 py-1.5 text-sm border rounded-lg hover:bg-muted transition-colors"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    View
+                  </Link>
+                </div>
               </div>
-            </Link>
+            </div>
           ))}
           {company.tools.length === 0 && (
             <p className="text-muted-foreground text-center py-8">

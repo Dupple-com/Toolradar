@@ -3,14 +3,15 @@
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { signOut } from "next-auth/react";
-import { User, LogOut, LayoutDashboard, ChevronDown } from "lucide-react";
+import { User, LogOut, LayoutDashboard, Building2, ChevronDown } from "lucide-react";
 
 interface UserMenuProps {
   userName: string | null;
   userImage: string | null;
+  hasCompany?: boolean;
 }
 
-export function UserMenu({ userName, userImage }: UserMenuProps) {
+export function UserMenu({ userName, userImage, hasCompany }: UserMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -52,6 +53,16 @@ export function UserMenu({ userName, userImage }: UserMenuProps) {
             <LayoutDashboard size={16} />
             Dashboard
           </Link>
+          {hasCompany && (
+            <Link
+              href="/company"
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+            >
+              <Building2 size={16} />
+              Company
+            </Link>
+          )}
           <hr className="my-1 border-gray-100" />
           <button
             onClick={() => signOut({ callbackUrl: "/" })}

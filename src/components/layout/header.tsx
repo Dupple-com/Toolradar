@@ -2,6 +2,7 @@ import Link from "next/link";
 import { RadarLogo } from "@/components/ui/radar-logo";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
+import { prisma } from "@/lib/prisma";
 import { CommandSearch } from "@/components/search/command-search";
 import { MobileMenu } from "./mobile-menu";
 import { UserMenu } from "./user-menu";
@@ -9,6 +10,19 @@ import { NotificationBell } from "./notification-bell";
 
 export async function Header() {
   const session = await getServerSession(authOptions);
+
+  // Check if user has a verified company
+  let hasVerifiedCompany = false;
+  if (session?.user?.id) {
+    const membership = await prisma.companyMember.findFirst({
+      where: { userId: session.user.id },
+      include: { company: true },
+    });
+    const company = membership?.company || await prisma.company.findUnique({
+      where: { userId: session.user.id },
+    });
+    hasVerifiedCompany = !!company?.verifiedAt;
+  }
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
@@ -56,6 +70,7 @@ export async function Header() {
                 <UserMenu
                   userName={session.user?.name || null}
                   userImage={session.user?.image || null}
+                  hasCompany={hasVerifiedCompany}
                 />
               </div>
             ) : (
