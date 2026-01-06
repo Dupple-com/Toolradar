@@ -65,25 +65,23 @@ export async function GET(
   let svg = "";
 
   if (format === "badge") {
-    // Vertical rectangle badge
+    // Vertical rectangle badge - clean design
     svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="150" height="200" viewBox="0 0 150 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="180" viewBox="0 0 150 180">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:${t.accent}"/>
       <stop offset="100%" style="stop-color:${t.accentDark}"/>
     </linearGradient>
-    <filter id="sh"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/></filter>
+    <filter id="sh"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/></filter>
   </defs>
-  <rect width="150" height="200" rx="12" fill="${t.bg}" filter="url(#sh)"/>
-  <rect width="150" height="44" rx="12" fill="url(#grad)"/>
-  <rect y="32" width="150" height="12" fill="url(#grad)"/>
-  <text x="75" y="28" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="1">TOOLRADAR</text>
-  <circle cx="75" cy="100" r="34" fill="${t.bg}" stroke="${t.accent}" stroke-width="3"/>
-  <text x="75" y="110" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="32" font-weight="800" fill="${t.text}">${score}</text>
-  <text x="75" y="150" text-anchor="middle" font-family="system-ui" font-size="16" fill="#fbbf24">${starsStr}</text>
-  <text x="75" y="172" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="12" font-weight="600" fill="${t.text}">${label}</text>
-  <text x="75" y="190" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="${t.subtext}">${tool.name.length > 18 ? tool.name.substring(0, 18) + "…" : tool.name}</text>
+  <rect width="150" height="180" rx="16" fill="${t.bg}" filter="url(#sh)"/>
+  <rect width="150" height="180" rx="16" fill="none" stroke="${t.border}" stroke-width="1"/>
+  <circle cx="75" cy="60" r="36" fill="url(#grad)"/>
+  <text x="75" y="70" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="800" fill="white">${score}</text>
+  <text x="75" y="115" text-anchor="middle" font-family="system-ui" font-size="18" fill="#fbbf24">${starsStr}</text>
+  <text x="75" y="140" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="${t.text}">${label}</text>
+  <text x="75" y="160" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="${t.subtext}">toolradar.com</text>
 </svg>`;
   } else if (format === "bar") {
     // Horizontal bar style (like Trustpilot)

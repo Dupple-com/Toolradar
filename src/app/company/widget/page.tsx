@@ -57,11 +57,11 @@ export default async function CompanyWidgetPage() {
                     <div className="flex flex-wrap gap-4 items-end">
                       <div className="bg-gray-100 rounded-xl p-4">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&v=7`} alt={`${tool.name}`} width={150} height={200} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&v=9`} alt={`${tool.name}`} width={150} height={180} />
                       </div>
                       <div className="bg-slate-900 rounded-xl p-4">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&theme=dark&v=7`} alt={`${tool.name}`} width={150} height={200} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&theme=dark&v=9`} alt={`${tool.name}`} width={150} height={180} />
                       </div>
                     </div>
                   </div>
@@ -72,11 +72,11 @@ export default async function CompanyWidgetPage() {
                     <div className="space-y-3">
                       <div className="bg-gray-100 rounded-xl p-4 inline-block">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=bar&v=6`} alt={`${tool.name}`} width={280} height={60} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=bar&v=8`} alt={`${tool.name}`} width={280} height={60} />
                       </div>
                       <div className="bg-slate-900 rounded-xl p-4 inline-block">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=bar&theme=dark&v=6`} alt={`${tool.name}`} width={280} height={60} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=bar&theme=dark&v=8`} alt={`${tool.name}`} width={280} height={60} />
                       </div>
                     </div>
                   </div>
@@ -87,11 +87,11 @@ export default async function CompanyWidgetPage() {
                     <div className="flex flex-wrap gap-4">
                       <div className="bg-gray-100 rounded-xl p-4">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=compact&v=6`} alt={`${tool.name}`} width={120} height={120} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=compact&v=8`} alt={`${tool.name}`} width={120} height={120} />
                       </div>
                       <div className="bg-slate-900 rounded-xl p-4">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=compact&theme=dark&v=6`} alt={`${tool.name}`} width={120} height={120} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=compact&theme=dark&v=8`} alt={`${tool.name}`} width={120} height={120} />
                       </div>
                     </div>
                   </div>
@@ -102,11 +102,11 @@ export default async function CompanyWidgetPage() {
                     <div className="flex flex-wrap gap-4">
                       <div className="bg-gray-100 rounded-xl p-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=minimal&v=6`} alt={`${tool.name}`} width={160} height={40} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=minimal&v=8`} alt={`${tool.name}`} width={160} height={40} />
                       </div>
                       <div className="bg-slate-900 rounded-xl p-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=minimal&theme=dark&v=6`} alt={`${tool.name}`} width={160} height={40} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=minimal&theme=dark&v=8`} alt={`${tool.name}`} width={160} height={40} />
                       </div>
                     </div>
                   </div>
