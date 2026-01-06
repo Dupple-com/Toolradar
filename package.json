@@ -12,7 +12,8 @@
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
     "db:seed": "npx tsx prisma/seed-tools.ts",
-    "db:update-pricing": "npx tsx scripts/update-pricing.ts"
+    "db:update-pricing": "npx tsx scripts/update-pricing.ts",
+    "db:seed-faqs": "npx tsx prisma/seed-faqs.ts"
   },
   "prisma": {
     "seed": "npx tsx prisma/seed-tools.ts"
