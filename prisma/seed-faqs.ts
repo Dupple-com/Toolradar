@@ -2757,6 +2757,3406 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "Salesforce is more powerful and customizable but complex and expensive. HubSpot is easier with a free CRM tier. Salesforce for enterprise; HubSpot for simplicity."
     }
   ],
+
+  // ============================================
+  // COPY.AI
+  // ============================================
+  "copy-ai": [
+    {
+      question: "Is Copy.ai free to use?",
+      answer: "Yes, Copy.ai offers a free plan with 2,000 words per month and access to all writing tools. Pro plans start at $49/month for unlimited words."
+    },
+    {
+      question: "How much does Copy.ai cost?",
+      answer: "Copy.ai Pro costs $49/month for unlimited words and 5 user seats. Enterprise plans have custom pricing with advanced features, SSO, and dedicated support."
+    },
+    {
+      question: "What can Copy.ai write?",
+      answer: "Copy.ai generates marketing copy, blog posts, product descriptions, emails, social media content, ad copy, and more. It supports 25+ languages and 90+ templates."
+    },
+    {
+      question: "Does Copy.ai support multiple languages?",
+      answer: "Yes, Copy.ai supports 25+ languages including Spanish, French, German, Portuguese, Italian, Dutch, and more. You can generate and translate content across languages."
+    },
+    {
+      question: "What AI model does Copy.ai use?",
+      answer: "Copy.ai uses GPT-4 and other advanced language models fine-tuned for marketing and business writing. It continuously updates models for better quality."
+    },
+    {
+      question: "Does Copy.ai have workflows?",
+      answer: "Yes, Copy.ai Workflows lets you automate content creation with multi-step processes. Build automated pipelines for research, writing, and publishing."
+    },
+    {
+      question: "How does Copy.ai compare to Jasper?",
+      answer: "Copy.ai is simpler with a lower price point. Jasper offers more features like brand voice and campaign management. Copy.ai for quick copy; Jasper for marketing teams."
+    }
+  ],
+
+  // ============================================
+  // JASPER
+  // ============================================
+  "jasper": [
+    {
+      question: "How much does Jasper cost?",
+      answer: "Jasper Creator costs $49/month per seat, Pro costs $69/month per seat with more features. Business has custom pricing. 7-day free trial available."
+    },
+    {
+      question: "Is there a free version of Jasper?",
+      answer: "Jasper offers a 7-day free trial but no permanent free tier. It's designed for professional marketers and content teams."
+    },
+    {
+      question: "What is Jasper AI?",
+      answer: "Jasper is an AI content platform for marketing teams. It generates blog posts, ads, emails, social content, and more with brand voice consistency."
+    },
+    {
+      question: "Does Jasper learn my brand voice?",
+      answer: "Yes, Jasper's Brand Voice feature learns your company's tone, style, and terminology. Upload examples and it maintains consistency across all content."
+    },
+    {
+      question: "What integrations does Jasper have?",
+      answer: "Jasper integrates with Google Docs, Surfer SEO, Grammarly, Webflow, Zapier, and browser extensions. API available for custom integrations."
+    },
+    {
+      question: "Does Jasper help with SEO?",
+      answer: "Yes, Jasper integrates with Surfer SEO for real-time optimization. It suggests keywords, analyzes competitors, and helps content rank higher."
+    },
+    {
+      question: "How does Jasper compare to ChatGPT?",
+      answer: "Jasper is purpose-built for marketing with templates, brand voice, and team features. ChatGPT is general-purpose. Jasper for marketing teams; ChatGPT for varied tasks."
+    }
+  ],
+
+  // ============================================
+  // ELEVENLABS
+  // ============================================
+  "elevenlabs": [
+    {
+      question: "Is ElevenLabs free to use?",
+      answer: "Yes, ElevenLabs offers a free tier with 10,000 characters per month. Paid plans start at $5/month (Starter) for more characters and features."
+    },
+    {
+      question: "How much does ElevenLabs cost?",
+      answer: "ElevenLabs Starter costs $5/month (30,000 chars), Creator $22/month (100,000 chars), Pro $99/month (500,000 chars), and Scale $330/month (2M chars)."
+    },
+    {
+      question: "What is ElevenLabs?",
+      answer: "ElevenLabs is an AI voice platform for text-to-speech, voice cloning, and dubbing. It creates realistic human-like voices for content, games, and apps."
+    },
+    {
+      question: "Can I clone my voice with ElevenLabs?",
+      answer: "Yes, ElevenLabs Instant Voice Cloning creates a copy from short audio samples. Professional Voice Cloning requires more samples for higher quality."
+    },
+    {
+      question: "Does ElevenLabs support multiple languages?",
+      answer: "Yes, ElevenLabs supports 29 languages including English, Spanish, French, German, Japanese, Chinese, Arabic, and more. Voices can speak across languages."
+    },
+    {
+      question: "Does ElevenLabs have an API?",
+      answer: "Yes, ElevenLabs provides a full REST API for text-to-speech, voice cloning, and streaming. SDKs available for Python, JavaScript, and other languages."
+    },
+    {
+      question: "How does ElevenLabs compare to other TTS?",
+      answer: "ElevenLabs is known for the most realistic AI voices available. It excels at emotion, pacing, and naturalness compared to Amazon Polly, Google TTS, or Microsoft Azure."
+    }
+  ],
+
+  // ============================================
+  // PRISMA
+  // ============================================
+  "prisma": [
+    {
+      question: "Is Prisma free to use?",
+      answer: "Yes, Prisma ORM is completely free and open source (Apache 2.0 license). Prisma Accelerate and Pulse are paid cloud services starting at $0 with usage-based pricing."
+    },
+    {
+      question: "What is Prisma?",
+      answer: "Prisma is a next-generation ORM for Node.js and TypeScript. It provides type-safe database access, migrations, and a visual database browser (Prisma Studio)."
+    },
+    {
+      question: "What databases does Prisma support?",
+      answer: "Prisma supports PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, CockroachDB, and PlanetScale. Each has full type-safe client support."
+    },
+    {
+      question: "What is Prisma Accelerate?",
+      answer: "Prisma Accelerate is a global database cache and connection pooler. It reduces query latency and handles connection limits for serverless deployments."
+    },
+    {
+      question: "What is Prisma Pulse?",
+      answer: "Prisma Pulse enables real-time database subscriptions. Get notified instantly when data changes, perfect for collaborative apps and live updates."
+    },
+    {
+      question: "Does Prisma support migrations?",
+      answer: "Yes, Prisma Migrate generates SQL migrations from your schema. It tracks migration history, supports preview/apply workflows, and handles schema drift."
+    },
+    {
+      question: "How does Prisma compare to TypeORM?",
+      answer: "Prisma has better TypeScript support with auto-generated types. TypeORM uses decorators like traditional ORMs. Prisma for type safety; TypeORM for familiar ORM patterns."
+    }
+  ],
+
+  // ============================================
+  // DRIZZLE
+  // ============================================
+  "drizzle": [
+    {
+      question: "Is Drizzle ORM free?",
+      answer: "Yes, Drizzle ORM is completely free and open source. Drizzle Studio (visual editor) is also free. It's MIT licensed with no paid tiers."
+    },
+    {
+      question: "What is Drizzle ORM?",
+      answer: "Drizzle is a TypeScript ORM that's lightweight and SQL-like. It offers type-safe queries, zero dependencies, and works with any JavaScript runtime."
+    },
+    {
+      question: "What databases does Drizzle support?",
+      answer: "Drizzle supports PostgreSQL, MySQL, SQLite, and Turso. It works with Neon, PlanetScale, Vercel Postgres, Supabase, and other providers."
+    },
+    {
+      question: "What is Drizzle Kit?",
+      answer: "Drizzle Kit is the CLI tool for migrations. It generates SQL migrations, pushes schema changes, and provides introspection to generate schemas from existing databases."
+    },
+    {
+      question: "Does Drizzle have a GUI?",
+      answer: "Yes, Drizzle Studio is a visual database browser. Run locally with `drizzle-kit studio`. Browse data, run queries, and manage your database."
+    },
+    {
+      question: "Is Drizzle fast?",
+      answer: "Yes, Drizzle is one of the fastest ORMs. Zero dependencies, no query parsing overhead, and SQL-like syntax means minimal abstraction cost."
+    },
+    {
+      question: "How does Drizzle compare to Prisma?",
+      answer: "Drizzle is lighter and more SQL-like. Prisma has a larger ecosystem and better migrations. Drizzle for performance and control; Prisma for DX and features."
+    }
+  ],
+
+  // ============================================
+  // CLERK
+  // ============================================
+  "clerk": [
+    {
+      question: "Is Clerk free to use?",
+      answer: "Yes, Clerk offers a free tier with 10,000 monthly active users. Paid plans start at $25/month for additional features and higher limits."
+    },
+    {
+      question: "How much does Clerk cost?",
+      answer: "Clerk Pro costs $25/month base plus $0.02/MAU beyond 10,000. Pro includes custom domains, allowlists, and premium support. Enterprise has custom pricing."
+    },
+    {
+      question: "What is Clerk?",
+      answer: "Clerk is a complete authentication and user management platform. It provides pre-built UI components, APIs, and handles sign-up, sign-in, user profiles, and organizations."
+    },
+    {
+      question: "What auth methods does Clerk support?",
+      answer: "Clerk supports email/password, magic links, social OAuth (Google, GitHub, etc.), SAML SSO, passkeys, MFA, and phone authentication out of the box."
+    },
+    {
+      question: "Does Clerk work with Next.js?",
+      answer: "Yes, Clerk has first-class Next.js support including App Router, middleware, and server components. It's one of the most popular auth solutions for Next.js."
+    },
+    {
+      question: "Does Clerk support organizations?",
+      answer: "Yes, Clerk Organizations handles multi-tenant B2B scenarios. Features include invitations, roles, permissions, and organization switching."
+    },
+    {
+      question: "How does Clerk compare to Auth0?",
+      answer: "Clerk is newer with better DX and modern UI components. Auth0 is more established with broader enterprise features. Clerk for startups; Auth0 for complex enterprise needs."
+    }
+  ],
+
+  // ============================================
+  // AUTH0
+  // ============================================
+  "auth0": [
+    {
+      question: "Is Auth0 free to use?",
+      answer: "Yes, Auth0 offers a free tier with 7,500 monthly active users and unlimited logins. Paid plans start at $35/month for more users and features."
+    },
+    {
+      question: "How much does Auth0 cost?",
+      answer: "Auth0 Essential starts at $35/month (500 MAU included), Professional at $240/month. Enterprise has custom pricing. Pricing scales with MAU count."
+    },
+    {
+      question: "What is Auth0?",
+      answer: "Auth0 is an identity platform providing authentication, authorization, and user management. It supports any app type and offers extensive customization."
+    },
+    {
+      question: "What auth methods does Auth0 support?",
+      answer: "Auth0 supports 30+ social providers, enterprise SSO (SAML, LDAP, AD), passwordless, MFA, passkeys, and custom database connections."
+    },
+    {
+      question: "Does Auth0 support custom domains?",
+      answer: "Yes, Auth0 custom domains let you use your own domain for login pages. Available on paid plans for brand consistency."
+    },
+    {
+      question: "What are Auth0 Actions?",
+      answer: "Actions are serverless functions that customize Auth0 flows. Add custom logic to login, registration, password reset, and more without managing servers."
+    },
+    {
+      question: "Who owns Auth0?",
+      answer: "Auth0 was acquired by Okta in 2021 for $6.5 billion. It operates as an independent product unit within Okta's identity portfolio."
+    }
+  ],
+
+  // ============================================
+  // STORYBOOK
+  // ============================================
+  "storybook": [
+    {
+      question: "Is Storybook free?",
+      answer: "Yes, Storybook is completely free and open source (MIT license). Chromatic, the visual testing cloud, has free and paid tiers."
+    },
+    {
+      question: "What is Storybook?",
+      answer: "Storybook is a frontend workshop for building UI components in isolation. Develop, test, and document components outside your app."
+    },
+    {
+      question: "What frameworks does Storybook support?",
+      answer: "Storybook supports React, Vue, Angular, Svelte, Web Components, and more. It works with any component-based framework."
+    },
+    {
+      question: "What are Storybook stories?",
+      answer: "Stories define component states and variations. Each story shows how a component looks and behaves with specific props. Stories become living documentation."
+    },
+    {
+      question: "Does Storybook support testing?",
+      answer: "Yes, Storybook includes interaction testing, visual regression testing (via Chromatic), accessibility testing, and snapshot testing."
+    },
+    {
+      question: "What is Chromatic?",
+      answer: "Chromatic is the visual testing cloud for Storybook. It catches visual bugs, reviews UI changes, and provides collaboration features. Free tier available."
+    },
+    {
+      question: "Can I deploy Storybook?",
+      answer: "Yes, Storybook builds to static files deployable anywhere. Chromatic offers one-click publishing, or deploy to Vercel, Netlify, or any static host."
+    }
+  ],
+
+  // ============================================
+  // TURBOREPO
+  // ============================================
+  "turborepo": [
+    {
+      question: "Is Turborepo free?",
+      answer: "Yes, Turborepo is completely free and open source. Remote caching with Vercel has a free tier; self-hosted caching is unlimited."
+    },
+    {
+      question: "What is Turborepo?",
+      answer: "Turborepo is a high-performance build system for JavaScript/TypeScript monorepos. It provides incremental builds, caching, and parallel execution."
+    },
+    {
+      question: "How does Turborepo caching work?",
+      answer: "Turborepo caches build outputs and only rebuilds what changed. Remote caching shares cache across team and CI, dramatically speeding up builds."
+    },
+    {
+      question: "Does Turborepo work with pnpm?",
+      answer: "Yes, Turborepo works with npm, yarn, and pnpm. It leverages workspace features of each package manager for optimal performance."
+    },
+    {
+      question: "What is remote caching?",
+      answer: "Remote caching stores build artifacts in the cloud. Team members and CI share cache, so builds already run by others are instant."
+    },
+    {
+      question: "Who makes Turborepo?",
+      answer: "Turborepo was created by Jared Palmer and acquired by Vercel in 2021. It's actively maintained by the Vercel team."
+    },
+    {
+      question: "How does Turborepo compare to Nx?",
+      answer: "Turborepo is simpler and focused on caching. Nx has more features like generators and plugins. Turborepo for simplicity; Nx for full-featured monorepo management."
+    }
+  ],
+
+  // ============================================
+  // PLAYWRIGHT
+  // ============================================
+  "playwright": [
+    {
+      question: "Is Playwright free?",
+      answer: "Yes, Playwright is completely free and open source (Apache 2.0). It's developed by Microsoft with no paid tiers."
+    },
+    {
+      question: "What is Playwright?",
+      answer: "Playwright is an end-to-end testing framework for web applications. It supports Chromium, Firefox, and WebKit with a single API."
+    },
+    {
+      question: "What languages does Playwright support?",
+      answer: "Playwright has official bindings for JavaScript/TypeScript, Python, Java, and .NET. All have feature parity."
+    },
+    {
+      question: "Does Playwright support mobile testing?",
+      answer: "Yes, Playwright can emulate mobile devices and test responsive designs. It supports touch events, geolocation, and device-specific viewports."
+    },
+    {
+      question: "What is Playwright Test?",
+      answer: "Playwright Test is the built-in test runner with parallelization, fixtures, reporters, and retries. It's the recommended way to use Playwright."
+    },
+    {
+      question: "Does Playwright have a VS Code extension?",
+      answer: "Yes, the Playwright VS Code extension provides test generation, debugging, and running tests directly from the editor."
+    },
+    {
+      question: "How does Playwright compare to Cypress?",
+      answer: "Playwright supports all browsers natively; Cypress focuses on Chromium. Playwright is faster with better parallelization. Cypress has a nicer UI. Both are excellent."
+    }
+  ],
+
+  // ============================================
+  // NOTION AI
+  // ============================================
+  "notion-ai": [
+    {
+      question: "How much does Notion AI cost?",
+      answer: "Notion AI costs $10/user/month as an add-on to any Notion plan. Free trial lets you try AI features before committing."
+    },
+    {
+      question: "What can Notion AI do?",
+      answer: "Notion AI can write drafts, summarize pages, translate content, improve writing, brainstorm ideas, explain code, and answer questions about your workspace."
+    },
+    {
+      question: "Is Notion AI included in Notion?",
+      answer: "No, Notion AI is a paid add-on at $10/user/month. It's available on all Notion plans including the free tier."
+    },
+    {
+      question: "Can Notion AI access my workspace?",
+      answer: "Yes, Notion AI can search and reference content across your workspace to answer questions. It respects your existing permission settings."
+    },
+    {
+      question: "Does Notion AI work in all languages?",
+      answer: "Notion AI supports writing and translating in multiple languages. It can translate content between any supported languages."
+    },
+    {
+      question: "What AI model does Notion use?",
+      answer: "Notion AI uses GPT-4 and Claude models from OpenAI and Anthropic. It selects the best model for each task automatically."
+    },
+    {
+      question: "Can Notion AI create automations?",
+      answer: "Notion AI focuses on writing and research. For automations, use Notion's native automations feature or integrate with Zapier/Make."
+    }
+  ],
+
+  // ============================================
+  // CRON (NOTION CALENDAR)
+  // ============================================
+  "cron": [
+    {
+      question: "Is Cron calendar free?",
+      answer: "Yes, Cron (now Notion Calendar) is completely free. It was acquired by Notion and integrated as Notion Calendar."
+    },
+    {
+      question: "What happened to Cron?",
+      answer: "Cron was acquired by Notion in 2022 and rebranded as Notion Calendar. The product continues with the same features under the new name."
+    },
+    {
+      question: "What is Cron/Notion Calendar?",
+      answer: "A modern calendar app with menu bar widget, time zone support, scheduling links, and Google/Outlook integration. Clean design focused on productivity."
+    },
+    {
+      question: "Does Cron work with Google Calendar?",
+      answer: "Yes, Cron (Notion Calendar) syncs with Google Calendar and Outlook. All your calendars appear in one unified view."
+    },
+    {
+      question: "What platforms does Cron support?",
+      answer: "Cron is available on Mac, Windows, iOS, and Android. The menu bar widget is Mac-only, but all platforms have full calendar features."
+    },
+    {
+      question: "Does Cron have scheduling links?",
+      answer: "Yes, Cron/Notion Calendar includes free scheduling links like Calendly. Share your availability and let others book time slots."
+    },
+    {
+      question: "How does Cron integrate with Notion?",
+      answer: "Notion Calendar shows Notion tasks with due dates in your calendar. You can create Notion pages from calendar events and see upcoming deadlines."
+    }
+  ],
+
+  // ============================================
+  // MONDAY.COM
+  // ============================================
+  "monday": [
+    {
+      question: "Is Monday.com free?",
+      answer: "Yes, Monday.com offers a free Individual plan for up to 2 users with basic features. Paid plans start at $9/seat/month."
+    },
+    {
+      question: "How much does Monday.com cost?",
+      answer: "Monday.com Basic costs $9/seat/month, Standard $12/seat/month, Pro $19/seat/month. Enterprise has custom pricing. Minimum 3 seats on paid plans."
+    },
+    {
+      question: "What is Monday.com?",
+      answer: "Monday.com is a work management platform for projects, workflows, and collaboration. It's highly visual with customizable boards, automations, and integrations."
+    },
+    {
+      question: "What is Monday Work Management?",
+      answer: "Work Management is Monday's core product for project tracking. Other products include Monday CRM, Monday Dev, and Monday Marketer for specific use cases."
+    },
+    {
+      question: "Does Monday.com have automations?",
+      answer: "Yes, Monday.com includes powerful automations. Create rules like 'when status changes, notify team' without code. Templates for common workflows available."
+    },
+    {
+      question: "What integrations does Monday.com support?",
+      answer: "Monday.com integrates with 200+ tools including Slack, Zoom, Google Workspace, Microsoft 365, Jira, GitHub, Salesforce, and more."
+    },
+    {
+      question: "How does Monday.com compare to Asana?",
+      answer: "Monday.com is more visual and customizable. Asana has better task management and reporting. Monday for flexibility; Asana for structured project management."
+    }
+  ],
+
+  // ============================================
+  // MICROSOFT TEAMS
+  // ============================================
+  "microsoft-teams": [
+    {
+      question: "Is Microsoft Teams free?",
+      answer: "Yes, Microsoft Teams offers a free version with chat, video calls up to 60 minutes, and 5GB cloud storage. Paid plans start with Microsoft 365 subscriptions."
+    },
+    {
+      question: "How much does Microsoft Teams cost?",
+      answer: "Teams Essentials costs $4/user/month. Microsoft 365 Business Basic (includes Teams) costs $6/user/month. Enterprise plans range from $12-57/user/month."
+    },
+    {
+      question: "What is Microsoft Teams?",
+      answer: "Microsoft Teams is a collaboration platform combining chat, video meetings, file storage, and app integration. It's tightly integrated with Microsoft 365."
+    },
+    {
+      question: "Does Teams work with non-Microsoft apps?",
+      answer: "Yes, Teams has 700+ app integrations including Salesforce, Trello, Asana, Zoom, and more. Custom apps can be built with Power Platform."
+    },
+    {
+      question: "What is Teams Premium?",
+      answer: "Teams Premium adds AI features like meeting recaps, live translations, and advanced meeting protection. Costs $10/user/month on top of existing plans."
+    },
+    {
+      question: "How many people can join a Teams meeting?",
+      answer: "Teams meetings support up to 1,000 participants (10,000 in view-only mode). Webinars support up to 1,000 attendees with registration."
+    },
+    {
+      question: "How does Teams compare to Slack?",
+      answer: "Teams is better integrated with Microsoft 365 and offers more meeting features. Slack has a better UX and larger app ecosystem. Teams for Microsoft shops; Slack for modern workflows."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE WORKSPACE
+  // ============================================
+  "google-workspace": [
+    {
+      question: "How much does Google Workspace cost?",
+      answer: "Google Workspace Business Starter costs $6/user/month, Standard $12/user/month, Plus $18/user/month. Enterprise has custom pricing."
+    },
+    {
+      question: "Is there a free version of Google Workspace?",
+      answer: "Personal Gmail and Google apps are free. Google Workspace for businesses requires a paid subscription starting at $6/user/month."
+    },
+    {
+      question: "What is Google Workspace?",
+      answer: "Google Workspace (formerly G Suite) includes Gmail, Drive, Docs, Sheets, Slides, Meet, and more for businesses. Custom email domains and admin controls included."
+    },
+    {
+      question: "What's the difference between Gmail and Google Workspace?",
+      answer: "Gmail is free for personal use. Google Workspace adds custom email domains (you@company.com), admin controls, and business features."
+    },
+    {
+      question: "Does Google Workspace include storage?",
+      answer: "Yes, Business Starter includes 30GB/user, Standard 2TB/user, Plus 5TB/user. Enterprise has unlimited storage."
+    },
+    {
+      question: "What AI features does Google Workspace have?",
+      answer: "Google Workspace includes Gemini AI for writing assistance, meeting summaries, email drafts, and spreadsheet analysis. Gemini add-on costs extra."
+    },
+    {
+      question: "How does Google Workspace compare to Microsoft 365?",
+      answer: "Google Workspace is web-first and simpler. Microsoft 365 has more powerful desktop apps. Google for collaboration; Microsoft for enterprise features."
+    }
+  ],
+
+  // ============================================
+  // MICROSOFT 365
+  // ============================================
+  "microsoft-365": [
+    {
+      question: "How much does Microsoft 365 cost?",
+      answer: "Microsoft 365 Business Basic costs $6/user/month, Standard $12.50/user/month, Premium $22/user/month. Personal/Family plans available for consumers."
+    },
+    {
+      question: "What is Microsoft 365?",
+      answer: "Microsoft 365 is Microsoft's productivity suite including Word, Excel, PowerPoint, Outlook, Teams, OneDrive, and more. Available as web, desktop, and mobile apps."
+    },
+    {
+      question: "Is Microsoft Office free?",
+      answer: "Office web apps (Word, Excel, PowerPoint) are free at office.com. Full desktop apps and advanced features require a Microsoft 365 subscription."
+    },
+    {
+      question: "What is Microsoft Copilot?",
+      answer: "Microsoft Copilot is AI assistance built into Microsoft 365. It helps write documents, analyze data in Excel, create presentations, and summarize meetings."
+    },
+    {
+      question: "How much storage does Microsoft 365 include?",
+      answer: "Business plans include 1TB of OneDrive storage per user. SharePoint storage is pooled (1TB plus 10GB per user)."
+    },
+    {
+      question: "Does Microsoft 365 work on Mac?",
+      answer: "Yes, Microsoft 365 has full-featured Mac versions of Word, Excel, PowerPoint, and Outlook. Feature parity is high with Windows versions."
+    },
+    {
+      question: "What's the difference between Microsoft 365 and Office 2021?",
+      answer: "Microsoft 365 is subscription-based with continuous updates. Office 2021 is a one-time purchase without updates. Microsoft 365 includes cloud services and AI features."
+    }
+  ],
+
+  // ============================================
+  // ADOBE CREATIVE CLOUD
+  // ============================================
+  "adobe-creative-cloud": [
+    {
+      question: "How much does Adobe Creative Cloud cost?",
+      answer: "Adobe Creative Cloud All Apps costs $59.99/month. Individual apps like Photoshop cost $22.99/month. Photography plan (Photoshop + Lightroom) costs $9.99/month."
+    },
+    {
+      question: "Is there a free version of Adobe Creative Cloud?",
+      answer: "Adobe offers 7-day free trials for all apps. Adobe Express has a free tier. No permanent free tier for Photoshop, Illustrator, or Premiere."
+    },
+    {
+      question: "What apps are in Adobe Creative Cloud?",
+      answer: "Creative Cloud includes Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Lightroom, XD, Audition, and 20+ more creative apps."
+    },
+    {
+      question: "Does Adobe have AI features?",
+      answer: "Yes, Adobe Firefly and Sensei power AI features across apps. Generative fill in Photoshop, text-to-image, and intelligent editing are included."
+    },
+    {
+      question: "What is Adobe Firefly?",
+      answer: "Adobe Firefly is Adobe's generative AI model for images, text effects, and vectors. It powers features in Photoshop, Illustrator, and other Creative Cloud apps."
+    },
+    {
+      question: "Does Creative Cloud include storage?",
+      answer: "Yes, Creative Cloud includes 100GB cloud storage with All Apps plan. Individual app plans include 20GB. Can upgrade to more storage."
+    },
+    {
+      question: "Is there a student discount for Adobe?",
+      answer: "Yes, students and teachers get 60%+ off Creative Cloud. All Apps costs around $19.99/month for education customers. Valid school email required."
+    }
+  ],
+
+  // ============================================
+  // SKETCH
+  // ============================================
+  "sketch": [
+    {
+      question: "How much does Sketch cost?",
+      answer: "Sketch costs $12/editor/month or $120/year. Viewers are free. Mac app only requires an active subscription."
+    },
+    {
+      question: "Is Sketch free?",
+      answer: "Sketch offers a 30-day free trial. Students and educators can apply for free licenses. No permanent free tier for regular users."
+    },
+    {
+      question: "What is Sketch?",
+      answer: "Sketch is a Mac-only design tool for UI/UX design, prototyping, and collaboration. It was the industry standard before Figma's rise."
+    },
+    {
+      question: "Does Sketch work on Windows?",
+      answer: "No, Sketch is Mac-only. The desktop app requires macOS. There's a web app for viewing and commenting, but design requires a Mac."
+    },
+    {
+      question: "Does Sketch have real-time collaboration?",
+      answer: "Sketch has added real-time collaboration in the web workspace. Multiple designers can work on the same document simultaneously."
+    },
+    {
+      question: "How does Sketch compare to Figma?",
+      answer: "Sketch is Mac-only with a native app feel. Figma is browser-based and cross-platform. Figma has won market share with better collaboration. Sketch for Mac users who prefer native apps."
+    },
+    {
+      question: "Does Sketch have plugins?",
+      answer: "Yes, Sketch has a large plugin ecosystem for design systems, content generation, handoff, and more. Plugins extend functionality significantly."
+    }
+  ],
+
+  // ============================================
+  // INVISION
+  // ============================================
+  "invision": [
+    {
+      question: "Is InVision free?",
+      answer: "InVision Free plan includes one prototype. The product has been significantly scaled back since Figma's rise. Focus is now on Freehand whiteboard."
+    },
+    {
+      question: "What happened to InVision?",
+      answer: "InVision has pivoted focus to Freehand (whiteboard) as Figma dominated the design tool market. The main prototyping product is in maintenance mode."
+    },
+    {
+      question: "What is InVision?",
+      answer: "InVision is a design prototyping and collaboration platform. It was popular for turning static designs into clickable prototypes before Figma's rise."
+    },
+    {
+      question: "What is InVision Freehand?",
+      answer: "Freehand is InVision's online whiteboard for brainstorming, diagramming, and collaboration. It competes with Miro and FigJam."
+    },
+    {
+      question: "Does InVision integrate with Sketch?",
+      answer: "Yes, InVision works with Sketch through the Craft plugin. Import Sketch files and create interactive prototypes."
+    },
+    {
+      question: "How does InVision compare to Figma?",
+      answer: "Figma has largely replaced InVision for prototyping. Figma combines design and prototyping natively. InVision's main value now is Freehand whiteboard."
+    },
+    {
+      question: "Is InVision shutting down?",
+      answer: "InVision has downsized significantly but continues operating. Focus has shifted to Freehand. No official shutdown announced but product development has slowed."
+    }
+  ],
+
+  // ============================================
+  // ZEPLIN
+  // ============================================
+  "zeplin": [
+    {
+      question: "Is Zeplin free?",
+      answer: "Yes, Zeplin offers a free plan with 1 active project. Paid plans start at $6/user/month for more projects and features."
+    },
+    {
+      question: "How much does Zeplin cost?",
+      answer: "Zeplin Starter costs $6/user/month (3 projects), Growing Business $12/user/month (12 projects), Enterprise has custom pricing."
+    },
+    {
+      question: "What is Zeplin?",
+      answer: "Zeplin is a design handoff tool that bridges designers and developers. It generates specs, assets, and code snippets from design files."
+    },
+    {
+      question: "Does Zeplin work with Figma?",
+      answer: "Yes, Zeplin integrates with Figma, Sketch, XD, and Photoshop. Export designs to Zeplin for developer handoff and style guides."
+    },
+    {
+      question: "What code does Zeplin generate?",
+      answer: "Zeplin generates CSS, Swift, Kotlin, and more. Code snippets match your design specs and can be customized with extensions."
+    },
+    {
+      question: "Do I need Zeplin if I use Figma?",
+      answer: "Figma has improved dev mode, reducing Zeplin's necessity. Zeplin still offers advantages for complex handoffs and design systems across multiple tools."
+    },
+    {
+      question: "Does Zeplin support design systems?",
+      answer: "Yes, Zeplin Styleguides centralizes colors, typography, and components. Connect to your design files and keep specs in sync."
+    }
+  ],
+
+  // ============================================
+  // ABSTRACT
+  // ============================================
+  "abstract": [
+    {
+      question: "Is Abstract free?",
+      answer: "Abstract offers a free trial. Paid plans start at $15/user/month for version control and collaboration features."
+    },
+    {
+      question: "What is Abstract?",
+      answer: "Abstract is version control for design files. It provides Git-like branching, merging, and history for Sketch and XD files."
+    },
+    {
+      question: "Does Abstract work with Figma?",
+      answer: "No, Abstract doesn't support Figma because Figma has built-in version history. Abstract works with Sketch and Adobe XD."
+    },
+    {
+      question: "What happened to Abstract?",
+      answer: "Abstract was acquired by Adobe in 2021. It continues operating but development has slowed as Figma's native versioning made it less necessary."
+    },
+    {
+      question: "Does Abstract replace Git?",
+      answer: "Abstract brings Git concepts (branches, commits, merges) to design. Designers don't need to know Git; Abstract provides a visual interface."
+    },
+    {
+      question: "How does Abstract compare to Figma's version history?",
+      answer: "Figma's native versioning is simpler. Abstract offers more Git-like workflows with branches and merge reviews. For Sketch users, Abstract remains valuable."
+    },
+    {
+      question: "Who uses Abstract?",
+      answer: "Design teams using Sketch who need formal version control and review workflows. Less relevant as teams move to Figma with native versioning."
+    }
+  ],
+
+  // ============================================
+  // PRINCIPLE
+  // ============================================
+  "principle": [
+    {
+      question: "How much does Principle cost?",
+      answer: "Principle costs $129 one-time purchase for Mac. No subscription required. Free 14-day trial available."
+    },
+    {
+      question: "Is Principle free?",
+      answer: "Principle offers a 14-day free trial. After that, it's a one-time purchase of $129. No subscription fees."
+    },
+    {
+      question: "What is Principle?",
+      answer: "Principle is a Mac animation and prototyping tool. It creates interactive designs with complex animations and transitions."
+    },
+    {
+      question: "Does Principle work with Figma?",
+      answer: "Yes, you can import Figma designs into Principle via copy/paste or plugins. Add animations in Principle, then export videos or prototypes."
+    },
+    {
+      question: "Does Principle work on Windows?",
+      answer: "No, Principle is Mac-only. There's no Windows version or web app. Consider alternatives like Figma or After Effects for Windows."
+    },
+    {
+      question: "How does Principle compare to Framer?",
+      answer: "Principle excels at animation with a simpler timeline. Framer is more code-focused and can publish live sites. Principle for animation; Framer for interactive prototypes."
+    },
+    {
+      question: "Can I export from Principle?",
+      answer: "Yes, export animations as video (MOV), GIF, or interactive prototypes. Share prototypes via the Principle Mirror iOS app."
+    }
+  ],
+
+  // ============================================
+  // PROTOPIE
+  // ============================================
+  "protopie": [
+    {
+      question: "Is ProtoPie free?",
+      answer: "ProtoPie offers a free plan with limited features. Pro costs $13/month, Team $21/editor/month. Enterprise has custom pricing."
+    },
+    {
+      question: "How much does ProtoPie cost?",
+      answer: "ProtoPie Pro costs $13/month billed annually. Team costs $21/editor/month with collaboration features. Enterprise pricing is custom."
+    },
+    {
+      question: "What is ProtoPie?",
+      answer: "ProtoPie is an advanced prototyping tool for realistic interactions. It supports sensors, variables, and multi-device prototypes without coding."
+    },
+    {
+      question: "Does ProtoPie require coding?",
+      answer: "No, ProtoPie uses a visual interaction model. Create complex interactions with triggers, responses, and conditions without writing code."
+    },
+    {
+      question: "What makes ProtoPie different?",
+      answer: "ProtoPie excels at hardware-connected prototypes. Test with real sensors, voice, and multi-screen interactions. More advanced than typical design tools."
+    },
+    {
+      question: "Does ProtoPie work with Figma?",
+      answer: "Yes, ProtoPie imports from Figma, Sketch, and Adobe XD. Design in your preferred tool, then add advanced interactions in ProtoPie."
+    },
+    {
+      question: "How does ProtoPie compare to Principle?",
+      answer: "ProtoPie handles more complex interactions and sensors. Principle is simpler for animation. ProtoPie for realistic prototypes; Principle for motion design."
+    }
+  ],
+
+  // ============================================
+  // MAZE
+  // ============================================
+  "maze": [
+    {
+      question: "Is Maze free?",
+      answer: "Yes, Maze offers a free plan with limited studies and participants. Paid plans start at $99/month for more features and responses."
+    },
+    {
+      question: "How much does Maze cost?",
+      answer: "Maze Starter costs $99/month, Professional $199/month with unlimited seats. Organization and Enterprise have custom pricing."
+    },
+    {
+      question: "What is Maze?",
+      answer: "Maze is a user testing platform that works with design prototypes. Test Figma, Sketch, and InVision prototypes with real users to gather feedback."
+    },
+    {
+      question: "How does Maze work?",
+      answer: "Create tests from your prototypes, recruit participants, and gather metrics like success rates, misclick rates, and heatmaps. No coding required."
+    },
+    {
+      question: "Does Maze integrate with Figma?",
+      answer: "Yes, Maze has a native Figma integration. Import prototypes directly and test within minutes. Results sync back to your workflow."
+    },
+    {
+      question: "What types of tests does Maze support?",
+      answer: "Maze supports usability tests, surveys, card sorting, tree testing, and concept testing. Combine multiple methods in one study."
+    },
+    {
+      question: "How does Maze compare to UserTesting?",
+      answer: "Maze is more affordable and design-focused. UserTesting has more advanced video feedback and a larger participant panel. Maze for designers; UserTesting for comprehensive research."
+    }
+  ],
+
+  // ============================================
+  // USERTESTING
+  // ============================================
+  "usertesting": [
+    {
+      question: "How much does UserTesting cost?",
+      answer: "UserTesting pricing is custom based on needs. Plans typically start around $15,000+/year. Request a demo for specific pricing."
+    },
+    {
+      question: "Is there a free version of UserTesting?",
+      answer: "UserTesting offers demos but no free tier. It's an enterprise product with premium pricing. Consider Maze or UsabilityHub for budget options."
+    },
+    {
+      question: "What is UserTesting?",
+      answer: "UserTesting is an enterprise user research platform. It provides video-based feedback from real users through a large participant panel."
+    },
+    {
+      question: "How does UserTesting work?",
+      answer: "Define your test, select participants from the panel, and receive video recordings of users completing tasks. Get insights within hours."
+    },
+    {
+      question: "What is the UserTesting panel?",
+      answer: "UserTesting has a global panel of 2+ million participants. Filter by demographics, behaviors, and characteristics to find your target audience."
+    },
+    {
+      question: "Does UserTesting support live interviews?",
+      answer: "Yes, UserTesting Live Conversation enables moderated sessions. Schedule 1:1 interviews with recruited participants for deeper insights."
+    },
+    {
+      question: "Who uses UserTesting?",
+      answer: "Enterprise companies like Microsoft, Walmart, and HP use UserTesting. It's designed for large organizations with significant research budgets."
+    }
+  ],
+
+  // ============================================
+  // OPTIMAL WORKSHOP
+  // ============================================
+  "optimal-workshop": [
+    {
+      question: "Is Optimal Workshop free?",
+      answer: "Optimal Workshop offers a free plan with limited studies. Paid plans start at $99/month for more features and responses."
+    },
+    {
+      question: "How much does Optimal Workshop cost?",
+      answer: "Optimal Workshop Pro costs $99/month (individual), Team $208/month (3 seats). Enterprise has custom pricing with advanced features."
+    },
+    {
+      question: "What is Optimal Workshop?",
+      answer: "Optimal Workshop is a UX research platform specializing in information architecture. Tools include card sorting, tree testing, and first-click testing."
+    },
+    {
+      question: "What is card sorting?",
+      answer: "Card sorting helps organize content. Participants group items into categories, revealing how users expect information to be structured."
+    },
+    {
+      question: "What is tree testing?",
+      answer: "Tree testing validates your navigation structure. Participants find items in a text-only version of your site hierarchy."
+    },
+    {
+      question: "What is first-click testing?",
+      answer: "First-click testing shows where users click first on a design. It predicts task success by measuring initial navigation choices."
+    },
+    {
+      question: "How does Optimal Workshop compare to Maze?",
+      answer: "Optimal Workshop specializes in information architecture testing. Maze is better for prototype usability testing. Both complement each other in a research toolkit."
+    }
+  ],
+
+  // ============================================
+  // LOOKBACK
+  // ============================================
+  "lookback": [
+    {
+      question: "Is Lookback free?",
+      answer: "Lookback offers a 14-day free trial. Paid plans start at $99/month for teams. No permanent free tier available."
+    },
+    {
+      question: "How much does Lookback cost?",
+      answer: "Lookback Team costs $99/month (5 observers), Professional $229/month (15 observers). Enterprise has custom pricing."
+    },
+    {
+      question: "What is Lookback?",
+      answer: "Lookback is a user research platform for moderated and unmoderated studies. Record sessions, gather feedback, and analyze user behavior."
+    },
+    {
+      question: "Does Lookback support live sessions?",
+      answer: "Yes, Lookback Live enables moderated remote sessions with video, screen sharing, and real-time collaboration with team observers."
+    },
+    {
+      question: "What is Lookback Participate?",
+      answer: "Participate enables unmoderated self-guided studies. Participants complete tasks on their own time, recording their screen and reactions."
+    },
+    {
+      question: "Does Lookback have a mobile app?",
+      answer: "Yes, Lookback has iOS and Android apps for mobile testing. Record mobile usage with face cam for facial expressions."
+    },
+    {
+      question: "How does Lookback compare to UserTesting?",
+      answer: "Lookback is more affordable for smaller teams. UserTesting has a larger participant panel. Lookback for owned research; UserTesting for panel access."
+    }
+  ],
+
+  // ============================================
+  // FULLSTORY
+  // ============================================
+  "fullstory": [
+    {
+      question: "Is FullStory free?",
+      answer: "FullStory offers a free plan with 1,000 sessions/month. Paid plans have custom pricing based on session volume."
+    },
+    {
+      question: "How much does FullStory cost?",
+      answer: "FullStory pricing is custom based on monthly sessions. Business and Enterprise plans include more sessions and features. Request a demo for pricing."
+    },
+    {
+      question: "What is FullStory?",
+      answer: "FullStory is a digital experience analytics platform. It provides session replay, heatmaps, error tracking, and product analytics."
+    },
+    {
+      question: "What is session replay?",
+      answer: "Session replay records user interactions like a video. Watch how real users navigate your site, where they struggle, and what causes errors."
+    },
+    {
+      question: "Does FullStory track rage clicks?",
+      answer: "Yes, FullStory automatically detects frustration signals like rage clicks, dead clicks, and error clicks. Filter sessions by frustration level."
+    },
+    {
+      question: "What integrations does FullStory have?",
+      answer: "FullStory integrates with Segment, Slack, Salesforce, Zendesk, Jira, and more. Send insights to your existing tools."
+    },
+    {
+      question: "How does FullStory compare to Hotjar?",
+      answer: "FullStory has more powerful analytics and indexing. Hotjar is simpler and more affordable. FullStory for enterprise; Hotjar for smaller teams."
+    }
+  ],
+
+  // ============================================
+  // HEAP
+  // ============================================
+  "heap": [
+    {
+      question: "Is Heap free?",
+      answer: "Heap offers a free tier with basic features and limited sessions. Paid plans (Growth, Pro, Enterprise) have custom pricing."
+    },
+    {
+      question: "How much does Heap cost?",
+      answer: "Heap pricing is custom based on monthly tracked users (MTUs). Contact sales for Growth, Pro, or Enterprise pricing."
+    },
+    {
+      question: "What is Heap?",
+      answer: "Heap is a product analytics platform with automatic data capture. It tracks everything by default so you can analyze any event retroactively."
+    },
+    {
+      question: "What is autocapture?",
+      answer: "Heap automatically captures all user interactions (clicks, form submissions, page views) without manual instrumentation. Define events retroactively from collected data."
+    },
+    {
+      question: "Does Heap have session replay?",
+      answer: "Yes, Heap includes session replay to watch how users interact with your product. Jump to specific events in recordings."
+    },
+    {
+      question: "Does Heap replace Google Analytics?",
+      answer: "Heap is focused on product analytics with autocapture and user-level data. Google Analytics is better for marketing attribution. Many teams use both."
+    },
+    {
+      question: "How does Heap compare to Amplitude?",
+      answer: "Heap has autocapture; Amplitude requires manual tracking but has better visualization. Heap for retroactive analysis; Amplitude for intentional event design."
+    }
+  ],
+
+  // ============================================
+  // PENDO
+  // ============================================
+  "pendo": [
+    {
+      question: "Is Pendo free?",
+      answer: "Pendo offers a free tier for up to 500 monthly active users. Paid plans have custom pricing based on MAUs and features."
+    },
+    {
+      question: "How much does Pendo cost?",
+      answer: "Pendo pricing is custom based on monthly active users and features. Starter, Growth, and Enterprise tiers available. Request a demo for pricing."
+    },
+    {
+      question: "What is Pendo?",
+      answer: "Pendo is a product experience platform combining analytics, in-app guidance, and feedback. It helps product teams understand and improve user journeys."
+    },
+    {
+      question: "What are Pendo Guides?",
+      answer: "Guides are in-app messages like tooltips, modals, and walkthroughs. Create user onboarding, feature announcements, and NPS surveys without code."
+    },
+    {
+      question: "Does Pendo have analytics?",
+      answer: "Yes, Pendo tracks feature usage, paths, funnels, and retention. Retroactive analytics means you can analyze any event from installed date."
+    },
+    {
+      question: "Does Pendo support mobile?",
+      answer: "Yes, Pendo supports iOS, Android, and web applications. Mobile SDKs provide analytics and in-app guides on native apps."
+    },
+    {
+      question: "How does Pendo compare to Amplitude?",
+      answer: "Pendo combines analytics with in-app engagement. Amplitude is pure analytics with better visualization. Pendo for product-led growth; Amplitude for deep analysis."
+    }
+  ],
+
+  // ============================================
+  // SPRIG
+  // ============================================
+  "sprig": [
+    {
+      question: "Is Sprig free?",
+      answer: "Sprig offers a free plan with limited responses. Paid plans start at $175/month for more responses and features."
+    },
+    {
+      question: "How much does Sprig cost?",
+      answer: "Sprig Starter costs $175/month (1,000 responses), Pro costs $325/month (2,500 responses). Enterprise has custom pricing."
+    },
+    {
+      question: "What is Sprig?",
+      answer: "Sprig is an in-product research platform. Run surveys and usability tests within your product to get feedback from actual users in context."
+    },
+    {
+      question: "What are Sprig Surveys?",
+      answer: "Sprig surveys trigger based on user behavior within your product. Ask questions at the right moment for relevant, actionable feedback."
+    },
+    {
+      question: "What is Sprig Replays?",
+      answer: "Sprig Replays captures video clips of users interacting with your product. Watch real usage patterns and identify friction points."
+    },
+    {
+      question: "Does Sprig have AI analysis?",
+      answer: "Yes, Sprig AI summarizes open-ended responses and identifies themes automatically. Get insights from qualitative feedback at scale."
+    },
+    {
+      question: "How does Sprig compare to Pendo?",
+      answer: "Sprig focuses on in-product research and surveys. Pendo is broader with guides and analytics. Sprig for targeted research; Pendo for full product experience."
+    }
+  ],
+
+  // ============================================
+  // PRODUCTBOARD
+  // ============================================
+  "productboard": [
+    {
+      question: "Is Productboard free?",
+      answer: "Productboard offers a free trial but no permanent free tier. Paid plans start at $20/maker/month for essentials."
+    },
+    {
+      question: "How much does Productboard cost?",
+      answer: "Productboard Essentials costs $20/maker/month, Pro $80/maker/month. Enterprise has custom pricing. Viewers are always free."
+    },
+    {
+      question: "What is Productboard?",
+      answer: "Productboard is a product management platform for capturing feedback, prioritizing features, and sharing roadmaps. It centralizes product decisions."
+    },
+    {
+      question: "What is the Insights Board?",
+      answer: "Insights Board captures user feedback from various sources. Tag and organize requests, identify patterns, and link feedback to features."
+    },
+    {
+      question: "What is the Features Board?",
+      answer: "Features Board is where you define and prioritize features. Score features, link to feedback, and make data-driven roadmap decisions."
+    },
+    {
+      question: "Does Productboard have roadmaps?",
+      answer: "Yes, Productboard includes shareable roadmaps. Customize views for different audiences - executives, customers, and internal teams."
+    },
+    {
+      question: "How does Productboard compare to Jira?",
+      answer: "Productboard is for product strategy and discovery. Jira is for engineering execution. Many teams use Productboard for planning and Jira for development."
+    }
+  ],
+
+  // ============================================
+  // AHA
+  // ============================================
+  "aha": [
+    {
+      question: "How much does Aha! cost?",
+      answer: "Aha! Roadmaps Premium costs $59/user/month, Enterprise $99/user/month. Aha! Ideas and other products have separate pricing. Annual billing only."
+    },
+    {
+      question: "Is there a free version of Aha!?",
+      answer: "Aha! offers a 30-day free trial but no permanent free tier. It's positioned as premium product management software."
+    },
+    {
+      question: "What is Aha!?",
+      answer: "Aha! is a product development platform with roadmaps, idea management, whiteboards, and knowledge bases. It's comprehensive for product teams."
+    },
+    {
+      question: "What is Aha! Roadmaps?",
+      answer: "Aha! Roadmaps is the core product for strategy, goals, and visual roadmaps. Create timeline, Gantt, and custom roadmap views."
+    },
+    {
+      question: "What is Aha! Ideas?",
+      answer: "Aha! Ideas is a customer feedback portal. Collect ideas, vote on features, and communicate product decisions to users."
+    },
+    {
+      question: "Does Aha! integrate with Jira?",
+      answer: "Yes, Aha! has a two-way Jira integration. Sync features and releases between Aha! roadmaps and Jira development work."
+    },
+    {
+      question: "How does Aha! compare to Productboard?",
+      answer: "Aha! is more traditional with robust roadmapping. Productboard is more modern and feedback-focused. Aha! for comprehensive PM; Productboard for product discovery."
+    }
+  ],
+
+  // ============================================
+  // CANNY
+  // ============================================
+  "canny": [
+    {
+      question: "Is Canny free?",
+      answer: "Yes, Canny offers a free plan with 100 tracked users and 1 board. Paid plans start at $79/month for more features."
+    },
+    {
+      question: "How much does Canny cost?",
+      answer: "Canny Starter costs $79/month, Growth $359/month, Business has custom pricing. All plans have unlimited admins."
+    },
+    {
+      question: "What is Canny?",
+      answer: "Canny is a feature request and feedback management tool. Users can submit ideas, vote, and track status. Teams prioritize based on votes and revenue."
+    },
+    {
+      question: "What is the Canny Changelog?",
+      answer: "Canny Changelog lets you announce product updates and new features. Users can react and comment. Keep customers informed of progress."
+    },
+    {
+      question: "Does Canny integrate with Jira?",
+      answer: "Yes, Canny integrates with Jira, Linear, GitHub, Asana, and more. Link feedback to issues and sync status automatically."
+    },
+    {
+      question: "Can I use my own domain with Canny?",
+      answer: "Yes, paid plans support custom domains. Host your feedback board at feedback.yourdomain.com for brand consistency."
+    },
+    {
+      question: "How does Canny compare to Productboard?",
+      answer: "Canny is simpler and focused on public feedback voting. Productboard is a full product management platform. Canny for customer-facing feedback; Productboard for PM teams."
+    }
+  ],
+
+  // ============================================
+  // PRODUCTPLAN
+  // ============================================
+  "productplan": [
+    {
+      question: "How much does ProductPlan cost?",
+      answer: "ProductPlan Basic costs $39/editor/month, Professional $69/editor/month. Enterprise has custom pricing. Viewers are free."
+    },
+    {
+      question: "Is there a free version of ProductPlan?",
+      answer: "ProductPlan offers a free trial but no permanent free tier. Viewers can access roadmaps for free without an editor license."
+    },
+    {
+      question: "What is ProductPlan?",
+      answer: "ProductPlan is a roadmap software for visual product planning. Create beautiful timeline roadmaps and share with stakeholders."
+    },
+    {
+      question: "What integrations does ProductPlan have?",
+      answer: "ProductPlan integrates with Jira, Azure DevOps, GitHub, Trello, Slack, and more. Keep roadmaps in sync with development tools."
+    },
+    {
+      question: "Does ProductPlan support multiple roadmaps?",
+      answer: "Yes, create unlimited roadmaps with different views for different audiences. Share strategic or detailed views as needed."
+    },
+    {
+      question: "What is the ProductPlan portfolio view?",
+      answer: "Portfolio view shows multiple product roadmaps together. See how initiatives across products align and identify dependencies."
+    },
+    {
+      question: "How does ProductPlan compare to Aha!?",
+      answer: "ProductPlan is simpler and focuses on roadmapping. Aha! is more comprehensive with strategy and ideas. ProductPlan for visual roadmaps; Aha! for full product management."
+    }
+  ],
+
+  // ============================================
+  // AIRFOCUS
+  // ============================================
+  "airfocus": [
+    {
+      question: "Is Airfocus free?",
+      answer: "Airfocus offers a 14-day free trial. Paid plans start at $59/editor/month. No permanent free tier."
+    },
+    {
+      question: "How much does Airfocus cost?",
+      answer: "Airfocus Essential costs $59/editor/month, Advanced $99/editor/month. Enterprise has custom pricing. Volume discounts available."
+    },
+    {
+      question: "What is Airfocus?",
+      answer: "Airfocus is a modular product management platform. Customize with apps for roadmaps, prioritization, feedback, and OKRs."
+    },
+    {
+      question: "What is Airfocus Priority Poker?",
+      answer: "Priority Poker is collaborative prioritization. Team members score items together, reach consensus, and make objective decisions."
+    },
+    {
+      question: "What are Airfocus scoring frameworks?",
+      answer: "Airfocus includes RICE, ICE, Value vs. Effort, and custom scoring frameworks. Score features objectively for data-driven prioritization."
+    },
+    {
+      question: "Does Airfocus have AI features?",
+      answer: "Yes, Airfocus AI helps write feature descriptions, summarize feedback, and generate roadmap items. Reduce manual work with AI assistance."
+    },
+    {
+      question: "How does Airfocus compare to ProductPlan?",
+      answer: "Airfocus is modular with prioritization focus. ProductPlan is simpler for roadmapping. Airfocus for flexible PM; ProductPlan for visual roadmaps."
+    }
+  ],
+
+  // ============================================
+  // CRAFT.IO
+  // ============================================
+  "craft-io": [
+    {
+      question: "How much does Craft.io cost?",
+      answer: "Craft.io pricing is custom based on team size and needs. Pro and Enterprise plans available. Request a demo for pricing."
+    },
+    {
+      question: "What is Craft.io?",
+      answer: "Craft.io is a product management platform combining roadmaps, specs, feedback, and capacity planning in one workspace."
+    },
+    {
+      question: "What is Craft.io's capacity planning?",
+      answer: "Craft.io capacity planning shows team availability and workload. Plan releases based on actual engineering capacity."
+    },
+    {
+      question: "Does Craft.io have a spec editor?",
+      answer: "Yes, Craft.io includes a powerful spec editor for user stories, PRDs, and requirements. Link specs directly to roadmap items."
+    },
+    {
+      question: "Does Craft.io integrate with Jira?",
+      answer: "Yes, Craft.io has deep Jira integration. Sync items bidirectionally and keep roadmaps aligned with development."
+    },
+    {
+      question: "What is Craft.io's feedback portal?",
+      answer: "The feedback portal collects customer requests. Score by revenue impact, votes, and strategic fit for prioritization."
+    },
+    {
+      question: "How does Craft.io compare to Productboard?",
+      answer: "Craft.io includes capacity planning; Productboard focuses on discovery. Both are comprehensive. Craft.io for planning-heavy teams."
+    }
+  ],
+
+  // ============================================
+  // ABLY
+  // ============================================
+  "ably": [
+    {
+      question: "Is Ably free?",
+      answer: "Yes, Ably offers a free tier with 6 million messages/month and 200 peak connections. Paid plans start at $29/month."
+    },
+    {
+      question: "How much does Ably cost?",
+      answer: "Ably Standard costs $29/month (10M messages), Pro $399/month (100M messages). Enterprise has custom pricing for higher volumes."
+    },
+    {
+      question: "What is Ably?",
+      answer: "Ably is a realtime messaging platform for building live features like chat, notifications, and data sync. It's an alternative to Pusher."
+    },
+    {
+      question: "What protocols does Ably support?",
+      answer: "Ably supports WebSockets, SSE, MQTT, and REST. SDKs available for JavaScript, Python, Ruby, Go, Java, and more."
+    },
+    {
+      question: "Does Ably guarantee message delivery?",
+      answer: "Yes, Ably guarantees message ordering and delivery. Messages are persisted and replayed on reconnection. No messages lost."
+    },
+    {
+      question: "What is Ably Spaces?",
+      answer: "Ably Spaces provides collaborative features like presence, cursors, and component locking. Build Figma-like multiplayer experiences."
+    },
+    {
+      question: "How does Ably compare to Pusher?",
+      answer: "Ably offers stronger guarantees and more features. Pusher is simpler to start with. Ably for reliability-critical apps; Pusher for quick implementation."
+    }
+  ],
+
+  // ============================================
+  // PUSHER
+  // ============================================
+  "pusher": [
+    {
+      question: "Is Pusher free?",
+      answer: "Yes, Pusher Sandbox is free with 200,000 messages/day and 100 max connections. Paid plans start at $49/month."
+    },
+    {
+      question: "How much does Pusher cost?",
+      answer: "Pusher Startup costs $49/month, Pro $99/month, Business $299/month. Pricing based on messages and connections."
+    },
+    {
+      question: "What is Pusher?",
+      answer: "Pusher provides realtime APIs for building live features. Pusher Channels for pub/sub messaging, Beams for push notifications."
+    },
+    {
+      question: "What is Pusher Channels?",
+      answer: "Channels is Pusher's pub/sub messaging service. Add realtime updates, chat, notifications, and live data to your applications."
+    },
+    {
+      question: "What is Pusher Beams?",
+      answer: "Beams is Pusher's push notification service. Send notifications to iOS, Android, and web browsers with simple APIs."
+    },
+    {
+      question: "What languages does Pusher support?",
+      answer: "Pusher has SDKs for JavaScript, Python, PHP, Ruby, Go, Java, .NET, iOS, Android, and more. REST API for any language."
+    },
+    {
+      question: "How does Pusher compare to Firebase?",
+      answer: "Pusher is messaging-focused and backend-agnostic. Firebase is a full platform tied to Google. Pusher for adding realtime to existing apps."
+    }
+  ],
+
+  // ============================================
+  // FIREBASE
+  // ============================================
+  "firebase": [
+    {
+      question: "Is Firebase free?",
+      answer: "Yes, Firebase has a generous free tier (Spark plan) including auth, realtime database, hosting, and more. Blaze plan is pay-as-you-go."
+    },
+    {
+      question: "How much does Firebase cost?",
+      answer: "Firebase Blaze plan is usage-based. Realtime Database costs $5/GB stored, Firestore $0.18/100K reads. Free tier covers most small apps."
+    },
+    {
+      question: "What is Firebase?",
+      answer: "Firebase is Google's app development platform. It includes database, auth, hosting, cloud functions, analytics, and more."
+    },
+    {
+      question: "What is Firestore?",
+      answer: "Firestore is Firebase's NoSQL document database. It offers realtime sync, offline support, and scales automatically."
+    },
+    {
+      question: "Does Firebase support authentication?",
+      answer: "Yes, Firebase Auth supports email/password, phone, Google, Facebook, Apple, and more. Handles users, sessions, and security."
+    },
+    {
+      question: "What is Firebase Cloud Messaging?",
+      answer: "FCM sends push notifications to iOS, Android, and web. Free and reliable with targeting and analytics."
+    },
+    {
+      question: "How does Firebase compare to Supabase?",
+      answer: "Firebase is NoSQL and proprietary. Supabase is PostgreSQL and open source. Firebase for rapid development; Supabase for SQL and portability."
+    }
+  ],
+
+  // ============================================
+  // PIPEDRIVE
+  // ============================================
+  "pipedrive": [
+    {
+      question: "Is Pipedrive free?",
+      answer: "Pipedrive offers a 14-day free trial but no permanent free tier. Paid plans start at $14/user/month (Essential)."
+    },
+    {
+      question: "How much does Pipedrive cost?",
+      answer: "Pipedrive Essential costs $14/user/month, Advanced $34/user/month, Professional $49/user/month, Power $64/user/month, Enterprise $99/user/month."
+    },
+    {
+      question: "What is Pipedrive?",
+      answer: "Pipedrive is a sales CRM designed for small teams. It focuses on pipeline management with visual deal tracking and sales automation."
+    },
+    {
+      question: "What is Pipedrive's visual pipeline?",
+      answer: "Pipedrive's signature feature is its visual sales pipeline. Drag and drop deals between stages, see all opportunities at a glance."
+    },
+    {
+      question: "Does Pipedrive have email integration?",
+      answer: "Yes, Pipedrive syncs with Gmail and Outlook. Track emails, schedule follow-ups, and see communication history on deal records."
+    },
+    {
+      question: "Does Pipedrive have AI features?",
+      answer: "Yes, Pipedrive AI Sales Assistant suggests actions, scores leads, and provides insights. Helps prioritize deals and automate repetitive tasks."
+    },
+    {
+      question: "How does Pipedrive compare to HubSpot?",
+      answer: "Pipedrive is simpler and more affordable for pure sales. HubSpot offers free CRM with marketing tools. Pipedrive for sales focus; HubSpot for all-in-one."
+    }
+  ],
+
+  // ============================================
+  // CLOSE
+  // ============================================
+  "close": [
+    {
+      question: "Is Close CRM free?",
+      answer: "Close offers a 14-day free trial but no permanent free tier. Paid plans start at $59/user/month."
+    },
+    {
+      question: "How much does Close cost?",
+      answer: "Close Startup costs $59/user/month, Professional $109/user/month, Enterprise $149/user/month. All plans include calling."
+    },
+    {
+      question: "What is Close?",
+      answer: "Close is a CRM built for inside sales teams. It combines CRM, calling, email, and SMS in one platform with a focus on speed."
+    },
+    {
+      question: "Does Close have built-in calling?",
+      answer: "Yes, Close includes VoIP calling, call recording, and predictive dialer. Make calls directly from the CRM without switching tools."
+    },
+    {
+      question: "Does Close have SMS?",
+      answer: "Yes, Close includes SMS messaging for sales outreach. Send texts from the CRM and track conversations with leads."
+    },
+    {
+      question: "What integrations does Close have?",
+      answer: "Close integrates with Zapier, Segment, Zoom, Slack, Mailchimp, and more. API available for custom integrations."
+    },
+    {
+      question: "How does Close compare to Salesforce?",
+      answer: "Close is simpler with built-in calling and faster setup. Salesforce is more customizable but complex. Close for SMB inside sales; Salesforce for enterprise."
+    }
+  ],
+
+  // ============================================
+  // FRESHSALES
+  // ============================================
+  "freshsales": [
+    {
+      question: "Is Freshsales free?",
+      answer: "Yes, Freshsales offers a free plan for up to 3 users with basic CRM features. Paid plans start at $15/user/month."
+    },
+    {
+      question: "How much does Freshsales cost?",
+      answer: "Freshsales Growth costs $15/user/month, Pro $39/user/month, Enterprise $69/user/month. Free plan available for small teams."
+    },
+    {
+      question: "What is Freshsales?",
+      answer: "Freshsales is a CRM from Freshworks with AI-powered features. It includes contact management, pipeline tracking, and built-in phone/email."
+    },
+    {
+      question: "What is Freddy AI in Freshsales?",
+      answer: "Freddy AI is Freshsales' AI assistant. It scores leads, predicts deal outcomes, suggests next actions, and automates data entry."
+    },
+    {
+      question: "Does Freshsales integrate with Freshdesk?",
+      answer: "Yes, Freshsales integrates seamlessly with Freshdesk and other Freshworks products. Share customer data across sales and support."
+    },
+    {
+      question: "Does Freshsales have a mobile app?",
+      answer: "Yes, Freshsales has iOS and Android apps with full CRM access. Log calls, update deals, and check pipelines on the go."
+    },
+    {
+      question: "How does Freshsales compare to Pipedrive?",
+      answer: "Freshsales has AI features and a free tier. Pipedrive is more visual. Freshsales for AI-powered sales; Pipedrive for simplicity."
+    }
+  ],
+
+  // ============================================
+  // COPPER
+  // ============================================
+  "copper": [
+    {
+      question: "Is Copper CRM free?",
+      answer: "Copper offers a 14-day free trial but no permanent free tier. Paid plans start at $29/user/month."
+    },
+    {
+      question: "How much does Copper cost?",
+      answer: "Copper Basic costs $29/user/month, Professional $69/user/month, Business $134/user/month. Annual billing required."
+    },
+    {
+      question: "What is Copper?",
+      answer: "Copper is a CRM built specifically for Google Workspace. It lives inside Gmail and integrates deeply with Google apps."
+    },
+    {
+      question: "How does Copper integrate with Gmail?",
+      answer: "Copper shows CRM data directly in Gmail sidebar. Create contacts, log emails, update deals without leaving your inbox."
+    },
+    {
+      question: "Does Copper work with Google Sheets?",
+      answer: "Yes, Copper integrates with Google Sheets for reporting and data export. Create custom reports using familiar spreadsheet tools."
+    },
+    {
+      question: "Is Copper good for agencies?",
+      answer: "Yes, Copper is popular with agencies and professional services. It's designed for relationship-driven businesses."
+    },
+    {
+      question: "How does Copper compare to HubSpot?",
+      answer: "Copper is Google Workspace-native and simpler. HubSpot is more comprehensive with marketing tools. Copper for Google users; HubSpot for all-in-one."
+    }
+  ],
+
+  // ============================================
+  // OUTREACH
+  // ============================================
+  "outreach": [
+    {
+      question: "How much does Outreach cost?",
+      answer: "Outreach pricing is custom based on team size and features. Plans typically start around $100/user/month. Request a demo for pricing."
+    },
+    {
+      question: "What is Outreach?",
+      answer: "Outreach is a sales engagement platform for enterprise teams. It automates sequences, tracks engagement, and provides AI-powered insights."
+    },
+    {
+      question: "What are Outreach sequences?",
+      answer: "Sequences are automated multi-touch outreach campaigns. Combine emails, calls, and LinkedIn touches in personalized cadences."
+    },
+    {
+      question: "Does Outreach have AI?",
+      answer: "Yes, Outreach uses AI for email optimization, call sentiment analysis, and deal health scoring. Kaia AI assists during live calls."
+    },
+    {
+      question: "Does Outreach integrate with Salesforce?",
+      answer: "Yes, Outreach has deep Salesforce integration. Sync activities, contacts, and opportunities bidirectionally."
+    },
+    {
+      question: "What is Outreach Commit?",
+      answer: "Outreach Commit is revenue intelligence for forecasting. It analyzes deal health and provides accurate revenue predictions."
+    },
+    {
+      question: "How does Outreach compare to Salesloft?",
+      answer: "Both are enterprise sales engagement leaders. Outreach has stronger AI and analytics. Salesloft is slightly simpler. Both excellent for enterprise sales teams."
+    }
+  ],
+
+  // ============================================
+  // SALESLOFT
+  // ============================================
+  "salesloft": [
+    {
+      question: "How much does Salesloft cost?",
+      answer: "Salesloft pricing is custom based on team size. Plans typically start around $75-125/user/month. Request a demo for pricing."
+    },
+    {
+      question: "What is Salesloft?",
+      answer: "Salesloft is a sales engagement platform for managing outreach, calls, and pipeline. It helps sales teams execute consistent sales processes."
+    },
+    {
+      question: "What are Salesloft cadences?",
+      answer: "Cadences are multi-step outreach sequences. Automate email, call, and social touches while personalizing for each prospect."
+    },
+    {
+      question: "Does Salesloft have a dialer?",
+      answer: "Yes, Salesloft includes a built-in dialer with click-to-call, call recording, and voicemail drop. Manage calls without leaving the platform."
+    },
+    {
+      question: "Does Salesloft integrate with CRMs?",
+      answer: "Yes, Salesloft integrates with Salesforce, Microsoft Dynamics, HubSpot, and other CRMs. Sync activities and data bidirectionally."
+    },
+    {
+      question: "What is Salesloft Rhythm?",
+      answer: "Rhythm is Salesloft's AI-powered signal engine. It prioritizes tasks based on buyer behavior and suggests next best actions."
+    },
+    {
+      question: "How does Salesloft compare to Apollo?",
+      answer: "Salesloft is enterprise-focused with deeper features. Apollo is more affordable with built-in data. Salesloft for enterprise; Apollo for SMB."
+    }
+  ],
+
+  // ============================================
+  // GONG
+  // ============================================
+  "gong": [
+    {
+      question: "How much does Gong cost?",
+      answer: "Gong pricing is custom based on users and features. Plans typically start around $100-150/user/month. Request a demo for pricing."
+    },
+    {
+      question: "What is Gong?",
+      answer: "Gong is a revenue intelligence platform that records and analyzes sales calls. It provides AI insights to improve sales conversations."
+    },
+    {
+      question: "What does Gong analyze?",
+      answer: "Gong analyzes calls, emails, and meetings. It tracks talk ratios, questions asked, topics discussed, and sentiment throughout deals."
+    },
+    {
+      question: "How does Gong help with coaching?",
+      answer: "Gong identifies winning behaviors and areas for improvement. Managers can review calls, leave comments, and create coaching playlists."
+    },
+    {
+      question: "Does Gong integrate with video platforms?",
+      answer: "Yes, Gong records Zoom, Teams, Webex, and other video platforms. Automatically captures and transcribes all customer conversations."
+    },
+    {
+      question: "What is Gong Forecast?",
+      answer: "Gong Forecast uses AI to predict deal outcomes based on conversation data. More accurate than traditional pipeline reviews."
+    },
+    {
+      question: "How does Gong compare to Chorus?",
+      answer: "Gong has broader analytics and more integrations. Chorus (now ZoomInfo) focuses on call intelligence. Gong for comprehensive revenue intelligence."
+    }
+  ],
+
+  // ============================================
+  // DRIFT
+  // ============================================
+  "drift": [
+    {
+      question: "How much does Drift cost?",
+      answer: "Drift Premium starts around $2,500/month. Advanced and Enterprise tiers have custom pricing. Contact sales for quotes."
+    },
+    {
+      question: "What is Drift?",
+      answer: "Drift is a conversational marketing platform. It uses chatbots and live chat to convert website visitors into leads and meetings."
+    },
+    {
+      question: "What is a Drift chatbot?",
+      answer: "Drift chatbots engage visitors 24/7, qualify leads, and book meetings automatically. Use AI or rule-based flows for conversations."
+    },
+    {
+      question: "Does Drift have AI?",
+      answer: "Yes, Drift GPT powers AI chatbots that understand context and respond naturally. AI handles complex questions and qualifies leads."
+    },
+    {
+      question: "Does Drift integrate with CRMs?",
+      answer: "Yes, Drift integrates with Salesforce, HubSpot, Marketo, and more. Route leads and sync conversation data automatically."
+    },
+    {
+      question: "What is Drift Email?",
+      answer: "Drift Email uses AI to read and respond to inbound emails. It qualifies leads and books meetings from email inquiries."
+    },
+    {
+      question: "How does Drift compare to Intercom?",
+      answer: "Drift is B2B sales-focused with revenue features. Intercom is broader for support and engagement. Drift for B2B lead gen; Intercom for customer communication."
+    }
+  ],
+
+  // ============================================
+  // QUALIFIED
+  // ============================================
+  "qualified": [
+    {
+      question: "How much does Qualified cost?",
+      answer: "Qualified pricing starts around $3,000/month. Enterprise pricing is custom. Contact sales for specific quotes."
+    },
+    {
+      question: "What is Qualified?",
+      answer: "Qualified is a conversational sales platform for Salesforce users. It identifies target accounts on your site and enables real-time conversations."
+    },
+    {
+      question: "How does Qualified identify visitors?",
+      answer: "Qualified uses IP matching, form data, and cookies to identify companies and individuals. Shows Salesforce data for known accounts."
+    },
+    {
+      question: "Does Qualified integrate with Salesforce?",
+      answer: "Yes, Qualified is built natively on Salesforce. Full bidirectional sync with leads, contacts, accounts, and opportunities."
+    },
+    {
+      question: "What is Qualified Signals?",
+      answer: "Signals shows account-level buying intent based on website activity. See which target accounts are actively researching your solution."
+    },
+    {
+      question: "Does Qualified have AI?",
+      answer: "Yes, Qualified AI handles conversations, qualifies leads, and books meetings. Piper is Qualified's AI SDR that engages visitors 24/7."
+    },
+    {
+      question: "How does Qualified compare to Drift?",
+      answer: "Qualified is Salesforce-native with deeper CRM integration. Drift works with any CRM. Qualified for Salesforce users; Drift for broader compatibility."
+    }
+  ],
+
+  // ============================================
+  // CLEARBIT
+  // ============================================
+  "clearbit": [
+    {
+      question: "Is Clearbit free?",
+      answer: "Clearbit offers free tools like Logo API and limited data access. Paid plans have custom pricing based on data volume and features."
+    },
+    {
+      question: "How much does Clearbit cost?",
+      answer: "Clearbit pricing is custom based on data needs and enrichment volume. Contact sales for pricing. It's now part of HubSpot."
+    },
+    {
+      question: "What is Clearbit?",
+      answer: "Clearbit is a B2B data enrichment platform. It provides company and contact data for lead scoring, personalization, and targeting."
+    },
+    {
+      question: "What is Clearbit Enrichment?",
+      answer: "Enrichment adds 100+ attributes to leads and accounts automatically. Get company size, industry, tech stack, and more from just an email."
+    },
+    {
+      question: "What is Clearbit Reveal?",
+      answer: "Reveal identifies anonymous website visitors at the company level. See which companies are browsing your site without form fills."
+    },
+    {
+      question: "Did HubSpot acquire Clearbit?",
+      answer: "Yes, HubSpot acquired Clearbit in 2023. Clearbit's data powers HubSpot's enrichment features while continuing as a standalone product."
+    },
+    {
+      question: "How does Clearbit compare to ZoomInfo?",
+      answer: "Clearbit excels at data enrichment and APIs. ZoomInfo has a larger contact database. Clearbit for enrichment; ZoomInfo for prospecting."
+    }
+  ],
+
+  // ============================================
+  // ZOOMINFO
+  // ============================================
+  "zoominfo": [
+    {
+      question: "How much does ZoomInfo cost?",
+      answer: "ZoomInfo pricing is custom based on features and credits. Plans typically start around $15,000-20,000/year. Contact sales for quotes."
+    },
+    {
+      question: "What is ZoomInfo?",
+      answer: "ZoomInfo is a B2B contact database and sales intelligence platform. It provides company and contact data for prospecting and outreach."
+    },
+    {
+      question: "How many contacts does ZoomInfo have?",
+      answer: "ZoomInfo has data on 100M+ business professionals and 14M+ companies. The database is continuously updated and verified."
+    },
+    {
+      question: "What is ZoomInfo intent data?",
+      answer: "Intent data shows when companies are researching topics related to your solution. Identify in-market buyers before they reach out."
+    },
+    {
+      question: "Does ZoomInfo integrate with CRMs?",
+      answer: "Yes, ZoomInfo integrates with Salesforce, HubSpot, Microsoft Dynamics, and other CRMs. Enrich records and sync data automatically."
+    },
+    {
+      question: "What is ZoomInfo Engage?",
+      answer: "ZoomInfo Engage is a sales engagement tool with sequences, dialer, and email automation. Combines data with outreach execution."
+    },
+    {
+      question: "How does ZoomInfo compare to Apollo?",
+      answer: "ZoomInfo has more data and enterprise features at higher prices. Apollo is more affordable with good data quality. ZoomInfo for enterprise; Apollo for SMB."
+    }
+  ],
+
+  // ============================================
+  // LUSHA
+  // ============================================
+  "lusha": [
+    {
+      question: "Is Lusha free?",
+      answer: "Yes, Lusha offers a free plan with 5 credits/month. Paid plans start at $36/user/month for more credits and features."
+    },
+    {
+      question: "How much does Lusha cost?",
+      answer: "Lusha Pro costs $36/user/month (40 credits), Premium $59/user/month (80 credits), Scale has custom pricing for teams."
+    },
+    {
+      question: "What is Lusha?",
+      answer: "Lusha is a B2B contact data provider with a Chrome extension. Find emails and phone numbers while browsing LinkedIn and websites."
+    },
+    {
+      question: "How does the Lusha extension work?",
+      answer: "Install the Chrome extension, visit a LinkedIn profile, and reveal contact details with one click. Also works on company websites."
+    },
+    {
+      question: "Is Lusha data accurate?",
+      answer: "Lusha claims 81% email accuracy and focuses on data quality. It uses community verification and multiple sources to validate data."
+    },
+    {
+      question: "Does Lusha integrate with CRMs?",
+      answer: "Yes, Lusha integrates with Salesforce, HubSpot, Pipedrive, and others. Push contacts directly to your CRM from the extension."
+    },
+    {
+      question: "How does Lusha compare to ZoomInfo?",
+      answer: "Lusha is simpler and more affordable for individuals and small teams. ZoomInfo has more data and enterprise features. Lusha for SMB; ZoomInfo for enterprise."
+    }
+  ],
+
+  // ============================================
+  // HUNTER
+  // ============================================
+  "hunter": [
+    {
+      question: "Is Hunter free?",
+      answer: "Yes, Hunter offers a free plan with 25 searches and 50 verifications per month. Paid plans start at $49/month."
+    },
+    {
+      question: "How much does Hunter cost?",
+      answer: "Hunter Starter costs $49/month (500 searches), Growth $149/month (5,000 searches), Business $499/month (50,000 searches)."
+    },
+    {
+      question: "What is Hunter?",
+      answer: "Hunter is an email finding and verification tool. Find professional email addresses by name and company, then verify deliverability."
+    },
+    {
+      question: "How does Hunter find emails?",
+      answer: "Hunter searches its database of 100M+ professional emails, plus uses pattern matching and verification to find valid addresses."
+    },
+    {
+      question: "What is Hunter Verify?",
+      answer: "Hunter Verify checks if an email address is deliverable. It validates format, domain, and mailbox existence to reduce bounces."
+    },
+    {
+      question: "Does Hunter have an API?",
+      answer: "Yes, Hunter provides a REST API for email finding and verification. Integrate email lookup into your apps and workflows."
+    },
+    {
+      question: "How does Hunter compare to Apollo?",
+      answer: "Hunter focuses purely on email finding and verification. Apollo is a full sales platform with engagement tools. Hunter for email lookup; Apollo for complete sales."
+    }
+  ],
+
+  // ============================================
+  // SNOV.IO
+  // ============================================
+  "snov-io": [
+    {
+      question: "Is Snov.io free?",
+      answer: "Yes, Snov.io offers a free trial with 50 credits. Paid plans start at $39/month for more credits and features."
+    },
+    {
+      question: "How much does Snov.io cost?",
+      answer: "Snov.io Starter costs $39/month (1,000 credits), Pro $99/month (5,000 credits), Managed Service $3,999/month for done-for-you outreach."
+    },
+    {
+      question: "What is Snov.io?",
+      answer: "Snov.io is a sales automation platform with email finding, verification, and outreach tools. An affordable alternative to larger platforms."
+    },
+    {
+      question: "Does Snov.io have email sequences?",
+      answer: "Yes, Snov.io includes email drip campaigns with automatic follow-ups. Track opens, clicks, and replies in the built-in CRM."
+    },
+    {
+      question: "Does Snov.io verify emails?",
+      answer: "Yes, Snov.io includes email verification to reduce bounces. Verify emails individually or in bulk before sending campaigns."
+    },
+    {
+      question: "Does Snov.io have a Chrome extension?",
+      answer: "Yes, the Snov.io extension finds emails on LinkedIn and websites. Save contacts directly to your lists without leaving the page."
+    },
+    {
+      question: "How does Snov.io compare to Hunter?",
+      answer: "Snov.io offers more features including email sequences and CRM. Hunter focuses on finding and verifying. Snov.io for complete sales tools; Hunter for data."
+    }
+  ],
+
+  // ============================================
+  // SEAMLESS.AI
+  // ============================================
+  "seamless-ai": [
+    {
+      question: "Is Seamless.AI free?",
+      answer: "Seamless.AI offers a free plan with limited credits. Paid plans start at $147/month for individuals."
+    },
+    {
+      question: "How much does Seamless.AI cost?",
+      answer: "Seamless.AI Basic costs $147/month (individual), Pro and Enterprise have custom pricing for teams with more features."
+    },
+    {
+      question: "What is Seamless.AI?",
+      answer: "Seamless.AI is a sales prospecting tool that uses AI to find and verify contact data. Real-time search engine for B2B contacts."
+    },
+    {
+      question: "How does Seamless.AI find contacts?",
+      answer: "Seamless.AI uses AI to search the web in real-time for contact information. It verifies data on the fly rather than using a static database."
+    },
+    {
+      question: "Does Seamless.AI have buyer intent?",
+      answer: "Yes, Seamless.AI provides intent signals to identify companies actively researching your solution category."
+    },
+    {
+      question: "Does Seamless.AI integrate with CRMs?",
+      answer: "Yes, Seamless.AI integrates with Salesforce, HubSpot, Outreach, and other tools. Export contacts directly to your systems."
+    },
+    {
+      question: "How does Seamless.AI compare to ZoomInfo?",
+      answer: "Seamless.AI uses real-time AI search; ZoomInfo has a larger curated database. Seamless.AI is more affordable. Both provide quality B2B data."
+    }
+  ],
+
+  // ============================================
+  // COGNISM
+  // ============================================
+  "cognism": [
+    {
+      question: "How much does Cognism cost?",
+      answer: "Cognism pricing is custom based on users and data needs. Plans typically start around $15,000/year. Contact sales for quotes."
+    },
+    {
+      question: "What is Cognism?",
+      answer: "Cognism is a B2B sales intelligence platform with GDPR-compliant data. It provides phone-verified mobile numbers and buyer intent."
+    },
+    {
+      question: "What is Diamond Data?",
+      answer: "Diamond Data is Cognism's phone-verified mobile number database. Human-verified for 95%+ connection rates on mobile numbers."
+    },
+    {
+      question: "Is Cognism GDPR compliant?",
+      answer: "Yes, Cognism is designed for GDPR compliance with opt-out management and privacy-first approach. Popular in Europe for this reason."
+    },
+    {
+      question: "Does Cognism have intent data?",
+      answer: "Yes, Cognism includes Bombora intent data to identify companies researching relevant topics. Prioritize accounts showing buying signals."
+    },
+    {
+      question: "Does Cognism have a Chrome extension?",
+      answer: "Yes, the Cognism Chrome extension reveals contact data on LinkedIn and company websites. Integrates with popular CRMs."
+    },
+    {
+      question: "How does Cognism compare to ZoomInfo?",
+      answer: "Cognism has better European data and GDPR compliance. ZoomInfo has more US data. Cognism for international; ZoomInfo for North America."
+    }
+  ],
+
+  // ============================================
+  // SENDGRID
+  // ============================================
+  "sendgrid": [
+    {
+      question: "Is SendGrid free?",
+      answer: "Yes, SendGrid offers a free plan with 100 emails/day forever. Paid plans start at $19.95/month for higher volumes."
+    },
+    {
+      question: "How much does SendGrid cost?",
+      answer: "SendGrid Essentials costs $19.95/month (50K emails), Pro $89.95/month (100K emails). Higher volumes have custom pricing."
+    },
+    {
+      question: "What is SendGrid?",
+      answer: "SendGrid is a cloud email platform for transactional and marketing emails. It's owned by Twilio and handles delivery at scale."
+    },
+    {
+      question: "What is SendGrid's deliverability rate?",
+      answer: "SendGrid claims 99% delivery rate with dedicated IPs and authentication. It handles 100B+ emails per year."
+    },
+    {
+      question: "Does SendGrid have an API?",
+      answer: "Yes, SendGrid provides REST APIs and SMTP relay for sending emails. SDKs available for most programming languages."
+    },
+    {
+      question: "Does SendGrid support marketing emails?",
+      answer: "Yes, SendGrid Marketing Campaigns includes email builder, templates, segmentation, and automation for marketing emails."
+    },
+    {
+      question: "How does SendGrid compare to Mailchimp?",
+      answer: "SendGrid is API-first for developers and transactional email. Mailchimp is user-friendly for marketing. SendGrid for devs; Mailchimp for marketers."
+    }
+  ],
+
+  // ============================================
+  // MAILGUN
+  // ============================================
+  "mailgun": [
+    {
+      question: "Is Mailgun free?",
+      answer: "Mailgun offers a trial with 5,000 free emails for 3 months. After that, paid plans start at $35/month."
+    },
+    {
+      question: "How much does Mailgun cost?",
+      answer: "Mailgun Foundation costs $35/month (50K emails), Scale $90/month (100K emails), Enterprise has custom pricing."
+    },
+    {
+      question: "What is Mailgun?",
+      answer: "Mailgun is an email API service for developers. It handles sending, receiving, and tracking emails with powerful APIs."
+    },
+    {
+      question: "What is Mailgun Validate?",
+      answer: "Mailgun Validate verifies email addresses before sending. It checks syntax, domain, and mailbox existence to reduce bounces."
+    },
+    {
+      question: "Does Mailgun support inbound email?",
+      answer: "Yes, Mailgun can receive emails and parse them via webhooks. Build apps that respond to incoming emails automatically."
+    },
+    {
+      question: "Does Mailgun have SMTP?",
+      answer: "Yes, Mailgun supports SMTP relay in addition to REST API. Choose the integration method that works best for your stack."
+    },
+    {
+      question: "How does Mailgun compare to SendGrid?",
+      answer: "Both are excellent for transactional email. Mailgun is more developer-focused; SendGrid has a better marketing platform. Both reliable choices."
+    }
+  ],
+
+  // ============================================
+  // POSTMARK
+  // ============================================
+  "postmark": [
+    {
+      question: "Is Postmark free?",
+      answer: "Postmark offers 100 free emails to test. Paid plans start at $15/month for 10,000 emails."
+    },
+    {
+      question: "How much does Postmark cost?",
+      answer: "Postmark costs $15/month for 10,000 emails. Volume pricing scales: 50K for $50, 125K for $100, etc."
+    },
+    {
+      question: "What is Postmark?",
+      answer: "Postmark is a transactional email service focused on deliverability and speed. Known for fast delivery times and excellent uptime."
+    },
+    {
+      question: "How fast is Postmark delivery?",
+      answer: "Postmark delivers 99% of emails in under 10 seconds. They focus on transactional email where speed matters."
+    },
+    {
+      question: "Does Postmark support templates?",
+      answer: "Yes, Postmark has a template system with variables. Create reusable templates for receipts, notifications, and other transactional emails."
+    },
+    {
+      question: "Does Postmark have message streams?",
+      answer: "Yes, message streams separate transactional and broadcast emails. Keep different email types isolated for better deliverability."
+    },
+    {
+      question: "How does Postmark compare to SendGrid?",
+      answer: "Postmark focuses purely on transactional email with speed and reliability. SendGrid is broader with marketing features. Postmark for critical transactional; SendGrid for all-purpose."
+    }
+  ],
+
+  // ============================================
+  // CONVERTKIT
+  // ============================================
+  "convertkit": [
+    {
+      question: "Is ConvertKit free?",
+      answer: "Yes, ConvertKit offers a free plan with up to 10,000 subscribers and limited features. Paid plans start at $25/month."
+    },
+    {
+      question: "How much does ConvertKit cost?",
+      answer: "ConvertKit Creator costs $25/month (up to 1,000 subs), Creator Pro $50/month. Pricing increases with subscriber count."
+    },
+    {
+      question: "What is ConvertKit?",
+      answer: "ConvertKit is an email marketing platform for creators. It's designed for bloggers, podcasters, YouTubers, and course creators."
+    },
+    {
+      question: "What are ConvertKit automations?",
+      answer: "Visual automation builder lets you create email sequences triggered by actions. Guide subscribers through funnels based on behavior."
+    },
+    {
+      question: "Does ConvertKit have landing pages?",
+      answer: "Yes, ConvertKit includes landing page and form builders. Create opt-in pages without needing a separate website."
+    },
+    {
+      question: "Does ConvertKit sell products?",
+      answer: "Yes, ConvertKit Commerce lets you sell digital products and subscriptions. Accept payments directly without third-party tools."
+    },
+    {
+      question: "How does ConvertKit compare to Mailchimp?",
+      answer: "ConvertKit is simpler and creator-focused. Mailchimp is broader with e-commerce features. ConvertKit for creators; Mailchimp for businesses."
+    }
+  ],
+
+  // ============================================
+  // KLAVIYO
+  // ============================================
+  "klaviyo": [
+    {
+      question: "Is Klaviyo free?",
+      answer: "Yes, Klaviyo offers a free plan with up to 250 contacts and 500 email sends per month. Paid plans scale with contact count."
+    },
+    {
+      question: "How much does Klaviyo cost?",
+      answer: "Klaviyo starts at $20/month for 251-500 contacts. 10,000 contacts costs around $150/month. Pricing scales with list size."
+    },
+    {
+      question: "What is Klaviyo?",
+      answer: "Klaviyo is an email and SMS marketing platform for e-commerce. It specializes in Shopify integration and abandoned cart flows."
+    },
+    {
+      question: "How does Klaviyo integrate with Shopify?",
+      answer: "Klaviyo has native Shopify integration. Sync customer data, purchase history, and browse behavior for personalized campaigns."
+    },
+    {
+      question: "What are Klaviyo flows?",
+      answer: "Flows are automated email/SMS sequences triggered by behavior. Popular flows include welcome series, abandoned cart, and post-purchase."
+    },
+    {
+      question: "Does Klaviyo support SMS?",
+      answer: "Yes, Klaviyo includes SMS marketing with same segmentation and automation as email. Send coordinated multi-channel campaigns."
+    },
+    {
+      question: "How does Klaviyo compare to Mailchimp?",
+      answer: "Klaviyo is e-commerce-focused with better Shopify integration. Mailchimp is more general purpose. Klaviyo for e-commerce; Mailchimp for broader use."
+    }
+  ],
+
+  // ============================================
+  // DRIP
+  // ============================================
+  "drip": [
+    {
+      question: "Is Drip free?",
+      answer: "Drip offers a 14-day free trial. Paid plans start at $39/month for up to 2,500 contacts."
+    },
+    {
+      question: "How much does Drip cost?",
+      answer: "Drip costs $39/month for 2,500 contacts, $89/month for 5,000 contacts. Pricing scales with subscriber count."
+    },
+    {
+      question: "What is Drip?",
+      answer: "Drip is an e-commerce email marketing platform. It provides marketing automation and revenue attribution for online stores."
+    },
+    {
+      question: "What integrations does Drip have?",
+      answer: "Drip integrates with Shopify, WooCommerce, BigCommerce, and other platforms. Sync product and order data automatically."
+    },
+    {
+      question: "What are Drip workflows?",
+      answer: "Workflows are visual automation sequences. Create customer journeys based on purchases, page views, tags, and custom events."
+    },
+    {
+      question: "Does Drip track revenue?",
+      answer: "Yes, Drip provides revenue attribution showing which emails drive sales. See the dollar impact of every campaign."
+    },
+    {
+      question: "How does Drip compare to Klaviyo?",
+      answer: "Both are excellent for e-commerce. Klaviyo is larger with more features and SMS. Drip is simpler and more affordable for smaller stores."
+    }
+  ],
+
+  // ============================================
+  // CUSTOMER.IO
+  // ============================================
+  "customer-io": [
+    {
+      question: "Is Customer.io free?",
+      answer: "Customer.io offers a free trial. Paid plans start at $100/month for the Essentials plan."
+    },
+    {
+      question: "How much does Customer.io cost?",
+      answer: "Customer.io Essentials costs $100/month, Premium $1,000/month. Pricing based on profile count and message volume."
+    },
+    {
+      question: "What is Customer.io?",
+      answer: "Customer.io is a messaging platform for automated email, push, SMS, and in-app messages. It's API-first and developer-friendly."
+    },
+    {
+      question: "What triggers does Customer.io support?",
+      answer: "Trigger campaigns based on any event or attribute. Use API events, page views, or segment membership to start automated journeys."
+    },
+    {
+      question: "Does Customer.io support webhooks?",
+      answer: "Yes, Customer.io can send webhooks and API calls as campaign actions. Trigger external services as part of customer journeys."
+    },
+    {
+      question: "What is Customer.io Journeys?",
+      answer: "Journeys is the visual workflow builder. Create multi-channel automated campaigns with branching logic and A/B testing."
+    },
+    {
+      question: "How does Customer.io compare to Braze?",
+      answer: "Customer.io is more affordable and developer-friendly. Braze is enterprise-grade with more mobile features. Customer.io for startups; Braze for enterprise mobile."
+    }
+  ],
+
+  // ============================================
+  // BRAZE
+  // ============================================
+  "braze": [
+    {
+      question: "How much does Braze cost?",
+      answer: "Braze pricing is custom and typically starts around $50,000+/year for enterprise. Contact sales for specific quotes."
+    },
+    {
+      question: "What is Braze?",
+      answer: "Braze is an enterprise customer engagement platform. It specializes in mobile-first, multi-channel messaging at scale."
+    },
+    {
+      question: "What channels does Braze support?",
+      answer: "Braze supports email, push notifications, in-app messages, SMS, WhatsApp, webhooks, and content cards across channels."
+    },
+    {
+      question: "What is Braze Canvas?",
+      answer: "Canvas is Braze's customer journey builder. Create multi-step, multi-channel campaigns with branching logic and experimentation."
+    },
+    {
+      question: "Does Braze have AI?",
+      answer: "Yes, Braze AI includes predictive analytics, send time optimization, and intelligent channel selection for better engagement."
+    },
+    {
+      question: "Who uses Braze?",
+      answer: "Enterprise companies like Burger King, Grubhub, HBO, and Etsy use Braze. It's designed for large-scale mobile-first businesses."
+    },
+    {
+      question: "How does Braze compare to Iterable?",
+      answer: "Both are enterprise marketing platforms. Braze is stronger in mobile; Iterable has better email features. Both excellent for enterprise."
+    }
+  ],
+
+  // ============================================
+  // ITERABLE
+  // ============================================
+  "iterable": [
+    {
+      question: "How much does Iterable cost?",
+      answer: "Iterable pricing is custom and typically starts around $50,000+/year. Contact sales for specific quotes."
+    },
+    {
+      question: "What is Iterable?",
+      answer: "Iterable is a cross-channel marketing platform for enterprise. It handles email, push, SMS, in-app, and direct mail at scale."
+    },
+    {
+      question: "What is Iterable Studio?",
+      answer: "Studio is Iterable's visual journey builder. Design and launch cross-channel campaigns with drag-and-drop simplicity."
+    },
+    {
+      question: "Does Iterable have AI?",
+      answer: "Yes, Iterable AI Suite includes Brand Affinity, send time optimization, predictive goals, and channel optimization."
+    },
+    {
+      question: "What is Brand Affinity?",
+      answer: "Brand Affinity uses AI to score user sentiment. Target campaigns based on how loyal or disengaged users are."
+    },
+    {
+      question: "Who uses Iterable?",
+      answer: "Companies like Box, DoorDash, Priceline, and SeatGeek use Iterable. It's built for high-volume consumer brands."
+    },
+    {
+      question: "How does Iterable compare to Klaviyo?",
+      answer: "Iterable is enterprise-focused with more channels. Klaviyo is e-commerce specific and more affordable. Iterable for enterprise; Klaviyo for e-commerce."
+    }
+  ],
+
+  // ============================================
+  // BIGCOMMERCE
+  // ============================================
+  "bigcommerce": [
+    {
+      question: "Is BigCommerce free?",
+      answer: "BigCommerce offers a 15-day free trial. Paid plans start at $29/month for the Standard plan."
+    },
+    {
+      question: "How much does BigCommerce cost?",
+      answer: "BigCommerce Standard costs $29/month, Plus $79/month, Pro $299/month. Enterprise has custom pricing."
+    },
+    {
+      question: "What is BigCommerce?",
+      answer: "BigCommerce is an e-commerce platform for building online stores. It's known for built-in features and B2B capabilities."
+    },
+    {
+      question: "Does BigCommerce charge transaction fees?",
+      answer: "No, BigCommerce doesn't charge transaction fees on any plan. You only pay payment processor fees."
+    },
+    {
+      question: "What is BigCommerce headless?",
+      answer: "BigCommerce supports headless commerce with APIs. Use any frontend framework while BigCommerce handles the backend."
+    },
+    {
+      question: "Does BigCommerce support B2B?",
+      answer: "Yes, BigCommerce B2B Edition includes customer groups, quote management, purchase orders, and custom pricing."
+    },
+    {
+      question: "How does BigCommerce compare to Shopify?",
+      answer: "BigCommerce has more built-in features. Shopify has a larger app ecosystem. BigCommerce for B2B and built-in features; Shopify for simplicity and apps."
+    }
+  ],
+
+  // ============================================
+  // WOOCOMMERCE
+  // ============================================
+  "woocommerce": [
+    {
+      question: "Is WooCommerce free?",
+      answer: "Yes, WooCommerce core is free and open source. Costs come from hosting, themes, and premium extensions."
+    },
+    {
+      question: "How much does WooCommerce cost?",
+      answer: "WooCommerce itself is free. Expect $100-500/year for hosting plus optional premium extensions ranging $50-300 each."
+    },
+    {
+      question: "What is WooCommerce?",
+      answer: "WooCommerce is a free WordPress plugin that turns WordPress sites into e-commerce stores. It powers 28% of online stores."
+    },
+    {
+      question: "Does WooCommerce require WordPress?",
+      answer: "Yes, WooCommerce is a WordPress plugin. You need a WordPress site with hosting to use WooCommerce."
+    },
+    {
+      question: "What payment gateways does WooCommerce support?",
+      answer: "WooCommerce supports Stripe, PayPal, Square, and many others. WooPayments is the official Stripe-powered gateway."
+    },
+    {
+      question: "Is WooCommerce good for large stores?",
+      answer: "WooCommerce can scale with proper hosting. High-traffic stores need optimized hosting and caching for good performance."
+    },
+    {
+      question: "How does WooCommerce compare to Shopify?",
+      answer: "WooCommerce is free but requires more technical setup. Shopify is easier but costs more. WooCommerce for control; Shopify for simplicity."
+    }
+  ],
+
+  // ============================================
+  // SQUARESPACE
+  // ============================================
+  "squarespace": [
+    {
+      question: "Is Squarespace free?",
+      answer: "Squarespace offers a 14-day free trial. Paid plans start at $16/month for Personal and $23/month for Business."
+    },
+    {
+      question: "How much does Squarespace cost?",
+      answer: "Squarespace Personal costs $16/month, Business $23/month, Commerce Basic $27/month, Commerce Advanced $49/month."
+    },
+    {
+      question: "What is Squarespace?",
+      answer: "Squarespace is a website builder known for beautiful templates. It's popular with creatives, photographers, and small businesses."
+    },
+    {
+      question: "Does Squarespace have e-commerce?",
+      answer: "Yes, Commerce plans include online store features. Sell products, accept payments, and manage inventory directly on your site."
+    },
+    {
+      question: "Does Squarespace include hosting?",
+      answer: "Yes, all Squarespace plans include hosting, SSL, CDN, and security. No separate hosting needed."
+    },
+    {
+      question: "Can I use my own domain with Squarespace?",
+      answer: "Yes, connect your existing domain or buy one through Squarespace. First year free with annual plans."
+    },
+    {
+      question: "How does Squarespace compare to Wix?",
+      answer: "Squarespace has more polished templates. Wix is more flexible with drag-and-drop editing. Squarespace for design; Wix for customization."
+    }
+  ],
+
+  // ============================================
+  // WIX
+  // ============================================
+  "wix": [
+    {
+      question: "Is Wix free?",
+      answer: "Yes, Wix has a free plan with Wix branding. Premium plans start at $16/month for connecting your own domain."
+    },
+    {
+      question: "How much does Wix cost?",
+      answer: "Wix Light costs $16/month, Core $27/month, Business $32/month, Business Elite $159/month. E-commerce requires Business plans."
+    },
+    {
+      question: "What is Wix?",
+      answer: "Wix is a website builder with drag-and-drop editing. Build websites, online stores, and portfolios without coding."
+    },
+    {
+      question: "What is Wix ADI?",
+      answer: "Wix ADI (Artificial Design Intelligence) creates a website automatically based on your answers. AI builds the initial design."
+    },
+    {
+      question: "Does Wix have e-commerce?",
+      answer: "Yes, Wix Stores provides e-commerce functionality. Sell products, accept payments, and manage orders on Business plans."
+    },
+    {
+      question: "Does Wix include hosting?",
+      answer: "Yes, all Wix plans include hosting, SSL, and security. Premium plans remove Wix ads and add more features."
+    },
+    {
+      question: "How does Wix compare to WordPress?",
+      answer: "Wix is easier with drag-and-drop building. WordPress is more powerful but requires learning. Wix for beginners; WordPress for flexibility."
+    }
+  ],
+
+  // ============================================
+  // WORDPRESS
+  // ============================================
+  "wordpress": [
+    {
+      question: "Is WordPress free?",
+      answer: "Yes, WordPress.org software is free. You need hosting ($5-50/month). WordPress.com offers hosted plans starting at $4/month."
+    },
+    {
+      question: "What is WordPress?",
+      answer: "WordPress is the world's most popular CMS, powering 40%+ of websites. It's free, open source, and infinitely customizable."
+    },
+    {
+      question: "What's the difference between .org and .com?",
+      answer: "WordPress.org is free software you host yourself. WordPress.com is a hosted service with free and paid plans."
+    },
+    {
+      question: "Is WordPress good for e-commerce?",
+      answer: "Yes, with WooCommerce (free plugin), WordPress becomes a powerful e-commerce platform. Millions of stores use it."
+    },
+    {
+      question: "Does WordPress need coding?",
+      answer: "No, WordPress can be used without coding using themes and page builders. Coding knowledge helps for customization."
+    },
+    {
+      question: "Is WordPress secure?",
+      answer: "WordPress core is secure. Vulnerabilities usually come from plugins and themes. Keep everything updated for security."
+    },
+    {
+      question: "How does WordPress compare to Webflow?",
+      answer: "WordPress is more powerful with more plugins. Webflow has better visual editing and hosting. WordPress for flexibility; Webflow for design control."
+    }
+  ],
+
+  // ============================================
+  // GHOST
+  // ============================================
+  "ghost": [
+    {
+      question: "Is Ghost free?",
+      answer: "Yes, Ghost is free and open source. Self-hosting is free; Ghost(Pro) managed hosting starts at $9/month."
+    },
+    {
+      question: "How much does Ghost Pro cost?",
+      answer: "Ghost(Pro) Starter costs $9/month (500 members), Creator $25/month (1,000 members), Team $50/month (1,000 members + team)."
+    },
+    {
+      question: "What is Ghost?",
+      answer: "Ghost is a publishing platform for bloggers and newsletters. It's built for professional publishers with membership and subscription features."
+    },
+    {
+      question: "Does Ghost support memberships?",
+      answer: "Yes, Ghost has built-in membership and subscription features. Accept payments through Stripe and manage members natively."
+    },
+    {
+      question: "Does Ghost support newsletters?",
+      answer: "Yes, Ghost includes native email newsletter sending. Create posts and send them as emails to subscribers."
+    },
+    {
+      question: "Is Ghost good for SEO?",
+      answer: "Yes, Ghost is well-optimized for SEO with clean code, fast performance, and automatic structured data."
+    },
+    {
+      question: "How does Ghost compare to Substack?",
+      answer: "Ghost gives you full control and ownership. Substack is simpler with built-in network effects. Ghost for ownership; Substack for discovery."
+    }
+  ],
+
+  // ============================================
+  // SUBSTACK
+  // ============================================
+  "substack": [
+    {
+      question: "Is Substack free?",
+      answer: "Yes, Substack is free to use. They take 10% of paid subscription revenue. Free newsletters cost nothing."
+    },
+    {
+      question: "How much does Substack cost?",
+      answer: "Substack is free to use. They charge 10% of paid subscription revenue plus Stripe fees (2.9% + $0.30)."
+    },
+    {
+      question: "What is Substack?",
+      answer: "Substack is a newsletter platform where writers publish and monetize content. It's popular with journalists and independent writers."
+    },
+    {
+      question: "How do Substack subscriptions work?",
+      answer: "Writers set prices for paid subscriptions (typically $5-15/month). Substack handles payments and delivers content to subscribers."
+    },
+    {
+      question: "Does Substack have discovery?",
+      answer: "Yes, Substack has recommendations and leaderboards. The network effect helps new writers get discovered by readers."
+    },
+    {
+      question: "Can I use my own domain on Substack?",
+      answer: "Yes, paid publications can use custom domains. Go to Settings > Publication details to configure your domain."
+    },
+    {
+      question: "How does Substack compare to ConvertKit?",
+      answer: "Substack is simpler with built-in monetization. ConvertKit offers more control and marketing features. Substack for writers; ConvertKit for creators."
+    }
+  ],
+
+  // ============================================
+  // BEEHIIV
+  // ============================================
+  "beehiiv": [
+    {
+      question: "Is Beehiiv free?",
+      answer: "Yes, Beehiiv offers a free Launch plan with up to 2,500 subscribers. Paid plans start at $49/month."
+    },
+    {
+      question: "How much does Beehiiv cost?",
+      answer: "Beehiiv Scale costs $49/month (10K subs), Max $99/month (100K subs). Enterprise has custom pricing."
+    },
+    {
+      question: "What is Beehiiv?",
+      answer: "Beehiiv is a newsletter platform built by Morning Brew alumni. It focuses on growth tools, monetization, and analytics."
+    },
+    {
+      question: "What is Beehiiv Boost?",
+      answer: "Boost is Beehiiv's recommendation network. Get paid when you recommend other newsletters and earn subscribers through recommendations."
+    },
+    {
+      question: "Does Beehiiv support paid subscriptions?",
+      answer: "Yes, Beehiiv supports paid subscriptions through Stripe. Keep 100% of subscription revenue (minus Stripe fees)."
+    },
+    {
+      question: "Does Beehiiv have a website?",
+      answer: "Yes, every Beehiiv newsletter gets a website with posts, archives, and subscriber forms. Custom domains available."
+    },
+    {
+      question: "How does Beehiiv compare to Substack?",
+      answer: "Beehiiv has better growth tools and keeps no revenue share. Substack has more discovery. Beehiiv for growth; Substack for audience."
+    }
+  ],
+
+  // ============================================
+  // GUSTO
+  // ============================================
+  "gusto": [
+    {
+      question: "Is Gusto free?",
+      answer: "Gusto offers a free trial and contractor-only pricing at $6/person/month. Full payroll plans start at $40/month plus $6/person."
+    },
+    {
+      question: "How much does Gusto cost?",
+      answer: "Gusto Simple costs $40/month + $6/person, Plus $80/month + $12/person, Premium has custom pricing."
+    },
+    {
+      question: "What is Gusto?",
+      answer: "Gusto is an all-in-one HR platform for small businesses. It handles payroll, benefits, HR, and compliance."
+    },
+    {
+      question: "Does Gusto handle taxes?",
+      answer: "Yes, Gusto automatically calculates, files, and pays federal, state, and local payroll taxes."
+    },
+    {
+      question: "Does Gusto offer benefits?",
+      answer: "Yes, Gusto provides health insurance, 401(k), workers' comp, and other benefits. Broker services help find best options."
+    },
+    {
+      question: "Does Gusto support contractors?",
+      answer: "Yes, pay unlimited contractors for $6/person/month. Includes 1099 filing and automatic tax document generation."
+    },
+    {
+      question: "How does Gusto compare to Rippling?",
+      answer: "Gusto is simpler and more affordable for small businesses. Rippling has more features for mid-sized companies. Gusto for SMB; Rippling for growth."
+    }
+  ],
+
+  // ============================================
+  // RIPPLING
+  // ============================================
+  "rippling": [
+    {
+      question: "How much does Rippling cost?",
+      answer: "Rippling starts at $8/user/month for core HR. Additional modules (payroll, IT, benefits) add to the cost. Custom pricing for full platform."
+    },
+    {
+      question: "What is Rippling?",
+      answer: "Rippling is a unified HR, IT, and finance platform. Manage payroll, benefits, devices, apps, and expenses in one system."
+    },
+    {
+      question: "What makes Rippling unique?",
+      answer: "Rippling unifies HR and IT. When you hire someone, automatically provision laptop, create accounts, set up payroll, and enroll benefits."
+    },
+    {
+      question: "Does Rippling manage devices?",
+      answer: "Yes, Rippling IT manages computers, software, and security. Order, configure, and ship devices. Remote wipe when employees leave."
+    },
+    {
+      question: "Does Rippling support global payroll?",
+      answer: "Yes, Rippling Global handles payroll, compliance, and benefits in 150+ countries. Pay international employees and contractors."
+    },
+    {
+      question: "Does Rippling have expense management?",
+      answer: "Yes, Rippling Spend includes corporate cards, expense management, and bill pay. All connected to your employee data."
+    },
+    {
+      question: "How does Rippling compare to BambooHR?",
+      answer: "Rippling is more comprehensive with IT and finance. BambooHR is HR-focused and simpler. Rippling for unified platform; BambooHR for pure HR."
+    }
+  ],
+
+  // ============================================
+  // BAMBOOHR
+  // ============================================
+  "bamboohr": [
+    {
+      question: "How much does BambooHR cost?",
+      answer: "BambooHR pricing is custom based on employee count. Typical costs are $8-14/employee/month. Request a demo for pricing."
+    },
+    {
+      question: "What is BambooHR?",
+      answer: "BambooHR is an HR software platform for small to medium businesses. It handles employee data, hiring, onboarding, and performance."
+    },
+    {
+      question: "Does BambooHR include payroll?",
+      answer: "Yes, BambooHR offers payroll as an add-on. Full-service payroll with tax filing for US employees."
+    },
+    {
+      question: "What is BambooHR ATS?",
+      answer: "BambooHR includes an applicant tracking system. Post jobs, track candidates, and manage the hiring process."
+    },
+    {
+      question: "Does BambooHR have performance management?",
+      answer: "Yes, BambooHR includes performance reviews, goal tracking, and employee satisfaction surveys."
+    },
+    {
+      question: "Does BambooHR integrate with Slack?",
+      answer: "Yes, BambooHR integrates with Slack to share birthdays, anniversaries, and time-off notifications with your team."
+    },
+    {
+      question: "How does BambooHR compare to Workday?",
+      answer: "BambooHR is simpler and more affordable for SMBs. Workday is enterprise-grade with more complexity. BambooHR for SMB; Workday for enterprise."
+    }
+  ],
+
+  // ============================================
+  // DEEL
+  // ============================================
+  "deel": [
+    {
+      question: "Is Deel free?",
+      answer: "Deel offers free HR tools for small teams. Contractor payments start at $49/contractor/month. EOR services cost $599/employee/month."
+    },
+    {
+      question: "How much does Deel cost?",
+      answer: "Deel Contractor costs $49/contractor/month, EOR $599/employee/month, US Payroll $29/employee/month."
+    },
+    {
+      question: "What is Deel?",
+      answer: "Deel is a global payroll and HR platform. Hire and pay employees and contractors in 150+ countries without local entities."
+    },
+    {
+      question: "What is EOR?",
+      answer: "Employer of Record (EOR) means Deel legally employs workers on your behalf in countries where you don't have an entity."
+    },
+    {
+      question: "How does Deel handle compliance?",
+      answer: "Deel manages local labor laws, contracts, taxes, and benefits. Their legal team ensures compliance in each country."
+    },
+    {
+      question: "Does Deel offer benefits?",
+      answer: "Yes, Deel provides localized benefits packages including health insurance, pensions, and PTO management."
+    },
+    {
+      question: "How does Deel compare to Remote?",
+      answer: "Both are global HR leaders. Deel has more features and a larger presence. Remote focuses on simplicity. Both excellent for global hiring."
+    }
+  ],
+
+  // ============================================
+  // REMOTE
+  // ============================================
+  "remote": [
+    {
+      question: "How much does Remote cost?",
+      answer: "Remote EOR costs $599/employee/month. Contractor management costs $29/contractor/month. Discounts for annual commitments."
+    },
+    {
+      question: "What is Remote?",
+      answer: "Remote is a global employment platform. Hire full-time employees and contractors worldwide without setting up legal entities."
+    },
+    {
+      question: "Does Remote offer EOR?",
+      answer: "Yes, Remote's Employer of Record service lets you hire employees in 60+ countries. They handle payroll, taxes, and compliance."
+    },
+    {
+      question: "Does Remote handle IP protection?",
+      answer: "Yes, Remote IP Guard ensures your intellectual property is protected when hiring internationally. Work-for-hire provisions included."
+    },
+    {
+      question: "What is Remote Talent?",
+      answer: "Remote Talent is a job board for finding remote workers globally. Post jobs and connect with candidates seeking remote work."
+    },
+    {
+      question: "Does Remote support contractor payments?",
+      answer: "Yes, pay contractors in 170+ countries with compliant contracts, tax forms, and multiple payment methods."
+    },
+    {
+      question: "How does Remote compare to Deel?",
+      answer: "Remote is simpler with transparent pricing. Deel has more features and country coverage. Both are top choices for global employment."
+    }
+  ],
+
+  // ============================================
+  // LEVER
+  // ============================================
+  "lever": [
+    {
+      question: "How much does Lever cost?",
+      answer: "Lever pricing is custom based on company size. Plans typically start around $3,000-5,000/year. Contact sales for quotes."
+    },
+    {
+      question: "What is Lever?",
+      answer: "Lever is an applicant tracking system and recruiting CRM. It combines ATS functionality with candidate relationship management."
+    },
+    {
+      question: "What is LeverTRM?",
+      answer: "LeverTRM (Talent Relationship Management) combines ATS with CRM. Nurture candidates over time, not just for immediate openings."
+    },
+    {
+      question: "Does Lever have analytics?",
+      answer: "Yes, Lever Visual Insights provides recruiting analytics. Track pipeline, source effectiveness, time-to-hire, and DEI metrics."
+    },
+    {
+      question: "Does Lever integrate with LinkedIn?",
+      answer: "Yes, Lever integrates with LinkedIn Recruiter. Source candidates, sync data, and manage outreach from within Lever."
+    },
+    {
+      question: "Does Lever support referrals?",
+      answer: "Yes, Lever includes employee referral features. Track referrals, manage bonuses, and encourage team participation."
+    },
+    {
+      question: "How does Lever compare to Greenhouse?",
+      answer: "Both are leading ATS platforms. Lever emphasizes CRM and nurturing. Greenhouse focuses on structured hiring. Both excellent for scaling teams."
+    }
+  ],
+
+  // ============================================
+  // GREENHOUSE
+  // ============================================
+  "greenhouse": [
+    {
+      question: "How much does Greenhouse cost?",
+      answer: "Greenhouse pricing is custom based on company size. Plans typically start around $6,000+/year. Contact sales for quotes."
+    },
+    {
+      question: "What is Greenhouse?",
+      answer: "Greenhouse is an applicant tracking system focused on structured hiring. It helps companies build consistent, fair hiring processes."
+    },
+    {
+      question: "What is structured hiring?",
+      answer: "Structured hiring uses consistent interview plans, scorecards, and criteria. It reduces bias and improves hiring quality."
+    },
+    {
+      question: "Does Greenhouse have onboarding?",
+      answer: "Yes, Greenhouse Onboarding helps new hires get started. Digital paperwork, task management, and welcome workflows."
+    },
+    {
+      question: "Does Greenhouse support DEI?",
+      answer: "Yes, Greenhouse Inclusion helps reduce bias with structured interviews, blind resume reviews, and DEI analytics."
+    },
+    {
+      question: "What integrations does Greenhouse have?",
+      answer: "Greenhouse integrates with 400+ tools including LinkedIn, Calendly, Slack, and HRIS systems. Extensive marketplace."
+    },
+    {
+      question: "How does Greenhouse compare to Workable?",
+      answer: "Greenhouse is more structured and enterprise-focused. Workable is simpler and more affordable. Greenhouse for structure; Workable for simplicity."
+    }
+  ],
+
+  // ============================================
+  // WORKABLE
+  // ============================================
+  "workable": [
+    {
+      question: "Is Workable free?",
+      answer: "Workable offers a 15-day free trial. Paid plans start at $149/month for the Starter plan."
+    },
+    {
+      question: "How much does Workable cost?",
+      answer: "Workable Starter costs $149/month (2 jobs), Standard $299/month, Premier $599/month. Annual plans get discounts."
+    },
+    {
+      question: "What is Workable?",
+      answer: "Workable is an all-in-one recruiting software. It includes job posting, applicant tracking, and HR tools in one platform."
+    },
+    {
+      question: "Does Workable post to job boards?",
+      answer: "Yes, Workable posts to 200+ job boards with one click. Indeed, LinkedIn, Glassdoor, and niche boards included."
+    },
+    {
+      question: "Does Workable have AI features?",
+      answer: "Yes, Workable AI helps screen resumes, suggest candidates, and automate recruiting tasks. Saves time on initial screening."
+    },
+    {
+      question: "Does Workable include HRIS?",
+      answer: "Yes, Workable includes basic HR tools for employee records, time off, and org charts. Full ATS to HR workflow."
+    },
+    {
+      question: "How does Workable compare to Lever?",
+      answer: "Workable is simpler and more affordable. Lever has stronger CRM features for nurturing. Workable for SMB; Lever for candidate relationships."
+    }
+  ],
+
+  // ============================================
+  // DOCUSIGN
+  // ============================================
+  "docusign": [
+    {
+      question: "Is DocuSign free?",
+      answer: "DocuSign offers a free plan for individual use (3 documents/month). Paid plans start at $15/month."
+    },
+    {
+      question: "How much does DocuSign cost?",
+      answer: "DocuSign Personal costs $15/month (5 docs/month), Standard $45/month, Business Pro $65/month. Enterprise has custom pricing."
+    },
+    {
+      question: "What is DocuSign?",
+      answer: "DocuSign is the leading e-signature platform. Send, sign, and manage agreements digitally with legal validity."
+    },
+    {
+      question: "Is DocuSign legally binding?",
+      answer: "Yes, DocuSign signatures are legally binding in most countries. They comply with ESIGN, UETA, and eIDAS regulations."
+    },
+    {
+      question: "What is DocuSign CLM?",
+      answer: "Contract Lifecycle Management handles the entire contract process. Draft, collaborate, approve, sign, and manage contracts."
+    },
+    {
+      question: "Does DocuSign integrate with Salesforce?",
+      answer: "Yes, DocuSign has deep Salesforce integration. Send agreements from opportunities and auto-update records when signed."
+    },
+    {
+      question: "How does DocuSign compare to HelloSign?",
+      answer: "DocuSign is more feature-rich and enterprise-ready. HelloSign (Dropbox Sign) is simpler. DocuSign for enterprise; HelloSign for simplicity."
+    }
+  ],
+
+  // ============================================
+  // PANDADOC
+  // ============================================
+  "pandadoc": [
+    {
+      question: "Is PandaDoc free?",
+      answer: "Yes, PandaDoc offers a free plan with unlimited signatures and documents. Paid plans start at $35/user/month."
+    },
+    {
+      question: "How much does PandaDoc cost?",
+      answer: "PandaDoc Essentials costs $35/user/month, Business $65/user/month. Enterprise has custom pricing."
+    },
+    {
+      question: "What is PandaDoc?",
+      answer: "PandaDoc is a document automation platform. Create proposals, quotes, and contracts with templates, then get them signed electronically."
+    },
+    {
+      question: "Does PandaDoc have templates?",
+      answer: "Yes, PandaDoc includes hundreds of templates for proposals, contracts, and quotes. Customize with your branding."
+    },
+    {
+      question: "Does PandaDoc integrate with CRMs?",
+      answer: "Yes, PandaDoc integrates with Salesforce, HubSpot, Pipedrive, and others. Create documents from CRM data automatically."
+    },
+    {
+      question: "Does PandaDoc support payments?",
+      answer: "Yes, collect payments directly within documents. Integrate with Stripe, PayPal, and others for instant payment."
+    },
+    {
+      question: "How does PandaDoc compare to DocuSign?",
+      answer: "PandaDoc is better for document creation and proposals. DocuSign focuses on signatures. PandaDoc for proposals; DocuSign for pure e-sign."
+    }
+  ],
+
+  // ============================================
+  // IRONCLAD
+  // ============================================
+  "ironclad": [
+    {
+      question: "How much does Ironclad cost?",
+      answer: "Ironclad pricing is custom based on contract volume and features. Contact sales for quotes. It's enterprise-focused."
+    },
+    {
+      question: "What is Ironclad?",
+      answer: "Ironclad is a contract lifecycle management platform. It handles contract creation, negotiation, approval, and storage."
+    },
+    {
+      question: "What is Ironclad Clickwrap?",
+      answer: "Clickwrap captures digital acceptance of terms. Perfect for terms of service, privacy policies, and customer agreements."
+    },
+    {
+      question: "Does Ironclad have AI?",
+      answer: "Yes, Ironclad AI reviews contracts, extracts data, and identifies risks. Speed up contract review with machine learning."
+    },
+    {
+      question: "Does Ironclad integrate with Salesforce?",
+      answer: "Yes, Ironclad integrates with Salesforce. Generate contracts from opportunities and track agreement status."
+    },
+    {
+      question: "Who uses Ironclad?",
+      answer: "Companies like Dropbox, L'Oréal, and Mastercard use Ironclad. It's designed for legal teams at scaling companies."
+    },
+    {
+      question: "How does Ironclad compare to DocuSign?",
+      answer: "Ironclad focuses on full contract lifecycle. DocuSign is primarily e-signature. Ironclad for legal teams; DocuSign for signatures."
+    }
+  ],
+
+  // ============================================
+  // QUICKBOOKS
+  // ============================================
+  "quickbooks": [
+    {
+      question: "Is QuickBooks free?",
+      answer: "QuickBooks offers a 30-day free trial. Paid plans start at $30/month for Simple Start."
+    },
+    {
+      question: "How much does QuickBooks cost?",
+      answer: "QuickBooks Simple Start costs $30/month, Essentials $60/month, Plus $90/month, Advanced $200/month."
+    },
+    {
+      question: "What is QuickBooks?",
+      answer: "QuickBooks is accounting software for small businesses. Track income, expenses, invoices, and payroll in one platform."
+    },
+    {
+      question: "Does QuickBooks do payroll?",
+      answer: "Yes, QuickBooks Payroll is an add-on starting at $50/month plus $6/employee. Full-service payroll with tax filing."
+    },
+    {
+      question: "Does QuickBooks connect to banks?",
+      answer: "Yes, QuickBooks connects to bank accounts and credit cards. Automatically import and categorize transactions."
+    },
+    {
+      question: "Is QuickBooks Online or Desktop better?",
+      answer: "QuickBooks Online is cloud-based and accessible anywhere. Desktop has more features for complex needs. Most small businesses choose Online."
+    },
+    {
+      question: "How does QuickBooks compare to Xero?",
+      answer: "QuickBooks is more popular in the US with more features. Xero is cleaner and popular internationally. Both are excellent for small business accounting."
+    }
+  ],
+
+  // ============================================
+  // XERO
+  // ============================================
+  "xero": [
+    {
+      question: "Is Xero free?",
+      answer: "Xero offers a 30-day free trial. Paid plans start at $15/month for Early plan (limited features)."
+    },
+    {
+      question: "How much does Xero cost?",
+      answer: "Xero Early costs $15/month (20 invoices), Growing $42/month, Established $78/month. Full features on higher tiers."
+    },
+    {
+      question: "What is Xero?",
+      answer: "Xero is cloud accounting software. It handles invoicing, bank reconciliation, expenses, and financial reporting for small businesses."
+    },
+    {
+      question: "Does Xero have payroll?",
+      answer: "Yes, Xero offers payroll in select countries (US, UK, Australia, NZ). Included on higher tiers or as an add-on."
+    },
+    {
+      question: "Does Xero connect to banks?",
+      answer: "Yes, Xero has bank feeds that import and categorize transactions automatically. Supports most major banks globally."
+    },
+    {
+      question: "Does Xero have invoicing?",
+      answer: "Yes, Xero includes professional invoicing with payment links. Customers can pay online directly from invoices."
+    },
+    {
+      question: "How does Xero compare to FreshBooks?",
+      answer: "Xero is more accounting-focused. FreshBooks is simpler for freelancers. Xero for growing businesses; FreshBooks for solopreneurs."
+    }
+  ],
+
+  // ============================================
+  // FRESHBOOKS
+  // ============================================
+  "freshbooks": [
+    {
+      question: "Is FreshBooks free?",
+      answer: "FreshBooks offers a 30-day free trial. Paid plans start at $17/month for the Lite plan."
+    },
+    {
+      question: "How much does FreshBooks cost?",
+      answer: "FreshBooks Lite costs $17/month (5 clients), Plus $30/month (50 clients), Premium $55/month (500 clients)."
+    },
+    {
+      question: "What is FreshBooks?",
+      answer: "FreshBooks is accounting software for freelancers and small businesses. It focuses on invoicing, time tracking, and expenses."
+    },
+    {
+      question: "Does FreshBooks track time?",
+      answer: "Yes, FreshBooks includes built-in time tracking. Log hours and add them to invoices automatically."
+    },
+    {
+      question: "Does FreshBooks accept payments?",
+      answer: "Yes, FreshBooks accepts credit cards and bank payments on invoices. Customers can pay directly from invoice links."
+    },
+    {
+      question: "Does FreshBooks have mobile apps?",
+      answer: "Yes, FreshBooks has iOS and Android apps. Invoice, track time, and manage expenses on the go."
+    },
+    {
+      question: "How does FreshBooks compare to Wave?",
+      answer: "FreshBooks has more features and better UX at a cost. Wave is free but basic. FreshBooks for growing businesses; Wave for bootstrapped startups."
+    }
+  ],
+
+  // ============================================
+  // BILL.COM
+  // ============================================
+  "bill-com": [
+    {
+      question: "How much does Bill.com cost?",
+      answer: "Bill.com Essentials costs $45/user/month, Team $55/user/month, Corporate $79/user/month. Enterprise has custom pricing."
+    },
+    {
+      question: "What is Bill.com?",
+      answer: "Bill.com is accounts payable and receivable automation. It streamlines bill payment, invoicing, and approval workflows."
+    },
+    {
+      question: "How does Bill.com pay bills?",
+      answer: "Bill.com pays vendors via ACH, check, virtual card, or international wire. Upload invoices and schedule payments."
+    },
+    {
+      question: "Does Bill.com have approval workflows?",
+      answer: "Yes, create custom approval workflows for bill payment. Route to managers based on amount, vendor, or department."
+    },
+    {
+      question: "Does Bill.com integrate with QuickBooks?",
+      answer: "Yes, Bill.com syncs with QuickBooks, Xero, and other accounting software. Keep financials in sync automatically."
+    },
+    {
+      question: "What is Bill.com Divvy?",
+      answer: "Divvy (acquired by Bill.com) is a free expense management platform with corporate cards and budgeting tools."
+    },
+    {
+      question: "How does Bill.com compare to Ramp?",
+      answer: "Bill.com focuses on AP/AR automation. Ramp is corporate cards with expense management. Bill.com for bill pay; Ramp for spend management."
+    }
+  ],
+
+  // ============================================
+  // RAMP
+  // ============================================
+  "ramp": [
+    {
+      question: "Is Ramp free?",
+      answer: "Yes, Ramp's core product is free including corporate cards, expense management, and bill pay. They make money on card interchange."
+    },
+    {
+      question: "How much does Ramp cost?",
+      answer: "Ramp is free for most features. Ramp Plus ($15/user/month) and Enterprise add advanced features like ERP integrations."
+    },
+    {
+      question: "What is Ramp?",
+      answer: "Ramp is a finance automation platform with corporate cards, expense management, bill pay, and accounting automation."
+    },
+    {
+      question: "How does Ramp save money?",
+      answer: "Ramp offers 1.5% cashback on all purchases and finds savings through vendor negotiations and subscription monitoring."
+    },
+    {
+      question: "Does Ramp track subscriptions?",
+      answer: "Yes, Ramp automatically identifies and tracks software subscriptions. Find unused subscriptions and duplicate tools."
+    },
+    {
+      question: "Does Ramp integrate with accounting software?",
+      answer: "Yes, Ramp integrates with QuickBooks, Xero, Sage, NetSuite, and others. Auto-code transactions and sync in real-time."
+    },
+    {
+      question: "How does Ramp compare to Brex?",
+      answer: "Both are excellent corporate cards. Ramp emphasizes savings; Brex offers higher limits and rewards. Ramp for savings; Brex for growth."
+    }
+  ],
+
+  // ============================================
+  // BREX
+  // ============================================
+  "brex": [
+    {
+      question: "Is Brex free?",
+      answer: "Brex Essentials is free with basic features. Premium costs $12/user/month for advanced controls and integrations."
+    },
+    {
+      question: "How much does Brex cost?",
+      answer: "Brex Essentials is free, Premium costs $12/user/month, Enterprise has custom pricing for larger organizations."
+    },
+    {
+      question: "What is Brex?",
+      answer: "Brex is a corporate card and spend management platform for startups. Higher limits than traditional cards, no personal guarantee needed."
+    },
+    {
+      question: "Does Brex require a personal guarantee?",
+      answer: "No, Brex cards don't require personal guarantees. Limits are based on company financials, not personal credit."
+    },
+    {
+      question: "What rewards does Brex offer?",
+      answer: "Brex offers points redeemable for travel, gift cards, and cash back. Bonus points on software, travel, and restaurants."
+    },
+    {
+      question: "Does Brex have expense management?",
+      answer: "Yes, Brex includes expense management, receipt capture, and approval workflows. Control spending with budgets and policies."
+    },
+    {
+      question: "How does Brex compare to traditional corporate cards?",
+      answer: "Brex offers higher limits, better rewards, and no personal guarantee. Traditional cards have lower limits but broader acceptance. Brex for startups; traditional for established companies."
+    }
+  ],
+
+  // ============================================
+  // MERCURY
+  // ============================================
+  "mercury": [
+    {
+      question: "Is Mercury free?",
+      answer: "Yes, Mercury banking is free with no monthly fees, no minimum balance, and no transaction fees for standard banking."
+    },
+    {
+      question: "What is Mercury?",
+      answer: "Mercury is a banking platform for startups. It provides checking, savings, and credit cards designed for tech companies."
+    },
+    {
+      question: "Is Mercury a real bank?",
+      answer: "Mercury partners with FDIC-insured banks (Choice Financial, Column Bank). Your deposits are insured up to $5M through sweep networks."
+    },
+    {
+      question: "Does Mercury offer Treasury?",
+      answer: "Yes, Mercury Treasury invests idle cash in government securities. Earn yield while keeping funds liquid."
+    },
+    {
+      question: "Does Mercury have credit cards?",
+      answer: "Yes, Mercury IO cards offer 1.5% cashback. Virtual cards and spend controls included for team management."
+    },
+    {
+      question: "Does Mercury integrate with accounting software?",
+      answer: "Yes, Mercury integrates with QuickBooks, Xero, and other tools. Automatically sync transactions and reconcile."
+    },
+    {
+      question: "How does Mercury compare to Brex?",
+      answer: "Mercury is banking-focused. Brex is card and spend management focused. Many startups use both together."
+    }
+  ],
+
+  // ============================================
+  // PLAID
+  // ============================================
+  "plaid": [
+    {
+      question: "How much does Plaid cost?",
+      answer: "Plaid pricing is usage-based starting at $0 for development. Production pricing varies by product and volume."
+    },
+    {
+      question: "What is Plaid?",
+      answer: "Plaid is financial data infrastructure. It connects apps to bank accounts for verification, transactions, and identity."
+    },
+    {
+      question: "What is Plaid Link?",
+      answer: "Plaid Link is the UI module users see to connect bank accounts. It handles credential entry and MFA securely."
+    },
+    {
+      question: "What can I build with Plaid?",
+      answer: "Build account verification, payment initiation, income verification, credit scoring, and personal finance features using Plaid's APIs."
+    },
+    {
+      question: "Is Plaid secure?",
+      answer: "Yes, Plaid is SOC 2 Type II certified and uses encryption. They don't store credentials; they use secure token-based access."
+    },
+    {
+      question: "What banks does Plaid support?",
+      answer: "Plaid connects to 12,000+ financial institutions including major banks, credit unions, and investment platforms."
+    },
+    {
+      question: "How does Plaid compare to Finicity?",
+      answer: "Both are bank data aggregators. Plaid has broader coverage and better UX. Finicity (Mastercard) has deeper mortgage data. Both widely used."
+    }
+  ],
+
+  // ============================================
+  // 1PASSWORD
+  // ============================================
+  "1password": [
+    {
+      question: "Is 1Password free?",
+      answer: "1Password offers a 14-day free trial but no permanent free tier. Individual plans start at $2.99/month."
+    },
+    {
+      question: "How much does 1Password cost?",
+      answer: "1Password Individual costs $2.99/month, Families $4.99/month (5 users), Teams $7.99/user/month, Business $7.99/user/month."
+    },
+    {
+      question: "What is 1Password?",
+      answer: "1Password is a password manager. It stores passwords, credit cards, and sensitive data securely with encryption."
+    },
+    {
+      question: "Is 1Password secure?",
+      answer: "Yes, 1Password uses end-to-end encryption. Only you can decrypt your data. Zero-knowledge architecture means 1Password can't access your passwords."
+    },
+    {
+      question: "Does 1Password have a browser extension?",
+      answer: "Yes, 1Password browser extensions work in Chrome, Firefox, Safari, and Edge. Auto-fill passwords and generate secure passwords."
+    },
+    {
+      question: "Does 1Password support passkeys?",
+      answer: "Yes, 1Password supports passkeys for passwordless authentication. Store and use passkeys alongside traditional passwords."
+    },
+    {
+      question: "How does 1Password compare to LastPass?",
+      answer: "1Password has better UI and security reputation. LastPass has a free tier but had security incidents. 1Password for best experience."
+    }
+  ],
+
+  // ============================================
+  // BITWARDEN
+  // ============================================
+  "bitwarden": [
+    {
+      question: "Is Bitwarden free?",
+      answer: "Yes, Bitwarden has a robust free plan with unlimited passwords and devices. Premium costs $10/year."
+    },
+    {
+      question: "How much does Bitwarden cost?",
+      answer: "Bitwarden Premium costs $10/year (individual), Families $40/year (6 users), Teams $4/user/month, Enterprise $6/user/month."
+    },
+    {
+      question: "What is Bitwarden?",
+      answer: "Bitwarden is an open source password manager. It stores passwords securely with end-to-end encryption."
+    },
+    {
+      question: "Is Bitwarden open source?",
+      answer: "Yes, Bitwarden's code is fully open source. Anyone can audit the security. This transparency builds trust."
+    },
+    {
+      question: "Can I self-host Bitwarden?",
+      answer: "Yes, Bitwarden supports self-hosting. Run your own server for complete control over your password data."
+    },
+    {
+      question: "Does Bitwarden work on all devices?",
+      answer: "Yes, Bitwarden has apps for iOS, Android, Windows, Mac, Linux, and browser extensions. Sync across all devices."
+    },
+    {
+      question: "How does Bitwarden compare to 1Password?",
+      answer: "Bitwarden is open source and more affordable. 1Password has better UX and features. Bitwarden for value; 1Password for polish."
+    }
+  ],
+
+  // ============================================
+  // OKTA
+  // ============================================
+  "okta": [
+    {
+      question: "How much does Okta cost?",
+      answer: "Okta Workforce Identity starts around $2/user/month. Customer Identity pricing is based on monthly active users. Enterprise has custom pricing."
+    },
+    {
+      question: "What is Okta?",
+      answer: "Okta is an identity and access management platform. It provides SSO, MFA, and user management for enterprises."
+    },
+    {
+      question: "What is Okta SSO?",
+      answer: "Okta Single Sign-On lets employees access all their apps with one login. Integrates with 7,000+ applications."
+    },
+    {
+      question: "Does Okta have MFA?",
+      answer: "Yes, Okta Adaptive MFA provides multi-factor authentication with push, biometrics, hardware keys, and more."
+    },
+    {
+      question: "What is Okta Workforce Identity?",
+      answer: "Workforce Identity manages employee access. SSO, MFA, lifecycle management, and access governance for internal users."
+    },
+    {
+      question: "What is Okta Customer Identity?",
+      answer: "Customer Identity provides authentication for your app's users. Includes registration, login, and user management."
+    },
+    {
+      question: "How does Okta compare to Azure AD?",
+      answer: "Okta is identity-focused and vendor-neutral. Azure AD integrates with Microsoft ecosystem. Okta for multi-cloud; Azure AD for Microsoft shops."
+    }
+  ],
+
+  // ============================================
+  // CROWDSTRIKE
+  // ============================================
+  "crowdstrike": [
+    {
+      question: "How much does CrowdStrike cost?",
+      answer: "CrowdStrike Falcon Go starts at $4.99/device/month. Enterprise pricing is custom based on modules and devices."
+    },
+    {
+      question: "What is CrowdStrike?",
+      answer: "CrowdStrike is a cybersecurity platform providing endpoint protection, threat intelligence, and incident response."
+    },
+    {
+      question: "What is CrowdStrike Falcon?",
+      answer: "Falcon is CrowdStrike's cloud-native platform. It uses AI and machine learning to detect and prevent threats in real-time."
+    },
+    {
+      question: "Is CrowdStrike cloud-based?",
+      answer: "Yes, CrowdStrike Falcon is fully cloud-native. No on-premises infrastructure needed; lightweight agent on endpoints."
+    },
+    {
+      question: "Does CrowdStrike have threat intelligence?",
+      answer: "Yes, CrowdStrike tracks adversary groups and provides threat intelligence. Their research team monitors global cyber threats."
+    },
+    {
+      question: "What is managed detection and response?",
+      answer: "CrowdStrike Falcon Complete provides 24/7 managed detection and response. Expert team monitors and responds to threats."
+    },
+    {
+      question: "How does CrowdStrike compare to SentinelOne?",
+      answer: "Both are leading EDR platforms. CrowdStrike has larger market share and threat intelligence. SentinelOne emphasizes automation. Both excellent."
+    }
+  ],
+
+  // ============================================
+  // SNYK
+  // ============================================
+  "snyk": [
+    {
+      question: "Is Snyk free?",
+      answer: "Yes, Snyk has a free tier for individual developers. Free plan includes limited tests per month for open source projects."
+    },
+    {
+      question: "How much does Snyk cost?",
+      answer: "Snyk Free for individuals, Team starts at $25/developer/month, Enterprise has custom pricing for larger organizations."
+    },
+    {
+      question: "What is Snyk?",
+      answer: "Snyk is a developer security platform. It finds and fixes vulnerabilities in code, dependencies, containers, and infrastructure."
+    },
+    {
+      question: "What is Snyk Open Source?",
+      answer: "Snyk Open Source scans dependencies for known vulnerabilities. It provides fix suggestions and monitors for new issues."
+    },
+    {
+      question: "What is Snyk Code?",
+      answer: "Snyk Code is SAST (static analysis) for your code. It finds security issues and provides developer-friendly fixes."
+    },
+    {
+      question: "Does Snyk integrate with CI/CD?",
+      answer: "Yes, Snyk integrates with GitHub, GitLab, Jenkins, CircleCI, and other CI/CD tools. Scan on every pull request."
+    },
+    {
+      question: "How does Snyk compare to SonarQube?",
+      answer: "Snyk focuses on security vulnerabilities. SonarQube covers code quality and security. Snyk for security; SonarQube for broader quality."
+    }
+  ],
+
+  // ============================================
+  // HASHICORP
+  // ============================================
+  "hashicorp": [
+    {
+      question: "Is HashiCorp software free?",
+      answer: "Most HashiCorp tools have free open source versions. Enterprise features require paid licenses starting at various price points."
+    },
+    {
+      question: "What products does HashiCorp make?",
+      answer: "HashiCorp makes Terraform (infrastructure), Vault (secrets), Consul (networking), Nomad (orchestration), and Boundary (access)."
+    },
+    {
+      question: "What is HashiCorp Vault?",
+      answer: "Vault manages secrets and sensitive data. Store API keys, passwords, and certificates with encryption and access controls."
+    },
+    {
+      question: "What is HashiCorp Terraform?",
+      answer: "Terraform is infrastructure as code. Define cloud resources in configuration files and provision them automatically."
+    },
+    {
+      question: "What is HCP?",
+      answer: "HashiCorp Cloud Platform (HCP) offers managed versions of HashiCorp products. Run Vault, Consul, and Terraform in the cloud."
+    },
+    {
+      question: "Did IBM acquire HashiCorp?",
+      answer: "Yes, IBM announced plans to acquire HashiCorp in April 2024 for $6.4 billion. The acquisition is pending regulatory approval."
+    },
+    {
+      question: "How does Vault compare to AWS Secrets Manager?",
+      answer: "Vault is multi-cloud and more feature-rich. AWS Secrets Manager is simpler but AWS-only. Vault for multi-cloud; AWS for AWS-native."
+    }
+  ],
+
+  // ============================================
+  // TERRAFORM
+  // ============================================
+  "terraform": [
+    {
+      question: "Is Terraform free?",
+      answer: "Yes, Terraform CLI is free and open source. Terraform Cloud has a free tier; paid plans start at $20/user/month."
+    },
+    {
+      question: "How much does Terraform Cloud cost?",
+      answer: "Terraform Cloud Free for individuals, Team $20/user/month, Business $70/user/month. Enterprise has custom pricing."
+    },
+    {
+      question: "What is Terraform?",
+      answer: "Terraform is infrastructure as code software. Define infrastructure in HCL files and provision resources across any cloud."
+    },
+    {
+      question: "What clouds does Terraform support?",
+      answer: "Terraform supports AWS, Azure, GCP, and hundreds of other providers. Manage any API-accessible infrastructure."
+    },
+    {
+      question: "What is Terraform Cloud?",
+      answer: "Terraform Cloud provides remote state, team collaboration, policy enforcement, and a private module registry."
+    },
+    {
+      question: "What is OpenTofu?",
+      answer: "OpenTofu is an open source fork of Terraform created after HashiCorp changed Terraform's license. Community-maintained alternative."
+    },
+    {
+      question: "How does Terraform compare to Pulumi?",
+      answer: "Terraform uses HCL; Pulumi uses real programming languages. Terraform is more mature; Pulumi is more flexible. Both excellent choices."
+    }
+  ],
+
+  // ============================================
+  // PULUMI
+  // ============================================
+  "pulumi": [
+    {
+      question: "Is Pulumi free?",
+      answer: "Yes, Pulumi open source is free. Pulumi Cloud has a free tier; paid plans start at $50/month for Team."
+    },
+    {
+      question: "How much does Pulumi cost?",
+      answer: "Pulumi Cloud Individual is free, Team $50/month + $25/user, Enterprise $125/month + $50/user. Usage-based pricing also available."
+    },
+    {
+      question: "What is Pulumi?",
+      answer: "Pulumi is infrastructure as code using real programming languages. Define cloud resources in TypeScript, Python, Go, or C#."
+    },
+    {
+      question: "What languages does Pulumi support?",
+      answer: "Pulumi supports TypeScript/JavaScript, Python, Go, C#, Java, and YAML. Use your favorite language and tools."
+    },
+    {
+      question: "What is Pulumi Cloud?",
+      answer: "Pulumi Cloud provides state management, secrets, deployments, and team collaboration. Optional managed service for teams."
+    },
+    {
+      question: "Does Pulumi support all clouds?",
+      answer: "Yes, Pulumi supports AWS, Azure, GCP, Kubernetes, and 100+ cloud providers through its extensible provider model."
+    },
+    {
+      question: "How does Pulumi compare to Terraform?",
+      answer: "Pulumi uses real languages; Terraform uses HCL. Pulumi is more flexible; Terraform has larger ecosystem. Both are excellent."
+    }
+  ],
 };
 
 async function main() {
