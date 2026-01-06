@@ -55,7 +55,7 @@ function generateFAQs(
   // Extract pricing info
   const hasFreeText = pricingContent?.toLowerCase().includes("free") || false;
   const priceMatches = pricingContent?.match(/\$[\d,]+(?:\.\d{2})?(?:\s*\/\s*(?:month|mo|user|seat))?/gi) || [];
-  const uniquePrices = [...new Set(priceMatches)].slice(0, 4);
+  const uniquePrices = Array.from(new Set(priceMatches)).slice(0, 4);
 
   // FAQ 1: Is it free?
   if (hasFreeText) {
