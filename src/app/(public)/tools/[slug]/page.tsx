@@ -13,24 +13,8 @@ import { ViewTracker } from "@/components/analytics/view-tracker";
 import { TrackedLink } from "@/components/analytics/tracked-link";
 import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
-// Force dynamic rendering to avoid build-time DB access
-
-export const revalidate = 3600;
-
-// Generate static params for popular tools
-export async function generateStaticParams() {
-  try {
-    const tools = await prisma.tool.findMany({
-      where: { status: "published" },
-      select: { slug: true },
-      orderBy: { weeklyUpvotes: "desc" },
-      take: 100,
-    });
-    return tools.map((tool) => ({ slug: tool.slug }));
-  } catch {
-    return [];
-  }
-}
+// Force dynamic rendering - all tool pages rendered on demand
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const tool = await prisma.tool.findUnique({
