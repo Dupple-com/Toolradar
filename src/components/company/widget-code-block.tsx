@@ -8,13 +8,25 @@ interface WidgetCodeBlockProps {
   toolName: string;
 }
 
+const formats = {
+  badge: { width: 150, height: 180, label: "Badge" },
+  bar: { width: 280, height: 60, label: "Horizontal" },
+  compact: { width: 120, height: 120, label: "Compact" },
+  minimal: { width: 160, height: 40, label: "Minimal" },
+};
+
 export function WidgetCodeBlock({ toolSlug, toolName }: WidgetCodeBlockProps) {
   const [copied, setCopied] = useState(false);
-  const [style, setStyle] = useState<"default" | "dark" | "blue" | "minimal">("default");
+  const [format, setFormat] = useState<keyof typeof formats>("badge");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
-  const styleParam = style === "default" ? "" : `?style=${style}`;
+  const f = formats[format];
+  const params = new URLSearchParams();
+  params.set("format", format);
+  if (theme === "dark") params.set("theme", "dark");
+
   const code = `<a href="https://toolradar.com/tools/${toolSlug}" target="_blank" rel="noopener">
-  <img src="https://toolradar.com/api/widget/${toolSlug}${styleParam}" alt="${toolName} on Toolradar" width="160" height="190" />
+  <img src="https://toolradar.com/api/widget/${toolSlug}?${params.toString()}" alt="${toolName} on Toolradar" width="${f.width}" height="${f.height}" />
 </a>`;
 
   const handleCopy = async () => {
@@ -25,19 +37,33 @@ export function WidgetCodeBlock({ toolSlug, toolName }: WidgetCodeBlockProps) {
 
   return (
     <div className="space-y-3">
-      {/* Style Selector */}
-      <div className="flex gap-2">
-        {(["default", "dark", "blue", "minimal"] as const).map((s) => (
+      {/* Format Selector */}
+      <div className="flex flex-wrap gap-2">
+        {(Object.keys(formats) as Array<keyof typeof formats>).map((f) => (
           <button
-            key={s}
-            onClick={() => setStyle(s)}
+            key={f}
+            onClick={() => setFormat(f)}
             className={`px-3 py-1.5 text-xs rounded-lg border transition-colors ${
-              style === s
+              format === f
                 ? "bg-primary text-white border-primary"
                 : "bg-white hover:bg-muted border-gray-200"
             }`}
           >
-            {s.charAt(0).toUpperCase() + s.slice(1)}
+            {formats[f].label}
+          </button>
+        ))}
+        <span className="border-l mx-2" />
+        {(["light", "dark"] as const).map((t) => (
+          <button
+            key={t}
+            onClick={() => setTheme(t)}
+            className={`px-3 py-1.5 text-xs rounded-lg border transition-colors ${
+              theme === t
+                ? "bg-slate-800 text-white border-slate-800"
+                : "bg-white hover:bg-muted border-gray-200"
+            }`}
+          >
+            {t === "light" ? "Light" : "Dark"}
           </button>
         ))}
       </div>

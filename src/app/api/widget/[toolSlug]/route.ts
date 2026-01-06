@@ -7,7 +7,8 @@ export async function GET(
   { params }: { params: { toolSlug: string } }
 ) {
   const { searchParams } = new URL(request.url);
-  const style = searchParams.get("style") || "default";
+  const theme = searchParams.get("theme") || "light"; // light, dark
+  const format = searchParams.get("format") || "badge"; // badge, bar, compact, minimal
 
   const tool = await prisma.tool.findUnique({
     where: { slug: params.toolSlug, status: "published" },
@@ -25,38 +26,15 @@ export async function GET(
   }
 
   const score = tool.editorialScore || Math.round((tool.communityScore || 0) * 20);
-  const rating = tool.communityScore?.toFixed(1) || "0.0";
 
-  // Color based on score
-  const getScoreColor = (s: number) => {
-    if (s >= 80) return "#22c55e";
-    if (s >= 60) return "#6366f1";
-    if (s >= 40) return "#f59e0b";
-    return "#94a3b8";
-  };
-
-  const scoreColor = score > 0 ? getScoreColor(score) : "#94a3b8";
-
-  // Score arc calculation
-  const radius = 22;
-  const circumference = 2 * Math.PI * radius;
-  const progress = (score / 100) * circumference;
-  const dashOffset = circumference - progress;
-
-  const styles = {
-    default: {
+  const themes = {
+    light: {
       bg: "#ffffff",
       border: "#e2e8f0",
       text: "#0f172a",
       subtext: "#64748b",
       accent: "#6366f1",
-    },
-    minimal: {
-      bg: "#ffffff",
-      border: "#f1f5f9",
-      text: "#0f172a",
-      subtext: "#64748b",
-      accent: "#6366f1",
+      accentDark: "#4f46e5",
     },
     dark: {
       bg: "#0f172a",
@@ -64,17 +42,11 @@ export async function GET(
       text: "#f8fafc",
       subtext: "#94a3b8",
       accent: "#818cf8",
-    },
-    blue: {
-      bg: "#1e40af",
-      border: "#3b82f6",
-      text: "#f0f9ff",
-      subtext: "#bfdbfe",
-      accent: "#60a5fa",
+      accentDark: "#6366f1",
     },
   };
 
-  const s = styles[style as keyof typeof styles] || styles.default;
+  const t = themes[theme as keyof typeof themes] || themes.light;
 
   // Rating label based on score
   const getLabel = (s: number) => {
@@ -87,48 +59,75 @@ export async function GET(
   const label = getLabel(score);
 
   // Stars (1-5) based on score
-  const starRating = Math.max(1, Math.round((score / 100) * 5));
+  const starRating = Math.max(0, Math.round((score / 100) * 5));
+  const starsStr = [0,1,2,3,4].map(i => i < starRating ? "★" : "☆").join("");
 
-  const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="190" viewBox="0 0 160 190">
+  let svg = "";
+
+  if (format === "badge") {
+    // Vertical badge style (like G2)
+    svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="180" viewBox="0 0 150 180">
   <defs>
-    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:${s.accent}"/>
-      <stop offset="100%" style="stop-color:${style === "dark" ? "#4f46e5" : style === "blue" ? "#1d4ed8" : "#4f46e5"}"/>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:${t.accent}"/>
+      <stop offset="100%" style="stop-color:${t.accentDark}"/>
     </linearGradient>
-    <filter id="shadow">
-      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
-    </filter>
+    <filter id="sh"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.15"/></filter>
   </defs>
-
-  <!-- Badge shape -->
-  <path d="M80 0 L160 30 L160 140 L80 190 L0 140 L0 30 Z" fill="${s.bg}" filter="url(#shadow)"/>
-  <path d="M80 0 L160 30 L160 140 L80 190 L0 140 L0 30 Z" fill="none" stroke="${s.border}" stroke-width="1"/>
-
-  <!-- Top ribbon -->
-  <path d="M80 0 L160 30 L160 50 L80 20 L0 50 L0 30 Z" fill="url(#badgeGrad)"/>
-
-  <!-- Toolradar text in ribbon -->
-  <text x="80" y="38" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="1">TOOLRADAR</text>
-
-  <!-- Score circle -->
-  <circle cx="80" cy="85" r="32" fill="${s.bg}" stroke="${s.accent}" stroke-width="3"/>
-  <text x="80" y="93" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="${s.text}">${score}</text>
-
-  <!-- Stars -->
-  <g transform="translate(40, 125)">
-    ${[0,1,2,3,4].map(i => `<text x="${i * 18}" font-family="system-ui" font-size="16" fill="${i < starRating ? '#fbbf24' : s.border}">★</text>`).join("")}
+  <path d="M75 0 L150 28 L150 135 L75 180 L0 135 L0 28 Z" fill="${t.bg}" filter="url(#sh)"/>
+  <path d="M75 0 L150 28 L150 48 L75 20 L0 48 L0 28 Z" fill="url(#grad)"/>
+  <text x="75" y="38" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" font-weight="700" fill="white" letter-spacing="0.5">TOOLRADAR</text>
+  <circle cx="75" cy="82" r="30" fill="${t.bg}" stroke="${t.accent}" stroke-width="2.5"/>
+  <text x="75" y="90" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="26" font-weight="800" fill="${t.text}">${score}</text>
+  <text x="75" y="125" text-anchor="middle" font-family="system-ui" font-size="14" fill="#fbbf24">${starsStr}</text>
+  <text x="75" y="145" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="600" fill="${t.text}">${label}</text>
+  <text x="75" y="162" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="${t.subtext}">${tool.name.length > 18 ? tool.name.substring(0, 18) + "…" : tool.name}</text>
+</svg>`;
+  } else if (format === "bar") {
+    // Horizontal bar style (like Trustpilot)
+    svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="280" height="60" viewBox="0 0 280 60">
+  <defs><filter id="sh"><feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1"/></filter></defs>
+  <rect width="280" height="60" rx="8" fill="${t.bg}" filter="url(#sh)" stroke="${t.border}" stroke-width="1"/>
+  <rect x="8" y="8" width="44" height="44" rx="6" fill="${t.accent}"/>
+  <text x="30" y="36" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="18" font-weight="800" fill="white">${score}</text>
+  <text x="64" y="24" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="${t.text}">${tool.name}</text>
+  <text x="64" y="42" font-family="system-ui" font-size="14" fill="#fbbf24">${starsStr}</text>
+  <text x="140" y="42" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="${t.subtext}">${label}</text>
+  <g transform="translate(230, 20)">
+    <circle cx="10" cy="10" r="10" fill="${t.accent}" opacity="0.15"/>
+    <circle cx="10" cy="10" r="5" fill="none" stroke="${t.accent}" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="10" cy="10" r="2" fill="${t.accent}"/>
   </g>
+  <text x="258" y="44" font-family="system-ui,-apple-system,sans-serif" font-size="7" fill="${t.subtext}">toolradar</text>
+</svg>`;
+  } else if (format === "compact") {
+    // Square compact style
+    svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <defs><filter id="sh"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.12"/></filter></defs>
+  <rect width="120" height="120" rx="12" fill="${t.bg}" filter="url(#sh)" stroke="${t.border}" stroke-width="1"/>
+  <rect x="0" y="0" width="120" height="28" rx="12" fill="${t.accent}"/>
+  <rect x="0" y="14" width="120" height="14" fill="${t.accent}"/>
+  <text x="60" y="19" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="700" fill="white" letter-spacing="0.5">TOOLRADAR</text>
+  <text x="60" y="62" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="32" font-weight="800" fill="${t.text}">${score}</text>
+  <text x="60" y="82" text-anchor="middle" font-family="system-ui" font-size="12" fill="#fbbf24">${starsStr}</text>
+  <text x="60" y="100" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="9" font-weight="500" fill="${t.subtext}">${tool.name.length > 14 ? tool.name.substring(0, 14) + "…" : tool.name}</text>
+</svg>`;
+  } else {
+    // Minimal inline style
+    svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="40" viewBox="0 0 160 40">
+  <rect width="160" height="40" rx="6" fill="${t.bg}" stroke="${t.border}" stroke-width="1"/>
+  <circle cx="20" cy="20" r="12" fill="${t.accent}"/>
+  <text x="20" y="25" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="11" font-weight="700" fill="white">${score}</text>
+  <text x="40" y="18" font-family="system-ui" font-size="11" fill="#fbbf24">${starsStr}</text>
+  <text x="40" y="30" font-family="system-ui,-apple-system,sans-serif" font-size="8" fill="${t.subtext}">toolradar.com</text>
+</svg>`;
+  }
 
-  <!-- Label -->
-  <text x="80" y="155" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="${s.text}">${label}</text>
-
-  <!-- Tool name -->
-  <text x="80" y="172" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="${s.subtext}">${tool.name.length > 16 ? tool.name.substring(0, 16) + "…" : tool.name}</text>
-</svg>
-  `.trim();
-
-  return new NextResponse(svg, {
+  return new NextResponse(svg.trim(), {
     headers: {
       "Content-Type": "image/svg+xml",
       "Cache-Control": "public, max-age=3600",
