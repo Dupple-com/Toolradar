@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
+import { ComparisonTracker } from "@/components/tracking/comparison-tracker";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
@@ -164,6 +165,7 @@ export default async function CompareResultPage({
 
   return (
     <>
+      <ComparisonTracker toolIds={sortedTools.map((t) => t.id)} />
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={comparisonJsonLd} />
       <JsonLd data={faqJsonLd} />

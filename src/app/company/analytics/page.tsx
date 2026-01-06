@@ -2,7 +2,7 @@ import { getCurrentUser } from "@/lib/auth-utils";
 import { getActiveCompany } from "@/lib/company-utils";
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
-import { BarChart3, Eye, MousePointer, GitCompare, Search } from "lucide-react";
+import { BarChart3, Eye, MousePointer, GitCompare, Search, TrendingUp } from "lucide-react";
 
 export default async function CompanyAnalyticsPage() {
   const user = await getCurrentUser();
@@ -14,7 +14,7 @@ export default async function CompanyAnalyticsPage() {
     redirect("/company/setup");
   }
 
-  // Get tools with analytics
+  // Get tools with analytics and search terms
   const tools = await prisma.tool.findMany({
     where: { companyId: company.id },
     include: {
@@ -22,8 +22,27 @@ export default async function CompanyAnalyticsPage() {
         orderBy: { date: "desc" },
         take: 30,
       },
+      searchTerms: {
+        orderBy: { count: "desc" },
+        take: 10,
+      },
     },
   });
+
+  // Aggregate all search terms across tools
+  const allSearchTerms = tools
+    .flatMap((t) => t.searchTerms || [])
+    .reduce((acc, term) => {
+      const existing = acc.find((t) => t.term === term.term);
+      if (existing) {
+        existing.count += term.count;
+      } else {
+        acc.push({ term: term.term, count: term.count });
+      }
+      return acc;
+    }, [] as { term: string; count: number }[])
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 10);
 
   // Calculate totals
   const totals = tools.reduce(
@@ -130,6 +149,35 @@ export default async function CompanyAnalyticsPage() {
           </div>
         )}
       </div>
+
+      {/* Search Terms */}
+      {allSearchTerms.length > 0 && (
+        <div>
+          <h2 className="font-semibold mb-4 flex items-center gap-2">
+            <TrendingUp className="w-5 h-5 text-cyan-500" />
+            Top Search Keywords
+          </h2>
+          <div className="bg-card rounded-xl border p-6">
+            <p className="text-sm text-muted-foreground mb-4">
+              Keywords that led users to your tools
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {allSearchTerms.map((term) => (
+                <div
+                  key={term.term}
+                  className="flex items-center gap-2 px-3 py-2 bg-cyan-50 border border-cyan-200 rounded-lg"
+                >
+                  <Search className="w-3.5 h-3.5 text-cyan-600" />
+                  <span className="text-sm font-medium text-cyan-900">{term.term}</span>
+                  <span className="text-xs text-cyan-600 bg-cyan-100 px-1.5 py-0.5 rounded">
+                    {term.count}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Info Banner */}
       <div className="flex items-start gap-3 p-4 bg-muted/50 rounded-xl">
