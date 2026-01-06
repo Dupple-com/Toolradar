@@ -67,7 +67,7 @@ export async function GET(
   if (format === "badge") {
     // Vertical rectangle badge - clean design
     svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="150" height="180" viewBox="0 0 150 180">
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="160" viewBox="0 0 150 160">
   <defs>
     <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:${t.accent}"/>
@@ -75,13 +75,12 @@ export async function GET(
     </linearGradient>
     <filter id="sh"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/></filter>
   </defs>
-  <rect width="150" height="180" rx="16" fill="${t.bg}" filter="url(#sh)"/>
-  <rect width="150" height="180" rx="16" fill="none" stroke="${t.border}" stroke-width="1"/>
-  <circle cx="75" cy="60" r="36" fill="url(#grad)"/>
-  <text x="75" y="70" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="800" fill="white">${score}</text>
-  <text x="75" y="115" text-anchor="middle" font-family="system-ui" font-size="18" fill="#fbbf24">${starsStr}</text>
-  <text x="75" y="140" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="${t.text}">${label}</text>
-  <text x="75" y="160" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="10" fill="${t.subtext}">toolradar.com</text>
+  <rect width="150" height="160" rx="16" fill="${t.bg}" filter="url(#sh)"/>
+  <rect width="150" height="160" rx="16" fill="none" stroke="${t.border}" stroke-width="1"/>
+  <circle cx="75" cy="55" r="36" fill="url(#grad)"/>
+  <text x="75" y="65" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="800" fill="white">${score}</text>
+  <text x="75" y="108" text-anchor="middle" font-family="system-ui" font-size="18" fill="#fbbf24">${starsStr}</text>
+  <text x="75" y="138" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="${t.text}">${label}</text>
 </svg>`;
   } else if (format === "bar") {
     // Horizontal bar style (like Trustpilot)
