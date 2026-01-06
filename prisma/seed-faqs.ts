@@ -13907,6 +13907,1084 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "BigQuery, Kubernetes (GKE), AI/ML services, and global network. Strong in data engineering and machine learning."
     }
   ],
+
+  // ============================================
+  // GEMINI (Google)
+  // ============================================
+  "gemini": [
+    {
+      question: "Is Gemini free?",
+      answer: "Gemini (formerly Bard) has a free tier. Gemini Advanced with Ultra model is $20/month through Google One. API has free tier with limits."
+    },
+    {
+      question: "What is Gemini?",
+      answer: "Gemini is Google's multimodal AI model. Handles text, code, images, and video. Powers Google's AI chatbot and available via API."
+    },
+    {
+      question: "Gemini vs ChatGPT?",
+      answer: "Gemini has Google integration and multimodal from the start. ChatGPT has larger ecosystem. Both are excellent - try both."
+    },
+    {
+      question: "What Gemini models are available?",
+      answer: "Gemini Nano (on-device), Gemini Pro (general), Gemini Ultra (most capable). Different models for different use cases and pricing."
+    }
+  ],
+
+  // ============================================
+  // GHOST
+  // ============================================
+  "ghost": [
+    {
+      question: "Is Ghost free?",
+      answer: "Self-hosting is free. Ghost(Pro) hosting starts at $9/month for 500 members. Publishing features included in all plans."
+    },
+    {
+      question: "What is Ghost?",
+      answer: "Ghost is an open-source publishing platform. Blogging, newsletters, and memberships. Clean alternative to WordPress focused on publishing."
+    },
+    {
+      question: "Ghost vs WordPress?",
+      answer: "Ghost is simpler and faster for publishing. WordPress is more flexible with plugins. Ghost for publishing; WordPress for complex sites."
+    },
+    {
+      question: "Can Ghost handle paid memberships?",
+      answer: "Yes, built-in membership and subscription features. Stripe integration, member tiers, and newsletters. Key differentiator from WordPress."
+    }
+  ],
+
+  // ============================================
+  // GIT
+  // ============================================
+  "git": [
+    {
+      question: "Is Git free?",
+      answer: "Yes, Git is open source and completely free. GPLv2 licensed. The foundation of modern software development."
+    },
+    {
+      question: "What is Git?",
+      answer: "Git is a distributed version control system. Track code changes, collaborate with teams, and manage code history. Created by Linus Torvalds."
+    },
+    {
+      question: "Git vs GitHub?",
+      answer: "Git is the version control tool. GitHub is a hosting service for Git repositories. Git is local; GitHub is cloud hosting."
+    },
+    {
+      question: "What are Git basics?",
+      answer: "clone, add, commit, push, pull, branch, merge. Start with these commands. Many tutorials and resources available online."
+    }
+  ],
+
+  // ============================================
+  // GITHUB
+  // ============================================
+  "github": [
+    {
+      question: "Is GitHub free?",
+      answer: "Free for public and private repos with unlimited collaborators. Pro $4/month. Team $4/user/month. Enterprise $21/user/month."
+    },
+    {
+      question: "What is GitHub?",
+      answer: "GitHub is the world's largest code hosting platform. Git repositories, collaboration, CI/CD, and developer community. Owned by Microsoft."
+    },
+    {
+      question: "GitHub vs GitLab?",
+      answer: "GitHub has larger community and ecosystem. GitLab has more built-in DevOps features. GitHub for open source; GitLab for full DevOps."
+    },
+    {
+      question: "What is GitHub Actions?",
+      answer: "GitHub's CI/CD platform. Automate build, test, and deploy workflows. Free tier with minutes. Integrated into GitHub."
+    }
+  ],
+
+  // ============================================
+  // GITHUB COPILOT
+  // ============================================
+  "github-copilot": [
+    {
+      question: "Is GitHub Copilot free?",
+      answer: "Free for students and open source maintainers. Individual $10/month. Business $19/user/month. Enterprise $39/user/month."
+    },
+    {
+      question: "What is GitHub Copilot?",
+      answer: "Copilot is AI pair programming from GitHub. Suggests code as you type. Powered by OpenAI models. Most popular AI coding assistant."
+    },
+    {
+      question: "GitHub Copilot vs Codeium?",
+      answer: "Copilot costs $10/month but has better suggestions. Codeium is free for individuals. Copilot for best quality; Codeium for free."
+    },
+    {
+      question: "What IDEs does Copilot support?",
+      answer: "VS Code, JetBrains IDEs, Neovim, and Visual Studio. Best integration in VS Code. Coming to more editors over time."
+    }
+  ],
+
+  // ============================================
+  // GITLAB
+  // ============================================
+  "gitlab": [
+    {
+      question: "Is GitLab free?",
+      answer: "Free tier for individuals with most features. Premium $29/user/month. Ultimate $99/user/month. Self-hosting available."
+    },
+    {
+      question: "What is GitLab?",
+      answer: "GitLab is a complete DevOps platform. Git repos, CI/CD, security scanning, and project management in one tool."
+    },
+    {
+      question: "GitLab vs GitHub?",
+      answer: "GitLab has more built-in DevOps tools. GitHub has larger community. GitLab for full DevOps; GitHub for code hosting."
+    },
+    {
+      question: "Can you self-host GitLab?",
+      answer: "Yes, GitLab Community Edition is free to self-host. Enterprise features require license. Popular for on-premise needs."
+    }
+  ],
+
+  // ============================================
+  // GITPOD
+  // ============================================
+  "gitpod": [
+    {
+      question: "Is Gitpod free?",
+      answer: "Free for 50 hours/month. Individual $9/month for more hours. Team pricing available. Open source projects get credits."
+    },
+    {
+      question: "What is Gitpod?",
+      answer: "Gitpod provides cloud development environments. Instant, pre-configured dev environments from Git repos. No local setup needed."
+    },
+    {
+      question: "Gitpod vs GitHub Codespaces?",
+      answer: "Similar products. Gitpod works with any Git provider. Codespaces is GitHub-only but deeply integrated. Both are excellent."
+    },
+    {
+      question: "How does Gitpod work?",
+      answer: "Add .gitpod.yml to your repo. Click a button to start pre-configured environment. VS Code in browser or locally via SSH."
+    }
+  ],
+
+  // ============================================
+  // GRAFANA
+  // ============================================
+  "grafana": [
+    {
+      question: "Is Grafana free?",
+      answer: "Grafana OSS is free and open source. Grafana Cloud has free tier. Enterprise features require paid license."
+    },
+    {
+      question: "What is Grafana?",
+      answer: "Grafana is visualization and monitoring platform. Create dashboards from various data sources. Industry standard for observability."
+    },
+    {
+      question: "Grafana vs Datadog?",
+      answer: "Grafana is open source and connects to any data source. Datadog is all-in-one but expensive. Grafana for flexibility; Datadog for convenience."
+    },
+    {
+      question: "What data sources does Grafana support?",
+      answer: "Prometheus, InfluxDB, Elasticsearch, PostgreSQL, MySQL, Cloudwatch, and 50+ more. Very flexible data source support."
+    }
+  ],
+
+  // ============================================
+  // GRAMMARLY
+  // ============================================
+  "grammarly": [
+    {
+      question: "Is Grammarly free?",
+      answer: "Free tier with basic grammar and spelling. Premium $12/month (annual) for advanced features. Business $15/user/month."
+    },
+    {
+      question: "What is Grammarly?",
+      answer: "Grammarly is AI writing assistant. Grammar, spelling, tone, and clarity suggestions. Browser extension and desktop apps."
+    },
+    {
+      question: "Grammarly vs ProWritingAid?",
+      answer: "Grammarly is more polished and easier to use. ProWritingAid has more detailed analysis. Grammarly for most; ProWritingAid for authors."
+    },
+    {
+      question: "What does Grammarly Premium add?",
+      answer: "Tone detection, word choice, formality level, plagiarism detection, and more suggestions. Significant upgrade from free."
+    }
+  ],
+
+  // ============================================
+  // GUMROAD
+  // ============================================
+  "gumroad": [
+    {
+      question: "Is Gumroad free?",
+      answer: "No monthly fees. 10% flat fee on sales. Simple pricing - no tiers. Pay only when you sell."
+    },
+    {
+      question: "What is Gumroad?",
+      answer: "Gumroad is a platform for selling digital products. E-books, courses, software, and memberships. Popular with creators."
+    },
+    {
+      question: "Gumroad vs Patreon?",
+      answer: "Gumroad is for selling products. Patreon is for subscriptions. Gumroad for one-time purchases; Patreon for ongoing support."
+    },
+    {
+      question: "What can you sell on Gumroad?",
+      answer: "Digital products, physical goods, memberships, and pre-orders. Built-in audience building tools. Simple checkout process."
+    }
+  ],
+
+  // ============================================
+  // HARNESS
+  // ============================================
+  "harness": [
+    {
+      question: "Is Harness free?",
+      answer: "Free tier available with limits. Team $100/developer/month. Enterprise custom pricing. Cloud or self-hosted options."
+    },
+    {
+      question: "What is Harness?",
+      answer: "Harness is a software delivery platform. CI/CD, feature flags, cloud costs, and chaos engineering. Acquired Drone CI."
+    },
+    {
+      question: "Harness vs GitHub Actions?",
+      answer: "Harness is more enterprise-focused with AI features. GitHub Actions is simpler and integrated. Harness for enterprise; Actions for simplicity."
+    },
+    {
+      question: "What is Harness AI?",
+      answer: "Harness uses AI for deployment verification, anomaly detection, and auto-remediation. Differentiator from traditional CI/CD tools."
+    }
+  ],
+
+  // ============================================
+  // HASHICORP VAULT
+  // ============================================
+  "hashicorp-vault": [
+    {
+      question: "Is HashiCorp Vault free?",
+      answer: "Vault OSS is free and open source. HCP Vault (cloud) has free tier. Enterprise features require license."
+    },
+    {
+      question: "What is HashiCorp Vault?",
+      answer: "Vault is a secrets management tool. Store, access, and manage secrets and sensitive data. Industry standard for secrets."
+    },
+    {
+      question: "Vault vs Doppler?",
+      answer: "Vault is more powerful but complex. Doppler is simpler for app secrets. Vault for enterprise; Doppler for developer teams."
+    },
+    {
+      question: "What can Vault do?",
+      answer: "Secrets management, encryption as a service, identity-based access, PKI, and database credentials rotation."
+    }
+  ],
+
+  // ============================================
+  // HEROKU
+  // ============================================
+  "heroku": [
+    {
+      question: "Is Heroku free?",
+      answer: "Free tier was removed in 2022. Now starts at $5/month for Eco dynos. Basic $7/month. Standard $25/month."
+    },
+    {
+      question: "What is Heroku?",
+      answer: "Heroku is a platform-as-a-service for app hosting. Git push to deploy. Pioneered modern PaaS. Owned by Salesforce."
+    },
+    {
+      question: "Heroku vs Fly.io?",
+      answer: "Heroku is simpler but more expensive. Fly.io is global and cheaper. Heroku for ease; Fly.io for cost and performance."
+    },
+    {
+      question: "What happened to Heroku's free tier?",
+      answer: "Heroku removed free dynos and databases in November 2022. Cited abuse and resource cost. Alternatives: Railway, Render, Fly.io."
+    }
+  ],
+
+  // ============================================
+  // HEYGEN
+  // ============================================
+  "heygen": [
+    {
+      question: "Is HeyGen free?",
+      answer: "Free trial with 1 credit. Creator $24/month. Business $72/month. Enterprise custom pricing. Credits for video minutes."
+    },
+    {
+      question: "What is HeyGen?",
+      answer: "HeyGen creates AI avatar videos. Choose avatars, add script, generate video. Popular for marketing, training, and presentations."
+    },
+    {
+      question: "HeyGen vs Synthesia?",
+      answer: "Both create AI avatar videos. HeyGen has more avatars and voice cloning. Synthesia is more enterprise-focused. Both excellent."
+    },
+    {
+      question: "What can HeyGen do?",
+      answer: "AI avatars, voice cloning, multi-language videos, and templates. Create professional videos without cameras or actors."
+    }
+  ],
+
+  // ============================================
+  // HONEYCOMB
+  // ============================================
+  "honeycomb": [
+    {
+      question: "Is Honeycomb free?",
+      answer: "Free tier with 20M events/month. Team $130/month. Pro $450/month. Enterprise custom. Generous free for observability."
+    },
+    {
+      question: "What is Honeycomb?",
+      answer: "Honeycomb is an observability platform. Debug production systems with high-cardinality data. Created by former Parse/Facebook engineers."
+    },
+    {
+      question: "Honeycomb vs Datadog?",
+      answer: "Honeycomb excels at debugging with BubbleUp. Datadog is broader but more expensive. Honeycomb for debugging; Datadog for full monitoring."
+    },
+    {
+      question: "What is observability?",
+      answer: "Understanding system state from outputs. Different from monitoring. Honeycomb lets you ask questions you didn't predict needing."
+    }
+  ],
+
+  // ============================================
+  // HOTJAR
+  // ============================================
+  "hotjar": [
+    {
+      question: "Is Hotjar free?",
+      answer: "Free Basic plan with 35 daily sessions. Plus $32/month. Business $80/month. Scale $171/month. Good free tier to start."
+    },
+    {
+      question: "What is Hotjar?",
+      answer: "Hotjar provides website heatmaps and session recordings. See where users click, scroll, and struggle. User behavior insights."
+    },
+    {
+      question: "Hotjar vs FullStory?",
+      answer: "Hotjar is simpler and cheaper for heatmaps. FullStory is more powerful for session replay. Hotjar for basics; FullStory for depth."
+    },
+    {
+      question: "What features does Hotjar include?",
+      answer: "Heatmaps, session recordings, surveys, and feedback widgets. Understand user behavior and collect feedback in one tool."
+    }
+  ],
+
+  // ============================================
+  // HUBSPOT
+  // ============================================
+  "hubspot": [
+    {
+      question: "Is HubSpot free?",
+      answer: "Free CRM with basic features. Starter $20/month per hub. Professional $800-1600/month. Enterprise $3600+/month."
+    },
+    {
+      question: "What is HubSpot?",
+      answer: "HubSpot is an all-in-one CRM and marketing platform. Marketing, sales, service, and CMS hubs. Popular for inbound marketing."
+    },
+    {
+      question: "HubSpot vs Salesforce?",
+      answer: "HubSpot is simpler and more affordable to start. Salesforce is more powerful and customizable. HubSpot for SMB; Salesforce for enterprise."
+    },
+    {
+      question: "What are HubSpot Hubs?",
+      answer: "Marketing Hub, Sales Hub, Service Hub, CMS Hub, and Operations Hub. Buy separately or bundle. Each has free/starter/pro/enterprise tiers."
+    }
+  ],
+
+  // ============================================
+  // HUGGING FACE
+  // ============================================
+  "huggingface": [
+    {
+      question: "Is Hugging Face free?",
+      answer: "Free tier for models and datasets. Pro $9/month. Enterprise $20/user/month. Inference API has free tier with limits."
+    },
+    {
+      question: "What is Hugging Face?",
+      answer: "Hugging Face is the AI community hub. Host models, datasets, and demos. Transformers library and model hub. GitHub for AI."
+    },
+    {
+      question: "What is Hugging Face Hub?",
+      answer: "Repository for ML models and datasets. Thousands of pre-trained models. Download models or use inference API."
+    },
+    {
+      question: "What is Hugging Face Transformers?",
+      answer: "Open-source library for NLP and ML models. Easy to use pre-trained models. Most popular ML library after PyTorch/TensorFlow."
+    }
+  ],
+
+  // ============================================
+  // IMAGEKIT
+  // ============================================
+  "imagekit": [
+    {
+      question: "Is ImageKit free?",
+      answer: "Free tier: 20GB bandwidth and 20GB storage. Paid plans from $49/month. Affordable alternative to Cloudinary."
+    },
+    {
+      question: "What is ImageKit?",
+      answer: "ImageKit is image CDN and optimization service. Real-time image transformation, optimization, and delivery. Simple and affordable."
+    },
+    {
+      question: "ImageKit vs Cloudinary?",
+      answer: "ImageKit is simpler and cheaper. Cloudinary has more features. ImageKit for straightforward needs; Cloudinary for advanced use cases."
+    },
+    {
+      question: "What can ImageKit do?",
+      answer: "Image resizing, cropping, format conversion, optimization, and CDN delivery. URL-based transformations. Video support too."
+    }
+  ],
+
+  // ============================================
+  // INFISICAL
+  // ============================================
+  "infisical": [
+    {
+      question: "Is Infisical free?",
+      answer: "Yes, open source and free to self-host. Cloud free tier for 5 members. Pro $18/user/month. Enterprise custom."
+    },
+    {
+      question: "What is Infisical?",
+      answer: "Infisical is open-source secrets management. Store, sync, and manage secrets across team and infrastructure. Alternative to Vault."
+    },
+    {
+      question: "Infisical vs Doppler?",
+      answer: "Infisical is open source and self-hostable. Doppler is cloud-only. Both are developer-friendly. Choose based on self-hosting needs."
+    },
+    {
+      question: "What features does Infisical have?",
+      answer: "Secret storage, environment syncing, CI/CD integration, access controls, and audit logs. Full secrets lifecycle management."
+    }
+  ],
+
+  // ============================================
+  // INFLUXDB
+  // ============================================
+  "influxdb": [
+    {
+      question: "Is InfluxDB free?",
+      answer: "InfluxDB OSS is free. InfluxDB Cloud has free tier (30-day data, 5MB writes). Cloud paid plans based on usage."
+    },
+    {
+      question: "What is InfluxDB?",
+      answer: "InfluxDB is a time-series database. Store metrics, events, and real-time analytics. Popular for monitoring and IoT."
+    },
+    {
+      question: "InfluxDB vs Prometheus?",
+      answer: "InfluxDB is push-based, better for IoT. Prometheus is pull-based, better for Kubernetes. Both excellent for different use cases."
+    },
+    {
+      question: "What is InfluxDB used for?",
+      answer: "Metrics collection, IoT sensor data, real-time analytics, and monitoring. High write throughput for time-series data."
+    }
+  ],
+
+  // ============================================
+  // INSOMNIA
+  // ============================================
+  "insomnia": [
+    {
+      question: "Is Insomnia free?",
+      answer: "Free for local use. Team $12/user/month. Enterprise $22/user/month. Free tier is quite capable."
+    },
+    {
+      question: "What is Insomnia?",
+      answer: "Insomnia is an API client for REST and GraphQL. Design, debug, and test APIs. Alternative to Postman with cleaner interface."
+    },
+    {
+      question: "Insomnia vs Postman?",
+      answer: "Insomnia is cleaner and lighter. Postman has more features and ecosystem. Insomnia for simplicity; Postman for collaboration."
+    },
+    {
+      question: "Does Insomnia support GraphQL?",
+      answer: "Yes, Insomnia has excellent GraphQL support. Schema exploration, autocomplete, and documentation. One of the best GraphQL clients."
+    }
+  ],
+
+  // ============================================
+  // INTERCOM
+  // ============================================
+  "intercom": [
+    {
+      question: "Is Intercom free?",
+      answer: "Starter $74/month. Most plans are custom priced based on seats and usage. Can get expensive quickly. 14-day trial."
+    },
+    {
+      question: "What is Intercom?",
+      answer: "Intercom is customer communication platform. Live chat, chatbots, product tours, and help center. Popular for SaaS support."
+    },
+    {
+      question: "Intercom vs Zendesk?",
+      answer: "Intercom is more modern and product-focused. Zendesk is more traditional support. Intercom for SaaS; Zendesk for enterprise support."
+    },
+    {
+      question: "What features does Intercom include?",
+      answer: "Live chat, chatbots, help articles, product tours, and outbound messaging. Full customer engagement platform."
+    }
+  ],
+
+  // ============================================
+  // IONIC
+  // ============================================
+  "ionic": [
+    {
+      question: "Is Ionic free?",
+      answer: "Framework is free and open source. Capacitor is free. Appflow (CI/CD) has free tier. Enterprise features are paid."
+    },
+    {
+      question: "What is Ionic?",
+      answer: "Ionic is a cross-platform app development framework. Build iOS, Android, and web apps with web technologies. Uses Capacitor for native access."
+    },
+    {
+      question: "Ionic vs React Native?",
+      answer: "Ionic uses web views with native bridges. React Native renders native components. Ionic easier to learn; React Native better performance."
+    },
+    {
+      question: "What is Capacitor?",
+      answer: "Capacitor is Ionic's native runtime. Access device APIs from web apps. Successor to Cordova. Works with any framework."
+    }
+  ],
+
+  // ============================================
+  // JASPER
+  // ============================================
+  "jasper": [
+    {
+      question: "Is Jasper free?",
+      answer: "No free tier. Creator $49/month. Pro $69/month. Business $125/user/month. 7-day free trial available."
+    },
+    {
+      question: "What is Jasper?",
+      answer: "Jasper is an AI content generation platform. Marketing copy, blog posts, and social media content. One of the original AI writing tools."
+    },
+    {
+      question: "Jasper vs ChatGPT?",
+      answer: "Jasper is focused on marketing with templates. ChatGPT is general-purpose. Jasper for marketing teams; ChatGPT for versatility."
+    },
+    {
+      question: "What can Jasper create?",
+      answer: "Blog posts, ads, social media posts, emails, and product descriptions. Brand voice customization available."
+    }
+  ],
+
+  // ============================================
+  // JENKINS
+  // ============================================
+  "jenkins": [
+    {
+      question: "Is Jenkins free?",
+      answer: "Yes, Jenkins is open source and free under MIT license. CloudBees offers enterprise support and features."
+    },
+    {
+      question: "What is Jenkins?",
+      answer: "Jenkins is the original CI/CD automation server. Highly customizable with thousands of plugins. Self-hosted and extensible."
+    },
+    {
+      question: "Jenkins vs GitHub Actions?",
+      answer: "Jenkins is more flexible and self-hosted. GitHub Actions is simpler and managed. Jenkins for control; Actions for convenience."
+    },
+    {
+      question: "Is Jenkins still relevant?",
+      answer: "Yes, widely used in enterprises. Modern alternatives exist but Jenkins has huge install base and flexibility. New projects often choose simpler options."
+    }
+  ],
+
+  // ============================================
+  // JEST
+  // ============================================
+  "jest": [
+    {
+      question: "Is Jest free?",
+      answer: "Yes, Jest is open source under MIT license. Created by Facebook/Meta. Most popular JavaScript testing framework."
+    },
+    {
+      question: "What is Jest?",
+      answer: "Jest is a JavaScript testing framework. Unit tests, snapshots, and mocking built-in. Zero-config for most projects."
+    },
+    {
+      question: "Jest vs Vitest?",
+      answer: "Vitest is faster with ESM and Vite projects. Jest is more established. Vitest for Vite; Jest for everything else."
+    },
+    {
+      question: "What features does Jest include?",
+      answer: "Snapshot testing, mocking, code coverage, parallel tests, and watch mode. Complete testing solution."
+    }
+  ],
+
+  // ============================================
+  // JIRA
+  // ============================================
+  "jira": [
+    {
+      question: "Is Jira free?",
+      answer: "Free for up to 10 users. Standard $7.75/user/month. Premium $15.25/user/month. Enterprise custom pricing."
+    },
+    {
+      question: "What is Jira?",
+      answer: "Jira is the industry-standard issue tracker. Project management for software teams. Created by Atlassian."
+    },
+    {
+      question: "Jira vs Linear?",
+      answer: "Linear is faster and more modern. Jira is more customizable with more integrations. Linear for startups; Jira for enterprise."
+    },
+    {
+      question: "What is Jira Software vs Jira Work Management?",
+      answer: "Software is for dev teams with sprints and backlogs. Work Management is for business teams with different views. Different products."
+    }
+  ],
+
+  // ============================================
+  // JOTFORM
+  // ============================================
+  "jotform": [
+    {
+      question: "Is JotForm free?",
+      answer: "Free plan with 5 forms and 100 submissions/month. Bronze $34/month. Silver $39/month. Gold $99/month. Generous free tier."
+    },
+    {
+      question: "What is JotForm?",
+      answer: "JotForm is a form builder with thousands of templates. Forms, surveys, payments, and approvals. One of the largest form platforms."
+    },
+    {
+      question: "JotForm vs Typeform?",
+      answer: "JotForm has more templates and features. Typeform has better design and UX. JotForm for variety; Typeform for beautiful forms."
+    },
+    {
+      question: "What can you do with JotForm?",
+      answer: "Forms, surveys, payments, e-signatures, tables, and apps. Very broad feature set. Enterprise-friendly."
+    }
+  ],
+
+  // ============================================
+  // JSON WEB TOKEN (JWT)
+  // ============================================
+  "jwt": [
+    {
+      question: "Is JWT free?",
+      answer: "Yes, JWT is an open standard (RFC 7519). Libraries available in all languages. No licensing costs."
+    },
+    {
+      question: "What is JWT?",
+      answer: "JSON Web Token is a standard for securely transmitting information. Used for authentication and authorization. Compact and self-contained."
+    },
+    {
+      question: "JWT vs sessions?",
+      answer: "JWTs are stateless; sessions require server storage. JWTs scale better but can't be easily revoked. Different trade-offs."
+    },
+    {
+      question: "What is in a JWT?",
+      answer: "Header (algorithm), payload (claims/data), and signature. Base64 encoded. Can be verified without database lookup."
+    }
+  ],
+
+  // ============================================
+  // JUPYTER
+  // ============================================
+  "jupyter": [
+    {
+      question: "Is Jupyter free?",
+      answer: "Yes, Jupyter is open source under BSD license. JupyterHub for teams is also free. Foundation of data science workflows."
+    },
+    {
+      question: "What is Jupyter?",
+      answer: "Jupyter is interactive computing environment. Notebooks combine code, output, and documentation. Essential for data science."
+    },
+    {
+      question: "Jupyter Notebook vs JupyterLab?",
+      answer: "JupyterLab is the next-gen interface with more features. Notebook is simpler. JupyterLab is recommended for most users now."
+    },
+    {
+      question: "What languages does Jupyter support?",
+      answer: "Python primarily, plus R, Julia, and many others via kernels. Python is most common use case."
+    }
+  ],
+
+  // ============================================
+  // K6
+  // ============================================
+  "k6": [
+    {
+      question: "Is k6 free?",
+      answer: "k6 OSS is free and open source. Grafana Cloud k6 has free tier. Pro and Enterprise for more features."
+    },
+    {
+      question: "What is k6?",
+      answer: "k6 is a modern load testing tool. Write tests in JavaScript, run from CLI. Acquired by Grafana Labs."
+    },
+    {
+      question: "k6 vs JMeter?",
+      answer: "k6 is modern, scriptable, and developer-friendly. JMeter is older with GUI. k6 for developers; JMeter for QA teams."
+    },
+    {
+      question: "What can you test with k6?",
+      answer: "Load testing, stress testing, and API testing. HTTP, WebSocket, and gRPC. Browser testing with k6 browser."
+    }
+  ],
+
+  // ============================================
+  // KAFKA (already have apache-kafka, add this for people searching "kafka")
+  // ============================================
+  "kafka": [
+    {
+      question: "Is Kafka free?",
+      answer: "Yes, Apache Kafka is open source under Apache 2.0 license. Self-hosting is free. Confluent Cloud and AWS MSK are paid managed options."
+    },
+    {
+      question: "What is Kafka?",
+      answer: "Apache Kafka is a distributed event streaming platform. Handle real-time data feeds at scale. Used for messaging, event sourcing, and log aggregation."
+    },
+    {
+      question: "Kafka vs RabbitMQ?",
+      answer: "Kafka is better for high-throughput event streaming. RabbitMQ is better for traditional message queuing. Kafka for big data; RabbitMQ for application messaging."
+    },
+    {
+      question: "What is Confluent?",
+      answer: "Confluent is the company founded by Kafka creators. Offers managed Kafka cloud and enterprise features. Commercial option for teams that don't want to manage Kafka."
+    }
+  ],
+
+  // ============================================
+  // KEYCLOAK
+  // ============================================
+  "keycloak": [
+    {
+      question: "Is Keycloak free?",
+      answer: "Yes, Keycloak is open source under Apache 2.0. Free to self-host. Red Hat SSO is the enterprise version."
+    },
+    {
+      question: "What is Keycloak?",
+      answer: "Keycloak is open-source identity management. SSO, social login, user federation, and admin console. Alternative to Auth0."
+    },
+    {
+      question: "Keycloak vs Auth0?",
+      answer: "Keycloak is free and self-hosted. Auth0 is managed but expensive. Keycloak for budget; Auth0 for convenience."
+    },
+    {
+      question: "What features does Keycloak include?",
+      answer: "SSO, OIDC/SAML, social login, user federation, fine-grained authorization, and admin console. Enterprise IAM features."
+    }
+  ],
+
+  // ============================================
+  // KUBERNETES
+  // ============================================
+  "kubernetes": [
+    {
+      question: "Is Kubernetes free?",
+      answer: "Yes, Kubernetes is open source under Apache 2.0. CNCF graduated project. Managed services (GKE, EKS, AKS) cost money."
+    },
+    {
+      question: "What is Kubernetes?",
+      answer: "Kubernetes (K8s) is container orchestration platform. Deploy, scale, and manage containerized applications. Industry standard."
+    },
+    {
+      question: "Kubernetes vs Docker Swarm?",
+      answer: "Kubernetes is more powerful and feature-rich. Docker Swarm is simpler. Kubernetes for production; Swarm for simpler needs."
+    },
+    {
+      question: "Is Kubernetes hard to learn?",
+      answer: "Kubernetes has steep learning curve. Start with managed services (GKE, EKS). Many concepts to understand. Worth it for scale."
+    }
+  ],
+
+  // ============================================
+  // LARK
+  // ============================================
+  "lark": [
+    {
+      question: "Is Lark free?",
+      answer: "Generous free tier for up to 50 users. Pro $12/user/month. Enterprise custom. Unusually generous free plan."
+    },
+    {
+      question: "What is Lark?",
+      answer: "Lark is ByteDance's workplace platform. Docs, sheets, meetings, and chat in one app. Competitor to Google Workspace and Notion."
+    },
+    {
+      question: "Lark vs Slack?",
+      answer: "Lark includes docs and sheets; Slack is chat-focused. Lark is more complete; Slack has bigger ecosystem."
+    },
+    {
+      question: "What features does Lark include?",
+      answer: "Messenger, video calls, calendar, docs, sheets, and workflows. All-in-one platform. Made by TikTok's parent company."
+    }
+  ],
+
+  // ============================================
+  // LARAVEL
+  // ============================================
+  "laravel": [
+    {
+      question: "Is Laravel free?",
+      answer: "Yes, Laravel is open source under MIT license. Forge, Vapor, and other services are paid. Framework is free."
+    },
+    {
+      question: "What is Laravel?",
+      answer: "Laravel is a PHP web framework. Elegant syntax, MVC architecture, and rich ecosystem. Most popular PHP framework."
+    },
+    {
+      question: "Laravel vs Symfony?",
+      answer: "Laravel is easier to start with. Symfony is more flexible for complex apps. Laravel for rapid development; Symfony for customization."
+    },
+    {
+      question: "What is Laravel Forge?",
+      answer: "Forge is server management for Laravel apps. Provision and deploy to any cloud. $12/month starting. Official Laravel service."
+    }
+  ],
+
+  // ============================================
+  // LEMON SQUEEZY
+  // ============================================
+  "lemonsqueezy": [
+    {
+      question: "Is Lemon Squeezy free?",
+      answer: "No monthly fees. 5% + 50¢ per transaction. Higher than Stripe but handles tax and compliance. Pay only on sales."
+    },
+    {
+      question: "What is Lemon Squeezy?",
+      answer: "Lemon Squeezy is merchant of record for software. Handles payments, tax, and compliance globally. Alternative to Paddle."
+    },
+    {
+      question: "Lemon Squeezy vs Paddle?",
+      answer: "Lemon Squeezy has better DX and lower fees for small sellers. Paddle is more established. Both handle tax compliance."
+    },
+    {
+      question: "What does merchant of record mean?",
+      answer: "Lemon Squeezy is the legal seller, handles tax and compliance. You receive payouts. Simplifies global selling dramatically."
+    }
+  ],
+
+  // ============================================
+  // LEONARDO AI
+  // ============================================
+  "leonardo-ai": [
+    {
+      question: "Is Leonardo AI free?",
+      answer: "Free tier with 150 daily tokens. Apprentice $10/month. Artisan $24/month. Maestro $48/month. Good free tier."
+    },
+    {
+      question: "What is Leonardo AI?",
+      answer: "Leonardo AI is an AI image generation platform. Create images and train custom models. Popular for game assets and art."
+    },
+    {
+      question: "Leonardo vs Midjourney?",
+      answer: "Leonardo has more control and custom models. Midjourney has better artistic output. Leonardo for customization; Midjourney for art."
+    },
+    {
+      question: "What can Leonardo AI do?",
+      answer: "Image generation, model training, real-time canvas, and texture generation. Strong focus on game development assets."
+    }
+  ],
+
+  // ============================================
+  // LINODE
+  // ============================================
+  "linode": [
+    {
+      question: "How much does Linode cost?",
+      answer: "Shared CPU from $5/month. Dedicated CPU from $30/month. High Memory from $60/month. Simple, predictable pricing."
+    },
+    {
+      question: "What is Linode?",
+      answer: "Linode is a cloud hosting provider. VPS, Kubernetes, databases, and more. Acquired by Akamai in 2022."
+    },
+    {
+      question: "Linode vs DigitalOcean?",
+      answer: "Very similar offerings and pricing. Linode now backed by Akamai. Both excellent for developers and small teams."
+    },
+    {
+      question: "What happened to Linode?",
+      answer: "Akamai acquired Linode in 2022. Still operates as Linode brand. Combined with Akamai's edge network."
+    }
+  ],
+
+  // ============================================
+  // LINEAR
+  // ============================================
+  "linear": [
+    {
+      question: "Is Linear free?",
+      answer: "Free for up to 250 issues. Plus $8/user/month. Business $14/user/month. Enterprise custom. Generous free tier."
+    },
+    {
+      question: "What is Linear?",
+      answer: "Linear is a fast issue tracker for software teams. Modern alternative to Jira. Known for speed and keyboard-first design."
+    },
+    {
+      question: "Linear vs Jira?",
+      answer: "Linear is faster and more opinionated. Jira is more customizable with more integrations. Linear for speed; Jira for flexibility."
+    },
+    {
+      question: "What makes Linear fast?",
+      answer: "Local-first architecture, optimistic updates, and keyboard-first design. Sub-50ms interactions. Built for developer workflow."
+    }
+  ],
+
+  // ============================================
+  // LINUX
+  // ============================================
+  "linux": [
+    {
+      question: "Is Linux free?",
+      answer: "Yes, Linux kernel is open source under GPLv2. Most distributions are free. Foundation of cloud infrastructure."
+    },
+    {
+      question: "What is Linux?",
+      answer: "Linux is an open-source operating system kernel. Powers servers, phones (Android), and embedded devices. Created by Linus Torvalds."
+    },
+    {
+      question: "Ubuntu vs Debian?",
+      answer: "Ubuntu is based on Debian with more polish. Debian is more stable and minimal. Ubuntu for ease; Debian for servers."
+    },
+    {
+      question: "What is a Linux distribution?",
+      answer: "A distro packages Linux kernel with software. Ubuntu, Fedora, Debian, Arch are popular. Choose based on use case and preference."
+    }
+  ],
+
+  // ============================================
+  // LITELLM
+  // ============================================
+  "litellm": [
+    {
+      question: "Is LiteLLM free?",
+      answer: "Yes, LiteLLM is open source under MIT license. Self-host for free. LiteLLM Proxy available."
+    },
+    {
+      question: "What is LiteLLM?",
+      answer: "LiteLLM provides unified interface for 100+ LLM providers. Call OpenAI, Anthropic, Cohere with same code. Simplifies LLM integration."
+    },
+    {
+      question: "LiteLLM vs LangChain?",
+      answer: "LiteLLM focuses on LLM API calls. LangChain is broader framework. LiteLLM for simple switching; LangChain for complex chains."
+    },
+    {
+      question: "What providers does LiteLLM support?",
+      answer: "OpenAI, Anthropic, Cohere, Hugging Face, Azure, AWS Bedrock, Replicate, and 100+ more. One SDK for all."
+    }
+  ],
+
+  // ============================================
+  // LOGROCKET
+  // ============================================
+  "logrocket": [
+    {
+      question: "Is LogRocket free?",
+      answer: "Free tier with 1000 sessions/month. Team $99/month. Professional $350/month. Enterprise custom pricing."
+    },
+    {
+      question: "What is LogRocket?",
+      answer: "LogRocket provides session replay and error tracking. See what users did before errors. Debugging tool for frontend apps."
+    },
+    {
+      question: "LogRocket vs FullStory?",
+      answer: "Similar products for session replay. LogRocket is more developer-focused. FullStory is more product analytics. Both excellent."
+    },
+    {
+      question: "What features does LogRocket include?",
+      answer: "Session replay, error tracking, performance monitoring, and product analytics. Debug and understand user behavior."
+    }
+  ],
+
+  // ============================================
+  // LOOM
+  // ============================================
+  "loom": [
+    {
+      question: "Is Loom free?",
+      answer: "Free tier with 25 videos and 5-minute limit. Business $12.50/user/month. Enterprise custom. Good free tier."
+    },
+    {
+      question: "What is Loom?",
+      answer: "Loom is async video messaging. Record screen, camera, or both. Share video messages instead of meetings."
+    },
+    {
+      question: "Loom vs Zoom?",
+      answer: "Loom is asynchronous recording. Zoom is live meetings. Loom for async communication; Zoom for live calls."
+    },
+    {
+      question: "What can you do with Loom?",
+      answer: "Record tutorials, product demos, feedback, and updates. Viewers can react and comment. Reduces meeting fatigue."
+    }
+  ],
+
+  // ============================================
+  // LUCIDCHART
+  // ============================================
+  "lucidchart": [
+    {
+      question: "Is Lucidchart free?",
+      answer: "Free tier with 3 documents and 60 shapes per doc. Individual $7.95/month. Team $9/user/month. Enterprise custom."
+    },
+    {
+      question: "What is Lucidchart?",
+      answer: "Lucidchart is a collaborative diagramming tool. Flowcharts, org charts, UML, and more. Browser-based with real-time collaboration."
+    },
+    {
+      question: "Lucidchart vs Miro?",
+      answer: "Lucidchart is better for structured diagrams. Miro is better for freeform collaboration. Lucidchart for diagrams; Miro for brainstorming."
+    },
+    {
+      question: "What can you create in Lucidchart?",
+      answer: "Flowcharts, wireframes, org charts, ERDs, network diagrams, UML, and more. Extensive template library."
+    }
+  ],
+
+  // ============================================
+  // MAILGUN
+  // ============================================
+  "mailgun": [
+    {
+      question: "Is Mailgun free?",
+      answer: "Free tier with 100 emails/day for 3 months. Flex pay-as-you-go after. Foundation $35/month. Enterprise custom."
+    },
+    {
+      question: "What is Mailgun?",
+      answer: "Mailgun is a transactional email API. Send, receive, and track emails programmatically. Developer-focused email service."
+    },
+    {
+      question: "Mailgun vs SendGrid?",
+      answer: "Mailgun is more developer-focused. SendGrid has better marketing features. Mailgun for pure API; SendGrid for marketing needs."
+    },
+    {
+      question: "What features does Mailgun include?",
+      answer: "Email sending, webhooks, email validation, parsing, and analytics. Complete transactional email platform."
+    }
+  ],
+
+  // ============================================
+  // MAILTRAP
+  // ============================================
+  "mailtrap": [
+    {
+      question: "Is Mailtrap free?",
+      answer: "Free tier with 100 emails/month for testing. Paid plans from $10/month for sending. Good for testing."
+    },
+    {
+      question: "What is Mailtrap?",
+      answer: "Mailtrap is email testing and sending. Fake SMTP for development, real sending for production. Don't accidentally email customers."
+    },
+    {
+      question: "Mailtrap vs Mailhog?",
+      answer: "Mailtrap is hosted with sending features. Mailhog is self-hosted testing only. Mailtrap for convenience; Mailhog for free local testing."
+    },
+    {
+      question: "What is email testing?",
+      answer: "Send emails to fake inbox during development. Test formatting and deliverability without reaching real users. Essential for email development."
+    }
+  ],
+
+  // ============================================
+  // MAKE
+  // ============================================
+  "make": [
+    {
+      question: "Is Make free?",
+      answer: "Free tier with 1000 operations/month. Core $9/month for 10K ops. Pro $16/month for 10K ops. Teams available."
+    },
+    {
+      question: "What is Make?",
+      answer: "Make (formerly Integromat) is an automation platform. Connect apps, automate workflows. Visual alternative to Zapier."
+    },
+    {
+      question: "Make vs Zapier?",
+      answer: "Make is more powerful with visual builder and more complex logic. Zapier is simpler. Make for power users; Zapier for simplicity."
+    },
+    {
+      question: "What happened to Integromat?",
+      answer: "Integromat rebranded to Make in 2022. Same product, new name and expanded features. All accounts migrated."
+    }
+  ],
 };
 
 async function main() {
