@@ -4,6 +4,7 @@ import { getActiveCompany } from "@/lib/company-utils";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Pencil, ExternalLink } from "lucide-react";
+import { CompanySettingsForm } from "@/components/company/company-settings-form";
 
 export default async function CompanyDashboardPage() {
   const user = await getCurrentUser();
@@ -24,10 +25,13 @@ export default async function CompanyDashboardPage() {
 
   const company = await prisma.company.findUnique({
     where: { id: activeCompany.id },
-    include: {
+    select: {
+      id: true,
+      name: true,
+      linkedinUrl: true,
       tools: { select: { id: true, name: true, slug: true, upvotes: true, reviewCount: true } },
-      submissions: { where: { status: "pending" } },
-      badges: true,
+      submissions: { where: { status: "pending" }, select: { id: true } },
+      badges: { select: { id: true } },
     },
   });
 
@@ -96,6 +100,8 @@ export default async function CompanyDashboardPage() {
           )}
         </div>
       </div>
+
+      <CompanySettingsForm company={{ id: company.id, linkedinUrl: company.linkedinUrl }} />
     </div>
   );
 }

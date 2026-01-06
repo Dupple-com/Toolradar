@@ -13,6 +13,43 @@ interface PageContent {
   content: string;
 }
 
+// Extract logo URL from page (apple-touch-icon, og:image, etc.)
+function extractLogo(html: string, baseUrl: string): string | null {
+  const $ = cheerio.load(html);
+  const base = new URL(baseUrl);
+
+  // Priority order for logo sources
+  const logoSelectors = [
+    'link[rel="apple-touch-icon"][sizes="180x180"]',
+    'link[rel="apple-touch-icon"][sizes="152x152"]',
+    'link[rel="apple-touch-icon"]',
+    'link[rel="icon"][sizes="192x192"]',
+    'link[rel="icon"][sizes="128x128"]',
+    'meta[property="og:image"]',
+    'link[rel="shortcut icon"]',
+    'link[rel="icon"]',
+  ];
+
+  for (const selector of logoSelectors) {
+    const el = $(selector).first();
+    if (el.length) {
+      const href = el.attr("href") || el.attr("content");
+      if (href) {
+        try {
+          // Handle relative URLs
+          const logoUrl = new URL(href, baseUrl);
+          return logoUrl.href;
+        } catch {
+          continue;
+        }
+      }
+    }
+  }
+
+  // Fallback to unavatar
+  return `https://unavatar.io/${base.hostname}`;
+}
+
 // Fetch and extract text content from a URL
 async function fetchPageContent(url: string): Promise<PageContent | null> {
   try {
@@ -262,6 +299,9 @@ export async function POST(request: NextRequest) {
     const $ = cheerio.load(homepageHtml);
     const homepageTitle = $("title").text().trim();
 
+    // Extract logo URL
+    const logoUrl = extractLogo(homepageHtml, url);
+
     // Clean homepage content
     $("script, style, nav, footer, header, aside, noscript, iframe").remove();
     const homepageContent = $("body").text().replace(/\s+/g, " ").trim().slice(0, 15000);
@@ -296,6 +336,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       data: result,
+      logoUrl,
       pagesAnalyzed: pages.map((p) => p.url),
     });
   } catch (error) {

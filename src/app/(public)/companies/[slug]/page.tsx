@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ToolCard } from "@/components/tools/tool-card";
-import { CheckCircle, Globe, Building2, Package } from "lucide-react";
+import { CheckCircle, Globe, Building2, Package, Linkedin } from "lucide-react";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateCompanyMetadata } from "@/lib/seo";
@@ -152,6 +152,17 @@ export default async function CompanyPage({ params }: { params: { slug: string }
                 >
                   <Globe className="w-4 h-4" />
                   <span className="truncate max-w-[150px] sm:max-w-none">{company.domain}</span>
+                </a>
+              )}
+              {company.linkedinUrl && (
+                <a
+                  href={company.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 hover:text-blue-600"
+                >
+                  <Linkedin className="w-4 h-4" />
+                  LinkedIn
                 </a>
               )}
               <span className="flex items-center gap-1">

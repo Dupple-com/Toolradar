@@ -109,6 +109,9 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
       if (data.data.cons?.length) setCons(data.data.cons);
       if (data.data.faqs?.length) setFaqs(data.data.faqs);
 
+      // Set logo URL if found
+      if (data.logoUrl) setLogo(data.logoUrl);
+
       // Match suggested categories
       if (data.data.suggestedCategories?.length) {
         const matchedIds = categories
