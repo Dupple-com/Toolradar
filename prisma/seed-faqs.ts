@@ -17515,6 +17515,2030 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "Every message belongs to a topic within a stream. Conversations stay organized. Easy to catch up on specific topics."
     }
   ],
+
+  // ============================================
+  // ARCHITECT
+  // ============================================
+  "architect": [
+    {
+      question: "Is Architect free?",
+      answer: "Yes, Architect is free and open source. Apache 2.0 license. Deploy serverless apps to AWS."
+    },
+    {
+      question: "What is Architect?",
+      answer: "Architect is a serverless framework for AWS. Simple configuration, deploys Lambda, API Gateway, DynamoDB, and more."
+    },
+    {
+      question: "Architect vs Serverless Framework?",
+      answer: "Architect is simpler and AWS-focused. Serverless Framework supports multiple clouds. Architect for AWS simplicity."
+    },
+    {
+      question: "What is arc.codes?",
+      answer: "The Architect website and documentation. Define infrastructure as code with simple manifest files."
+    }
+  ],
+
+  // ============================================
+  // BING-IMAGE-CREATOR
+  // ============================================
+  "bing-image-creator": [
+    {
+      question: "Is Bing Image Creator free?",
+      answer: "Yes, free with Microsoft account. Uses boosts for fast generation. Unlimited slow generations."
+    },
+    {
+      question: "What is Bing Image Creator?",
+      answer: "Microsoft's AI image generator powered by DALL-E. Create images from text prompts. Integrated with Bing and Edge."
+    },
+    {
+      question: "Bing Image Creator vs DALL-E?",
+      answer: "Bing Image Creator is free and uses DALL-E 3. Direct DALL-E access costs money. Same technology, different pricing."
+    },
+    {
+      question: "What are boosts?",
+      answer: "Credits for fast image generation. Replenish weekly. Without boosts, generation is slower but still works."
+    }
+  ],
+
+  // ============================================
+  // BITDEFENDER
+  // ============================================
+  "bitdefender": [
+    {
+      question: "Is Bitdefender free?",
+      answer: "Free antivirus available. Premium plans from $29.99/year. Business plans priced per endpoint."
+    },
+    {
+      question: "What is Bitdefender?",
+      answer: "Bitdefender is cybersecurity software. Antivirus, VPN, and privacy protection. Consistently top-rated protection."
+    },
+    {
+      question: "Bitdefender vs Norton?",
+      answer: "Both are excellent. Bitdefender often scores slightly higher in tests. Norton has better VPN. Personal preference."
+    },
+    {
+      question: "Is Bitdefender good for business?",
+      answer: "Yes, GravityZone is their enterprise solution. Endpoint protection, EDR, and cloud security. Scales to large organizations."
+    }
+  ],
+
+  // ============================================
+  // BLACK (Python formatter)
+  // ============================================
+  "black": [
+    {
+      question: "Is Black free?",
+      answer: "Yes, Black is completely free and open source. MIT license. The uncompromising Python formatter."
+    },
+    {
+      question: "What is Black?",
+      answer: "Black is an opinionated Python code formatter. Minimal configuration, consistent output. 'You can have any color as long as it's black.'"
+    },
+    {
+      question: "Black vs Prettier?",
+      answer: "Black is for Python only. Prettier handles JavaScript, CSS, etc. Both are opinionated formatters for their ecosystems."
+    },
+    {
+      question: "Why use Black?",
+      answer: "Ends formatting debates. Consistent code across team. Fast and deterministic. Industry standard for Python."
+    }
+  ],
+
+  // ============================================
+  // BLAMELESS
+  // ============================================
+  "blameless": [
+    {
+      question: "Is Blameless free?",
+      answer: "No free tier. Pricing is custom based on team size. Contact sales for quotes. Enterprise incident management."
+    },
+    {
+      question: "What is Blameless?",
+      answer: "Blameless is an SRE platform. Incident management, retrospectives, and reliability tracking. Improves on-call experience."
+    },
+    {
+      question: "What is blameless culture?",
+      answer: "Focus on systems, not individuals. Learn from incidents without blame. Psychological safety improves reliability."
+    },
+    {
+      question: "Blameless vs PagerDuty?",
+      answer: "Blameless focuses on post-incident learning. PagerDuty on alerting. Often used together for full incident lifecycle."
+    }
+  ],
+
+  // ============================================
+  // CACHET
+  // ============================================
+  "cachet": [
+    {
+      question: "Is Cachet free?",
+      answer: "Yes, Cachet is free and open source. BSD 3-Clause license. Self-hosted status page system."
+    },
+    {
+      question: "What is Cachet?",
+      answer: "Cachet is an open-source status page system. Display service status, incidents, and metrics. Self-host your own status page."
+    },
+    {
+      question: "Cachet vs Statuspage?",
+      answer: "Cachet is free and self-hosted. Statuspage (Atlassian) is managed but paid. Cachet for budget; Statuspage for convenience."
+    },
+    {
+      question: "Is Cachet still maintained?",
+      answer: "Development has slowed. Community maintains it. Consider alternatives like Upptime or Instatus for active development."
+    }
+  ],
+
+  // ============================================
+  // CALIBRE
+  // ============================================
+  "calibre": [
+    {
+      question: "Is Calibre free?",
+      answer: "Yes, Calibre is completely free and open source. GPL license. Best e-book management software."
+    },
+    {
+      question: "What is Calibre?",
+      answer: "Calibre is e-book management software. Organize, convert, and sync e-books. Works with all major e-readers."
+    },
+    {
+      question: "Can Calibre convert formats?",
+      answer: "Yes, converts between most e-book formats. EPUB, MOBI, PDF, and many more. Essential for e-reader compatibility."
+    },
+    {
+      question: "Does Calibre work with Kindle?",
+      answer: "Yes, syncs with Kindle devices. Converts formats Kindle can read. Manages your entire e-book library."
+    }
+  ],
+
+  // ============================================
+  // CAMTASIA
+  // ============================================
+  "camtasia": [
+    {
+      question: "Is Camtasia free?",
+      answer: "Free trial available. One-time purchase from $249.99. Maintenance plan optional for updates."
+    },
+    {
+      question: "What is Camtasia?",
+      answer: "Camtasia is screen recording and video editing software. Create tutorials, demos, and presentations. Made by TechSmith."
+    },
+    {
+      question: "Camtasia vs OBS?",
+      answer: "Camtasia has built-in editing and is easier. OBS is free and better for streaming. Camtasia for polished tutorials."
+    },
+    {
+      question: "Is Camtasia good for tutorials?",
+      answer: "Yes, it's designed for tutorials. Screen recording, annotations, quizzes. Industry standard for software training."
+    }
+  ],
+
+  // ============================================
+  // CANVA-AI
+  // ============================================
+  "canva-ai": [
+    {
+      question: "Is Canva AI free?",
+      answer: "Some AI features in free tier. Magic Write, Magic Design in Pro from $12.99/month. Enterprise available."
+    },
+    {
+      question: "What is Canva AI?",
+      answer: "AI features within Canva. Text to image, Magic Write, background removal, and design suggestions. AI-enhanced design."
+    },
+    {
+      question: "What is Magic Design?",
+      answer: "Upload content, AI creates designs. Generates templates and layouts automatically. Starting point for designs."
+    },
+    {
+      question: "Canva AI vs Midjourney?",
+      answer: "Canva AI is integrated into design workflow. Midjourney is standalone image generation. Canva for practical design; Midjourney for art."
+    }
+  ],
+
+  // ============================================
+  // CAPACITIES
+  // ============================================
+  "capacities": [
+    {
+      question: "Is Capacities free?",
+      answer: "Free tier available. Pro from $9.99/month. Believer plan $5.99/month (early adopter pricing)."
+    },
+    {
+      question: "What is Capacities?",
+      answer: "Capacities is a note-taking app based on objects. Everything is an object with properties. Unique approach to PKM."
+    },
+    {
+      question: "Capacities vs Notion?",
+      answer: "Capacities focuses on objects and relationships. Notion is more flexible. Capacities for structured thinking."
+    },
+    {
+      question: "What are objects in Capacities?",
+      answer: "Objects are typed notes like Person, Book, Meeting. Each has specific properties. Creates a knowledge graph naturally."
+    }
+  ],
+
+  // ============================================
+  // CAPROVER
+  // ============================================
+  "caprover": [
+    {
+      question: "Is CapRover free?",
+      answer: "Yes, CapRover is completely free and open source. Apache 2.0 license. Self-hosted PaaS."
+    },
+    {
+      question: "What is CapRover?",
+      answer: "CapRover is a self-hosted PaaS. Deploy apps with one click. Heroku alternative you run yourself."
+    },
+    {
+      question: "CapRover vs Coolify?",
+      answer: "Both are self-hosted PaaS options. CapRover is more mature. Coolify has better UI. Both excellent choices."
+    },
+    {
+      question: "What can I deploy with CapRover?",
+      answer: "Docker images, Node.js, Python, PHP, databases, and more. One-click apps from marketplace. Very versatile."
+    }
+  ],
+
+  // ============================================
+  // CARBON-BLACK
+  // ============================================
+  "carbon-black": [
+    {
+      question: "Is Carbon Black free?",
+      answer: "No free tier. Enterprise pricing based on endpoints. Contact VMware for quotes. Enterprise endpoint security."
+    },
+    {
+      question: "What is Carbon Black?",
+      answer: "Carbon Black is endpoint security from VMware. EDR, threat hunting, and workload protection. Enterprise-grade security."
+    },
+    {
+      question: "Carbon Black vs CrowdStrike?",
+      answer: "Both are top EDR solutions. CrowdStrike is cloud-native. Carbon Black integrates with VMware. Both excellent."
+    },
+    {
+      question: "What is EDR?",
+      answer: "Endpoint Detection and Response. Monitors endpoints for threats. Goes beyond traditional antivirus with behavior analysis."
+    }
+  ],
+
+  // ============================================
+  // CARGO
+  // ============================================
+  "cargo": [
+    {
+      question: "Is Cargo free?",
+      answer: "Yes, Cargo is completely free. Comes with Rust. Official package manager and build tool."
+    },
+    {
+      question: "What is Cargo?",
+      answer: "Cargo is Rust's package manager and build system. Manages dependencies, builds projects, runs tests. Essential for Rust."
+    },
+    {
+      question: "Cargo vs npm?",
+      answer: "Cargo is for Rust, npm for JavaScript. Both manage dependencies. Cargo also handles building and testing."
+    },
+    {
+      question: "What is crates.io?",
+      answer: "The Rust package registry. Cargo downloads packages from here. Like npm registry but for Rust."
+    }
+  ],
+
+  // ============================================
+  // CARRD
+  // ============================================
+  "carrd": [
+    {
+      question: "Is Carrd free?",
+      answer: "Free tier with 3 sites. Pro from $19/year. Pro Plus $49/year for more features. Very affordable."
+    },
+    {
+      question: "What is Carrd?",
+      answer: "Carrd is a simple one-page website builder. Landing pages, link-in-bio, portfolios. Fast and easy."
+    },
+    {
+      question: "Carrd vs Linktree?",
+      answer: "Carrd is more flexible and customizable. Linktree is simpler for link lists. Carrd for better design control."
+    },
+    {
+      question: "Can Carrd accept payments?",
+      answer: "Yes, with Pro plan. Integrate Stripe, PayPal, or Gumroad. Simple checkout for digital products."
+    }
+  ],
+
+  // ============================================
+  // CARTA
+  // ============================================
+  "carta": [
+    {
+      question: "Is Carta free?",
+      answer: "Launch plan from $3,000/year. Growth and Scale plans higher. Pricing based on company stage."
+    },
+    {
+      question: "What is Carta?",
+      answer: "Carta is equity management software. Cap tables, 409A valuations, and fund administration. Standard for startups."
+    },
+    {
+      question: "Why do startups use Carta?",
+      answer: "Manage equity, issue stock options, handle compliance. Investors expect clean cap tables. Makes fundraising easier."
+    },
+    {
+      question: "Carta vs Pulley?",
+      answer: "Pulley is newer and cheaper. Carta is more established with more features. Both handle cap table management."
+    }
+  ],
+
+  // ============================================
+  // CASSANDRA
+  // ============================================
+  "cassandra": [
+    {
+      question: "Is Cassandra free?",
+      answer: "Yes, Apache Cassandra is free and open source. Apache 2.0 license. Commercial support available from DataStax."
+    },
+    {
+      question: "What is Cassandra?",
+      answer: "Cassandra is a distributed NoSQL database. High availability, no single point of failure. Used by Netflix, Apple, and more."
+    },
+    {
+      question: "Cassandra vs MongoDB?",
+      answer: "Cassandra excels at write-heavy workloads. MongoDB is more flexible for queries. Cassandra for scale; MongoDB for flexibility."
+    },
+    {
+      question: "When should I use Cassandra?",
+      answer: "High write throughput, global distribution, always-on requirements. Time-series data, IoT, messaging. Not for complex queries."
+    }
+  ],
+
+  // ============================================
+  // CDKTF
+  // ============================================
+  "cdktf": [
+    {
+      question: "Is CDKTF free?",
+      answer: "Yes, CDKTF is free and open source. MPL 2.0 license. Made by HashiCorp."
+    },
+    {
+      question: "What is CDKTF?",
+      answer: "CDKTF (Cloud Development Kit for Terraform) lets you write Terraform in programming languages. TypeScript, Python, Go, and more."
+    },
+    {
+      question: "CDKTF vs HCL?",
+      answer: "CDKTF uses real programming languages. HCL is Terraform's native language. CDKTF for complex logic; HCL for simplicity."
+    },
+    {
+      question: "CDKTF vs Pulumi?",
+      answer: "Both use programming languages for IaC. CDKTF generates Terraform. Pulumi has its own engine. Similar developer experience."
+    }
+  ],
+
+  // ============================================
+  // CDNJS
+  // ============================================
+  "cdnjs": [
+    {
+      question: "Is cdnjs free?",
+      answer: "Yes, cdnjs is completely free. Powered by Cloudflare. No usage limits."
+    },
+    {
+      question: "What is cdnjs?",
+      answer: "cdnjs is a free CDN for JavaScript libraries. Host common libraries without self-hosting. Fast global delivery."
+    },
+    {
+      question: "cdnjs vs unpkg?",
+      answer: "cdnjs is curated with popular libraries. unpkg serves anything from npm. Both are free CDNs."
+    },
+    {
+      question: "Should I use a CDN for libraries?",
+      answer: "Good for quick prototypes. For production, bundle your own for control. CDNs are a single point of failure."
+    }
+  ],
+
+  // ============================================
+  // CERT-MANAGER
+  // ============================================
+  "cert-manager": [
+    {
+      question: "Is cert-manager free?",
+      answer: "Yes, cert-manager is free and open source. Apache 2.0 license. CNCF project."
+    },
+    {
+      question: "What is cert-manager?",
+      answer: "cert-manager automates TLS certificates in Kubernetes. Works with Let's Encrypt and other CAs. Essential for K8s HTTPS."
+    },
+    {
+      question: "How does cert-manager work?",
+      answer: "Define Certificate resources, cert-manager handles the rest. Automatic renewal, multiple issuers. Set it and forget it."
+    },
+    {
+      question: "cert-manager vs manual certificates?",
+      answer: "cert-manager automates everything. Manual requires renewal tracking. No reason not to use cert-manager in K8s."
+    }
+  ],
+
+  // ============================================
+  // CERTBOT
+  // ============================================
+  "certbot": [
+    {
+      question: "Is Certbot free?",
+      answer: "Yes, Certbot is completely free. Apache 2.0 license. Official Let's Encrypt client."
+    },
+    {
+      question: "What is Certbot?",
+      answer: "Certbot is a tool for obtaining Let's Encrypt SSL certificates. Automates certificate issuance and renewal."
+    },
+    {
+      question: "How do I use Certbot?",
+      answer: "Install Certbot, run with your web server plugin. Automatically configures HTTPS. Renews certificates automatically."
+    },
+    {
+      question: "Certbot vs Caddy?",
+      answer: "Certbot is a standalone tool. Caddy has automatic HTTPS built-in. Caddy simpler; Certbot works with any server."
+    }
+  ],
+
+  // ============================================
+  // CHAMELEON
+  // ============================================
+  "chameleon": [
+    {
+      question: "Is Chameleon free?",
+      answer: "Free trial available. Startup from $279/month. Growth from $999/month. Enterprise pricing varies."
+    },
+    {
+      question: "What is Chameleon?",
+      answer: "Chameleon is product adoption software. In-app tours, tooltips, and surveys. Improve user onboarding."
+    },
+    {
+      question: "Chameleon vs Appcues?",
+      answer: "Both are product adoption tools. Chameleon has stronger customization. Appcues is easier to start. Both effective."
+    },
+    {
+      question: "What is product adoption?",
+      answer: "Helping users discover and use features. Tours, tooltips, checklists. Reduces churn, improves activation."
+    }
+  ],
+
+  // ============================================
+  // CHANTY
+  // ============================================
+  "chanty": [
+    {
+      question: "Is Chanty free?",
+      answer: "Free for up to 10 team members. Business from $3/user/month. Very affordable team chat."
+    },
+    {
+      question: "What is Chanty?",
+      answer: "Chanty is team messaging software. Chat, voice calls, and task management. Slack alternative for small teams."
+    },
+    {
+      question: "Chanty vs Slack?",
+      answer: "Chanty is simpler and cheaper. Slack has more integrations. Chanty for small teams on budget."
+    },
+    {
+      question: "What is Teambook?",
+      answer: "Chanty's feature to organize messages, tasks, and files. Everything in one view. Reduces context switching."
+    }
+  ],
+
+  // ============================================
+  // CHARTHOP
+  // ============================================
+  "charthop": [
+    {
+      question: "Is ChartHop free?",
+      answer: "Free trial available. Pricing based on employee count. Contact sales for quotes. HR analytics platform."
+    },
+    {
+      question: "What is ChartHop?",
+      answer: "ChartHop is people analytics and org chart software. Visualize organization, plan headcount, track diversity metrics."
+    },
+    {
+      question: "ChartHop vs Lattice?",
+      answer: "ChartHop focuses on org planning and analytics. Lattice on performance management. Different but complementary."
+    },
+    {
+      question: "What is workforce planning?",
+      answer: "Planning future headcount, budgets, and organization structure. ChartHop makes it visual and data-driven."
+    }
+  ],
+
+  // ============================================
+  // CHECKMARX
+  // ============================================
+  "checkmarx": [
+    {
+      question: "Is Checkmarx free?",
+      answer: "No free tier. Enterprise pricing based on usage. Contact sales for quotes. Application security testing."
+    },
+    {
+      question: "What is Checkmarx?",
+      answer: "Checkmarx is application security testing. SAST, SCA, and DAST. Find vulnerabilities in code and dependencies."
+    },
+    {
+      question: "Checkmarx vs Snyk?",
+      answer: "Checkmarx is more comprehensive for enterprise. Snyk is developer-friendly with free tier. Both strong security tools."
+    },
+    {
+      question: "What is SAST?",
+      answer: "Static Application Security Testing. Analyzes source code for vulnerabilities. Finds issues before deployment."
+    }
+  ],
+
+  // ============================================
+  // CHEF
+  // ============================================
+  "chef": [
+    {
+      question: "Is Chef free?",
+      answer: "Chef Infra is open source. Commercial products require license. Progress Software owns Chef now."
+    },
+    {
+      question: "What is Chef?",
+      answer: "Chef is infrastructure automation. Configuration management using Ruby DSL. Alternative to Ansible and Puppet."
+    },
+    {
+      question: "Chef vs Ansible?",
+      answer: "Chef uses Ruby, Ansible uses YAML. Ansible is agentless, Chef needs agents. Ansible simpler; Chef more powerful for complex setups."
+    },
+    {
+      question: "Is Chef still relevant?",
+      answer: "Still used in enterprises. Ansible and Terraform more popular now. Chef has strong ecosystem but declining mindshare."
+    }
+  ],
+
+  // ============================================
+  // CHILI-PIPER
+  // ============================================
+  "chili-piper": [
+    {
+      question: "Is Chili Piper free?",
+      answer: "Free trial available. Instant Booker from $15/user/month. Concierge from $30/user/month. Sales scheduling platform."
+    },
+    {
+      question: "What is Chili Piper?",
+      answer: "Chili Piper is scheduling software for sales teams. Instant meeting booking, lead routing, and handoff automation."
+    },
+    {
+      question: "Chili Piper vs Calendly?",
+      answer: "Chili Piper is sales-focused with lead routing. Calendly is general scheduling. Chili Piper for sales teams; Calendly for everyone."
+    },
+    {
+      question: "What is Concierge?",
+      answer: "Converts form fills into instant meetings. Visitor books meeting right after filling form. Increases conversion rates."
+    }
+  ],
+
+  // ============================================
+  // CHORUS
+  // ============================================
+  "chorus": [
+    {
+      question: "Is Chorus free?",
+      answer: "No free tier. Pricing is custom based on team size. Contact ZoomInfo for quotes. Now part of ZoomInfo."
+    },
+    {
+      question: "What is Chorus?",
+      answer: "Chorus is conversation intelligence for sales. Records and analyzes sales calls. AI insights to improve performance."
+    },
+    {
+      question: "Chorus vs Gong?",
+      answer: "Both are top conversation intelligence tools. Very similar features. Gong is standalone; Chorus part of ZoomInfo."
+    },
+    {
+      question: "What is conversation intelligence?",
+      answer: "AI analysis of sales calls. Topics discussed, talk ratios, sentiment. Helps coach reps and understand deals."
+    }
+  ],
+
+  // ============================================
+  // CHROMA
+  // ============================================
+  "chroma": [
+    {
+      question: "Is Chroma free?",
+      answer: "Open source is free. Chroma Cloud in beta with free tier. Commercial pricing coming."
+    },
+    {
+      question: "What is Chroma?",
+      answer: "Chroma is an open-source embedding database. Store and query embeddings for AI apps. Simple Python and JavaScript APIs."
+    },
+    {
+      question: "Chroma vs Pinecone?",
+      answer: "Chroma is open source and simpler. Pinecone is managed with more features. Chroma for getting started; Pinecone for scale."
+    },
+    {
+      question: "What is Chroma used for?",
+      answer: "RAG applications, semantic search, recommendations. Any app that needs vector similarity search."
+    }
+  ],
+
+  // ============================================
+  // CHROMATIC
+  // ============================================
+  "chromatic": [
+    {
+      question: "Is Chromatic free?",
+      answer: "Free for 5,000 snapshots/month. Pro from $149/month. Made by Storybook maintainers."
+    },
+    {
+      question: "What is Chromatic?",
+      answer: "Chromatic is visual testing for Storybook. Catch visual regressions, review UI changes. Cloud-hosted Storybook."
+    },
+    {
+      question: "Chromatic vs Percy?",
+      answer: "Chromatic is Storybook-native. Percy is more general. Chromatic for Storybook users; Percy for any project."
+    },
+    {
+      question: "What is visual regression testing?",
+      answer: "Comparing screenshots to catch unintended changes. See exactly what changed in your UI. Prevents visual bugs."
+    }
+  ],
+
+  // ============================================
+  // CINEMA-4D
+  // ============================================
+  "cinema-4d": [
+    {
+      question: "Is Cinema 4D free?",
+      answer: "No, subscription from $94/month or $719/year. Perpetual licenses available. Student licenses discounted."
+    },
+    {
+      question: "What is Cinema 4D?",
+      answer: "Cinema 4D is 3D modeling and animation software. Known for motion graphics. Made by Maxon."
+    },
+    {
+      question: "Cinema 4D vs Blender?",
+      answer: "Cinema 4D is professional with better workflow. Blender is free with steeper learning curve. C4D for motion graphics."
+    },
+    {
+      question: "Why is Cinema 4D popular for motion graphics?",
+      answer: "Excellent After Effects integration, intuitive interface, MoGraph tools. Industry standard for broadcast graphics."
+    }
+  ],
+
+  // ============================================
+  // CIRCLE
+  // ============================================
+  "circle": [
+    {
+      question: "Is Circle free?",
+      answer: "Basic from $49/month (limited). Professional from $89/month. Business from $199/month. Community platform."
+    },
+    {
+      question: "What is Circle?",
+      answer: "Circle is community platform software. Build branded communities with courses, events, and discussions."
+    },
+    {
+      question: "Circle vs Discord?",
+      answer: "Circle is more professional with courses. Discord is free but less structured. Circle for paid communities."
+    },
+    {
+      question: "Circle vs Mighty Networks?",
+      answer: "Both build branded communities. Circle is simpler. Mighty Networks has native apps. Similar use cases."
+    }
+  ],
+
+  // ============================================
+  // CLAIR
+  // ============================================
+  "clair": [
+    {
+      question: "Is Clair free?",
+      answer: "Yes, Clair is free and open source. Apache 2.0 license. Container vulnerability scanner."
+    },
+    {
+      question: "What is Clair?",
+      answer: "Clair is a container vulnerability scanner. Analyzes container images for known vulnerabilities. Made by Red Hat."
+    },
+    {
+      question: "Clair vs Trivy?",
+      answer: "Trivy is easier to use and more comprehensive. Clair is designed for registry integration. Trivy for CLI; Clair for registries."
+    },
+    {
+      question: "How does Clair work?",
+      answer: "Scans container layers against vulnerability databases. Integrates with registries like Quay. Continuous scanning."
+    }
+  ],
+
+  // ============================================
+  // CLARI
+  // ============================================
+  "clari": [
+    {
+      question: "Is Clari free?",
+      answer: "No free tier. Enterprise pricing based on users. Contact sales for quotes. Revenue intelligence platform."
+    },
+    {
+      question: "What is Clari?",
+      answer: "Clari is revenue intelligence and forecasting. AI-powered pipeline analysis. Predicts revenue outcomes."
+    },
+    {
+      question: "Clari vs Gong?",
+      answer: "Clari focuses on forecasting and pipeline. Gong on conversation intelligence. Different but complementary."
+    },
+    {
+      question: "What is revenue intelligence?",
+      answer: "Data-driven insights into revenue performance. Pipeline health, forecast accuracy, deal risks. Makes revenue predictable."
+    }
+  ],
+
+  // ============================================
+  // CLEANSHOT
+  // ============================================
+  "cleanshot": [
+    {
+      question: "Is CleanShot free?",
+      answer: "No, one-time purchase $29 or $8/month with Cloud. macOS only. Professional screenshot tool."
+    },
+    {
+      question: "What is CleanShot?",
+      answer: "CleanShot is a screenshot and recording app for Mac. Annotations, scrolling capture, and cloud hosting."
+    },
+    {
+      question: "CleanShot vs native screenshot?",
+      answer: "CleanShot has annotations, scrolling capture, GIFs, and cloud. Native is basic. CleanShot for professionals."
+    },
+    {
+      question: "What is CleanShot Cloud?",
+      answer: "Instant sharing of screenshots and recordings. Get shareable links automatically. Included in subscription."
+    }
+  ],
+
+  // ============================================
+  // CLEARML
+  // ============================================
+  "clearml": [
+    {
+      question: "Is ClearML free?",
+      answer: "Free self-hosted community edition. Cloud has free tier. Pro from $69/month. MLOps platform."
+    },
+    {
+      question: "What is ClearML?",
+      answer: "ClearML is an MLOps platform. Experiment tracking, orchestration, and model serving. End-to-end ML lifecycle."
+    },
+    {
+      question: "ClearML vs MLflow?",
+      answer: "ClearML is more feature-rich. MLflow is simpler. Both handle experiment tracking. ClearML for full MLOps."
+    },
+    {
+      question: "What is MLOps?",
+      answer: "DevOps for machine learning. Versioning, training pipelines, deployment, monitoring. Makes ML reproducible."
+    }
+  ],
+
+  // ============================================
+  // CLEARSCOPE
+  // ============================================
+  "clearscope": [
+    {
+      question: "Is Clearscope free?",
+      answer: "No free tier. Essentials from $170/month. Business from $350/month. SEO content optimization."
+    },
+    {
+      question: "What is Clearscope?",
+      answer: "Clearscope is SEO content optimization software. Analyzes top-ranking content, suggests improvements. Data-driven content."
+    },
+    {
+      question: "Clearscope vs Surfer?",
+      answer: "Both optimize content for SEO. Clearscope is simpler. Surfer has more features. Both effective."
+    },
+    {
+      question: "How does Clearscope work?",
+      answer: "Enter target keyword, get content grade and suggestions. Includes topics to cover, optimal length. Improves rankings."
+    }
+  ],
+
+  // ============================================
+  // CLICKUP-DOCS
+  // ============================================
+  "clickup-docs": [
+    {
+      question: "Is ClickUp Docs free?",
+      answer: "Included in ClickUp plans. Free plan has basic docs. Unlimited plan $7/user/month for more features."
+    },
+    {
+      question: "What is ClickUp Docs?",
+      answer: "ClickUp Docs is documentation within ClickUp. Wikis, docs, and pages linked to tasks. Knowledge base built-in."
+    },
+    {
+      question: "ClickUp Docs vs Notion?",
+      answer: "ClickUp Docs is integrated with project management. Notion is standalone with more flexibility. ClickUp for all-in-one."
+    },
+    {
+      question: "Can I use ClickUp just for docs?",
+      answer: "Yes, but it's designed as part of project management. Better value if using full platform."
+    }
+  ],
+
+  // ============================================
+  // CLICKY
+  // ============================================
+  "clicky": [
+    {
+      question: "Is Clicky free?",
+      answer: "Free for 1 site up to 3,000 pageviews/day. Pro from $9.99/month. Pro Plus from $14.99/month."
+    },
+    {
+      question: "What is Clicky?",
+      answer: "Clicky is real-time web analytics. See visitors as they happen. Alternative to Google Analytics."
+    },
+    {
+      question: "Clicky vs Google Analytics?",
+      answer: "Clicky is simpler with real-time focus. Google Analytics is more comprehensive. Clicky for quick insights."
+    },
+    {
+      question: "Is Clicky privacy-friendly?",
+      answer: "More privacy-respecting than Google Analytics. Can be used without cookies. Not as strict as Plausible though."
+    }
+  ],
+
+  // ============================================
+  // CLIO
+  // ============================================
+  "clio": [
+    {
+      question: "Is Clio free?",
+      answer: "Free trial available. EasyStart from $39/user/month. Essentials from $69/user/month. Legal practice management."
+    },
+    {
+      question: "What is Clio?",
+      answer: "Clio is legal practice management software. Case management, billing, and client portal. Industry standard for law firms."
+    },
+    {
+      question: "Why do law firms use Clio?",
+      answer: "Time tracking, trust accounting, document management. Built for legal workflows. Integrates with legal tools."
+    },
+    {
+      question: "Clio vs MyCase?",
+      answer: "Both are top legal software. Clio is larger with more integrations. MyCase is simpler. Both excellent."
+    }
+  ],
+
+  // ============================================
+  // CLIP-STUDIO-PAINT
+  // ============================================
+  "clip-studio-paint": [
+    {
+      question: "Is Clip Studio Paint free?",
+      answer: "Free trial available. One-time from $49.99 or subscription from $4.49/month. Popular digital art software."
+    },
+    {
+      question: "What is Clip Studio Paint?",
+      answer: "Clip Studio Paint is digital art software. Specialized for comics and illustration. Excellent brush engine."
+    },
+    {
+      question: "Clip Studio vs Procreate?",
+      answer: "Clip Studio is on desktop and mobile. Procreate is iPad only. Clip Studio better for comics; Procreate for painting."
+    },
+    {
+      question: "Is Clip Studio good for animation?",
+      answer: "Yes, has animation features. Frame-by-frame and timeline. Not as powerful as dedicated animation software but capable."
+    }
+  ],
+
+  // ============================================
+  // CLIPDROP
+  // ============================================
+  "clipdrop": [
+    {
+      question: "Is ClipDrop free?",
+      answer: "Free tier with limits. Pro from $9/month. API available. Now owned by Stability AI."
+    },
+    {
+      question: "What is ClipDrop?",
+      answer: "ClipDrop is AI image tools. Background removal, upscaling, image generation. Suite of AI image utilities."
+    },
+    {
+      question: "ClipDrop vs Remove.bg?",
+      answer: "ClipDrop has more tools including generation. Remove.bg is background removal only. ClipDrop for variety."
+    },
+    {
+      question: "What is ClipDrop API?",
+      answer: "API access to ClipDrop tools. Integrate AI image processing into apps. Pay-per-use pricing."
+    }
+  ],
+
+  // ============================================
+  // CLOCKIFY
+  // ============================================
+  "clockify": [
+    {
+      question: "Is Clockify free?",
+      answer: "Yes, completely free for unlimited users. Pro from $3.99/user/month for extra features. Very generous free tier."
+    },
+    {
+      question: "What is Clockify?",
+      answer: "Clockify is time tracking software. Track hours, generate reports, manage projects. Popular free alternative."
+    },
+    {
+      question: "Clockify vs Toggl?",
+      answer: "Clockify has better free plan. Toggl has nicer interface. Both track time well. Clockify for budget."
+    },
+    {
+      question: "Is Clockify really free?",
+      answer: "Yes, core time tracking is free forever. No user limits. Paid plans add features like invoicing and scheduling."
+    }
+  ],
+
+  // ============================================
+  // CLOCKWISE
+  // ============================================
+  "clockwise": [
+    {
+      question: "Is Clockwise free?",
+      answer: "Free plan available. Pro from $6.75/user/month. Business from $11.50/user/month. Calendar optimization."
+    },
+    {
+      question: "What is Clockwise?",
+      answer: "Clockwise is AI calendar optimization. Protects focus time, optimizes meeting schedules. Reduces calendar chaos."
+    },
+    {
+      question: "Clockwise vs Reclaim?",
+      answer: "Both optimize calendars with AI. Clockwise focuses on teams. Reclaim on individuals. Both effective."
+    },
+    {
+      question: "What is Focus Time?",
+      answer: "Blocks of uninterrupted work time. Clockwise automatically protects and moves meetings around it."
+    }
+  ],
+
+  // ============================================
+  // CLOUDFLARE-STREAM
+  // ============================================
+  "cloudflare-stream": [
+    {
+      question: "Is Cloudflare Stream free?",
+      answer: "No free tier. $5/1000 minutes stored, $1/1000 minutes delivered. Pay-as-you-go video streaming."
+    },
+    {
+      question: "What is Cloudflare Stream?",
+      answer: "Cloudflare Stream is video hosting and streaming. Upload videos, get player and delivery. Simple video infrastructure."
+    },
+    {
+      question: "Stream vs Mux?",
+      answer: "Both are video APIs. Mux has better analytics. Stream is simpler and cheaper. Stream for basics; Mux for features."
+    },
+    {
+      question: "Does Stream include a player?",
+      answer: "Yes, embeddable player included. Or use HLS with your own player. Simple to get started."
+    }
+  ],
+
+  // ============================================
+  // CLUTCH
+  // ============================================
+  "clutch": [
+    {
+      question: "Is Clutch free?",
+      answer: "Free to browse and review. Agencies pay for premium profiles. B2B marketplace model."
+    },
+    {
+      question: "What is Clutch?",
+      answer: "Clutch is a B2B ratings and reviews platform. Find agencies, dev shops, and service providers. Research before hiring."
+    },
+    {
+      question: "How do Clutch reviews work?",
+      answer: "Verified reviews from real clients. Clutch interviews clients directly. More trustworthy than self-reported reviews."
+    },
+    {
+      question: "Clutch vs G2?",
+      answer: "Clutch is for services (agencies). G2 is for software. Different use cases."
+    }
+  ],
+
+  // ============================================
+  // CODACY
+  // ============================================
+  "codacy": [
+    {
+      question: "Is Codacy free?",
+      answer: "Free for open source. Pro from $15/user/month. Enterprise available. Code quality platform."
+    },
+    {
+      question: "What is Codacy?",
+      answer: "Codacy is automated code review. Static analysis, code coverage, and security scanning. Integrates with GitHub."
+    },
+    {
+      question: "Codacy vs SonarQube?",
+      answer: "Codacy is cloud-native and easier. SonarQube is self-hosted with more features. Codacy for simplicity."
+    },
+    {
+      question: "What languages does Codacy support?",
+      answer: "30+ languages including JavaScript, Python, Java, Go. Most popular languages covered."
+    }
+  ],
+
+  // ============================================
+  // CODEBERG
+  // ============================================
+  "codeberg": [
+    {
+      question: "Is Codeberg free?",
+      answer: "Yes, completely free for open source. Donation-supported. Non-profit organization."
+    },
+    {
+      question: "What is Codeberg?",
+      answer: "Codeberg is a free code hosting platform. GitHub alternative run by non-profit. Uses Forgejo (Gitea fork)."
+    },
+    {
+      question: "Codeberg vs GitHub?",
+      answer: "Codeberg is non-profit and community-run. GitHub is Microsoft-owned with more features. Codeberg for independence."
+    },
+    {
+      question: "Who should use Codeberg?",
+      answer: "Open source projects wanting independence. Those avoiding big tech. Values-driven hosting choice."
+    }
+  ],
+
+  // ============================================
+  // CODECLIMATE
+  // ============================================
+  "codeclimate": [
+    {
+      question: "Is Code Climate free?",
+      answer: "Free for open source. Quality from $16/user/month. Velocity available. Code quality tools."
+    },
+    {
+      question: "What is Code Climate?",
+      answer: "Code Climate offers code quality and velocity tools. Static analysis, maintainability scores. Engineering metrics."
+    },
+    {
+      question: "What is Code Climate Velocity?",
+      answer: "Engineering metrics dashboard. Cycle time, throughput, and team health. Data-driven engineering management."
+    },
+    {
+      question: "Code Climate vs SonarQube?",
+      answer: "Code Climate is cloud-native with velocity metrics. SonarQube is self-hosted quality only. Different focuses."
+    }
+  ],
+
+  // ============================================
+  // CODEFRESH
+  // ============================================
+  "codefresh": [
+    {
+      question: "Is Codefresh free?",
+      answer: "Free tier with limited builds. Pro from $75/month. Enterprise available. CI/CD for Kubernetes."
+    },
+    {
+      question: "What is Codefresh?",
+      answer: "Codefresh is CI/CD platform built for Kubernetes. GitOps, Argo CD integration, and container-native pipelines."
+    },
+    {
+      question: "Codefresh vs GitHub Actions?",
+      answer: "Codefresh specializes in Kubernetes and GitOps. GitHub Actions is general-purpose. Codefresh for K8s-heavy teams."
+    },
+    {
+      question: "What is GitOps?",
+      answer: "Using Git as source of truth for infrastructure. Pull-based deployments. Codefresh implements GitOps with Argo CD."
+    }
+  ],
+
+  // ============================================
+  // CODEPEN
+  // ============================================
+  "codepen": [
+    {
+      question: "Is CodePen free?",
+      answer: "Free tier available. Pro from $8/month. Team plans from $12/user/month. Frontend playground."
+    },
+    {
+      question: "What is CodePen?",
+      answer: "CodePen is an online code editor for frontend. HTML, CSS, JavaScript playground. Share and discover demos."
+    },
+    {
+      question: "CodePen vs JSFiddle?",
+      answer: "CodePen has better community and discovery. JSFiddle is simpler. CodePen for sharing; JSFiddle for quick tests."
+    },
+    {
+      question: "What is CodePen used for?",
+      answer: "Prototyping, learning, sharing demos. Great for CSS experiments and portfolio pieces. Large inspiration library."
+    }
+  ],
+
+  // ============================================
+  // CODIUM-AI
+  // ============================================
+  "codium-ai": [
+    {
+      question: "Is CodiumAI free?",
+      answer: "Free tier for individuals. Teams from $19/user/month. Enterprise available. AI code testing."
+    },
+    {
+      question: "What is CodiumAI?",
+      answer: "CodiumAI generates tests with AI. Analyzes code, suggests test cases. IDE extension for better testing."
+    },
+    {
+      question: "CodiumAI vs Copilot?",
+      answer: "CodiumAI focuses on testing. Copilot is general code completion. CodiumAI complements Copilot for tests."
+    },
+    {
+      question: "What tests does CodiumAI generate?",
+      answer: "Unit tests, edge cases, and integration tests. Covers happy paths and error handling. Multiple languages supported."
+    }
+  ],
+
+  // ============================================
+  // COLOSSYAN
+  // ============================================
+  "colossyan": [
+    {
+      question: "Is Colossyan free?",
+      answer: "Free trial available. Starter from $28/month. Pro from $60/month. AI video generation."
+    },
+    {
+      question: "What is Colossyan?",
+      answer: "Colossyan creates AI videos with synthetic actors. Training, marketing, and corporate videos. Text to video."
+    },
+    {
+      question: "Colossyan vs Synthesia?",
+      answer: "Both create AI avatar videos. Similar features and pricing. Colossyan has good multilingual support."
+    },
+    {
+      question: "What are AI avatars?",
+      answer: "Computer-generated presenters. Look and speak like real people. Create videos without filming."
+    }
+  ],
+
+  // ============================================
+  // COMMERCE-JS
+  // ============================================
+  "commerce-js": [
+    {
+      question: "Is Commerce.js free?",
+      answer: "Free tier available. Startup from $79/month. Business from $249/month. Headless commerce API."
+    },
+    {
+      question: "What is Commerce.js?",
+      answer: "Commerce.js is headless ecommerce API. Products, carts, checkout via API. Build custom storefronts."
+    },
+    {
+      question: "Commerce.js vs Shopify?",
+      answer: "Commerce.js is headless and flexible. Shopify is all-in-one. Commerce.js for custom frontends."
+    },
+    {
+      question: "What is headless commerce?",
+      answer: "Backend and frontend separated. Use any frontend technology. More flexibility, more development work."
+    }
+  ],
+
+  // ============================================
+  // COMMERCE-LAYER
+  // ============================================
+  "commerce-layer": [
+    {
+      question: "Is Commerce Layer free?",
+      answer: "Free tier for up to 100 orders/month. Growth from $649/month. Enterprise available."
+    },
+    {
+      question: "What is Commerce Layer?",
+      answer: "Commerce Layer is headless commerce API. Focus on multi-market, multi-currency. International ecommerce."
+    },
+    {
+      question: "Commerce Layer vs Medusa?",
+      answer: "Commerce Layer is managed API. Medusa is open source self-hosted. Commerce Layer for global commerce; Medusa for control."
+    },
+    {
+      question: "What is Commerce Layer good for?",
+      answer: "International selling with multiple currencies and markets. Complex pricing rules. Enterprise global commerce."
+    }
+  ],
+
+  // ============================================
+  // COMPOSER
+  // ============================================
+  "composer": [
+    {
+      question: "Is Composer free?",
+      answer: "Yes, Composer is completely free and open source. MIT license. PHP package manager."
+    },
+    {
+      question: "What is Composer?",
+      answer: "Composer is the dependency manager for PHP. Like npm for JavaScript. Essential for modern PHP development."
+    },
+    {
+      question: "Composer vs npm?",
+      answer: "Composer is for PHP, npm for JavaScript. Same concept, different ecosystems. Both manage dependencies."
+    },
+    {
+      question: "What is Packagist?",
+      answer: "The main Composer package repository. Like npm registry for JavaScript. Where PHP packages are published."
+    }
+  ],
+
+  // ============================================
+  // CONCOURSE
+  // ============================================
+  "concourse": [
+    {
+      question: "Is Concourse free?",
+      answer: "Yes, Concourse CI is free and open source. Apache 2.0 license. Enterprise support available."
+    },
+    {
+      question: "What is Concourse?",
+      answer: "Concourse is a container-based CI/CD system. Pipeline-as-code with declarative YAML. Self-hosted."
+    },
+    {
+      question: "Concourse vs Jenkins?",
+      answer: "Concourse is container-native and reproducible. Jenkins is more flexible but complex. Concourse for clean pipelines."
+    },
+    {
+      question: "What makes Concourse different?",
+      answer: "Resources, jobs, and pipelines as first-class concepts. Everything runs in containers. Highly reproducible builds."
+    }
+  ],
+
+  // ============================================
+  // CONFIGCAT
+  // ============================================
+  "configcat": [
+    {
+      question: "Is ConfigCat free?",
+      answer: "Free tier with limited flags. Pro from $49/month. Unlimited from $99/month. Feature flags."
+    },
+    {
+      question: "What is ConfigCat?",
+      answer: "ConfigCat is feature flag management. Toggle features without deployments. Simple and developer-friendly."
+    },
+    {
+      question: "ConfigCat vs LaunchDarkly?",
+      answer: "ConfigCat is simpler and cheaper. LaunchDarkly has more features. ConfigCat for basics; LaunchDarkly for enterprise."
+    },
+    {
+      question: "What SDKs does ConfigCat support?",
+      answer: "All major languages and frameworks. JavaScript, Python, Java, .NET, Go, and more. Easy integration."
+    }
+  ],
+
+  // ============================================
+  // CONFLUENT
+  // ============================================
+  "confluent": [
+    {
+      question: "Is Confluent free?",
+      answer: "Free trial and free tier available. Pay-as-you-go pricing. Enterprise licenses vary."
+    },
+    {
+      question: "What is Confluent?",
+      answer: "Confluent is a streaming data platform based on Apache Kafka. Managed Kafka with additional tools. Founded by Kafka creators."
+    },
+    {
+      question: "Confluent vs self-hosted Kafka?",
+      answer: "Confluent handles operations and adds features. Self-hosted is cheaper but needs expertise. Confluent for convenience."
+    },
+    {
+      question: "What is Confluent Cloud?",
+      answer: "Fully managed Kafka service. No infrastructure to manage. Available on AWS, GCP, and Azure."
+    }
+  ],
+
+  // ============================================
+  // CONSTANT-CONTACT
+  // ============================================
+  "constant-contact": [
+    {
+      question: "Is Constant Contact free?",
+      answer: "Free trial only. Lite from $12/month. Standard from $35/month. Email marketing platform."
+    },
+    {
+      question: "What is Constant Contact?",
+      answer: "Constant Contact is email marketing software. Email campaigns, automation, and contact management. Established since 1995."
+    },
+    {
+      question: "Constant Contact vs Mailchimp?",
+      answer: "Both are solid email platforms. Mailchimp has better free tier. Constant Contact has better support. Similar features."
+    },
+    {
+      question: "Is Constant Contact good for small business?",
+      answer: "Yes, designed for small businesses. Easy to use, good templates. Phone support available."
+    }
+  ],
+
+  // ============================================
+  // CONTAINERD
+  // ============================================
+  "containerd": [
+    {
+      question: "Is containerd free?",
+      answer: "Yes, containerd is free and open source. Apache 2.0 license. CNCF graduated project."
+    },
+    {
+      question: "What is containerd?",
+      answer: "containerd is a container runtime. Manages container lifecycle. Used by Docker and Kubernetes."
+    },
+    {
+      question: "containerd vs Docker?",
+      answer: "containerd is the runtime inside Docker. Docker adds CLI and UX. containerd is lower-level."
+    },
+    {
+      question: "Why does Kubernetes use containerd?",
+      answer: "Kubernetes deprecated Docker, uses containerd directly. Simpler, lighter, standard runtime. Same containers run."
+    }
+  ],
+
+  // ============================================
+  // CONTINUE-DEV
+  // ============================================
+  "continue-dev": [
+    {
+      question: "Is Continue free?",
+      answer: "Yes, Continue is free and open source. Apache 2.0 license. Use any LLM."
+    },
+    {
+      question: "What is Continue?",
+      answer: "Continue is an open-source AI code assistant. VS Code extension that works with any LLM. Alternative to Copilot."
+    },
+    {
+      question: "Continue vs GitHub Copilot?",
+      answer: "Continue is open source and model-agnostic. Copilot is proprietary. Continue for flexibility and privacy."
+    },
+    {
+      question: "What LLMs work with Continue?",
+      answer: "Any LLM: GPT-4, Claude, Llama, Mistral, local models. Full control over your AI assistant."
+    }
+  ],
+
+  // ============================================
+  // CONTRACTBOOK
+  // ============================================
+  "contractbook": [
+    {
+      question: "Is Contractbook free?",
+      answer: "Free trial available. Essentials from €39/user/month. Plus from €79/user/month. Contract management."
+    },
+    {
+      question: "What is Contractbook?",
+      answer: "Contractbook is contract lifecycle management. Create, sign, and manage contracts. European CLM platform."
+    },
+    {
+      question: "Contractbook vs DocuSign?",
+      answer: "Contractbook focuses on full contract lifecycle. DocuSign mainly e-signatures. Contractbook for management; DocuSign for signing."
+    },
+    {
+      question: "Does Contractbook include e-signatures?",
+      answer: "Yes, e-signatures built in. Plus templates, automation, and analytics. Complete contract solution."
+    }
+  ],
+
+  // ============================================
+  // CONTRACTPODAI
+  // ============================================
+  "contractpodai": [
+    {
+      question: "Is ContractPodAi free?",
+      answer: "No free tier. Enterprise pricing. Contact sales for quotes. AI-powered contract management."
+    },
+    {
+      question: "What is ContractPodAi?",
+      answer: "ContractPodAi is AI contract management. Automates contract creation, review, and analysis. Enterprise CLM."
+    },
+    {
+      question: "ContractPodAi vs Ironclad?",
+      answer: "Both are enterprise CLM with AI. Similar features. Compare based on specific needs and integrations."
+    },
+    {
+      question: "What is AI contract analysis?",
+      answer: "AI reads contracts, extracts terms, identifies risks. Faster review, better compliance. Scales legal teams."
+    }
+  ],
+
+  // ============================================
+  // CONVERT
+  // ============================================
+  "convert": [
+    {
+      question: "Is Convert free?",
+      answer: "Free trial only. Kickstart from $599/month. Specialist from $999/month. A/B testing platform."
+    },
+    {
+      question: "What is Convert?",
+      answer: "Convert is A/B testing and personalization software. Experiment on websites. Privacy-focused testing."
+    },
+    {
+      question: "Convert vs Optimizely?",
+      answer: "Convert is more affordable and privacy-focused. Optimizely has more enterprise features. Convert for mid-market."
+    },
+    {
+      question: "Is Convert GDPR compliant?",
+      answer: "Yes, strong privacy focus. No third-party cookies required. Built for GDPR compliance."
+    }
+  ],
+
+  // ============================================
+  // COSCHEDULE
+  // ============================================
+  "coschedule": [
+    {
+      question: "Is CoSchedule free?",
+      answer: "Free calendar available. Marketing Calendar from $29/user/month. Marketing Suite pricing varies."
+    },
+    {
+      question: "What is CoSchedule?",
+      answer: "CoSchedule is marketing calendar and workflow software. Plan content, manage projects, coordinate marketing."
+    },
+    {
+      question: "CoSchedule vs Asana?",
+      answer: "CoSchedule is marketing-specific. Asana is general project management. CoSchedule for marketing teams."
+    },
+    {
+      question: "What is the CoSchedule Headline Analyzer?",
+      answer: "Free tool to analyze headlines for clicks. Scores emotional value and word balance. Popular for content."
+    }
+  ],
+
+  // ============================================
+  // COUCHDB
+  // ============================================
+  "couchdb": [
+    {
+      question: "Is CouchDB free?",
+      answer: "Yes, Apache CouchDB is free and open source. Apache 2.0 license. Document database."
+    },
+    {
+      question: "What is CouchDB?",
+      answer: "CouchDB is a document database with HTTP API. Built-in replication and offline-first design. JSON documents."
+    },
+    {
+      question: "CouchDB vs MongoDB?",
+      answer: "CouchDB has master-master replication. MongoDB is more popular with more features. CouchDB for sync scenarios."
+    },
+    {
+      question: "What is CouchDB good for?",
+      answer: "Offline-first apps, multi-device sync, distributed systems. Built-in conflict resolution."
+    }
+  ],
+
+  // ============================================
+  // COUNT
+  // ============================================
+  "count": [
+    {
+      question: "Is Count free?",
+      answer: "Free tier available. Pro from $50/month. Business from $100/month. Data notebook."
+    },
+    {
+      question: "What is Count?",
+      answer: "Count is a data notebook. SQL, Python, and visualization in one. Collaborative data analysis."
+    },
+    {
+      question: "Count vs Jupyter?",
+      answer: "Count is cloud-native and collaborative. Jupyter is local and developer-focused. Count for teams."
+    },
+    {
+      question: "What databases does Count connect to?",
+      answer: "Most popular databases: Postgres, MySQL, BigQuery, Snowflake, and more. Direct database connections."
+    }
+  ],
+
+  // ============================================
+  // COUNTLY
+  // ============================================
+  "countly": [
+    {
+      question: "Is Countly free?",
+      answer: "Community edition is free. Enterprise pricing varies. Self-hosted or cloud options."
+    },
+    {
+      question: "What is Countly?",
+      answer: "Countly is product analytics. Mobile and web analytics with crash reporting. Privacy-focused alternative."
+    },
+    {
+      question: "Countly vs Mixpanel?",
+      answer: "Countly can be self-hosted for privacy. Mixpanel is cloud-only. Countly for data ownership."
+    },
+    {
+      question: "Can I self-host Countly?",
+      answer: "Yes, community edition is self-hostable. Full control over data. Good for privacy requirements."
+    }
+  ],
+
+  // ============================================
+  // COURSERA
+  // ============================================
+  "coursera": [
+    {
+      question: "Is Coursera free?",
+      answer: "Many courses free to audit. Certificates from $49. Plus $59/month for unlimited. Degrees cost more."
+    },
+    {
+      question: "What is Coursera?",
+      answer: "Coursera is an online learning platform. University and company courses. Professional certificates and degrees."
+    },
+    {
+      question: "Coursera vs Udemy?",
+      answer: "Coursera has university partnerships and structure. Udemy is marketplace model. Coursera for credentials; Udemy for variety."
+    },
+    {
+      question: "Are Coursera certificates worth it?",
+      answer: "Professional certificates can help careers. Degrees are accredited. Value depends on field and employer."
+    }
+  ],
+
+  // ============================================
+  // CRAFT
+  // ============================================
+  "craft": [
+    {
+      question: "Is Craft free?",
+      answer: "Free tier with limits. Pro from $5/month. Business from $10/user/month. Note-taking app."
+    },
+    {
+      question: "What is Craft?",
+      answer: "Craft is a document and note app. Beautiful design, native Apple experience. Blocks-based editor."
+    },
+    {
+      question: "Craft vs Notion?",
+      answer: "Craft has better Apple integration and design. Notion has databases and more flexibility. Craft for Apple users."
+    },
+    {
+      question: "Does Craft work on Windows?",
+      answer: "Web version works anywhere. Native app is Mac and iOS only. Best experience on Apple devices."
+    }
+  ],
+
+  // ============================================
+  // CROSSPLANE
+  // ============================================
+  "crossplane": [
+    {
+      question: "Is Crossplane free?",
+      answer: "Yes, Crossplane is free and open source. Apache 2.0 license. CNCF project."
+    },
+    {
+      question: "What is Crossplane?",
+      answer: "Crossplane is infrastructure as code for Kubernetes. Provision cloud resources with K8s CRDs. Universal control plane."
+    },
+    {
+      question: "Crossplane vs Terraform?",
+      answer: "Crossplane uses Kubernetes, Terraform uses HCL. Crossplane for K8s-native. Terraform for broader use."
+    },
+    {
+      question: "What are Crossplane providers?",
+      answer: "Plugins for different clouds: AWS, GCP, Azure. Enable managing cloud resources through Kubernetes."
+    }
+  ],
+
+  // ============================================
+  // CRYSTALLIZE
+  // ============================================
+  "crystallize": [
+    {
+      question: "Is Crystallize free?",
+      answer: "Free tier available. Pro from €199/month. Enterprise pricing varies. Headless commerce and PIM."
+    },
+    {
+      question: "What is Crystallize?",
+      answer: "Crystallize is headless PIM and commerce. Product information management with ecommerce. GraphQL API."
+    },
+    {
+      question: "Crystallize vs Contentful?",
+      answer: "Crystallize is commerce-focused. Contentful is general CMS. Crystallize for product catalogs."
+    },
+    {
+      question: "What is PIM?",
+      answer: "Product Information Management. Central source for product data. Essential for multi-channel commerce."
+    }
+  ],
+
+  // ============================================
+  // CULTURE-AMP
+  // ============================================
+  "culture-amp": [
+    {
+      question: "Is Culture Amp free?",
+      answer: "No free tier. Pricing based on employee count. Contact sales for quotes. Employee experience platform."
+    },
+    {
+      question: "What is Culture Amp?",
+      answer: "Culture Amp is employee experience software. Engagement surveys, performance management, and analytics."
+    },
+    {
+      question: "Culture Amp vs Lattice?",
+      answer: "Both are HR platforms. Culture Amp focuses more on culture and engagement. Lattice on performance. Both excellent."
+    },
+    {
+      question: "What is employee engagement?",
+      answer: "How connected and motivated employees feel. Culture Amp measures and improves it. Data-driven people management."
+    }
+  ],
+
+  // ============================================
+  // DEBUGBEAR
+  // ============================================
+  "debugbear": [
+    {
+      question: "Is DebugBear free?",
+      answer: "Free tier available. Pro from $99/month. Team from $249/month. Web performance monitoring."
+    },
+    {
+      question: "What is DebugBear?",
+      answer: "DebugBear monitors website performance. Core Web Vitals, Lighthouse scores, and alerts. Track speed over time."
+    },
+    {
+      question: "DebugBear vs Lighthouse?",
+      answer: "DebugBear runs Lighthouse continuously with history. Lighthouse is one-time tests. DebugBear for ongoing monitoring."
+    },
+    {
+      question: "What are Core Web Vitals?",
+      answer: "Google's web performance metrics: LCP, FID, CLS. Affect SEO rankings. DebugBear tracks them."
+    }
+  ],
+
+  // ============================================
+  // DEEPSOURCE
+  // ============================================
+  "deepsource": [
+    {
+      question: "Is DeepSource free?",
+      answer: "Free for open source. Team from $12/user/month. Enterprise available. Code analysis platform."
+    },
+    {
+      question: "What is DeepSource?",
+      answer: "DeepSource is automated code review. Static analysis with auto-fixing. Catches bugs and security issues."
+    },
+    {
+      question: "DeepSource vs SonarQube?",
+      answer: "DeepSource is cloud-native with auto-fix. SonarQube is self-hosted. DeepSource for modern workflows."
+    },
+    {
+      question: "What is auto-fix?",
+      answer: "DeepSource can automatically fix issues it finds. Creates PRs with fixes. Saves developer time."
+    }
+  ],
+
+  // ============================================
+  // DETOX
+  // ============================================
+  "detox": [
+    {
+      question: "Is Detox free?",
+      answer: "Yes, Detox is free and open source. MIT license. Mobile E2E testing."
+    },
+    {
+      question: "What is Detox?",
+      answer: "Detox is end-to-end testing for React Native. Gray-box testing with synchronization. Made by Wix."
+    },
+    {
+      question: "Detox vs Appium?",
+      answer: "Detox is React Native specific and faster. Appium supports all mobile platforms. Detox for React Native."
+    },
+    {
+      question: "What is gray-box testing?",
+      answer: "Has some knowledge of app internals. Better synchronization than black-box. Faster, more reliable tests."
+    }
+  ],
+
+  // ============================================
+  // DEVCYCLE
+  // ============================================
+  "devcycle": [
+    {
+      question: "Is DevCycle free?",
+      answer: "Free tier with 1,000 MAUs. Pro from $20/month. Enterprise available. Feature flags."
+    },
+    {
+      question: "What is DevCycle?",
+      answer: "DevCycle is feature flag management. Fast SDK, edge evaluation, OpenFeature support. Modern feature flags."
+    },
+    {
+      question: "DevCycle vs LaunchDarkly?",
+      answer: "DevCycle is newer with edge performance. LaunchDarkly is established with more features. DevCycle for speed."
+    },
+    {
+      question: "What is OpenFeature?",
+      answer: "Standard API for feature flags. Vendor-neutral. DevCycle supports it for portability."
+    }
+  ],
+
+  // ============================================
+  // DGRAPH
+  // ============================================
+  "dgraph": [
+    {
+      question: "Is Dgraph free?",
+      answer: "Community edition is free. Cloud has free tier. Enterprise pricing varies. Graph database."
+    },
+    {
+      question: "What is Dgraph?",
+      answer: "Dgraph is a distributed graph database. Native GraphQL support. Horizontally scalable."
+    },
+    {
+      question: "Dgraph vs Neo4j?",
+      answer: "Dgraph is distributed and GraphQL-native. Neo4j is more mature. Dgraph for scale and GraphQL."
+    },
+    {
+      question: "What is DQL?",
+      answer: "Dgraph Query Language. GraphQL-like but with more features. Native query language for Dgraph."
+    }
+  ],
+
+  // ============================================
+  // DIVVY
+  // ============================================
+  "divvy": [
+    {
+      question: "Is Divvy free?",
+      answer: "Yes, Divvy is free for companies. They make money on card interchange. No monthly fees."
+    },
+    {
+      question: "What is Divvy?",
+      answer: "Divvy is expense management and corporate cards. Now part of Bill.com. Budgets, cards, and reimbursements."
+    },
+    {
+      question: "Divvy vs Brex?",
+      answer: "Both offer corporate cards. Divvy is free, Brex has more features. Divvy for budget-conscious."
+    },
+    {
+      question: "How does Divvy make money?",
+      answer: "Interchange fees from card transactions. No cost to companies using it. Win-win model."
+    }
+  ],
+
+  // ============================================
+  // DIXA
+  // ============================================
+  "dixa": [
+    {
+      question: "Is Dixa free?",
+      answer: "No free tier. Essential from $39/agent/month. Growth from $89/agent/month. Customer service platform."
+    },
+    {
+      question: "What is Dixa?",
+      answer: "Dixa is customer service software. Omnichannel support with single interface. Chat, phone, email, social."
+    },
+    {
+      question: "Dixa vs Zendesk?",
+      answer: "Dixa is more modern with better UX. Zendesk has more integrations. Dixa for streamlined support."
+    },
+    {
+      question: "What is omnichannel support?",
+      answer: "Handle all channels in one place. Customer history across channels. Consistent experience everywhere."
+    }
+  ],
+
+  // ============================================
+  // DNSIMPLE
+  // ============================================
+  "dnsimple": [
+    {
+      question: "Is DNSimple free?",
+      answer: "No free tier. Solo from $5/month for 5 domains. Teams from $25/month. DNS management."
+    },
+    {
+      question: "What is DNSimple?",
+      answer: "DNSimple is DNS and domain management. Developer-friendly with good API. Simple DNS hosting."
+    },
+    {
+      question: "DNSimple vs Cloudflare DNS?",
+      answer: "Cloudflare DNS is free. DNSimple costs but has better developer tools. Cloudflare for budget."
+    },
+    {
+      question: "What is DNSimple good for?",
+      answer: "Developers needing DNS API, SSL certificates, domain management. Clean interface and automation."
+    }
+  ],
+
+  // ============================================
+  // DOCSIFY
+  // ============================================
+  "docsify": [
+    {
+      question: "Is Docsify free?",
+      answer: "Yes, Docsify is completely free and open source. MIT license. Documentation generator."
+    },
+    {
+      question: "What is Docsify?",
+      answer: "Docsify generates documentation from Markdown. No build step required. Lightweight and simple."
+    },
+    {
+      question: "Docsify vs Docusaurus?",
+      answer: "Docsify is simpler with no build. Docusaurus is more powerful with React. Docsify for simplicity."
+    },
+    {
+      question: "How does Docsify work?",
+      answer: "Loads Markdown files at runtime. No static site generation. Just deploy Markdown files."
+    }
+  ],
+
+  // ============================================
+  // DOCUMENT360
+  // ============================================
+  "document360": [
+    {
+      question: "Is Document360 free?",
+      answer: "Free tier available. Startup from $149/month. Business from $299/month. Knowledge base."
+    },
+    {
+      question: "What is Document360?",
+      answer: "Document360 is knowledge base software. Help docs, FAQs, and internal wikis. AI-powered search."
+    },
+    {
+      question: "Document360 vs Notion?",
+      answer: "Document360 is purpose-built for documentation. Notion is general. Document360 for public knowledge bases."
+    },
+    {
+      question: "What is an AI-powered knowledge base?",
+      answer: "AI helps write, organize, and search content. Better answers for users. Document360 includes these features."
+    }
+  ],
+
+  // ============================================
+  // DORIK
+  // ============================================
+  "dorik": [
+    {
+      question: "Is Dorik free?",
+      answer: "Free tier with Dorik subdomain. Personal from $5/month. Business from $15/month. Website builder."
+    },
+    {
+      question: "What is Dorik?",
+      answer: "Dorik is a no-code website builder. Clean design, fast sites, good pricing. Alternative to Webflow."
+    },
+    {
+      question: "Dorik vs Webflow?",
+      answer: "Dorik is simpler and cheaper. Webflow is more powerful. Dorik for simple sites; Webflow for complex."
+    },
+    {
+      question: "Can Dorik build landing pages?",
+      answer: "Yes, great for landing pages. Pre-built sections, responsive design. Fast to launch."
+    }
+  ],
+
+  // ============================================
+  // DRAFTBIT
+  // ============================================
+  "draftbit": [
+    {
+      question: "Is Draftbit free?",
+      answer: "Free tier available. Pro from $49/month. Team from $129/month. Mobile app builder."
+    },
+    {
+      question: "What is Draftbit?",
+      answer: "Draftbit is a visual app builder. Creates React Native apps. Export clean, editable code."
+    },
+    {
+      question: "Draftbit vs FlutterFlow?",
+      answer: "Draftbit exports React Native. FlutterFlow exports Flutter. Both visual app builders. Choose your framework."
+    },
+    {
+      question: "Can I export code from Draftbit?",
+      answer: "Yes, exports clean React Native code. Not locked in. Continue development in your IDE."
+    }
+  ],
+
+  // ============================================
+  // DREAMSTUDIO
+  // ============================================
+  "dreamstudio": [
+    {
+      question: "Is DreamStudio free?",
+      answer: "25 free credits at signup. Then $10 for 1000 credits. Credit-based pricing. Stable Diffusion interface."
+    },
+    {
+      question: "What is DreamStudio?",
+      answer: "DreamStudio is Stability AI's image generation interface. Official Stable Diffusion web app. Easy access to SDXL."
+    },
+    {
+      question: "DreamStudio vs Midjourney?",
+      answer: "DreamStudio uses Stable Diffusion, open source. Midjourney is proprietary. Different styles and capabilities."
+    },
+    {
+      question: "What models does DreamStudio use?",
+      answer: "Stable Diffusion XL and other Stability AI models. Latest versions available. Regular model updates."
+    }
+  ],
+
+  // ============================================
+  // DRONAHQ
+  // ============================================
+  "dronahq": [
+    {
+      question: "Is DronaHQ free?",
+      answer: "Free tier available. Starter from $10/user/month. Business from $30/user/month. Low-code platform."
+    },
+    {
+      question: "What is DronaHQ?",
+      answer: "DronaHQ is a low-code platform. Build internal tools, mobile apps, and workflows. Retool alternative."
+    },
+    {
+      question: "DronaHQ vs Retool?",
+      answer: "DronaHQ has better mobile support. Retool is more established. Both build internal tools well."
+    },
+    {
+      question: "Can DronaHQ build mobile apps?",
+      answer: "Yes, native mobile apps included. Build once, deploy web and mobile. Strong mobile capabilities."
+    }
+  ],
+
+  // ============================================
+  // DROPBOX-PAPER
+  // ============================================
+  "dropbox-paper": [
+    {
+      question: "Is Dropbox Paper free?",
+      answer: "Free with Dropbox account. Part of Dropbox plans. Collaborative document editor."
+    },
+    {
+      question: "What is Dropbox Paper?",
+      answer: "Dropbox Paper is collaborative docs. Clean editor for notes and docs. Integrates with Dropbox."
+    },
+    {
+      question: "Dropbox Paper vs Notion?",
+      answer: "Paper is simpler for basic docs. Notion has databases and more features. Paper for simple collaboration."
+    },
+    {
+      question: "Is Dropbox Paper still maintained?",
+      answer: "Yes, but development has slowed. Dropbox acquired DocSend and Dash. Paper remains available."
+    }
+  ],
+
+  // ============================================
+  // DROPBOX-SIGN
+  // ============================================
+  "dropbox-sign": [
+    {
+      question: "Is Dropbox Sign free?",
+      answer: "3 free signatures/month. Essentials from $20/month. Standard from $30/user/month. Formerly HelloSign."
+    },
+    {
+      question: "What is Dropbox Sign?",
+      answer: "Dropbox Sign is e-signature software. Send and sign documents digitally. Formerly known as HelloSign."
+    },
+    {
+      question: "Dropbox Sign vs DocuSign?",
+      answer: "Dropbox Sign is simpler and cheaper. DocuSign has more enterprise features. Both legally binding."
+    },
+    {
+      question: "What happened to HelloSign?",
+      answer: "Dropbox acquired HelloSign in 2019. Rebranded to Dropbox Sign. Same product, new name."
+    }
+  ],
+
+  // ============================================
+  // DUO-SECURITY
+  // ============================================
+  "duo-security": [
+    {
+      question: "Is Duo Security free?",
+      answer: "Free for up to 10 users. Essentials from $3/user/month. Advantage from $6/user/month. Part of Cisco."
+    },
+    {
+      question: "What is Duo Security?",
+      answer: "Duo Security is multi-factor authentication. Protect logins with 2FA. Acquired by Cisco."
+    },
+    {
+      question: "Duo vs Okta?",
+      answer: "Duo focuses on MFA. Okta is full identity platform. Duo for simple MFA; Okta for enterprise IAM."
+    },
+    {
+      question: "How does Duo work?",
+      answer: "User logs in, Duo sends push notification. Approve on phone to complete login. Simple and secure."
+    }
+  ],
+
+  // ============================================
+  // DUPPLE
+  // ============================================
+  "dupple": [
+    {
+      question: "Is Dupple free?",
+      answer: "Free tier available. Pro plans from $29/month. 3D configurators for ecommerce."
+    },
+    {
+      question: "What is Dupple?",
+      answer: "Dupple creates 3D product configurators. Let customers customize products visually. No-code 3D tool."
+    },
+    {
+      question: "What can I configure with Dupple?",
+      answer: "Colors, materials, options, and variants. Real-time 3D preview. Great for customizable products."
+    },
+    {
+      question: "Does Dupple integrate with Shopify?",
+      answer: "Yes, Shopify integration available. Embed configurators in your store. Works with most ecommerce platforms."
+    }
+  ],
+
+  // ============================================
+  // DURABLE
+  // ============================================
+  "durable": [
+    {
+      question: "Is Durable free?",
+      answer: "Free trial available. Starter from $12/month. Business from $20/month. AI website builder."
+    },
+    {
+      question: "What is Durable?",
+      answer: "Durable is an AI website builder. Generate complete website in 30 seconds. Built-in CRM and invoicing."
+    },
+    {
+      question: "Durable vs Wix?",
+      answer: "Durable uses AI for instant sites. Wix has more customization. Durable for speed; Wix for control."
+    },
+    {
+      question: "What businesses is Durable for?",
+      answer: "Service businesses: plumbers, consultants, agencies. Quick professional presence with business tools."
+    }
+  ],
 };
 
 async function main() {
