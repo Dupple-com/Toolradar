@@ -12741,6 +12741,1172 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "React, Vue, Angular, Node.js, and more. Full development environment in browser. Good for prototypes, demos, and collaboration."
     }
   ],
+
+  // ============================================
+  // COGNITO FORMS
+  // ============================================
+  "cognito-forms": [
+    {
+      question: "Is Cognito Forms free?",
+      answer: "Yes, free plan with unlimited forms and 500 entries/month. Pro $15/month for 2000 entries. Team $35/month for 10K entries. Very generous free tier."
+    },
+    {
+      question: "What is Cognito Forms?",
+      answer: "Cognito Forms is a form builder with payment processing. Create forms, collect data, and accept payments. Good alternative to Typeform and JotForm."
+    },
+    {
+      question: "Cognito Forms vs Typeform?",
+      answer: "Cognito Forms has better free tier and payment features. Typeform has better design and conversational forms. Cognito for function; Typeform for experience."
+    },
+    {
+      question: "Does Cognito Forms accept payments?",
+      answer: "Yes, integrate with Stripe, Square, or PayPal. Collect payments with forms. No additional fees beyond payment processor charges."
+    }
+  ],
+
+  // ============================================
+  // COHERE
+  // ============================================
+  "cohere": [
+    {
+      question: "Is Cohere free?",
+      answer: "Free trial tier available. Production pricing starts at $1/million tokens for Command model. Enterprise pricing custom."
+    },
+    {
+      question: "What is Cohere?",
+      answer: "Cohere provides enterprise AI language models. Command for generation, Embed for embeddings, Rerank for search. Focus on enterprise deployments."
+    },
+    {
+      question: "Cohere vs OpenAI?",
+      answer: "Cohere focuses on enterprise with on-premise deployment options. OpenAI has broader capabilities and ChatGPT. Cohere for enterprise; OpenAI for general use."
+    },
+    {
+      question: "What is Cohere Embed?",
+      answer: "Embed generates text embeddings for semantic search and clustering. Multilingual support. Used for RAG and similarity search applications."
+    }
+  ],
+
+  // ============================================
+  // COMET ML
+  // ============================================
+  "comet-ml": [
+    {
+      question: "Is Comet ML free?",
+      answer: "Free for individuals and academics with core features. Team starts at $179/month. Enterprise pricing custom."
+    },
+    {
+      question: "What is Comet ML?",
+      answer: "Comet is an ML experiment tracking platform. Log experiments, compare models, and collaborate on ML projects. Alternative to MLflow and Weights & Biases."
+    },
+    {
+      question: "Comet vs Weights & Biases?",
+      answer: "Both are experiment tracking tools. W&B has better visualizations. Comet has stronger model registry. Both excellent - try both."
+    },
+    {
+      question: "What features does Comet include?",
+      answer: "Experiment tracking, model registry, data versioning, and team collaboration. Integrates with popular ML frameworks."
+    }
+  ],
+
+  // ============================================
+  // CONTENTFUL
+  // ============================================
+  "contentful": [
+    {
+      question: "Is Contentful free?",
+      answer: "Free tier for up to 5 users and 1M API calls. Team $489/month. Enterprise custom pricing. Free tier good for small projects."
+    },
+    {
+      question: "What is Contentful?",
+      answer: "Contentful is a headless CMS. Structure content once, deliver anywhere via API. Popular for enterprise content management."
+    },
+    {
+      question: "Contentful vs Sanity?",
+      answer: "Contentful is more enterprise with stronger ecosystem. Sanity is more flexible with better DX. Contentful for enterprise; Sanity for flexibility."
+    },
+    {
+      question: "What is a headless CMS?",
+      answer: "Content stored separately from presentation. Deliver same content to websites, apps, and any platform via API. Frontend flexibility."
+    }
+  ],
+
+  // ============================================
+  // CONVEX
+  // ============================================
+  "convex": [
+    {
+      question: "Is Convex free?",
+      answer: "Generous free tier with 2 projects and reasonable limits. Pro $25/month. Team $50/month. Good for getting started."
+    },
+    {
+      question: "What is Convex?",
+      answer: "Convex is a backend platform for real-time apps. Database, server functions, and real-time sync built-in. Firebase alternative with better developer experience."
+    },
+    {
+      question: "Convex vs Firebase?",
+      answer: "Convex has better DX and type safety. Firebase has larger ecosystem. Convex for modern stack; Firebase for broader platform."
+    },
+    {
+      question: "What makes Convex different?",
+      answer: "TypeScript-first, reactive queries, transactional database, and serverless functions all in one. Simpler mental model than piecing together services."
+    }
+  ],
+
+  // ============================================
+  // COOLIFY
+  // ============================================
+  "coolify": [
+    {
+      question: "Is Coolify free?",
+      answer: "Yes, open source and free to self-host. No paid version. Self-hosted alternative to Heroku and Vercel."
+    },
+    {
+      question: "What is Coolify?",
+      answer: "Coolify is an open-source self-hostable Heroku/Vercel alternative. Deploy applications, databases, and services on your own servers."
+    },
+    {
+      question: "Coolify vs CapRover?",
+      answer: "Both are self-hosted PaaS. Coolify is newer with nicer UI. CapRover is more mature. Both excellent for self-hosting."
+    },
+    {
+      question: "What can you deploy with Coolify?",
+      answer: "Docker containers, static sites, databases, and services. Supports Nixpacks for automatic builds. Git integration for deployments."
+    }
+  ],
+
+  // ============================================
+  // COOLORS
+  // ============================================
+  "coolors": [
+    {
+      question: "Is Coolors free?",
+      answer: "Yes, core color generator is free. Pro $2.99/month removes ads and adds features. Very affordable premium."
+    },
+    {
+      question: "What is Coolors?",
+      answer: "Coolors is a color palette generator. Press spacebar to generate new combinations. Popular design tool for finding color schemes."
+    },
+    {
+      question: "Coolors vs Adobe Color?",
+      answer: "Coolors is faster for generating palettes. Adobe Color has more advanced harmony rules. Coolors for speed; Adobe Color for precision."
+    },
+    {
+      question: "What features does Coolors have?",
+      answer: "Random palette generation, color extraction from images, palette export, accessibility checking, and gradient generator. Simple but effective."
+    }
+  ],
+
+  // ============================================
+  // COUCHBASE
+  // ============================================
+  "couchbase": [
+    {
+      question: "Is Couchbase free?",
+      answer: "Couchbase Server Community is free. Capella cloud starts at $0.22/hour. Enterprise Server requires licensing."
+    },
+    {
+      question: "What is Couchbase?",
+      answer: "Couchbase is a NoSQL database with JSON documents and SQL++ query language. Known for high performance and mobile sync via Couchbase Lite."
+    },
+    {
+      question: "Couchbase vs MongoDB?",
+      answer: "Both are document databases. Couchbase has built-in caching and better mobile sync. MongoDB has broader ecosystem. Couchbase for performance; MongoDB for flexibility."
+    },
+    {
+      question: "What is Couchbase Mobile?",
+      answer: "Couchbase Lite embeds in mobile apps with offline-first sync. Data syncs with server when online. Good for apps needing offline capability."
+    }
+  ],
+
+  // ============================================
+  // CRONITOR
+  // ============================================
+  "cronitor": [
+    {
+      question: "Is Cronitor free?",
+      answer: "Free tier for 5 monitors. Developer $20/month for 20 monitors. Business $50/month for 50 monitors. Simple pricing."
+    },
+    {
+      question: "What is Cronitor?",
+      answer: "Cronitor monitors cron jobs and scheduled tasks. Know when your jobs fail, run too long, or don't run at all. Simple but essential."
+    },
+    {
+      question: "How does Cronitor work?",
+      answer: "Add ping URLs to your cron jobs. Cronitor alerts if pings don't arrive on schedule. Also monitors websites, APIs, and heartbeats."
+    },
+    {
+      question: "Cronitor vs Healthchecks.io?",
+      answer: "Both monitor cron jobs. Cronitor has better UI and more features. Healthchecks.io has generous free tier. Both work well."
+    }
+  ],
+
+  // ============================================
+  // CUSTOMER.IO
+  // ============================================
+  "customerio": [
+    {
+      question: "Is Customer.io free?",
+      answer: "No free tier. Essentials $100/month for 5K profiles. Premium $1,000/month with more features. Enterprise custom pricing."
+    },
+    {
+      question: "What is Customer.io?",
+      answer: "Customer.io is a marketing automation platform. Send targeted messages based on user behavior. Email, SMS, push, and in-app messaging."
+    },
+    {
+      question: "Customer.io vs Intercom?",
+      answer: "Customer.io focuses on automated messaging. Intercom is more for live support and product tours. Different use cases with some overlap."
+    },
+    {
+      question: "What makes Customer.io different?",
+      answer: "Behavior-based segmentation and triggers. Send messages when users do (or don't do) things. More flexible than traditional email marketing."
+    }
+  ],
+
+  // ============================================
+  // CYPRESS
+  // ============================================
+  "cypress": [
+    {
+      question: "Is Cypress free?",
+      answer: "Yes, Cypress test runner is free and open source. Cypress Cloud (dashboard) has free tier for 500 test results. Paid plans for more."
+    },
+    {
+      question: "What is Cypress?",
+      answer: "Cypress is an end-to-end testing framework for web apps. Write tests in JavaScript, run in real browsers. Popular alternative to Selenium."
+    },
+    {
+      question: "Cypress vs Playwright?",
+      answer: "Playwright supports more browsers and is faster. Cypress has better debugging and easier setup. Playwright for coverage; Cypress for developer experience."
+    },
+    {
+      question: "What is Cypress Cloud?",
+      answer: "Cloud dashboard for test results, parallelization, and flake detection. Free tier for small teams. Essential for CI/CD integration."
+    }
+  ],
+
+  // ============================================
+  // D-ID
+  // ============================================
+  "d-id": [
+    {
+      question: "Is D-ID free?",
+      answer: "Free trial with limited credits. Lite $5.99/month for 20 minutes. Pro $49/month for more. Enterprise custom pricing."
+    },
+    {
+      question: "What is D-ID?",
+      answer: "D-ID creates AI-generated videos with talking avatars. Upload photo, add script, get video. Used for personalized videos and presentations."
+    },
+    {
+      question: "What can D-ID do?",
+      answer: "Create talking head videos, animate photos, real-time avatars, and clone voices. Good for marketing, training, and content creation."
+    },
+    {
+      question: "D-ID vs HeyGen?",
+      answer: "Both create AI avatar videos. HeyGen has more avatar options. D-ID pioneered photo animation. Both good for different use cases."
+    }
+  ],
+
+  // ============================================
+  // DAGSTER
+  // ============================================
+  "dagster": [
+    {
+      question: "Is Dagster free?",
+      answer: "Yes, open source under Apache 2.0. Dagster Cloud starts at $100/month. Self-hosting is completely free."
+    },
+    {
+      question: "What is Dagster?",
+      answer: "Dagster is a data orchestration platform. Define data pipelines as code with software engineering practices. Modern alternative to Airflow."
+    },
+    {
+      question: "Dagster vs Airflow?",
+      answer: "Dagster has better developer experience and asset-based approach. Airflow is more mature with larger ecosystem. Dagster for modern data teams."
+    },
+    {
+      question: "What are Dagster assets?",
+      answer: "Assets represent data you care about (tables, ML models, etc.). Define how to produce assets, Dagster handles orchestration. Different mental model from tasks."
+    }
+  ],
+
+  // ============================================
+  // DALL-E
+  // ============================================
+  "dall-e": [
+    {
+      question: "Is DALL-E free?",
+      answer: "Free credits when you sign up for OpenAI. After that, $0.02-0.04 per image depending on size. Pay per image generated."
+    },
+    {
+      question: "What is DALL-E?",
+      answer: "DALL-E is OpenAI's image generation AI. Create images from text descriptions. Currently on DALL-E 3 with significant quality improvements."
+    },
+    {
+      question: "DALL-E vs Midjourney?",
+      answer: "Midjourney often produces more artistic results. DALL-E has better text handling and is easier to access. Both are excellent."
+    },
+    {
+      question: "How do you access DALL-E?",
+      answer: "Through ChatGPT Plus, API directly, or Bing Image Creator (free). ChatGPT Plus is easiest for personal use."
+    }
+  ],
+
+  // ============================================
+  // DASHLANE
+  // ============================================
+  "dashlane": [
+    {
+      question: "Is Dashlane free?",
+      answer: "Free plan for 1 device with 25 passwords. Premium $4.99/month for unlimited. Friends & Family $7.49/month for 10 users."
+    },
+    {
+      question: "What is Dashlane?",
+      answer: "Dashlane is a password manager with VPN included. Store passwords, autofill, and secure sharing. One of the original password managers."
+    },
+    {
+      question: "Dashlane vs 1Password?",
+      answer: "Dashlane includes VPN; 1Password has better family sharing. Both are excellent. 1Password is more popular for business."
+    },
+    {
+      question: "Does Dashlane include VPN?",
+      answer: "Yes, Premium plans include Hotspot Shield VPN. Unique feature among password managers. Good value if you need both."
+    }
+  ],
+
+  // ============================================
+  // DATABRICKS
+  // ============================================
+  "databricks": [
+    {
+      question: "Is Databricks free?",
+      answer: "Community Edition is free with limited resources. Otherwise, pay for compute (DBUs) on top of cloud costs. Can be expensive at scale."
+    },
+    {
+      question: "What is Databricks?",
+      answer: "Databricks is a unified data analytics platform. Built on Apache Spark for big data processing, ML, and analytics. Founded by Spark creators."
+    },
+    {
+      question: "Databricks vs Snowflake?",
+      answer: "Databricks is better for ML and data engineering. Snowflake is better for data warehousing and analytics. Different strengths, often used together."
+    },
+    {
+      question: "What is Unity Catalog?",
+      answer: "Unity Catalog is Databricks' data governance layer. Manage data access, lineage, and discovery across the lakehouse. Essential for enterprise."
+    }
+  ],
+
+  // ============================================
+  // DATOCMS
+  // ============================================
+  "datocms": [
+    {
+      question: "Is DatoCMS free?",
+      answer: "Free plan for up to 300 records. Basic €99/month. Advanced €499/month. Enterprise custom. Good for small projects."
+    },
+    {
+      question: "What is DatoCMS?",
+      answer: "DatoCMS is a headless CMS with focus on images and content modeling. Good for JAMstack sites. Strong image optimization features."
+    },
+    {
+      question: "DatoCMS vs Contentful?",
+      answer: "DatoCMS has better image handling and simpler pricing. Contentful has larger ecosystem. DatoCMS for smaller teams; Contentful for enterprise."
+    },
+    {
+      question: "What is DatoCMS image optimization?",
+      answer: "Automatic image optimization, responsive images, and CDN delivery. Transform images via URL parameters. One of the best CMS image features."
+    }
+  ],
+
+  // ============================================
+  // DBT
+  // ============================================
+  "dbt": [
+    {
+      question: "Is dbt free?",
+      answer: "dbt Core is free and open source. dbt Cloud has free tier for 1 developer. Team $100/month. Enterprise custom."
+    },
+    {
+      question: "What is dbt?",
+      answer: "dbt (data build tool) transforms data in your warehouse using SQL. Version control, testing, and documentation for analytics engineering."
+    },
+    {
+      question: "What is dbt Cloud?",
+      answer: "dbt Cloud is the hosted platform with IDE, scheduling, and collaboration. dbt Core is the CLI tool you can run anywhere."
+    },
+    {
+      question: "dbt vs Airflow?",
+      answer: "Different tools. dbt transforms data (T in ELT). Airflow orchestrates workflows. Often used together - Airflow runs dbt jobs."
+    }
+  ],
+
+  // ============================================
+  // DENO DEPLOY
+  // ============================================
+  "deno-deploy": [
+    {
+      question: "Is Deno Deploy free?",
+      answer: "Free tier: 1M requests/month and 100GB bandwidth. Pro $20/month for more. Very generous for edge deployments."
+    },
+    {
+      question: "What is Deno Deploy?",
+      answer: "Deno Deploy is serverless edge hosting for Deno and JavaScript. Deploy globally with zero config. Built by Deno creators."
+    },
+    {
+      question: "Deno Deploy vs Cloudflare Workers?",
+      answer: "Deno Deploy runs full Deno with npm support. Workers has more edge locations and features. Both excellent for edge compute."
+    },
+    {
+      question: "What is Deno Fresh?",
+      answer: "Fresh is a web framework for Deno Deploy. Zero config, island architecture, and just-in-time rendering. Modern alternative to Next.js."
+    }
+  ],
+
+  // ============================================
+  // DEPENDABOT
+  // ============================================
+  "dependabot": [
+    {
+      question: "Is Dependabot free?",
+      answer: "Yes, Dependabot is free for all GitHub repositories. Owned by GitHub. No paid version."
+    },
+    {
+      question: "What is Dependabot?",
+      answer: "Dependabot automates dependency updates. Creates PRs when dependencies have new versions or security fixes. Built into GitHub."
+    },
+    {
+      question: "How does Dependabot work?",
+      answer: "Configure dependabot.yml in your repo. Dependabot checks for updates on schedule and creates PRs. Review and merge updates."
+    },
+    {
+      question: "Dependabot vs Renovate?",
+      answer: "Renovate is more configurable with more features. Dependabot is simpler and built into GitHub. Dependabot for simplicity; Renovate for power."
+    }
+  ],
+
+  // ============================================
+  // DEVIN
+  // ============================================
+  "devin": [
+    {
+      question: "What is Devin?",
+      answer: "Devin is Cognition's AI software engineer. Can autonomously write code, fix bugs, and complete programming tasks. One of the first AI coding agents."
+    },
+    {
+      question: "Is Devin available?",
+      answer: "Devin is in limited access/waitlist as of 2024. Pricing not publicly announced. Enterprise-focused initial rollout."
+    },
+    {
+      question: "Devin vs GitHub Copilot?",
+      answer: "Devin is an autonomous agent that completes tasks. Copilot assists while you code. Devin for full task automation; Copilot for coding assistance."
+    },
+    {
+      question: "What can Devin do?",
+      answer: "Write code end-to-end, debug issues, learn new technologies, and contribute to real codebases. More autonomous than copilots."
+    }
+  ],
+
+  // ============================================
+  // DIRECTUS
+  // ============================================
+  "directus": [
+    {
+      question: "Is Directus free?",
+      answer: "Yes, Directus is open source and free to self-host. Cloud starts at $15/month. Self-hosting has no limits."
+    },
+    {
+      question: "What is Directus?",
+      answer: "Directus is an open-source headless CMS that wraps any SQL database. Instant REST & GraphQL APIs. Good for existing databases."
+    },
+    {
+      question: "Directus vs Strapi?",
+      answer: "Directus works with existing databases; Strapi creates its own. Both are open source. Directus for brownfield; Strapi for greenfield."
+    },
+    {
+      question: "What databases does Directus support?",
+      answer: "PostgreSQL, MySQL, SQLite, Oracle, MS SQL Server, and more. Wraps existing tables with admin UI and APIs."
+    }
+  ],
+
+  // ============================================
+  // DISCOURSE
+  // ============================================
+  "discourse": [
+    {
+      question: "Is Discourse free?",
+      answer: "Open source and free to self-host. Hosted starts at $100/month. Self-hosting saves money but requires technical skill."
+    },
+    {
+      question: "What is Discourse?",
+      answer: "Discourse is modern forum software. Discussion boards with real-time updates, gamification, and moderation tools. Powers many community forums."
+    },
+    {
+      question: "Discourse vs Slack?",
+      answer: "Discourse is for async, searchable discussions. Slack is for real-time chat. Discourse for community; Slack for team communication."
+    },
+    {
+      question: "Who uses Discourse?",
+      answer: "Ruby community, Figma, New Relic, and many open source projects. Popular for developer communities and support forums."
+    }
+  ],
+
+  // ============================================
+  // DOCKER HUB
+  // ============================================
+  "docker-hub": [
+    {
+      question: "Is Docker Hub free?",
+      answer: "Free for public repos and 1 private repo. Pro $7/month for unlimited private repos. Team $11/user/month with collaboration."
+    },
+    {
+      question: "What is Docker Hub?",
+      answer: "Docker Hub is the default registry for Docker images. Store, share, and distribute container images. Most popular container registry."
+    },
+    {
+      question: "Docker Hub vs GitHub Container Registry?",
+      answer: "Docker Hub is Docker's official registry. GitHub Container Registry integrates with GitHub Actions. Both work well; choose based on workflow."
+    },
+    {
+      question: "Are there Docker Hub rate limits?",
+      answer: "Anonymous: 100 pulls/6 hours. Free authenticated: 200 pulls/6 hours. Paid: unlimited. Rate limits affect CI/CD pipelines."
+    }
+  ],
+
+  // ============================================
+  // DOCUSAURUS
+  // ============================================
+  "docusaurus": [
+    {
+      question: "Is Docusaurus free?",
+      answer: "Yes, completely free and open source. MIT licensed. Created and maintained by Meta."
+    },
+    {
+      question: "What is Docusaurus?",
+      answer: "Docusaurus is a documentation website generator. Build docs sites with React. Used by many open source projects."
+    },
+    {
+      question: "Docusaurus vs GitBook?",
+      answer: "Docusaurus is free and self-hosted. GitBook is hosted with editor. Docusaurus for developers; GitBook for non-technical teams."
+    },
+    {
+      question: "What features does Docusaurus have?",
+      answer: "Markdown docs, versioning, search, i18n, blog, and React component support. Full documentation site in a framework."
+    }
+  ],
+
+  // ============================================
+  // DOKKU
+  // ============================================
+  "dokku": [
+    {
+      question: "Is Dokku free?",
+      answer: "Yes, completely free and open source. Self-hosted mini-Heroku. No paid version."
+    },
+    {
+      question: "What is Dokku?",
+      answer: "Dokku is a self-hosted PaaS built on Docker. Git push to deploy. Single server Heroku alternative."
+    },
+    {
+      question: "Dokku vs Heroku?",
+      answer: "Dokku is free and self-hosted. Heroku is managed but costs more. Dokku for budget; Heroku for convenience."
+    },
+    {
+      question: "What can you deploy on Dokku?",
+      answer: "Any app that runs in Docker. Buildpacks for most languages. Add databases and services via plugins."
+    }
+  ],
+
+  // ============================================
+  // DOPPLER
+  // ============================================
+  "doppler": [
+    {
+      question: "Is Doppler free?",
+      answer: "Free for up to 5 team members. Team $6/user/month. Enterprise custom pricing. Good free tier."
+    },
+    {
+      question: "What is Doppler?",
+      answer: "Doppler is a secrets management platform. Store, sync, and rotate secrets across environments. Developer-friendly alternative to HashiCorp Vault."
+    },
+    {
+      question: "Doppler vs HashiCorp Vault?",
+      answer: "Doppler is simpler and more developer-focused. Vault is more powerful for enterprise. Doppler for teams; Vault for infrastructure."
+    },
+    {
+      question: "How does Doppler work?",
+      answer: "Store secrets in Doppler, sync to apps via CLI or integrations. Secrets inject at runtime. No more .env files in repos."
+    }
+  ],
+
+  // ============================================
+  // DRAGONFLY
+  // ============================================
+  "dragonfly": [
+    {
+      question: "Is Dragonfly free?",
+      answer: "Yes, Dragonfly is open source under BSL license. Free to use. Dragonfly Cloud is the managed service."
+    },
+    {
+      question: "What is Dragonfly?",
+      answer: "Dragonfly is an in-memory data store compatible with Redis. Claims 25x better throughput than Redis with multi-threading."
+    },
+    {
+      question: "Dragonfly vs Redis?",
+      answer: "Dragonfly is Redis-compatible but multi-threaded for better performance. Redis is more mature with larger ecosystem. Dragonfly for raw performance."
+    },
+    {
+      question: "Can I replace Redis with Dragonfly?",
+      answer: "Yes, Dragonfly is API-compatible with Redis. Drop-in replacement for most use cases. May need testing for complex Redis features."
+    }
+  ],
+
+  // ============================================
+  // DREAMHOST
+  // ============================================
+  "dreamhost": [
+    {
+      question: "How much does DreamHost cost?",
+      answer: "Shared hosting from $2.59/month promotional. WordPress hosting from $2.59/month. VPS from $10/month. DreamPress from $16.95/month."
+    },
+    {
+      question: "What is DreamHost?",
+      answer: "DreamHost is an independent web hosting provider. Shared, WordPress, VPS, and dedicated hosting. Known for privacy stance and WordPress integration."
+    },
+    {
+      question: "DreamHost vs Bluehost?",
+      answer: "DreamHost is independent; Bluehost is owned by EIG. DreamHost has better reputation for support. Both are affordable entry-level hosts."
+    },
+    {
+      question: "Is DreamHost good for WordPress?",
+      answer: "Yes, officially recommended by WordPress.org. DreamPress is their managed WordPress option with better performance."
+    }
+  ],
+
+  // ============================================
+  // DRONE
+  // ============================================
+  "drone": [
+    {
+      question: "Is Drone CI free?",
+      answer: "Drone Cloud is free for public repos. Self-hosted is free for open source. Enterprise pricing for commercial use."
+    },
+    {
+      question: "What is Drone?",
+      answer: "Drone is a container-native CI/CD platform. Pipelines as code in YAML. Lightweight and easy to self-host."
+    },
+    {
+      question: "Drone vs Jenkins?",
+      answer: "Drone is simpler and container-native. Jenkins is more feature-rich but complex. Drone for modern stacks; Jenkins for enterprise legacy."
+    },
+    {
+      question: "What happened to Drone?",
+      answer: "Harness acquired Drone. It continues as open source project and integrates with Harness CI. Still actively maintained."
+    }
+  ],
+
+  // ============================================
+  // DUCKDB
+  // ============================================
+  "duckdb": [
+    {
+      question: "Is DuckDB free?",
+      answer: "Yes, DuckDB is open source under MIT license. Completely free. No paid version. Community-supported."
+    },
+    {
+      question: "What is DuckDB?",
+      answer: "DuckDB is an in-process analytical database. Like SQLite but for analytics. Run SQL queries on local files with excellent performance."
+    },
+    {
+      question: "DuckDB vs SQLite?",
+      answer: "DuckDB is optimized for analytics (OLAP). SQLite is for transactions (OLTP). DuckDB for analytics; SQLite for application data."
+    },
+    {
+      question: "What is DuckDB used for?",
+      answer: "Local analytics, data exploration, ETL scripts, and embedded analytics. Query Parquet, CSV, and JSON files directly."
+    }
+  ],
+
+  // ============================================
+  // DYNATRACE
+  // ============================================
+  "dynatrace": [
+    {
+      question: "Is Dynatrace free?",
+      answer: "15-day free trial. Pricing is consumption-based and complex. Generally expensive - enterprise-focused. Starts around $0.04/GB monitored."
+    },
+    {
+      question: "What is Dynatrace?",
+      answer: "Dynatrace is an enterprise observability platform. APM, infrastructure monitoring, log management, and AIOps. AI-powered root cause analysis."
+    },
+    {
+      question: "Dynatrace vs Datadog?",
+      answer: "Dynatrace has better AI capabilities. Datadog has simpler pricing and broader adoption. Both are enterprise-grade. Compare for your needs."
+    },
+    {
+      question: "What is Dynatrace Davis?",
+      answer: "Davis is Dynatrace's AI engine. Automatic root cause analysis and anomaly detection. Key differentiator from competitors."
+    }
+  ],
+
+  // ============================================
+  // EASYPOST
+  // ============================================
+  "easypost": [
+    {
+      question: "Is EasyPost free?",
+      answer: "Pay per label - typically 2-5 cents. No monthly fees. Free account, pay only for usage. Good for small volumes."
+    },
+    {
+      question: "What is EasyPost?",
+      answer: "EasyPost is a shipping API. Connect to USPS, FedEx, UPS, and 100+ carriers through one integration. Simplifies multi-carrier shipping."
+    },
+    {
+      question: "EasyPost vs ShipStation?",
+      answer: "EasyPost is API-first for developers. ShipStation is a UI-based platform. EasyPost for custom integrations; ShipStation for manual shipping."
+    },
+    {
+      question: "What carriers does EasyPost support?",
+      answer: "USPS, UPS, FedEx, DHL, and 100+ regional and international carriers. One API for all carriers."
+    }
+  ],
+
+  // ============================================
+  // ELASTICSEARCH
+  // ============================================
+  "elasticsearch": [
+    {
+      question: "Is Elasticsearch free?",
+      answer: "Basic features are free under SSPL/Elastic License. Elastic Cloud has free trial. Self-hosting is free for basic use."
+    },
+    {
+      question: "What is Elasticsearch?",
+      answer: "Elasticsearch is a distributed search and analytics engine. Full-text search, log analytics, and APM. Foundation of the ELK Stack."
+    },
+    {
+      question: "Elasticsearch vs OpenSearch?",
+      answer: "OpenSearch is AWS's fork after license change. Both are capable. Elasticsearch has more features; OpenSearch is Apache 2.0 licensed."
+    },
+    {
+      question: "What is the ELK Stack?",
+      answer: "Elasticsearch, Logstash, Kibana - now called Elastic Stack. Search, ingest, and visualize data. Popular for log management."
+    }
+  ],
+
+  // ============================================
+  // ESBUILD
+  // ============================================
+  "esbuild": [
+    {
+      question: "Is esbuild free?",
+      answer: "Yes, esbuild is open source under MIT license. Completely free. No paid version."
+    },
+    {
+      question: "What is esbuild?",
+      answer: "esbuild is an extremely fast JavaScript bundler. Written in Go. 10-100x faster than webpack. Powers Vite's development mode."
+    },
+    {
+      question: "esbuild vs webpack?",
+      answer: "esbuild is dramatically faster but has fewer features. webpack is mature with huge plugin ecosystem. esbuild for speed; webpack for complex builds."
+    },
+    {
+      question: "Why is esbuild so fast?",
+      answer: "Written in Go, not JavaScript. Heavy parallelization. Minimal passes over source code. Designed for speed from the start."
+    }
+  ],
+
+  // ============================================
+  // ESLINT
+  // ============================================
+  "eslint": [
+    {
+      question: "Is ESLint free?",
+      answer: "Yes, ESLint is open source under MIT license. Completely free. Industry standard JavaScript linter."
+    },
+    {
+      question: "What is ESLint?",
+      answer: "ESLint is a JavaScript/TypeScript linter. Find and fix problems in code. Highly configurable with plugin ecosystem."
+    },
+    {
+      question: "ESLint vs Biome?",
+      answer: "ESLint is mature with huge plugin ecosystem. Biome is faster but newer with fewer plugins. ESLint for customization; Biome for speed."
+    },
+    {
+      question: "What is ESLint Flat Config?",
+      answer: "Flat Config is the new configuration format (eslint.config.js). Simpler than .eslintrc. Becoming the default in newer versions."
+    }
+  ],
+
+  // ============================================
+  // EVERNOTE
+  // ============================================
+  "evernote": [
+    {
+      question: "Is Evernote free?",
+      answer: "Free tier for 1 device with limited uploads. Personal $14.99/month. Professional $17.99/month. Free tier is very limited now."
+    },
+    {
+      question: "What is Evernote?",
+      answer: "Evernote is a note-taking app with powerful organization. Notes, notebooks, tags, and web clipping. One of the original note apps."
+    },
+    {
+      question: "Evernote vs Notion?",
+      answer: "Notion is more flexible with databases and blocks. Evernote is simpler note-taking. Most users prefer Notion now for flexibility."
+    },
+    {
+      question: "What happened to Evernote?",
+      answer: "Bending Spoons acquired Evernote in 2022. New ownership made significant changes. Many long-time users have migrated to alternatives."
+    }
+  ],
+
+  // ============================================
+  // EXPENSIFY
+  // ============================================
+  "expensify": [
+    {
+      question: "Is Expensify free?",
+      answer: "Free plan for individuals with basic features. Collect $5/user/month. Control $9/user/month. Enterprise custom pricing."
+    },
+    {
+      question: "What is Expensify?",
+      answer: "Expensify is expense management software. Scan receipts, submit reports, approve expenses, and reimburse employees. Simplifies expense tracking."
+    },
+    {
+      question: "Expensify vs SAP Concur?",
+      answer: "Expensify is simpler and better for SMBs. Concur is more powerful for enterprise. Expensify for ease; Concur for complexity."
+    },
+    {
+      question: "How does SmartScan work?",
+      answer: "Take photo of receipt, SmartScan extracts merchant, amount, and date automatically. One of Expensify's key features."
+    }
+  ],
+
+  // ============================================
+  // FASTLY
+  // ============================================
+  "fastly": [
+    {
+      question: "Is Fastly free?",
+      answer: "Free trial available. Pay-as-you-go pricing based on bandwidth and requests. Generally expensive - designed for high-traffic sites."
+    },
+    {
+      question: "What is Fastly?",
+      answer: "Fastly is an edge cloud platform. CDN, edge compute, security, and streaming. Known for performance and developer-friendly edge computing."
+    },
+    {
+      question: "Fastly vs Cloudflare?",
+      answer: "Fastly has better programmability for developers. Cloudflare has free tier and more products. Fastly for edge compute; Cloudflare for value."
+    },
+    {
+      question: "What is Fastly Compute?",
+      answer: "Compute@Edge runs your code at Fastly edge locations. WebAssembly-based. Supports Rust, JavaScript, and more."
+    }
+  ],
+
+  // ============================================
+  // FATHOM ANALYTICS
+  // ============================================
+  "fathom-analytics": [
+    {
+      question: "Is Fathom Analytics free?",
+      answer: "No free tier. $14/month for 100K pageviews. $24/month for 200K. Scales with traffic. 7-day free trial."
+    },
+    {
+      question: "What is Fathom Analytics?",
+      answer: "Fathom is privacy-focused web analytics. Simple dashboard, no cookies, GDPR compliant. Premium alternative to Google Analytics."
+    },
+    {
+      question: "Fathom vs Plausible?",
+      answer: "Both are privacy-focused. Fathom is simpler and more polished. Plausible is open source and cheaper. Both excellent choices."
+    },
+    {
+      question: "Why use Fathom over Google Analytics?",
+      answer: "No cookies needed, faster script, simpler interface, and genuine privacy. Trade-off is less data but more ethical tracking."
+    }
+  ],
+
+  // ============================================
+  // FAUNADB
+  // ============================================
+  "faunadb": [
+    {
+      question: "Is FaunaDB free?",
+      answer: "Free tier with generous limits. Pay as you grow based on reads, writes, and compute. Good for getting started."
+    },
+    {
+      question: "What is FaunaDB?",
+      answer: "Fauna is a distributed document-relational database. ACID transactions, global distribution, GraphQL native. Serverless database platform."
+    },
+    {
+      question: "FaunaDB vs MongoDB?",
+      answer: "Fauna is fully serverless with global distribution. MongoDB requires more infrastructure. Fauna for serverless; MongoDB for more control."
+    },
+    {
+      question: "What is FQL?",
+      answer: "Fauna Query Language is Fauna's query language. More expressive than typical query languages. New version (FQL v10) is SQL-like."
+    }
+  ],
+
+  // ============================================
+  // FIGMA
+  // ============================================
+  "figma": [
+    {
+      question: "Is Figma free?",
+      answer: "Free for up to 3 projects. Professional $15/editor/month. Organization $45/editor/month. Viewers are always free."
+    },
+    {
+      question: "What is Figma?",
+      answer: "Figma is a collaborative design tool. UI/UX design, prototyping, and design systems. Browser-based with real-time collaboration."
+    },
+    {
+      question: "Figma vs Sketch?",
+      answer: "Figma is browser-based and collaborative. Sketch is Mac-only. Figma won the market - most teams use Figma now."
+    },
+    {
+      question: "What is Figma Dev Mode?",
+      answer: "Dev Mode helps developers inspect designs, get code snippets, and see specifications. Bridges design to development."
+    }
+  ],
+
+  // ============================================
+  // FIREBASE
+  // ============================================
+  "firebase": [
+    {
+      question: "Is Firebase free?",
+      answer: "Generous free tier (Spark plan). Blaze plan is pay-as-you-go. Free tier covers many small apps. Popular for startups."
+    },
+    {
+      question: "What is Firebase?",
+      answer: "Firebase is Google's app development platform. Database, auth, hosting, functions, and analytics. Backend-as-a-service for web and mobile."
+    },
+    {
+      question: "Firebase vs Supabase?",
+      answer: "Firebase is NoSQL with Google integration. Supabase is PostgreSQL and open source. Firebase for Google ecosystem; Supabase for SQL and open source."
+    },
+    {
+      question: "What Firebase products are available?",
+      answer: "Firestore (database), Auth, Hosting, Functions, Storage, Analytics, Crashlytics, and more. Comprehensive app platform."
+    }
+  ],
+
+  // ============================================
+  // FIVETRAN
+  // ============================================
+  "fivetran": [
+    {
+      question: "Is Fivetran free?",
+      answer: "Free tier with limited MAR (Monthly Active Rows). Paid plans based on usage. Generally expensive for enterprise features."
+    },
+    {
+      question: "What is Fivetran?",
+      answer: "Fivetran is automated data integration. Sync data from apps and databases to your warehouse. EL in ELT - handles extraction and loading."
+    },
+    {
+      question: "Fivetran vs Airbyte?",
+      answer: "Fivetran is managed and more reliable. Airbyte is open source and cheaper. Fivetran for enterprise; Airbyte for budget-conscious teams."
+    },
+    {
+      question: "How does Fivetran pricing work?",
+      answer: "Based on Monthly Active Rows (MAR). Rows that change each month count. Can be expensive for high-volume data sources."
+    }
+  ],
+
+  // ============================================
+  // FLASK
+  // ============================================
+  "flask": [
+    {
+      question: "Is Flask free?",
+      answer: "Yes, Flask is open source under BSD license. Completely free. One of the most popular Python web frameworks."
+    },
+    {
+      question: "What is Flask?",
+      answer: "Flask is a lightweight Python web framework. Micro-framework - minimal core with extensions. Good for APIs and small-medium apps."
+    },
+    {
+      question: "Flask vs Django?",
+      answer: "Flask is minimal and flexible. Django is full-featured with batteries included. Flask for APIs and microservices; Django for full applications."
+    },
+    {
+      question: "What can you build with Flask?",
+      answer: "REST APIs, web applications, microservices, and prototypes. Add extensions for databases, auth, forms, etc."
+    }
+  ],
+
+  // ============================================
+  // FLUENTD
+  // ============================================
+  "fluentd": [
+    {
+      question: "Is Fluentd free?",
+      answer: "Yes, Fluentd is open source under Apache 2.0. CNCF graduated project. Completely free."
+    },
+    {
+      question: "What is Fluentd?",
+      answer: "Fluentd is an open-source data collector. Unify logging infrastructure. Input from many sources, output to many destinations."
+    },
+    {
+      question: "Fluentd vs Logstash?",
+      answer: "Fluentd is lighter and more reliable. Logstash has more plugins and Elastic integration. Fluentd for Kubernetes; Logstash for Elastic Stack."
+    },
+    {
+      question: "What is Fluent Bit?",
+      answer: "Fluent Bit is Fluentd's lightweight sibling. Optimized for containers and embedded systems. Often used together."
+    }
+  ],
+
+  // ============================================
+  // FLUTTER
+  // ============================================
+  "flutter": [
+    {
+      question: "Is Flutter free?",
+      answer: "Yes, Flutter is open source under BSD license. Created by Google. Completely free to use."
+    },
+    {
+      question: "What is Flutter?",
+      answer: "Flutter is Google's UI toolkit for cross-platform apps. Build iOS, Android, web, and desktop from one codebase using Dart."
+    },
+    {
+      question: "Flutter vs React Native?",
+      answer: "Flutter has better performance and consistent UI. React Native has larger ecosystem and JavaScript. Both are excellent choices."
+    },
+    {
+      question: "What language does Flutter use?",
+      answer: "Dart - Google's language for Flutter. Easy to learn if you know Java or JavaScript. Strong typing with good tooling."
+    }
+  ],
+
+  // ============================================
+  // FLY.IO
+  // ============================================
+  "fly-io": [
+    {
+      question: "Is Fly.io free?",
+      answer: "Free tier: 3 shared VMs, 160GB bandwidth, 3GB persistent storage. Generous for small projects. Pay for more resources."
+    },
+    {
+      question: "What is Fly.io?",
+      answer: "Fly.io runs apps close to users globally. Deploy containers to edge locations. Platform for full-stack apps needing low latency."
+    },
+    {
+      question: "Fly.io vs Heroku?",
+      answer: "Fly.io is cheaper and runs globally. Heroku is simpler with larger ecosystem. Fly.io for global apps; Heroku for simplicity."
+    },
+    {
+      question: "What can you deploy on Fly.io?",
+      answer: "Docker containers, Rails, Phoenix, Laravel, Node.js, and more. Run databases at the edge. Full-stack platform."
+    }
+  ],
+
+  // ============================================
+  // FORESTADMIN
+  // ============================================
+  "forestadmin": [
+    {
+      question: "Is Forest Admin free?",
+      answer: "Free for up to 3 users. Pro $199/month for more users. Enterprise custom pricing. Good free tier for small teams."
+    },
+    {
+      question: "What is Forest Admin?",
+      answer: "Forest Admin generates admin panels from your database. Connect to any SQL or Mongo database. Instant back-office interface."
+    },
+    {
+      question: "Forest Admin vs Retool?",
+      answer: "Forest Admin auto-generates from database. Retool is build-from-scratch. Forest for quick admin panels; Retool for custom apps."
+    },
+    {
+      question: "What databases does Forest Admin support?",
+      answer: "PostgreSQL, MySQL, MariaDB, SQL Server, MongoDB, and more. Works with most databases through connectors."
+    }
+  ],
+
+  // ============================================
+  // FRAMER
+  // ============================================
+  "framer": [
+    {
+      question: "Is Framer free?",
+      answer: "Free plan for 1 site with Framer subdomain. Basic $5/month. Pro $15/month. Mini $10/month for personal sites."
+    },
+    {
+      question: "What is Framer?",
+      answer: "Framer is a no-code website builder. Design and publish sites visually. Known for animations and designer-friendly interface."
+    },
+    {
+      question: "Framer vs Webflow?",
+      answer: "Framer is more designer-friendly. Webflow is more powerful for complex sites. Framer for landing pages; Webflow for complex projects."
+    },
+    {
+      question: "What can you build with Framer?",
+      answer: "Landing pages, portfolios, and marketing sites. Strong animation capabilities. Less suited for complex web applications."
+    }
+  ],
+
+  // ============================================
+  // FRESHDESK
+  // ============================================
+  "freshdesk": [
+    {
+      question: "Is Freshdesk free?",
+      answer: "Free plan for up to 10 agents. Growth $15/agent/month. Pro $49/agent/month. Enterprise $79/agent/month."
+    },
+    {
+      question: "What is Freshdesk?",
+      answer: "Freshdesk is a customer support platform. Ticket management, knowledge base, and multi-channel support. Part of Freshworks suite."
+    },
+    {
+      question: "Freshdesk vs Zendesk?",
+      answer: "Freshdesk is cheaper with good features. Zendesk is more established with more integrations. Freshdesk for value; Zendesk for enterprise."
+    },
+    {
+      question: "What channels does Freshdesk support?",
+      answer: "Email, chat, phone, social media, and website widget. Unified inbox for all support channels."
+    }
+  ],
+
+  // ============================================
+  // GATSBY
+  // ============================================
+  "gatsby": [
+    {
+      question: "Is Gatsby free?",
+      answer: "Yes, Gatsby framework is open source under MIT. Gatsby Cloud (hosting) has free tier. Framework is always free."
+    },
+    {
+      question: "What is Gatsby?",
+      answer: "Gatsby is a React-based static site generator. Build fast, SEO-optimized sites. Popular for marketing sites and blogs."
+    },
+    {
+      question: "Gatsby vs Next.js?",
+      answer: "Gatsby is static-first with data layer. Next.js is more flexible for dynamic content. Gatsby for content sites; Next.js for apps."
+    },
+    {
+      question: "What happened to Gatsby Cloud?",
+      answer: "Netlify acquired Gatsby in 2023. Gatsby Cloud merged into Netlify. Framework continues as open source."
+    }
+  ],
+
+  // ============================================
+  // GCP
+  // ============================================
+  "gcp": [
+    {
+      question: "Is Google Cloud free?",
+      answer: "$300 credit for 90 days. Always Free tier includes Compute, Storage, BigQuery limits. Most services have free allocation."
+    },
+    {
+      question: "What is Google Cloud Platform?",
+      answer: "GCP is Google's cloud computing platform. Compute, storage, AI/ML, data analytics, and more. Third largest cloud after AWS and Azure."
+    },
+    {
+      question: "GCP vs AWS?",
+      answer: "GCP leads in data analytics and ML. AWS has more services and market share. GCP for data; AWS for breadth of services."
+    },
+    {
+      question: "What is GCP known for?",
+      answer: "BigQuery, Kubernetes (GKE), AI/ML services, and global network. Strong in data engineering and machine learning."
+    }
+  ],
 };
 
 async function main() {
