@@ -60,7 +60,7 @@ export default async function CompanyWidgetPage() {
                         <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src={`https://toolradar.com/api/widget/${tool.slug}`}
+                            src={`https://toolradar.com/api/widget/${tool.slug}?v=2`}
                             alt={`${tool.name} on Toolradar`}
                             width={280}
                             height={100}
@@ -75,7 +75,7 @@ export default async function CompanyWidgetPage() {
                         <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src={`https://toolradar.com/api/widget/${tool.slug}?style=dark`}
+                            src={`https://toolradar.com/api/widget/${tool.slug}?style=dark&v=2`}
                             alt={`${tool.name} on Toolradar`}
                             width={280}
                             height={100}
@@ -90,7 +90,7 @@ export default async function CompanyWidgetPage() {
                         <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src={`https://toolradar.com/api/widget/${tool.slug}?style=blue`}
+                            src={`https://toolradar.com/api/widget/${tool.slug}?style=blue&v=2`}
                             alt={`${tool.name} on Toolradar`}
                             width={280}
                             height={100}
@@ -105,7 +105,7 @@ export default async function CompanyWidgetPage() {
                         <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
-                            src={`https://toolradar.com/api/widget/${tool.slug}?style=minimal`}
+                            src={`https://toolradar.com/api/widget/${tool.slug}?style=minimal&v=2`}
                             alt={`${tool.name} on Toolradar`}
                             width={280}
                             height={100}
