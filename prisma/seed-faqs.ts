@@ -9081,6 +9081,2572 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "Freshworks is the parent company offering Freshdesk, Freshsales, Freshservice, and more. Products integrate together. Provides business software suite at competitive pricing."
     }
   ],
+
+  // ============================================
+  // 15FIVE
+  // ============================================
+  "15five": [
+    {
+      question: "Is 15Five free?",
+      answer: "No free tier available. 15Five starts at $4/user/month for the Engage plan and $14/user/month for the full Perform suite. They offer a free trial to test the platform before committing."
+    },
+    {
+      question: "What is 15Five used for?",
+      answer: "15Five is a performance management platform that helps companies run weekly check-ins, continuous feedback, 1-on-1s, OKRs, and employee engagement surveys. The name comes from the idea of 15 minutes to write, 5 minutes to read."
+    },
+    {
+      question: "How does 15Five work?",
+      answer: "Employees submit weekly check-ins answering questions about their work, wins, challenges, and mood. Managers review and respond. The platform also supports goal tracking, peer recognition, and performance reviews."
+    },
+    {
+      question: "What does 15Five integrate with?",
+      answer: "15Five connects with HRIS systems like BambooHR, Workday, and ADP. Also integrates with Slack for notifications, Microsoft Teams, and SSO providers. API available for custom integrations."
+    },
+    {
+      question: "15Five vs Lattice?",
+      answer: "Both focus on performance management. 15Five emphasizes weekly check-ins and continuous feedback. Lattice has stronger performance review features. 15Five is often more affordable for smaller teams."
+    }
+  ],
+
+  // ============================================
+  // 1PASSWORD BUSINESS
+  // ============================================
+  "1password-business": [
+    {
+      question: "What is 1Password Business?",
+      answer: "1Password Business is the enterprise version of 1Password with team features: shared vaults, admin controls, SSO, advanced reporting, and custom groups. Designed for organizations managing passwords at scale."
+    },
+    {
+      question: "How much does 1Password Business cost?",
+      answer: "Teams Starter Pack is $19.95/month for up to 10 users. Business plan is $7.99/user/month. Enterprise pricing is custom. All plans include unlimited passwords and devices."
+    },
+    {
+      question: "What features does 1Password Business include?",
+      answer: "Shared vaults, admin dashboard, activity logs, usage reports, SSO integration, custom security policies, advanced permissions, and 5GB document storage per user. Enterprise adds custom roles and dedicated support."
+    },
+    {
+      question: "Does 1Password Business support SSO?",
+      answer: "Yes, 1Password integrates with identity providers like Okta, Azure AD, and OneLogin. SSO lets employees use their company credentials. Enterprise plan required for full SSO unlock."
+    },
+    {
+      question: "Is 1Password secure for business?",
+      answer: "Yes, 1Password uses end-to-end encryption with your Secret Key plus master password. Zero-knowledge architecture means even 1Password can't see your data. SOC 2 certified and regularly audited."
+    }
+  ],
+
+  // ============================================
+  // A2 HOSTING
+  // ============================================
+  "a2-hosting": [
+    {
+      question: "What is A2 Hosting?",
+      answer: "A2 Hosting is a web hosting provider known for speed-optimized servers. They offer shared hosting, VPS, dedicated servers, and WordPress hosting. Founded in 2001, based in Michigan."
+    },
+    {
+      question: "How much does A2 Hosting cost?",
+      answer: "Shared hosting starts at $2.99/month with promotional pricing. Turbo plans for better performance start at $6.99/month. VPS from $4.99/month, dedicated servers from $119.99/month."
+    },
+    {
+      question: "What makes A2 Hosting fast?",
+      answer: "A2 uses SSD storage, Turbo servers with LiteSpeed, and server-side caching. Their Turbo plans claim up to 20x faster page loads compared to standard hosting. Free Cloudflare CDN included."
+    },
+    {
+      question: "Does A2 Hosting offer WordPress hosting?",
+      answer: "Yes, A2 has managed WordPress plans with pre-installed WordPress, automatic updates, staging environments, and WordPress-specific optimizations. Turbo WordPress plans available for better performance."
+    },
+    {
+      question: "What is A2's uptime guarantee?",
+      answer: "A2 Hosting offers 99.9% uptime guarantee with SLA credits if they miss it. They use redundant network infrastructure and multiple data center locations in the US, Europe, and Asia."
+    }
+  ],
+
+  // ============================================
+  // AB TASTY
+  // ============================================
+  "ab-tasty": [
+    {
+      question: "What is AB Tasty?",
+      answer: "AB Tasty is an experimentation and personalization platform for A/B testing, feature flags, and web personalization. Helps optimize digital experiences through data-driven experiments."
+    },
+    {
+      question: "How much does AB Tasty cost?",
+      answer: "AB Tasty uses custom pricing based on traffic and features. Plans typically start around $40,000/year for enterprise. They don't publish pricing publicly - you'll need to request a quote."
+    },
+    {
+      question: "What can you do with AB Tasty?",
+      answer: "Run A/B tests, multivariate tests, split URL tests, and server-side experiments. Also supports feature flags, progressive rollouts, and audience-based personalization. Visual editor for non-developers."
+    },
+    {
+      question: "AB Tasty vs Optimizely?",
+      answer: "Both are enterprise experimentation platforms. Optimizely has more advanced statistical capabilities. AB Tasty is often more affordable and easier to use. AB Tasty has stronger European presence."
+    },
+    {
+      question: "Does AB Tasty support server-side testing?",
+      answer: "Yes, AB Tasty offers server-side experimentation and feature flags through their SDK. Supports multiple languages including JavaScript, Python, PHP, and Java."
+    }
+  ],
+
+  // ============================================
+  // ACKEE
+  // ============================================
+  "ackee": [
+    {
+      question: "Is Ackee free?",
+      answer: "Yes, Ackee is completely free and open source. You can self-host it on your own server with no licensing costs. It's a privacy-focused alternative to Google Analytics."
+    },
+    {
+      question: "What is Ackee?",
+      answer: "Ackee is a self-hosted, privacy-focused web analytics tool. It tracks page views, referrers, and visitor data without using cookies or collecting personal information. Built with Node.js and MongoDB."
+    },
+    {
+      question: "How do you install Ackee?",
+      answer: "Ackee can be deployed via Docker, npm, or one-click installers on platforms like Railway and Heroku. Requires Node.js 14+ and MongoDB. Documentation provides step-by-step setup guides."
+    },
+    {
+      question: "Ackee vs Plausible?",
+      answer: "Both are privacy-focused analytics. Ackee is free and self-hosted. Plausible has a paid hosted version that's easier to set up. Plausible has more features; Ackee is simpler and completely free."
+    },
+    {
+      question: "Does Ackee comply with GDPR?",
+      answer: "Yes, Ackee is designed for GDPR compliance. No cookies, no personal data collection, no user tracking across sites. You control the data since it's self-hosted."
+    }
+  ],
+
+  // ============================================
+  // ACTIVECAMPAIGN
+  // ============================================
+  "activecampaign": [
+    {
+      question: "Is ActiveCampaign free?",
+      answer: "No free plan, but there's a 14-day free trial. Paid plans start at $29/month for 1,000 contacts on the Lite plan. Pricing scales with contacts and features."
+    },
+    {
+      question: "What does ActiveCampaign cost?",
+      answer: "Lite: $29/month for 1,000 contacts. Plus: $49/month adds CRM and landing pages. Professional: $149/month includes machine learning and predictive sending. Enterprise: custom pricing."
+    },
+    {
+      question: "What is ActiveCampaign used for?",
+      answer: "ActiveCampaign combines email marketing, marketing automation, CRM, and sales automation. Strong automation builder lets you create complex workflows triggered by customer behavior."
+    },
+    {
+      question: "ActiveCampaign vs Mailchimp?",
+      answer: "ActiveCampaign has more powerful automation and includes CRM. Mailchimp is easier for beginners and has a free tier. ActiveCampaign better for complex automation; Mailchimp for simpler email needs."
+    },
+    {
+      question: "What integrations does ActiveCampaign have?",
+      answer: "900+ integrations including Shopify, WordPress, Salesforce, and Zapier. Native integrations for e-commerce, CRMs, and popular tools. API available for custom integrations."
+    }
+  ],
+
+  // ============================================
+  // ACTIVEPIECES
+  // ============================================
+  "activepieces": [
+    {
+      question: "Is Activepieces free?",
+      answer: "Yes, Activepieces is open source and free to self-host with unlimited workflows. They also offer a cloud version with a free tier for up to 1,000 tasks/month."
+    },
+    {
+      question: "What is Activepieces?",
+      answer: "Activepieces is an open-source automation platform like Zapier. Build workflows connecting apps without coding. Can be self-hosted or used as cloud service. Focuses on being developer-friendly."
+    },
+    {
+      question: "Activepieces vs Zapier?",
+      answer: "Activepieces is open source and can be self-hosted for free. Zapier is easier with more integrations but gets expensive. Activepieces good for developers and budget-conscious teams."
+    },
+    {
+      question: "How do you self-host Activepieces?",
+      answer: "Activepieces runs as Docker containers. Can deploy on any server with Docker support. Requires PostgreSQL database. One-click deployments available for Railway, Render, and DigitalOcean."
+    },
+    {
+      question: "What apps does Activepieces connect to?",
+      answer: "Growing list of 100+ integrations including Google Sheets, Slack, Discord, OpenAI, and popular APIs. New pieces (integrations) added regularly. Can create custom pieces with TypeScript."
+    }
+  ],
+
+  // ============================================
+  // ACUITY SCHEDULING
+  // ============================================
+  "acuity": [
+    {
+      question: "Is Acuity Scheduling free?",
+      answer: "No free tier anymore - Acuity removed it in 2024. Plans start at $20/month for the Emerging plan. Free 7-day trial available to test before subscribing."
+    },
+    {
+      question: "What does Acuity Scheduling cost?",
+      answer: "Emerging: $20/month for 1 calendar. Growing: $34/month for 6 calendars with text reminders. Powerhouse: $61/month for 36 calendars with advanced features."
+    },
+    {
+      question: "What is Acuity Scheduling?",
+      answer: "Acuity is appointment scheduling software acquired by Squarespace. Clients self-book appointments, pay online, fill intake forms. Popular with service businesses, consultants, and coaches."
+    },
+    {
+      question: "Acuity vs Calendly?",
+      answer: "Both are solid scheduling tools. Acuity has more customization and built-in payments. Calendly is simpler and has better team features. Acuity is better for service businesses; Calendly for sales teams."
+    },
+    {
+      question: "Does Acuity take payments?",
+      answer: "Yes, Acuity integrates with Stripe, Square, and PayPal for online payments. Clients can pay when booking, require deposits, or buy packages. Payment processing fees apply from the processor."
+    }
+  ],
+
+  // ============================================
+  // ADALO
+  // ============================================
+  "adalo": [
+    {
+      question: "Is Adalo free?",
+      answer: "Yes, there's a free tier to build and test apps with 200 app actions per month. Paid plans start at $45/month to publish to app stores and remove Adalo branding."
+    },
+    {
+      question: "What does Adalo cost?",
+      answer: "Free tier available. Starter: $45/month. Professional: $65/month with more actions and features. Team: $200/month for collaboration. Business: $250/month with full features."
+    },
+    {
+      question: "What is Adalo?",
+      answer: "Adalo is a no-code platform for building native mobile apps. Drag-and-drop interface, database included, publish directly to iOS and Android app stores without writing code."
+    },
+    {
+      question: "Adalo vs Bubble?",
+      answer: "Adalo focuses on native mobile apps. Bubble builds web apps (mobile-responsive but not native). Choose Adalo for app store apps; Bubble for web applications and complex logic."
+    },
+    {
+      question: "Can Adalo apps be published to app stores?",
+      answer: "Yes, Adalo generates native iOS and Android apps that can be published to the App Store and Google Play. You'll need developer accounts ($99/year Apple, $25 one-time Google)."
+    }
+  ],
+
+  // ============================================
+  // ADJUST
+  // ============================================
+  "adjust": [
+    {
+      question: "Is Adjust free?",
+      answer: "Adjust has a free tier for small apps with limited features. Full pricing is custom based on tracked users and needs. Enterprise customers negotiate contracts - expect significant costs for scale."
+    },
+    {
+      question: "What is Adjust?",
+      answer: "Adjust is a mobile measurement and analytics platform. Tracks app installs, in-app events, and marketing attribution. Helps mobile marketers understand which campaigns drive installs and revenue."
+    },
+    {
+      question: "What does Adjust do for mobile apps?",
+      answer: "Adjust provides attribution tracking (which ads drove installs), fraud prevention, audience segmentation, and campaign analytics. SDK integrates with your app to track user behavior."
+    },
+    {
+      question: "Adjust vs AppsFlyer?",
+      answer: "Both are top mobile measurement platforms. AppsFlyer has larger market share and more integrations. Adjust is known for strong fraud prevention. Pricing and support vary - get quotes from both."
+    },
+    {
+      question: "Does Adjust help with fraud prevention?",
+      answer: "Yes, fraud prevention is a core Adjust feature. Their Fraud Prevention Suite detects click injection, SDK spoofing, and fake installs. Important for protecting your marketing budget."
+    }
+  ],
+
+  // ============================================
+  // ADOBE COLOR
+  // ============================================
+  "adobe-color": [
+    {
+      question: "Is Adobe Color free?",
+      answer: "Yes, Adobe Color is completely free to use. You don't even need an Adobe account to use the color wheel and explore palettes. Creating an account lets you save and sync colors."
+    },
+    {
+      question: "What is Adobe Color?",
+      answer: "Adobe Color is a web-based color palette tool. Create harmonious color schemes using the color wheel, extract colors from images, and explore community-created themes. Works with Creative Cloud apps."
+    },
+    {
+      question: "How do you use Adobe Color with other Adobe apps?",
+      answer: "Colors saved to your Adobe libraries sync automatically to Photoshop, Illustrator, and other Creative Cloud apps. Access your palettes directly in the app's Libraries panel."
+    },
+    {
+      question: "What color harmonies does Adobe Color support?",
+      answer: "Adobe Color offers analogous, monochromatic, triad, complementary, split-complementary, double split-complementary, square, compound, and shades. Also has accessibility tools for color blindness simulation."
+    },
+    {
+      question: "Can you extract colors from images in Adobe Color?",
+      answer: "Yes, upload any image and Adobe Color will extract a color palette automatically. Choose from colorful, bright, muted, deep, or dark moods for different extraction styles."
+    }
+  ],
+
+  // ============================================
+  // ADOBE FIREFLY
+  // ============================================
+  "adobe-firefly": [
+    {
+      question: "Is Adobe Firefly free?",
+      answer: "There's a free tier with 25 generative credits per month. More credits come with Creative Cloud subscriptions or the Firefly Premium plan at $4.99/month for 100 monthly credits."
+    },
+    {
+      question: "What is Adobe Firefly?",
+      answer: "Adobe Firefly is Adobe's generative AI platform. Create images from text prompts, generate text effects, expand images, and more. Trained on licensed content to be commercially safe."
+    },
+    {
+      question: "Can you use Firefly images commercially?",
+      answer: "Yes, Adobe designed Firefly for commercial use. It's trained on Adobe Stock, openly licensed content, and public domain material. This sets it apart from AI tools with unclear training data."
+    },
+    {
+      question: "How is Firefly integrated into Adobe apps?",
+      answer: "Firefly powers Generative Fill and Generative Expand in Photoshop, Text to Image in Express, and various features across Creative Cloud. It's the AI engine behind many new Adobe capabilities."
+    },
+    {
+      question: "Firefly vs Midjourney?",
+      answer: "Firefly is safer for commercial use due to its training data. Midjourney often produces more artistic results. Firefly integrates with Adobe apps; Midjourney is Discord-based standalone."
+    }
+  ],
+
+  // ============================================
+  // ADOBE ILLUSTRATOR
+  // ============================================
+  "adobe-illustrator": [
+    {
+      question: "Is Adobe Illustrator free?",
+      answer: "No free version, but there's a 7-day free trial. Illustrator costs $22.99/month standalone or $59.99/month with all Creative Cloud apps. Student/teacher pricing available at significant discount."
+    },
+    {
+      question: "What is Adobe Illustrator used for?",
+      answer: "Illustrator is the industry-standard vector graphics editor. Used for logos, icons, illustrations, typography, and print designs. Vector format means artwork scales infinitely without quality loss."
+    },
+    {
+      question: "Illustrator vs Photoshop - which to use?",
+      answer: "Illustrator is for vectors (logos, illustrations, graphics). Photoshop is for raster images (photos, textures, complex compositions). Many designers use both for different purposes."
+    },
+    {
+      question: "What file formats does Illustrator support?",
+      answer: "Native AI format, plus PDF, EPS, SVG for vectors. Can export PNG, JPG, GIF for raster. Import PSD, TIFF, and most image formats. SVG export is key for web work."
+    },
+    {
+      question: "Does Illustrator have AI features?",
+      answer: "Yes, powered by Adobe Firefly. Generative Recolor changes artwork colors with AI. Text to Vector creates editable graphics from prompts. More AI features being added regularly."
+    }
+  ],
+
+  // ============================================
+  // ADOBE PHOTOSHOP
+  // ============================================
+  "adobe-photoshop": [
+    {
+      question: "Is Adobe Photoshop free?",
+      answer: "No free version, but there's a 7-day free trial. Photoshop costs $22.99/month standalone or comes with Creative Cloud All Apps at $59.99/month. Photography plan ($9.99/month) includes Photoshop and Lightroom."
+    },
+    {
+      question: "What is Photoshop used for?",
+      answer: "Photoshop is the industry-standard image editor for photo retouching, compositing, digital painting, and graphic design. Used by photographers, designers, and artists worldwide."
+    },
+    {
+      question: "Does Photoshop have AI features?",
+      answer: "Yes, Adobe added major AI features with Firefly integration. Generative Fill and Generative Expand let you add or extend image content with text prompts. Background removal is one-click now."
+    },
+    {
+      question: "Can Photoshop run on iPad?",
+      answer: "Yes, Photoshop for iPad is included with your subscription. Most core features work, though some advanced tools are desktop-only. Files sync via Creative Cloud."
+    },
+    {
+      question: "Photoshop vs Lightroom?",
+      answer: "Photoshop is for detailed editing and compositing. Lightroom is for photo organization and batch editing. Photographers often use Lightroom for culling and basic edits, Photoshop for complex retouching."
+    }
+  ],
+
+  // ============================================
+  // ADOBE SIGN
+  // ============================================
+  "adobe-sign": [
+    {
+      question: "Is Adobe Sign free?",
+      answer: "No free tier for business use. Individual plan starts at $12.99/month for basic e-signatures. Business plans start at $14.99/user/month. Free trial available."
+    },
+    {
+      question: "What does Adobe Sign cost?",
+      answer: "Individual: $12.99/month. Business: $14.99/user/month. Enterprise: custom pricing with advanced features. Acrobat plans often include Sign functionality."
+    },
+    {
+      question: "What is Adobe Sign?",
+      answer: "Adobe Sign (now Acrobat Sign) is Adobe's e-signature solution. Send documents for signature, track status, automate workflows. Integrates tightly with Acrobat and other Adobe products."
+    },
+    {
+      question: "Adobe Sign vs DocuSign?",
+      answer: "Both are enterprise-grade e-signature tools. DocuSign has larger market share and more integrations. Adobe Sign integrates better with Adobe products. Pricing is competitive between them."
+    },
+    {
+      question: "Is Adobe Sign legally binding?",
+      answer: "Yes, Adobe Sign e-signatures are legally binding in most countries under laws like ESIGN Act and eIDAS. Enterprise plans include advanced authentication and compliance features."
+    }
+  ],
+
+  // ============================================
+  // ADOBE XD
+  // ============================================
+  "adobe-xd": [
+    {
+      question: "Is Adobe XD still available?",
+      answer: "Adobe XD is in maintenance mode since 2023. No new features are being developed, but it's still included in Creative Cloud. Adobe now recommends Figma after their acquisition attempt."
+    },
+    {
+      question: "What was Adobe XD used for?",
+      answer: "Adobe XD was Adobe's UI/UX design tool for websites and mobile apps. Supported wireframing, prototyping, and design systems. Similar to Figma and Sketch."
+    },
+    {
+      question: "Should I use Adobe XD or Figma?",
+      answer: "Use Figma. Adobe XD is effectively discontinued with no new development. The design industry has largely moved to Figma for collaborative UI/UX design work."
+    },
+    {
+      question: "Can I still use Adobe XD files?",
+      answer: "Yes, XD continues to work for existing projects. You can export to Figma using third-party plugins. Consider migrating active projects to Figma for long-term sustainability."
+    },
+    {
+      question: "What happened to Adobe XD?",
+      answer: "Adobe attempted to acquire Figma in 2022, then cancelled the deal in 2023. After that, Adobe put XD in maintenance mode, effectively conceding the market to Figma."
+    }
+  ],
+
+  // ============================================
+  // AFFINITY DESIGNER
+  // ============================================
+  "affinity-designer": [
+    {
+      question: "Is Affinity Designer free?",
+      answer: "No free version, but it's a one-time purchase of $69.99 instead of subscription. Free 30-day trial available. V2 universal license includes Mac, Windows, and iPad versions."
+    },
+    {
+      question: "What does Affinity Designer cost?",
+      answer: "$69.99 one-time for each platform, or $169.99 for the universal license covering all platforms. No subscription - you own it forever. That's the main selling point over Adobe."
+    },
+    {
+      question: "What is Affinity Designer?",
+      answer: "Affinity Designer is a professional vector graphics editor by Serif. Competes with Adobe Illustrator at a fraction of the cost. Known for excellent performance and no subscription."
+    },
+    {
+      question: "Affinity Designer vs Illustrator?",
+      answer: "Affinity is cheaper (one-time vs subscription) with excellent performance. Illustrator has more features, industry-standard status, and better integration with other Adobe apps. Affinity is increasingly viable for most work."
+    },
+    {
+      question: "Does Affinity Designer work with AI files?",
+      answer: "Yes, Affinity can open and edit AI files (Adobe Illustrator format). Also supports EPS, PDF, and SVG. Some advanced AI features may not import perfectly, but basic compatibility is solid."
+    }
+  ],
+
+  // ============================================
+  // AFFINITY PHOTO
+  // ============================================
+  "affinity-photo": [
+    {
+      question: "Is Affinity Photo free?",
+      answer: "No free version, but it's $69.99 one-time purchase instead of a subscription. Free 30-day trial available. Universal license for $169.99 includes Mac, Windows, and iPad."
+    },
+    {
+      question: "What does Affinity Photo cost?",
+      answer: "$69.99 per platform or $169.99 for universal license. One-time payment, no subscription. Major version upgrades may require a paid upgrade but the cost is still minimal compared to Adobe."
+    },
+    {
+      question: "What is Affinity Photo?",
+      answer: "Affinity Photo is a professional photo editor by Serif. Direct competitor to Adobe Photoshop with similar features: layers, masks, RAW editing, retouching tools, and batch processing."
+    },
+    {
+      question: "Affinity Photo vs Photoshop?",
+      answer: "Affinity is much cheaper (one-time vs subscription) with most features professionals need. Photoshop has more advanced tools, better AI features, and industry-standard status. Affinity handles 90% of what most users need."
+    },
+    {
+      question: "Can Affinity Photo open PSD files?",
+      answer: "Yes, Affinity Photo opens and edits PSD files with layers intact. Some advanced Photoshop features may not import perfectly, but compatibility is generally good for standard workflows."
+    }
+  ],
+
+  // ============================================
+  // AGORAPULSE
+  // ============================================
+  "agorapulse": [
+    {
+      question: "Is Agorapulse free?",
+      answer: "There's a free plan for 3 social profiles with limited features. Paid plans start at $49/month for the Standard plan with more profiles and full functionality."
+    },
+    {
+      question: "What does Agorapulse cost?",
+      answer: "Free tier available. Standard: $49/user/month. Professional: $79/user/month. Advanced: $119/user/month. Custom enterprise pricing available."
+    },
+    {
+      question: "What is Agorapulse?",
+      answer: "Agorapulse is a social media management platform for scheduling, publishing, monitoring, and reporting. Includes unified inbox for all social messages. Popular with agencies and marketing teams."
+    },
+    {
+      question: "Agorapulse vs Hootsuite?",
+      answer: "Agorapulse has a cleaner interface and better customer support. Hootsuite has more integrations and is more established. Agorapulse is often more affordable for similar features."
+    },
+    {
+      question: "What platforms does Agorapulse support?",
+      answer: "Supports Facebook, Twitter, Instagram, LinkedIn, YouTube, TikTok, and Google Business Profile. Each platform counts as a social profile against your plan limits."
+    }
+  ],
+
+  // ============================================
+  // AI21 LABS
+  // ============================================
+  "ai21-labs": [
+    {
+      question: "What is AI21 Labs?",
+      answer: "AI21 Labs is an AI company offering large language models (Jurassic-2) and AI writing tools. Founded by ex-Google researchers. Competes with OpenAI and Anthropic in the enterprise AI space."
+    },
+    {
+      question: "How much does AI21 Labs cost?",
+      answer: "AI21 has usage-based API pricing. Jurassic-2 models range from $0.0005 to $0.015 per 1K tokens depending on model size. Free tier available for developers to start."
+    },
+    {
+      question: "What is Wordtune?",
+      answer: "Wordtune is AI21's consumer writing assistant. Rewrites sentences, suggests alternatives, and helps improve clarity. Chrome extension and web app. Free tier with limited rewrites."
+    },
+    {
+      question: "AI21 vs OpenAI?",
+      answer: "AI21's Jurassic models compete with GPT. AI21 focuses more on enterprise deployments and offers customizable models. OpenAI has broader consumer awareness with ChatGPT."
+    },
+    {
+      question: "Can you fine-tune AI21 models?",
+      answer: "Yes, AI21 offers custom model training for enterprise customers. Fine-tune Jurassic models on your data for domain-specific applications. Contact sales for enterprise features."
+    }
+  ],
+
+  // ============================================
+  // AIDER
+  // ============================================
+  "aider": [
+    {
+      question: "Is Aider free?",
+      answer: "Yes, Aider is open source and free. You pay for the AI models you use (OpenAI, Anthropic, etc.) but Aider itself is completely free. Install via pip or homebrew."
+    },
+    {
+      question: "What is Aider?",
+      answer: "Aider is an AI pair programming tool that works in your terminal. It can read your codebase, understand context, and make edits directly to your files. Works with GPT-4, Claude, and other models."
+    },
+    {
+      question: "How does Aider work?",
+      answer: "Run aider in your project directory. Add files to the chat context, describe what you want, and Aider edits your code directly. It understands your git history and can make commits."
+    },
+    {
+      question: "Aider vs GitHub Copilot?",
+      answer: "Copilot does inline autocomplete. Aider is conversational and makes larger changes across multiple files. Aider is better for refactoring and feature implementation; Copilot for moment-to-moment coding."
+    },
+    {
+      question: "What AI models does Aider support?",
+      answer: "Aider works with OpenAI (GPT-4, GPT-3.5), Anthropic (Claude), Azure OpenAI, and local models via Ollama. GPT-4 and Claude give best results for complex code changes."
+    }
+  ],
+
+  // ============================================
+  // AIRBRAKE
+  // ============================================
+  "airbrake": [
+    {
+      question: "Is Airbrake free?",
+      answer: "There's a free tier for small projects with limited errors. Paid plans start at $19/month for the Dev plan. Pricing scales based on error volume."
+    },
+    {
+      question: "What does Airbrake cost?",
+      answer: "Dev: $19/month for 5,000 errors. Startup: $99/month for 50,000 errors. Business: $249/month for 250,000 errors. Custom enterprise pricing available."
+    },
+    {
+      question: "What is Airbrake?",
+      answer: "Airbrake is an error monitoring and crash reporting tool. Captures exceptions in your applications, groups them intelligently, and alerts your team. One of the original error trackers."
+    },
+    {
+      question: "Airbrake vs Sentry?",
+      answer: "Both are solid error tracking tools. Sentry has a larger open-source community and more features. Airbrake is simpler and has been around longer. Sentry is more popular now."
+    },
+    {
+      question: "What languages does Airbrake support?",
+      answer: "Airbrake has official support for Ruby, Python, JavaScript, Go, Java, PHP, .NET, iOS, and Android. Community libraries exist for other languages."
+    }
+  ],
+
+  // ============================================
+  // AIRBYTE
+  // ============================================
+  "airbyte": [
+    {
+      question: "Is Airbyte free?",
+      answer: "Yes, Airbyte is open source and free to self-host. The cloud version has a free tier with credits for testing. Paid cloud plans based on data sync volume."
+    },
+    {
+      question: "What does Airbyte cost?",
+      answer: "Self-hosted is free. Cloud starts at $3 per credit (roughly per sync). Team plan is $6/credit with more features. Enterprise pricing is custom."
+    },
+    {
+      question: "What is Airbyte?",
+      answer: "Airbyte is an open-source data integration platform. Moves data from sources (APIs, databases) to destinations (warehouses, lakes). Competes with Fivetran and Stitch."
+    },
+    {
+      question: "Airbyte vs Fivetran?",
+      answer: "Airbyte is open source with 300+ connectors. Fivetran is enterprise-focused with better reliability but higher cost. Airbyte good for budget-conscious teams; Fivetran for enterprise needs."
+    },
+    {
+      question: "How do you deploy Airbyte?",
+      answer: "Airbyte runs as Docker containers. Deploy on any cloud with Docker support. Kubernetes deployment available for production. Or use Airbyte Cloud for managed service."
+    }
+  ],
+
+  // ============================================
+  // AIRTABLE FORMS
+  // ============================================
+  "airtable-forms": [
+    {
+      question: "Are Airtable forms free?",
+      answer: "Yes, Airtable forms are included in all plans including free. Create unlimited forms that feed directly into your Airtable bases. One of the best free form solutions."
+    },
+    {
+      question: "What are Airtable forms?",
+      answer: "Airtable forms let you collect data directly into your Airtable bases. Customize fields, add logic, and share forms publicly. Data flows straight into tables for processing."
+    },
+    {
+      question: "Can you customize Airtable forms?",
+      answer: "Yes, customize fields, descriptions, and required settings. Add cover images and logos. Conditional logic available on paid plans. Limited design customization compared to Typeform."
+    },
+    {
+      question: "Airtable forms vs Typeform?",
+      answer: "Airtable forms are free and connect directly to your base. Typeform has better design and conversational UX but costs money. Use Airtable forms if data goes to Airtable anyway."
+    },
+    {
+      question: "Do Airtable forms support file uploads?",
+      answer: "Yes, forms support file upload fields (attachment fields in Airtable). Files stored in your Airtable attachment storage. Free tier has storage limits."
+    }
+  ],
+
+  // ============================================
+  // AKAMAI
+  // ============================================
+  "akamai": [
+    {
+      question: "What is Akamai?",
+      answer: "Akamai is a content delivery network (CDN) and cloud security provider. Powers delivery for major websites and apps worldwide. Enterprise-focused with edge computing capabilities."
+    },
+    {
+      question: "How much does Akamai cost?",
+      answer: "Akamai uses custom enterprise pricing based on traffic, features, and support level. Not published publicly. Generally expensive - designed for large enterprises with significant traffic."
+    },
+    {
+      question: "What does Akamai do?",
+      answer: "Akamai delivers content faster via edge servers worldwide. Also provides DDoS protection, web application firewall, bot management, and API security. Handles ~30% of global web traffic."
+    },
+    {
+      question: "Akamai vs Cloudflare?",
+      answer: "Akamai is enterprise-focused with custom pricing. Cloudflare has free tier and self-service. Akamai has more enterprise features; Cloudflare is more accessible for smaller companies."
+    },
+    {
+      question: "What is Akamai Linode?",
+      answer: "Akamai acquired Linode in 2022. Linode provides cloud computing (VPS, Kubernetes) and complements Akamai's edge network. Linode remains available as separate cloud platform."
+    }
+  ],
+
+  // ============================================
+  // ALFRED
+  // ============================================
+  "alfred": [
+    {
+      question: "Is Alfred free?",
+      answer: "Alfred's core features are free on macOS. The Powerpack license ($34 single, $59 mega) unlocks workflows, clipboard history, and advanced features. One-time purchase."
+    },
+    {
+      question: "What does Alfred cost?",
+      answer: "Free tier available. Single License: $34 for one Mac. Mega License: $59 for all your Macs plus free lifetime updates. One-time payment, not subscription."
+    },
+    {
+      question: "What is Alfred?",
+      answer: "Alfred is a productivity app for macOS that replaces Spotlight. Launch apps, search files, run workflows, expand text snippets. The Powerpack makes it incredibly powerful."
+    },
+    {
+      question: "Alfred vs Spotlight?",
+      answer: "Alfred is faster and more powerful than Spotlight. Workflows automate complex tasks. Clipboard history, snippets, and custom searches. Spotlight is built-in but limited."
+    },
+    {
+      question: "What are Alfred workflows?",
+      answer: "Workflows are powerful automations for Alfred Powerpack. Connect to APIs, automate apps, chain actions together. Huge community library of pre-built workflows available."
+    }
+  ],
+
+  // ============================================
+  // ALGOLIA
+  // ============================================
+  "algolia": [
+    {
+      question: "Is Algolia free?",
+      answer: "There's a free tier with 10,000 search requests and 10,000 records per month. Good for prototyping. Paid plans start at $0.50 per 1,000 requests."
+    },
+    {
+      question: "What does Algolia cost?",
+      answer: "Build plan is free with limits. Grow plan charges per request starting at $0.50/1K. Premium and Enterprise have custom pricing. Can get expensive at scale."
+    },
+    {
+      question: "What is Algolia?",
+      answer: "Algolia is a hosted search API. Add fast, relevant search to your website or app. Known for typo tolerance, instant results, and excellent relevance. Powers search for Discord, Stripe, Twitch."
+    },
+    {
+      question: "Algolia vs Elasticsearch?",
+      answer: "Algolia is hosted and easier to implement. Elasticsearch is self-hosted, more flexible, but requires more DevOps work. Algolia for quick implementation; Elasticsearch for full control."
+    },
+    {
+      question: "How do you implement Algolia?",
+      answer: "Push your data to Algolia via API or dashboard. Use InstantSearch libraries for React, Vue, Angular, etc. Configure ranking rules. Algolia handles indexing and serving searches."
+    }
+  ],
+
+  // ============================================
+  // ALIBABA CLOUD
+  // ============================================
+  "alibaba-cloud": [
+    {
+      question: "What is Alibaba Cloud?",
+      answer: "Alibaba Cloud (Aliyun) is the cloud computing arm of Alibaba Group. Third largest cloud provider globally after AWS and Azure. Particularly strong in Asia and for companies doing business in China."
+    },
+    {
+      question: "How does Alibaba Cloud pricing work?",
+      answer: "Pay-as-you-go or subscription pricing like other clouds. Often competitive with AWS/Azure. Prices in USD for international, RMB for China. Calculator available on their site."
+    },
+    {
+      question: "Why use Alibaba Cloud?",
+      answer: "Best option for serving users in China (requires ICP license anyway). Competitive pricing globally. Good for companies with Asian customer base. Strong in AI and big data services."
+    },
+    {
+      question: "Alibaba Cloud vs AWS?",
+      answer: "AWS is larger with more services and better global presence. Alibaba Cloud is better for China market and often cheaper. AWS for most use cases; Alibaba for China-focused businesses."
+    },
+    {
+      question: "What services does Alibaba Cloud offer?",
+      answer: "Compute (ECS), storage (OSS), databases, networking, security, AI/ML, big data, and more. Full cloud platform similar to AWS. Especially strong in e-commerce and retail tech."
+    }
+  ],
+
+  // ============================================
+  // AMAZON CODEWHISPERER
+  // ============================================
+  "amazon-codewhisperer": [
+    {
+      question: "Is Amazon CodeWhisperer free?",
+      answer: "Yes, the Individual tier is free with unlimited code suggestions. Professional tier is $19/user/month with admin features. Free tier is very usable for individual developers."
+    },
+    {
+      question: "What is Amazon CodeWhisperer?",
+      answer: "CodeWhisperer is Amazon's AI coding assistant. Suggests code as you type, similar to GitHub Copilot. Integrates with VS Code, JetBrains, and AWS Cloud9. Trained on AWS best practices."
+    },
+    {
+      question: "CodeWhisperer vs GitHub Copilot?",
+      answer: "CodeWhisperer is free for individuals; Copilot is $10/month. Copilot often produces better suggestions. CodeWhisperer excels at AWS-specific code. Try both to see which fits your workflow."
+    },
+    {
+      question: "What languages does CodeWhisperer support?",
+      answer: "Supports Python, Java, JavaScript, TypeScript, C#, Go, Rust, PHP, Ruby, Kotlin, C, C++, shell scripting, SQL, and Scala. Best results with Python and JavaScript."
+    },
+    {
+      question: "Does CodeWhisperer have security scanning?",
+      answer: "Yes, CodeWhisperer scans code for security vulnerabilities as you write. Professional tier includes additional security features and admin controls. Useful for catching issues early."
+    }
+  ],
+
+  // ============================================
+  // AMAZON DYNAMODB
+  // ============================================
+  "amazon-dynamodb": [
+    {
+      question: "Is DynamoDB free?",
+      answer: "AWS Free Tier includes 25GB storage and 25 read/write capacity units forever. Enough for small apps or testing. Beyond that, pay per read/write or use on-demand pricing."
+    },
+    {
+      question: "How does DynamoDB pricing work?",
+      answer: "Two modes: On-demand (pay per request) or Provisioned (pay for capacity). On-demand: $1.25 per million writes, $0.25 per million reads. Storage is $0.25/GB/month."
+    },
+    {
+      question: "What is DynamoDB?",
+      answer: "DynamoDB is AWS's NoSQL database service. Key-value and document store with single-digit millisecond latency at any scale. Fully managed, serverless option available."
+    },
+    {
+      question: "When to use DynamoDB vs RDS?",
+      answer: "DynamoDB for high-scale, simple query patterns. RDS for complex queries and joins. DynamoDB for serverless apps; RDS when you need relational features. Different tools for different jobs."
+    },
+    {
+      question: "Does DynamoDB scale automatically?",
+      answer: "Yes, DynamoDB handles scaling automatically. On-demand mode scales instantly. Provisioned capacity can auto-scale based on utilization. No downtime for scaling."
+    }
+  ],
+
+  // ============================================
+  // AMAZON NEPTUNE
+  // ============================================
+  "amazon-neptune": [
+    {
+      question: "What is Amazon Neptune?",
+      answer: "Neptune is AWS's managed graph database. Supports both property graphs (Gremlin) and RDF (SPARQL). Good for highly connected data like social networks, recommendations, and fraud detection."
+    },
+    {
+      question: "How much does Neptune cost?",
+      answer: "Instance-based pricing starting around $0.10/hour for smallest instance. Plus storage ($0.10/GB/month) and I/O costs. No free tier - estimate costs carefully before using."
+    },
+    {
+      question: "When to use Neptune vs DynamoDB?",
+      answer: "Neptune for relationship-heavy data with complex traversals. DynamoDB for simple key-value access at scale. Neptune is expensive for simple use cases; DynamoDB can't do graph queries."
+    },
+    {
+      question: "What query languages does Neptune support?",
+      answer: "Neptune supports Gremlin (TinkerPop) for property graphs and SPARQL for RDF data. OpenCypher support added in 2021. Choose based on your data model and team expertise."
+    },
+    {
+      question: "Is Neptune serverless?",
+      answer: "Neptune Serverless is available for auto-scaling capacity. Pay only for what you use. Good for variable workloads but can be expensive for steady high usage."
+    }
+  ],
+
+  // ============================================
+  // AMAZON REDSHIFT
+  // ============================================
+  "amazon-redshift": [
+    {
+      question: "Is Redshift free?",
+      answer: "No permanent free tier. Two-month free trial with 750 hours of dc2.large. Paid pricing starts around $0.25/hour for smallest nodes. Serverless has separate pay-per-use pricing."
+    },
+    {
+      question: "How does Redshift pricing work?",
+      answer: "Provisioned: Pay per node hour starting ~$0.25/hour. Serverless: $0.375 per RPU-hour used. Plus storage costs. Reserved instances save up to 75% for committed usage."
+    },
+    {
+      question: "What is Amazon Redshift?",
+      answer: "Redshift is AWS's cloud data warehouse. Designed for analytics and BI on large datasets. Columnar storage, massively parallel processing. Competes with Snowflake and BigQuery."
+    },
+    {
+      question: "Redshift vs Snowflake?",
+      answer: "Snowflake separates compute and storage more elegantly. Redshift is better if you're already in AWS ecosystem. Snowflake easier to use; Redshift can be cheaper at scale."
+    },
+    {
+      question: "What is Redshift Serverless?",
+      answer: "Serverless Redshift automatically provisions and scales capacity. Pay only for compute used. Good for variable workloads. No cluster management required."
+    }
+  ],
+
+  // ============================================
+  // AMAZON SAGEMAKER
+  // ============================================
+  "amazon-sagemaker": [
+    {
+      question: "Is SageMaker free?",
+      answer: "AWS Free Tier includes 2 months of SageMaker with limited hours. After that, pay for compute, storage, and features used. Can get expensive quickly for serious ML work."
+    },
+    {
+      question: "What is Amazon SageMaker?",
+      answer: "SageMaker is AWS's machine learning platform. Build, train, and deploy ML models at scale. Includes notebooks, training infrastructure, model hosting, and MLOps tools."
+    },
+    {
+      question: "How does SageMaker pricing work?",
+      answer: "Pay for notebook instances, training jobs, and inference endpoints separately. Prices vary by instance type. Training a model can cost dollars to thousands depending on scale."
+    },
+    {
+      question: "What can you do with SageMaker?",
+      answer: "Jupyter notebooks for experimentation, managed training on GPU clusters, model hosting with auto-scaling, MLOps pipelines, built-in algorithms, and now SageMaker Studio for collaboration."
+    },
+    {
+      question: "SageMaker vs Google Vertex AI?",
+      answer: "Both are comprehensive ML platforms. SageMaker integrates better with AWS services. Vertex AI has AutoML strength. Choose based on your cloud provider preference."
+    }
+  ],
+
+  // ============================================
+  // AMAZON SES
+  // ============================================
+  "amazon-ses": [
+    {
+      question: "Is Amazon SES free?",
+      answer: "Very affordable - first 62,000 emails/month are free when sent from EC2. After that, $0.10 per 1,000 emails. One of the cheapest email options at scale."
+    },
+    {
+      question: "What does Amazon SES cost?",
+      answer: "$0.10 per 1,000 emails sent. Plus $0.12 per GB of attachments. Incoming email is $0.10 per 1,000 emails received. Incredibly cheap for high-volume sending."
+    },
+    {
+      question: "What is Amazon SES?",
+      answer: "Simple Email Service is AWS's email sending and receiving service. Used for transactional emails, marketing campaigns, and notifications. High deliverability, low cost."
+    },
+    {
+      question: "SES vs SendGrid?",
+      answer: "SES is cheaper at scale but more DIY. SendGrid has better UI, analytics, and templates. SES for developers comfortable with AWS; SendGrid for marketing teams."
+    },
+    {
+      question: "How do you improve SES deliverability?",
+      answer: "Set up SPF, DKIM, and DMARC records. Warm up new sending domains gradually. Monitor bounces and complaints. Use dedicated IPs for high volume. Follow AWS best practices."
+    }
+  ],
+
+  // ============================================
+  // AMPLITUDE
+  // ============================================
+  "amplitude": [
+    {
+      question: "Is Amplitude free?",
+      answer: "Yes, the Starter plan is free with 10 million events per month - quite generous. Growth and Enterprise plans are custom priced based on volume and features."
+    },
+    {
+      question: "What does Amplitude cost?",
+      answer: "Starter is free (10M events). Growth and Enterprise are custom priced. Expect $25,000+ annually for Growth tier. Pricing based on event volume and features needed."
+    },
+    {
+      question: "What is Amplitude?",
+      answer: "Amplitude is a product analytics platform. Track user behavior, analyze funnels, understand retention, and run experiments. Used by product teams to make data-driven decisions."
+    },
+    {
+      question: "Amplitude vs Mixpanel?",
+      answer: "Very similar products. Amplitude has stronger retention and cohort analysis. Mixpanel has simpler pricing. Both are great - often comes down to team preference and specific features needed."
+    },
+    {
+      question: "How does Amplitude compare to Google Analytics?",
+      answer: "Amplitude is product analytics; GA is web analytics. Amplitude excels at user journeys and retention. GA better for marketing attribution. Product teams prefer Amplitude; marketing prefers GA."
+    }
+  ],
+
+  // ============================================
+  // ANCHOR
+  // ============================================
+  "anchor": [
+    {
+      question: "Is Anchor free?",
+      answer: "Yes, Anchor (now Spotify for Podcasters) is completely free. Record, edit, host, and distribute your podcast for free. They monetize through Spotify ecosystem."
+    },
+    {
+      question: "What is Anchor?",
+      answer: "Anchor, now Spotify for Podcasters, is a free podcast hosting platform. Record from phone or computer, add music, distribute to all platforms. Owned by Spotify since 2019."
+    },
+    {
+      question: "Can you make money with Anchor?",
+      answer: "Yes, Anchor offers Listener Support (donations), sponsorships through Anchor Ads, and premium podcast subscriptions. Revenue share applies but it's easy to monetize."
+    },
+    {
+      question: "Anchor vs Buzzsprout?",
+      answer: "Anchor is free; Buzzsprout starts at $12/month. Buzzsprout has better analytics and support. Anchor is great for beginners; Buzzsprout for more serious podcasters."
+    },
+    {
+      question: "Does Anchor distribute to all platforms?",
+      answer: "Yes, Anchor distributes to Apple Podcasts, Google Podcasts, Spotify, Stitcher, and more automatically. One upload reaches all major platforms."
+    }
+  ],
+
+  // ============================================
+  // ANCHORE
+  // ============================================
+  "anchore": [
+    {
+      question: "Is Anchore free?",
+      answer: "Anchore has open-source tools (Syft, Grype) that are free. Anchore Enterprise is paid with custom pricing. Good open-source options for container security scanning."
+    },
+    {
+      question: "What is Anchore?",
+      answer: "Anchore provides container security and compliance tools. Scans container images for vulnerabilities, generates SBOMs, and enforces policies. Used in DevSecOps pipelines."
+    },
+    {
+      question: "What is Anchore Grype?",
+      answer: "Grype is Anchore's free, open-source vulnerability scanner. Scans container images and filesystems for known vulnerabilities. Simple CLI tool for quick security checks."
+    },
+    {
+      question: "What is Anchore Syft?",
+      answer: "Syft generates Software Bills of Materials (SBOMs) from container images. Free and open source. Creates inventory of packages in your containers. Works with Grype for vulnerability matching."
+    },
+    {
+      question: "Anchore vs Trivy?",
+      answer: "Both are good container scanners. Trivy is simpler and faster for quick scans. Anchore has more enterprise features and policy enforcement. Trivy for simplicity; Anchore for compliance."
+    }
+  ],
+
+  // ============================================
+  // ANDROID STUDIO
+  // ============================================
+  "android-studio": [
+    {
+      question: "Is Android Studio free?",
+      answer: "Yes, completely free and open source. Official IDE for Android development from Google. No paid tiers or premium features. Download and use without restrictions."
+    },
+    {
+      question: "What is Android Studio?",
+      answer: "Android Studio is Google's official IDE for Android app development. Built on IntelliJ IDEA with Android-specific tools: emulator, layout editor, profiler, and Gradle build system."
+    },
+    {
+      question: "Android Studio system requirements?",
+      answer: "Needs 8GB RAM minimum (16GB recommended), 8GB disk space for IDE plus more for SDK/emulators. macOS, Windows, Linux, and Chrome OS supported. Can be resource-heavy."
+    },
+    {
+      question: "Android Studio vs VS Code?",
+      answer: "Android Studio is purpose-built for Android with better tools and debugging. VS Code is lighter but requires extensions and setup. Use Android Studio for serious Android development."
+    },
+    {
+      question: "Can you develop Flutter apps in Android Studio?",
+      answer: "Yes, with the Flutter plugin. Android Studio works well for Flutter with full debugging support. Alternative is VS Code with Flutter extension. Both are officially supported."
+    }
+  ],
+
+  // ============================================
+  // ANGELLIST
+  // ============================================
+  "angellist": [
+    {
+      question: "Is AngelList free?",
+      answer: "AngelList Talent (now Wellfound) is free for job seekers. Companies pay for recruiting tools. Rolling Funds and Syndicates have different fee structures for investors and GPs."
+    },
+    {
+      question: "What is AngelList?",
+      answer: "AngelList is a platform for startups, investors, and job seekers. Now split into Wellfound (jobs), AngelList Venture (fund admin), and AngelList Syndicates (investing)."
+    },
+    {
+      question: "What is Wellfound?",
+      answer: "Wellfound is the rebranded AngelList Talent. Startup job board connecting tech talent with startups. Free for candidates, paid recruiting tools for companies."
+    },
+    {
+      question: "What are AngelList Syndicates?",
+      answer: "Syndicates let lead investors pool capital from backers to invest in startups. Leads pay platform fees and carry. Way for angels to invest alongside experienced investors."
+    },
+    {
+      question: "What are Rolling Funds?",
+      answer: "Rolling Funds are AngelList's subscription VC model. LPs commit quarterly instead of lump sum. More accessible way to raise and run a venture fund."
+    }
+  ],
+
+  // ============================================
+  // ANSIBLE
+  // ============================================
+  "ansible": [
+    {
+      question: "Is Ansible free?",
+      answer: "Yes, Ansible is open source and free. Red Hat Ansible Automation Platform (enterprise version) is paid. Core Ansible handles most needs without paying."
+    },
+    {
+      question: "What is Ansible?",
+      answer: "Ansible is an automation tool for configuration management, application deployment, and orchestration. Uses YAML playbooks, agentless design (SSH-based). Owned by Red Hat/IBM."
+    },
+    {
+      question: "Ansible vs Terraform?",
+      answer: "Different tools. Ansible configures servers (configuration management). Terraform provisions infrastructure. Often used together: Terraform creates servers, Ansible configures them."
+    },
+    {
+      question: "Ansible vs Puppet vs Chef?",
+      answer: "All are configuration management tools. Ansible is agentless and simpler. Puppet/Chef use agents and are more complex. Ansible is easier to start; Puppet/Chef for complex enterprise needs."
+    },
+    {
+      question: "What is Ansible AWX?",
+      answer: "AWX is the open-source upstream for Red Hat Ansible Tower. Provides web UI, REST API, and role-based access for Ansible. Free alternative to paid Automation Platform."
+    }
+  ],
+
+  // ============================================
+  // ANTHROPIC API
+  // ============================================
+  "anthropic-api": [
+    {
+      question: "What is the Anthropic API?",
+      answer: "The Anthropic API provides access to Claude AI models. Use Claude for conversations, analysis, coding, and content generation. Competes with OpenAI's API."
+    },
+    {
+      question: "How much does the Anthropic API cost?",
+      answer: "Claude 3 Sonnet: $3/$15 per million input/output tokens. Claude 3 Opus: $15/$75 per million tokens. Claude 3 Haiku: $0.25/$1.25. Pay per token used."
+    },
+    {
+      question: "Claude vs GPT-4?",
+      answer: "Both are top-tier LLMs. Claude has larger context windows (200K tokens) and different personality. GPT-4 has more integrations. Performance is comparable - try both for your use case."
+    },
+    {
+      question: "What models does Anthropic offer?",
+      answer: "Claude 3 family: Opus (most capable), Sonnet (balanced), Haiku (fastest/cheapest). Each optimized for different use cases. Choose based on task complexity and budget."
+    },
+    {
+      question: "Does Anthropic have a free tier?",
+      answer: "Anthropic offers free API credits for trying the API. Check their developer console for current offers. Production use requires payment."
+    }
+  ],
+
+  // ============================================
+  // ANY.DO
+  // ============================================
+  "any-do": [
+    {
+      question: "Is Any.do free?",
+      answer: "Yes, there's a free tier with basic task management. Premium is $3/month billed annually for advanced features like recurring tasks, color tags, and location reminders."
+    },
+    {
+      question: "What does Any.do cost?",
+      answer: "Free tier available. Premium: $3/month (annual) or $6/month (monthly). Teams: $5/user/month. Affordable compared to many productivity apps."
+    },
+    {
+      question: "What is Any.do?",
+      answer: "Any.do is a task management and to-do list app. Simple design, cross-platform sync, calendar integration. Focuses on personal productivity with clean mobile experience."
+    },
+    {
+      question: "Any.do vs Todoist?",
+      answer: "Todoist has more features and better natural language input. Any.do has cleaner design and daily planner. Any.do simpler; Todoist for power users."
+    },
+    {
+      question: "Does Any.do have a calendar?",
+      answer: "Yes, Any.do includes a calendar that integrates with Google Calendar. See tasks and events together. Premium unlocks calendar views and event creation."
+    }
+  ],
+
+  // ============================================
+  // ANYSCALE
+  // ============================================
+  "anyscale": [
+    {
+      question: "What is Anyscale?",
+      answer: "Anyscale is the company behind Ray, the distributed computing framework. They offer managed Ray platform for scaling Python and AI/ML workloads. Founded by Ray creators."
+    },
+    {
+      question: "How much does Anyscale cost?",
+      answer: "Anyscale uses consumption-based pricing on top of cloud compute costs. Custom pricing for enterprise. Generally expensive - designed for large-scale ML workloads."
+    },
+    {
+      question: "What is Ray?",
+      answer: "Ray is an open-source framework for distributed computing. Scales Python code across clusters. Used for ML training, data processing, and reinforcement learning. Free to use."
+    },
+    {
+      question: "Anyscale vs Databricks?",
+      answer: "Both handle distributed computing. Databricks focuses on data engineering and Spark. Anyscale focuses on Ray and ML workloads. Databricks more mature; Anyscale better for Ray-native work."
+    },
+    {
+      question: "What is Anyscale used for?",
+      answer: "Large-scale ML training, batch inference, reinforcement learning, and data processing. Companies use it when single machines can't handle their compute needs."
+    }
+  ],
+
+  // ============================================
+  // ANYTYPE
+  // ============================================
+  "anytype": [
+    {
+      question: "Is Anytype free?",
+      answer: "Yes, Anytype is free during their current phase. Local-first and encrypted. They plan monetization through optional sync and backup services in the future."
+    },
+    {
+      question: "What is Anytype?",
+      answer: "Anytype is a local-first, privacy-focused note-taking app. Like Notion but your data stays on your devices. Uses object-based system instead of pages."
+    },
+    {
+      question: "Anytype vs Notion?",
+      answer: "Anytype stores data locally with optional sync - more private. Notion is cloud-first with better collaboration. Anytype for privacy; Notion for team features."
+    },
+    {
+      question: "Is Anytype open source?",
+      answer: "Yes, Anytype is open source. Code available on GitHub. Local-first architecture means you control your data. Community-driven development."
+    },
+    {
+      question: "Does Anytype work offline?",
+      answer: "Yes, Anytype works fully offline. Data stored locally on your device. Optional P2P sync between your devices. No internet required for core functionality."
+    }
+  ],
+
+  // ============================================
+  // APACHE AIRFLOW
+  // ============================================
+  "apache-airflow": [
+    {
+      question: "Is Apache Airflow free?",
+      answer: "Yes, Airflow is open source and free under Apache 2.0 license. You can self-host it at no cost. Managed services like Astronomer and MWAA (AWS) are paid options."
+    },
+    {
+      question: "What is Apache Airflow?",
+      answer: "Airflow is a workflow orchestration platform. Define, schedule, and monitor data pipelines as code using Python. Created at Airbnb, now an Apache project used by thousands of companies."
+    },
+    {
+      question: "What is Airflow used for?",
+      answer: "Scheduling and monitoring ETL jobs, data pipelines, ML workflows, and automated tasks. Define dependencies between tasks using DAGs (Directed Acyclic Graphs)."
+    },
+    {
+      question: "Airflow vs Prefect?",
+      answer: "Both are workflow orchestrators. Airflow is more mature with larger ecosystem. Prefect has better developer experience and easier setup. Airflow for enterprise; Prefect for modern data teams."
+    },
+    {
+      question: "How do you deploy Airflow?",
+      answer: "Self-host with Docker/Kubernetes or use managed services. Astronomer provides commercial support. AWS MWAA and Google Cloud Composer offer managed Airflow. Complex to self-manage at scale."
+    }
+  ],
+
+  // ============================================
+  // APACHE DRUID
+  // ============================================
+  "apache-druid": [
+    {
+      question: "Is Apache Druid free?",
+      answer: "Yes, Druid is open source under Apache 2.0 license. Self-hosting is free. Commercial managed services like Imply provide enterprise support and hosted options."
+    },
+    {
+      question: "What is Apache Druid?",
+      answer: "Druid is a real-time analytics database. Designed for fast OLAP queries on event data. Sub-second queries on billions of rows. Used for dashboards, monitoring, and real-time analytics."
+    },
+    {
+      question: "What is Druid used for?",
+      answer: "Real-time analytics dashboards, monitoring systems, clickstream analysis, and time-series data. Netflix, Airbnb, and eBay use it for high-performance analytics."
+    },
+    {
+      question: "Druid vs ClickHouse?",
+      answer: "Both are fast analytics databases. ClickHouse is simpler to operate. Druid has better real-time ingestion. ClickHouse for batch analytics; Druid for streaming/real-time use cases."
+    },
+    {
+      question: "How does Druid handle real-time data?",
+      answer: "Druid ingests data from Kafka or Kinesis in real-time. Data is queryable within seconds of arrival. Segment-based architecture separates real-time and historical data."
+    }
+  ],
+
+  // ============================================
+  // APACHE KAFKA
+  // ============================================
+  "apache-kafka": [
+    {
+      question: "Is Apache Kafka free?",
+      answer: "Yes, Kafka is open source under Apache 2.0 license. Self-hosting is free. Confluent Cloud and AWS MSK provide managed services at a cost."
+    },
+    {
+      question: "What is Apache Kafka?",
+      answer: "Kafka is a distributed event streaming platform. Handle real-time data feeds at scale. Used for messaging, event sourcing, log aggregation, and stream processing."
+    },
+    {
+      question: "What is Kafka used for?",
+      answer: "Real-time data pipelines, event-driven architectures, log aggregation, and stream processing. LinkedIn (creator), Uber, and Netflix use it for massive event streams."
+    },
+    {
+      question: "Kafka vs RabbitMQ?",
+      answer: "Kafka is better for high-throughput event streaming. RabbitMQ is better for traditional message queuing with complex routing. Kafka for big data; RabbitMQ for application messaging."
+    },
+    {
+      question: "What is Confluent?",
+      answer: "Confluent is the company founded by Kafka creators. Offers Confluent Cloud (managed Kafka) and enterprise features. Commercial option for teams that don't want to manage Kafka themselves."
+    }
+  ],
+
+  // ============================================
+  // APACHE NIFI
+  // ============================================
+  "apache-nifi": [
+    {
+      question: "Is Apache NiFi free?",
+      answer: "Yes, NiFi is open source under Apache 2.0 license. Free to self-host. Cloudera DataFlow is a commercial managed service based on NiFi."
+    },
+    {
+      question: "What is Apache NiFi?",
+      answer: "NiFi is a data integration tool with a visual flow-based interface. Move data between systems with drag-and-drop processors. Great for ETL without coding."
+    },
+    {
+      question: "What is NiFi used for?",
+      answer: "Data ingestion, ETL pipelines, and real-time data flows. Popular for IoT data collection, log forwarding, and integrating diverse data sources."
+    },
+    {
+      question: "NiFi vs Apache Airflow?",
+      answer: "Different tools. NiFi is for data flow and integration (moving data). Airflow is for workflow orchestration (scheduling tasks). Often used together."
+    },
+    {
+      question: "Does NiFi scale?",
+      answer: "Yes, NiFi supports clustering for high availability and throughput. MiNiFi provides edge device agents. Can handle high-volume data flows across distributed systems."
+    }
+  ],
+
+  // ============================================
+  // APACHE SUPERSET
+  // ============================================
+  "apache-superset": [
+    {
+      question: "Is Apache Superset free?",
+      answer: "Yes, Superset is open source under Apache 2.0. Self-host for free. Preset.io offers commercial managed hosting created by Superset's original authors."
+    },
+    {
+      question: "What is Apache Superset?",
+      answer: "Superset is a data visualization and exploration platform. Create interactive dashboards, explore data with SQL, and build charts. Modern alternative to Tableau."
+    },
+    {
+      question: "Superset vs Metabase?",
+      answer: "Both are open-source BI tools. Superset has more features and SQL-first design. Metabase is simpler and more approachable for non-technical users."
+    },
+    {
+      question: "What databases does Superset support?",
+      answer: "PostgreSQL, MySQL, Presto, Trino, BigQuery, Snowflake, Redshift, ClickHouse, and 30+ others via SQLAlchemy. Very broad database compatibility."
+    },
+    {
+      question: "How do you deploy Superset?",
+      answer: "Docker is the recommended approach. Helm charts available for Kubernetes. Can be complex to set up properly. Preset.io handles hosting if you don't want to manage it."
+    }
+  ],
+
+  // ============================================
+  // APIARY
+  // ============================================
+  "apiary": [
+    {
+      question: "Is Apiary still available?",
+      answer: "Apiary was acquired by Oracle and integrated into Oracle Cloud. The original Apiary service was sunset. Consider alternatives like SwaggerHub or Stoplight."
+    },
+    {
+      question: "What was Apiary?",
+      answer: "Apiary was an API design and documentation platform. Used API Blueprint format for API-first design. Mock servers and documentation generation were key features."
+    },
+    {
+      question: "What happened to Apiary?",
+      answer: "Oracle acquired Apiary in 2017 and eventually sunset the service. API Blueprint is still available but less common now. Most teams use OpenAPI (Swagger) instead."
+    },
+    {
+      question: "What are Apiary alternatives?",
+      answer: "SwaggerHub for OpenAPI-based design. Stoplight for API-first development. Postman for API development and testing. Most teams have moved to OpenAPI ecosystem."
+    }
+  ],
+
+  // ============================================
+  // APIDOG
+  // ============================================
+  "apidog": [
+    {
+      question: "Is Apidog free?",
+      answer: "Yes, Apidog has a free tier for individuals and small teams. Paid plans start around $9/user/month for advanced features like custom domains and SSO."
+    },
+    {
+      question: "What is Apidog?",
+      answer: "Apidog is an API development platform combining design, documentation, debugging, and testing. All-in-one alternative to using Swagger + Postman + Mock servers separately."
+    },
+    {
+      question: "Apidog vs Postman?",
+      answer: "Apidog integrates design, docs, and testing in one tool. Postman focuses mainly on testing and documentation. Apidog for API-first development; Postman for testing existing APIs."
+    },
+    {
+      question: "Does Apidog support OpenAPI?",
+      answer: "Yes, Apidog supports OpenAPI 3.0 import and export. Also supports Swagger 2.0, HAR, and Postman collection formats. Good interoperability with existing tools."
+    },
+    {
+      question: "Can Apidog generate code?",
+      answer: "Yes, Apidog generates client SDKs and server stubs in multiple languages. Also generates API documentation automatically from your spec."
+    }
+  ],
+
+  // ============================================
+  // APOLLO GRAPHQL
+  // ============================================
+  "apollo-graphql": [
+    {
+      question: "Is Apollo GraphQL free?",
+      answer: "Apollo Client and Apollo Server are open source and free. Apollo Studio has a free tier. Apollo Enterprise has custom pricing for advanced features."
+    },
+    {
+      question: "What is Apollo GraphQL?",
+      answer: "Apollo provides tools for building GraphQL applications. Apollo Client for frontend, Apollo Server for backend, Apollo Studio for schema management and observability."
+    },
+    {
+      question: "What is Apollo Federation?",
+      answer: "Federation lets you compose multiple GraphQL services into one unified graph. Each team owns their part of the schema. Essential for large-scale GraphQL architectures."
+    },
+    {
+      question: "Apollo Client vs Relay?",
+      answer: "Apollo Client is more flexible and easier to learn. Relay (by Facebook) is more opinionated with better performance for specific patterns. Apollo is more popular."
+    },
+    {
+      question: "What is Apollo Studio?",
+      answer: "Apollo Studio (formerly Engine) provides GraphQL observability: schema registry, performance monitoring, error tracking. Free tier available. Essential for production GraphQL."
+    }
+  ],
+
+  // ============================================
+  // APOLLO.IO
+  // ============================================
+  "apollo-io": [
+    {
+      question: "Is Apollo.io free?",
+      answer: "Yes, there's a free tier with 50 email credits per month. Basic plan is $49/user/month. Professional at $99/user/month. Organization plan with custom pricing."
+    },
+    {
+      question: "What is Apollo.io?",
+      answer: "Apollo.io is a sales intelligence and engagement platform. Find B2B contact data, build prospect lists, and run email sequences. Combines data and outreach tools."
+    },
+    {
+      question: "How accurate is Apollo data?",
+      answer: "Apollo claims 95%+ email accuracy. Data comes from various sources and is regularly verified. Still recommend email verification before large campaigns."
+    },
+    {
+      question: "Apollo vs ZoomInfo?",
+      answer: "ZoomInfo has more data and enterprise features but costs 10x more. Apollo is better value for SMBs and startups. ZoomInfo for enterprise; Apollo for everyone else."
+    },
+    {
+      question: "Does Apollo have email sequences?",
+      answer: "Yes, Apollo includes email and call sequences. Automate multi-step outreach campaigns. Track opens, clicks, and replies. Good all-in-one prospecting tool."
+    }
+  ],
+
+  // ============================================
+  // APOLLO STUDIO
+  // ============================================
+  "apollo-studio": [
+    {
+      question: "Is Apollo Studio free?",
+      answer: "Yes, free tier includes schema registry, basic metrics, and explorer. Team plan at $99/month adds collaboration features. Enterprise pricing is custom."
+    },
+    {
+      question: "What is Apollo Studio?",
+      answer: "Apollo Studio is GraphQL development platform. Schema registry, operation monitoring, error tracking, and collaborative tools for GraphQL teams."
+    },
+    {
+      question: "What is the Apollo Schema Registry?",
+      answer: "The registry stores your GraphQL schema versions. Track changes, check compatibility, and manage variants (staging, production). Essential for schema governance."
+    },
+    {
+      question: "Does Apollo Studio work with any GraphQL server?",
+      answer: "Yes, Apollo Studio works with any GraphQL server via Apollo tracing. Best integration with Apollo Server, but compatible with other implementations too."
+    },
+    {
+      question: "What is Apollo Explorer?",
+      answer: "Explorer is a GraphQL IDE for testing queries against your schema. Run queries, browse documentation, and explore your graph. Better than GraphiQL for teams."
+    }
+  ],
+
+  // ============================================
+  // APPCUES
+  // ============================================
+  "appcues": [
+    {
+      question: "Is Appcues free?",
+      answer: "No free tier. Plans start at $249/month for the Essentials plan. Growth is $879/month. Enterprise pricing is custom. 14-day free trial available."
+    },
+    {
+      question: "What is Appcues?",
+      answer: "Appcues is a product adoption platform. Create in-app experiences like onboarding flows, tooltips, and announcements without coding. Used by product and growth teams."
+    },
+    {
+      question: "What can you build with Appcues?",
+      answer: "Product tours, onboarding checklists, tooltips, modals, announcements, and in-app surveys. No-code builder for non-technical users. Segment users for targeted experiences."
+    },
+    {
+      question: "Appcues vs Pendo?",
+      answer: "Both are product adoption tools. Pendo includes more analytics. Appcues is more focused on building experiences. Appcues often cheaper; Pendo for full product analytics suite."
+    },
+    {
+      question: "Does Appcues require developers?",
+      answer: "Initial setup needs a developer to install the SDK snippet. After that, product teams can create experiences without code using the visual builder."
+    }
+  ],
+
+  // ============================================
+  // APPDYNAMICS
+  // ============================================
+  "appdynamics": [
+    {
+      question: "Is AppDynamics free?",
+      answer: "No free tier. AppDynamics is enterprise-priced, typically $50-100+ per month per host depending on edition. Cisco acquired it in 2017."
+    },
+    {
+      question: "What is AppDynamics?",
+      answer: "AppDynamics is an application performance monitoring (APM) platform. Monitor application health, trace transactions, and troubleshoot issues. Enterprise-grade observability."
+    },
+    {
+      question: "What does AppDynamics monitor?",
+      answer: "Application performance, database queries, infrastructure metrics, user experience, and business transactions. Full stack visibility from browser to backend."
+    },
+    {
+      question: "AppDynamics vs Datadog?",
+      answer: "AppDynamics is more enterprise and Java-focused. Datadog is more modern and cloud-native. AppDynamics for traditional enterprise; Datadog for cloud-first teams."
+    },
+    {
+      question: "Who owns AppDynamics?",
+      answer: "Cisco acquired AppDynamics in 2017 for $3.7B right before their planned IPO. Now part of Cisco's observability portfolio alongside ThousandEyes."
+    }
+  ],
+
+  // ============================================
+  // APPIUM
+  // ============================================
+  "appium": [
+    {
+      question: "Is Appium free?",
+      answer: "Yes, Appium is open source and completely free. No paid version. Use with free device farms for local testing, or commercial services like BrowserStack and Sauce Labs."
+    },
+    {
+      question: "What is Appium?",
+      answer: "Appium is an open-source mobile app testing framework. Automate iOS and Android apps using WebDriver protocol. Write tests in any language with WebDriver bindings."
+    },
+    {
+      question: "What can you test with Appium?",
+      answer: "Native mobile apps, hybrid apps, and mobile web browsers. Works on real devices and emulators/simulators. Cross-platform testing with the same API."
+    },
+    {
+      question: "Appium vs XCUITest/Espresso?",
+      answer: "Appium is cross-platform but slower. XCUITest (iOS) and Espresso (Android) are faster but platform-specific. Appium for cross-platform; native frameworks for speed."
+    },
+    {
+      question: "What languages does Appium support?",
+      answer: "Any language with WebDriver client: Java, Python, JavaScript, Ruby, C#, PHP. Most teams use Java or JavaScript for Appium tests."
+    }
+  ],
+
+  // ============================================
+  // APPLITOOLS
+  // ============================================
+  "applitools": [
+    {
+      question: "Is Applitools free?",
+      answer: "Free tier includes 100 checkpoints per month. Starter plan begins around $99/month. Team and Enterprise plans have custom pricing based on usage."
+    },
+    {
+      question: "What is Applitools?",
+      answer: "Applitools provides AI-powered visual testing. Detects visual regressions in web and mobile UIs automatically. Catches bugs that functional tests miss."
+    },
+    {
+      question: "What is Applitools Eyes?",
+      answer: "Eyes is the core visual testing engine. Compare screenshots using AI that ignores minor differences humans wouldn't notice. Reduces false positives compared to pixel comparison."
+    },
+    {
+      question: "Applitools vs Percy?",
+      answer: "Both do visual testing. Applitools uses AI for smarter comparisons. Percy (by BrowserStack) is simpler and cheaper. Applitools for complex UIs; Percy for simpler needs."
+    },
+    {
+      question: "What frameworks does Applitools integrate with?",
+      answer: "Integrates with Selenium, Cypress, Playwright, Appium, Storybook, and more. SDKs for major languages. Works with existing test frameworks."
+    }
+  ],
+
+  // ============================================
+  // APPSFLYER
+  // ============================================
+  "appsflyer": [
+    {
+      question: "Is AppsFlyer free?",
+      answer: "No free tier. Pricing is based on attributed installs and features. Entry point around $1,000/month. Enterprise pricing for large apps. One of the more expensive MMPs."
+    },
+    {
+      question: "What is AppsFlyer?",
+      answer: "AppsFlyer is a mobile measurement partner (MMP). Tracks app installs, attributes them to marketing sources, and measures ROI. Industry leader in mobile attribution."
+    },
+    {
+      question: "What does AppsFlyer measure?",
+      answer: "App installs, in-app events, revenue, retention, and marketing attribution. Tells you which campaigns drive installs and which users are valuable."
+    },
+    {
+      question: "AppsFlyer vs Adjust?",
+      answer: "Both are top MMPs. AppsFlyer has larger market share and more integrations. Adjust is strong on fraud prevention. Pricing is similar. Both are solid choices."
+    },
+    {
+      question: "What is AppsFlyer's SKAdNetwork support?",
+      answer: "AppsFlyer supports Apple's SKAdNetwork for iOS privacy-compliant attribution. Their Conversion Studio helps optimize SKAN campaigns. Important post-iOS 14.5."
+    }
+  ],
+
+  // ============================================
+  // APPSIGNAL
+  // ============================================
+  "appsignal": [
+    {
+      question: "Is AppSignal free?",
+      answer: "No free tier. Plans start at $19/month. Pricing based on requests: $19/month for 250K, scaling up to enterprise. 30-day free trial available."
+    },
+    {
+      question: "What is AppSignal?",
+      answer: "AppSignal is application monitoring for Ruby, Elixir, Node.js, and Python. Error tracking, performance monitoring, and host metrics in one tool. Developer-friendly alternative to enterprise APMs."
+    },
+    {
+      question: "AppSignal vs New Relic?",
+      answer: "AppSignal is simpler and more affordable. New Relic has more features and broader language support. AppSignal for Ruby/Elixir shops; New Relic for enterprise needs."
+    },
+    {
+      question: "What languages does AppSignal support?",
+      answer: "Ruby on Rails, Elixir/Phoenix, Node.js, and Python. Ruby support is the most mature. Not as broad as Datadog or New Relic, but excellent for supported languages."
+    },
+    {
+      question: "Does AppSignal include error tracking?",
+      answer: "Yes, error tracking is built in alongside performance monitoring. No need for separate Sentry-like tool. Exceptions grouped and tracked automatically."
+    }
+  ],
+
+  // ============================================
+  // APPSMITH
+  // ============================================
+  "appsmith": [
+    {
+      question: "Is Appsmith free?",
+      answer: "Yes, the open-source version is free to self-host with no user limits. Cloud free tier for up to 5 users. Paid plans for larger teams and enterprise features."
+    },
+    {
+      question: "What is Appsmith?",
+      answer: "Appsmith is an open-source low-code platform for building internal tools. Connect to databases and APIs, build UIs with drag-and-drop, deploy quickly."
+    },
+    {
+      question: "Appsmith vs Retool?",
+      answer: "Both build internal tools. Retool has more integrations and polish. Appsmith is open source and more affordable. Retool for enterprises; Appsmith for budget-conscious teams."
+    },
+    {
+      question: "What can you build with Appsmith?",
+      answer: "Admin panels, dashboards, CRUD apps, customer support tools, and workflows. Connect to any database or API. Good for internal tools that don't need custom design."
+    },
+    {
+      question: "How do you deploy Appsmith?",
+      answer: "Docker for self-hosting. One-click deploys to AWS, GCP, Azure. Kubernetes helm charts available. Or use Appsmith Cloud for managed hosting."
+    }
+  ],
+
+  // ============================================
+  // APPWRITE
+  // ============================================
+  "appwrite": [
+    {
+      question: "Is Appwrite free?",
+      answer: "Yes, Appwrite is open source and free to self-host. Cloud has a generous free tier. Pro plan is $15/month per member with higher limits."
+    },
+    {
+      question: "What is Appwrite?",
+      answer: "Appwrite is an open-source backend-as-a-service. Provides authentication, database, storage, and functions. Self-hosted Firebase alternative."
+    },
+    {
+      question: "Appwrite vs Firebase?",
+      answer: "Appwrite is open source and self-hostable. Firebase is proprietary but more mature with better mobile SDKs. Appwrite for control; Firebase for ecosystem."
+    },
+    {
+      question: "Appwrite vs Supabase?",
+      answer: "Both are open-source BaaS. Supabase uses Postgres; Appwrite uses MariaDB. Supabase has SQL access; Appwrite has custom database. Both excellent choices."
+    },
+    {
+      question: "What features does Appwrite include?",
+      answer: "Auth (email, OAuth, phone), databases, storage, serverless functions, realtime subscriptions, and messaging. Most backend needs covered out of the box."
+    }
+  ],
+
+  // ============================================
+  // APTABASE
+  // ============================================
+  "aptabase": [
+    {
+      question: "Is Aptabase free?",
+      answer: "Yes, there's a generous free tier for up to 20,000 events per month. Paid plans start at $8/month for higher limits. Very affordable for indie developers."
+    },
+    {
+      question: "What is Aptabase?",
+      answer: "Aptabase is privacy-focused analytics for mobile and desktop apps. Built specifically for iOS, Android, Flutter, Electron, and Tauri apps. Simple and GDPR-compliant."
+    },
+    {
+      question: "Aptabase vs Firebase Analytics?",
+      answer: "Aptabase is privacy-first with no personal data collection. Firebase tracks more but raises privacy concerns. Aptabase for privacy; Firebase for detailed user insights."
+    },
+    {
+      question: "Does Aptabase track users?",
+      answer: "No, Aptabase doesn't track individual users or use device identifiers. Aggregate analytics only. No consent banners needed. Designed for privacy-focused apps."
+    },
+    {
+      question: "What platforms does Aptabase support?",
+      answer: "iOS, Android, Flutter, React Native, Electron, Tauri, and various desktop frameworks. Focus on mobile and desktop apps, not web."
+    }
+  ],
+
+  // ============================================
+  // AQUA SECURITY
+  // ============================================
+  "aqua-security": [
+    {
+      question: "Is Aqua Security free?",
+      answer: "Trivy, their open-source scanner, is free. Aqua Platform is enterprise-priced with custom quotes. Generally expensive - designed for enterprise container security."
+    },
+    {
+      question: "What is Aqua Security?",
+      answer: "Aqua provides cloud native security for containers, Kubernetes, and serverless. Runtime protection, vulnerability scanning, and compliance tools."
+    },
+    {
+      question: "What is Aqua Trivy?",
+      answer: "Trivy is Aqua's open-source vulnerability scanner. Scans container images, IaC, and filesystems. Free, fast, and widely used in CI/CD pipelines."
+    },
+    {
+      question: "Aqua vs Snyk?",
+      answer: "Both provide container security. Snyk focuses more on developer workflow. Aqua has stronger runtime protection. Snyk for shift-left; Aqua for full cloud native security."
+    },
+    {
+      question: "What is Aqua's runtime protection?",
+      answer: "Runtime protection detects and blocks attacks on running containers. Behavioral analysis, network policies, and drift prevention. Goes beyond just scanning images."
+    }
+  ],
+
+  // ============================================
+  // ARANGODB
+  // ============================================
+  "arangodb": [
+    {
+      question: "Is ArangoDB free?",
+      answer: "Yes, ArangoDB Community Edition is free and open source. Enterprise Edition adds features like SmartGraphs and Datacenter replication at commercial pricing."
+    },
+    {
+      question: "What is ArangoDB?",
+      answer: "ArangoDB is a multi-model database supporting documents, graphs, and key-value in one engine. Write queries mixing all three data models. Reduces complexity of running multiple databases."
+    },
+    {
+      question: "ArangoDB vs Neo4j?",
+      answer: "Neo4j is pure graph database with more graph features. ArangoDB combines graphs with documents. Neo4j for graph-heavy workloads; ArangoDB for mixed data models."
+    },
+    {
+      question: "What is AQL?",
+      answer: "AQL (ArangoDB Query Language) is the query language for ArangoDB. SQL-like syntax that works across documents, graphs, and key-value data. One language for all data models."
+    },
+    {
+      question: "Does ArangoDB scale?",
+      answer: "Yes, ArangoDB supports clustering for horizontal scaling. SmartGraphs (Enterprise) enable efficient distributed graph queries. Can handle large datasets across nodes."
+    }
+  ],
+
+  // ============================================
+  // ARCHBEE
+  // ============================================
+  "archbee": [
+    {
+      question: "Is Archbee free?",
+      answer: "Yes, there's a free tier for up to 3 team members. Startup plan is $50/month for 10 members. Growing plan $200/month for 25 members. Enterprise is custom."
+    },
+    {
+      question: "What is Archbee?",
+      answer: "Archbee is a documentation platform for technical teams. Write docs, API references, and wikis. Good for product documentation, internal knowledge bases, and developer docs."
+    },
+    {
+      question: "Archbee vs GitBook?",
+      answer: "Both are technical documentation tools. Archbee has better API documentation features. GitBook has simpler Git integration. Archbee for API docs; GitBook for general docs."
+    },
+    {
+      question: "Does Archbee support API documentation?",
+      answer: "Yes, Archbee has strong API documentation with OpenAPI import, interactive examples, and code samples. Can generate docs from your API spec."
+    },
+    {
+      question: "Can Archbee be self-hosted?",
+      answer: "No, Archbee is cloud-only. If you need self-hosted documentation, consider alternatives like Docusaurus or GitBook's enterprise offering."
+    }
+  ],
+
+  // ============================================
+  // ARGO CD
+  // ============================================
+  "argo-cd": [
+    {
+      question: "Is Argo CD free?",
+      answer: "Yes, Argo CD is open source under Apache 2.0 license. Free to use. Commercial support available through Akuity and other vendors."
+    },
+    {
+      question: "What is Argo CD?",
+      answer: "Argo CD is a GitOps continuous delivery tool for Kubernetes. Define applications in Git, Argo CD syncs them to your cluster. Declarative, version-controlled deployments."
+    },
+    {
+      question: "What is GitOps?",
+      answer: "GitOps uses Git as the source of truth for infrastructure. Changes go through Git, automated systems sync the desired state. Argo CD implements GitOps for Kubernetes."
+    },
+    {
+      question: "Argo CD vs Flux?",
+      answer: "Both are GitOps tools for Kubernetes. Argo CD has better UI and more features. Flux is lighter and integrates better with Helm. Both are CNCF projects."
+    },
+    {
+      question: "What is Argo Workflows?",
+      answer: "Argo Workflows is a separate project for running workflows on Kubernetes. Often used with Argo CD for CI/CD pipelines. Container-native workflow engine."
+    }
+  ],
+
+  // ============================================
+  // ARTILLERY
+  // ============================================
+  "artillery": [
+    {
+      question: "Is Artillery free?",
+      answer: "Artillery Core is open source and free. Artillery Pro cloud service starts at $99/month. Enterprise pricing for advanced features and support."
+    },
+    {
+      question: "What is Artillery?",
+      answer: "Artillery is a load testing and performance testing tool. Test HTTP, WebSocket, Socket.io, and more. Write scenarios in YAML, run from command line."
+    },
+    {
+      question: "Artillery vs k6?",
+      answer: "Both are modern load testing tools. k6 uses JavaScript for scenarios. Artillery uses YAML with optional JS. k6 has more scripting power; Artillery is more approachable."
+    },
+    {
+      question: "What can Artillery test?",
+      answer: "HTTP APIs, WebSocket connections, Socket.io, GraphQL, and custom protocols via plugins. Good for API and real-time application testing."
+    },
+    {
+      question: "How do you run Artillery tests?",
+      answer: "Install via npm, write scenarios in YAML, run from CLI. Can run locally or use Artillery Pro for distributed cloud testing. Results in JSON or HTML reports."
+    }
+  ],
+
+  // ============================================
+  // ASHBY
+  // ============================================
+  "ashby": [
+    {
+      question: "Is Ashby free?",
+      answer: "No free tier. Pricing starts around $300/month based on company size and features. Designed for fast-growing startups and mid-market companies."
+    },
+    {
+      question: "What is Ashby?",
+      answer: "Ashby is an all-in-one recruiting platform. ATS, scheduling, sourcing, and analytics in one product. Built for data-driven recruiting teams."
+    },
+    {
+      question: "Ashby vs Greenhouse?",
+      answer: "Ashby is newer and more data-focused. Greenhouse is more established with broader integrations. Ashby for analytics; Greenhouse for enterprise features."
+    },
+    {
+      question: "What makes Ashby different?",
+      answer: "Built-in analytics and reports are much stronger than competitors. Combines ATS + scheduling + CRM + analytics. Single platform vs piecing together tools."
+    },
+    {
+      question: "Does Ashby have scheduling?",
+      answer: "Yes, Ashby includes scheduling natively. Automated interview scheduling with calendar integration. No need for separate tools like Calendly or Goodtime."
+    }
+  ],
+
+  // ============================================
+  // ASKCODI
+  // ============================================
+  "askcodi": [
+    {
+      question: "Is AskCodi free?",
+      answer: "Yes, there's a free tier with limited queries. Pro plan is around $10/month. Teams plan available for organizations. Affordable AI coding assistant."
+    },
+    {
+      question: "What is AskCodi?",
+      answer: "AskCodi is an AI coding assistant. Get code explanations, generate code, write documentation, and convert between languages. IDE extensions and web app available."
+    },
+    {
+      question: "AskCodi vs GitHub Copilot?",
+      answer: "Copilot integrates more seamlessly into IDEs. AskCodi has more features like code explanation and documentation generation. Copilot for autocomplete; AskCodi for learning and explanations."
+    },
+    {
+      question: "What can AskCodi do?",
+      answer: "Generate code from descriptions, explain existing code, write docstrings, convert between languages, generate SQL queries, and create test cases."
+    },
+    {
+      question: "What languages does AskCodi support?",
+      answer: "Most major languages including Python, JavaScript, Java, C++, Ruby, Go, and more. Works best with popular languages. Less effective for niche languages."
+    }
+  ],
+
+  // ============================================
+  // ASSEMBLYAI
+  // ============================================
+  "assemblyai": [
+    {
+      question: "Is AssemblyAI free?",
+      answer: "Free tier includes 3 hours of transcription monthly. Pay-as-you-go starts at $0.65/hour for speech-to-text. Volume discounts available."
+    },
+    {
+      question: "What is AssemblyAI?",
+      answer: "AssemblyAI provides AI speech-to-text and audio intelligence APIs. Transcription, speaker diarization, content moderation, summarization, and more."
+    },
+    {
+      question: "How accurate is AssemblyAI?",
+      answer: "AssemblyAI claims industry-leading accuracy with their Conformer models. Generally 90%+ for clear audio. Accuracy depends on audio quality, accents, and domain."
+    },
+    {
+      question: "AssemblyAI vs Whisper?",
+      answer: "AssemblyAI is a managed API service with additional features. Whisper is open source and can run locally. AssemblyAI for convenience; Whisper for control and cost savings at scale."
+    },
+    {
+      question: "What audio features does AssemblyAI offer?",
+      answer: "Speech-to-text, speaker diarization (who spoke when), sentiment analysis, summarization, chapter detection, PII redaction, and content moderation."
+    }
+  ],
+
+  // ============================================
+  // ASTRO
+  // ============================================
+  "astro": [
+    {
+      question: "Is Astro free?",
+      answer: "Yes, Astro is open source and free. The framework and CLI are free forever. You pay only for hosting (Vercel, Netlify, or any host)."
+    },
+    {
+      question: "What is Astro?",
+      answer: "Astro is a web framework for content-driven sites. Ships zero JavaScript by default for fast pages. Supports React, Vue, Svelte components - all in one project."
+    },
+    {
+      question: "What is Astro's island architecture?",
+      answer: "Islands are interactive components in a sea of static HTML. Only interactive parts ship JavaScript. Results in much faster pages than traditional SPAs."
+    },
+    {
+      question: "Astro vs Next.js?",
+      answer: "Astro ships less JavaScript and is faster for content sites. Next.js is better for full web applications. Astro for blogs and docs; Next.js for dynamic apps."
+    },
+    {
+      question: "What can you build with Astro?",
+      answer: "Blogs, documentation sites, marketing pages, portfolios, and content-heavy websites. Not ideal for highly interactive apps like dashboards or social media."
+    }
+  ],
+
+  // ============================================
+  // ATATUS
+  // ============================================
+  "atatus": [
+    {
+      question: "Is Atatus free?",
+      answer: "Free tier with limited retention and features. Paid plans start at $49/month. Pricing based on hosts, browsers, or transactions depending on product."
+    },
+    {
+      question: "What is Atatus?",
+      answer: "Atatus is an application monitoring platform. APM, log management, real user monitoring, and synthetic monitoring. Alternative to New Relic and Datadog."
+    },
+    {
+      question: "Atatus vs Datadog?",
+      answer: "Atatus is significantly cheaper with similar features. Datadog has more integrations and advanced features. Atatus for budget-conscious teams; Datadog for enterprise."
+    },
+    {
+      question: "What languages does Atatus support?",
+      answer: "APM agents for Node.js, Java, PHP, Ruby, Python, .NET, and Go. Frontend monitoring for JavaScript. Broader than some competitors."
+    },
+    {
+      question: "Does Atatus include log management?",
+      answer: "Yes, Atatus includes log management in its platform. Ingest, search, and analyze logs alongside APM data. Good for correlating issues."
+    }
+  ],
+
+  // ============================================
+  // ATTIO
+  // ============================================
+  "attio": [
+    {
+      question: "Is Attio free?",
+      answer: "Yes, free tier for up to 3 users with core CRM features. Plus plan is $29/user/month. Pro is $59/user/month. Enterprise pricing is custom."
+    },
+    {
+      question: "What is Attio?",
+      answer: "Attio is a modern CRM built for collaboration. Flexible data model, real-time multiplayer, and powerful automations. Next-gen alternative to Salesforce and HubSpot."
+    },
+    {
+      question: "Attio vs HubSpot?",
+      answer: "Attio is more flexible and modern. HubSpot has more features and ecosystem. Attio for teams wanting customization; HubSpot for out-of-box functionality."
+    },
+    {
+      question: "What makes Attio different?",
+      answer: "Real-time collaboration like Figma or Notion. Highly flexible data model. Syncs with your existing tools automatically. Built for modern workflows."
+    },
+    {
+      question: "Does Attio integrate with email?",
+      answer: "Yes, Attio syncs with Gmail and Outlook. Email history automatically linked to contacts. Calendar integration for meeting context."
+    }
+  ],
+
+  // ============================================
+  // AUTHELIA
+  // ============================================
+  "authelia": [
+    {
+      question: "Is Authelia free?",
+      answer: "Yes, Authelia is open source and completely free. Apache 2.0 license. No paid version - community supported project."
+    },
+    {
+      question: "What is Authelia?",
+      answer: "Authelia is an open-source authentication server. Single sign-on and 2FA for your applications. Works as a reverse proxy companion for self-hosted apps."
+    },
+    {
+      question: "What does Authelia protect?",
+      answer: "Any web application behind a reverse proxy. Add SSO, 2FA, and access control to apps that don't have built-in auth. Popular for self-hosted services."
+    },
+    {
+      question: "Authelia vs Keycloak?",
+      answer: "Keycloak is full IAM with OIDC provider. Authelia is simpler auth portal. Keycloak for enterprise SSO; Authelia for protecting self-hosted apps."
+    },
+    {
+      question: "How does Authelia work?",
+      answer: "Sits behind your reverse proxy (Nginx, Traefik, Caddy). Intercepts requests and checks authentication. Supports TOTP, WebAuthn, and Duo for 2FA."
+    }
+  ],
+
+  // ============================================
+  // AUTOMATISCH
+  // ============================================
+  "automatisch": [
+    {
+      question: "Is Automatisch free?",
+      answer: "Yes, Automatisch is open source and free to self-host. No limits on workflows or executions. They also offer a cloud version."
+    },
+    {
+      question: "What is Automatisch?",
+      answer: "Automatisch is an open-source automation platform. Build workflows connecting apps like Zapier or Make. Self-hosted alternative with no per-task pricing."
+    },
+    {
+      question: "Automatisch vs n8n?",
+      answer: "Both are open-source automation tools. n8n has more integrations and features. Automatisch is simpler and newer. n8n is more mature; Automatisch is catching up."
+    },
+    {
+      question: "How do you install Automatisch?",
+      answer: "Docker is the easiest method. Also supports npm installation. Requires PostgreSQL database. Documentation provides step-by-step guides."
+    },
+    {
+      question: "What apps does Automatisch support?",
+      answer: "Growing list including Google services, Slack, Discord, Twitter, OpenAI, and more. Fewer integrations than Zapier but new ones added regularly."
+    }
+  ],
+
+  // ============================================
+  // AVOCODE
+  // ============================================
+  "avocode": [
+    {
+      question: "Is Avocode free?",
+      answer: "14-day free trial. Plans start at $14/month for individuals. Team plans from $35/user/month. Enterprise pricing available."
+    },
+    {
+      question: "What is Avocode?",
+      answer: "Avocode is a design handoff tool. Open Sketch, Figma, XD, and PSD files. Inspect designs, export assets, and generate code. Bridge between design and development."
+    },
+    {
+      question: "Do developers still need Avocode?",
+      answer: "Less so now. Figma has built-in dev mode. Avocode is useful if your team uses multiple design tools or needs to work with legacy PSD/Sketch files."
+    },
+    {
+      question: "Avocode vs Zeplin?",
+      answer: "Similar tools for design handoff. Zeplin has better Figma integration. Avocode supports more file formats. Both being replaced by native Figma features."
+    },
+    {
+      question: "What can developers do in Avocode?",
+      answer: "Inspect spacing and colors, export assets at multiple resolutions, copy CSS/Swift/Android code snippets, and comment on designs."
+    }
+  ],
+
+  // ============================================
+  // AWEBER
+  // ============================================
+  "aweber": [
+    {
+      question: "Is AWeber free?",
+      answer: "Yes, free plan for up to 500 subscribers with basic features. Lite plan is $12.50/month. Plus starts at $20/month with more automation."
+    },
+    {
+      question: "What is AWeber?",
+      answer: "AWeber is an email marketing platform focused on small businesses. Email campaigns, landing pages, and basic automation. One of the original email marketing tools."
+    },
+    {
+      question: "AWeber vs Mailchimp?",
+      answer: "Mailchimp has more features and free tier limits. AWeber is simpler and has better customer support. AWeber for simplicity; Mailchimp for features."
+    },
+    {
+      question: "Does AWeber have automation?",
+      answer: "Yes, but simpler than competitors. Autoresponders and basic automation sequences. For complex automation, consider ActiveCampaign or ConvertKit."
+    },
+    {
+      question: "What templates does AWeber offer?",
+      answer: "700+ email templates and landing page templates. Drag-and-drop editor. Templates are decent but not as modern as some competitors."
+    }
+  ],
+
+  // ============================================
+  // AWS AMPLIFY
+  // ============================================
+  "aws-amplify": [
+    {
+      question: "Is AWS Amplify free?",
+      answer: "Generous free tier: 5GB storage, 15GB bandwidth, 1000 build minutes per month for hosting. Backend features have separate AWS Free Tier limits."
+    },
+    {
+      question: "What is AWS Amplify?",
+      answer: "Amplify is AWS's full-stack development platform. Frontend hosting, backend APIs, authentication, and storage. Simplifies building apps on AWS."
+    },
+    {
+      question: "Amplify vs Vercel/Netlify?",
+      answer: "Vercel and Netlify are simpler for frontend hosting. Amplify is better if you're already using AWS services or need AWS-specific integrations."
+    },
+    {
+      question: "What backend features does Amplify offer?",
+      answer: "GraphQL and REST APIs, authentication, storage, functions, and analytics. Uses AWS services under the hood: AppSync, Cognito, S3, Lambda."
+    },
+    {
+      question: "Does Amplify support React Native?",
+      answer: "Yes, Amplify has React Native support. Same backend features work for web and mobile. Libraries for React, Vue, Angular, and React Native."
+    }
+  ],
+
+  // ============================================
+  // AWS CDK
+  // ============================================
+  "aws-cdk": [
+    {
+      question: "Is AWS CDK free?",
+      answer: "Yes, CDK itself is free and open source. You pay only for AWS resources you create. No additional CDK licensing costs."
+    },
+    {
+      question: "What is AWS CDK?",
+      answer: "Cloud Development Kit lets you define AWS infrastructure using programming languages. TypeScript, Python, Java, C#, and Go. Alternative to YAML/JSON templates."
+    },
+    {
+      question: "CDK vs Terraform?",
+      answer: "CDK is AWS-specific and uses real programming languages. Terraform is multi-cloud with HCL. CDK for AWS-only; Terraform for multi-cloud or infrastructure teams."
+    },
+    {
+      question: "CDK vs CloudFormation?",
+      answer: "CDK generates CloudFormation templates. You write TypeScript/Python instead of YAML. CDK provides higher-level abstractions and type safety."
+    },
+    {
+      question: "What languages does CDK support?",
+      answer: "TypeScript (best support), Python, Java, C#, and Go. TypeScript and Python are most commonly used. Same constructs available in all languages."
+    }
+  ],
+
+  // ============================================
+  // AWS CLOUDFORMATION
+  // ============================================
+  "aws-cloudformation": [
+    {
+      question: "Is CloudFormation free?",
+      answer: "Yes, CloudFormation itself is free. You pay only for resources it creates. No additional charges for the orchestration service."
+    },
+    {
+      question: "What is CloudFormation?",
+      answer: "CloudFormation is AWS's infrastructure as code service. Define resources in YAML or JSON templates. AWS creates and manages the stack."
+    },
+    {
+      question: "CloudFormation vs Terraform?",
+      answer: "CloudFormation is AWS-native with best AWS integration. Terraform is multi-cloud. CloudFormation for AWS-only; Terraform if you use multiple clouds."
+    },
+    {
+      question: "What are CloudFormation stacks?",
+      answer: "A stack is a collection of resources defined in a template. Create, update, or delete together. Nested stacks allow modular templates."
+    },
+    {
+      question: "Should I use CloudFormation or CDK?",
+      answer: "CDK if you prefer programming languages. CloudFormation for YAML templates or if your team knows it. CDK compiles to CloudFormation anyway."
+    }
+  ],
+
+  // ============================================
+  // AWS CODECOMMIT
+  // ============================================
+  "aws-codecommit": [
+    {
+      question: "Is CodeCommit free?",
+      answer: "Generous free tier: 5 users, unlimited repos, 50GB storage, 10K Git requests per month. Additional users cost $1/month each."
+    },
+    {
+      question: "What is AWS CodeCommit?",
+      answer: "CodeCommit is AWS's managed Git repository service. Private repos with AWS IAM integration. Part of AWS's DevOps toolchain."
+    },
+    {
+      question: "CodeCommit vs GitHub?",
+      answer: "GitHub has more features, community, and integrations. CodeCommit is useful if you need AWS IAM integration or want everything in AWS. Most teams prefer GitHub."
+    },
+    {
+      question: "Why use CodeCommit?",
+      answer: "AWS IAM integration for access control, data stays in your AWS region, and integrates with CodePipeline/CodeBuild. Good for compliance requirements."
+    },
+    {
+      question: "Is CodeCommit being deprecated?",
+      answer: "As of 2024, AWS announced CodeCommit is no longer accepting new customers. Existing users can continue, but new projects should use GitHub or GitLab."
+    }
+  ],
+
+  // ============================================
+  // AWS LAMBDA
+  // ============================================
+  "aws-lambda": [
+    {
+      question: "Is Lambda free?",
+      answer: "Generous free tier: 1 million requests and 400,000 GB-seconds per month forever. Many small applications run entirely within free tier."
+    },
+    {
+      question: "What is AWS Lambda?",
+      answer: "Lambda is AWS's serverless compute service. Run code without managing servers. Pay only for compute time used. Scales automatically."
+    },
+    {
+      question: "Lambda vs EC2?",
+      answer: "Lambda is serverless with no server management. EC2 gives full control but requires management. Lambda for events and APIs; EC2 for long-running workloads."
+    },
+    {
+      question: "What languages does Lambda support?",
+      answer: "Node.js, Python, Java, C#, Go, Ruby, and custom runtimes. Node.js and Python are most popular. Can bring any language via custom runtime."
+    },
+    {
+      question: "What are Lambda cold starts?",
+      answer: "Cold start is delay when Lambda initializes a new container. Can be 100ms to several seconds depending on runtime. Keep functions warm for latency-sensitive apps."
+    }
+  ],
+
+  // ============================================
+  // AWS SECRETS MANAGER
+  // ============================================
+  "aws-secrets-manager": [
+    {
+      question: "Is Secrets Manager free?",
+      answer: "No free tier. $0.40 per secret per month plus $0.05 per 10,000 API calls. Can add up with many secrets but generally affordable."
+    },
+    {
+      question: "What is AWS Secrets Manager?",
+      answer: "Secrets Manager stores and retrieves secrets like database credentials and API keys. Automatic rotation, encryption, and fine-grained access control."
+    },
+    {
+      question: "Secrets Manager vs Parameter Store?",
+      answer: "Parameter Store is cheaper (free tier) for simple config. Secrets Manager has automatic rotation and is designed for secrets. Use Secrets Manager for credentials."
+    },
+    {
+      question: "How does secret rotation work?",
+      answer: "Secrets Manager can automatically rotate secrets on a schedule. Built-in rotation for RDS and some services. Custom Lambda functions for other systems."
+    },
+    {
+      question: "How do applications access secrets?",
+      answer: "SDK call to retrieve secret at runtime. IAM policies control access. Can cache secrets in memory. Better than env vars or config files."
+    }
+  ],
+
+  // ============================================
+  // AXIOM
+  // ============================================
+  "axiom": [
+    {
+      question: "Is Axiom free?",
+      answer: "Yes, free tier with 500GB ingest, 30-day retention. Personal plan $25/month for 1TB. Team starts at $95/month. Very generous for logging tool."
+    },
+    {
+      question: "What is Axiom?",
+      answer: "Axiom is a log management and observability platform. Store, query, and analyze logs at scale. Modern alternative to Splunk and Elasticsearch."
+    },
+    {
+      question: "Axiom vs Datadog Logs?",
+      answer: "Axiom is much cheaper for high-volume logging. Datadog has more features and APM integration. Axiom for pure logging; Datadog for full observability."
+    },
+    {
+      question: "What makes Axiom different?",
+      answer: "Serverless architecture with no indexing costs. Store everything, query anything. Designed for high-cardinality data. Cost-effective at scale."
+    },
+    {
+      question: "How do you send logs to Axiom?",
+      answer: "Official integrations for Vercel, Cloudflare, AWS. Language SDKs available. Standard syslog and HTTP endpoints. Drop-in replacement for many logging systems."
+    }
+  ],
+
+  // ============================================
+  // AZURE
+  // ============================================
+  "azure": [
+    {
+      question: "Is Azure free?",
+      answer: "Free tier includes 12 months of popular services plus 55+ always-free services. $200 credit for first 30 days. Most services have some free allocation."
+    },
+    {
+      question: "What is Microsoft Azure?",
+      answer: "Azure is Microsoft's cloud computing platform. Compute, storage, databases, AI, and 200+ services. Second largest cloud provider after AWS."
+    },
+    {
+      question: "Azure vs AWS?",
+      answer: "Similar capabilities overall. Azure has better Microsoft integration (Active Directory, Office 365). AWS has more services and market share. Choice often depends on existing stack."
+    },
+    {
+      question: "What is Azure Active Directory?",
+      answer: "Azure AD is Microsoft's identity service. SSO, MFA, and user management. Central to Microsoft 365 and Azure. Often reason companies choose Azure."
+    },
+    {
+      question: "How does Azure pricing work?",
+      answer: "Pay-as-you-go or committed use discounts. Reserved instances save up to 72%. Pricing varies by region and service. Calculator available on Azure site."
+    }
+  ],
+
+  // ============================================
+  // AZURE COSMOS DB
+  // ============================================
+  "azure-cosmos-db": [
+    {
+      question: "Is Cosmos DB free?",
+      answer: "Free tier includes 1000 RU/s and 25GB storage forever. Good for development. Production costs vary based on throughput and storage."
+    },
+    {
+      question: "What is Azure Cosmos DB?",
+      answer: "Cosmos DB is Microsoft's globally distributed, multi-model database. Document, key-value, graph, and column-family in one service. Single-digit millisecond latency worldwide."
+    },
+    {
+      question: "How does Cosmos DB pricing work?",
+      answer: "Request Units (RUs) for throughput plus storage. Serverless mode for sporadic workloads. Provisioned for predictable traffic. Can be expensive at scale."
+    },
+    {
+      question: "Cosmos DB vs DynamoDB?",
+      answer: "Cosmos DB is multi-model with SQL API. DynamoDB is simpler key-value. Cosmos DB has global distribution built-in. DynamoDB cheaper for simple use cases."
+    },
+    {
+      question: "What APIs does Cosmos DB support?",
+      answer: "SQL (document), MongoDB, Cassandra, Gremlin (graph), and Table. Use familiar APIs with Cosmos DB backend. SQL API is most feature-rich."
+    }
+  ],
+
+  // ============================================
+  // AZURE DEVOPS
+  // ============================================
+  "azure-devops": [
+    {
+      question: "Is Azure DevOps free?",
+      answer: "Free for up to 5 users with unlimited private repos. Free 1800 minutes of CI/CD per month. Paid plans for larger teams and more compute."
+    },
+    {
+      question: "What is Azure DevOps?",
+      answer: "Azure DevOps is Microsoft's DevOps platform. Boards (project management), Repos (Git), Pipelines (CI/CD), Test Plans, and Artifacts in one suite."
+    },
+    {
+      question: "Azure DevOps vs GitHub?",
+      answer: "GitHub is more popular for open source and modern workflows. Azure DevOps better for enterprise Windows shops. Microsoft owns both - GitHub is generally preferred now."
+    },
+    {
+      question: "What are Azure Pipelines?",
+      answer: "Azure Pipelines is the CI/CD service. Build and deploy to any platform. YAML or visual designer. Free tier includes Microsoft-hosted agents."
+    },
+    {
+      question: "Can Azure DevOps use GitHub repos?",
+      answer: "Yes, Azure Pipelines can build from GitHub repos. Azure Boards integrates with GitHub issues. Many teams use GitHub repos with Azure Pipelines."
+    }
+  ],
+
+  // ============================================
+  // AZURE FUNCTIONS
+  // ============================================
+  "azure-functions": [
+    {
+      question: "Is Azure Functions free?",
+      answer: "Generous free tier: 1 million executions and 400,000 GB-s per month. Consumption plan charges only for usage. Many apps run free."
+    },
+    {
+      question: "What is Azure Functions?",
+      answer: "Azure Functions is Microsoft's serverless compute platform. Run code triggered by events without managing servers. Similar to AWS Lambda."
+    },
+    {
+      question: "Azure Functions vs AWS Lambda?",
+      answer: "Similar capabilities. Azure Functions has better C#/.NET support. Lambda has more triggers and ecosystem. Choose based on your cloud platform."
+    },
+    {
+      question: "What languages do Azure Functions support?",
+      answer: "C#, JavaScript, TypeScript, Python, Java, PowerShell, and custom handlers. C# has the best integration as expected from Microsoft."
+    },
+    {
+      question: "What triggers Azure Functions?",
+      answer: "HTTP requests, timers, queues, blobs, Cosmos DB changes, Event Grid, and more. Build event-driven applications. Good integration with Azure services."
+    }
+  ],
+
+  // ============================================
+  // AZURE ML
+  // ============================================
+  "azure-ml": [
+    {
+      question: "Is Azure ML free?",
+      answer: "Free tier with limited compute for experimentation. Pay for compute instances, storage, and endpoints. Can get expensive for serious ML work."
+    },
+    {
+      question: "What is Azure Machine Learning?",
+      answer: "Azure ML is Microsoft's enterprise ML platform. Build, train, and deploy models. Notebooks, AutoML, MLOps, and managed compute clusters."
+    },
+    {
+      question: "Azure ML vs Amazon SageMaker?",
+      answer: "Similar capabilities. Azure ML has better enterprise features and AutoML. SageMaker has more built-in algorithms. Choose based on your cloud."
+    },
+    {
+      question: "What is Azure AutoML?",
+      answer: "AutoML automates model selection and hyperparameter tuning. Point it at data, get a trained model. Good for teams without deep ML expertise."
+    },
+    {
+      question: "Does Azure ML support MLOps?",
+      answer: "Yes, Azure ML has MLOps features: model registry, endpoints, pipelines, and monitoring. Deploy models to production with version control and CI/CD."
+    }
+  ],
+
+  // ============================================
+  // AZURE SYNAPSE
+  // ============================================
+  "azure-synapse": [
+    {
+      question: "Is Azure Synapse free?",
+      answer: "No real free tier. Pay for compute (on-demand or provisioned), storage, and pipelines. Can be expensive - estimate costs carefully."
+    },
+    {
+      question: "What is Azure Synapse?",
+      answer: "Synapse Analytics is Microsoft's unified analytics platform. Data warehousing, big data, and data integration. Combines SQL, Spark, and pipelines."
+    },
+    {
+      question: "Synapse vs Snowflake?",
+      answer: "Snowflake is simpler and cloud-agnostic. Synapse integrates better with Azure ecosystem. Snowflake for pure warehousing; Synapse for full analytics platform."
+    },
+    {
+      question: "What is Synapse SQL?",
+      answer: "Synapse SQL provides both serverless and dedicated SQL pools. Query data lake files with T-SQL. Familiar SQL Server syntax for Azure users."
+    },
+    {
+      question: "Does Synapse include Apache Spark?",
+      answer: "Yes, Synapse has built-in Spark pools. Run Spark jobs alongside SQL queries. Unified workspace for both SQL and Spark workloads."
+    }
+  ],
+
+  // ============================================
+  // BACKENDLESS
+  // ============================================
+  "backendless": [
+    {
+      question: "Is Backendless free?",
+      answer: "Yes, free tier with generous limits: 1GB storage, 1000 API calls/minute. Paid plans from $25/month for higher limits."
+    },
+    {
+      question: "What is Backendless?",
+      answer: "Backendless is a backend-as-a-service platform. Database, user management, push notifications, and serverless functions. Visual development tools included."
+    },
+    {
+      question: "Backendless vs Firebase?",
+      answer: "Backendless has more SQL-like data modeling and visual tools. Firebase has better real-time features and Google integration. Backendless for traditional backend; Firebase for real-time apps."
+    },
+    {
+      question: "What features does Backendless include?",
+      answer: "Database, user auth, file storage, push notifications, geolocation, serverless code, and API management. Comprehensive backend platform."
+    },
+    {
+      question: "Can Backendless be self-hosted?",
+      answer: "Yes, Backendless offers on-premises deployment for enterprise. Run the full platform in your own infrastructure. Requires licensing."
+    }
+  ],
+
+  // ============================================
+  // BANNERBEAR
+  // ============================================
+  "bannerbear": [
+    {
+      question: "Is Bannerbear free?",
+      answer: "Free trial available. Starter plan $49/month for 1000 API calls. Pro $149/month for 5000 calls. Enterprise pricing for higher volume."
+    },
+    {
+      question: "What is Bannerbear?",
+      answer: "Bannerbear generates images and videos programmatically via API. Create social media images, certificates, e-commerce graphics automatically. Design templates, fill with data."
+    },
+    {
+      question: "What can you create with Bannerbear?",
+      answer: "Social media images, open graph images, certificates, personalized ads, and short videos. Any templated graphic you need to generate at scale."
+    },
+    {
+      question: "Bannerbear vs Placid?",
+      answer: "Both generate images via API. Placid is cheaper with simpler API. Bannerbear has more features and video support. Choose based on needs and budget."
+    },
+    {
+      question: "Does Bannerbear support video?",
+      answer: "Yes, Bannerbear can generate short videos from templates. Add dynamic text and images to video templates. Good for social media content."
+    }
+  ],
+
+  // ============================================
+  // BARDEEN
+  // ============================================
+  "bardeen": [
+    {
+      question: "Is Bardeen free?",
+      answer: "Yes, free tier with unlimited non-premium automations. Pro is $20/month for premium automations and unlimited credits."
+    },
+    {
+      question: "What is Bardeen?",
+      answer: "Bardeen is a browser automation tool. Automate repetitive tasks, scrape data, and connect apps. Chrome extension with no-code builder."
+    },
+    {
+      question: "Bardeen vs Zapier?",
+      answer: "Bardeen runs in your browser with scraping capabilities. Zapier is cloud-based API connections. Bardeen for browser tasks and scraping; Zapier for API integrations."
+    },
+    {
+      question: "What can Bardeen automate?",
+      answer: "Web scraping, data entry, lead research, social media tasks, and app connections. Works in your browser, can interact with any website."
+    },
+    {
+      question: "Does Bardeen use AI?",
+      answer: "Yes, Bardeen has AI features for generating automations from natural language and intelligent data extraction. AI helps with complex automations."
+    }
+  ],
+
+  // ============================================
+  // BASECAMP
+  // ============================================
+  "basecamp": [
+    {
+      question: "Is Basecamp free?",
+      answer: "No free tier anymore. Basecamp costs $15/user/month or $299/month flat for unlimited users. Simple, predictable pricing."
+    },
+    {
+      question: "What is Basecamp?",
+      answer: "Basecamp is a project management and team communication platform. To-dos, message boards, schedules, and file sharing. Known for simplicity and opinionated design."
+    },
+    {
+      question: "Basecamp vs Asana?",
+      answer: "Basecamp is simpler and more opinionated. Asana is more flexible with more features. Basecamp for teams who want simple; Asana for power users."
+    },
+    {
+      question: "What is Basecamp's pricing model?",
+      answer: "Per-user ($15/user/month) or flat rate ($299/month unlimited). Flat rate is unique in the space. Great for large teams."
+    },
+    {
+      question: "What's included in Basecamp?",
+      answer: "Message boards, to-do lists, schedules, file storage, real-time chat, and automatic check-ins. Everything your team needs in one tool."
+    }
+  ],
+
+  // ============================================
+  // BASEROW
+  // ============================================
+  "baserow": [
+    {
+      question: "Is Baserow free?",
+      answer: "Yes, free tier for individuals with core features. Premium $5/user/month. Advanced $20/user/month. Self-hosting is free."
+    },
+    {
+      question: "What is Baserow?",
+      answer: "Baserow is an open-source Airtable alternative. No-code database with spreadsheet interface. Self-hostable with API access."
+    },
+    {
+      question: "Baserow vs Airtable?",
+      answer: "Baserow is open source and self-hostable. Airtable has more features and integrations. Baserow for open source; Airtable for polish."
+    },
+    {
+      question: "Can you self-host Baserow?",
+      answer: "Yes, Baserow is open source under MIT license. Deploy via Docker. Full-featured self-hosted version available free."
+    },
+    {
+      question: "Does Baserow have an API?",
+      answer: "Yes, REST API for all operations. Create records, query data, manage fields programmatically. API-first design."
+    }
+  ],
+
+  // ============================================
+  // BASIN
+  // ============================================
+  "basin": [
+    {
+      question: "Is Basin free?",
+      answer: "Yes, free plan with 100 submissions per month. Plus plan $4.08/month for 1000 submissions. Team plans available."
+    },
+    {
+      question: "What is Basin?",
+      answer: "Basin is a form backend service. Submit HTML forms to Basin, get emails and integrations. No backend code needed for contact forms."
+    },
+    {
+      question: "Basin vs Formspree?",
+      answer: "Both are form backends. Basin has more generous free tier. Formspree has more integrations. Both work well for static sites."
+    },
+    {
+      question: "What features does Basin include?",
+      answer: "Email notifications, spam filtering, Zapier integration, file uploads, webhooks, and submission dashboard. Solid form backend."
+    },
+    {
+      question: "How do you use Basin?",
+      answer: "Create a form endpoint, point your HTML form's action to Basin URL. Submissions arrive by email or webhook. Takes minutes to set up."
+    }
+  ],
+
+  // ============================================
+  // BEAR
+  // ============================================
+  "bear": [
+    {
+      question: "Is Bear free?",
+      answer: "Free version available with basic features. Bear Pro $2.99/month or $29.99/year unlocks sync, themes, and export options."
+    },
+    {
+      question: "What is Bear?",
+      answer: "Bear is a beautiful markdown notes app for Mac and iOS. Simple design, powerful organization with tags, and great writing experience."
+    },
+    {
+      question: "Bear vs Apple Notes?",
+      answer: "Bear has better markdown support and more beautiful design. Apple Notes has better collaboration and is free. Bear for writers; Apple Notes for everyday notes."
+    },
+    {
+      question: "Bear vs Obsidian?",
+      answer: "Obsidian has more features and local storage. Bear is simpler and prettier. Obsidian for knowledge management; Bear for clean note-taking."
+    },
+    {
+      question: "Does Bear work on Windows?",
+      answer: "No, Bear is Apple-only: Mac, iPhone, and iPad. Windows users should consider Obsidian, Notion, or Typora."
+    }
+  ],
+
+  // ============================================
+  // BEGIN
+  // ============================================
+  "begin": [
+    {
+      question: "Is Begin free?",
+      answer: "Begin has been discontinued as of 2024. The company behind it, Begin, pivoted. Existing users were migrated off the platform."
+    },
+    {
+      question: "What was Begin?",
+      answer: "Begin was a serverless application platform built on AWS. Simplified deploying full-stack apps with DynamoDB and Lambda. Made by the Architect framework team."
+    },
+    {
+      question: "What are Begin alternatives?",
+      answer: "SST (Serverless Stack), Vercel, Netlify, or AWS Amplify. SST is closest philosophically for AWS-native serverless apps."
+    },
+    {
+      question: "What is Architect framework?",
+      answer: "Architect is the open-source framework Begin was built on. Still maintained. Define AWS serverless apps with simple declarative syntax."
+    }
+  ],
 };
 
 async function main() {
