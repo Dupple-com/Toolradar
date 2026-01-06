@@ -136,8 +136,11 @@ export default async function ToolPage({ params }: { params: { slug: string } })
   const avgRating = tool.communityScore?.toFixed(1) || "N/A";
   const reviewCount = tool._count.reviews;
 
-  // Create FAQ data array (used for both JSON-LD and visible section)
-  const faqs = [
+  // Custom FAQs from database (added by vendors)
+  const customFaqs = (tool.faqs as Array<{ question: string; answer: string }> | null) || [];
+
+  // Auto-generated FAQs for SEO (only if no custom FAQs)
+  const autoFaqs = [
     {
       question: `Is ${tool.name} free?`,
       answer: tool.pricing === "free"
@@ -163,6 +166,9 @@ export default async function ToolPage({ params }: { params: { slug: string } })
       answer: `${tool.name} is ideal for users looking for ${categoryName.toLowerCase()} solutions. ${tool.pricing === "free" ? "It's free, making it accessible for individuals and small teams." : tool.pricing === "freemium" ? "The free tier is great for getting started, with paid options for teams." : "It's designed for professionals and businesses willing to invest in quality tools."}`,
     },
   ];
+
+  // Combine: custom FAQs first, then auto-generated
+  const faqs = [...customFaqs, ...autoFaqs];
 
   const faqJsonLd = generateFaqJsonLd(faqs);
 
