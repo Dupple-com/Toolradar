@@ -1,6 +1,10 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 
+// Force dynamic generation at runtime (not build time)
+export const dynamic = "force-dynamic";
+export const revalidate = 3600; // Cache for 1 hour
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://toolradar.com";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -157,8 +161,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         });
       }
     }
-  } catch {
-    // Database unavailable during build - tool pages will be generated at runtime
+  } catch (error) {
+    console.error("Sitemap: Failed to fetch tools", error);
   }
 
   try {
@@ -189,8 +193,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.6,
     }));
-  } catch {
-    // Database unavailable during build - category pages will be generated at runtime
+  } catch (error) {
+    console.error("Sitemap: Failed to fetch categories", error);
   }
 
   try {
@@ -206,8 +210,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.6,
     }));
-  } catch {
-    // Database unavailable during build - company pages will be generated at runtime
+  } catch (error) {
+    console.error("Sitemap: Failed to fetch companies", error);
   }
 
   return [
