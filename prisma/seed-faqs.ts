@@ -16500,6 +16500,1634 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "Service businesses: plumbers, consultants, agencies. Quick professional presence with business tools."
     }
   ],
+
+  // ============================================
+  // ECLIPSE
+  // ============================================
+  "eclipse": [
+    {
+      question: "Is Eclipse free?",
+      answer: "Yes, Eclipse IDE is completely free and open source. No cost for any edition or features."
+    },
+    {
+      question: "What is Eclipse?",
+      answer: "Eclipse is an open-source IDE primarily for Java development. Also supports C++, PHP, Python via plugins."
+    },
+    {
+      question: "Eclipse vs IntelliJ IDEA?",
+      answer: "IntelliJ has better Java tooling and UX but paid version needed for full features. Eclipse is free with all features but steeper learning curve."
+    },
+    {
+      question: "Is Eclipse good for beginners?",
+      answer: "Eclipse can be overwhelming for beginners. VS Code or IntelliJ Community might be easier starts. Eclipse is powerful once learned."
+    }
+  ],
+
+  // ============================================
+  // ECWID
+  // ============================================
+  "ecwid": [
+    {
+      question: "Is Ecwid free?",
+      answer: "Free plan available with 10 products. Paid plans from $19/month for unlimited products and more features."
+    },
+    {
+      question: "What is Ecwid?",
+      answer: "Ecwid is an e-commerce platform you can add to existing websites. Embeds into any site, WordPress, Wix, etc."
+    },
+    {
+      question: "Ecwid vs Shopify?",
+      answer: "Shopify is full e-commerce platform. Ecwid adds store to existing site. Ecwid for adding commerce; Shopify for dedicated stores."
+    },
+    {
+      question: "Can Ecwid work with WordPress?",
+      answer: "Yes, Ecwid has WordPress plugin. Add full e-commerce to your WordPress site without rebuilding."
+    }
+  ],
+
+  // ============================================
+  // ELAI
+  // ============================================
+  "elai": [
+    {
+      question: "Is Elai free?",
+      answer: "Free trial with limited credits. Paid plans from $29/month for more video generation capabilities."
+    },
+    {
+      question: "What is Elai?",
+      answer: "Elai is an AI video generation platform. Create videos with AI avatars from text. No filming needed."
+    },
+    {
+      question: "Elai vs Synthesia?",
+      answer: "Both create AI avatar videos. Synthesia has more avatars and languages. Elai often more affordable. Both good for corporate videos."
+    },
+    {
+      question: "What can you make with Elai?",
+      answer: "Training videos, marketing content, product demos, educational content. Any video where you'd typically need a presenter."
+    }
+  ],
+
+  // ============================================
+  // ELASTIC-APM
+  // ============================================
+  "elastic-apm": [
+    {
+      question: "Is Elastic APM free?",
+      answer: "Free when self-hosted with Elastic Stack. Elastic Cloud has paid tiers starting around $95/month."
+    },
+    {
+      question: "What is Elastic APM?",
+      answer: "Elastic APM is application performance monitoring built on Elasticsearch. Traces, metrics, logs in one platform."
+    },
+    {
+      question: "Elastic APM vs Datadog?",
+      answer: "Datadog is easier to start with SaaS model. Elastic APM more flexible if you already use Elasticsearch. Both powerful."
+    },
+    {
+      question: "How does Elastic APM work?",
+      answer: "Install agents in your applications. Agents send traces and metrics to APM Server, stored in Elasticsearch, visualized in Kibana."
+    }
+  ],
+
+  // ============================================
+  // ELEMENT
+  // ============================================
+  "element": [
+    {
+      question: "Is Element free?",
+      answer: "Free for personal use with Element servers. Self-hosted is free. Paid plans from $5/user/month for business features."
+    },
+    {
+      question: "What is Element?",
+      answer: "Element is a secure messaging app built on Matrix protocol. End-to-end encrypted, decentralized, can self-host."
+    },
+    {
+      question: "Element vs Slack?",
+      answer: "Element is open-source and decentralized with true E2E encryption. Slack is easier but centralized. Element for privacy; Slack for ease."
+    },
+    {
+      question: "Can Element be self-hosted?",
+      answer: "Yes, Element can be self-hosted with your own Matrix server. Full control over data. Popular for organizations needing data sovereignty."
+    }
+  ],
+
+  // ============================================
+  // EPPO
+  // ============================================
+  "eppo": [
+    {
+      question: "Is Eppo free?",
+      answer: "No free tier. Eppo is enterprise-focused with custom pricing based on experiment volume and features needed."
+    },
+    {
+      question: "What is Eppo?",
+      answer: "Eppo is a feature flagging and experimentation platform. Run A/B tests with statistical rigor. Warehouse-native architecture."
+    },
+    {
+      question: "Eppo vs LaunchDarkly?",
+      answer: "LaunchDarkly focuses on feature flags. Eppo emphasizes experimentation analytics. Eppo for data teams; LaunchDarkly for engineering."
+    },
+    {
+      question: "What makes Eppo different?",
+      answer: "Warehouse-native: connects directly to your data warehouse. Advanced statistics. Built for data scientists and product teams."
+    }
+  ],
+
+  // ============================================
+  // ESET
+  // ============================================
+  "eset": [
+    {
+      question: "Is ESET free?",
+      answer: "30-day free trial. Paid plans from $39.99/year for home users. Business pricing varies by seats."
+    },
+    {
+      question: "What is ESET?",
+      answer: "ESET is an antivirus and internet security company. Known for NOD32 antivirus. Light on system resources."
+    },
+    {
+      question: "Is ESET good?",
+      answer: "Yes, ESET consistently scores well in independent tests. Known for low system impact and good detection rates."
+    },
+    {
+      question: "ESET vs Norton?",
+      answer: "ESET is lighter on resources. Norton has more bundled features. Both effective at protection. ESET for performance-focused users."
+    }
+  ],
+
+  // ============================================
+  // ESTUARY-FLOW
+  // ============================================
+  "estuary-flow": [
+    {
+      question: "Is Estuary Flow free?",
+      answer: "Free tier with limited data volume. Paid plans based on data processed. Good free tier for testing."
+    },
+    {
+      question: "What is Estuary Flow?",
+      answer: "Estuary Flow is a real-time data integration platform. CDC and ETL with sub-second latency. Open-source core."
+    },
+    {
+      question: "Estuary vs Fivetran?",
+      answer: "Fivetran is batch-oriented ELT. Estuary is real-time streaming. Estuary for low-latency needs; Fivetran for traditional ELT."
+    },
+    {
+      question: "What connectors does Estuary have?",
+      answer: "200+ connectors for databases, SaaS apps, and warehouses. Focus on real-time CDC from databases."
+    }
+  ],
+
+  // ============================================
+  // EXCEPTIONLESS
+  // ============================================
+  "exceptionless": [
+    {
+      question: "Is Exceptionless free?",
+      answer: "Free self-hosted version. Cloud plans from $15/month. Generous free tier for small projects."
+    },
+    {
+      question: "What is Exceptionless?",
+      answer: "Exceptionless is an error and log management platform. Track exceptions and events. .NET focused but supports other languages."
+    },
+    {
+      question: "Exceptionless vs Sentry?",
+      answer: "Sentry has broader language support and more features. Exceptionless is simpler and can be self-hosted free. Good Sentry alternative."
+    },
+    {
+      question: "Can I self-host Exceptionless?",
+      answer: "Yes, Exceptionless is open source and can be self-hosted for free. Run on your own servers for full control."
+    }
+  ],
+
+  // ============================================
+  // FALCO
+  // ============================================
+  "falco": [
+    {
+      question: "Is Falco free?",
+      answer: "Yes, Falco is open source and free. Created by Sysdig, now a CNCF project. Commercial support available."
+    },
+    {
+      question: "What is Falco?",
+      answer: "Falco is a cloud-native runtime security tool. Detects threats in containers and Kubernetes. Uses eBPF for kernel-level visibility."
+    },
+    {
+      question: "Falco vs Sysdig?",
+      answer: "Falco is the open-source detection engine. Sysdig Secure builds commercial product on top. Falco free; Sysdig Secure paid with more features."
+    },
+    {
+      question: "How does Falco work?",
+      answer: "Falco monitors system calls using eBPF or kernel module. Rules detect anomalous behavior. Alerts on threats in real-time."
+    }
+  ],
+
+  // ============================================
+  // FANTASTICAL
+  // ============================================
+  "fantastical": [
+    {
+      question: "Is Fantastical free?",
+      answer: "Basic version free with limited features. Flexibits Premium $6.99/month or $56.99/year for full features."
+    },
+    {
+      question: "What is Fantastical?",
+      answer: "Fantastical is a calendar app for Apple platforms. Natural language input, beautiful design, integrates with all calendar services."
+    },
+    {
+      question: "Fantastical vs Apple Calendar?",
+      answer: "Fantastical has better natural language input and UI. Apple Calendar is free and sufficient for basics. Fantastical for power users."
+    },
+    {
+      question: "Does Fantastical work with Google Calendar?",
+      answer: "Yes, Fantastical connects to Google Calendar, Outlook, Exchange, and other CalDAV services. All calendars in one app."
+    }
+  ],
+
+  // ============================================
+  // FASTLY-COMPUTE
+  // ============================================
+  "fastly-compute": [
+    {
+      question: "Is Fastly Compute free?",
+      answer: "Free tier with limited requests. Pay-as-you-go pricing after. Competitive with Cloudflare Workers pricing."
+    },
+    {
+      question: "What is Fastly Compute?",
+      answer: "Fastly Compute (formerly Compute@Edge) is serverless computing at the edge. Run WebAssembly on Fastly's global network."
+    },
+    {
+      question: "Fastly Compute vs Cloudflare Workers?",
+      answer: "Both are edge compute platforms. Fastly uses WebAssembly. Cloudflare has broader ecosystem. Both excellent for edge computing."
+    },
+    {
+      question: "What languages does Fastly Compute support?",
+      answer: "Rust, JavaScript, Go, and any language that compiles to WebAssembly. Rust has best support and performance."
+    }
+  ],
+
+  // ============================================
+  // FATHOM-MEETINGS
+  // ============================================
+  "fathom-meetings": [
+    {
+      question: "Is Fathom free?",
+      answer: "Free tier available with unlimited recording. Premium from $24/month for team features and integrations."
+    },
+    {
+      question: "What is Fathom?",
+      answer: "Fathom is an AI meeting assistant. Records, transcribes, and summarizes meetings automatically. Works with Zoom, Google Meet, Teams."
+    },
+    {
+      question: "Fathom vs Otter.ai?",
+      answer: "Both transcribe meetings. Fathom has better AI summaries and is more affordable. Otter has longer history and more features."
+    },
+    {
+      question: "Does Fathom work with Zoom?",
+      answer: "Yes, Fathom integrates with Zoom, Google Meet, and Microsoft Teams. Joins meetings automatically and records."
+    }
+  ],
+
+  // ============================================
+  // FEATHER-ICONS
+  // ============================================
+  "feather-icons": [
+    {
+      question: "Is Feather Icons free?",
+      answer: "Yes, Feather Icons is completely free and open source. MIT license allows commercial use."
+    },
+    {
+      question: "What is Feather Icons?",
+      answer: "Feather Icons is a collection of simple, beautiful open-source icons. Clean, minimal design. 280+ icons."
+    },
+    {
+      question: "Feather Icons vs Heroicons?",
+      answer: "Both are minimal icon sets. Heroicons has more icons and Tailwind integration. Feather is simpler with consistent stroke style."
+    },
+    {
+      question: "How to use Feather Icons?",
+      answer: "Use via npm package, CDN, or download SVGs. Works with React, Vue, and vanilla JS. Just import and use."
+    }
+  ],
+
+  // ============================================
+  // FEATHERY
+  // ============================================
+  "feathery": [
+    {
+      question: "Is Feathery free?",
+      answer: "Free tier with 100 submissions/month. Paid plans from $49/month for more volume and features."
+    },
+    {
+      question: "What is Feathery?",
+      answer: "Feathery is a powerful no-code form builder. Create complex, multi-step forms with logic, integrations, and custom styling."
+    },
+    {
+      question: "Feathery vs Typeform?",
+      answer: "Typeform focuses on conversational forms. Feathery is more powerful for complex workflows and custom design. Both excellent."
+    },
+    {
+      question: "Can Feathery handle complex forms?",
+      answer: "Yes, Feathery excels at complex forms: conditional logic, calculations, payments, file uploads, and extensive integrations."
+    }
+  ],
+
+  // ============================================
+  // FERMYON-SPIN
+  // ============================================
+  "fermyon-spin": [
+    {
+      question: "Is Fermyon Spin free?",
+      answer: "Spin framework is free and open source. Fermyon Cloud has free tier. Paid cloud hosting available."
+    },
+    {
+      question: "What is Fermyon Spin?",
+      answer: "Spin is a framework for building WebAssembly microservices. Serverless apps that start in milliseconds."
+    },
+    {
+      question: "Spin vs Cloudflare Workers?",
+      answer: "Both run WebAssembly. Spin is open-source framework deployable anywhere. Cloudflare Workers is proprietary platform. Different approaches."
+    },
+    {
+      question: "What languages does Spin support?",
+      answer: "Rust, Go, JavaScript/TypeScript, Python, and others via WebAssembly. Rust has best support."
+    }
+  ],
+
+  // ============================================
+  // FILESTACK
+  // ============================================
+  "filestack": [
+    {
+      question: "Is Filestack free?",
+      answer: "Free tier with 100 uploads/month. Paid plans from $49/month for more uploads and transformations."
+    },
+    {
+      question: "What is Filestack?",
+      answer: "Filestack is a file upload and processing API. Upload from multiple sources, transform images and documents, deliver via CDN."
+    },
+    {
+      question: "Filestack vs Uploadcare?",
+      answer: "Both handle file uploads and processing. Filestack has more integrations. Uploadcare simpler pricing. Both good choices."
+    },
+    {
+      question: "What can Filestack transform?",
+      answer: "Image resize, crop, filters. Document conversion. Video transcoding. Facial detection. Text extraction from images."
+    }
+  ],
+
+  // ============================================
+  // FILLOUT
+  // ============================================
+  "fillout": [
+    {
+      question: "Is Fillout free?",
+      answer: "Free tier with unlimited forms and 1000 submissions/month. Paid from $15/month for more features."
+    },
+    {
+      question: "What is Fillout?",
+      answer: "Fillout is a modern form builder. Create forms, surveys, quizzes with conditional logic. Notion and Airtable integration."
+    },
+    {
+      question: "Fillout vs Tally?",
+      answer: "Both are modern form builders. Fillout has better database integrations (Notion, Airtable). Tally is simpler. Choose based on workflow."
+    },
+    {
+      question: "Does Fillout connect to Notion?",
+      answer: "Yes, Fillout has native Notion integration. Form submissions can create or update Notion database entries automatically."
+    }
+  ],
+
+  // ============================================
+  // FIREBASE-FIRESTORE
+  // ============================================
+  "firebase-firestore": [
+    {
+      question: "Is Firestore free?",
+      answer: "Generous free tier: 1GB storage, 50K reads, 20K writes, 20K deletes per day. Pay-as-you-go after."
+    },
+    {
+      question: "What is Firestore?",
+      answer: "Firestore is a NoSQL document database from Google. Real-time sync, offline support, scales automatically. Part of Firebase."
+    },
+    {
+      question: "Firestore vs MongoDB?",
+      answer: "Both are document databases. Firestore is serverless with real-time sync. MongoDB more flexible for complex queries. Firestore for apps; MongoDB for general use."
+    },
+    {
+      question: "When to use Firestore?",
+      answer: "Mobile and web apps needing real-time sync, offline support, and simple backend. Not for complex queries or analytics."
+    }
+  ],
+
+  // ============================================
+  // FIREBOLT
+  // ============================================
+  "firebolt": [
+    {
+      question: "Is Firebolt free?",
+      answer: "No free tier. Firebolt is enterprise-focused with usage-based pricing. Contact sales for quotes."
+    },
+    {
+      question: "What is Firebolt?",
+      answer: "Firebolt is a cloud data warehouse designed for speed. Sub-second query performance on large datasets. Decoupled storage and compute."
+    },
+    {
+      question: "Firebolt vs Snowflake?",
+      answer: "Firebolt claims faster queries and lower costs for certain workloads. Snowflake has broader ecosystem. Firebolt for query-heavy analytics."
+    },
+    {
+      question: "What is Firebolt good for?",
+      answer: "High-performance analytics, real-time dashboards, customer-facing analytics. Excels at interactive query workloads."
+    }
+  ],
+
+  // ============================================
+  // FIREFLIES-AI
+  // ============================================
+  "fireflies-ai": [
+    {
+      question: "Is Fireflies.ai free?",
+      answer: "Free tier with limited transcription credits. Pro from $18/month for unlimited transcription and features."
+    },
+    {
+      question: "What is Fireflies.ai?",
+      answer: "Fireflies is an AI meeting assistant. Automatically records, transcribes, and summarizes meetings. Searchable transcripts."
+    },
+    {
+      question: "Fireflies vs Otter.ai?",
+      answer: "Both transcribe meetings. Fireflies has better CRM integrations. Otter has better real-time features. Both good choices."
+    },
+    {
+      question: "What platforms does Fireflies work with?",
+      answer: "Zoom, Google Meet, Microsoft Teams, Webex, and more. Also works with dialers for sales calls."
+    }
+  ],
+
+  // ============================================
+  // FIREHYDRANT
+  // ============================================
+  "firehydrant": [
+    {
+      question: "Is FireHydrant free?",
+      answer: "Free tier for small teams. Paid plans from $800/month for larger organizations with more features."
+    },
+    {
+      question: "What is FireHydrant?",
+      answer: "FireHydrant is an incident management platform. Automates incident response, post-mortems, and communication. Slack-native."
+    },
+    {
+      question: "FireHydrant vs PagerDuty?",
+      answer: "PagerDuty focuses on alerting. FireHydrant focuses on incident lifecycle management. Many teams use both together."
+    },
+    {
+      question: "What does FireHydrant automate?",
+      answer: "Incident channel creation, stakeholder notifications, status page updates, runbooks, post-mortem scheduling, and more."
+    }
+  ],
+
+  // ============================================
+  // FIREWORKS-AI
+  // ============================================
+  "fireworks-ai": [
+    {
+      question: "Is Fireworks AI free?",
+      answer: "Free tier with $1 credit. Pay-per-token pricing after. Competitive pricing for LLM inference."
+    },
+    {
+      question: "What is Fireworks AI?",
+      answer: "Fireworks is an AI inference platform. Run open-source LLMs (Llama, Mixtral) with fast inference. API compatible with OpenAI."
+    },
+    {
+      question: "Fireworks vs Together AI?",
+      answer: "Both host open-source models. Fireworks claims faster inference. Together has more model variety. Both good alternatives to OpenAI."
+    },
+    {
+      question: "What models does Fireworks support?",
+      answer: "Llama 2, Llama 3, Mixtral, Mistral, and other open-source models. Also supports fine-tuning and custom model deployment."
+    }
+  ],
+
+  // ============================================
+  // FLAGSMITH
+  // ============================================
+  "flagsmith": [
+    {
+      question: "Is Flagsmith free?",
+      answer: "Free tier with 50K requests/month. Self-hosted is free. Cloud from $45/month for more volume."
+    },
+    {
+      question: "What is Flagsmith?",
+      answer: "Flagsmith is an open-source feature flag and remote config service. Control feature rollouts without deployments."
+    },
+    {
+      question: "Flagsmith vs LaunchDarkly?",
+      answer: "LaunchDarkly is more polished but expensive. Flagsmith is open-source, can self-host. Flagsmith for budget-conscious; LaunchDarkly for enterprise."
+    },
+    {
+      question: "Can I self-host Flagsmith?",
+      answer: "Yes, Flagsmith is open source. Self-host for free with full control. Docker and Kubernetes deployment options."
+    }
+  ],
+
+  // ============================================
+  // FLEET
+  // ============================================
+  "fleet": [
+    {
+      question: "Is Fleet free?",
+      answer: "Fleet is open source and free to self-host. Fleet Premium has paid features for enterprise needs."
+    },
+    {
+      question: "What is Fleet?",
+      answer: "Fleet is an open-source device management platform built on osquery. Manage and query devices at scale."
+    },
+    {
+      question: "Fleet vs Jamf?",
+      answer: "Jamf is Apple-focused MDM. Fleet is cross-platform query-based management. Different approaches to device management."
+    },
+    {
+      question: "What can Fleet do?",
+      answer: "Query device state with SQL, detect vulnerabilities, manage software, monitor compliance. Works on Mac, Windows, Linux."
+    }
+  ],
+
+  // ============================================
+  // FLIKI
+  // ============================================
+  "fliki": [
+    {
+      question: "Is Fliki free?",
+      answer: "Free tier with 5 minutes/month. Paid plans from $21/month for more video generation time."
+    },
+    {
+      question: "What is Fliki?",
+      answer: "Fliki is an AI video creation tool. Turn text into videos with AI voices and stock media. Great for content creators."
+    },
+    {
+      question: "Fliki vs Pictory?",
+      answer: "Both turn text to video. Fliki has better voice synthesis. Pictory better for repurposing long content. Both good for social media."
+    },
+    {
+      question: "What can you create with Fliki?",
+      answer: "Social media videos, YouTube content, educational videos, marketing clips. Text-to-video with AI narration."
+    }
+  ],
+
+  // ============================================
+  // FLIPT
+  // ============================================
+  "flipt": [
+    {
+      question: "Is Flipt free?",
+      answer: "Yes, Flipt is open source and free. Self-host without licensing costs. Flipt Cloud available for managed hosting."
+    },
+    {
+      question: "What is Flipt?",
+      answer: "Flipt is an open-source feature flag system. Simple, fast, and self-hosted. No external dependencies."
+    },
+    {
+      question: "Flipt vs LaunchDarkly?",
+      answer: "LaunchDarkly is SaaS with more features. Flipt is self-hosted and simpler. Flipt for simplicity and cost; LaunchDarkly for scale."
+    },
+    {
+      question: "How to deploy Flipt?",
+      answer: "Single binary deployment. Docker image available. No database required (uses file or Git). Simple to operate."
+    }
+  ],
+
+  // ============================================
+  // FLOCK
+  // ============================================
+  "flock": [
+    {
+      question: "Is Flock free?",
+      answer: "Free plan available with basic features. Pro from $4.50/user/month. Good value for team messaging."
+    },
+    {
+      question: "What is Flock?",
+      answer: "Flock is a team messaging and collaboration platform. Similar to Slack with channels, DMs, and integrations."
+    },
+    {
+      question: "Flock vs Slack?",
+      answer: "Slack has larger ecosystem and more integrations. Flock is more affordable with built-in productivity tools. Flock for cost savings."
+    },
+    {
+      question: "What features does Flock have?",
+      answer: "Team messaging, video calls, file sharing, to-dos, polls, and reminders. All-in-one collaboration platform."
+    }
+  ],
+
+  // ============================================
+  // FLODESK
+  // ============================================
+  "flodesk": [
+    {
+      question: "Is Flodesk free?",
+      answer: "No free tier. Flat rate of $38/month for unlimited subscribers and emails. Simple pricing model."
+    },
+    {
+      question: "What is Flodesk?",
+      answer: "Flodesk is an email marketing platform focused on beautiful design. Drag-and-drop builder with stunning templates."
+    },
+    {
+      question: "Flodesk vs Mailchimp?",
+      answer: "Mailchimp has more features and automations. Flodesk has better design templates and simpler pricing. Flodesk for design-focused creators."
+    },
+    {
+      question: "Who is Flodesk for?",
+      answer: "Creators, bloggers, and small businesses wanting beautiful emails. Less technical, more design-focused than competitors."
+    }
+  ],
+
+  // ============================================
+  // FLUTTERFLOW
+  // ============================================
+  "flutterflow": [
+    {
+      question: "Is FlutterFlow free?",
+      answer: "Free tier for building. Paid plans from $30/month to export code and deploy. Testing is free."
+    },
+    {
+      question: "What is FlutterFlow?",
+      answer: "FlutterFlow is a visual builder for Flutter apps. Build native iOS and Android apps without code. Exports clean Flutter code."
+    },
+    {
+      question: "FlutterFlow vs Bubble?",
+      answer: "FlutterFlow builds native mobile apps. Bubble is web-focused. FlutterFlow for mobile; Bubble for web apps."
+    },
+    {
+      question: "Can FlutterFlow export code?",
+      answer: "Yes, FlutterFlow exports clean Flutter/Dart code. Own your code, no vendor lock-in. Paid plans required for export."
+    }
+  ],
+
+  // ============================================
+  // FLUX-CD
+  // ============================================
+  "flux-cd": [
+    {
+      question: "Is Flux CD free?",
+      answer: "Yes, Flux is open source and free. CNCF graduated project. No licensing costs."
+    },
+    {
+      question: "What is Flux CD?",
+      answer: "Flux is a GitOps tool for Kubernetes. Automatically syncs cluster state from Git. Continuous delivery for Kubernetes."
+    },
+    {
+      question: "Flux vs ArgoCD?",
+      answer: "Both are GitOps tools. ArgoCD has better UI. Flux is more composable and Kubernetes-native. Both excellent choices."
+    },
+    {
+      question: "How does Flux work?",
+      answer: "Flux watches Git repos and container registries. When changes detected, automatically applies to Kubernetes cluster."
+    }
+  ],
+
+  // ============================================
+  // FLYIO
+  // ============================================
+  "flyio": [
+    {
+      question: "Is Fly.io free?",
+      answer: "Free tier with 3 shared VMs. Paid usage after free allowances. Pay for what you use beyond free tier."
+    },
+    {
+      question: "What is Fly.io?",
+      answer: "Fly.io is a platform for running apps globally. Deploy containers close to users. Built-in Postgres and Redis."
+    },
+    {
+      question: "Fly.io vs Railway?",
+      answer: "Railway is simpler for getting started. Fly.io offers more control and global distribution. Fly.io for performance; Railway for simplicity."
+    },
+    {
+      question: "What makes Fly.io different?",
+      answer: "Runs apps on Firecracker microVMs globally. Low latency worldwide. Good for globally distributed apps."
+    }
+  ],
+
+  // ============================================
+  // FOLK
+  // ============================================
+  "folk": [
+    {
+      question: "Is Folk free?",
+      answer: "Free plan for individuals. Paid from $20/user/month for teams and advanced features."
+    },
+    {
+      question: "What is Folk?",
+      answer: "Folk is a modern CRM focused on relationship management. Clean UI, flexible, integrates with email and LinkedIn."
+    },
+    {
+      question: "Folk vs HubSpot?",
+      answer: "HubSpot is feature-rich enterprise CRM. Folk is simpler for relationship-focused teams. Folk for simplicity; HubSpot for scale."
+    },
+    {
+      question: "What makes Folk different?",
+      answer: "Relationship-first approach, not sales-first. Beautiful UI, mail merge, LinkedIn integration. Great for networkers."
+    }
+  ],
+
+  // ============================================
+  // FONTBASE
+  // ============================================
+  "fontbase": [
+    {
+      question: "Is FontBase free?",
+      answer: "Free version available with core features. FontBase Awesome $3/month for advanced features."
+    },
+    {
+      question: "What is FontBase?",
+      answer: "FontBase is a font manager for designers. Organize, preview, and activate fonts. Works on Mac, Windows, Linux."
+    },
+    {
+      question: "FontBase vs RightFont?",
+      answer: "RightFont is Mac-only with iCloud sync. FontBase is cross-platform. Both excellent font managers for designers."
+    },
+    {
+      question: "What can FontBase do?",
+      answer: "Organize fonts in collections, preview in custom text, activate/deactivate fonts. Google Fonts integration built-in."
+    }
+  ],
+
+  // ============================================
+  // FONTJOY
+  // ============================================
+  "fontjoy": [
+    {
+      question: "Is Fontjoy free?",
+      answer: "Yes, Fontjoy is completely free. Web-based tool, no account needed."
+    },
+    {
+      question: "What is Fontjoy?",
+      answer: "Fontjoy is an AI-powered font pairing tool. Generates harmonious font combinations using deep learning."
+    },
+    {
+      question: "How does Fontjoy work?",
+      answer: "Uses machine learning to find fonts that work well together. Click generate for new combinations. Lock fonts you like."
+    },
+    {
+      question: "What fonts does Fontjoy use?",
+      answer: "Uses Google Fonts library. All fonts free to use commercially. Easy to implement on any website."
+    }
+  ],
+
+  // ============================================
+  // FORK-GIT
+  // ============================================
+  "fork-git": [
+    {
+      question: "Is Fork free?",
+      answer: "Paid license required: $49.99 one-time payment. Free evaluation period available."
+    },
+    {
+      question: "What is Fork?",
+      answer: "Fork is a Git client for Mac and Windows. Fast, friendly interface for working with Git repositories."
+    },
+    {
+      question: "Fork vs GitKraken?",
+      answer: "GitKraken has more integrations and features. Fork is faster and simpler. Fork for speed; GitKraken for features."
+    },
+    {
+      question: "What makes Fork good?",
+      answer: "Very fast performance, clean interface, good diff viewer, interactive rebase. Popular among developers who want speed."
+    }
+  ],
+
+  // ============================================
+  // FORMSPARK
+  // ============================================
+  "formspark": [
+    {
+      question: "Is Formspark free?",
+      answer: "Free tier with 250 submissions. Paid from $16/month for more submissions and features."
+    },
+    {
+      question: "What is Formspark?",
+      answer: "Formspark is a form backend service. Handle form submissions without server code. Works with any frontend."
+    },
+    {
+      question: "Formspark vs Formspree?",
+      answer: "Both are form backends. Formspark is simpler and cheaper. Formspree has more integrations. Both good for static sites."
+    },
+    {
+      question: "How does Formspark work?",
+      answer: "Point your HTML form to Formspark endpoint. Formspark handles submissions, spam filtering, and notifications."
+    }
+  ],
+
+  // ============================================
+  // FORMSPREE
+  // ============================================
+  "formspree": [
+    {
+      question: "Is Formspree free?",
+      answer: "Free tier with 50 submissions/month. Paid from $10/month for more submissions and features."
+    },
+    {
+      question: "What is Formspree?",
+      answer: "Formspree is a form backend for static sites. No server code needed. Supports file uploads and integrations."
+    },
+    {
+      question: "Formspree vs Netlify Forms?",
+      answer: "Netlify Forms only works on Netlify. Formspree works anywhere. Formspree for flexibility; Netlify Forms for Netlify sites."
+    },
+    {
+      question: "What integrations does Formspree have?",
+      answer: "Slack, Airtable, Mailchimp, Notion, Zapier, and more. Connect form submissions to your workflow."
+    }
+  ],
+
+  // ============================================
+  // FORMSTACK
+  // ============================================
+  "formstack": [
+    {
+      question: "Is Formstack free?",
+      answer: "No free tier. Plans from $83/month. Enterprise-focused form and workflow platform."
+    },
+    {
+      question: "What is Formstack?",
+      answer: "Formstack is a form builder and workflow automation platform. Forms, documents, and signatures in one platform."
+    },
+    {
+      question: "Formstack vs Typeform?",
+      answer: "Typeform focuses on user experience. Formstack is enterprise workflow tool. Formstack for business processes; Typeform for engagement."
+    },
+    {
+      question: "What can Formstack do?",
+      answer: "Build forms, create documents from submissions, collect e-signatures, automate workflows. Full document automation."
+    }
+  ],
+
+  // ============================================
+  // FRESHPING
+  // ============================================
+  "freshping": [
+    {
+      question: "Is Freshping free?",
+      answer: "Free plan with 50 checks from one location. Paid plans from $15/month for more checks and locations."
+    },
+    {
+      question: "What is Freshping?",
+      answer: "Freshping is an uptime monitoring service from Freshworks. Monitor websites, APIs, and servers for availability."
+    },
+    {
+      question: "Freshping vs UptimeRobot?",
+      answer: "Both are uptime monitors. Freshping has better UI and Freshworks integration. UptimeRobot has more generous free tier."
+    },
+    {
+      question: "What does Freshping monitor?",
+      answer: "HTTP/HTTPS endpoints, TCP ports, ping, DNS. Public status page included. Multi-location monitoring."
+    }
+  ],
+
+  // ============================================
+  // FRONT
+  // ============================================
+  "front": [
+    {
+      question: "Is Front free?",
+      answer: "No free tier. Plans from $19/user/month. 7-day free trial available."
+    },
+    {
+      question: "What is Front?",
+      answer: "Front is a customer communication platform. Shared inbox for email, SMS, chat, and social. Team collaboration on customer messages."
+    },
+    {
+      question: "Front vs Intercom?",
+      answer: "Intercom is chat-focused with bots. Front is email-first shared inbox. Front for email-heavy support; Intercom for chat."
+    },
+    {
+      question: "What makes Front different?",
+      answer: "Combines personal email with team collaboration. Internal comments, assignments, analytics. Feels like email, works like helpdesk."
+    }
+  ],
+
+  // ============================================
+  // FUSIONAUTH
+  // ============================================
+  "fusionauth": [
+    {
+      question: "Is FusionAuth free?",
+      answer: "Community edition is free forever (self-hosted). Paid editions from $125/month for advanced features."
+    },
+    {
+      question: "What is FusionAuth?",
+      answer: "FusionAuth is an identity platform. Authentication, authorization, and user management. Self-hosted or cloud."
+    },
+    {
+      question: "FusionAuth vs Auth0?",
+      answer: "Auth0 is SaaS-only and more expensive. FusionAuth can be self-hosted for free. FusionAuth for self-hosting; Auth0 for ease."
+    },
+    {
+      question: "Can I self-host FusionAuth?",
+      answer: "Yes, FusionAuth Community is free to self-host. Docker deployment available. Full features without user limits."
+    }
+  ],
+
+  // ============================================
+  // GANDI
+  // ============================================
+  "gandi": [
+    {
+      question: "Is Gandi free?",
+      answer: "Domain registration from around $15/year. Email hosting included with domains. Pricing varies by TLD."
+    },
+    {
+      question: "What is Gandi?",
+      answer: "Gandi is a domain registrar and hosting company. Known for simple pricing and good ethics. Based in France."
+    },
+    {
+      question: "Gandi vs Namecheap?",
+      answer: "Namecheap is often cheaper. Gandi has cleaner interface and includes privacy protection. Both reputable registrars."
+    },
+    {
+      question: "What does Gandi offer?",
+      answer: "Domain registration, DNS hosting, email hosting, SSL certificates, and simple hosting. All-in-one for web presence."
+    }
+  ],
+
+  // ============================================
+  // GATHER
+  // ============================================
+  "gather": [
+    {
+      question: "Is Gather free?",
+      answer: "Free for up to 10 concurrent users. Paid from $7/user/month for larger spaces and features."
+    },
+    {
+      question: "What is Gather?",
+      answer: "Gather is a virtual space platform. 2D pixel-art world for remote teams. Move around and talk to people nearby."
+    },
+    {
+      question: "Gather vs Zoom?",
+      answer: "Zoom is for scheduled meetings. Gather is for persistent virtual offices. Gather enables spontaneous interaction."
+    },
+    {
+      question: "What is Gather used for?",
+      answer: "Virtual offices, team socials, conferences, onboarding. Creates sense of presence that video calls lack."
+    }
+  ],
+
+  // ============================================
+  // GATLING
+  // ============================================
+  "gatling": [
+    {
+      question: "Is Gatling free?",
+      answer: "Open source Gatling is free. Gatling Enterprise (cloud) has paid plans for team features."
+    },
+    {
+      question: "What is Gatling?",
+      answer: "Gatling is a load testing tool. Write tests in Scala or Java. High-performance, scriptable load generation."
+    },
+    {
+      question: "Gatling vs JMeter?",
+      answer: "JMeter is GUI-based, older. Gatling is code-first, modern. Gatling scales better and has cleaner reports."
+    },
+    {
+      question: "How to write Gatling tests?",
+      answer: "Write scenarios in Scala DSL. Define user journeys, then simulate load. Generate HTML reports automatically."
+    }
+  ],
+
+  // ============================================
+  // GETFORM
+  // ============================================
+  "getform": [
+    {
+      question: "Is Getform free?",
+      answer: "Free tier with 50 submissions/month. Paid from $8/month for more submissions and features."
+    },
+    {
+      question: "What is Getform?",
+      answer: "Getform is a form backend for developers. Handle submissions from any frontend. Integrations and spam filtering included."
+    },
+    {
+      question: "Getform vs Formspree?",
+      answer: "Both are form backends. Similar features and pricing. Getform has simpler interface. Both work well."
+    },
+    {
+      question: "What frameworks does Getform support?",
+      answer: "Works with any frontend: React, Vue, Next.js, plain HTML. Just point form action to Getform endpoint."
+    }
+  ],
+
+  // ============================================
+  // GETRESPONSE
+  // ============================================
+  "getresponse": [
+    {
+      question: "Is GetResponse free?",
+      answer: "Free plan for up to 500 contacts. Paid from $19/month for more features and contacts."
+    },
+    {
+      question: "What is GetResponse?",
+      answer: "GetResponse is an email marketing platform. Email campaigns, automation, landing pages, and webinars in one tool."
+    },
+    {
+      question: "GetResponse vs Mailchimp?",
+      answer: "Mailchimp has better brand recognition. GetResponse has more features like webinars. GetResponse often better value."
+    },
+    {
+      question: "What makes GetResponse unique?",
+      answer: "All-in-one marketing: email, automation, landing pages, webinars, e-commerce. No need for multiple tools."
+    }
+  ],
+
+  // ============================================
+  // GIMP
+  // ============================================
+  "gimp": [
+    {
+      question: "Is GIMP free?",
+      answer: "Yes, GIMP is completely free and open source. No cost, no subscription, no limitations."
+    },
+    {
+      question: "What is GIMP?",
+      answer: "GIMP is a free image editor. Professional-grade photo editing and manipulation. Photoshop alternative."
+    },
+    {
+      question: "GIMP vs Photoshop?",
+      answer: "Photoshop is more polished with better tools. GIMP is free and capable. GIMP for budget-conscious; Photoshop for professionals."
+    },
+    {
+      question: "Can GIMP do what Photoshop does?",
+      answer: "GIMP handles most photo editing tasks. Lacks some advanced features. Learning curve is different but results can be similar."
+    }
+  ],
+
+  // ============================================
+  // GITBOOK
+  // ============================================
+  "gitbook": [
+    {
+      question: "Is GitBook free?",
+      answer: "Free for personal and open source. Team plans from $8/user/month. Generous free tier."
+    },
+    {
+      question: "What is GitBook?",
+      answer: "GitBook is a documentation platform. Write docs in a beautiful editor. Git-based version control."
+    },
+    {
+      question: "GitBook vs Notion?",
+      answer: "Notion is all-purpose workspace. GitBook is documentation-focused. GitBook for public docs; Notion for internal wiki."
+    },
+    {
+      question: "Can GitBook host public docs?",
+      answer: "Yes, GitBook excels at public documentation. Custom domains, SEO-friendly, beautiful templates. Many open source projects use it."
+    }
+  ],
+
+  // ============================================
+  // GITEA
+  // ============================================
+  "gitea": [
+    {
+      question: "Is Gitea free?",
+      answer: "Yes, Gitea is free and open source. Self-host your own Git server at no cost."
+    },
+    {
+      question: "What is Gitea?",
+      answer: "Gitea is a self-hosted Git service. Lightweight GitHub/GitLab alternative. Written in Go, runs anywhere."
+    },
+    {
+      question: "Gitea vs GitLab?",
+      answer: "GitLab has more features (CI/CD, project management). Gitea is lighter and simpler. Gitea for Git-only; GitLab for DevOps platform."
+    },
+    {
+      question: "How resource-intensive is Gitea?",
+      answer: "Very lightweight. Can run on Raspberry Pi. Single binary, embedded database option. Minimal system requirements."
+    }
+  ],
+
+  // ============================================
+  // GITGUARDIAN
+  // ============================================
+  "gitguardian": [
+    {
+      question: "Is GitGuardian free?",
+      answer: "Free for individual developers. Team plans from $35/developer/month. Public repo scanning free."
+    },
+    {
+      question: "What is GitGuardian?",
+      answer: "GitGuardian is a secrets detection platform. Finds hardcoded credentials in code. Prevents secret leaks."
+    },
+    {
+      question: "GitGuardian vs Gitleaks?",
+      answer: "Gitleaks is open source CLI tool. GitGuardian is commercial platform with dashboard and integrations. GitGuardian for teams."
+    },
+    {
+      question: "What secrets does GitGuardian detect?",
+      answer: "API keys, passwords, tokens, certificates, private keys. 350+ detectors for various services and formats."
+    }
+  ],
+
+  // ============================================
+  // GITHUB-ACTIONS
+  // ============================================
+  "github-actions": [
+    {
+      question: "Is GitHub Actions free?",
+      answer: "Free for public repos. Private repos get 2000 minutes/month free. Additional minutes paid."
+    },
+    {
+      question: "What is GitHub Actions?",
+      answer: "GitHub Actions is CI/CD built into GitHub. Automate build, test, deploy workflows. YAML-based configuration."
+    },
+    {
+      question: "GitHub Actions vs Jenkins?",
+      answer: "Jenkins is self-hosted with unlimited customization. Actions is integrated with GitHub. Actions for simplicity; Jenkins for control."
+    },
+    {
+      question: "What can GitHub Actions do?",
+      answer: "CI/CD pipelines, automated testing, deployments, scheduled tasks, issue management. Workflows triggered by GitHub events."
+    }
+  ],
+
+  // ============================================
+  // GITHUB-DESKTOP
+  // ============================================
+  "github-desktop": [
+    {
+      question: "Is GitHub Desktop free?",
+      answer: "Yes, GitHub Desktop is completely free. Open source and available for Mac and Windows."
+    },
+    {
+      question: "What is GitHub Desktop?",
+      answer: "GitHub Desktop is a GUI Git client from GitHub. Simplifies Git operations for those who prefer visual interfaces."
+    },
+    {
+      question: "GitHub Desktop vs GitKraken?",
+      answer: "GitKraken has more features and works with any Git host. GitHub Desktop is simpler and GitHub-focused. Both beginner-friendly."
+    },
+    {
+      question: "Is GitHub Desktop for beginners?",
+      answer: "Yes, great for Git beginners. Visual commits, branches, and merges. Hides complexity while teaching Git concepts."
+    }
+  ],
+
+  // ============================================
+  // GITHUB-PAGES
+  // ============================================
+  "github-pages": [
+    {
+      question: "Is GitHub Pages free?",
+      answer: "Yes, free for public repositories. Private repo sites need GitHub Pro ($4/month)."
+    },
+    {
+      question: "What is GitHub Pages?",
+      answer: "GitHub Pages is free static site hosting. Host websites directly from GitHub repos. Great for docs and portfolios."
+    },
+    {
+      question: "GitHub Pages vs Netlify?",
+      answer: "Netlify has more features (functions, forms, deploys). GitHub Pages is simpler and free. Both good for static sites."
+    },
+    {
+      question: "What can you host on GitHub Pages?",
+      answer: "Static HTML, CSS, JavaScript sites. Jekyll blogs. Documentation. No server-side code, but JavaScript frameworks work."
+    }
+  ],
+
+  // ============================================
+  // GITKRAKEN
+  // ============================================
+  "gitkraken": [
+    {
+      question: "Is GitKraken free?",
+      answer: "Free for public repos and local work. Pro from $4.95/month for private repos and team features."
+    },
+    {
+      question: "What is GitKraken?",
+      answer: "GitKraken is a Git GUI client. Visual commit history, drag-drop branching, integrations with GitHub, GitLab, Bitbucket."
+    },
+    {
+      question: "GitKraken vs Fork?",
+      answer: "Fork is faster and simpler. GitKraken has more integrations and features. GitKraken for features; Fork for speed."
+    },
+    {
+      question: "What platforms does GitKraken support?",
+      answer: "Windows, Mac, and Linux. Also includes GitKraken CLI, issue boards, and team features."
+    }
+  ],
+
+  // ============================================
+  // GITLEAKS
+  // ============================================
+  "gitleaks": [
+    {
+      question: "Is Gitleaks free?",
+      answer: "Yes, Gitleaks is open source and free. MIT license. No cost for any use."
+    },
+    {
+      question: "What is Gitleaks?",
+      answer: "Gitleaks is a secret scanning tool. Finds hardcoded secrets in Git repos. CLI tool for CI/CD pipelines."
+    },
+    {
+      question: "Gitleaks vs GitGuardian?",
+      answer: "Gitleaks is free CLI tool. GitGuardian is commercial platform. Gitleaks for DIY; GitGuardian for managed service."
+    },
+    {
+      question: "How to use Gitleaks?",
+      answer: "Run gitleaks detect on a repo. Add to pre-commit hooks or CI pipelines. Customizable rules for different secret types."
+    }
+  ],
+
+  // ============================================
+  // GLADLY
+  // ============================================
+  "gladly": [
+    {
+      question: "Is Gladly free?",
+      answer: "No free tier. Enterprise pricing, contact sales. Premium customer service platform."
+    },
+    {
+      question: "What is Gladly?",
+      answer: "Gladly is a customer service platform. People-centered design shows full customer history across channels."
+    },
+    {
+      question: "Gladly vs Zendesk?",
+      answer: "Zendesk is ticket-based. Gladly is conversation-based and people-centered. Gladly for premium support experiences."
+    },
+    {
+      question: "What makes Gladly different?",
+      answer: "No tickets, just continuous conversations. All channels (email, chat, phone) in one thread per customer."
+    }
+  ],
+
+  // ============================================
+  // GLIDE
+  // ============================================
+  "glide": [
+    {
+      question: "Is Glide free?",
+      answer: "Free tier available with Glide branding. Paid from $25/month for more features and branding removal."
+    },
+    {
+      question: "What is Glide?",
+      answer: "Glide turns spreadsheets into apps. Build mobile apps from Google Sheets or Airtable. No code required."
+    },
+    {
+      question: "Glide vs Appsheet?",
+      answer: "Both make apps from spreadsheets. Glide has better design. AppSheet (Google) has more enterprise features."
+    },
+    {
+      question: "What can you build with Glide?",
+      answer: "Internal tools, directories, inventory apps, CRMs, simple mobile apps. Any app that works with tabular data."
+    }
+  ],
+
+  // ============================================
+  // GOATCOUNTER
+  // ============================================
+  "goatcounter": [
+    {
+      question: "Is GoatCounter free?",
+      answer: "Free for non-commercial use. Self-hosting free. Paid plans from $5/month for commercial use."
+    },
+    {
+      question: "What is GoatCounter?",
+      answer: "GoatCounter is a privacy-friendly web analytics tool. Simple, no cookies, GDPR compliant. Open source."
+    },
+    {
+      question: "GoatCounter vs Plausible?",
+      answer: "Both are privacy-focused. Plausible has better UI and more features. GoatCounter is simpler and cheaper."
+    },
+    {
+      question: "Does GoatCounter use cookies?",
+      answer: "No cookies. No personal data collected. Counts page views without tracking individuals. GDPR compliant by design."
+    }
+  ],
+
+  // ============================================
+  // GOCD
+  // ============================================
+  "gocd": [
+    {
+      question: "Is GoCD free?",
+      answer: "Yes, GoCD is open source and free. No paid version. Commercial support available from Thoughtworks."
+    },
+    {
+      question: "What is GoCD?",
+      answer: "GoCD is an open-source CI/CD server from Thoughtworks. Focuses on complex deployment pipelines and workflows."
+    },
+    {
+      question: "GoCD vs Jenkins?",
+      answer: "Jenkins is more popular with huge plugin ecosystem. GoCD has better pipeline visualization and modeling. GoCD for complex pipelines."
+    },
+    {
+      question: "What is GoCD good for?",
+      answer: "Complex multi-stage pipelines, value stream mapping, deployment pipelines. Good for enterprises with complex release processes."
+    }
+  ],
+
+  // ============================================
+  // GOGS
+  // ============================================
+  "gogs": [
+    {
+      question: "Is Gogs free?",
+      answer: "Yes, Gogs is open source and free. Self-host your own Git server at no cost."
+    },
+    {
+      question: "What is Gogs?",
+      answer: "Gogs is a painless self-hosted Git service. Lightweight, cross-platform, easy to install."
+    },
+    {
+      question: "Gogs vs Gitea?",
+      answer: "Gitea is a fork of Gogs with more active development. Both similar, Gitea has more features. Gitea generally recommended now."
+    },
+    {
+      question: "How resource-intensive is Gogs?",
+      answer: "Very lightweight. Single binary, runs on minimal hardware. Good for personal use or small teams."
+    }
+  ],
+
+  // ============================================
+  // GOLAND
+  // ============================================
+  "goland": [
+    {
+      question: "Is GoLand free?",
+      answer: "Not free. $24.90/month or $249/year for individuals. Free for students and open source projects."
+    },
+    {
+      question: "What is GoLand?",
+      answer: "GoLand is JetBrains' IDE for Go development. Full-featured with debugging, testing, and refactoring tools."
+    },
+    {
+      question: "GoLand vs VS Code?",
+      answer: "VS Code is free with Go extension. GoLand has deeper Go integration. GoLand for serious Go development; VS Code for lighter needs."
+    },
+    {
+      question: "Is GoLand worth it?",
+      answer: "If you do heavy Go development, GoLand's tooling saves time. VS Code is capable but GoLand is more polished for Go."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-ANALYTICS
+  // ============================================
+  "google-analytics": [
+    {
+      question: "Is Google Analytics free?",
+      answer: "Yes, Google Analytics is free. GA4 is the current version. Analytics 360 is paid enterprise version."
+    },
+    {
+      question: "What is Google Analytics?",
+      answer: "Google Analytics tracks website traffic and user behavior. Most popular analytics tool. Now GA4 with event-based tracking."
+    },
+    {
+      question: "Google Analytics vs Plausible?",
+      answer: "GA is free with most features. Plausible is privacy-focused and simpler. GA for depth; Plausible for simplicity and privacy."
+    },
+    {
+      question: "Is Google Analytics GDPR compliant?",
+      answer: "Requires cookie consent banner and privacy policy disclosure. Some EU countries have concerns. Consider alternatives for EU audiences."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-CLOUD-DNS
+  // ============================================
+  "google-cloud-dns": [
+    {
+      question: "Is Cloud DNS free?",
+      answer: "Not free. Charges per hosted zone ($0.20/zone/month) and per queries. Low cost for most sites."
+    },
+    {
+      question: "What is Google Cloud DNS?",
+      answer: "Cloud DNS is Google's managed DNS service. Reliable DNS hosting with Google's infrastructure. Part of Google Cloud."
+    },
+    {
+      question: "Cloud DNS vs Cloudflare DNS?",
+      answer: "Cloudflare DNS is free. Cloud DNS is paid but integrates with GCP. Cloudflare for most; Cloud DNS if in Google Cloud."
+    },
+    {
+      question: "Why use Cloud DNS?",
+      answer: "If already in Google Cloud, easier integration. High availability. DNSSEC support. Otherwise, Cloudflare is often better choice."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-CLOUD-FUNCTIONS
+  // ============================================
+  "google-cloud-functions": [
+    {
+      question: "Is Cloud Functions free?",
+      answer: "Free tier: 2M invocations/month. Pay-as-you-go after. Generous free tier for small projects."
+    },
+    {
+      question: "What is Cloud Functions?",
+      answer: "Cloud Functions is Google's serverless compute. Run code without servers. Triggered by HTTP, Pub/Sub, or other events."
+    },
+    {
+      question: "Cloud Functions vs AWS Lambda?",
+      answer: "Both are serverless compute. Lambda has larger ecosystem. Cloud Functions integrates well with Google Cloud services."
+    },
+    {
+      question: "What languages does Cloud Functions support?",
+      answer: "Node.js, Python, Go, Java, .NET, Ruby, and PHP. Bring your own runtime also possible."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-CLOUD-SOURCE
+  // ============================================
+  "google-cloud-source": [
+    {
+      question: "Is Cloud Source free?",
+      answer: "Free for up to 5 users. Paid for larger teams. Included with Google Cloud projects."
+    },
+    {
+      question: "What is Cloud Source Repositories?",
+      answer: "Cloud Source is Google's Git hosting. Private Git repos in Google Cloud. Integrates with Cloud Build."
+    },
+    {
+      question: "Cloud Source vs GitHub?",
+      answer: "GitHub has better features and community. Cloud Source for Google Cloud integration. Most teams prefer GitHub."
+    },
+    {
+      question: "Why use Cloud Source?",
+      answer: "Deep Google Cloud integration, mirrors from GitHub/Bitbucket. Use if heavily invested in Google Cloud ecosystem."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-FORMS
+  // ============================================
+  "google-forms": [
+    {
+      question: "Is Google Forms free?",
+      answer: "Yes, completely free with Google account. Part of Google Workspace. No limits on forms or responses."
+    },
+    {
+      question: "What is Google Forms?",
+      answer: "Google Forms is a free survey and form builder. Create forms, quizzes, and surveys. Responses in Google Sheets."
+    },
+    {
+      question: "Google Forms vs Typeform?",
+      answer: "Typeform has better design and UX. Google Forms is free and simple. Forms for basics; Typeform for polished experiences."
+    },
+    {
+      question: "What can Google Forms do?",
+      answer: "Surveys, quizzes, registration forms, feedback collection. Logic branching, file uploads, response validation."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-GEMINI
+  // ============================================
+  "google-gemini": [
+    {
+      question: "Is Google Gemini free?",
+      answer: "Gemini (formerly Bard) is free for personal use. Gemini Advanced with Gemini Pro/Ultra requires Google One AI Premium at $19.99/month."
+    },
+    {
+      question: "What is Google Gemini?",
+      answer: "Gemini is Google's AI assistant and model family. Multimodal AI that understands text, images, and code."
+    },
+    {
+      question: "Gemini vs ChatGPT?",
+      answer: "Both are capable AI assistants. Gemini integrates with Google services. ChatGPT has GPT-4. Try both for your use case."
+    },
+    {
+      question: "What can Gemini do?",
+      answer: "Answer questions, write content, analyze images, code assistance, integrate with Google apps. Multimodal understanding."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-MEET
+  // ============================================
+  "google-meet": [
+    {
+      question: "Is Google Meet free?",
+      answer: "Free for up to 100 participants, 60-minute limit. Longer meetings with Google Workspace plans."
+    },
+    {
+      question: "What is Google Meet?",
+      answer: "Google Meet is video conferencing from Google. Meetings, screen sharing, recording. Part of Google Workspace."
+    },
+    {
+      question: "Google Meet vs Zoom?",
+      answer: "Zoom has more features and larger meetings. Meet is simpler and integrates with Google. Meet for Google users; Zoom for power users."
+    },
+    {
+      question: "How many people can join Google Meet?",
+      answer: "Free: 100 participants. Workspace: up to 500 participants depending on plan. Live streaming for 100K viewers."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE-VERTEX-AI
+  // ============================================
+  "google-vertex-ai": [
+    {
+      question: "Is Vertex AI free?",
+      answer: "Free tier with limited credits. Pay-as-you-go pricing. Enterprise platform with various model costs."
+    },
+    {
+      question: "What is Vertex AI?",
+      answer: "Vertex AI is Google's machine learning platform. Build, train, and deploy ML models. Access to Gemini and other models."
+    },
+    {
+      question: "Vertex AI vs AWS SageMaker?",
+      answer: "Both are enterprise ML platforms. Vertex has Google's models (Gemini). SageMaker has broader AWS integration. Both powerful."
+    },
+    {
+      question: "What can you do with Vertex AI?",
+      answer: "Train custom models, use pre-built models, deploy ML models, access Gemini API. Full ML lifecycle management."
+    }
+  ],
+
+  // ============================================
+  // GORGIAS
+  // ============================================
+  "gorgias": [
+    {
+      question: "Is Gorgias free?",
+      answer: "No free tier. Plans from $10/month for startups. Pricing based on ticket volume."
+    },
+    {
+      question: "What is Gorgias?",
+      answer: "Gorgias is a helpdesk for e-commerce. Built for Shopify, BigCommerce, Magento. Integrates with e-commerce data."
+    },
+    {
+      question: "Gorgias vs Zendesk?",
+      answer: "Zendesk is general-purpose. Gorgias is e-commerce focused with order data integration. Gorgias for online stores."
+    },
+    {
+      question: "What makes Gorgias unique?",
+      answer: "Deep e-commerce integration. See orders in tickets, automate responses based on order status. Built for online retailers."
+    }
+  ],
+
+  // ============================================
+  // GOTO-MEETING
+  // ============================================
+  "goto-meeting": [
+    {
+      question: "Is GoTo Meeting free?",
+      answer: "No free tier. Plans from $14/organizer/month. Part of GoTo suite."
+    },
+    {
+      question: "What is GoTo Meeting?",
+      answer: "GoTo Meeting is video conferencing software. Online meetings, webinars, and collaboration. Long-established player."
+    },
+    {
+      question: "GoTo Meeting vs Zoom?",
+      answer: "Zoom has more features and better free tier. GoTo Meeting is reliable but less innovative. Most choose Zoom now."
+    },
+    {
+      question: "What features does GoTo Meeting have?",
+      answer: "HD video, screen sharing, recording, transcription. Mobile apps. Integration with common business tools."
+    }
+  ],
+
+  // ============================================
+  // GPT4ALL
+  // ============================================
+  "gpt4all": [
+    {
+      question: "Is GPT4All free?",
+      answer: "Yes, GPT4All is free and open source. Run AI models locally at no cost."
+    },
+    {
+      question: "What is GPT4All?",
+      answer: "GPT4All runs large language models locally on your computer. No internet needed. Privacy-focused AI."
+    },
+    {
+      question: "GPT4All vs ChatGPT?",
+      answer: "ChatGPT is cloud-based and more powerful. GPT4All is local and private. GPT4All for privacy; ChatGPT for quality."
+    },
+    {
+      question: "What models does GPT4All support?",
+      answer: "Llama, Mistral, GPT-J, and other open models. Download models through the app. Runs on CPU or GPU."
+    }
+  ],
+
+  // ============================================
+  // GRAFANA-ONCALL
+  // ============================================
+  "grafana-oncall": [
+    {
+      question: "Is Grafana OnCall free?",
+      answer: "Open source version is free. Grafana Cloud OnCall free tier available. Pro features in Grafana Cloud."
+    },
+    {
+      question: "What is Grafana OnCall?",
+      answer: "Grafana OnCall is on-call management. Schedule on-call rotations, route alerts, manage escalations. Part of Grafana stack."
+    },
+    {
+      question: "Grafana OnCall vs PagerDuty?",
+      answer: "PagerDuty has more features. Grafana OnCall is simpler and integrates with Grafana. OnCall if already using Grafana."
+    },
+    {
+      question: "Can I self-host Grafana OnCall?",
+      answer: "Yes, OnCall is open source. Self-host for free with full features. Also available as Grafana Cloud service."
+    }
+  ],
 };
 
 async function main() {
