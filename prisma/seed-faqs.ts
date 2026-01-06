@@ -11647,6 +11647,1100 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "Architect is the open-source framework Begin was built on. Still maintained. Define AWS serverless apps with simple declarative syntax."
     }
   ],
+
+  // ============================================
+  // BENCH
+  // ============================================
+  "bench": [
+    {
+      question: "What is Bench?",
+      answer: "Bench is an online bookkeeping service for small businesses. Real humans do your books using proprietary software. Monthly financial statements and tax-ready reports included."
+    },
+    {
+      question: "How much does Bench cost?",
+      answer: "Plans start around $249/month for Essential. Premium with tax filing is $419/month. Pricing varies based on expenses volume. More affordable than traditional accountants."
+    },
+    {
+      question: "Bench vs QuickBooks?",
+      answer: "Bench is done-for-you bookkeeping. QuickBooks is DIY software. Bench is better if you don't want to do books yourself; QuickBooks if you want control."
+    },
+    {
+      question: "Does Bench do taxes?",
+      answer: "Premium plan includes tax filing. Otherwise, they provide tax-ready financials for your accountant. Year-end tax package helps at tax time."
+    }
+  ],
+
+  // ============================================
+  // BETTER STACK
+  // ============================================
+  "better-stack": [
+    {
+      question: "Is Better Stack free?",
+      answer: "Yes, free tier includes uptime monitoring, incident management basics, and log management with limits. Paid plans for more monitors and features."
+    },
+    {
+      question: "What is Better Stack?",
+      answer: "Better Stack combines Better Uptime (monitoring) and Logtail (logging) into one platform. Uptime monitoring, incident management, status pages, and log management."
+    },
+    {
+      question: "Better Stack vs Datadog?",
+      answer: "Better Stack is simpler and more affordable. Datadog has more features for APM and full observability. Better Stack for monitoring and logs; Datadog for complete platform."
+    },
+    {
+      question: "What products does Better Stack include?",
+      answer: "Better Uptime for monitoring and incident management, Logtail for log management, and status pages. Can use products separately or together."
+    }
+  ],
+
+  // ============================================
+  // BETTER UPTIME
+  // ============================================
+  "better-uptime": [
+    {
+      question: "Is Better Uptime free?",
+      answer: "Yes, free tier includes 10 monitors with 3-minute checks. Pro is $20/month for more monitors and 30-second checks. Enterprise with custom pricing."
+    },
+    {
+      question: "What is Better Uptime?",
+      answer: "Better Uptime is an uptime monitoring and incident management platform. Monitors your services, alerts on downtime, provides status pages and incident management."
+    },
+    {
+      question: "Better Uptime vs UptimeRobot?",
+      answer: "Better Uptime has better UI, incident management, and status pages. UptimeRobot is cheaper and more basic. Better Uptime for professional needs; UptimeRobot for simple monitoring."
+    },
+    {
+      question: "Does Better Uptime have status pages?",
+      answer: "Yes, beautiful status pages included in all plans. Custom domain, subscribers, incident history. One of the best free status page options."
+    }
+  ],
+
+  // ============================================
+  // BETTERMODE
+  // ============================================
+  "bettermode": [
+    {
+      question: "Is Bettermode free?",
+      answer: "Yes, free plan for up to 100 members. Growth plan $49/month. Advanced $99/month. Enterprise custom pricing."
+    },
+    {
+      question: "What is Bettermode?",
+      answer: "Bettermode is a community platform for building branded community spaces. Discussion forums, Q&A, knowledge bases, and member engagement features."
+    },
+    {
+      question: "Bettermode vs Circle?",
+      answer: "Both are community platforms. Circle focuses on courses and memberships. Bettermode is more flexible with better customization. Circle for creators; Bettermode for brands."
+    },
+    {
+      question: "What can you build with Bettermode?",
+      answer: "Customer communities, support forums, knowledge bases, feedback boards, and member portals. Customizable with widgets and integrations."
+    }
+  ],
+
+  // ============================================
+  // BETTY BLOCKS
+  // ============================================
+  "betty-blocks": [
+    {
+      question: "Is Betty Blocks free?",
+      answer: "No free tier. Enterprise pricing only - typically starts around $2,000/month. Designed for larger organizations building business applications."
+    },
+    {
+      question: "What is Betty Blocks?",
+      answer: "Betty Blocks is an enterprise no-code platform. Build business applications without coding. Used by corporations for internal tools and process automation."
+    },
+    {
+      question: "Betty Blocks vs Mendix?",
+      answer: "Both are enterprise low-code platforms. Mendix is more established. Betty Blocks is more accessible. Both expensive - designed for large organizations."
+    },
+    {
+      question: "What can you build with Betty Blocks?",
+      answer: "Enterprise applications, workflow automation, customer portals, and internal tools. Visual builder with enterprise features like SSO and audit logs."
+    }
+  ],
+
+  // ============================================
+  // BIGQUERY
+  // ============================================
+  "bigquery": [
+    {
+      question: "Is BigQuery free?",
+      answer: "Generous free tier: 10GB storage and 1TB queries per month. Beyond that, $5/TB queried and $0.02/GB storage. Can be expensive for heavy queries."
+    },
+    {
+      question: "What is BigQuery?",
+      answer: "BigQuery is Google Cloud's serverless data warehouse. Run SQL queries on massive datasets without managing infrastructure. Columnar storage with separation of compute and storage."
+    },
+    {
+      question: "BigQuery vs Snowflake?",
+      answer: "Both are cloud data warehouses. BigQuery is serverless with simpler pricing. Snowflake has better multi-cloud support. BigQuery for Google shops; Snowflake for flexibility."
+    },
+    {
+      question: "What is BigQuery ML?",
+      answer: "BigQuery ML lets you build machine learning models using SQL. Train and predict within BigQuery without moving data. Good for analytics teams without ML expertise."
+    },
+    {
+      question: "How does BigQuery pricing work?",
+      answer: "Pay per query (bytes scanned) or flat-rate. On-demand is $5/TB. Flat-rate from $10,000/month for reserved capacity. Free tier covers small projects."
+    }
+  ],
+
+  // ============================================
+  // BILDR
+  // ============================================
+  "bildr": [
+    {
+      question: "Is Bildr free?",
+      answer: "Free plan for learning. Creator plan $29/month. Studio $149/month. Agency pricing available. 14-day free trial on paid plans."
+    },
+    {
+      question: "What is Bildr?",
+      answer: "Bildr is a no-code web app builder for developers. More powerful than typical no-code tools. Build complex applications with custom logic and API integrations."
+    },
+    {
+      question: "Bildr vs Bubble?",
+      answer: "Bildr is more flexible and developer-friendly. Bubble is more established with larger community. Bildr for technical builders; Bubble for broader audience."
+    },
+    {
+      question: "What can you build with Bildr?",
+      answer: "Complex web applications, SaaS products, marketplaces, and internal tools. Full front-end control with JavaScript support. More power than typical no-code."
+    }
+  ],
+
+  // ============================================
+  // BIOME
+  // ============================================
+  "biome": [
+    {
+      question: "Is Biome free?",
+      answer: "Yes, Biome is open source and completely free. MIT licensed. No paid version - community funded project."
+    },
+    {
+      question: "What is Biome?",
+      answer: "Biome is a fast formatter and linter for JavaScript, TypeScript, JSON, and more. Written in Rust for performance. Successor to Rome."
+    },
+    {
+      question: "Biome vs ESLint + Prettier?",
+      answer: "Biome is much faster and single tool for both. ESLint has more plugins and rules. Biome for speed and simplicity; ESLint for maximum customization."
+    },
+    {
+      question: "What happened to Rome?",
+      answer: "Rome Tools company shut down in 2023. Biome forked the project and continues development under new name. Active and growing community."
+    }
+  ],
+
+  // ============================================
+  // BITBUCKET
+  // ============================================
+  "bitbucket": [
+    {
+      question: "Is Bitbucket free?",
+      answer: "Free for up to 5 users with unlimited private repos. Standard $3/user/month. Premium $6/user/month. Good value for small teams."
+    },
+    {
+      question: "What is Bitbucket?",
+      answer: "Bitbucket is Atlassian's Git repository hosting service. Source control, pull requests, and CI/CD pipelines. Integrates with Jira and other Atlassian tools."
+    },
+    {
+      question: "Bitbucket vs GitHub?",
+      answer: "GitHub is more popular with better community features. Bitbucket integrates better with Atlassian tools. Bitbucket if you use Jira; GitHub for everything else."
+    },
+    {
+      question: "What is Bitbucket Pipelines?",
+      answer: "Pipelines is Bitbucket's built-in CI/CD. Define builds in YAML, run in containers. Free minutes included. Convenient if you're already on Bitbucket."
+    },
+    {
+      question: "Does Bitbucket support Git LFS?",
+      answer: "Yes, Bitbucket supports Git Large File Storage. 1GB free for files up to 10MB. Additional storage available on paid plans."
+    }
+  ],
+
+  // ============================================
+  // BITO
+  // ============================================
+  "bito": [
+    {
+      question: "Is Bito free?",
+      answer: "Yes, free tier with 20 AI requests per day. Pro is $15/month for unlimited usage. Teams plan available."
+    },
+    {
+      question: "What is Bito?",
+      answer: "Bito is an AI coding assistant using GPT-4 and Claude. Explains code, generates code, writes tests, and reviews. IDE extensions for VS Code, JetBrains, etc."
+    },
+    {
+      question: "Bito vs GitHub Copilot?",
+      answer: "Bito uses GPT-4 and has chat interface for explanations. Copilot is inline completion focused. Bito better for understanding code; Copilot for writing."
+    },
+    {
+      question: "What can Bito do?",
+      answer: "Code explanation, generation, review, test creation, documentation, and security scanning. Chat interface in your IDE. Good for learning and productivity."
+    }
+  ],
+
+  // ============================================
+  // BITRIX24
+  // ============================================
+  "bitrix24": [
+    {
+      question: "Is Bitrix24 free?",
+      answer: "Yes, generous free plan for unlimited users with basic features. Paid plans from $49/month for 5 users. Unusual pricing model."
+    },
+    {
+      question: "What is Bitrix24?",
+      answer: "Bitrix24 is an all-in-one business suite. CRM, project management, team chat, video calls, website builder, and more. Everything in one platform."
+    },
+    {
+      question: "Bitrix24 vs Monday.com?",
+      answer: "Bitrix24 includes more (CRM, chat, websites). Monday.com is better at project management specifically. Bitrix24 for all-in-one; Monday.com for projects."
+    },
+    {
+      question: "Can Bitrix24 be self-hosted?",
+      answer: "Yes, Bitrix24 offers on-premise version. One-time license fee. Popular for organizations needing data control."
+    }
+  ],
+
+  // ============================================
+  // BLACKBOX AI
+  // ============================================
+  "blackbox-ai": [
+    {
+      question: "Is Blackbox AI free?",
+      answer: "Yes, free tier available with basic features. Pro plans for more usage and features. Affordable AI coding assistant."
+    },
+    {
+      question: "What is Blackbox AI?",
+      answer: "Blackbox AI is an AI coding assistant. Code search, completion, and chat. Known for code search across GitHub and Stack Overflow."
+    },
+    {
+      question: "What can Blackbox AI do?",
+      answer: "Search code snippets, autocomplete code, explain code, and answer programming questions. Browser extension and IDE plugins available."
+    },
+    {
+      question: "Blackbox vs Copilot?",
+      answer: "Blackbox has strong code search features. Copilot has better inline completion. Blackbox for finding existing code; Copilot for generating new code."
+    }
+  ],
+
+  // ============================================
+  // BLENDER
+  // ============================================
+  "blender": [
+    {
+      question: "Is Blender free?",
+      answer: "Yes, completely free and open source. GPL licensed. No paid version. One of the best free software success stories."
+    },
+    {
+      question: "What is Blender?",
+      answer: "Blender is a 3D creation suite. Modeling, animation, rendering, video editing, and more. Used for movies, games, and visual effects."
+    },
+    {
+      question: "Blender vs Maya?",
+      answer: "Blender is free; Maya costs $2,000+/year. Maya is industry standard for film/TV. Blender catching up fast and used in professional production."
+    },
+    {
+      question: "Can professionals use Blender?",
+      answer: "Yes, Blender is used in professional production including Netflix shows and indie games. Quality rivals paid software. Growing studio adoption."
+    },
+    {
+      question: "What can you do with Blender?",
+      answer: "3D modeling, sculpting, animation, rendering, video editing, compositing, and motion tracking. Full 3D pipeline in one free tool."
+    }
+  ],
+
+  // ============================================
+  // BLUEHOST
+  // ============================================
+  "bluehost": [
+    {
+      question: "How much does Bluehost cost?",
+      answer: "Basic shared hosting from $2.95/month promotional (renews higher). WordPress hosting from $2.95/month. VPS from $29.99/month. Cheap entry, typical renewals."
+    },
+    {
+      question: "What is Bluehost?",
+      answer: "Bluehost is a web hosting provider recommended by WordPress.org. Shared hosting, WordPress hosting, and VPS options. Good for beginners."
+    },
+    {
+      question: "Bluehost vs SiteGround?",
+      answer: "SiteGround has better support and performance. Bluehost is cheaper initially. SiteGround for quality; Bluehost for lowest entry price."
+    },
+    {
+      question: "Is Bluehost good for WordPress?",
+      answer: "Yes, Bluehost is officially recommended by WordPress.org. One-click install, free domain first year. Good for WordPress beginners."
+    }
+  ],
+
+  // ============================================
+  // BOLT
+  // ============================================
+  "bolt": [
+    {
+      question: "Is Bolt free?",
+      answer: "Bolt.new has a free tier for trying out. Pro plans for more features and usage. Building full applications requires paid plan."
+    },
+    {
+      question: "What is Bolt?",
+      answer: "Bolt.new is an AI-powered web development environment. Describe what you want, AI builds full-stack apps. In-browser development with deployment."
+    },
+    {
+      question: "What can Bolt build?",
+      answer: "Full-stack web applications with React, databases, and APIs. AI writes code based on prompts. Good for prototyping and MVPs."
+    },
+    {
+      question: "Bolt vs Cursor?",
+      answer: "Bolt builds complete apps from prompts in browser. Cursor is AI-enhanced code editor. Bolt for non-coders building apps; Cursor for developers coding."
+    }
+  ],
+
+  // ============================================
+  // BOOKSTACK
+  // ============================================
+  "bookstack": [
+    {
+      question: "Is BookStack free?",
+      answer: "Yes, completely free and open source. MIT licensed. No paid version. Self-host for free."
+    },
+    {
+      question: "What is BookStack?",
+      answer: "BookStack is an open-source wiki and documentation platform. Simple, self-hosted alternative to Notion or Confluence for documentation."
+    },
+    {
+      question: "BookStack vs Notion?",
+      answer: "BookStack is free and self-hosted. Notion is SaaS with more features. BookStack for documentation; Notion for broader workspace needs."
+    },
+    {
+      question: "How do you install BookStack?",
+      answer: "PHP application with MySQL/MariaDB. Install on Linux server. Docker available. Clear documentation for setup."
+    }
+  ],
+
+  // ============================================
+  // BOX
+  // ============================================
+  "box": [
+    {
+      question: "Is Box free?",
+      answer: "Free personal plan with 10GB storage. Business starts at $15/user/month. Enterprise pricing custom. More expensive than Google Drive or Dropbox."
+    },
+    {
+      question: "What is Box?",
+      answer: "Box is enterprise cloud content management. File storage, sharing, and collaboration with strong security and compliance features. Enterprise-focused competitor to Dropbox."
+    },
+    {
+      question: "Box vs Dropbox?",
+      answer: "Box is more enterprise-focused with better compliance and admin features. Dropbox is simpler for individuals and small teams. Box for enterprise; Dropbox for simplicity."
+    },
+    {
+      question: "What is Box Shield?",
+      answer: "Box Shield provides advanced security features: malware detection, data leak prevention, and access controls. Enterprise feature for regulated industries."
+    }
+  ],
+
+  // ============================================
+  // BRANCH
+  // ============================================
+  "branch": [
+    {
+      question: "Is Branch free?",
+      answer: "Free tier for up to 10K monthly active users with basic features. Paid plans for more MAUs and features. Custom enterprise pricing."
+    },
+    {
+      question: "What is Branch?",
+      answer: "Branch is a mobile linking and attribution platform. Deep links that work across platforms, attribution tracking, and app engagement tools."
+    },
+    {
+      question: "What are deep links?",
+      answer: "Deep links send users to specific content within apps. Branch links work across iOS, Android, and web. Essential for mobile marketing."
+    },
+    {
+      question: "Branch vs AppsFlyer?",
+      answer: "Branch focuses on deep linking and attribution together. AppsFlyer is pure attribution/MMP. Branch for linking; AppsFlyer for comprehensive attribution."
+    }
+  ],
+
+  // ============================================
+  // BREVO
+  // ============================================
+  "brevo": [
+    {
+      question: "Is Brevo free?",
+      answer: "Yes, free plan with 300 emails/day. Starter $25/month for 20K emails. Business $65/month with more features. Formerly Sendinblue."
+    },
+    {
+      question: "What is Brevo?",
+      answer: "Brevo (formerly Sendinblue) is an all-in-one marketing platform. Email marketing, SMS, chat, CRM, and automation. Good value for features offered."
+    },
+    {
+      question: "Brevo vs Mailchimp?",
+      answer: "Brevo is cheaper with more features included. Mailchimp is easier to start with. Brevo for value; Mailchimp for simplicity."
+    },
+    {
+      question: "What happened to Sendinblue?",
+      answer: "Sendinblue rebranded to Brevo in 2023. Same product, new name. All features and accounts transferred."
+    }
+  ],
+
+  // ============================================
+  // BROWSERSTACK
+  // ============================================
+  "browserstack": [
+    {
+      question: "Is BrowserStack free?",
+      answer: "Free trial available. Live testing from $29/month. Automate from $99/month. Enterprise pricing for large teams. Not cheap but comprehensive."
+    },
+    {
+      question: "What is BrowserStack?",
+      answer: "BrowserStack provides real browsers and devices for testing. Live interactive testing, automated testing, and app testing. Test on real iOS and Android devices."
+    },
+    {
+      question: "BrowserStack vs Sauce Labs?",
+      answer: "Both provide browser and device testing. BrowserStack is often cheaper. Sauce Labs has more enterprise features. Both are solid choices."
+    },
+    {
+      question: "What testing types does BrowserStack support?",
+      answer: "Live manual testing, Selenium automation, Cypress, Playwright, Appium for mobile, and visual testing with Percy (acquired)."
+    }
+  ],
+
+  // ============================================
+  // BRUNO
+  // ============================================
+  "bruno": [
+    {
+      question: "Is Bruno free?",
+      answer: "Yes, Bruno is open source and free. MIT licensed. No paid version. Local-first API client."
+    },
+    {
+      question: "What is Bruno?",
+      answer: "Bruno is an open-source API client. Alternative to Postman that stores collections in your filesystem. Git-friendly, no cloud sync required."
+    },
+    {
+      question: "Bruno vs Postman?",
+      answer: "Bruno is free, open source, and stores locally. Postman is cloud-first with collaboration features. Bruno for privacy and version control; Postman for team features."
+    },
+    {
+      question: "Why use Bruno?",
+      answer: "Collections stored as files in your repo. No account needed. Git-friendly format. Good for developers who want API testing version controlled."
+    }
+  ],
+
+  // ============================================
+  // BUBBLE
+  // ============================================
+  "bubble": [
+    {
+      question: "Is Bubble free?",
+      answer: "Free tier for building and testing. Paid plans from $29/month to launch with custom domain. Professional $129/month. Production Team $349/month."
+    },
+    {
+      question: "What is Bubble?",
+      answer: "Bubble is the leading no-code web app builder. Build full web applications with visual programming. Database, workflows, and responsive design included."
+    },
+    {
+      question: "What can you build with Bubble?",
+      answer: "Full web applications: marketplaces, SaaS products, CRMs, social networks. Surprisingly powerful for complex applications."
+    },
+    {
+      question: "Bubble vs Webflow?",
+      answer: "Bubble is for web apps with logic and databases. Webflow is for websites with some dynamic features. Bubble for applications; Webflow for websites."
+    },
+    {
+      question: "Is Bubble scalable?",
+      answer: "Bubble handles significant scale with proper optimization. Large apps may need Dedicated plan ($1,500/month). Performance depends on how you build."
+    }
+  ],
+
+  // ============================================
+  // BUDDY
+  // ============================================
+  "buddy": [
+    {
+      question: "Is Buddy free?",
+      answer: "Free plan with 5 projects and 120 executions/month. Pro $75/month for unlimited projects. Enterprise available."
+    },
+    {
+      question: "What is Buddy?",
+      answer: "Buddy is a CI/CD platform focused on speed and simplicity. Visual pipeline builder, Docker support, and deployment automation."
+    },
+    {
+      question: "Buddy vs GitHub Actions?",
+      answer: "Buddy has visual pipeline builder and faster execution. GitHub Actions is free and integrated with GitHub. Buddy for visual UI; Actions for GitHub projects."
+    },
+    {
+      question: "What makes Buddy fast?",
+      answer: "Buddy caches dependencies aggressively and runs on dedicated servers. Claims 80%+ faster than competitors. Good for teams prioritizing build speed."
+    }
+  ],
+
+  // ============================================
+  // BUDIBASE
+  // ============================================
+  "budibase": [
+    {
+      question: "Is Budibase free?",
+      answer: "Yes, free self-hosted version with no user limits. Cloud starts at $5/user/month. Open source under GPLv3."
+    },
+    {
+      question: "What is Budibase?",
+      answer: "Budibase is an open-source low-code platform. Build internal tools, admin panels, and business apps. Self-hostable alternative to Retool."
+    },
+    {
+      question: "Budibase vs Retool?",
+      answer: "Budibase is open source and self-hostable. Retool has more integrations and polish. Budibase for open source; Retool for enterprise."
+    },
+    {
+      question: "What can you build with Budibase?",
+      answer: "Internal tools, admin panels, dashboards, and CRUD apps. Connect to databases and APIs. Visual builder with custom JavaScript."
+    }
+  ],
+
+  // ============================================
+  // BUFFER
+  // ============================================
+  "buffer": [
+    {
+      question: "Is Buffer free?",
+      answer: "Yes, free plan for 3 channels. Essentials $6/channel/month. Team $12/channel/month. Simple, transparent pricing."
+    },
+    {
+      question: "What is Buffer?",
+      answer: "Buffer is a social media scheduling tool. Plan, schedule, and publish content across platforms. Known for simplicity and transparent company culture."
+    },
+    {
+      question: "Buffer vs Hootsuite?",
+      answer: "Buffer is simpler and cheaper. Hootsuite has more features and enterprise capabilities. Buffer for small teams; Hootsuite for large organizations."
+    },
+    {
+      question: "What platforms does Buffer support?",
+      answer: "Facebook, Instagram, Twitter/X, LinkedIn, Pinterest, TikTok, and Google Business. Each platform counts as one channel."
+    }
+  ],
+
+  // ============================================
+  // BUGSNAG
+  // ============================================
+  "bugsnag": [
+    {
+      question: "Is Bugsnag free?",
+      answer: "Free tier for up to 7,500 events/month. Team $59/month for 25K events. Enterprise pricing for higher volume."
+    },
+    {
+      question: "What is Bugsnag?",
+      answer: "Bugsnag is error monitoring for applications. Captures crashes and errors, groups them intelligently, and helps prioritize fixes. Mobile and web support."
+    },
+    {
+      question: "Bugsnag vs Sentry?",
+      answer: "Both are error monitoring tools. Bugsnag has excellent mobile support. Sentry is more popular and open source. Both are solid; try both."
+    },
+    {
+      question: "What platforms does Bugsnag support?",
+      answer: "iOS, Android, React Native, JavaScript, Ruby, Python, Java, PHP, .NET, Go, and more. Strong mobile SDK support."
+    }
+  ],
+
+  // ============================================
+  // BUILDER.IO
+  // ============================================
+  "builder-io": [
+    {
+      question: "Is Builder.io free?",
+      answer: "Free tier for 1 user and limited page views. Growth from $49/month. Enterprise pricing custom. Generous free tier for testing."
+    },
+    {
+      question: "What is Builder.io?",
+      answer: "Builder.io is a visual CMS and page builder. Integrate with React, Vue, etc. Marketing teams can edit pages without developers. Headless approach."
+    },
+    {
+      question: "Builder.io vs Contentful?",
+      answer: "Builder.io has visual editing; Contentful is structured content. Builder.io for landing pages and visual content; Contentful for structured data."
+    },
+    {
+      question: "How does Builder.io work?",
+      answer: "Install SDK in your React/Vue/Next.js app. Content editors use visual builder. Changes publish without deploys. Good developer and marketing experience."
+    }
+  ],
+
+  // ============================================
+  // BUILDKITE
+  // ============================================
+  "buildkite": [
+    {
+      question: "Is Buildkite free?",
+      answer: "Free for open source. For-profit starts at $15/user/month. Run your own agents so you only pay Buildkite fees, not compute."
+    },
+    {
+      question: "What is Buildkite?",
+      answer: "Buildkite is a CI/CD platform where you run your own build agents. Buildkite orchestrates, you provide compute. Popular with larger engineering teams."
+    },
+    {
+      question: "Buildkite vs GitHub Actions?",
+      answer: "Buildkite runs on your infrastructure with more control. GitHub Actions is simpler and integrated. Buildkite for scale and control; Actions for convenience."
+    },
+    {
+      question: "Why run your own agents?",
+      answer: "Control your environment, use your own hardware/cloud, and scale as needed. No waiting for shared runners. Better security and customization."
+    }
+  ],
+
+  // ============================================
+  // BUN
+  // ============================================
+  "bun": [
+    {
+      question: "Is Bun free?",
+      answer: "Yes, Bun is open source and free. MIT licensed. No paid version. Drop-in Node.js replacement."
+    },
+    {
+      question: "What is Bun?",
+      answer: "Bun is a fast JavaScript runtime, bundler, and package manager. Written in Zig for performance. Drop-in replacement for Node.js with native TypeScript support."
+    },
+    {
+      question: "Bun vs Node.js?",
+      answer: "Bun is faster at starting and running JavaScript. Node.js is more mature with bigger ecosystem. Bun for speed; Node.js for compatibility."
+    },
+    {
+      question: "What does Bun include?",
+      answer: "JavaScript runtime (like Node), package manager (like npm), bundler (like webpack), and test runner. All-in-one toolkit."
+    }
+  ],
+
+  // ============================================
+  // BUNNY CDN
+  // ============================================
+  "bunnycdn": [
+    {
+      question: "Is Bunny CDN free?",
+      answer: "14-day free trial. Pay-as-you-go starting at $0.01/GB. Much cheaper than Cloudflare enterprise or CloudFront. Very affordable CDN."
+    },
+    {
+      question: "What is Bunny CDN?",
+      answer: "Bunny CDN is a content delivery network known for being fast and affordable. CDN, storage, and video streaming. Great value for the price."
+    },
+    {
+      question: "Bunny CDN vs Cloudflare?",
+      answer: "Cloudflare has free tier and more features. Bunny CDN is simpler and can be cheaper at scale. Cloudflare for free; Bunny for simplicity and pricing."
+    },
+    {
+      question: "What is Bunny Stream?",
+      answer: "Bunny Stream is video hosting and streaming. Upload videos, get HLS streaming, and embed anywhere. Cheaper than Mux or Vimeo OTT."
+    }
+  ],
+
+  // ============================================
+  // BUNNY STREAM
+  // ============================================
+  "bunny-stream": [
+    {
+      question: "Is Bunny Stream free?",
+      answer: "Pay-as-you-go: $0.005/minute stored, $0.005/GB bandwidth. Very affordable video hosting. No monthly minimum."
+    },
+    {
+      question: "What is Bunny Stream?",
+      answer: "Bunny Stream is video hosting and streaming from Bunny.net. Upload videos, automatic transcoding, HLS delivery. Simple alternative to complex video platforms."
+    },
+    {
+      question: "Bunny Stream vs Mux?",
+      answer: "Mux has more features and analytics. Bunny Stream is much cheaper. Mux for professional video; Bunny for budget-conscious projects."
+    },
+    {
+      question: "What features does Bunny Stream include?",
+      answer: "Video transcoding, HLS delivery, embed player, basic analytics, and API access. Simple but functional video platform."
+    }
+  ],
+
+  // ============================================
+  // BURP SUITE
+  // ============================================
+  "burp-suite": [
+    {
+      question: "Is Burp Suite free?",
+      answer: "Community Edition is free with limited features. Professional $499/year. Enterprise for teams with custom pricing."
+    },
+    {
+      question: "What is Burp Suite?",
+      answer: "Burp Suite is web application security testing tool. Intercept, modify, and analyze HTTP traffic. Industry standard for penetration testing."
+    },
+    {
+      question: "What can you do with Burp Suite?",
+      answer: "Intercept web traffic, scan for vulnerabilities, test authentication, and find security issues. Used by security professionals worldwide."
+    },
+    {
+      question: "Burp Suite vs OWASP ZAP?",
+      answer: "Burp is more powerful with better UI. ZAP is free and open source. Burp for professional testing; ZAP for free option."
+    }
+  ],
+
+  // ============================================
+  // BUTTONDOWN
+  // ============================================
+  "buttondown": [
+    {
+      question: "Is Buttondown free?",
+      answer: "Free for up to 100 subscribers. Basic $9/month for 1K subscribers. Professional $29/month. Simple, per-subscriber pricing."
+    },
+    {
+      question: "What is Buttondown?",
+      answer: "Buttondown is a minimalist newsletter platform. Markdown-first, clean interface, no bloat. Popular with indie developers and writers."
+    },
+    {
+      question: "Buttondown vs Substack?",
+      answer: "Buttondown has no platform cut on paid newsletters. Substack takes 10%. Buttondown for ownership; Substack for discovery and network."
+    },
+    {
+      question: "What features does Buttondown have?",
+      answer: "Markdown editor, subscriber management, automation, analytics, and paid subscriptions. Simple but powerful for newsletter writers."
+    }
+  ],
+
+  // ============================================
+  // BUZZSUMO
+  // ============================================
+  "buzzsumo": [
+    {
+      question: "Is BuzzSumo free?",
+      answer: "Limited free searches. Pro $99/month. Plus $179/month. Large $299/month. Expensive but useful for content marketing."
+    },
+    {
+      question: "What is BuzzSumo?",
+      answer: "BuzzSumo is a content research tool. Find trending content, analyze competitors, and discover influencers. Used for content marketing strategy."
+    },
+    {
+      question: "What can BuzzSumo do?",
+      answer: "Content discovery, competitor analysis, influencer identification, backlink monitoring, and content alerts. Research tool for marketers."
+    },
+    {
+      question: "BuzzSumo vs Ahrefs?",
+      answer: "BuzzSumo focuses on content performance. Ahrefs is SEO and backlinks. Different tools - many use both for complete picture."
+    }
+  ],
+
+  // ============================================
+  // CABIN
+  // ============================================
+  "cabin": [
+    {
+      question: "Is Cabin free?",
+      answer: "Yes, Cabin is free for basic analytics. Paid plans for more features and higher limits. Privacy-focused analytics."
+    },
+    {
+      question: "What is Cabin?",
+      answer: "Cabin is privacy-focused web analytics. No cookies, GDPR compliant, lightweight script. Simple alternative to Google Analytics."
+    },
+    {
+      question: "Cabin vs Plausible?",
+      answer: "Both are privacy-focused analytics. Plausible is more established. Cabin has unique features like carbon footprint tracking."
+    },
+    {
+      question: "Does Cabin track users?",
+      answer: "No personal data collection. Aggregate statistics only. No cookies or tracking across sites. Privacy by design."
+    }
+  ],
+
+  // ============================================
+  // CADDY
+  // ============================================
+  "caddy": [
+    {
+      question: "Is Caddy free?",
+      answer: "Yes, Caddy is open source and free. Apache 2.0 license. Commercial licenses available for enterprises needing support."
+    },
+    {
+      question: "What is Caddy?",
+      answer: "Caddy is a web server with automatic HTTPS. Easy configuration, automatic SSL certificates from Let's Encrypt. Modern alternative to Nginx."
+    },
+    {
+      question: "Caddy vs Nginx?",
+      answer: "Caddy has automatic HTTPS and simpler config. Nginx is more established with more features. Caddy for simplicity; Nginx for maximum control."
+    },
+    {
+      question: "How does automatic HTTPS work?",
+      answer: "Caddy obtains and renews Let's Encrypt certificates automatically. Just configure your domain - SSL just works. No certbot or manual renewals."
+    }
+  ],
+
+  // ============================================
+  // CHARGEBEE
+  // ============================================
+  "chargebee": [
+    {
+      question: "Is Chargebee free?",
+      answer: "Launch plan free for up to $100K revenue. Rise is 0.75% of revenue. Scale is 0.5% with higher volume. Expensive at scale."
+    },
+    {
+      question: "What is Chargebee?",
+      answer: "Chargebee is subscription billing and revenue management. Handle subscriptions, invoicing, dunning, and revenue recognition. Alternative to Stripe Billing."
+    },
+    {
+      question: "Chargebee vs Stripe Billing?",
+      answer: "Chargebee has more features for complex billing. Stripe Billing is simpler and integrated. Chargebee for enterprise; Stripe for straightforward subscriptions."
+    },
+    {
+      question: "What features does Chargebee include?",
+      answer: "Subscription management, invoicing, payment processing integration, dunning, analytics, and revenue recognition. Full subscription lifecycle."
+    }
+  ],
+
+  // ============================================
+  // CHATWOOT
+  // ============================================
+  "chatwoot": [
+    {
+      question: "Is Chatwoot free?",
+      answer: "Yes, self-hosted is free with all features. Cloud plans start at $19/agent/month. Open source under MIT license."
+    },
+    {
+      question: "What is Chatwoot?",
+      answer: "Chatwoot is open-source customer engagement platform. Live chat, email, social media in one inbox. Self-hosted alternative to Intercom."
+    },
+    {
+      question: "Chatwoot vs Intercom?",
+      answer: "Chatwoot is free and self-hosted. Intercom is more polished with more features. Chatwoot for open source; Intercom for enterprise."
+    },
+    {
+      question: "What channels does Chatwoot support?",
+      answer: "Website chat, email, Facebook, Twitter, WhatsApp, Telegram, and more. Unified inbox for all customer channels."
+    }
+  ],
+
+  // ============================================
+  // CHECKLY
+  // ============================================
+  "checkly": [
+    {
+      question: "Is Checkly free?",
+      answer: "Free tier with 5 browser checks. Team $15/check/month. Scale pricing based on volume. Generous free tier for trying out."
+    },
+    {
+      question: "What is Checkly?",
+      answer: "Checkly is synthetic monitoring using Playwright. Run browser checks globally, catch issues before users. Modern alternative to Pingdom."
+    },
+    {
+      question: "Checkly vs Pingdom?",
+      answer: "Checkly uses real browsers and Playwright. Pingdom is simpler HTTP monitoring. Checkly for modern web apps; Pingdom for basic uptime."
+    },
+    {
+      question: "What is monitoring as code?",
+      answer: "Checkly lets you define checks in code (JavaScript/TypeScript). Version control your monitoring. CI/CD integration for testing before deploy."
+    }
+  ],
+
+  // ============================================
+  // CIRCLECI
+  // ============================================
+  "circleci": [
+    {
+      question: "Is CircleCI free?",
+      answer: "Free tier with 6,000 build minutes/month. Performance $15/month for more resources. Scale for teams with custom pricing."
+    },
+    {
+      question: "What is CircleCI?",
+      answer: "CircleCI is a CI/CD platform. Build, test, and deploy code automatically. Popular with startups and mid-size companies."
+    },
+    {
+      question: "CircleCI vs GitHub Actions?",
+      answer: "CircleCI has more features and better caching. GitHub Actions is integrated and simpler. CircleCI for complex pipelines; Actions for GitHub projects."
+    },
+    {
+      question: "What is CircleCI orbs?",
+      answer: "Orbs are reusable pipeline configurations. Use pre-built orbs for common tasks. Speeds up pipeline setup significantly."
+    }
+  ],
+
+  // ============================================
+  // CLICKHOUSE
+  // ============================================
+  "clickhouse": [
+    {
+      question: "Is ClickHouse free?",
+      answer: "Yes, ClickHouse is open source under Apache 2.0. Self-host for free. ClickHouse Cloud is the managed service with usage-based pricing."
+    },
+    {
+      question: "What is ClickHouse?",
+      answer: "ClickHouse is a column-oriented database for OLAP. Extremely fast analytical queries. Used by Cloudflare, GitLab, and many others for analytics."
+    },
+    {
+      question: "ClickHouse vs PostgreSQL?",
+      answer: "ClickHouse is for analytics queries on large datasets. PostgreSQL is general-purpose. ClickHouse 100x+ faster for analytics; PostgreSQL for transactional workloads."
+    },
+    {
+      question: "What is ClickHouse used for?",
+      answer: "Real-time analytics, log analysis, time-series data, and business intelligence. Queries billions of rows in milliseconds."
+    }
+  ],
+
+  // ============================================
+  // CLOUDFLARE DNS
+  // ============================================
+  "cloudflare-dns": [
+    {
+      question: "Is Cloudflare DNS free?",
+      answer: "Yes, Cloudflare DNS is completely free. One of the fastest DNS providers globally. No limits on queries or domains."
+    },
+    {
+      question: "What is Cloudflare DNS?",
+      answer: "Cloudflare DNS is a fast, secure DNS service. Move your nameservers to Cloudflare for free DNS hosting with DDoS protection."
+    },
+    {
+      question: "Cloudflare DNS vs Route 53?",
+      answer: "Cloudflare DNS is free and often faster. Route 53 costs money but integrates with AWS. Cloudflare for most; Route 53 for AWS-heavy projects."
+    },
+    {
+      question: "How fast is Cloudflare DNS?",
+      answer: "1.1.1.1 resolver is one of the fastest. Their authoritative DNS is also extremely fast due to global anycast network."
+    }
+  ],
+
+  // ============================================
+  // CLOUDFLARE PAGES
+  // ============================================
+  "cloudflare-pages": [
+    {
+      question: "Is Cloudflare Pages free?",
+      answer: "Very generous free tier: unlimited sites, unlimited requests, 500 builds/month. Paid plans add concurrent builds and analytics."
+    },
+    {
+      question: "What is Cloudflare Pages?",
+      answer: "Cloudflare Pages is a JAMstack hosting platform. Deploy static sites and full-stack apps with Functions. Competitor to Vercel and Netlify."
+    },
+    {
+      question: "Cloudflare Pages vs Vercel?",
+      answer: "Pages is more generous free tier. Vercel has better DX and framework support. Pages for unlimited free hosting; Vercel for best developer experience."
+    },
+    {
+      question: "Does Pages support full-stack?",
+      answer: "Yes, with Functions you can run server-side code. Built on Workers. Good for API routes and server-side rendering."
+    }
+  ],
+
+  // ============================================
+  // CLOUDFLARE WORKERS
+  // ============================================
+  "cloudflare-workers": [
+    {
+      question: "Is Cloudflare Workers free?",
+      answer: "Free tier: 100K requests/day. Paid $5/month includes 10M requests. Very affordable serverless compute."
+    },
+    {
+      question: "What is Cloudflare Workers?",
+      answer: "Workers is serverless compute at the edge. Run JavaScript/TypeScript at Cloudflare's edge locations worldwide. Ultra-low latency."
+    },
+    {
+      question: "Workers vs AWS Lambda?",
+      answer: "Workers run at the edge with ~0 cold start. Lambda is regional with cold starts. Workers for edge compute; Lambda for traditional serverless."
+    },
+    {
+      question: "What can you build with Workers?",
+      answer: "APIs, server-side rendering, edge caching, authentication, and more. Full framework support with Pages integration."
+    }
+  ],
+
+  // ============================================
+  // CLOUDINARY
+  // ============================================
+  "cloudinary": [
+    {
+      question: "Is Cloudinary free?",
+      answer: "Free tier: 25 credits (~25K transformations + storage). Paid from $89/month. Credit-based pricing can be confusing."
+    },
+    {
+      question: "What is Cloudinary?",
+      answer: "Cloudinary is a media management platform. Image and video storage, transformation, optimization, and delivery via CDN."
+    },
+    {
+      question: "Cloudinary vs ImageKit?",
+      answer: "Both handle media optimization. Cloudinary has more features. ImageKit is simpler and cheaper. Cloudinary for enterprise; ImageKit for straightforward needs."
+    },
+    {
+      question: "What can Cloudinary do?",
+      answer: "Upload, store, transform, optimize, and deliver images and videos. Real-time transformations via URL. AI-powered features like background removal."
+    }
+  ],
+
+  // ============================================
+  // COCKROACHDB
+  // ============================================
+  "cockroachdb": [
+    {
+      question: "Is CockroachDB free?",
+      answer: "Core is free and open source. Serverless free tier on CockroachDB Cloud. Standard $0.20/vCPU-hour. Dedicated pricing varies."
+    },
+    {
+      question: "What is CockroachDB?",
+      answer: "CockroachDB is a distributed SQL database. PostgreSQL-compatible with horizontal scaling and global distribution. Survives failures automatically."
+    },
+    {
+      question: "CockroachDB vs PostgreSQL?",
+      answer: "CockroachDB scales horizontally and survives failures. PostgreSQL is simpler for single-node. CockroachDB for global scale; PostgreSQL for most use cases."
+    },
+    {
+      question: "What is CockroachDB used for?",
+      answer: "Global applications needing low latency everywhere. Multi-region deployments. Applications requiring high availability without complexity."
+    }
+  ],
+
+  // ============================================
+  // CODA
+  // ============================================
+  "coda": [
+    {
+      question: "Is Coda free?",
+      answer: "Free for individuals. Pro $10/doc maker/month. Team $30/doc maker/month. Only doc makers pay; viewers are free."
+    },
+    {
+      question: "What is Coda?",
+      answer: "Coda is a doc that brings together documents, spreadsheets, and apps. Build custom workflows and apps in a familiar doc interface."
+    },
+    {
+      question: "Coda vs Notion?",
+      answer: "Coda is more powerful for building apps and automation. Notion is simpler and better for knowledge management. Coda for power users; Notion for simplicity."
+    },
+    {
+      question: "What can you build in Coda?",
+      answer: "Project trackers, CRMs, wikis, and custom workflows. Packs connect to external services. More powerful than spreadsheets."
+    }
+  ],
+
+  // ============================================
+  // CODEIUM
+  // ============================================
+  "codeium": [
+    {
+      question: "Is Codeium free?",
+      answer: "Yes, free for individuals with unlimited completions. Teams $12/user/month. Enterprise with custom pricing. Very generous free tier."
+    },
+    {
+      question: "What is Codeium?",
+      answer: "Codeium is an AI coding assistant. Code completion, chat, and search. Free alternative to GitHub Copilot."
+    },
+    {
+      question: "Codeium vs GitHub Copilot?",
+      answer: "Codeium is free for individuals. Copilot is $10/month. Quality is competitive. Codeium for free; Copilot if you want GitHub integration."
+    },
+    {
+      question: "What IDEs does Codeium support?",
+      answer: "VS Code, JetBrains, Vim, Emacs, and 40+ editors. Very broad IDE support. Works in most development environments."
+    }
+  ],
+
+  // ============================================
+  // CODESANDBOX
+  // ============================================
+  "codesandbox": [
+    {
+      question: "Is CodeSandbox free?",
+      answer: "Free tier for personal use. Pro $9/month. Team $18/user/month. Generous free tier for trying ideas."
+    },
+    {
+      question: "What is CodeSandbox?",
+      answer: "CodeSandbox is a cloud development environment. Code in browser, instant dev environments, and collaborative editing. Good for prototyping and teaching."
+    },
+    {
+      question: "CodeSandbox vs StackBlitz?",
+      answer: "Both are browser IDEs. StackBlitz runs in browser via WebContainers. CodeSandbox runs on cloud VMs. Both excellent for different use cases."
+    },
+    {
+      question: "What can you build in CodeSandbox?",
+      answer: "React, Vue, Angular, Node.js, and more. Full development environment in browser. Good for prototypes, demos, and collaboration."
+    }
+  ],
 };
 
 async function main() {
