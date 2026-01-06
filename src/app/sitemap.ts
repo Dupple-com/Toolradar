@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 // Force dynamic generation at runtime (not build time)
 export const dynamic = "force-dynamic";
 export const revalidate = 0; // No cache - always fresh
+export const runtime = "nodejs"; // Prisma requires Node.js runtime, not Edge
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://toolradar.com";
 
