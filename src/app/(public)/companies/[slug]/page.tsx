@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ToolCard } from "@/components/tools/tool-card";
-import { CheckCircle, Globe, Building2, Users, Package } from "lucide-react";
+import { CheckCircle, Globe, Building2, Package } from "lucide-react";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateCompanyMetadata } from "@/lib/seo";
@@ -158,12 +158,6 @@ export default async function CompanyPage({ params }: { params: { slug: string }
                 <Package className="w-4 h-4" />
                 {company._count.tools} {company._count.tools === 1 ? "product" : "products"}
               </span>
-              {isClaimed && (
-                <span className="flex items-center gap-1">
-                  <Users className="w-4 h-4" />
-                  {company.members.length} team {company.members.length === 1 ? "member" : "members"}
-                </span>
-              )}
             </div>
           </div>
 
