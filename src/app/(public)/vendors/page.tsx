@@ -285,15 +285,18 @@ export default async function VendorsPage() {
               </p>
             </div>
           </div>
-          <div className="mt-8 p-6 bg-white rounded-xl border border-green-200">
+          <div className="mt-8 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200">
             <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center shrink-0">
-                <CheckCircle size={20} className="text-green-600" />
+              <div className="w-12 h-12 rounded-lg bg-green-500 flex items-center justify-center shrink-0">
+                <Globe size={24} className="text-white" />
               </div>
               <div>
-                <h4 className="font-semibold text-slate-900 mb-1">Embeddable Widget</h4>
-                <p className="text-sm text-slate-500">
-                  Display your Toolradar rating on your website with our embeddable widget. Show social proof and get a backlink to your listing.
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="font-semibold text-slate-900">Free Dofollow Backlink</h4>
+                  <span className="px-2 py-0.5 bg-green-100 text-green-700 text-xs font-medium rounded">SEO Boost</span>
+                </div>
+                <p className="text-sm text-slate-600">
+                  Add our embeddable widget to your website and get a <strong>free dofollow backlink</strong> from toolradar.com. Boost your domain authority and climb Google rankings while displaying your verified rating.
                 </p>
               </div>
             </div>
