@@ -57,11 +57,11 @@ export default async function CompanyWidgetPage() {
                     <div className="flex flex-wrap gap-4 items-end">
                       <div className="bg-gray-100 rounded-xl p-4">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&v=6`} alt={`${tool.name}`} width={150} height={180} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&v=7`} alt={`${tool.name}`} width={150} height={200} />
                       </div>
                       <div className="bg-slate-900 rounded-xl p-4">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&theme=dark&v=6`} alt={`${tool.name}`} width={150} height={180} />
+                        <img src={`https://toolradar.com/api/widget/${tool.slug}?format=badge&theme=dark&v=7`} alt={`${tool.name}`} width={150} height={200} />
                       </div>
                     </div>
                   </div>

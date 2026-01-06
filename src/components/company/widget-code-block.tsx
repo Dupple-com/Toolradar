@@ -9,7 +9,7 @@ interface WidgetCodeBlockProps {
 }
 
 const formats = {
-  badge: { width: 150, height: 180, label: "Badge" },
+  badge: { width: 150, height: 200, label: "Badge" },
   bar: { width: 280, height: 60, label: "Horizontal" },
   compact: { width: 120, height: 120, label: "Compact" },
   minimal: { width: 160, height: 40, label: "Minimal" },
