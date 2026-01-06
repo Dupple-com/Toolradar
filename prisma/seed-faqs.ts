@@ -8163,6 +8163,924 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "Yes, Postmark includes a templating system with variables and pre-built templates for common transactional emails (password resets, receipts, welcome messages). This simplifies creating consistent, professional emails."
     }
   ],
+
+  // ============================================
+  // AWS (AMAZON WEB SERVICES)
+  // ============================================
+  "aws": [
+    {
+      question: "Is AWS free?",
+      answer: "AWS offers a free tier with limited usage of many services for 12 months, plus some always-free services. After exceeding free tier limits or the initial period, you pay based on usage. Costs can scale significantly with usage."
+    },
+    {
+      question: "What does AWS cost?",
+      answer: "AWS uses pay-as-you-go pricing that varies by service. A small application might cost $20-50/month; enterprise workloads can reach thousands. The pricing calculator helps estimate costs, but complexity is a common challenge."
+    },
+    {
+      question: "What services does AWS provide?",
+      answer: "AWS offers 200+ services including compute (EC2), storage (S3), databases (RDS, DynamoDB), serverless (Lambda), machine learning, networking, and more. It's the most comprehensive cloud platform available."
+    },
+    {
+      question: "AWS vs Google Cloud vs Azure?",
+      answer: "AWS has the largest market share and most services. Azure integrates best with Microsoft products. Google Cloud excels in data analytics and machine learning. Choice often depends on existing technology stack and specific needs."
+    },
+    {
+      question: "Is AWS good for startups?",
+      answer: "Yes, AWS offers startup credits through programs like AWS Activate. The free tier helps keep initial costs low. However, costs can grow quickly without proper monitoring. Many successful startups built on AWS."
+    },
+    {
+      question: "What's the learning curve for AWS?",
+      answer: "AWS has a steep learning curve due to the breadth of services and configuration options. Certification programs exist, and documentation is extensive. Most teams start with core services (EC2, S3, RDS) before expanding."
+    },
+    {
+      question: "Is AWS reliable?",
+      answer: "AWS has strong reliability with multiple availability zones and regions worldwide. SLAs typically guarantee 99.9%+ uptime for major services. Regional outages do occur occasionally but are relatively rare."
+    }
+  ],
+
+  // ============================================
+  // GOOGLE CLOUD
+  // ============================================
+  "google-cloud": [
+    {
+      question: "Is Google Cloud free?",
+      answer: "Google Cloud offers $300 in free credits for 90 days, plus an always-free tier for certain services. After credits expire, you pay based on usage. Free tier limits are more restrictive than AWS."
+    },
+    {
+      question: "What does Google Cloud cost?",
+      answer: "Pay-as-you-go pricing varies by service. Sustained use discounts apply automatically for long-running workloads. Generally competitive with AWS, with some services priced lower. Committed use discounts available."
+    },
+    {
+      question: "What is Google Cloud best for?",
+      answer: "Data analytics (BigQuery), machine learning (Vertex AI), and Kubernetes (GKE) are standout services. Google Cloud excels in data processing and AI/ML workloads, leveraging Google's expertise in these areas."
+    },
+    {
+      question: "Google Cloud vs AWS?",
+      answer: "AWS has more services and market share. Google Cloud has superior data analytics and ML capabilities. Google's network is considered among the fastest. Choice depends on specific workload requirements."
+    },
+    {
+      question: "Is Google Cloud good for Kubernetes?",
+      answer: "Google Cloud is excellent for Kubernetes since Google created Kubernetes. Google Kubernetes Engine (GKE) is considered the most mature managed Kubernetes offering with deep integration into the platform."
+    },
+    {
+      question: "What makes BigQuery special?",
+      answer: "BigQuery is a serverless, highly scalable data warehouse that can query petabytes in seconds. Pricing is based on data scanned. It's a major reason organizations choose Google Cloud for analytics workloads."
+    },
+    {
+      question: "Is Google Cloud reliable?",
+      answer: "Google Cloud provides strong reliability backed by Google's infrastructure. Multiple regions worldwide with high availability options. SLAs guarantee 99.9%+ uptime for major services."
+    }
+  ],
+
+  // ============================================
+  // HEROKU
+  // ============================================
+  "heroku": [
+    {
+      question: "Is Heroku free?",
+      answer: "Heroku discontinued free dynos in 2022. The cheapest option is now Eco dynos at $5/month for up to 1,000 hours across all apps. Previously free tier users must now pay or migrate elsewhere."
+    },
+    {
+      question: "What does Heroku cost?",
+      answer: "Eco: $5/month (shared pool of hours), Basic: $7/month per dyno, Standard: $25-50/month, Performance: $250-500/month. Add-ons like databases cost extra. Costs scale with usage and add-ons."
+    },
+    {
+      question: "What is Heroku good for?",
+      answer: "Heroku simplifies deployment with git push workflow. Excellent for small-to-medium applications where developer time is more valuable than infrastructure costs. Supports many languages and frameworks."
+    },
+    {
+      question: "Heroku vs AWS?",
+      answer: "Heroku offers simplicity at higher per-unit cost. AWS offers more control and lower costs at scale but requires more DevOps knowledge. Heroku suits smaller teams prioritizing developer productivity."
+    },
+    {
+      question: "Is Heroku still relevant?",
+      answer: "Heroku remains useful for rapid prototyping and small applications. However, alternatives like Railway, Render, and Fly.io have gained popularity since free tier removal. The ecosystem has become more competitive."
+    },
+    {
+      question: "What are Heroku add-ons?",
+      answer: "Add-ons provide managed services: databases (Heroku Postgres), monitoring (New Relic), email, caching, and more. Pricing varies by add-on and plan. Simplifies adding capabilities to applications."
+    },
+    {
+      question: "Can Heroku scale for production?",
+      answer: "Yes, Heroku supports production workloads with auto-scaling, multiple regions, and performance dynos. Larger applications may find AWS or dedicated hosting more cost-effective, but Heroku scales adequately."
+    }
+  ],
+
+  // ============================================
+  // DIGITALOCEAN
+  // ============================================
+  "digitalocean": [
+    {
+      question: "Is DigitalOcean free?",
+      answer: "No permanent free tier, but new users receive $200 in credits valid for 60 days. This allows testing the platform before committing. After credits, standard pricing applies."
+    },
+    {
+      question: "What does DigitalOcean cost?",
+      answer: "Droplets (VMs) start at $4/month for basic instances. Managed databases start at $15/month. Kubernetes starts at $12/month. Pricing is transparent and predictable compared to AWS/GCP."
+    },
+    {
+      question: "What is DigitalOcean best for?",
+      answer: "DigitalOcean suits developers and small-to-medium businesses wanting simpler cloud infrastructure. Good for web applications, APIs, and managed databases without AWS complexity."
+    },
+    {
+      question: "DigitalOcean vs AWS?",
+      answer: "DigitalOcean is simpler with clearer pricing but fewer services. AWS offers more capabilities and global reach but greater complexity. DigitalOcean suits simpler needs; AWS for complex enterprise requirements."
+    },
+    {
+      question: "Does DigitalOcean have managed databases?",
+      answer: "Yes, managed PostgreSQL, MySQL, Redis, and MongoDB with automatic backups, failover, and maintenance. Pricing starts at $15/month. Removes database administration burden from development teams."
+    },
+    {
+      question: "Is DigitalOcean good for Kubernetes?",
+      answer: "DigitalOcean offers managed Kubernetes (DOKS) starting at $12/month for the control plane plus worker node costs. Simpler setup than AWS EKS, suitable for teams new to Kubernetes."
+    },
+    {
+      question: "What's the App Platform?",
+      answer: "App Platform is DigitalOcean's PaaS offering for deploying applications from Git repositories. Handles infrastructure automatically. Starter tier is $5/month, basic tier $12/month. Competes with Heroku."
+    }
+  ],
+
+  // ============================================
+  // VERCEL
+  // ============================================
+  "vercel": [
+    {
+      question: "Is Vercel free?",
+      answer: "Yes, the Hobby tier is free for personal and non-commercial projects. It includes 100GB bandwidth, serverless functions, and deployments. Commercial projects require Pro tier at $20/user/month."
+    },
+    {
+      question: "What does Vercel cost?",
+      answer: "Hobby: Free (personal use), Pro: $20/user/month, Enterprise: custom pricing. Bandwidth overages cost $40/100GB. Serverless function execution and other usage may incur additional costs."
+    },
+    {
+      question: "What is Vercel best for?",
+      answer: "Vercel excels at deploying frontend frameworks, especially Next.js (which they created). Automatic previews, edge functions, and serverless deployment make it popular for modern web applications."
+    },
+    {
+      question: "Vercel vs Netlify?",
+      answer: "Vercel has better Next.js integration and faster edge network. Netlify has more generous free tier limits and broader framework support. Both are excellent for JAMstack and frontend deployments."
+    },
+    {
+      question: "Does Vercel support backends?",
+      answer: "Yes, through serverless and edge functions. You can build full-stack applications using Next.js API routes. For complex backends, you might still need a separate backend service or database."
+    },
+    {
+      question: "What are Vercel preview deployments?",
+      answer: "Every pull request gets a unique preview URL automatically. This allows reviewing changes before merging. Teams use previews for QA, stakeholder reviews, and testing in production-like environments."
+    },
+    {
+      question: "Is Vercel enterprise-ready?",
+      answer: "Yes, Enterprise tier includes advanced security (SOC 2, SAML SSO), SLAs, dedicated support, and additional features. Many large companies use Vercel for production applications."
+    }
+  ],
+
+  // ============================================
+  // NETLIFY
+  // ============================================
+  "netlify": [
+    {
+      question: "Is Netlify free?",
+      answer: "Yes, the free tier includes 100GB bandwidth, 300 build minutes, one concurrent build, and serverless functions. Generous for personal projects and small sites. Paid plans start at $19/user/month."
+    },
+    {
+      question: "What does Netlify cost?",
+      answer: "Free tier for individuals, Pro at $19/user/month, Business at $99/user/month. Additional bandwidth: $55/100GB. Build minutes and function invocations have separate pricing at scale."
+    },
+    {
+      question: "What is Netlify good for?",
+      answer: "Netlify specializes in static site hosting, JAMstack deployments, and serverless functions. Ideal for marketing sites, documentation, blogs, and frontend applications with minimal backend needs."
+    },
+    {
+      question: "Netlify vs Vercel?",
+      answer: "Netlify has more generous free limits and broader framework support. Vercel has better Next.js integration and faster edge network. Choice often depends on framework preference and specific feature needs."
+    },
+    {
+      question: "What are Netlify Functions?",
+      answer: "Serverless functions that run on AWS Lambda under the hood. Write JavaScript/TypeScript, deploy with your site. Free tier includes 125,000 requests/month. Enables backend logic without managing servers."
+    },
+    {
+      question: "Does Netlify support forms?",
+      answer: "Yes, Netlify Forms handles form submissions without backend code. Free tier includes 100 submissions/month. Forms are spam-filtered and submissions are accessible via dashboard or notifications."
+    },
+    {
+      question: "What's Netlify Identity?",
+      answer: "Built-in authentication service for adding user login to sites. Free for up to 1,000 active users. Supports OAuth providers and passwordless login. Useful for membership sites and gated content."
+    }
+  ],
+
+  // ============================================
+  // RAILWAY
+  // ============================================
+  "railway": [
+    {
+      question: "Is Railway free?",
+      answer: "Railway offers a free trial with $5 in monthly credits. This covers light usage for testing. After credits, you pay based on resource usage. No permanent free tier exists."
+    },
+    {
+      question: "What does Railway cost?",
+      answer: "Hobby plan: $5/month credit included. Pro: $20/user/month with additional usage-based pricing. Pay for CPU, memory, and network usage. Pricing is generally competitive with Heroku."
+    },
+    {
+      question: "What makes Railway different?",
+      answer: "Railway offers Heroku-like simplicity with modern features: infrastructure as code, environments, and team collaboration. Deploy from GitHub with automatic builds. Appeals to developers seeking Heroku alternatives."
+    },
+    {
+      question: "Railway vs Heroku?",
+      answer: "Railway is more modern with better developer experience and competitive pricing since Heroku removed free tiers. Heroku has more add-ons and longer track record. Railway is gaining popularity among Heroku refugees."
+    },
+    {
+      question: "What can you deploy on Railway?",
+      answer: "Web apps, APIs, databases, and services across many languages and frameworks. Supports Node.js, Python, Go, Rust, and more. Can deploy from GitHub, Docker, or templates."
+    },
+    {
+      question: "Does Railway include databases?",
+      answer: "Yes, Railway provides managed PostgreSQL, MySQL, Redis, and MongoDB. Databases are created with one click and integrated with your projects. Pricing is usage-based."
+    },
+    {
+      question: "Is Railway good for production?",
+      answer: "Yes, Railway supports production workloads with high availability, private networking, and team management. Many startups use Railway for production applications."
+    }
+  ],
+
+  // ============================================
+  // RENDER
+  // ============================================
+  "render": [
+    {
+      question: "Is Render free?",
+      answer: "Yes, Render offers free tiers for static sites, cron jobs, and limited web services. Free services sleep after inactivity. Paid plans start at $7/month per service."
+    },
+    {
+      question: "What does Render cost?",
+      answer: "Static sites: Free. Web services: Free (with limits) to $7+/month. Databases: Start at $7/month. Background workers: $7/month. Pricing is simpler than AWS but scales with usage."
+    },
+    {
+      question: "What is Render good for?",
+      answer: "Render provides simple cloud deployment similar to Heroku. Supports web services, static sites, background workers, databases, and cron jobs. Appeals to developers wanting managed infrastructure."
+    },
+    {
+      question: "Render vs Heroku?",
+      answer: "Render has free tiers (though limited), simpler pricing, and native Docker support. Heroku has more add-ons and longer history. Render is popular among developers migrating from free Heroku."
+    },
+    {
+      question: "Does Render support Docker?",
+      answer: "Yes, Render deploys Dockerfiles natively. You can also deploy without Docker using buildpacks for common languages. Docker support provides flexibility for complex applications."
+    },
+    {
+      question: "What databases does Render offer?",
+      answer: "Render provides managed PostgreSQL and Redis. Free PostgreSQL tier available with limitations. Paid tiers include automatic backups, high availability options, and connection pooling."
+    },
+    {
+      question: "Is Render suitable for production?",
+      answer: "Yes, Render supports production workloads with autoscaling, private networks, and preview environments. Many companies use Render for production applications."
+    }
+  ],
+
+  // ============================================
+  // FLY.IO
+  // ============================================
+  "fly-io": [
+    {
+      question: "Is Fly.io free?",
+      answer: "Fly.io offers free allowances including small VMs, bandwidth, and IPv4 addresses. Enough for hobby projects. Beyond free limits, pay-as-you-go pricing applies."
+    },
+    {
+      question: "What does Fly.io cost?",
+      answer: "Free tier includes 3 shared-cpu-1x VMs, 160GB bandwidth. Beyond that: VMs from $1.94/month, dedicated CPU from $31/month. Pay-as-you-go model with reasonable prices."
+    },
+    {
+      question: "What makes Fly.io unique?",
+      answer: "Fly.io runs applications close to users across 30+ regions globally. Deploy containers that run at the edge. Excellent for globally distributed applications where latency matters."
+    },
+    {
+      question: "Fly.io vs traditional cloud?",
+      answer: "Traditional cloud is region-based; Fly.io is edge-native. Fly.io suits applications needing global distribution. Traditional cloud may be better for single-region workloads with complex requirements."
+    },
+    {
+      question: "What can you deploy on Fly.io?",
+      answer: "Docker containers run natively. Supports any language or framework that containerizes. Also supports Firecracker micro-VMs. Good for APIs, full-stack apps, and distributed systems."
+    },
+    {
+      question: "Does Fly.io have databases?",
+      answer: "Yes, including managed Postgres, Redis, and SQLite with LiteFS for distributed storage. Databases can run in multiple regions with replication. Useful for globally distributed data."
+    },
+    {
+      question: "Is Fly.io production-ready?",
+      answer: "Yes, many companies run production on Fly.io. Features include autoscaling, health checks, rolling deployments, and secrets management. Suitable for production workloads."
+    }
+  ],
+
+  // ============================================
+  // SUPABASE
+  // ============================================
+  "supabase": [
+    {
+      question: "Is Supabase free?",
+      answer: "Yes, the free tier includes database with 500MB storage, 2GB bandwidth, 50,000 monthly active users for auth, and more. Generous for hobby projects and early development."
+    },
+    {
+      question: "What does Supabase cost?",
+      answer: "Free tier available. Pro: $25/month per project. Team: $599/month. Add-ons for additional compute, storage, and features. Pricing is predictable compared to Firebase."
+    },
+    {
+      question: "What is Supabase?",
+      answer: "Supabase is an open-source Firebase alternative built on PostgreSQL. Provides database, authentication, storage, edge functions, and real-time subscriptions in one platform."
+    },
+    {
+      question: "Supabase vs Firebase?",
+      answer: "Supabase uses PostgreSQL (SQL), Firebase uses NoSQL. Supabase is open-source and can be self-hosted. Firebase has more mature mobile SDKs. Choice depends on database preference and vendor lock-in concerns."
+    },
+    {
+      question: "Does Supabase support real-time?",
+      answer: "Yes, real-time subscriptions are built-in. Subscribe to database changes and receive updates instantly. Useful for chat, notifications, and collaborative applications."
+    },
+    {
+      question: "What is Supabase Auth?",
+      answer: "Built-in authentication supporting email, OAuth providers (Google, GitHub, etc.), magic links, and phone auth. Free tier includes 50,000 monthly active users. Integrates seamlessly with database."
+    },
+    {
+      question: "Can you self-host Supabase?",
+      answer: "Yes, Supabase is open-source and self-hostable using Docker. This provides full control and removes vendor lock-in. Self-hosting requires DevOps expertise and maintenance."
+    }
+  ],
+
+  // ============================================
+  // FIREBASE
+  // ============================================
+  "firebase": [
+    {
+      question: "Is Firebase free?",
+      answer: "Firebase offers a free Spark plan with generous limits for most services. Database, auth, hosting, and functions all have free tiers. Costs apply when exceeding limits on the Blaze (pay-as-you-go) plan."
+    },
+    {
+      question: "What does Firebase cost?",
+      answer: "Spark plan: Free with limits. Blaze plan: Pay-as-you-go. Costs vary by service usage. Common costs include Firestore reads/writes, Cloud Functions invocations, and storage. Can be unpredictable at scale."
+    },
+    {
+      question: "What is Firebase best for?",
+      answer: "Firebase excels at mobile and web application backends, especially for real-time features. Authentication, databases, hosting, and analytics in one platform. Popular for startups and mobile apps."
+    },
+    {
+      question: "Firebase vs Supabase?",
+      answer: "Firebase uses NoSQL (Firestore), Supabase uses PostgreSQL. Firebase has mature mobile SDKs and ML features. Supabase is open-source with SQL flexibility. Choose based on database preference and lock-in tolerance."
+    },
+    {
+      question: "What is Firestore?",
+      answer: "Firestore is Firebase's NoSQL document database with real-time sync, offline support, and automatic scaling. Different from the older Realtime Database. Most new projects should use Firestore."
+    },
+    {
+      question: "Does Firebase handle authentication?",
+      answer: "Yes, Firebase Authentication supports email/password, phone, OAuth providers, and anonymous auth. Free for most use cases. Integrates with other Firebase services and custom backends."
+    },
+    {
+      question: "Is Firebase good for production?",
+      answer: "Yes, Firebase powers many production applications. Backed by Google infrastructure with strong reliability. Main concerns are vendor lock-in and cost unpredictability at scale."
+    }
+  ],
+
+  // ============================================
+  // PLANETSCALE
+  // ============================================
+  "planetscale": [
+    {
+      question: "Is PlanetScale free?",
+      answer: "PlanetScale offers a free Hobby tier with 5GB storage, 1 billion row reads/month, and 10 million row writes/month. Sufficient for small projects and development."
+    },
+    {
+      question: "What does PlanetScale cost?",
+      answer: "Hobby: Free with limits. Scaler: $29/month base + usage. Scaler Pro: $99/month base. Team and Enterprise tiers available. Usage-based pricing for reads, writes, and storage."
+    },
+    {
+      question: "What makes PlanetScale special?",
+      answer: "PlanetScale brings git-like branching to databases. Create branches, make schema changes, merge safely. Built on Vitess (YouTube's MySQL scaling technology). Handles scaling automatically."
+    },
+    {
+      question: "What is database branching?",
+      answer: "Database branching lets you create copies of your database schema for development. Test schema changes in isolation, then merge to production. Prevents accidental breaking changes."
+    },
+    {
+      question: "PlanetScale vs traditional MySQL hosting?",
+      answer: "PlanetScale offers branching, automatic scaling, and no-downtime deployments. Traditional hosting requires manual scaling and migration management. PlanetScale trades some MySQL features for developer experience."
+    },
+    {
+      question: "Does PlanetScale support foreign keys?",
+      answer: "PlanetScale doesn't support traditional foreign key constraints for scaling reasons. Instead, applications should enforce referential integrity. This is a tradeoff for horizontal scalability."
+    },
+    {
+      question: "Is PlanetScale good for production?",
+      answer: "Yes, PlanetScale powers production databases for many companies. Built on proven Vitess technology. Strong reliability and automatic scaling. Consider the foreign key limitation for your use case."
+    }
+  ],
+
+  // ============================================
+  // NEON
+  // ============================================
+  "neon": [
+    {
+      question: "Is Neon free?",
+      answer: "Yes, Neon's free tier includes 3GB storage, unlimited compute hours (with auto-suspend), and branching. Generous for development and small projects."
+    },
+    {
+      question: "What does Neon cost?",
+      answer: "Free tier available. Launch: $19/month. Scale: $69/month. Custom pricing for enterprise. Pay for compute, storage, and data transfer beyond included amounts."
+    },
+    {
+      question: "What is Neon?",
+      answer: "Neon is serverless PostgreSQL with automatic scaling, branching, and instant compute. The database starts immediately and scales down to zero when idle. Built for modern development workflows."
+    },
+    {
+      question: "What is database branching in Neon?",
+      answer: "Create instant copies of your database for development, testing, or preview environments. Branches share storage efficiently using copy-on-write. Enables isolated testing without duplicating data."
+    },
+    {
+      question: "Neon vs PlanetScale?",
+      answer: "Neon is PostgreSQL, PlanetScale is MySQL (Vitess). Both offer branching. Neon provides true serverless with scale-to-zero. Choice depends on database preference and specific feature needs."
+    },
+    {
+      question: "Does Neon scale to zero?",
+      answer: "Yes, compute automatically suspends after inactivity (configurable). You don't pay for idle compute. Cold starts are fast, typically under 500ms. Great for variable workloads."
+    },
+    {
+      question: "Is Neon compatible with PostgreSQL?",
+      answer: "Yes, Neon is fully PostgreSQL-compatible. Use existing PostgreSQL drivers, tools, and extensions. Migration from other PostgreSQL hosts is straightforward."
+    }
+  ],
+
+  // ============================================
+  // TWILIO
+  // ============================================
+  "twilio": [
+    {
+      question: "Is Twilio free?",
+      answer: "New accounts receive trial credit (amount varies). After that, pay-as-you-go pricing applies. No permanent free tier for production use."
+    },
+    {
+      question: "What does Twilio cost?",
+      answer: "Pricing is per-use: SMS from $0.0079/message, voice from $0.0085/minute, phone numbers from $1/month. Costs scale with volume. Negotiable rates for high-volume users."
+    },
+    {
+      question: "What can you build with Twilio?",
+      answer: "SMS messaging, voice calls, video, WhatsApp messaging, email (via SendGrid), and more. APIs enable communication features in applications. Powers customer support, notifications, and verification."
+    },
+    {
+      question: "What's Twilio's relationship with SendGrid?",
+      answer: "Twilio acquired SendGrid in 2019. SendGrid handles email delivery as part of Twilio's communication platform. They operate as separate products under the Twilio brand."
+    },
+    {
+      question: "Is Twilio difficult to implement?",
+      answer: "Twilio provides well-documented APIs and SDKs for major languages. Basic implementation is straightforward. Complex features like call routing require more development effort."
+    },
+    {
+      question: "What is Twilio Verify?",
+      answer: "Verify is Twilio's phone verification service for 2FA and identity confirmation. Supports SMS, voice, email, and push notifications. Per-verification pricing is often simpler than building custom solutions."
+    },
+    {
+      question: "Are there Twilio alternatives?",
+      answer: "Alternatives include Vonage, Plivo, and MessageBird. Pricing and coverage vary by region. Twilio has the largest market share and most comprehensive feature set."
+    }
+  ],
+
+  // ============================================
+  // ANTHROPIC CLAUDE
+  // ============================================
+  "claude": [
+    {
+      question: "Is Claude free?",
+      answer: "Claude.ai offers limited free usage. Claude Pro subscription costs $20/month for higher limits. API access is separate with pay-per-token pricing."
+    },
+    {
+      question: "What does Claude cost?",
+      answer: "Claude Pro: $20/month for increased usage limits. API: Claude 3.5 Sonnet ~$3/$15 per million input/output tokens, Claude 3 Opus ~$15/$75. API pricing is usage-based."
+    },
+    {
+      question: "What can Claude do?",
+      answer: "Claude is an AI assistant for analysis, writing, coding, math, and reasoning. Known for long context handling (200K tokens), safety focus, and natural conversation. Competes with GPT-4."
+    },
+    {
+      question: "Claude vs ChatGPT?",
+      answer: "Claude excels at longer context and detailed analysis. ChatGPT has broader plugin ecosystem and multimodal features. Performance varies by task. Many users switch between them based on need."
+    },
+    {
+      question: "What is Claude's context length?",
+      answer: "Claude 3 models support up to 200,000 tokens of context, equivalent to roughly 150,000 words. This enables analyzing entire codebases or long documents in a single conversation."
+    },
+    {
+      question: "How is Claude different from other AI?",
+      answer: "Anthropic (Claude's creator) focuses on AI safety research. Claude is designed to be helpful, harmless, and honest. Known for more careful, nuanced responses compared to some alternatives."
+    },
+    {
+      question: "Can developers integrate Claude?",
+      answer: "Yes, the Claude API allows integration into applications. SDKs available for Python and TypeScript. Compatible with standard chat completion patterns used by other LLM providers."
+    }
+  ],
+
+  // ============================================
+  // OPENAI / CHATGPT
+  // ============================================
+  "chatgpt": [
+    {
+      question: "Is ChatGPT free?",
+      answer: "ChatGPT's free tier uses GPT-3.5 with usage limits. ChatGPT Plus costs $20/month for GPT-4 access, priority, and additional features. API pricing is separate."
+    },
+    {
+      question: "What does ChatGPT cost?",
+      answer: "Free tier: GPT-3.5 with limits. ChatGPT Plus: $20/month. API: GPT-4 Turbo ~$10/$30 per million input/output tokens, GPT-3.5 Turbo ~$0.50/$1.50. Enterprise pricing available."
+    },
+    {
+      question: "What can ChatGPT do?",
+      answer: "ChatGPT handles conversation, writing, coding, analysis, and creative tasks. GPT-4 adds vision (image understanding), code interpreter, and web browsing. Plugins extend functionality further."
+    },
+    {
+      question: "ChatGPT vs Claude?",
+      answer: "ChatGPT has broader features (plugins, vision, browsing) and ecosystem. Claude offers longer context and arguably better analysis. Both are capable; choice often comes down to specific needs."
+    },
+    {
+      question: "What is GPT-4 vs GPT-3.5?",
+      answer: "GPT-4 is significantly more capable in reasoning, creativity, and accuracy. GPT-3.5 is faster and cheaper. GPT-4 access requires Plus subscription or API payment."
+    },
+    {
+      question: "Can ChatGPT browse the web?",
+      answer: "Yes, GPT-4 with web browsing can access current information. Available in ChatGPT Plus. Useful for recent events and research, though information may not always be current."
+    },
+    {
+      question: "How do developers use OpenAI?",
+      answer: "The OpenAI API provides programmatic access to GPT models. Build chatbots, content generation, code assistance, and more. SDKs available for major languages. Extensive documentation and examples."
+    }
+  ],
+
+  // ============================================
+  // MIDJOURNEY
+  // ============================================
+  "midjourney": [
+    {
+      question: "Is Midjourney free?",
+      answer: "Midjourney discontinued free trials in 2023. Paid plans start at $10/month. Access requires a Discord account."
+    },
+    {
+      question: "What does Midjourney cost?",
+      answer: "Basic: $10/month (~200 images). Standard: $30/month (~unlimited relaxed generation). Pro: $60/month. Mega: $120/month. Higher tiers include faster generation and more features."
+    },
+    {
+      question: "How does Midjourney work?",
+      answer: "Access Midjourney through Discord. Type prompts in Discord channels, receive AI-generated images. Describe what you want, adjust with parameters. Results typically arrive in under a minute."
+    },
+    {
+      question: "Midjourney vs DALL-E vs Stable Diffusion?",
+      answer: "Midjourney produces highly stylized, artistic images. DALL-E is more literal and integrated with ChatGPT. Stable Diffusion is open-source and customizable. Each has different aesthetic strengths."
+    },
+    {
+      question: "What is Midjourney best for?",
+      answer: "Midjourney excels at artistic, stylized imagery. Popular for concept art, illustration styles, and creative exploration. Less suited for photorealistic or technical images."
+    },
+    {
+      question: "Can you use Midjourney images commercially?",
+      answer: "Paid subscribers own their generated images and can use them commercially. Terms grant usage rights including for commercial purposes. Review current terms for specific limitations."
+    },
+    {
+      question: "Is there an API for Midjourney?",
+      answer: "No official public API currently exists. Access is through Discord only. Some third-party tools automate Discord interaction, but this may violate terms of service."
+    }
+  ],
+
+  // ============================================
+  // ELEVENLABS
+  // ============================================
+  "elevenlabs": [
+    {
+      question: "Is ElevenLabs free?",
+      answer: "Yes, the free tier includes ~10,000 characters/month of text-to-speech. Sufficient for testing and small projects. Paid plans start at $5/month."
+    },
+    {
+      question: "What does ElevenLabs cost?",
+      answer: "Free: ~10K characters/month. Starter: $5/month (30K chars). Creator: $22/month (100K chars). Pro: $99/month (500K chars). Scale: $330/month (2M chars). Character allowances vary by plan."
+    },
+    {
+      question: "What is ElevenLabs?",
+      answer: "ElevenLabs provides AI voice generation and cloning. Convert text to realistic speech in multiple voices. Clone voices from audio samples. Used for content creation, audiobooks, and applications."
+    },
+    {
+      question: "How realistic are ElevenLabs voices?",
+      answer: "ElevenLabs produces some of the most realistic AI voices available. Quality rivals professional voice recordings. Includes emotional inflection and natural-sounding speech patterns."
+    },
+    {
+      question: "Can you clone a voice?",
+      answer: "Yes, ElevenLabs offers voice cloning from audio samples. Instant voice cloning needs short samples; Professional cloning uses more audio for higher quality. Ethics guidelines apply."
+    },
+    {
+      question: "What languages does ElevenLabs support?",
+      answer: "ElevenLabs supports 29+ languages including English, Spanish, French, German, Japanese, Chinese, and more. Quality varies by language, with English having the most options."
+    },
+    {
+      question: "Is there an API?",
+      answer: "Yes, the ElevenLabs API enables text-to-speech integration in applications. SDKs available for Python and JavaScript. Commonly used for content generation, assistants, and accessibility features."
+    }
+  ],
+
+  // ============================================
+  // DESCRIPT
+  // ============================================
+  "descript": [
+    {
+      question: "Is Descript free?",
+      answer: "Yes, Descript offers a free plan with 1 hour of transcription/month and basic editing. Paid plans start at $12/month for more features and transcription hours."
+    },
+    {
+      question: "What does Descript cost?",
+      answer: "Free: 1 hour transcription. Creator: $12/month (10 hours). Pro: $24/month (30 hours). Enterprise: custom. Additional transcription hours can be purchased."
+    },
+    {
+      question: "What is Descript?",
+      answer: "Descript is audio/video editing software that works like a document. Edit media by editing text transcripts. Cut, rearrange, and modify content through text manipulation."
+    },
+    {
+      question: "How does text-based editing work?",
+      answer: "Descript transcribes audio/video automatically. Edit the transcript and corresponding media updates. Delete a word from text and it's removed from audio. Revolutionary for podcast and video editing."
+    },
+    {
+      question: "What is Overdub?",
+      answer: "Overdub is Descript's voice cloning feature. Create a digital voice from recordings, then generate speech from text. Useful for corrections without re-recording. Requires consent verification."
+    },
+    {
+      question: "Can Descript remove filler words?",
+      answer: "Yes, one-click removal of 'ums', 'uhs', and other filler words. Also removes silences and repeated words. Major time-saver for podcast and video producers."
+    },
+    {
+      question: "Is Descript good for podcasts?",
+      answer: "Descript is popular for podcast production. Combines transcription, editing, mixing, and publishing. Text-based editing simplifies complex audio work. Many podcasters switched from traditional DAWs."
+    }
+  ],
+
+  // ============================================
+  // LOOM
+  // ============================================
+  "loom": [
+    {
+      question: "Is Loom free?",
+      answer: "Yes, Loom's free plan includes unlimited videos up to 5 minutes, basic editing, and viewer insights. Paid plans start at $12.50/user/month for longer videos and more features."
+    },
+    {
+      question: "What does Loom cost?",
+      answer: "Starter: Free (5-min videos). Business: $12.50/user/month (25+ min videos). Enterprise: custom pricing. Free plan is sufficient for basic asynchronous communication."
+    },
+    {
+      question: "What is Loom used for?",
+      answer: "Loom records screen and webcam for asynchronous video messages. Popular for demos, feedback, tutorials, and team communication. Faster than typing long explanations."
+    },
+    {
+      question: "Loom vs Zoom?",
+      answer: "Different purposes. Zoom is synchronous video conferencing. Loom is asynchronous video recording. Use Zoom for meetings; Loom for messages that don't need real-time response."
+    },
+    {
+      question: "Can viewers comment on Loom videos?",
+      answer: "Yes, viewers can comment at specific timestamps, react with emojis, and reply in threads. Creates conversation around video content. Good for feedback and questions."
+    },
+    {
+      question: "Does Loom have transcription?",
+      answer: "Yes, Loom automatically transcribes videos with captions. Transcripts are searchable. Viewers can read along or search for specific content. Improves accessibility."
+    },
+    {
+      question: "What platforms does Loom work on?",
+      answer: "Loom works via desktop app (Mac, Windows), Chrome extension, and mobile apps (iOS, Android). Most users prefer the desktop app or Chrome extension for recording."
+    }
+  ],
+
+  // ============================================
+  // ZOOM
+  // ============================================
+  "zoom": [
+    {
+      question: "Is Zoom free?",
+      answer: "Yes, Zoom's free plan includes unlimited 1-on-1 meetings and 40-minute group meetings. Basic features included. Paid plans start at $15.99/user/month."
+    },
+    {
+      question: "What does Zoom cost?",
+      answer: "Basic: Free (40-min limit). Pro: $15.99/user/month. Business: $21.99/user/month. Enterprise: custom. Higher tiers add longer meeting times, cloud storage, and admin features."
+    },
+    {
+      question: "What is Zoom best for?",
+      answer: "Zoom is the leading video conferencing platform for meetings, webinars, and virtual events. Known for reliability and ease of use. Supports large meetings and recordings."
+    },
+    {
+      question: "Zoom vs Microsoft Teams vs Google Meet?",
+      answer: "Zoom has the best video quality and reliability. Teams integrates best with Microsoft 365. Meet integrates with Google Workspace. Choice often follows existing software ecosystem."
+    },
+    {
+      question: "What is Zoom Webinar?",
+      answer: "Zoom Webinar hosts large virtual events with up to 50,000 attendees. Includes registration, polling, and analytics. Separate product from regular Zoom Meetings, priced separately."
+    },
+    {
+      question: "Does Zoom have security features?",
+      answer: "Yes, including waiting rooms, passwords, end-to-end encryption (optional), and host controls. Security improved significantly after 2020. Enterprise tier adds additional compliance features."
+    },
+    {
+      question: "Can Zoom integrate with other tools?",
+      answer: "Yes, extensive integrations with calendars, Slack, HubSpot, Salesforce, and more. Zoom Apps add functionality within meetings. Developer API available for custom integrations."
+    }
+  ],
+
+  // ============================================
+  // HUBSPOT
+  // ============================================
+  "hubspot": [
+    {
+      question: "Is HubSpot free?",
+      answer: "Yes, HubSpot offers free CRM with contact management, forms, email marketing, and basic analytics. Free tools are genuinely useful. Paid features start at $20/month per seat."
+    },
+    {
+      question: "What does HubSpot cost?",
+      answer: "Free tools available. Starter: $20/seat/month. Professional: $100/seat/month (Marketing starts at $800/month). Enterprise: from $150/seat/month. Costs vary significantly by hub and usage."
+    },
+    {
+      question: "What are HubSpot Hubs?",
+      answer: "HubSpot offers Marketing Hub, Sales Hub, Service Hub, CMS Hub, and Operations Hub. Each sold separately or bundled. Mix and match based on needs. CRM is free foundation."
+    },
+    {
+      question: "HubSpot vs Salesforce?",
+      answer: "HubSpot is easier to use with stronger marketing features. Salesforce is more powerful and customizable for sales. HubSpot suits smaller teams; Salesforce scales to large enterprise."
+    },
+    {
+      question: "What is HubSpot CRM?",
+      answer: "HubSpot's CRM tracks contacts, companies, deals, and activities. Free version handles basic contact management. Integrates with email, calendar, and HubSpot's marketing and sales tools."
+    },
+    {
+      question: "Is HubSpot good for small businesses?",
+      answer: "Yes, particularly due to free tools and Starter pricing. HubSpot grew popular with SMBs before expanding to enterprise. The learning curve is manageable for non-technical users."
+    },
+    {
+      question: "Does HubSpot have automation?",
+      answer: "Yes, workflow automation is available in Professional and Enterprise tiers. Automate emails, lead scoring, task creation, and more. Marketing Hub has the most developed automation features."
+    }
+  ],
+
+  // ============================================
+  // SALESFORCE
+  // ============================================
+  "salesforce": [
+    {
+      question: "Is Salesforce free?",
+      answer: "No permanent free tier. There's a 30-day free trial. Essentials starts at $25/user/month. Salesforce is an enterprise product priced accordingly."
+    },
+    {
+      question: "What does Salesforce cost?",
+      answer: "Essentials: $25/user/month. Professional: $80/user/month. Enterprise: $165/user/month. Unlimited: $330/user/month. Additional products (Marketing Cloud, etc.) cost extra."
+    },
+    {
+      question: "What is Salesforce used for?",
+      answer: "Salesforce is the leading CRM platform for sales, service, and marketing. Tracks customer relationships, automates processes, and provides analytics. Highly customizable for enterprise needs."
+    },
+    {
+      question: "HubSpot vs Salesforce?",
+      answer: "Salesforce is more powerful and customizable for complex enterprise needs. HubSpot is easier to use with integrated marketing. Choose Salesforce for scale and customization; HubSpot for simplicity."
+    },
+    {
+      question: "What are Salesforce Clouds?",
+      answer: "Salesforce products include Sales Cloud, Service Cloud, Marketing Cloud, Commerce Cloud, and more. Each addresses different business functions. Many companies use multiple clouds together."
+    },
+    {
+      question: "Is Salesforce difficult to implement?",
+      answer: "Salesforce implementations can be complex and often require consultants. The platform is highly configurable, which adds implementation effort. Simple setups are easier; enterprise deployments take months."
+    },
+    {
+      question: "What is Salesforce AppExchange?",
+      answer: "AppExchange is Salesforce's marketplace with thousands of apps and integrations. Find tools for specific industries, functions, or needs. Both free and paid apps available."
+    }
+  ],
+
+  // ============================================
+  // PIPEDRIVE
+  // ============================================
+  "pipedrive": [
+    {
+      question: "Is Pipedrive free?",
+      answer: "No permanent free tier. 14-day free trial available. Paid plans start at $14/user/month. More affordable than Salesforce for small sales teams."
+    },
+    {
+      question: "What does Pipedrive cost?",
+      answer: "Essential: $14/user/month. Advanced: $29/user/month. Professional: $49/user/month. Power: $64/user/month. Enterprise: $99/user/month. Annual billing reduces costs."
+    },
+    {
+      question: "What is Pipedrive?",
+      answer: "Pipedrive is a sales-focused CRM built around pipeline management. Visual deal tracking, activity reminders, and sales reporting. Designed for salespeople by salespeople."
+    },
+    {
+      question: "Pipedrive vs HubSpot?",
+      answer: "Pipedrive is simpler and focused on sales. HubSpot offers broader marketing and service features. Pipedrive suits sales teams wanting straightforward CRM; HubSpot for all-in-one marketing."
+    },
+    {
+      question: "What makes Pipedrive different?",
+      answer: "Pipedrive emphasizes pipeline visualization and activity-based selling. Less feature bloat than competitors. Focuses on what salespeople actually use daily."
+    },
+    {
+      question: "Does Pipedrive have automation?",
+      answer: "Yes, workflow automation is available from Advanced tier. Automate emails, task creation, and deal updates. Simpler than Salesforce automation but covers common needs."
+    },
+    {
+      question: "What integrations does Pipedrive offer?",
+      answer: "400+ integrations including Gmail, Outlook, Slack, Zoom, and Zapier. Marketplace has apps for various needs. API available for custom integrations."
+    }
+  ],
+
+  // ============================================
+  // INTERCOM
+  // ============================================
+  "intercom": [
+    {
+      question: "Is Intercom free?",
+      answer: "Intercom offers a free trial and Starter plan starting at $74/month. No permanent free tier for production use. Pricing has shifted toward larger customers."
+    },
+    {
+      question: "What does Intercom cost?",
+      answer: "Starter: $74/month (2 seats). Pro and Premium: custom pricing based on usage. Resolution-based pricing for AI features. Costs scale with customer volume and features."
+    },
+    {
+      question: "What is Intercom?",
+      answer: "Intercom is a customer messaging platform combining chat, help desk, and product tours. In-app messages, chatbots, and support ticketing. Popular for SaaS customer communication."
+    },
+    {
+      question: "Intercom vs Zendesk?",
+      answer: "Intercom emphasizes proactive messaging and modern UI. Zendesk is more traditional ticket-based support. Intercom suits SaaS and startups; Zendesk for enterprise support operations."
+    },
+    {
+      question: "What is Intercom Messenger?",
+      answer: "The Messenger is Intercom's chat widget for websites and apps. Enables real-time chat, bot conversations, and help content. Central to Intercom's customer communication approach."
+    },
+    {
+      question: "Does Intercom have AI features?",
+      answer: "Yes, Fin is Intercom's AI agent for automated customer support. Resolution-based pricing means you pay for AI-resolved conversations. Can handle significant support volume automatically."
+    },
+    {
+      question: "Is Intercom good for startups?",
+      answer: "Intercom was popular with startups, but pricing increased significantly. Starter plan exists but costs add up quickly. Early-stage startups may find alternatives more affordable."
+    }
+  ],
+
+  // ============================================
+  // ZENDESK
+  // ============================================
+  "zendesk": [
+    {
+      question: "Is Zendesk free?",
+      answer: "No permanent free tier. Free trial available. Starter plans begin at $19/agent/month. Zendesk targets businesses willing to invest in support infrastructure."
+    },
+    {
+      question: "What does Zendesk cost?",
+      answer: "Support Team: $19/agent/month. Suite Team: $55/agent/month. Suite Growth: $89/agent/month. Suite Professional: $115/agent/month. Enterprise: custom. Multiple products with separate pricing."
+    },
+    {
+      question: "What is Zendesk used for?",
+      answer: "Zendesk provides customer support tools including ticketing, chat, phone, and knowledge base. Industry standard for customer service operations. Supports multi-channel communication."
+    },
+    {
+      question: "Zendesk vs Freshdesk?",
+      answer: "Zendesk has more features and integrations but higher cost. Freshdesk is more affordable with good functionality. Zendesk for larger operations; Freshdesk for budget-conscious teams."
+    },
+    {
+      question: "What products does Zendesk offer?",
+      answer: "Zendesk Support (ticketing), Zendesk Chat (messaging), Zendesk Talk (phone), Zendesk Guide (help center), and Zendesk Explore (analytics). Suite bundles combine products."
+    },
+    {
+      question: "Does Zendesk support self-service?",
+      answer: "Yes, Zendesk Guide creates help centers and knowledge bases. AI-powered answer suggestions. Customers can find answers without contacting support, reducing ticket volume."
+    },
+    {
+      question: "Is Zendesk AI-powered?",
+      answer: "Yes, Zendesk has AI features including automated responses, ticket routing, and agent assistance. Advanced AI features in higher tiers. AI capabilities continue expanding."
+    }
+  ],
+
+  // ============================================
+  // FRESHDESK
+  // ============================================
+  "freshdesk": [
+    {
+      question: "Is Freshdesk free?",
+      answer: "Yes, Freshdesk offers a free tier with basic ticketing for up to 10 agents. Limited features but functional for small teams. Paid plans start at $15/agent/month."
+    },
+    {
+      question: "What does Freshdesk cost?",
+      answer: "Free: Up to 10 agents. Growth: $15/agent/month. Pro: $49/agent/month. Enterprise: $79/agent/month. Significantly more affordable than Zendesk at scale."
+    },
+    {
+      question: "What is Freshdesk?",
+      answer: "Freshdesk is customer support software with ticketing, knowledge base, and automation. Part of Freshworks suite. Positioned as an affordable Zendesk alternative."
+    },
+    {
+      question: "Freshdesk vs Zendesk?",
+      answer: "Freshdesk is more affordable with generous free tier. Zendesk has more features and integrations. Freshdesk suits SMBs and budget-conscious teams; Zendesk for enterprise requirements."
+    },
+    {
+      question: "What features does Freshdesk include?",
+      answer: "Ticket management, team collaboration, automation rules, knowledge base, reporting, and multi-channel support (email, chat, phone, social). Features vary by plan."
+    },
+    {
+      question: "Does Freshdesk have automation?",
+      answer: "Yes, automation is available from Growth tier. Automate ticket routing, escalation, and responses. Scenario automation for complex workflows. Reduces manual support work."
+    },
+    {
+      question: "What is Freshworks?",
+      answer: "Freshworks is the parent company offering Freshdesk, Freshsales, Freshservice, and more. Products integrate together. Provides business software suite at competitive pricing."
+    }
+  ],
 };
 
 async function main() {
