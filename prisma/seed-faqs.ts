@@ -6157,6 +6157,2012 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
       answer: "Pulumi uses real languages; Terraform uses HCL. Pulumi is more flexible; Terraform has larger ecosystem. Both are excellent."
     }
   ],
+
+  // ============================================
+  // DATADOG
+  // ============================================
+  "datadog": [
+    {
+      question: "Is Datadog free?",
+      answer: "There's a free tier for up to 5 hosts. But honestly, Datadog gets expensive fast once you add APM, logs, and more hosts. Great product though - budget for it if observability matters."
+    },
+    {
+      question: "What does Datadog cost?",
+      answer: "Infrastructure starts at ~$15/host/month. APM is ~$31/host/month. Log management, synthetics, and RUM all cost extra. Enterprise bills can easily hit tens of thousands monthly."
+    },
+    {
+      question: "What's Datadog used for?",
+      answer: "Observability - metrics, logs, traces, all in one place. Monitor servers, containers, apps, databases, everything. The unified view is really the killer feature."
+    },
+    {
+      question: "Is Datadog good for Kubernetes?",
+      answer: "Excellent - container metrics, cluster state, pod logs, network mapping. The Agent runs as a DaemonSet and auto-discovers everything. One of the better K8s monitoring experiences."
+    },
+    {
+      question: "What's Datadog APM?",
+      answer: "Traces requests through your services to find bottlenecks. Supports most languages. Connects traces to logs and metrics which is super helpful for debugging production issues."
+    },
+    {
+      question: "Datadog vs New Relic?",
+      answer: "Both are excellent. Datadog has broader infrastructure coverage; New Relic started APM-focused. Datadog's pricing is more complex; New Relic has user-based pricing. Both get expensive at scale."
+    },
+    {
+      question: "Does Datadog have AI?",
+      answer: "Watchdog is ML-powered anomaly detection. Bits AI helps query data in natural language. They're investing heavily in AI to reduce alert fatigue."
+    }
+  ],
+
+  // ============================================
+  // NEW RELIC
+  // ============================================
+  "new-relic": [
+    {
+      question: "Is New Relic free?",
+      answer: "Yes! 100GB of data ingestion free per month forever, plus one full-access user. Actually generous for small projects. Pretty unique in the space."
+    },
+    {
+      question: "What does New Relic cost?",
+      answer: "User pricing: Standard ($49/user/month), Pro ($349/user/month). Plus $0.30/GB after 100GB free. User-based model is simpler than Datadog's per-host."
+    },
+    {
+      question: "What's New Relic for?",
+      answer: "Full-stack observability - APM, infrastructure, logs, browser monitoring, mobile, synthetics. Originally famous for APM, now covers the whole stack."
+    },
+    {
+      question: "What's NRQL?",
+      answer: "New Relic Query Language - SQL-like syntax to query all your telemetry. Powerful for custom dashboards and alerts once you learn it."
+    },
+    {
+      question: "New Relic vs Datadog?",
+      answer: "New Relic's user-based pricing is easier to predict. Datadog has stronger infrastructure monitoring. Cost model often decides which teams choose."
+    },
+    {
+      question: "Is New Relic good for startups?",
+      answer: "The free tier (100GB/month + 1 user) is actually usable. They also have startup programs. Good option if budget is tight but you need real observability."
+    },
+    {
+      question: "Does New Relic support Kubernetes?",
+      answer: "Yes - cluster, node, pod monitoring, plus Pixie integration for deeper debugging. Good K8s support overall."
+    }
+  ],
+
+  // ============================================
+  // GRAFANA
+  // ============================================
+  "grafana": [
+    {
+      question: "Is Grafana free?",
+      answer: "Grafana OSS is completely free. Grafana Cloud has a generous free tier - 10K metrics, 50GB logs. Paid Cloud starts at $29/month."
+    },
+    {
+      question: "What is Grafana?",
+      answer: "The visualization layer for your metrics and logs. Connects to Prometheus, InfluxDB, Elasticsearch, creates beautiful dashboards. The de facto standard."
+    },
+    {
+      question: "Grafana vs Prometheus?",
+      answer: "Prometheus collects and stores metrics. Grafana visualizes them. They work together - Prometheus scrapes, Grafana queries and displays."
+    },
+    {
+      question: "What's Grafana Loki?",
+      answer: "Like Prometheus but for logs. Doesn't index log content, just labels - way cheaper to run at scale. Pairs naturally with Grafana."
+    },
+    {
+      question: "Is Grafana good for Kubernetes?",
+      answer: "Excellent. kube-prometheus-stack gives you Prometheus + Grafana + pre-built K8s dashboards. Most K8s shops use it."
+    },
+    {
+      question: "Grafana vs Datadog?",
+      answer: "Grafana is open source and customizable. Datadog is turnkey but expensive. Grafana needs more setup but no vendor lock-in."
+    },
+    {
+      question: "What's Grafana Cloud?",
+      answer: "Managed Grafana plus Prometheus (Mimir), Loki, and Tempo. Full stack without running infrastructure. Free tier is generous."
+    }
+  ],
+
+  // ============================================
+  // SENTRY
+  // ============================================
+  "sentry": [
+    {
+      question: "Is Sentry free?",
+      answer: "Developer plan is free for solo devs with 5,000 errors/month. Team starts at $26/month. Pretty usable free tier."
+    },
+    {
+      question: "What does Sentry cost?",
+      answer: "Team is $26/month (50K errors), Business is $80/month. Enterprise varies. Successful error reduction actually saves you money."
+    },
+    {
+      question: "What's Sentry for?",
+      answer: "Error and performance monitoring. Captures crashes, exceptions, slow transactions. Shows stack traces, release info, user context - everything to debug fast."
+    },
+    {
+      question: "What languages does Sentry support?",
+      answer: "Everything - JavaScript, Python, Ruby, PHP, Go, Java, .NET, mobile platforms. Framework-specific SDKs too. Integration takes minutes."
+    },
+    {
+      question: "Does Sentry integrate with Slack/Jira?",
+      answer: "Absolutely - alerts to Slack, automatic Jira tickets, GitHub issue linking. Most teams automate ticket creation for critical errors."
+    },
+    {
+      question: "Does Sentry have performance monitoring?",
+      answer: "Yes - tracks transactions, spans, traces. Shows slow endpoints, queries, APIs. Not as deep as Datadog APM but included in all plans."
+    },
+    {
+      question: "Sentry vs LogRocket?",
+      answer: "Sentry focuses on errors. LogRocket is session replay. Complementary: Sentry tells you what broke, LogRocket shows how the user got there."
+    }
+  ],
+
+  // ============================================
+  // POSTHOG
+  // ============================================
+  "posthog": [
+    {
+      question: "Is PostHog free?",
+      answer: "Very generous - 1M events/month, 5K session recordings, unlimited team members. One of the best free tiers in analytics. Open source version is fully free."
+    },
+    {
+      question: "What does PostHog cost?",
+      answer: "After free tier, pay-as-you-go: ~$0.0001/event. Transparent pricing, no 'contact sales' games. Refreshingly honest."
+    },
+    {
+      question: "What is PostHog?",
+      answer: "All-in-one product analytics: events, session replay, feature flags, A/B testing, surveys. Like Amplitude + Hotjar + LaunchDarkly combined."
+    },
+    {
+      question: "Can you self-host PostHog?",
+      answer: "Yes! Unlike most analytics, PostHog can self-host. Great for data residency requirements. Docker or K8s deployment."
+    },
+    {
+      question: "Does PostHog have feature flags?",
+      answer: "Built in - toggle features by segment, percentage rollout, multivariate. Links to analytics so you see feature impact immediately."
+    },
+    {
+      question: "PostHog vs Amplitude?",
+      answer: "PostHog is broader (analytics + replay + flags) and more affordable. Amplitude goes deeper on analytics. PostHog for all-in-one; Amplitude for serious product analytics."
+    },
+    {
+      question: "Is PostHog good for startups?",
+      answer: "Perfect - huge free tier, open source, and you get analytics + replay + flags without three separate tools."
+    }
+  ],
+
+  // ============================================
+  // SEGMENT
+  // ============================================
+  "segment": [
+    {
+      question: "Is Segment free?",
+      answer: "Free tier handles 1,000 visitors/month. Team starts at $120/month. Gets expensive at scale, which is why alternatives exist."
+    },
+    {
+      question: "What does Segment cost?",
+      answer: "Team is $120/month (10K visitors), Business has custom pricing. Pricing can get steep for high-traffic sites."
+    },
+    {
+      question: "What is Segment?",
+      answer: "Customer Data Platform - collects data once, sends it everywhere. Instead of 10 analytics scripts, add Segment once and route to all tools."
+    },
+    {
+      question: "Does Segment replace Google Analytics?",
+      answer: "No, it complements it. Segment is the pipe that sends data to GA (and everywhere else). You still need analytics tools."
+    },
+    {
+      question: "What's Twilio Segment?",
+      answer: "Twilio acquired Segment in 2020. Same product, now part of Twilio's platform."
+    },
+    {
+      question: "Segment alternatives?",
+      answer: "RudderStack (open source), Freshpaint, mParticle. RudderStack is popular for self-hosting and being cheaper at scale."
+    },
+    {
+      question: "What are Sources and Destinations?",
+      answer: "Sources collect data (website, app). Destinations receive it (GA, Mixpanel, ads). Define mapping once, Segment handles the rest."
+    }
+  ],
+
+  // ============================================
+  // MIXPANEL
+  // ============================================
+  "mixpanel": [
+    {
+      question: "Is Mixpanel free?",
+      answer: "Yes! Free tier is 20M events/month - actually generous. Most startups stay on free for a while. Growth starts at $24/month."
+    },
+    {
+      question: "What does Mixpanel cost?",
+      answer: "Free up to 20M events. Growth starts at $24/month for more features. Enterprise has custom pricing."
+    },
+    {
+      question: "What is Mixpanel?",
+      answer: "Product analytics - track user behavior, build funnels, analyze retention. Answer 'where do users drop off?' and 'what makes them stick?'"
+    },
+    {
+      question: "Mixpanel vs Google Analytics?",
+      answer: "GA is traffic-focused (pageviews). Mixpanel is behavior-focused (events, journeys). GA for marketing; Mixpanel for product."
+    },
+    {
+      question: "What are Mixpanel funnels?",
+      answer: "Track conversion through multi-step flows. See drop-off in signup, onboarding, purchase. Segment to find what's working."
+    },
+    {
+      question: "Mixpanel vs Amplitude?",
+      answer: "Both are product analytics leaders. Similar features. Amplitude has better cohort analysis. Mixpanel's free tier is more generous."
+    },
+    {
+      question: "What's retention analysis?",
+      answer: "See if users come back. Day 1 to Day 7? Day 30? Retention curves show product health and what keeps users engaged."
+    }
+  ],
+
+  // ============================================
+  // HOTJAR
+  // ============================================
+  "hotjar": [
+    {
+      question: "Is Hotjar free?",
+      answer: "Basic plan is free forever with 35 daily sessions. Good for small sites. Plus starts at $32/month."
+    },
+    {
+      question: "What does Hotjar cost?",
+      answer: "Basic is free (35/day), Plus $32/month, Business $80/month, Scale $171/month. Scales with daily sessions."
+    },
+    {
+      question: "What is Hotjar?",
+      answer: "Heatmaps and session recordings. Watch real sessions, see where people click, identify UX problems. Visual user research."
+    },
+    {
+      question: "Heatmaps vs recordings?",
+      answer: "Heatmaps show aggregate behavior - where everyone clicks. Recordings show individual sessions. Both useful for different questions."
+    },
+    {
+      question: "Does Hotjar slow down sites?",
+      answer: "Minimal impact - lightweight script, loads async. Generally not noticeable for visitors."
+    },
+    {
+      question: "Hotjar vs FullStory?",
+      answer: "Hotjar is simpler and cheaper. FullStory has more powerful analytics. Hotjar for SMBs; FullStory for larger teams."
+    },
+    {
+      question: "What else can Hotjar do?",
+      answer: "Feedback widgets, surveys, user interviews. More than heatmaps - ask users directly why they're confused."
+    }
+  ],
+
+  // ============================================
+  // SEMRUSH
+  // ============================================
+  "semrush": [
+    {
+      question: "Is Semrush free?",
+      answer: "Free account with limited features - 10 queries/day. Pro starts at $129.95/month. Not usable long-term on free."
+    },
+    {
+      question: "What does Semrush cost?",
+      answer: "Pro $129.95/month, Guru $249.95/month, Business $499.95/month. 17% off annual. Enterprise pricing."
+    },
+    {
+      question: "What is Semrush?",
+      answer: "All-in-one SEO and marketing. Keyword research, competitor analysis, site audits, rank tracking, backlinks. Swiss Army knife for SEO."
+    },
+    {
+      question: "Semrush vs Ahrefs?",
+      answer: "Both excellent. Ahrefs has bigger backlink database. Semrush has more features beyond SEO. Ahrefs for links; Semrush for broader marketing."
+    },
+    {
+      question: "Is Semrush worth it?",
+      answer: "For serious SEO, yes. Saves hours of research. For casual use, hard to justify the price. Best if SEO is core to your business."
+    },
+    {
+      question: "What's Keyword Magic?",
+      answer: "Generates thousands of related keywords from a seed term. Shows volume, difficulty, intent. Great for content planning."
+    },
+    {
+      question: "What can Semrush do?",
+      answer: "Keyword research, competitor spy, site audits, rank tracking, backlinks, content optimization, PPC research. Covers most marketing needs."
+    }
+  ],
+
+  // ============================================
+  // AHREFS
+  // ============================================
+  "ahrefs": [
+    {
+      question: "Is Ahrefs free?",
+      answer: "Free tools like backlink checker with limits. Full access starts at $99/month (Lite). Webmaster Tools is free for verified site owners."
+    },
+    {
+      question: "What does Ahrefs cost?",
+      answer: "Lite $99/month, Standard $199/month, Advanced $399/month, Enterprise $999/month. Premium but the data justifies it."
+    },
+    {
+      question: "What is Ahrefs?",
+      answer: "SEO toolset with the best backlink database. Competitor research, keywords, content explorer, site audits. The backlink analysis is legendary."
+    },
+    {
+      question: "What makes Ahrefs special?",
+      answer: "Largest live backlink index - 30+ trillion links. Updates frequently. For link building or competitive analysis, hard to beat."
+    },
+    {
+      question: "Ahrefs vs Semrush?",
+      answer: "Ahrefs has better backlink data and cleaner UX. Semrush has more marketing features. For pure SEO, Ahrefs. Many pros use both."
+    },
+    {
+      question: "What's Content Explorer?",
+      answer: "Search billions of pages by topic. Find what performs well, who links to it. Great for content ideation and link opportunities."
+    },
+    {
+      question: "Is Ahrefs for beginners?",
+      answer: "Data is pro-level but interface is approachable. Excellent tutorials. Worth learning if SEO matters. Steep price for hobbyists."
+    }
+  ],
+
+  // ============================================
+  // CALENDLY
+  // ============================================
+  "calendly": [
+    {
+      question: "Is Calendly free?",
+      answer: "Yes! Free plan gives you one event type with basic features. Enough for simple scheduling. Standard starts at $12/seat/month."
+    },
+    {
+      question: "What does Calendly cost?",
+      answer: "Standard $12/seat/month, Teams $20/seat/month, Enterprise custom. The free tier is actually usable for basic needs."
+    },
+    {
+      question: "What is Calendly?",
+      answer: "Scheduling tool - share your link, people book time on your calendar. No back-and-forth emails. Syncs with Google, Outlook, etc."
+    },
+    {
+      question: "What integrations does Calendly have?",
+      answer: "Google Calendar, Outlook, Zoom, Teams, Salesforce, HubSpot, Slack, Zapier. The integration list is solid for automating your workflow."
+    },
+    {
+      question: "Calendly vs Cal.com?",
+      answer: "Calendly is polished and just works. Cal.com is open source and self-hostable. Calendly for simplicity; Cal.com for control and customization."
+    },
+    {
+      question: "Can teams use Calendly?",
+      answer: "Teams tier adds round-robin scheduling, collective events (multiple people need to be free), and routing. Good for sales teams."
+    },
+    {
+      question: "Does Calendly prevent double-booking?",
+      answer: "Yes - checks your connected calendars in real-time. Blocks off time as slots are booked. Buffer time between meetings optional."
+    }
+  ],
+
+  // ============================================
+  // CAL.COM
+  // ============================================
+  "cal-com": [
+    {
+      question: "Is Cal.com free?",
+      answer: "Yes! Free for individuals forever with unlimited bookings. Team features start at $15/user/month. Self-hosting is fully free."
+    },
+    {
+      question: "What does Cal.com cost?",
+      answer: "Free for individuals, Team $15/user/month, Organization $37/user/month. Self-hosted is free with no limits."
+    },
+    {
+      question: "What is Cal.com?",
+      answer: "Open source Calendly alternative. Scheduling infrastructure you can self-host or use their cloud. Same concept, more control."
+    },
+    {
+      question: "Can you self-host Cal.com?",
+      answer: "Yes! That's a big selling point. Docker, Vercel, Railway deployment options. Full control over your scheduling data."
+    },
+    {
+      question: "Cal.com vs Calendly?",
+      answer: "Calendly is more polished. Cal.com is open source, cheaper, self-hostable. Calendly for ease; Cal.com for control and budget."
+    },
+    {
+      question: "What integrations does Cal.com have?",
+      answer: "Google Calendar, Outlook, Zoom, Google Meet, Stripe for paid bookings. Growing list, though not as extensive as Calendly yet."
+    },
+    {
+      question: "Who uses Cal.com?",
+      answer: "Developers who want open source, companies with data residency requirements, budget-conscious teams. Growing fast in the startup world."
+    }
+  ],
+
+  // ============================================
+  // LOOM
+  // ============================================
+  "loom": [
+    {
+      question: "Is Loom free?",
+      answer: "Free Starter plan with up to 25 videos, 5-minute max. Business at $12.50/month unlocks unlimited videos and features."
+    },
+    {
+      question: "What does Loom cost?",
+      answer: "Starter is free, Business $12.50/creator/month, Enterprise custom. Viewers are always free."
+    },
+    {
+      question: "What is Loom?",
+      answer: "Screen recording made simple. Record your screen, webcam, or both. Share instantly with a link. Great for async communication."
+    },
+    {
+      question: "What can you record with Loom?",
+      answer: "Screen, webcam, or both together. Full screen, windows, or Chrome tabs with audio. Perfect for tutorials, demos, and feedback."
+    },
+    {
+      question: "Does Loom have AI?",
+      answer: "Yes - auto-generates titles, summaries, chapters, transcripts. Removes filler words. Makes videos more scannable."
+    },
+    {
+      question: "What integrations does Loom have?",
+      answer: "Slack, Notion, Gmail, GitHub, Figma. Embed videos easily. The Slack integration is particularly nice for team communication."
+    },
+    {
+      question: "Loom vs recording with Zoom?",
+      answer: "Loom is purpose-built for async - faster to record, easier to share, viewer analytics. Zoom recordings are fine but Loom is smoother for this use case."
+    }
+  ],
+
+  // ============================================
+  // DISCORD
+  // ============================================
+  "discord": [
+    {
+      question: "Is Discord free?",
+      answer: "Yes! Core features are free - chat, voice, video, servers. Nitro ($9.99/month) adds bigger uploads, better video, custom emojis. Most people stay free."
+    },
+    {
+      question: "What does Discord cost?",
+      answer: "Free for everything important. Nitro Basic $2.99/month, full Nitro $9.99/month. Nitro is nice-to-have, not need-to-have."
+    },
+    {
+      question: "What is Discord?",
+      answer: "Community platform - text channels, voice calls, video, screen share. Originally for gamers, now used by communities, creators, teams."
+    },
+    {
+      question: "Can companies use Discord?",
+      answer: "Some do, especially in tech and gaming. Not enterprise-ready like Slack. Better for communities than structured workplace communication."
+    },
+    {
+      question: "Discord vs Slack for work?",
+      answer: "Slack is built for work - search, integrations, compliance. Discord is better for communities and casual collaboration. Different use cases."
+    },
+    {
+      question: "What are Discord bots?",
+      answer: "Automated helpers that add features - moderation, music, games, integrations. Huge ecosystem of bots to customize your server."
+    },
+    {
+      question: "Is Discord secure?",
+      answer: "Decent security but not enterprise-grade. No SOC 2, limited admin controls. Fine for communities, not ideal for sensitive business communication."
+    }
+  ],
+
+  // ============================================
+  // WHEREBY
+  // ============================================
+  "whereby": [
+    {
+      question: "Is Whereby free?",
+      answer: "Free plan allows 1 meeting room with up to 100 participants. Good for small teams. Pro starts at $8.99/month."
+    },
+    {
+      question: "What does Whereby cost?",
+      answer: "Free (1 room), Pro $8.99/month (3 rooms), Business $11.99/month. Affordable compared to Zoom for small teams."
+    },
+    {
+      question: "What is Whereby?",
+      answer: "Browser-based video meetings - no downloads needed. Just share a link. Simple, clean, works well. Good Zoom alternative."
+    },
+    {
+      question: "Do guests need accounts?",
+      answer: "No - guests just click the link. No signup, no download. Really frictionless for external meetings."
+    },
+    {
+      question: "Whereby vs Zoom?",
+      answer: "Whereby is simpler and browser-native. Zoom has more features for large meetings. Whereby for ease; Zoom for feature-rich conferences."
+    },
+    {
+      question: "Can you embed Whereby?",
+      answer: "Yes - the API lets you embed video calls in your product. Popular for telehealth, customer support, tutoring apps."
+    },
+    {
+      question: "Is Whereby good for teams?",
+      answer: "Great for small teams who want simplicity. For larger orgs needing advanced features (breakouts, webinars), look at Zoom or Teams."
+    }
+  ],
+
+  // ============================================
+  // AROUND
+  // ============================================
+  "around": [
+    {
+      question: "Is Around free?",
+      answer: "Around shut down in 2023. The product no longer exists. Look at alternatives like Zoom, Google Meet, or Butter."
+    },
+    {
+      question: "What happened to Around?",
+      answer: "Around was acquired and the standalone product was discontinued in 2023. It was known for its floating-head video bubbles."
+    },
+    {
+      question: "What was Around?",
+      answer: "Was a video meeting app with minimal UI and floating video bubbles. Aimed to reduce meeting fatigue. Shut down in 2023."
+    },
+    {
+      question: "Around alternatives?",
+      answer: "Zoom, Google Meet, Whereby, Butter for similar meeting experiences. Nothing quite replicated Around's unique minimal aesthetic."
+    },
+    {
+      question: "Can I still use Around?",
+      answer: "No, the service was discontinued. Existing users were migrated to other solutions."
+    },
+    {
+      question: "Who acquired Around?",
+      answer: "Miro acquired Around in 2022 and integrated some features into Miro, then shut down the standalone product."
+    },
+    {
+      question: "What was special about Around?",
+      answer: "Floating video bubbles, noise cancellation, low bandwidth usage. Designed to feel lighter than traditional video calls."
+    }
+  ],
+
+  // ============================================
+  // BUTTER
+  // ============================================
+  "butter": [
+    {
+      question: "Is Butter free?",
+      answer: "Free plan with 45-minute sessions and basic features. Pro starts at $20/host/month for unlimited sessions."
+    },
+    {
+      question: "What does Butter cost?",
+      answer: "Free (45 min limit), Pro $20/host/month, Business custom. Good value for what you get."
+    },
+    {
+      question: "What is Butter?",
+      answer: "Video meetings designed for workshops and facilitation. Built-in tools like polls, timers, breakouts, agendas. Not just another Zoom clone."
+    },
+    {
+      question: "What makes Butter different?",
+      answer: "Facilitation features built in - agendas, timers, polls, breakout rooms, emoji reactions, soundboards. Designed for interactive sessions, not just calls."
+    },
+    {
+      question: "Who uses Butter?",
+      answer: "Facilitators, workshop leaders, trainers, team leads. Anyone running interactive sessions rather than just talking-head meetings."
+    },
+    {
+      question: "Butter vs Zoom?",
+      answer: "Zoom is general-purpose video. Butter is workshop-focused with better engagement tools. Use Zoom for calls; Butter for facilitated sessions."
+    },
+    {
+      question: "Does Butter integrate with calendars?",
+      answer: "Yes - Google Calendar, Outlook. Schedule sessions, send invites, track attendees. Basic scheduling works well."
+    }
+  ],
+
+  // ============================================
+  // SHOPIFY
+  // ============================================
+  "shopify": [
+    {
+      question: "Is Shopify free?",
+      answer: "There's a 3-day free trial, then 3 months at $1/month - basically a $3 test drive. After that, Basic starts at $39/month. Not free, but you get a complete e-commerce platform without hiring developers."
+    },
+    {
+      question: "What does Shopify cost?",
+      answer: "Basic $39/month (2.9% + 30¢ transaction fees), Shopify $105/month (2.6% + 30¢), Advanced $399/month (2.4% + 30¢). Plus for enterprise starts around $2,300/month. Annual billing saves 25%."
+    },
+    {
+      question: "Shopify vs WooCommerce?",
+      answer: "Shopify is hosted and managed - they handle servers, security, updates. WooCommerce is free but you need your own hosting and more technical skills. Shopify costs more but saves headaches."
+    },
+    {
+      question: "What payment methods does Shopify support?",
+      answer: "Shopify Payments (Stripe-powered), PayPal, Apple Pay, Google Pay, Shop Pay, plus 100+ third-party gateways. If you use their payments, no extra transaction fees."
+    },
+    {
+      question: "Can I sell internationally on Shopify?",
+      answer: "Yes - multiple currencies, automatic tax calculations, language translations, local payment methods. Markets feature helps you manage different regions. International shipping integrations too."
+    },
+    {
+      question: "What apps are popular on Shopify?",
+      answer: "Thousands in the app store. Popular ones: Klaviyo (email), PageFly (page builder), Loox (reviews), ReCharge (subscriptions). Be careful - apps can add up cost-wise."
+    },
+    {
+      question: "Is Shopify good for beginners?",
+      answer: "It's designed for non-technical people. Drag-and-drop themes, guided setup, 24/7 support. You can launch a store in a day. The learning curve is gentler than most e-commerce platforms."
+    }
+  ],
+
+  // ============================================
+  // WOOCOMMERCE
+  // ============================================
+  "woocommerce": [
+    {
+      question: "Is WooCommerce free?",
+      answer: "The plugin itself is 100% free and open source. But you'll pay for hosting ($5-30/month), domain, themes ($0-100), and extensions. Total cost is often $20-100/month depending on your needs."
+    },
+    {
+      question: "What does WooCommerce really cost?",
+      answer: "The hidden costs: hosting ($5-50/month), SSL certificate (free-$100/year), premium theme ($50-200), essential extensions ($100-500/year). Budget $50-150/month for a proper store."
+    },
+    {
+      question: "WooCommerce vs Shopify?",
+      answer: "WooCommerce = more control, lower base cost, but you manage everything. Shopify = higher monthly cost, but it's fully managed. Technical folks often prefer WooCommerce; beginners lean Shopify."
+    },
+    {
+      question: "What hosting is best for WooCommerce?",
+      answer: "WP Engine, Kinsta, or Cloudways for performance. SiteGround for budget-friendly. Avoid super-cheap shared hosting - slow stores kill sales. Expect $20-50/month for decent WooCommerce hosting."
+    },
+    {
+      question: "How do payments work in WooCommerce?",
+      answer: "Install payment gateway plugins - Stripe, PayPal, Square are popular and free. WooPayments (their official gateway) works well too. You can have multiple options running simultaneously."
+    },
+    {
+      question: "Is WooCommerce good for large stores?",
+      answer: "It can handle big catalogs but needs proper hosting and optimization. Sites with 10,000+ products exist, but you'll need caching, CDN, and possibly database optimization. Not plug-and-play at scale."
+    },
+    {
+      question: "What WooCommerce extensions are essential?",
+      answer: "Many stores need: WooCommerce Subscriptions ($199/yr), Advanced shipping plugins, Tax calculation (Avalara), Backup solution, Security plugin. Official extensions are pricey but reliable."
+    }
+  ],
+
+  // ============================================
+  // BIGCOMMERCE
+  // ============================================
+  "bigcommerce": [
+    {
+      question: "Is BigCommerce free?",
+      answer: "15-day free trial, then plans start at $39/month. No free tier. But unlike Shopify, there are no transaction fees on any plan, which can save money at higher volumes."
+    },
+    {
+      question: "What does BigCommerce cost?",
+      answer: "Standard $39/month, Plus $105/month, Pro $399/month. Enterprise is custom priced. Key difference from Shopify: zero transaction fees. They have revenue limits per tier though."
+    },
+    {
+      question: "BigCommerce vs Shopify?",
+      answer: "BigCommerce has more built-in features and no transaction fees. Shopify has better apps ecosystem and easier customization. BigCommerce often wins for B2B and larger catalogs."
+    },
+    {
+      question: "Is BigCommerce good for B2B?",
+      answer: "Actually one of its strengths. Customer groups, custom pricing, quote management, purchase orders, bulk pricing tiers. B2B Edition specifically addresses wholesale needs."
+    },
+    {
+      question: "What payment options does BigCommerce support?",
+      answer: "65+ pre-integrated gateways: PayPal, Stripe, Square, Authorize.net, etc. No extra fees regardless of which you use. They're payment-processor agnostic."
+    },
+    {
+      question: "Can BigCommerce do headless commerce?",
+      answer: "Yes - they push this hard. Use their backend with any frontend (Next.js, Gatsby, etc). Strong APIs and webhooks. Good option if you want custom storefronts."
+    },
+    {
+      question: "What are BigCommerce's limitations?",
+      answer: "Annual sales caps per plan (forces upgrades), fewer apps than Shopify, smaller community. Theme customization needs coding skills. Good platform, just smaller ecosystem."
+    }
+  ],
+
+  // ============================================
+  // SQUARESPACE
+  // ============================================
+  "squarespace": [
+    {
+      question: "Is Squarespace free?",
+      answer: "14-day free trial, then $16-52/month. No free tier. But the designs are beautiful out of the box, so you might save on designer fees."
+    },
+    {
+      question: "What does Squarespace cost?",
+      answer: "Personal $16/month, Business $27/month, Basic Commerce $33/month, Advanced Commerce $52/month. Annual billing saves 30%. Commerce plans remove transaction fees."
+    },
+    {
+      question: "Can you sell on Squarespace?",
+      answer: "Yes, Commerce plans support full e-commerce: products, subscriptions, digital downloads. 3% transaction fee on Business plan, 0% on Commerce plans. Good for small shops, limited for large catalogs."
+    },
+    {
+      question: "Squarespace vs Wix?",
+      answer: "Squarespace templates are more polished, Wix has more flexibility. Squarespace is better for aesthetics; Wix better for customization. Both are drag-and-drop friendly."
+    },
+    {
+      question: "Is Squarespace good for SEO?",
+      answer: "Decent built-in SEO tools: meta descriptions, alt text, clean URLs, auto sitemaps, SSL. Not as flexible as WordPress, but covers the basics well. Mobile-responsive templates help too."
+    },
+    {
+      question: "What can't Squarespace do?",
+      answer: "Large e-commerce (limited to a few hundred products), complex membership sites, heavy customization, third-party plugins. It's intentionally simple - that's the tradeoff for beautiful designs."
+    },
+    {
+      question: "Does Squarespace have email marketing?",
+      answer: "Yes - Email Campaigns built in. Costs extra ($5-48/month based on subscribers). Basic but sufficient for small businesses. For serious email, you'd still want Mailchimp or Klaviyo."
+    }
+  ],
+
+  // ============================================
+  // WIX
+  // ============================================
+  "wix": [
+    {
+      question: "Is Wix free?",
+      answer: "Free plan exists with Wix ads and wix.com subdomain. Paid plans start at $17/month. The free plan is usable for testing but not for real businesses."
+    },
+    {
+      question: "What does Wix cost?",
+      answer: "Combo $17/month, Unlimited $22/month, Pro $27/month, VIP $45/month. Business plans (for selling) start at $27/month. Annual billing only for discounted rates."
+    },
+    {
+      question: "Wix vs WordPress?",
+      answer: "Wix is drag-and-drop easy, all-in-one, but locked in. WordPress is flexible and portable but needs more setup. Wix for simplicity, WordPress for control."
+    },
+    {
+      question: "Is Wix good for online stores?",
+      answer: "For small stores, yes. Their e-commerce plans are solid. For serious retail, Shopify or BigCommerce offer more. Wix e-commerce is improving fast though."
+    },
+    {
+      question: "Can you use custom code on Wix?",
+      answer: "Yes - Velo (formerly Corvid) lets you add JavaScript. You can build databases, APIs, dynamic pages. More powerful than people think, but still has limits."
+    },
+    {
+      question: "What's Wix ADI?",
+      answer: "Artificial Design Intelligence - answers questions about your business and generates a site automatically. Good starting point, though most people customize from there."
+    },
+    {
+      question: "Is Wix bad for SEO?",
+      answer: "Not anymore - that's outdated info. Modern Wix has good SEO: fast loading, mobile-first, structured data, custom meta tags. Won't hold back a small business."
+    }
+  ],
+
+  // ============================================
+  // GUMROAD
+  // ============================================
+  "gumroad": [
+    {
+      question: "Is Gumroad free?",
+      answer: "No monthly fee - pay only when you sell. They take 10% of each sale. Simple and fair for creators starting out. No upfront costs."
+    },
+    {
+      question: "What does Gumroad cost?",
+      answer: "10% flat fee on all sales. That's it. No monthly fees, no hidden charges. For a $10 product, Gumroad takes $1. Stripe/PayPal fees are separate."
+    },
+    {
+      question: "What can you sell on Gumroad?",
+      answer: "Digital products (ebooks, courses, software, music), memberships, physical products, services. Strong for digital creators - writers, designers, developers, musicians."
+    },
+    {
+      question: "Gumroad vs Patreon?",
+      answer: "Gumroad for one-time purchases and product sales. Patreon for ongoing memberships and recurring support. Different models - many creators use both."
+    },
+    {
+      question: "Does Gumroad handle taxes?",
+      answer: "Yes - they collect and remit VAT/GST for EU, UK, Australia, etc. Huge relief for indie creators who'd otherwise deal with international tax compliance."
+    },
+    {
+      question: "Can you do subscriptions on Gumroad?",
+      answer: "Yes - memberships with recurring billing. Multiple tiers, member-only content, email updates. Not as feature-rich as Patreon but simpler."
+    },
+    {
+      question: "Is Gumroad good for courses?",
+      answer: "Basic course hosting works - video, PDFs, drip content. For serious courses with quizzes, certificates, community, dedicated platforms like Teachable are better."
+    }
+  ],
+
+  // ============================================
+  // LEMON SQUEEZY
+  // ============================================
+  "lemon-squeezy": [
+    {
+      question: "Is Lemon Squeezy free?",
+      answer: "No monthly fee - 5% + 50¢ per transaction. Lower than Gumroad's 10%. Good deal for digital product sellers, especially software."
+    },
+    {
+      question: "What does Lemon Squeezy cost?",
+      answer: "5% + 50¢ per transaction on the free tier. Volume discounts available. Plus payment processor fees. Competitive for the indie software market."
+    },
+    {
+      question: "Lemon Squeezy vs Gumroad?",
+      answer: "Lower fees (5% vs 10%), better for software (license keys, updates), modern UI. Gumroad has more brand recognition. Lemon Squeezy is the new favorite for devs."
+    },
+    {
+      question: "What can you sell on Lemon Squeezy?",
+      answer: "Digital products, subscriptions, SaaS licenses, software updates. Built-in license key generation makes it popular for indie devs selling software."
+    },
+    {
+      question: "Does Lemon Squeezy handle taxes?",
+      answer: "Yes - merchant of record model. They handle VAT, sales tax, compliance for 100+ countries. You get paid, they handle the tax headache."
+    },
+    {
+      question: "Can you do software licensing?",
+      answer: "Yes - built-in license key generation, activation limits, version management. Perfect for desktop apps, plugins, scripts. This is their sweet spot."
+    },
+    {
+      question: "What payment methods are supported?",
+      answer: "Credit cards, PayPal, Apple Pay, Google Pay. Multi-currency support. Checkout is fast and conversion-optimized."
+    }
+  ],
+
+  // ============================================
+  // PADDLE
+  // ============================================
+  "paddle": [
+    {
+      question: "Is Paddle free?",
+      answer: "No - they take 5% + 50¢ per transaction, plus payment processing (~2.5%). Total around 8%. Higher than Stripe alone, but they handle everything."
+    },
+    {
+      question: "What does Paddle cost?",
+      answer: "5% + 50¢ platform fee, plus ~2.5% payment processing. For a $100 sale, expect ~$8 in fees. The value is being merchant of record."
+    },
+    {
+      question: "What is merchant of record?",
+      answer: "Paddle legally sells your product and pays you. They handle sales tax, VAT, invoicing, chargebacks, compliance. You're not the seller - they are. Huge for global SaaS."
+    },
+    {
+      question: "Paddle vs Stripe?",
+      answer: "Stripe is just payments (2.9% + 30¢). Paddle handles everything: taxes, compliance, invoicing, chargebacks. More expensive but way less work. Pick based on how much you want to manage."
+    },
+    {
+      question: "Is Paddle good for SaaS?",
+      answer: "Built for it. Subscription management, dunning, upgrades/downgrades, proration, tax compliance. Many bootstrapped SaaS companies use Paddle specifically."
+    },
+    {
+      question: "What regions does Paddle support?",
+      answer: "Global coverage with localized pricing, currencies, and payment methods. They handle VAT for EU, GST for Australia, sales tax for US states. Properly global."
+    },
+    {
+      question: "Does Paddle handle chargebacks?",
+      answer: "Yes - they eat the chargeback costs. Since they're merchant of record, chargebacks are their problem. Big relief for SaaS companies worried about disputes."
+    }
+  ],
+
+  // ============================================
+  // STRIPE
+  // ============================================
+  "stripe": [
+    {
+      question: "Is Stripe free?",
+      answer: "No monthly fee - 2.9% + 30¢ per successful card charge. Only pay when you process payments. Additional fees for international cards, currency conversion, etc."
+    },
+    {
+      question: "What does Stripe cost?",
+      answer: "Standard: 2.9% + 30¢ per transaction. International cards: +1%. Currency conversion: +1%. ACH/bank: 0.8% (capped at $5). Volume discounts available for large businesses."
+    },
+    {
+      question: "What can you build with Stripe?",
+      answer: "One-time payments, subscriptions, marketplaces, invoicing, payment links, checkout pages. Connect lets you build Uber-style platforms. It's incredibly flexible."
+    },
+    {
+      question: "Stripe vs PayPal?",
+      answer: "Stripe has better developer experience, cleaner APIs, modern dashboard. PayPal has more consumer recognition and buyer protection reputation. Many businesses offer both."
+    },
+    {
+      question: "Is Stripe good for subscriptions?",
+      answer: "Excellent - Stripe Billing handles recurring payments, trials, proration, dunning, invoicing. Revenue recognition too. It's what most SaaS companies use."
+    },
+    {
+      question: "Does Stripe handle taxes?",
+      answer: "Stripe Tax automatically calculates and collects sales tax, VAT, GST in 40+ countries. Extra fees apply (0.5% per transaction). Way easier than DIY."
+    },
+    {
+      question: "What's Stripe's uptime like?",
+      answer: "99.99%+ typically. They're extremely reliable - powering Amazon, Google, Shopify. Rarely goes down, and they have good status communication when issues occur."
+    }
+  ],
+
+  // ============================================
+  // QUICKBOOKS
+  // ============================================
+  "quickbooks": [
+    {
+      question: "Is QuickBooks free?",
+      answer: "30-day free trial. Self-Employed starts at $15/month, Simple Start at $30/month. Not free, but often cheaper than hiring a bookkeeper."
+    },
+    {
+      question: "What does QuickBooks cost?",
+      answer: "Self-Employed $15/month, Simple Start $30/month, Essentials $60/month, Plus $90/month, Advanced $200/month. Frequent 50% off promos for first 3 months."
+    },
+    {
+      question: "QuickBooks Online vs Desktop?",
+      answer: "Online is subscription, works anywhere, auto-updates. Desktop is one-time purchase, more powerful, local data. Most new users should go Online. Desktop is being phased out."
+    },
+    {
+      question: "Can QuickBooks do payroll?",
+      answer: "Yes - add-on starting at $50/month + $6/employee. Handles taxes, direct deposit, benefits, W-2s. Or use Gusto separately - many prefer that combo."
+    },
+    {
+      question: "What integrates with QuickBooks?",
+      answer: "Hundreds of apps: Stripe, PayPal, Shopify, Square, Bill.com, HubSpot, Gusto. Strong ecosystem - most business tools have QuickBooks integration."
+    },
+    {
+      question: "Is QuickBooks good for small businesses?",
+      answer: "It's the default choice for a reason. Invoicing, expenses, basic reports, tax prep. User-friendly enough for non-accountants. Your accountant will know it too."
+    },
+    {
+      question: "QuickBooks vs FreshBooks?",
+      answer: "QuickBooks is more powerful for accounting. FreshBooks is simpler, better for invoicing-focused freelancers. QuickBooks if you'll grow; FreshBooks if you want easy."
+    }
+  ],
+
+  // ============================================
+  // XERO
+  // ============================================
+  "xero": [
+    {
+      question: "Is Xero free?",
+      answer: "30-day free trial, then $15-78/month. No free tier. Popular in UK, Australia, New Zealand - less common in US where QuickBooks dominates."
+    },
+    {
+      question: "What does Xero cost?",
+      answer: "Early $15/month (limited invoices/bills), Growing $42/month, Established $78/month. Add-ons for payroll, projects, expenses. Annual billing saves some."
+    },
+    {
+      question: "Xero vs QuickBooks?",
+      answer: "Xero has better UI, unlimited users on all plans, strong bank feeds. QuickBooks has more US integrations and accountant familiarity. Regional preference matters."
+    },
+    {
+      question: "What features does Xero have?",
+      answer: "Invoicing, bank reconciliation, expenses, projects, payroll (varies by country), inventory, reports, multi-currency. Full double-entry accounting."
+    },
+    {
+      question: "Does Xero do payroll?",
+      answer: "Built-in payroll for UK, Australia, NZ. US payroll through Gusto integration. Payroll capability varies significantly by country."
+    },
+    {
+      question: "What apps work with Xero?",
+      answer: "1000+ integrations: Stripe, PayPal, Shopify, HubSpot, Zapier, etc. Strong marketplace. Most business tools connect one way or another."
+    },
+    {
+      question: "Is Xero good for multiple currencies?",
+      answer: "Yes - all plans support multi-currency, even the cheapest. Good for international businesses. Auto exchange rate updates too."
+    }
+  ],
+
+  // ============================================
+  // FRESHBOOKS
+  // ============================================
+  "freshbooks": [
+    {
+      question: "Is FreshBooks free?",
+      answer: "30-day free trial. Plans start at $17/month (Lite). No free tier. Designed for freelancers and service businesses who need invoicing."
+    },
+    {
+      question: "What does FreshBooks cost?",
+      answer: "Lite $17/month (5 clients), Plus $30/month (50 clients), Premium $55/month (unlimited), Select custom pricing. 60% off first 6 months promos common."
+    },
+    {
+      question: "FreshBooks vs QuickBooks?",
+      answer: "FreshBooks is simpler, better invoicing, easier for non-accountants. QuickBooks is more powerful accounting. Freelancers often prefer FreshBooks; accountants prefer QuickBooks."
+    },
+    {
+      question: "What is FreshBooks best for?",
+      answer: "Invoicing, time tracking, expenses, simple financial reports. Service businesses, freelancers, consultants. Not ideal for inventory or complex accounting needs."
+    },
+    {
+      question: "Does FreshBooks have time tracking?",
+      answer: "Yes - built-in timer, manual entry, billable hours tracking. Can invoice directly from time logs. Nice for consultants billing hourly."
+    },
+    {
+      question: "Can FreshBooks do proposals?",
+      answer: "Yes - create proposals, get client approval, convert to invoices. Simple CRM-like features for managing client relationships."
+    },
+    {
+      question: "What integrations does FreshBooks have?",
+      answer: "Stripe, PayPal, Gusto, Bench, Zapier, Slack, Trello, and more. Fewer than QuickBooks but covers the essentials for small businesses."
+    }
+  ],
+
+  // ============================================
+  // GUSTO
+  // ============================================
+  "gusto": [
+    {
+      question: "Is Gusto free?",
+      answer: "No - starts at $40/month + $6/person. There's contractor-only plan at $35/month + $6/contractor. Free trial available. Worth it for the time saved."
+    },
+    {
+      question: "What does Gusto cost?",
+      answer: "Simple $40/month + $6/person, Plus $80/month + $12/person, Premium pricing varies. Contractor-only $35/month + $6/contractor. All include payroll taxes."
+    },
+    {
+      question: "What does Gusto do?",
+      answer: "Full-service payroll, benefits administration, HR tools, compliance, onboarding, time tracking. Basically everything for managing employees at small companies."
+    },
+    {
+      question: "Gusto vs ADP?",
+      answer: "Gusto is modern, user-friendly, built for small business. ADP is enterprise-grade, more features, steeper learning curve. Under 100 employees usually prefer Gusto."
+    },
+    {
+      question: "Does Gusto handle benefits?",
+      answer: "Yes - health insurance, 401(k), HSA, FSA, commuter benefits. They broker insurance plans and manage enrollment. One platform for payroll + benefits."
+    },
+    {
+      question: "Is Gusto good for contractors?",
+      answer: "Yes - 1099 contractor payments, 1099 form filing, contractor onboarding. Works alongside W-2 employees or standalone. Clean contractor experience."
+    },
+    {
+      question: "What integrates with Gusto?",
+      answer: "QuickBooks, Xero, FreshBooks, most accounting software. Plus time tracking tools, HR systems. Data flows to your books automatically."
+    }
+  ],
+
+  // ============================================
+  // RIPPLING
+  // ============================================
+  "rippling": [
+    {
+      question: "Is Rippling free?",
+      answer: "No - starts around $8/user/month for basic HR. Full platform with payroll, IT, etc. costs more. Custom pricing based on modules selected."
+    },
+    {
+      question: "What does Rippling cost?",
+      answer: "Base starts at $8/user/month. Add modules: payroll, benefits, IT management, device management. Total varies $15-35/user/month typically. Custom quotes for full platform."
+    },
+    {
+      question: "What is Rippling exactly?",
+      answer: "Unified employee management: HR, payroll, benefits, IT (app provisioning, device management). One system that handles new hire onboarding across everything."
+    },
+    {
+      question: "Rippling vs Gusto?",
+      answer: "Rippling is broader - HR, payroll, AND IT management. Gusto focuses on payroll and HR. Rippling better for tech companies needing device/app management."
+    },
+    {
+      question: "What's the IT management about?",
+      answer: "Automatic app provisioning (Slack, Google, etc.), device management, security policies. New hire gets laptop and all apps configured automatically. Off-boarding revokes everything."
+    },
+    {
+      question: "Does Rippling work globally?",
+      answer: "Yes - global payroll in 100+ countries, either direct or through EOR partners. Good for companies hiring internationally."
+    },
+    {
+      question: "Is Rippling good for startups?",
+      answer: "Popular with funded startups that want modern HR + IT in one place. The automation is valuable as you scale. Might be overkill for 5-person teams."
+    }
+  ],
+
+  // ============================================
+  // DEEL
+  // ============================================
+  "deel": [
+    {
+      question: "Is Deel free?",
+      answer: "Contractor management is free. EOR (hiring full-time internationally) starts at $599/employee/month. Significant cost but handles legal employment abroad."
+    },
+    {
+      question: "What does Deel cost?",
+      answer: "Contractors: Free. EOR: $599/employee/month. Global payroll: $29/employee/month. Premium plans add features. EOR is expensive but includes everything."
+    },
+    {
+      question: "What is Deel used for?",
+      answer: "Hiring and paying people internationally. EOR lets you legally employ someone in countries where you have no entity. Handles compliance, taxes, benefits."
+    },
+    {
+      question: "Deel vs Remote.com?",
+      answer: "Similar services. Deel often cheaper, more countries. Remote has flatter pricing, owns their entities. Both work well - compare quotes and country coverage."
+    },
+    {
+      question: "How does Deel EOR work?",
+      answer: "They become the legal employer in the country. Your hire is on Deel's entity, you pay Deel, they handle local compliance. Employee feels like they work for you."
+    },
+    {
+      question: "What countries does Deel cover?",
+      answer: "150+ countries for contractors, 100+ for EOR. Good coverage globally. Some countries have restrictions - check their country guide."
+    },
+    {
+      question: "Can Deel do payroll for my entity?",
+      answer: "Yes - Global Payroll runs payroll in countries where you have entities. $29/employee/month. Different from EOR where they provide the entity."
+    }
+  ],
+
+  // ============================================
+  // REMOTE
+  // ============================================
+  "remote": [
+    {
+      question: "Is Remote free?",
+      answer: "Contractor management is free. EOR starts at $599/employee/month flat rate. No hidden fees - they're transparent about pricing."
+    },
+    {
+      question: "What does Remote cost?",
+      answer: "Contractors: Free. EOR: $599/employee/month (all countries same price). Global payroll: $29/employee/month. Straightforward pricing."
+    },
+    {
+      question: "Remote vs Deel?",
+      answer: "Similar offerings. Remote owns all their entities (no third-party). Deel has more countries and flexible pricing. Both are solid - often comes down to specific country needs."
+    },
+    {
+      question: "What is Remote's EOR service?",
+      answer: "They employ your international hires on their local entities. Handle contracts, payroll, benefits, compliance. You manage the work; they handle employment legality."
+    },
+    {
+      question: "What makes Remote different?",
+      answer: "They own their entities worldwide rather than using partners. More control, consistent experience, IP protection. Also have their own visa/immigration services."
+    },
+    {
+      question: "Does Remote handle visas?",
+      answer: "Yes - Remote Relocation helps with work visas and immigration. Not all EOR companies do this. Useful for relocating employees."
+    },
+    {
+      question: "What benefits can Remote provide?",
+      answer: "Country-appropriate benefits: health insurance, pension, time off matching local standards. They know what's required and competitive in each market."
+    }
+  ],
+
+  // ============================================
+  // BAMBOOHR
+  // ============================================
+  "bamboohr": [
+    {
+      question: "Is BambooHR free?",
+      answer: "No - plans start around $6-8/employee/month. Custom pricing based on company size and modules. Free trial available."
+    },
+    {
+      question: "What does BambooHR cost?",
+      answer: "Essentials and Advantage tiers, roughly $6-12/employee/month. Add-ons for payroll, time tracking, performance. Quote-based - they don't publish exact pricing."
+    },
+    {
+      question: "What is BambooHR?",
+      answer: "HR software for small-to-medium businesses. Employee database, onboarding, time off, performance reviews, reports. The friendly, well-designed HR system."
+    },
+    {
+      question: "BambooHR vs Gusto?",
+      answer: "BambooHR is HR-first with payroll add-on. Gusto is payroll-first with HR features. BambooHR better for HR depth; Gusto better for payroll simplicity."
+    },
+    {
+      question: "Does BambooHR do payroll?",
+      answer: "Yes - as an add-on. Full service payroll, taxes, direct deposit. Many use BambooHR for HR and separate payroll, or bundled together."
+    },
+    {
+      question: "What's the employee experience like?",
+      answer: "Clean self-service portal. Employees update info, request time off, see org chart, access documents. Mobile app too. Employee-friendly design is a differentiator."
+    },
+    {
+      question: "Is BambooHR good for onboarding?",
+      answer: "Yes - preboarding, electronic signatures, task assignments, welcome emails. New hires can complete paperwork before day one. Smooth onboarding experience."
+    }
+  ],
+
+  // ============================================
+  // GREENHOUSE
+  // ============================================
+  "greenhouse": [
+    {
+      question: "Is Greenhouse free?",
+      answer: "No - enterprise ATS with custom pricing, typically $6,000-25,000+/year depending on company size and features. No free tier."
+    },
+    {
+      question: "What does Greenhouse cost?",
+      answer: "Custom pricing based on employees and features. Small companies: $6,000-10,000/year. Mid-size: $15,000-40,000/year. Enterprise more. Request a quote."
+    },
+    {
+      question: "What is Greenhouse?",
+      answer: "Applicant Tracking System (ATS) and recruiting software. Job posts, applications, interviews, scorecards, offers. Built for structured, fair hiring processes."
+    },
+    {
+      question: "Greenhouse vs Lever?",
+      answer: "Greenhouse is more structured, process-oriented, better for large hiring volumes. Lever is more flexible, CRM-like, better for relationship-building recruiting. Both are top-tier."
+    },
+    {
+      question: "What makes Greenhouse different?",
+      answer: "Structured hiring methodology built in. Scorecards, interview kits, bias reduction features. More opinionated about how hiring should work - which many like."
+    },
+    {
+      question: "What integrates with Greenhouse?",
+      answer: "400+ integrations: job boards, background checks, assessments, video interviews, HRIS systems. Strong ecosystem - most recruiting tools connect."
+    },
+    {
+      question: "Is Greenhouse good for DEI?",
+      answer: "Yes - inclusion features: anonymous resume screening, structured interviews, diversity analytics. Built-in tools to reduce bias in hiring process."
+    }
+  ],
+
+  // ============================================
+  // LEVER
+  // ============================================
+  "lever": [
+    {
+      question: "Is Lever free?",
+      answer: "No - enterprise recruiting platform with custom pricing. Starts around $4,000-8,000/year for smaller teams. No free tier."
+    },
+    {
+      question: "What does Lever cost?",
+      answer: "Custom pricing based on features and company size. LeverTRM (core) and LeverTRM for Enterprise. Generally $4,000-30,000+/year. Request demo for quote."
+    },
+    {
+      question: "What is Lever?",
+      answer: "Talent Relationship Management - ATS plus CRM for recruiting. Track candidates, nurture relationships, manage pipeline. Good for proactive recruiting."
+    },
+    {
+      question: "Lever vs Greenhouse?",
+      answer: "Lever is more CRM-focused, flexible, relationship-oriented. Greenhouse is more ATS-focused, structured, process-heavy. Lever for relationship recruiting; Greenhouse for high-volume."
+    },
+    {
+      question: "What's the CRM aspect?",
+      answer: "Track passive candidates, nurture campaigns, talent pools. Not just applicants - anyone you might want to hire someday. Relationship-first approach."
+    },
+    {
+      question: "Does Lever have analytics?",
+      answer: "Yes - pipeline metrics, source effectiveness, time-to-hire, diversity stats. Visual Insights dashboards. Data to optimize your recruiting process."
+    },
+    {
+      question: "What integrations does Lever have?",
+      answer: "Integrates with LinkedIn, Indeed, job boards, background checks, scheduling tools, HRIS systems. API for custom integrations."
+    }
+  ],
+
+  // ============================================
+  // WORKABLE
+  // ============================================
+  "workable": [
+    {
+      question: "Is Workable free?",
+      answer: "15-day free trial. Paid plans start at $169/month (Starter). No free tier, but competitive for smaller companies doing moderate hiring."
+    },
+    {
+      question: "What does Workable cost?",
+      answer: "Starter $169/month (up to 20 jobs), Growth custom pricing, Premier custom. Per-job pricing also available at $119/job. Flexible options."
+    },
+    {
+      question: "What is Workable?",
+      answer: "Recruiting software: job posting, applications, interviews, offers. AI-powered sourcing and candidate suggestions. Mid-market alternative to Greenhouse/Lever."
+    },
+    {
+      question: "Workable vs Greenhouse?",
+      answer: "Workable is simpler, cheaper, easier to get started. Greenhouse is more powerful for enterprise. Workable good for SMBs hiring 10-50 people/year."
+    },
+    {
+      question: "Does Workable have AI features?",
+      answer: "Yes - AI candidate recommendations, resume parsing, job description generation, chatbot for candidates. AI is integrated throughout."
+    },
+    {
+      question: "Can Workable post to job boards?",
+      answer: "Yes - 200+ job boards with one click. Indeed, LinkedIn, Glassdoor, industry boards. Manages postings centrally."
+    },
+    {
+      question: "Is Workable good for remote hiring?",
+      answer: "Yes - video interviews, assessment tests, async interviews, global job board posting. Built for distributed teams and remote recruiting."
+    }
+  ],
+
+  // ============================================
+  // DOCUSIGN
+  // ============================================
+  "docusign": [
+    {
+      question: "Is DocuSign free?",
+      answer: "Free plan with 3 signature requests total (not per month - total). Paid plans start at $15/month. Free tier is really just a trial."
+    },
+    {
+      question: "What does DocuSign cost?",
+      answer: "Personal $15/month (5 docs/month), Standard $45/user/month, Business Pro $65/user/month. Enterprise custom. Annual billing required for lower tiers."
+    },
+    {
+      question: "Is DocuSign legally binding?",
+      answer: "Yes - compliant with ESIGN Act, UETA, eIDAS, and laws in 180+ countries. As legally valid as wet signatures. Court-admissible with audit trail."
+    },
+    {
+      question: "DocuSign vs HelloSign?",
+      answer: "DocuSign is the market leader, more features, higher price. HelloSign (now Dropbox Sign) is simpler, cheaper, better for basic needs. Both are legally valid."
+    },
+    {
+      question: "What can you do with DocuSign?",
+      answer: "E-signatures, contract lifecycle management, document generation, forms, notarization, identity verification. More than just signing now."
+    },
+    {
+      question: "Does DocuSign integrate with CRMs?",
+      answer: "Yes - Salesforce, HubSpot, Microsoft Dynamics, plus 400+ other integrations. Generate contracts from CRM data, track signature status."
+    },
+    {
+      question: "Is DocuSign secure?",
+      answer: "Yes - SOC 1/2, ISO 27001, HIPAA-ready, GDPR compliant. Bank-level encryption. Audit trails track every action. Enterprise-grade security."
+    }
+  ],
+
+  // ============================================
+  // PANDADOC
+  // ============================================
+  "pandadoc": [
+    {
+      question: "Is PandaDoc free?",
+      answer: "Free eSign plan for unlimited signatures. Document automation starts at $35/user/month. Free plan is genuinely useful for basic signing."
+    },
+    {
+      question: "What does PandaDoc cost?",
+      answer: "Free (eSign only), Essentials $35/user/month, Business $65/user/month, Enterprise custom. Document creation and automation on paid plans."
+    },
+    {
+      question: "PandaDoc vs DocuSign?",
+      answer: "PandaDoc is more for document creation + signatures (proposals, quotes). DocuSign focuses on signatures and CLM. PandaDoc better for sales docs; DocuSign for pure signing."
+    },
+    {
+      question: "What is PandaDoc best for?",
+      answer: "Sales documents: proposals, quotes, contracts. Template library, content blocks, pricing tables. Built for sales teams creating and closing deals."
+    },
+    {
+      question: "Does PandaDoc have a CRM integration?",
+      answer: "Yes - HubSpot, Salesforce, Pipedrive, Zoho, and more. Pull data from CRM into documents, push signed contracts back. Tight sales workflow integration."
+    },
+    {
+      question: "Can PandaDoc do payments?",
+      answer: "Yes - collect payments within documents. Stripe, PayPal, Square. Sign and pay in one flow. Great for invoices, service agreements."
+    },
+    {
+      question: "What templates does PandaDoc have?",
+      answer: "750+ templates: proposals, contracts, quotes, NDAs, SOWs. Content library for reusable blocks. Drag-and-drop editor for customization."
+    }
+  ],
+
+  // ============================================
+  // CANVA
+  // ============================================
+  "canva": [
+    {
+      question: "Is Canva free?",
+      answer: "Yes! The free plan is genuinely useful - thousands of templates, millions of photos, basic editing. Pro features start at $15/month but many never need to upgrade."
+    },
+    {
+      question: "What does Canva cost?",
+      answer: "Free (very capable), Pro $15/month (premium content, brand kit, resize), Teams $10/user/month (5 user minimum). Education and nonprofits get Pro free."
+    },
+    {
+      question: "What can you create with Canva?",
+      answer: "Social posts, presentations, logos, videos, posters, business cards, websites, documents, whiteboards. Basically any visual content. Templates for everything."
+    },
+    {
+      question: "Canva vs Adobe Creative Cloud?",
+      answer: "Canva is easy, template-based, good for non-designers. Adobe is professional-grade, more powerful, steeper learning curve. Canva for quick; Adobe for advanced."
+    },
+    {
+      question: "Can teams use Canva together?",
+      answer: "Yes - shared Brand Kit, templates, folders. Real-time collaboration. Approval workflows on Teams plan. Good for marketing teams maintaining brand consistency."
+    },
+    {
+      question: "Does Canva do video?",
+      answer: "Yes - video editing, animations, social media clips. Not Final Cut Pro level, but good for marketing videos, social content, simple edits."
+    },
+    {
+      question: "Is Canva AI-powered?",
+      answer: "Magic Write (AI text), Magic Design (auto-create from prompts), background remover, image generation. AI features spreading across the platform."
+    }
+  ],
+
+  // ============================================
+  // ADOBE CREATIVE CLOUD
+  // ============================================
+  "adobe-creative-cloud": [
+    {
+      question: "Is Adobe Creative Cloud free?",
+      answer: "7-day trial, then $60/month for all apps or $23/month per app. Adobe Express has a free tier. Not cheap, but industry standard for professionals."
+    },
+    {
+      question: "What does Adobe Creative Cloud cost?",
+      answer: "All Apps $60/month, Single App $23/month, Photography (Lightroom + Photoshop) $10/month. Annual plans required. Student discount ~60% off."
+    },
+    {
+      question: "What apps are in Creative Cloud?",
+      answer: "Photoshop, Illustrator, Premiere Pro, After Effects, InDesign, Lightroom, XD, Acrobat, plus 20+ more. Complete creative toolkit."
+    },
+    {
+      question: "Adobe vs Canva?",
+      answer: "Adobe for professionals who need precision, advanced features, print production. Canva for quick designs, templates, non-designers. Different use cases."
+    },
+    {
+      question: "Can I just buy Photoshop?",
+      answer: "Yes - $23/month for single app. Or Photography plan at $10/month includes Photoshop + Lightroom. Best deal for just photo editing."
+    },
+    {
+      question: "Is Creative Cloud subscription worth it?",
+      answer: "For professionals, yes - tools are unmatched. For occasional users, maybe not - Canva, Figma, Affinity offer cheaper alternatives for specific needs."
+    },
+    {
+      question: "Does Adobe have AI features?",
+      answer: "Yes - Firefly for image generation, Generative Fill in Photoshop, AI audio in Premiere. Adobe is adding AI across all apps."
+    }
+  ],
+
+  // ============================================
+  // SKETCH
+  // ============================================
+  "sketch": [
+    {
+      question: "Is Sketch free?",
+      answer: "30-day trial. $12/editor/month (billed annually). Mac-only. No free tier, but you can view files free on any platform with the web app."
+    },
+    {
+      question: "What does Sketch cost?",
+      answer: "$12/editor/month billed annually, or $15 month-to-month. Free viewers (unlimited). One-time Mac license also available for $120."
+    },
+    {
+      question: "Sketch vs Figma?",
+      answer: "Figma runs everywhere, better collaboration. Sketch is Mac-only, faster locally, some prefer the feel. Figma has largely won the market, but Sketch loyalists remain."
+    },
+    {
+      question: "Is Sketch still relevant?",
+      answer: "It's lost market share to Figma but still has devoted users. Native Mac performance is excellent. Some agencies and designers prefer it for focused solo work."
+    },
+    {
+      question: "Can Sketch do collaboration?",
+      answer: "Yes - web-based collaboration, commenting, shared libraries. Improved significantly. Still not as seamless as Figma's real-time editing."
+    },
+    {
+      question: "Does Sketch work offline?",
+      answer: "Yes - the Mac app works fully offline. This is actually an advantage over Figma for some workflows. Changes sync when back online."
+    },
+    {
+      question: "What plugins are available?",
+      answer: "Hundreds of plugins: icon libraries, design systems, prototyping, dev handoff. Smaller ecosystem than Figma but covers major use cases."
+    }
+  ],
+
+  // ============================================
+  // ZEPLIN
+  // ============================================
+  "zeplin": [
+    {
+      question: "Is Zeplin free?",
+      answer: "Free for 1 project. Paid plans start at $6/seat/month. Good free tier for solo designers or trying it out."
+    },
+    {
+      question: "What does Zeplin cost?",
+      answer: "Free (1 project), Starter $6/seat/month, Growing $12/seat/month, Organization custom. Annual billing available."
+    },
+    {
+      question: "What is Zeplin for?",
+      answer: "Design-to-developer handoff. Designers upload from Figma/Sketch, developers get specs, assets, code snippets. Bridge between design and development."
+    },
+    {
+      question: "Zeplin vs Figma Dev Mode?",
+      answer: "Figma now has built-in dev mode, reducing Zeplin's advantage. Zeplin still offers more detailed specs, style guides, and works with Sketch. Figma users may not need it."
+    },
+    {
+      question: "Does Zeplin work with Figma?",
+      answer: "Yes - sync Figma files to Zeplin. Also works with Sketch, Adobe XD, Photoshop. Multi-tool design teams benefit."
+    },
+    {
+      question: "What do developers get from Zeplin?",
+      answer: "Exact specs (spacing, colors, fonts), exportable assets, CSS/Swift/Android code snippets, component documentation. Reduces back-and-forth."
+    },
+    {
+      question: "Is Zeplin still needed?",
+      answer: "Less essential now that Figma has dev mode. But useful for teams using multiple design tools or wanting detailed style guides separate from design files."
+    }
+  ],
+
+  // ============================================
+  // EXCALIDRAW
+  // ============================================
+  "excalidraw": [
+    {
+      question: "Is Excalidraw free?",
+      answer: "Core Excalidraw is free and open source. Excalidraw+ (collaboration features) is $7/month. The free version is fully functional for drawing."
+    },
+    {
+      question: "What does Excalidraw cost?",
+      answer: "Free (core tool), Excalidraw+ $7/month for collaboration, end-to-end encryption, and more. Self-host the open source version for free."
+    },
+    {
+      question: "What is Excalidraw?",
+      answer: "Whiteboard-style diagramming with hand-drawn aesthetic. Architecture diagrams, wireframes, flowcharts that look sketched. Simple and fast."
+    },
+    {
+      question: "Excalidraw vs Miro?",
+      answer: "Excalidraw is simpler, free, hand-drawn style. Miro is full-featured whiteboard with templates, integrations, workshops. Excalidraw for quick diagrams; Miro for collaboration."
+    },
+    {
+      question: "Can you self-host Excalidraw?",
+      answer: "Yes - open source. Run your own instance. Many companies self-host for data control. Docker available."
+    },
+    {
+      question: "Does Excalidraw have libraries?",
+      answer: "Yes - community libraries with icons, shapes, components. AWS architecture, flowchart symbols, UI components. Import and reuse."
+    },
+    {
+      question: "What integrations exist?",
+      answer: "Notion, Obsidian, VS Code, Logseq, Roam. Embed diagrams in your docs. Good developer ecosystem."
+    }
+  ],
+
+  // ============================================
+  // TLDRAW
+  // ============================================
+  "tldraw": [
+    {
+      question: "Is tldraw free?",
+      answer: "Yes - tldraw.com is free to use. Open source. SDK for building your own apps is free too (MIT license)."
+    },
+    {
+      question: "What is tldraw?",
+      answer: "Infinite canvas whiteboard - drawing, shapes, text, sticky notes. Open source and embeddable. Simple, fast, hand-drawn feel."
+    },
+    {
+      question: "tldraw vs Excalidraw?",
+      answer: "Similar vibes - both are simple, hand-drawn style whiteboards. tldraw is newer, has AI features, focuses on SDK for embedding. Both are good."
+    },
+    {
+      question: "Can you embed tldraw?",
+      answer: "Yes - that's the main use case. React component, customize everything. Many apps embed tldraw for whiteboard features. Well-documented SDK."
+    },
+    {
+      question: "Does tldraw have AI?",
+      answer: "Yes - 'Make Real' feature turns sketches into working code/UI. Draw a wireframe, get React components. Experimental but cool."
+    },
+    {
+      question: "Is tldraw open source?",
+      answer: "Yes - MIT license. Free to use, modify, embed in commercial products. Active development on GitHub."
+    },
+    {
+      question: "What can you build with tldraw?",
+      answer: "Custom whiteboards, diagramming tools, collaborative canvases. Discord used it. Good foundation for canvas-based products."
+    }
+  ],
+
+  // ============================================
+  // WHIMSICAL
+  // ============================================
+  "whimsical": [
+    {
+      question: "Is Whimsical free?",
+      answer: "Free plan with limited boards. Pro $12/month for unlimited. Good free tier for individuals trying it out."
+    },
+    {
+      question: "What does Whimsical cost?",
+      answer: "Free (limited), Pro $12/month, Organization $20/member/month. Annual billing available with discounts."
+    },
+    {
+      question: "What is Whimsical for?",
+      answer: "Flowcharts, wireframes, mind maps, docs, projects. All-in-one for product thinking. Clean, fast, thoughtfully designed."
+    },
+    {
+      question: "Whimsical vs Miro?",
+      answer: "Whimsical is more structured - specific tools that work well. Miro is freeform canvas with everything. Whimsical for focused work; Miro for workshops."
+    },
+    {
+      question: "Is Whimsical good for wireframing?",
+      answer: "Yes - fast wireframing with pre-built components. Not for high-fidelity design, but excellent for quick mockups and concept exploration."
+    },
+    {
+      question: "Does Whimsical have AI?",
+      answer: "Yes - AI can generate flowcharts, mind maps from prompts. Also AI doc summarization. Useful for starting points."
+    },
+    {
+      question: "Can teams collaborate in Whimsical?",
+      answer: "Yes - real-time collaboration, comments, sharing. Organization plan adds permissions and workspaces. Good for product teams."
+    }
+  ],
+
+  // ============================================
+  // FRAMER
+  // ============================================
+  "framer": [
+    {
+      question: "Is Framer free?",
+      answer: "Free plan for 2 pages with Framer branding. Paid plans start at $15/month. Free is limited but enough to try it out."
+    },
+    {
+      question: "What does Framer cost?",
+      answer: "Free (2 pages, Framer branding), Mini $5/month, Basic $15/month, Pro $30/month, Enterprise custom. Per-site pricing."
+    },
+    {
+      question: "What is Framer now?",
+      answer: "Website builder with design tool feel. Visual editing, animations, CMS, responsive design. Pivoted from prototyping to websites."
+    },
+    {
+      question: "Framer vs Webflow?",
+      answer: "Framer is simpler, faster, better for landing pages. Webflow is more powerful for complex sites. Framer feels like design tool; Webflow feels like web dev."
+    },
+    {
+      question: "Can developers use Framer?",
+      answer: "Yes - React components, custom code, API integrations. More flexible than it looks. Good balance of visual and code."
+    },
+    {
+      question: "Is Framer good for animations?",
+      answer: "Yes - smooth animations are a specialty. Scroll effects, hover states, page transitions. One of the best for animated sites."
+    },
+    {
+      question: "What happened to Framer prototyping?",
+      answer: "Framer Classic (prototyping) is deprecated. They fully pivoted to websites. Use Figma for prototyping now."
+    }
+  ],
+
+  // ============================================
+  // WEBFLOW
+  // ============================================
+  "webflow": [
+    {
+      question: "Is Webflow free?",
+      answer: "Free plan for 2 projects with webflow.io subdomain. Paid site plans start at $14/month. Free is decent for learning."
+    },
+    {
+      question: "What does Webflow cost?",
+      answer: "Free (limited), Starter $14/month, Basic $18/month, CMS $29/month, Business $49/month. Plus workspace plans for teams. Per-site pricing."
+    },
+    {
+      question: "What is Webflow?",
+      answer: "Visual website builder that outputs clean code. Design, CMS, hosting, e-commerce. No-code with professional results."
+    },
+    {
+      question: "Webflow vs WordPress?",
+      answer: "Webflow is visual-first, hosted, modern stack. WordPress is plugin-based, self-hostable, more ecosystem. Webflow for designers; WordPress for flexibility."
+    },
+    {
+      question: "Can Webflow do e-commerce?",
+      answer: "Yes - E-commerce plan at $29-212/month. Good for small stores, limited for large catalogs. Physical and digital products."
+    },
+    {
+      question: "Is Webflow code good?",
+      answer: "Yes - generates clean HTML, CSS, JS. Can export code. Performance is good. Not like old website builders with messy output."
+    },
+    {
+      question: "What's the Webflow learning curve?",
+      answer: "Steeper than Squarespace - need to understand CSS concepts (flexbox, grid). Webflow University is excellent. Investment pays off."
+    }
+  ],
+
+  // ============================================
+  // WORDPRESS
+  // ============================================
+  "wordpress": [
+    {
+      question: "Is WordPress free?",
+      answer: "WordPress.org software is 100% free. You pay for hosting ($5-50/month). WordPress.com hosted service has free tier with limitations."
+    },
+    {
+      question: "What does WordPress cost?",
+      answer: "Software free, hosting $5-100/month, themes $0-200, plugins $0-500+/year. Total cost varies wildly based on needs."
+    },
+    {
+      question: "WordPress.org vs WordPress.com?",
+      answer: "WordPress.org = free software, you host. WordPress.com = hosted service with free/paid plans. .org for control; .com for simplicity."
+    },
+    {
+      question: "Is WordPress still relevant?",
+      answer: "Powers 43% of websites. Massive ecosystem, flexible, proven. Not the coolest, but incredibly capable. Still great for blogs, business sites, e-commerce."
+    },
+    {
+      question: "What hosting is best for WordPress?",
+      answer: "WP Engine, Kinsta, Cloudways for performance. SiteGround, Bluehost for budget. Avoid super-cheap hosts - slow sites hurt SEO and conversions."
+    },
+    {
+      question: "Is WordPress good for SEO?",
+      answer: "Yes - with plugins like Yoast or Rank Math, excellent SEO. Clean URLs, fast themes, structured data. SEO professionals often prefer WordPress."
+    },
+    {
+      question: "Is WordPress secure?",
+      answer: "Can be very secure with updates, security plugins, good hosting. But requires maintenance. Managed WordPress hosting handles this."
+    }
+  ],
+
+  // ============================================
+  // GHOST
+  // ============================================
+  "ghost": [
+    {
+      question: "Is Ghost free?",
+      answer: "Self-hosted Ghost is free (open source). Ghost(Pro) hosting starts at $9/month. You can run your own for just hosting costs."
+    },
+    {
+      question: "What does Ghost cost?",
+      answer: "Self-hosted: Free + your hosting. Ghost(Pro): Starter $9/month, Creator $25/month, Team $50/month, Business $199/month. Based on members."
+    },
+    {
+      question: "What is Ghost for?",
+      answer: "Publishing platform for blogs, newsletters, memberships. Clean writing experience, built-in subscriptions, fast performance. Modern alternative to WordPress."
+    },
+    {
+      question: "Ghost vs WordPress?",
+      answer: "Ghost is simpler, faster, built for publishing. WordPress is more flexible, bigger ecosystem. Ghost for focused publishing; WordPress for everything else."
+    },
+    {
+      question: "Can Ghost do paid subscriptions?",
+      answer: "Yes - built-in membership and payment (via Stripe). Free, paid, and tiered memberships. Newsletter + paywall in one platform."
+    },
+    {
+      question: "Does Ghost have a newsletter feature?",
+      answer: "Yes - native email newsletter sending. Members sign up, you send emails from Ghost. Competes with Substack, ConvertKit."
+    },
+    {
+      question: "Is Ghost good for SEO?",
+      answer: "Yes - fast loading, clean HTML, structured data built in. Good defaults. AMP support too. SEO-friendly out of the box."
+    }
+  ],
+
+  // ============================================
+  // SUBSTACK
+  // ============================================
+  "substack": [
+    {
+      question: "Is Substack free?",
+      answer: "Free to use. Substack takes 10% only when you charge subscribers. No cost for free newsletters. Fair model."
+    },
+    {
+      question: "What does Substack cost?",
+      answer: "Free to publish. If you charge readers, Substack takes 10% + Stripe fees (~3%). So $10 subscription = you get ~$8.70."
+    },
+    {
+      question: "Substack vs ConvertKit?",
+      answer: "Substack is platform with built-in audience discovery. ConvertKit is email tool you own completely. Substack easier to start; ConvertKit more control long-term."
+    },
+    {
+      question: "Can you make money on Substack?",
+      answer: "Yes - paid subscriptions, founding members, one-time payments. Many writers earning six figures. Top writers in millions."
+    },
+    {
+      question: "Does Substack own my audience?",
+      answer: "You can export subscriber list anytime. But readers live in Substack app/ecosystem. Less control than self-hosted, more built-in distribution."
+    },
+    {
+      question: "What's Substack Notes?",
+      answer: "Twitter-like feature for short posts. Cross-promote, engage audience between newsletters. Building social layer into Substack."
+    },
+    {
+      question: "Is Substack good for podcasts?",
+      answer: "Yes - podcast hosting included free. Audio newsletters, paid podcast subscriptions. Integrating audio and video content."
+    }
+  ],
+
+  // ============================================
+  // BEEHIIV
+  // ============================================
+  "beehiiv": [
+    {
+      question: "Is beehiiv free?",
+      answer: "Free plan up to 2,500 subscribers. Launch plan $49/month. Better free tier than most newsletter platforms."
+    },
+    {
+      question: "What does beehiiv cost?",
+      answer: "Free (2,500 subs), Launch $49/month, Scale $99/month, Max $299/month. Pricing based on subscribers and features."
+    },
+    {
+      question: "beehiiv vs Substack?",
+      answer: "beehiiv has better growth tools, monetization options, analytics. Substack has better reader network. beehiiv for serious newsletter business; Substack for simplicity."
+    },
+    {
+      question: "What growth tools does beehiiv have?",
+      answer: "Referral program, recommendations network, SEO blog, subscriber surveys, A/B testing. Built for growth, not just sending."
+    },
+    {
+      question: "How do you monetize on beehiiv?",
+      answer: "Paid subscriptions, ad network (they sell ads for you), sponsorship marketplace, boosts (get paid for recommendations). Multiple revenue streams."
+    },
+    {
+      question: "Does beehiiv have a website builder?",
+      answer: "Yes - web pages, custom domains, SEO-optimized archives. Your newsletter has a home on the web, not just email."
+    },
+    {
+      question: "Is beehiiv good for beginners?",
+      answer: "Yes - generous free plan, good onboarding, templates. The growth tools help new newsletters scale faster than manual work."
+    }
+  ],
+
+  // ============================================
+  // CONVERTKIT
+  // ============================================
+  "convertkit": [
+    {
+      question: "Is ConvertKit free?",
+      answer: "Free up to 10,000 subscribers (limited features). Creator plan starts at $29/month. Good free tier for starting out."
+    },
+    {
+      question: "What does ConvertKit cost?",
+      answer: "Free (10k subs, limited), Creator $29/month, Creator Pro $59/month. Pricing scales with subscriber count. Annual saves 2 months."
+    },
+    {
+      question: "ConvertKit vs Mailchimp?",
+      answer: "ConvertKit is creator-focused - simpler, better for newsletters and courses. Mailchimp is broader, e-commerce focused. ConvertKit for creators; Mailchimp for businesses."
+    },
+    {
+      question: "What is ConvertKit best for?",
+      answer: "Creators: bloggers, podcasters, YouTubers, course creators. Email sequences, landing pages, digital products. Built for building audience."
+    },
+    {
+      question: "Does ConvertKit do automation?",
+      answer: "Yes - visual automation builder, sequences, triggers, segmentation. Not as complex as ActiveCampaign but handles most creator needs."
+    },
+    {
+      question: "Can you sell products with ConvertKit?",
+      answer: "Yes - ConvertKit Commerce for digital products, subscriptions, tips. Basic but integrated. For serious e-commerce, integrate Gumroad or Teachable."
+    },
+    {
+      question: "What's the Creator Network?",
+      answer: "Newsletter recommendations - promote other creators, get recommended back. Growth feature for cross-pollinating audiences."
+    }
+  ],
+
+  // ============================================
+  // MAILCHIMP
+  // ============================================
+  "mailchimp": [
+    {
+      question: "Is Mailchimp free?",
+      answer: "There's a free plan, but it's limited to 500 contacts and 1,000 emails per month. The free tier was more generous in the past. For most businesses, you'll need to upgrade to a paid plan at $13/month or higher to have enough room to grow."
+    },
+    {
+      question: "What does Mailchimp cost?",
+      answer: "The free tier covers 500 contacts. Essentials starts at $13/month, Standard at $20/month, and Premium at $350/month for enterprise features. Important to note: pricing scales with your contact list size, so costs can increase significantly as you grow."
+    },
+    {
+      question: "Is Mailchimp still a good choice?",
+      answer: "Mailchimp remains easy to use and widely recognized. However, pricing has increased since the Intuit acquisition, and many users are exploring alternatives like ConvertKit, Buttondown, or beehiiv. It's still a solid platform, but the competitive landscape has evolved."
+    },
+    {
+      question: "What can you do with Mailchimp?",
+      answer: "Beyond email campaigns, Mailchimp now includes automations, landing pages, basic CRM, social ads, postcards, and simple websites. They've positioned themselves as an all-in-one marketing platform, offering breadth across multiple marketing channels."
+    },
+    {
+      question: "Mailchimp vs ConvertKit: which should I choose?",
+      answer: "They serve different audiences. Mailchimp is broader with strong e-commerce features like abandoned cart emails and product recommendations. ConvertKit is simpler and designed for creators building audiences through newsletters. Choose based on your primary use case."
+    },
+    {
+      question: "Does Mailchimp integrate with e-commerce platforms?",
+      answer: "E-commerce is a core strength. Mailchimp integrates directly with Shopify, WooCommerce, BigCommerce, and Square. You can create abandoned cart sequences, product recommendations, and purchase follow-up campaigns."
+    },
+    {
+      question: "Why are some users switching away from Mailchimp?",
+      answer: "Common reasons include pricing increases, more complex tier structures, and a reduced free plan. Some users find better value in specialized alternatives. That said, Mailchimp remains reliable and maintains strong brand recognition."
+    }
+  ],
+
+  // ============================================
+  // LOOPS
+  // ============================================
+  "loops": [
+    {
+      question: "Is Loops free?",
+      answer: "Yes, free up to 1,000 contacts. This is suitable for early-stage projects. Beyond that, Starter costs $49/month. Loops is designed for SaaS companies seeking modern, developer-friendly email infrastructure."
+    },
+    {
+      question: "What does Loops cost?",
+      answer: "The free tier includes 1,000 contacts. Starter at $49/month supports 5,000 contacts, Growth at $149/month handles 25,000, and Pro at $549/month scales to 100,000. Pricing is straightforward and based on contact list size."
+    },
+    {
+      question: "What is Loops used for?",
+      answer: "Loops specializes in email for product-led SaaS companies: user onboarding sequences, product update announcements, and lifecycle emails triggered by user behavior. It's positioned as a modern, streamlined alternative to Customer.io."
+    },
+    {
+      question: "How does Loops compare to Customer.io?",
+      answer: "Loops offers a faster setup and simpler interface. Customer.io provides more features and configurability but requires more time to learn. Loops suits small teams prioritizing speed, while Customer.io may be better for complex enterprise requirements."
+    },
+    {
+      question: "What types of emails can Loops send?",
+      answer: "Onboarding sequences, product updates, re-engagement campaigns, and transactional emails. The platform is event-based: you define triggers like 'user signed up' or 'user inactive for 7 days,' and Loops sends the appropriate email automatically."
+    },
+    {
+      question: "Is Loops developer-friendly?",
+      answer: "Yes, this is a key strength. Loops offers a clean API, thorough documentation, and intuitive event tracking. The platform was designed with developers in mind and integrates well with modern tech stacks."
+    },
+    {
+      question: "Can Loops handle newsletters?",
+      answer: "Newsletter functionality exists, but Loops is optimized for automated, behavior-triggered emails. For primarily newsletter-focused needs, platforms like beehiiv or ConvertKit may be more appropriate."
+    }
+  ],
+
+  // ============================================
+  // RESEND
+  // ============================================
+  "resend": [
+    {
+      question: "Is Resend free?",
+      answer: "Yes, the free tier includes 3,000 emails per month on one domain. This covers many small projects and early-stage applications. Paid plans start at $20/month when you need additional capacity."
+    },
+    {
+      question: "What does Resend cost?",
+      answer: "Free tier: 3,000 emails/month. Pro at $20/month supports up to 50,000 emails, Scale at $90/month handles 100,000, and Enterprise offers custom pricing. Pricing is based on email volume with clear, predictable tiers."
+    },
+    {
+      question: "What makes Resend different?",
+      answer: "Resend focuses on developer experience with a clean API and modern documentation. They created React Email, which allows building email templates using React components. It's designed to simplify email infrastructure for development teams."
+    },
+    {
+      question: "Resend vs SendGrid: which should I use?",
+      answer: "Resend offers simpler setup and a more streamlined developer experience. SendGrid has longer track record and more enterprise features. For new projects, Resend often provides faster time-to-value. For complex enterprise requirements, SendGrid may offer more flexibility."
+    },
+    {
+      question: "What is React Email?",
+      answer: "React Email is an open-source library from Resend for building email templates using React components. Instead of traditional HTML email markup, you write JSX. This brings modern component-based development to email template creation."
+    },
+    {
+      question: "How is Resend's deliverability?",
+      answer: "Deliverability is a stated priority. Higher plans include dedicated IP options and reputation monitoring. While newer than some competitors, Resend has built infrastructure focused on ensuring emails reach inboxes."
+    },
+    {
+      question: "What integrations does Resend offer?",
+      answer: "Official SDKs for Node.js, Python, Go, and others. Partnerships with Vercel and Supabase provide smooth integration within those ecosystems. Standard REST API supports any other stack."
+    }
+  ],
+
+  // ============================================
+  // SENDGRID
+  // ============================================
+  "sendgrid": [
+    {
+      question: "Is SendGrid free?",
+      answer: "Yes, there's a permanent free tier with 100 emails per day. This is sufficient for testing or very small projects. When you need more volume, paid plans begin at $19.95/month."
+    },
+    {
+      question: "What does SendGrid cost?",
+      answer: "Free tier: 100 emails/day. Essentials starts at $19.95/month, Pro at $89.95/month adds enhanced analytics and support, Premier offers custom pricing for high-volume senders. Pricing scales with email volume and is competitive at scale."
+    },
+    {
+      question: "What can SendGrid do?",
+      answer: "SendGrid handles both transactional email (password resets, receipts, notifications) and marketing campaigns (newsletters, promotions). Now owned by Twilio, it integrates well with their broader communication platform."
+    },
+    {
+      question: "SendGrid vs Mailgun: which is better?",
+      answer: "SendGrid covers both transactional and marketing email in one platform. Mailgun focuses specifically on transactional email with a simpler feature set. Choose SendGrid for combined needs, Mailgun if you only need transactional sending."
+    },
+    {
+      question: "How reliable is SendGrid's deliverability?",
+      answer: "SendGrid has an established reputation with email providers built over many years. Dedicated IPs are available on higher plans for sender reputation control. Domain authentication tools (DKIM, SPF) are included to support deliverability."
+    },
+    {
+      question: "Can SendGrid handle marketing campaigns?",
+      answer: "Yes, the Email Marketing product includes templates, a drag-and-drop editor, automation workflows, and campaign analytics. Many companies use SendGrid for both transactional and marketing email in a single platform."
+    },
+    {
+      question: "What programming languages does SendGrid support?",
+      answer: "Official SDKs for Node.js, Python, Ruby, PHP, Go, Java, and C#. The REST API is well-documented and works with any language. Integration is straightforward across most technology stacks."
+    }
+  ],
+
+  // ============================================
+  // MAILGUN
+  // ============================================
+  "mailgun": [
+    {
+      question: "Is Mailgun free?",
+      answer: "There's a trial with 5,000 emails over 3 months, then you move to the pay-as-you-go Flex plan. No permanent free tier exists, so plan for costs once the trial ends."
+    },
+    {
+      question: "What does Mailgun cost?",
+      answer: "Flex plan: $0.80 per 1,000 emails (pay-as-you-go). Foundation at $35/month includes 50,000 emails, Growth at $80/month covers 100,000. The pay-as-you-go model works well for variable sending volumes."
+    },
+    {
+      question: "What is Mailgun designed for?",
+      answer: "Mailgun specializes in transactional email: password resets, order confirmations, notifications, and similar automated messages. It's built for developers who need reliable email delivery without marketing features."
+    },
+    {
+      question: "How does Mailgun compare to SendGrid?",
+      answer: "Mailgun focuses purely on transactional email with a simpler feature set. SendGrid offers both transactional and marketing capabilities. Choose Mailgun for straightforward transactional needs, SendGrid if you also require marketing campaigns."
+    },
+    {
+      question: "Can Mailgun process incoming emails?",
+      answer: "Yes, Mailgun can receive and parse incoming emails, routing data to your webhooks. This enables features like support ticket systems or email-to-task functionality. Not all email APIs offer inbound processing."
+    },
+    {
+      question: "Is Mailgun reliable?",
+      answer: "Mailgun has an established track record and solid deliverability. Now part of Sinch (a larger communications company), it has served major companies like GitHub and Stripe. The infrastructure is proven and stable."
+    },
+    {
+      question: "How is the developer experience?",
+      answer: "Mailgun provides a clean REST API with official SDKs for Python, Ruby, Node, PHP, and more. Documentation is straightforward, and webhooks enable tracking of email events. Integration is typically smooth for developers."
+    }
+  ],
+
+  // ============================================
+  // POSTMARK
+  // ============================================
+  "postmark": [
+    {
+      question: "Is Postmark free?",
+      answer: "There's a trial with 100 emails, then pricing starts at $15/month for 10,000 emails. No permanent free tier, but Postmark's focus on speed and deliverability provides clear value for transactional email needs."
+    },
+    {
+      question: "What does Postmark cost?",
+      answer: "Pricing starts at $15/month for 10,000 emails, scaling to approximately $85/month for 100,000 emails. Slightly higher than some competitors, reflecting their focus on delivery quality and speed."
+    },
+    {
+      question: "What makes Postmark stand out?",
+      answer: "Delivery speed is their primary differentiator. Postmark emails typically reach inboxes within 10 seconds. They publish real-time delivery statistics publicly, demonstrating confidence in their infrastructure."
+    },
+    {
+      question: "How does Postmark compare to SendGrid?",
+      answer: "Postmark focuses exclusively on transactional email and excels at fast, reliable delivery. SendGrid offers both transactional and marketing capabilities. Choose Postmark for best-in-class transactional delivery; SendGrid if you need marketing features in the same platform."
+    },
+    {
+      question: "Does Postmark support marketing emails?",
+      answer: "No, by design. Postmark intentionally separates transactional from marketing email to maintain deliverability. This ensures transactional emails (password resets, receipts) aren't affected by marketing campaign reputation. A separate service is needed for marketing."
+    },
+    {
+      question: "How fast is Postmark's delivery?",
+      answer: "Median delivery time is approximately 10 seconds, with live statistics published publicly. For comparison, some providers average 30-60 seconds. This speed matters for time-sensitive emails like password resets."
+    },
+    {
+      question: "Does Postmark offer email templates?",
+      answer: "Yes, Postmark includes a templating system with variables and pre-built templates for common transactional emails (password resets, receipts, welcome messages). This simplifies creating consistent, professional emails."
+    }
+  ],
 };
 
 async function main() {
