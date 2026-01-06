@@ -76,24 +76,55 @@ export async function GET(
 
   const s = styles[style as keyof typeof styles] || styles.default;
 
-  const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="160" height="56" viewBox="0 0 160 56">
-  <!-- Background -->
-  <rect x="0" y="0" width="160" height="56" rx="10" fill="${s.bg}" stroke="${s.border}" stroke-width="1"/>
+  // Rating label based on score
+  const getLabel = (s: number) => {
+    if (s >= 90) return "Excellent";
+    if (s >= 75) return "Very Good";
+    if (s >= 60) return "Good";
+    if (s >= 40) return "Average";
+    return "New";
+  };
+  const label = getLabel(score);
 
-  <!-- Logo -->
-  <g transform="translate(16, 16)">
-    <circle cx="12" cy="12" r="12" fill="${s.accent}"/>
-    <circle cx="12" cy="12" r="6" fill="none" stroke="${s.bg}" stroke-width="1.5" opacity="0.5"/>
-    <circle cx="12" cy="12" r="2" fill="${s.bg}"/>
-    <line x1="12" y1="12" x2="18" y2="6" stroke="${s.bg}" stroke-width="1.5" stroke-linecap="round"/>
+  // Stars (1-5) based on score
+  const starRating = Math.max(1, Math.round((score / 100) * 5));
+
+  const svg = `
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="190" viewBox="0 0 160 190">
+  <defs>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:${s.accent}"/>
+      <stop offset="100%" style="stop-color:${style === "dark" ? "#4f46e5" : style === "blue" ? "#1d4ed8" : "#4f46e5"}"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <!-- Badge shape -->
+  <path d="M80 0 L160 30 L160 140 L80 190 L0 140 L0 30 Z" fill="${s.bg}" filter="url(#shadow)"/>
+  <path d="M80 0 L160 30 L160 140 L80 190 L0 140 L0 30 Z" fill="none" stroke="${s.border}" stroke-width="1"/>
+
+  <!-- Top ribbon -->
+  <path d="M80 0 L160 30 L160 50 L80 20 L0 50 L0 30 Z" fill="url(#badgeGrad)"/>
+
+  <!-- Toolradar text in ribbon -->
+  <text x="80" y="38" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="white" letter-spacing="1">TOOLRADAR</text>
+
+  <!-- Score circle -->
+  <circle cx="80" cy="85" r="32" fill="${s.bg}" stroke="${s.accent}" stroke-width="3"/>
+  <text x="80" y="93" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" fill="${s.text}">${score}</text>
+
+  <!-- Stars -->
+  <g transform="translate(40, 125)">
+    ${[0,1,2,3,4].map(i => `<text x="${i * 18}" font-family="system-ui" font-size="16" fill="${i < starRating ? '#fbbf24' : s.border}">★</text>`).join("")}
   </g>
 
-  <!-- Tool name -->
-  <text x="44" y="33" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="${s.text}">${tool.name.length > 10 ? tool.name.substring(0, 10) + "…" : tool.name}</text>
+  <!-- Label -->
+  <text x="80" y="155" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="${s.text}">${label}</text>
 
-  <!-- Score -->
-  <text x="138" y="35" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="${scoreColor}">${score}</text>
+  <!-- Tool name -->
+  <text x="80" y="172" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="${s.subtext}">${tool.name.length > 16 ? tool.name.substring(0, 16) + "…" : tool.name}</text>
 </svg>
   `.trim();
 
