@@ -52,56 +52,56 @@ export default async function CompanyWidgetPage() {
                 {/* Preview */}
                 <div className="mb-6">
                   <h3 className="text-sm font-medium text-muted-foreground mb-3">Preview</h3>
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="flex flex-wrap gap-4">
                     {/* Default Style */}
                     <div>
                       <p className="text-xs text-muted-foreground mb-2">Default</p>
-                      <div className="bg-gray-100 rounded-lg p-3 flex items-center justify-center">
+                      <div className="bg-gray-100 rounded-lg p-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={`https://toolradar.com/api/widget/${tool.slug}?v=3`}
+                          src={`https://toolradar.com/api/widget/${tool.slug}?v=4`}
                           alt={`${tool.name} on Toolradar`}
-                          width={220}
-                          height={70}
+                          width={160}
+                          height={56}
                         />
                       </div>
                     </div>
                     {/* Dark Style */}
                     <div>
                       <p className="text-xs text-muted-foreground mb-2">Dark</p>
-                      <div className="bg-slate-900 rounded-lg p-3 flex items-center justify-center">
+                      <div className="bg-slate-900 rounded-lg p-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={`https://toolradar.com/api/widget/${tool.slug}?style=dark&v=3`}
+                          src={`https://toolradar.com/api/widget/${tool.slug}?style=dark&v=4`}
                           alt={`${tool.name} on Toolradar`}
-                          width={220}
-                          height={70}
+                          width={160}
+                          height={56}
                         />
                       </div>
                     </div>
                     {/* Blue Style */}
                     <div>
                       <p className="text-xs text-muted-foreground mb-2">Blue</p>
-                      <div className="bg-blue-950 rounded-lg p-3 flex items-center justify-center">
+                      <div className="bg-blue-950 rounded-lg p-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={`https://toolradar.com/api/widget/${tool.slug}?style=blue&v=3`}
+                          src={`https://toolradar.com/api/widget/${tool.slug}?style=blue&v=4`}
                           alt={`${tool.name} on Toolradar`}
-                          width={220}
-                          height={70}
+                          width={160}
+                          height={56}
                         />
                       </div>
                     </div>
                     {/* Minimal Style */}
                     <div>
                       <p className="text-xs text-muted-foreground mb-2">Minimal</p>
-                      <div className="bg-gray-50 rounded-lg p-3 flex items-center justify-center">
+                      <div className="bg-gray-50 rounded-lg p-3">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
-                          src={`https://toolradar.com/api/widget/${tool.slug}?style=minimal&v=3`}
+                          src={`https://toolradar.com/api/widget/${tool.slug}?style=minimal&v=4`}
                           alt={`${tool.name} on Toolradar`}
-                          width={220}
-                          height={70}
+                          width={160}
+                          height={56}
                         />
                       </div>
                     </div>

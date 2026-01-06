@@ -14,7 +14,7 @@ export function WidgetCodeBlock({ toolSlug, toolName }: WidgetCodeBlockProps) {
 
   const styleParam = style === "default" ? "" : `?style=${style}`;
   const code = `<a href="https://toolradar.com/tools/${toolSlug}" target="_blank" rel="noopener">
-  <img src="https://toolradar.com/api/widget/${toolSlug}${styleParam}" alt="${toolName} on Toolradar" width="220" height="70" />
+  <img src="https://toolradar.com/api/widget/${toolSlug}${styleParam}" alt="${toolName} on Toolradar" width="160" height="56" />
 </a>`;
 
   const handleCopy = async () => {

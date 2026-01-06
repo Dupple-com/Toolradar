@@ -77,39 +77,23 @@ export async function GET(
   const s = styles[style as keyof typeof styles] || styles.default;
 
   const svg = `
-<svg xmlns="http://www.w3.org/2000/svg" width="220" height="70" viewBox="0 0 220 70">
-  <defs>
-    <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
-      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-opacity="0.1"/>
-    </filter>
-  </defs>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="56" viewBox="0 0 160 56">
   <!-- Background -->
-  <rect x="0" y="0" width="220" height="70" rx="10" fill="${s.bg}" filter="url(#shadow)" stroke="${s.border}" stroke-width="1"/>
+  <rect x="0" y="0" width="160" height="56" rx="10" fill="${s.bg}" stroke="${s.border}" stroke-width="1"/>
 
-  <!-- Left: Logo + Brand -->
-  <g transform="translate(14, 14)">
-    <!-- Radar icon -->
+  <!-- Logo -->
+  <g transform="translate(16, 16)">
     <circle cx="12" cy="12" r="12" fill="${s.accent}"/>
-    <circle cx="12" cy="12" r="6" fill="none" stroke="${s.bg}" stroke-width="1.5" opacity="0.4"/>
-    <circle cx="12" cy="12" r="2.5" fill="${s.bg}"/>
-    <line x1="12" y1="12" x2="19" y2="5" stroke="${s.bg}" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="12" cy="12" r="6" fill="none" stroke="${s.bg}" stroke-width="1.5" opacity="0.5"/>
+    <circle cx="12" cy="12" r="2" fill="${s.bg}"/>
+    <line x1="12" y1="12" x2="18" y2="6" stroke="${s.bg}" stroke-width="1.5" stroke-linecap="round"/>
   </g>
 
-  <!-- Tool name + rating -->
-  <g transform="translate(44, 18)">
-    <text font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="${s.text}">${tool.name.length > 14 ? tool.name.substring(0, 14) + "..." : tool.name}</text>
-    <text y="18" font-family="system-ui, -apple-system, sans-serif" font-size="10" fill="${s.subtext}">
-      <tspan fill="#fbbf24">★</tspan> ${rating} · toolradar.com
-    </text>
-  </g>
+  <!-- Tool name -->
+  <text x="44" y="33" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="${s.text}">${tool.name.length > 10 ? tool.name.substring(0, 10) + "…" : tool.name}</text>
 
-  <!-- Score circle -->
-  <g transform="translate(178, 35)">
-    <circle cx="0" cy="0" r="${radius}" fill="none" stroke="${s.border}" stroke-width="3"/>
-    <circle cx="0" cy="0" r="${radius}" fill="none" stroke="${scoreColor}" stroke-width="3" stroke-linecap="round" stroke-dasharray="${circumference}" stroke-dashoffset="${dashOffset}" transform="rotate(-90)"/>
-    <text x="0" y="5" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="${scoreColor}">${score}</text>
-  </g>
+  <!-- Score -->
+  <text x="138" y="35" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="${scoreColor}">${score}</text>
 </svg>
   `.trim();
 
