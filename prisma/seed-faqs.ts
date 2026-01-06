@@ -11024,6 +11024,24 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   ],
 
   // ============================================
+  // FATHOM
+  // ============================================
+  "fathom": [
+    {
+      question: "Is Fathom free?",
+      answer: "No free tier. $14/month for 100K pageviews. Privacy-focused analytics. 7-day trial."
+    },
+    {
+      question: "What is Fathom?",
+      answer: "Fathom is privacy-first web analytics. No cookies, GDPR compliant. Simple dashboard."
+    },
+    {
+      question: "Fathom vs Google Analytics?",
+      answer: "Fathom prioritizes privacy. No cookies, simpler, more ethical. Less data but genuinely private."
+    }
+  ],
+
+  // ============================================
   // FATHOM ANALYTICS
   // ============================================
   "fathom-analytics": [
