@@ -9,7 +9,7 @@ import { generateReviewsMetadata, generateReviewsJsonLd, generateBreadcrumbJsonL
 import { JsonLd } from "@/components/seo/json-ld";
 
 // Force dynamic rendering to avoid build-time DB access
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 // Generate metadata for SEO

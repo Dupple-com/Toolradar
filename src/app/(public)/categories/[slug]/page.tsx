@@ -8,7 +8,7 @@ import { SortSelect } from "@/components/filters/sort-select";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateCategoryMetadata, generateBreadcrumbJsonLd } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 // Generate static params for all categories

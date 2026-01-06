@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["free tools", "free software", "no cost tools", "free apps", "open source"],
 };
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 async function FreeToolsContent() {

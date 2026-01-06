@@ -8,7 +8,7 @@ import { ToolLogo } from "@/components/tools/tool-logo";
 import { CategoryIcon } from "@/components/categories/category-icon";
 import { Scale, ArrowRight, Star } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 export async function generateStaticParams() {

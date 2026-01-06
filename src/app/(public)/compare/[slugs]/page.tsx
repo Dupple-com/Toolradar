@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { ComparisonTracker } from "@/components/tracking/comparison-tracker";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 // Generate static params for popular comparisons

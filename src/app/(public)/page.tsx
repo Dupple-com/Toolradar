@@ -9,7 +9,7 @@ import { Trophy, TrendingUp, Sparkles, ArrowRight } from "lucide-react";
 import { HeroSearch } from "@/components/search/hero-search";
 
 // Force dynamic rendering to avoid build-time DB access
-export const dynamic = "force-dynamic";
+
 
 export const metadata: Metadata = {
   title: "Toolradar - Discover & Compare the Best Software Tools",

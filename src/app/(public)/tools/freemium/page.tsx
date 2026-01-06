@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["freemium tools", "freemium software", "free plan tools", "free tier software", "try before you buy"],
 };
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 async function FreemiumToolsContent() {

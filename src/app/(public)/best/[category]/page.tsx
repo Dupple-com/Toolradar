@@ -9,7 +9,7 @@ import { CategoryIcon } from "@/components/categories/category-icon";
 import { KeyTakeaways } from "@/components/seo/key-takeaways";
 import { Star, ExternalLink, ArrowRight } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 export async function generateStaticParams() {

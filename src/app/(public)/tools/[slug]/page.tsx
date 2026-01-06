@@ -14,7 +14,7 @@ import { TrackedLink } from "@/components/analytics/tracked-link";
 import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react";
 
 // Force dynamic rendering to avoid build-time DB access
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 // Generate static params for popular tools

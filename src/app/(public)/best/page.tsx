@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { CategoryIcon } from "@/components/categories/category-icon";
 import { Trophy, TrendingUp, Star } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 const year = new Date().getFullYear();

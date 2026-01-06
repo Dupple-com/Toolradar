@@ -8,7 +8,7 @@ import { ToolLogo } from "@/components/tools/tool-logo";
 import { KeyTakeaways } from "@/components/seo/key-takeaways";
 import { Users, Building2, Rocket, Briefcase, GraduationCap, Home, Star, ArrowRight } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 // Define criteria interface

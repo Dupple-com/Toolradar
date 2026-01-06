@@ -6,7 +6,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { ArrowRight, TrendingUp, Shuffle } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 const year = new Date().getFullYear();

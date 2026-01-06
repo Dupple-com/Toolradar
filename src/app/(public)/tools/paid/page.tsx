@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   keywords: ["paid tools", "premium software", "professional tools", "enterprise software", "paid apps"],
 };
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 async function PaidToolsContent() {

@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateMetadata as generateSeoMetadata, generateBreadcrumbJsonLd } from "@/lib/seo";
 import { ArrowLeft } from "lucide-react";
 
-export const dynamic = "force-dynamic";
+
 export const revalidate = 3600;
 
 // Generate static params for popular tools
