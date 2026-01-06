@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { Loader2, Save, Linkedin } from "lucide-react";
+import { Loader2, Save, Linkedin, Check } from "lucide-react";
 
 interface CompanySettingsFormProps {
   company: {
@@ -15,6 +15,7 @@ interface CompanySettingsFormProps {
 export function CompanySettingsForm({ company }: CompanySettingsFormProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
   const [linkedinUrl, setLinkedinUrl] = useState(company.linkedinUrl || "");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -29,8 +30,9 @@ export function CompanySettingsForm({ company }: CompanySettingsFormProps) {
       });
 
       if (res.ok) {
-        toast.success("Settings saved!");
+        setIsSaved(true);
         router.refresh();
+        setTimeout(() => setIsSaved(false), 2000);
       } else {
         const data = await res.json();
         toast.error(data.error || "Failed to save");
@@ -69,11 +71,29 @@ export function CompanySettingsForm({ company }: CompanySettingsFormProps) {
 
       <button
         type="submit"
-        disabled={isLoading}
-        className="mt-4 flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 disabled:opacity-50 text-sm font-medium"
+        disabled={isLoading || isSaved}
+        className={`mt-4 flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+          isSaved
+            ? "bg-green-500 text-white"
+            : "bg-primary text-white hover:bg-primary/90 disabled:opacity-50"
+        }`}
       >
-        {isLoading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-        Save Settings
+        {isLoading ? (
+          <>
+            <Loader2 className="w-4 h-4 animate-spin" />
+            Saving...
+          </>
+        ) : isSaved ? (
+          <>
+            <Check className="w-4 h-4" />
+            Saved!
+          </>
+        ) : (
+          <>
+            <Save className="w-4 h-4" />
+            Save Settings
+          </>
+        )}
       </button>
     </form>
   );
