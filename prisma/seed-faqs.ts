@@ -2,39 +2,39 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-// AI-generated FAQs for each tool (based on real product knowledge)
+// FAQs for each tool - written to help users understand pricing, features, and alternatives
 const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   // ============================================
   // NOTION
   // ============================================
   "notion": [
     {
-      question: "Is Notion free to use?",
-      answer: "Yes, Notion offers a free plan with unlimited pages and blocks for individual use. The free plan includes basic features, 5MB file uploads, and 7-day page history. Paid plans start at $10/month per user for teams needing advanced collaboration features."
+      question: "Is Notion free?",
+      answer: "Yes! Notion's free plan is actually quite generous - you get unlimited pages and blocks for personal use, which is enough for most individuals. The main limitations are 5MB file uploads and only 7 days of page history. If you're working with a team, paid plans start at $10/user/month."
     },
     {
-      question: "How much does Notion cost for teams?",
-      answer: "Notion offers three paid plans: Plus at $10/user/month (small teams), Business at $18/user/month (advanced features, SAML SSO), and Enterprise with custom pricing. Annual billing provides a 20% discount. Students and educators get free Plus plans."
+      question: "What's Notion's pricing like?",
+      answer: "Pretty straightforward: Plus is $10/user/month for small teams, Business jumps to $18/user/month and adds SAML SSO and admin features. Enterprise pricing varies. Pro tip: students and educators get the Plus plan for free, and annual billing saves you 20%."
     },
     {
-      question: "What integrations does Notion support?",
-      answer: "Notion integrates with 100+ tools including Slack, Google Drive, GitHub, Figma, Trello, Asana, Jira, Zapier, and more. It also offers a public API for custom integrations and supports embeds from YouTube, Figma, Miro, and other services."
+      question: "What apps does Notion connect with?",
+      answer: "Notion plays nice with over 100 tools - Slack, Google Drive, GitHub, Figma, you name it. The public API means developers can build custom integrations too. Plus you can embed content from YouTube, Miro, Figma directly into pages, which is super handy."
     },
     {
-      question: "Does Notion have AI features?",
-      answer: "Yes, Notion AI is built into the platform and can help with writing, summarizing, translating, brainstorming, and more. AI features include automated meeting notes, enterprise search, and custom AI agents. Notion AI costs an additional $10/user/month."
+      question: "What can Notion AI do?",
+      answer: "Notion AI is like having a writing assistant built right into your workspace. It can draft content, summarize long documents, translate text, brainstorm ideas, and even generate meeting notes. It costs an extra $10/user/month but can be a real time-saver."
     },
     {
-      question: "Can I use Notion offline?",
-      answer: "Notion has limited offline support. You can view recently accessed pages offline, but editing requires an internet connection to sync. For fully offline work, consider exporting pages as Markdown or PDF."
+      question: "Does Notion work offline?",
+      answer: "Sort of. You can view pages you've recently opened, but you'll need internet to actually edit anything. If offline work is important for you, your best bet is exporting pages as Markdown or PDF before going offline."
     },
     {
-      question: "Does Notion offer an API?",
-      answer: "Yes, Notion provides a public REST API that allows developers to integrate Notion with other tools, build custom automations, and create integrations. The API supports reading, creating, updating, and deleting pages, databases, and blocks."
+      question: "Can developers integrate with Notion?",
+      answer: "Absolutely. Notion has a full REST API that lets you read, create, update, and delete pages, databases, and blocks. It's well-documented and there's a solid developer community. Great for automating workflows or building custom tools on top of Notion."
     },
     {
-      question: "Is Notion good for project management?",
-      answer: "Yes, Notion excels at project management with features like databases, Kanban boards, timelines, calendars, and custom views. Teams use it to track tasks, manage sprints, document processes, and collaborate on projects. It's more flexible but less specialized than dedicated PM tools."
+      question: "Is Notion good for managing projects?",
+      answer: "It's actually excellent for project management - databases, Kanban boards, timelines, calendars, you can set it up however you like. The flexibility is both its strength and weakness: it can do almost anything, but you might spend time configuring it compared to purpose-built PM tools like Linear or Asana."
     }
   ],
 
@@ -43,32 +43,32 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   // ============================================
   "slack": [
     {
-      question: "Is Slack free to use?",
-      answer: "Yes, Slack offers a free plan with access to 90 days of message history, 10 app integrations, and 1:1 video calls. Paid plans start at $8.75/user/month (Pro) and unlock unlimited message history, group video calls, and more integrations."
+      question: "Is Slack free?",
+      answer: "Yep! The free plan is pretty usable - you get 90 days of message history and 10 app integrations. The big catch is losing older messages after 90 days, which can be frustrating. Paid plans ($8.75/user/month) remove that limit and unlock group video calls."
     },
     {
-      question: "How much does Slack cost for teams?",
-      answer: "Slack Pro costs $8.75/user/month, Business+ costs $15/user/month (adds compliance features, SSO), and Enterprise Grid has custom pricing for large organizations. Annual billing saves roughly 15%."
+      question: "What does Slack cost?",
+      answer: "Pro is $8.75/user/month with unlimited history and group calls. Business+ at $15/user/month adds compliance features and SSO - important for regulated industries. Enterprise Grid is priced per org for large companies. Annual billing knocks off about 15%."
     },
     {
-      question: "What integrations does Slack support?",
-      answer: "Slack integrates with 2,600+ apps including Google Workspace, Microsoft 365, Salesforce, Jira, GitHub, Zoom, Notion, Asana, Trello, and more. It also offers a powerful API and Slack Apps platform for custom integrations."
+      question: "What tools does Slack integrate with?",
+      answer: "Over 2,600 apps - basically everything. Google Workspace, Salesforce, Jira, GitHub, Notion, Zoom... you name it. The API is also excellent, which is why so many companies build Slack-first integrations. That app ecosystem is honestly one of Slack's biggest strengths."
     },
     {
-      question: "Does Slack have video calling?",
-      answer: "Yes, Slack includes built-in video and audio calls called Huddles. Free plans support 1:1 calls, while paid plans enable group calls with up to 50 participants. Huddles include screen sharing and can be started instantly from any channel."
+      question: "Can you do video calls in Slack?",
+      answer: "Yes! They're called Huddles and they're great for quick conversations. Just click and you're in a call - way faster than scheduling a Zoom. Free users can do 1:1 calls; paid plans get group calls up to 50 people with screen sharing."
     },
     {
-      question: "Can I use Slack on mobile?",
-      answer: "Yes, Slack has native mobile apps for iOS and Android with full feature parity. You can send messages, join calls, manage notifications, and access all your workspaces on the go."
+      question: "Is Slack good on mobile?",
+      answer: "The mobile apps are solid - iOS and Android both work well. You can do pretty much everything: messages, calls, manage notifications. The experience isn't quite as nice as desktop, but it does the job when you're away from your computer."
     },
     {
-      question: "Does Slack offer enterprise security?",
-      answer: "Yes, Slack Enterprise Grid provides advanced security including SAML SSO, data loss prevention, eDiscovery, custom retention policies, HIPAA compliance, and FedRAMP authorization. Enterprise Grid also supports unlimited workspaces."
+      question: "Is Slack secure enough for enterprises?",
+      answer: "Enterprise Grid is built for this - SAML SSO, data loss prevention, eDiscovery, HIPAA compliance, even FedRAMP authorization. It's why you see banks and healthcare companies using Slack. Not cheap, but the security features are comprehensive."
     },
     {
-      question: "How does Slack compare to Microsoft Teams?",
-      answer: "Slack is often preferred for its user experience, extensive app ecosystem, and developer-friendly API. Teams is better integrated with Microsoft 365. Slack excels in startups and tech companies, while Teams dominates in enterprises already using Microsoft products."
+      question: "Slack vs Teams - which is better?",
+      answer: "It depends on your company. Slack has a better user experience and way more integrations. Teams is basically free if you already pay for Microsoft 365, which is hard to beat. Startups and tech companies usually prefer Slack; Microsoft shops gravitate to Teams."
     }
   ],
 
@@ -77,32 +77,32 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   // ============================================
   "figma": [
     {
-      question: "Is Figma free to use?",
-      answer: "Yes, Figma offers a free Starter plan with 3 Figma files, 3 FigJam files, unlimited personal files, and access to all design features. Paid plans start at $15/editor/month (Professional) for teams needing unlimited files and advanced collaboration."
+      question: "Is Figma free?",
+      answer: "For individuals, yes! The free Starter plan gives you 3 Figma files and 3 FigJam files - enough to work on personal projects. Viewers are always free, which is huge for sharing designs with clients. Teams need Professional at $15/editor/month for unlimited files."
     },
     {
-      question: "How much does Figma cost for teams?",
-      answer: "Figma Professional costs $15/editor/month, Organization costs $45/editor/month (adds design systems, branching, SSO), and Enterprise has custom pricing. Viewers are always free. Annual billing provides a discount."
+      question: "How much does Figma cost?",
+      answer: "Professional is $15/editor/month - that's what most teams use. Organization ($45/editor/month) adds branching, design system analytics, and SSO. Remember, only editors pay - viewers and commenters are free, which makes stakeholder collaboration easy."
     },
     {
-      question: "What makes Figma different from Sketch?",
-      answer: "Figma is browser-based and works on any OS (Mac, Windows, Linux), while Sketch is Mac-only. Figma offers real-time collaboration, free viewer access, and built-in prototyping. Sketch requires plugins for many features Figma includes natively."
+      question: "Why choose Figma over Sketch?",
+      answer: "The big difference: Figma runs in your browser, so it works on Mac, Windows, or Linux. Real-time collaboration is built in - multiple designers can edit simultaneously. Plus, viewers don't need to buy anything. Sketch is Mac-only and more siloed."
     },
     {
-      question: "Does Figma work offline?",
-      answer: "Figma is primarily cloud-based but offers limited offline access through the desktop app. You can view and edit recently opened files offline, and changes sync automatically when you reconnect. However, some features require an internet connection."
+      question: "Can Figma work offline?",
+      answer: "The desktop app has some offline support - you can keep working on files you've opened recently. Changes sync when you're back online. But it's really designed as a cloud tool, so constant connectivity gives you the best experience."
     },
     {
-      question: "What is FigJam?",
-      answer: "FigJam is Figma's online whiteboard tool for brainstorming, diagramming, and team collaboration. It includes sticky notes, shapes, connectors, stamps, and templates. FigJam integrates seamlessly with Figma designs and is included in all plans."
+      question: "What's FigJam for?",
+      answer: "FigJam is Figma's whiteboard for brainstorming, workshops, and quick diagrams. Sticky notes, arrows, stamps - the usual whiteboard stuff. It's included in all plans and connects nicely with your design files. Great for design sprints and team planning."
     },
     {
-      question: "Does Figma have AI features?",
-      answer: "Yes, Figma introduced AI features including auto-layout suggestions, content generation, and visual search. Figma AI can rename layers, generate placeholder content, and help with design system organization. More AI features are being added regularly."
+      question: "Does Figma have AI tools?",
+      answer: "They've been rolling out AI features - auto-layout suggestions, layer renaming, placeholder content generation. It's still evolving, but the direction is clear: AI to handle tedious tasks so designers can focus on actual design decisions."
     },
     {
-      question: "Can developers use Figma?",
-      answer: "Yes, Figma offers Dev Mode with features specifically for developers: code snippets (CSS, iOS, Android), design specs, component documentation, and Jira/GitHub integrations. Developers can inspect designs, export assets, and compare versions."
+      question: "How do developers use Figma?",
+      answer: "Dev Mode is specifically for devs - inspect designs, grab code snippets (CSS, Swift, Kotlin), see exact specs. It connects to Jira and GitHub too. Designers hand off cleanly, developers get what they need without constant back-and-forth."
     }
   ],
 
@@ -111,32 +111,32 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   // ============================================
   "airtable": [
     {
-      question: "Is Airtable free to use?",
-      answer: "Yes, Airtable offers a free plan with unlimited bases, 1,000 records per base, 1GB of attachments, and 100 automation runs/month. Paid plans start at $20/seat/month (Team) for more records, storage, and advanced features."
+      question: "Is Airtable free?",
+      answer: "There's a free plan with up to 1,000 records per base and 100 automation runs per month. Works great for small projects or testing things out. Once you hit those limits, Team pricing starts at $20/seat/month."
     },
     {
-      question: "How much does Airtable cost for teams?",
-      answer: "Airtable Team costs $20/seat/month (25,000 records, 20GB storage), Business costs $45/seat/month (100,000 records, advanced features), and Enterprise Scale has custom pricing. Annual billing saves 20%."
+      question: "What does Airtable cost?",
+      answer: "Team is $20/seat/month (25,000 records), Business is $45/seat/month (100,000 records), Enterprise goes even higher. The jump from free to paid can feel steep, but you get way more records and automation runs. Annual billing saves 20%."
     },
     {
-      question: "What can I build with Airtable?",
-      answer: "Airtable can power project trackers, CRMs, inventory systems, content calendars, event planning, applicant tracking, and more. Its flexibility allows you to create custom databases with different views (grid, kanban, calendar, gallery, timeline)."
+      question: "What's Airtable actually good for?",
+      answer: "Think of it as a database that looks like a spreadsheet. People build project trackers, CRMs, inventory systems, content calendars - basically any structured data. The magic is in different views: same data, but seen as a grid, kanban, calendar, or timeline."
     },
     {
-      question: "What integrations does Airtable support?",
-      answer: "Airtable integrates with Slack, Google Workspace, Salesforce, Jira, Tableau, and 1,000+ apps via Zapier and Make. It also offers Airtable Sync to connect bases, and a REST API for custom integrations."
+      question: "What does Airtable connect with?",
+      answer: "Native integrations with Slack, Google Workspace, Salesforce, Jira. Plus Zapier and Make connections open up thousands more options. The REST API is solid if you need custom stuff. Airtable Sync is neat for connecting multiple bases together."
     },
     {
-      question: "Does Airtable have automation?",
-      answer: "Yes, Airtable Automations lets you trigger actions based on conditions—send emails, update records, notify Slack, and more. Free plans include 100 runs/month, while paid plans offer more runs and advanced triggers."
+      question: "Can Airtable automate things?",
+      answer: "Yes! The automations are actually pretty powerful - trigger actions when records change, send emails, update Slack, create records in other tables. Free tier gives you 100 runs/month; paid plans unlock more capacity and advanced triggers."
     },
     {
-      question: "How does Airtable compare to Excel or Google Sheets?",
-      answer: "Airtable looks like a spreadsheet but functions as a relational database. Unlike Excel/Sheets, Airtable has linked records, multiple views, attachments, and built-in automations. It's better for structured data and team collaboration."
+      question: "How is Airtable different from Google Sheets?",
+      answer: "It looks like a spreadsheet but it's really a database. You can link records between tables, attach files, have multiple views of the same data. Sheets is better for calculations and formulas; Airtable is better for organizing structured information."
     },
     {
-      question: "Can I create apps with Airtable?",
-      answer: "Yes, Airtable Interface Designer lets you build custom apps without code. You can create dashboards, forms, and portals that connect to your base data. Paid plans also support Airtable Apps (formerly Blocks) for charts, maps, and more."
+      question: "Can you build apps on Airtable?",
+      answer: "Interface Designer lets you create custom dashboards, forms, and portals - no code needed. Great for making user-friendly views of your data or building simple tools for your team. More capable than you'd expect from a 'spreadsheet tool.'"
     }
   ],
 
@@ -145,32 +145,32 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   // ============================================
   "trello": [
     {
-      question: "Is Trello free to use?",
-      answer: "Yes, Trello offers a generous free plan with unlimited cards, up to 10 boards per workspace, unlimited storage, and 250 automation commands/month. Paid plans start at $5/user/month (Standard) for unlimited boards and more features."
+      question: "Is Trello free?",
+      answer: "The free plan is actually pretty solid - unlimited cards, 10 boards, unlimited storage. Most small teams can get by on free. Paid starts at just $5/user/month if you need unlimited boards, which is one of the cheapest options out there."
     },
     {
-      question: "How much does Trello cost for teams?",
-      answer: "Trello Standard costs $5/user/month, Premium costs $10/user/month (adds timeline, dashboard views), and Enterprise costs $17.50/user/month (adds SSO, permissions). Annual billing saves roughly 15%."
+      question: "What's Trello's pricing?",
+      answer: "Super accessible: Standard is $5/user/month, Premium is $10/user/month and adds timeline and dashboard views. Enterprise is $17.50/user/month for SSO and advanced permissions. Even the premium tiers are cheaper than most competitors."
     },
     {
-      question: "What are Trello Power-Ups?",
-      answer: "Power-Ups are integrations and features you can add to Trello boards. Popular Power-Ups include Calendar, Card Aging, Voting, and integrations with Slack, Google Drive, and GitHub. Free plans include unlimited Power-Ups."
+      question: "What are Power-Ups?",
+      answer: "They're add-ons that extend what Trello can do - calendar views, voting, Slack integration, you name it. Used to be limited on free plans, but now you get unlimited Power-Ups on all plans. Lots of the best ones are free."
     },
     {
-      question: "Does Trello have automation?",
-      answer: "Yes, Trello includes Butler automation built-in. You can create rules, buttons, and scheduled commands to automate repetitive tasks like moving cards, assigning members, and setting due dates. Free plans get 250 command runs/month."
+      question: "Can Trello automate workflows?",
+      answer: "Butler is built-in and surprisingly capable. Set up rules like 'when a card moves to Done, mark it complete and notify the channel.' Free gets you 250 commands/month - plenty for most use cases."
     },
     {
-      question: "Can Trello replace project management software?",
-      answer: "Trello works great for simple project management, especially visual task tracking using Kanban boards. For complex projects with dependencies, timelines, and resource planning, dedicated PM tools like Asana or Monday.com may be more suitable."
+      question: "Is Trello enough for project management?",
+      answer: "For straightforward task tracking, absolutely. Kanban boards work great for workflows with clear stages. But if you need dependencies, resource planning, or detailed timelines, you'll probably outgrow it and want something like Asana or Linear."
     },
     {
-      question: "Does Trello offer enterprise features?",
-      answer: "Yes, Trello Enterprise includes SAML SSO, advanced admin controls, organization-wide permissions, unlimited workspaces, and priority support. It's designed for organizations with strict security and compliance requirements."
+      question: "Does Trello work for enterprises?",
+      answer: "There's an Enterprise tier with SSO, org-wide permissions, and priority support. It works, though honestly Trello's strength is simplicity. Big companies often use it alongside more complex tools for specific team workflows."
     },
     {
-      question: "How does Trello compare to Asana?",
-      answer: "Trello excels at simple, visual Kanban-style task management with a lower learning curve. Asana offers more project management features like timelines, workload management, and forms. Trello is better for small teams; Asana scales better for complex projects."
+      question: "Trello vs Asana - which one?",
+      answer: "Trello is simpler and more visual - great if Kanban boards fit how you work. Asana has more features: timelines, forms, workload views. Trello for simplicity, Asana for complex project needs. Many teams start with Trello and graduate to Asana."
     }
   ],
 
@@ -179,32 +179,32 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   // ============================================
   "asana": [
     {
-      question: "Is Asana free to use?",
-      answer: "Yes, Asana offers a free Basic plan for up to 10 users with unlimited tasks, projects, and messages. It includes list, board, and calendar views. Paid plans start at $10.99/user/month (Premium) for additional features."
+      question: "Is Asana free?",
+      answer: "Yes, and the free plan is surprisingly capable - unlimited tasks and projects for up to 10 people. The main things you miss are timeline view and advanced automation. Premium at $10.99/user/month unlocks those."
     },
     {
-      question: "How much does Asana cost for teams?",
-      answer: "Asana Premium costs $10.99/user/month (timeline, forms, rules), Business costs $24.99/user/month (portfolios, goals, workload), and Enterprise has custom pricing. Annual billing provides a discount."
+      question: "What does Asana cost?",
+      answer: "Premium is $10.99/user/month for timeline, forms, and automation rules. Business at $24.99/user/month adds portfolios, goals tracking, and workload management. The gap between tiers is significant - most growing teams end up on Business."
     },
     {
-      question: "What views does Asana offer?",
-      answer: "Asana offers multiple project views: List (spreadsheet-style), Board (Kanban), Timeline (Gantt chart), Calendar, and Dashboard. You can switch between views for the same project and customize each view with filters and sorting."
+      question: "What project views are available?",
+      answer: "List, Board (Kanban), Timeline (like a Gantt chart), Calendar, and Dashboard. Same project, different views - switch depending on what you're trying to see. Timeline is probably the most useful paid feature, honestly."
     },
     {
-      question: "What integrations does Asana support?",
-      answer: "Asana integrates with 200+ apps including Slack, Microsoft Teams, Google Workspace, Salesforce, Jira, GitHub, Zoom, and more. It also offers a robust API and Zapier/Make integrations for custom workflows."
+      question: "What apps does Asana integrate with?",
+      answer: "Over 200 integrations - Slack, Teams, Google Workspace, Jira, GitHub, Salesforce, the usual suspects. The Zapier and Make integrations extend this massively. API is well-documented if you need custom stuff."
     },
     {
-      question: "Does Asana have automation?",
-      answer: "Yes, Asana Rules automate routine tasks like assigning work, updating status, moving sections, and sending notifications. Premium and above plans can create custom rules with triggers and actions."
+      question: "Can Asana automate workflows?",
+      answer: "Rules let you automate the repetitive stuff - auto-assign tasks, move things between sections, send notifications. Premium unlocks the good stuff. Not as flexible as Zapier but good for most standard workflows."
     },
     {
-      question: "What is Asana Goals?",
-      answer: "Asana Goals lets you set, track, and connect company objectives (OKRs) to the work being done. You can create goal hierarchies, track progress automatically based on project completion, and align team goals with company strategy."
+      question: "How does Goals work in Asana?",
+      answer: "You set company and team goals, then link them to actual projects and tasks. Progress updates automatically based on project completion. Good for OKR tracking if you want everything in one place instead of using a separate tool."
     },
     {
-      question: "Does Asana offer enterprise security?",
-      answer: "Yes, Asana Enterprise includes SAML SSO, SCIM provisioning, data export, admin console, custom branding, and priority support. Asana is SOC 2 Type II certified and GDPR compliant."
+      question: "Is Asana secure enough for enterprise?",
+      answer: "Enterprise tier adds SSO, SCIM provisioning, admin controls, and custom branding. SOC 2 Type II certified, GDPR compliant. Security features are solid for regulated industries, though you'll need the top tier to get them."
     }
   ],
 
@@ -213,32 +213,32 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
   // ============================================
   "linear": [
     {
-      question: "Is Linear free to use?",
-      answer: "Yes, Linear offers a free plan for up to 250 issues with all core features included—no feature gating. Paid plans start at $8/user/month (Standard) for unlimited issues and advanced features like automations and insights."
+      question: "Is Linear free?",
+      answer: "Yes, and unlike most tools, the free plan doesn't gate features - you get everything except you're limited to 250 issues. Perfect for small teams. Standard at $8/user/month removes that limit."
     },
     {
-      question: "How much does Linear cost for teams?",
-      answer: "Linear Standard costs $8/user/month with unlimited issues, cycles, and roadmaps. Linear Plus costs $14/user/month with advanced analytics and time tracking. Enterprise has custom pricing with SSO and audit logs."
+      question: "What does Linear cost?",
+      answer: "Standard is $8/user/month for unlimited issues. Plus at $14/user/month adds analytics and time tracking. Honestly, $8/user is very competitive for how polished the product is. Enterprise adds SSO and audit logs."
     },
     {
-      question: "What makes Linear different from Jira?",
-      answer: "Linear is known for speed, beautiful UI, and keyboard-first design. Unlike Jira's configuration complexity, Linear is opinionated and streamlined. It's built for modern product teams and syncs instantly. Jira is more customizable but slower."
+      question: "Why do people love Linear over Jira?",
+      answer: "Speed. Linear is fast - like, noticeably fast. The UI is clean and keyboard-driven. It's opinionated in good ways: less configuration, more getting things done. Jira lets you customize everything, but that's also why it gets slow and cluttered."
     },
     {
-      question: "What integrations does Linear support?",
-      answer: "Linear integrates with GitHub, GitLab, Slack, Figma, Sentry, Zendesk, Intercom, and more. It offers automatic issue linking from PRs, Slack issue creation, and a GraphQL API for custom integrations."
+      question: "What does Linear integrate with?",
+      answer: "GitHub and GitLab integration is excellent - PRs automatically link to issues, issues close when PRs merge. Slack, Figma, Sentry, Zendesk are all there. GraphQL API for anything custom. The integrations feel thoughtful, not tacked on."
     },
     {
-      question: "Does Linear support roadmaps?",
-      answer: "Yes, Linear includes native roadmap features. You can create projects with target dates, visualize them on a timeline, track progress automatically, and group by team or initiative. Roadmaps sync with actual issue progress."
+      question: "How do Linear roadmaps work?",
+      answer: "Projects become your roadmap items - set target dates, visualize on a timeline, track progress automatically as issues get done. It's simple but effective. No need for a separate roadmapping tool for most teams."
     },
     {
-      question: "How do Linear Cycles work?",
-      answer: "Cycles are Linear's version of sprints. You can set weekly or bi-weekly cycles, auto-assign incomplete issues to the next cycle, and track velocity over time. Cycles help teams maintain consistent delivery rhythms."
+      question: "What are Cycles in Linear?",
+      answer: "Basically sprints, but Linear-flavored. Set them weekly or bi-weekly, drag issues in, and incomplete work automatically rolls to the next cycle. Velocity tracking helps you see if you're overcommitting."
     },
     {
-      question: "Does Linear have mobile apps?",
-      answer: "Yes, Linear offers iOS and Android apps for viewing and managing issues on the go. While the desktop experience is optimized for speed and keyboard shortcuts, mobile apps provide full access to your workspace."
+      question: "Is Linear good on mobile?",
+      answer: "The iOS and Android apps exist and work well for checking status and triaging. But Linear really shines on desktop where you can use all the keyboard shortcuts. Mobile is fine for quick updates when you're away from your computer."
     }
   ],
 
