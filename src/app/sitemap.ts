@@ -108,111 +108,90 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  // Dynamic pages - wrapped in try-catch for build time when DB is unavailable
-  let toolPages: MetadataRoute.Sitemap = [];
-  let toolReviewPages: MetadataRoute.Sitemap = [];
-  let categoryPages: MetadataRoute.Sitemap = [];
-  let companyPages: MetadataRoute.Sitemap = [];
-  let alternativePages: MetadataRoute.Sitemap = [];
-  let bestCategoryPages: MetadataRoute.Sitemap = [];
-  let comparisonPages: MetadataRoute.Sitemap = [];
-  let compareCategoryPages: MetadataRoute.Sitemap = [];
+  // Tool pages - all published tools
+  const tools = await prisma.tool.findMany({
+    where: { status: "published" },
+    select: { slug: true, updatedAt: true, editorialScore: true },
+    orderBy: { editorialScore: "desc" },
+  });
 
-  try {
-    // Tool pages - all published tools
-    const tools = await prisma.tool.findMany({
-      where: { status: "published" },
-      select: { slug: true, updatedAt: true, editorialScore: true },
-      orderBy: { editorialScore: "desc" },
-    });
+  const toolPages: MetadataRoute.Sitemap = tools.map((tool) => ({
+    url: `${SITE_URL}/tools/${tool.slug}`,
+    lastModified: tool.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
-    toolPages = tools.map((tool) => ({
-      url: `${SITE_URL}/tools/${tool.slug}`,
-      lastModified: tool.updatedAt,
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    }));
+  // Tool reviews pages - all tools
+  const toolReviewPages: MetadataRoute.Sitemap = tools.map((tool) => ({
+    url: `${SITE_URL}/tools/${tool.slug}/reviews`,
+    lastModified: tool.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }));
 
-    // Tool reviews pages - all tools
-    toolReviewPages = tools.map((tool) => ({
-      url: `${SITE_URL}/tools/${tool.slug}/reviews`,
-      lastModified: tool.updatedAt,
-      changeFrequency: "weekly" as const,
-      priority: 0.5,
-    }));
+  // Alternatives pages - all tools (programmatic SEO)
+  const alternativePages: MetadataRoute.Sitemap = tools.map((tool) => ({
+    url: `${SITE_URL}/tools/${tool.slug}/alternatives`,
+    lastModified: tool.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
 
-    // Alternatives pages - all tools (programmatic SEO)
-    alternativePages = tools.map((tool) => ({
-      url: `${SITE_URL}/tools/${tool.slug}/alternatives`,
-      lastModified: tool.updatedAt,
-      changeFrequency: "weekly" as const,
-      priority: 0.6,
-    }));
-
-    // Comparison pages (programmatic SEO) - Top 50 tools = 1225 comparisons
-    const topTools = tools.slice(0, 50);
-    for (let i = 0; i < topTools.length; i++) {
-      for (let j = i + 1; j < topTools.length; j++) {
-        comparisonPages.push({
-          url: `${SITE_URL}/compare/${topTools[i].slug}-vs-${topTools[j].slug}`,
-          lastModified: new Date(),
-          changeFrequency: "monthly" as const,
-          priority: 0.5,
-        });
-      }
+  // Comparison pages (programmatic SEO) - Top 50 tools = 1225 comparisons
+  const comparisonPages: MetadataRoute.Sitemap = [];
+  const topTools = tools.slice(0, 50);
+  for (let i = 0; i < topTools.length; i++) {
+    for (let j = i + 1; j < topTools.length; j++) {
+      comparisonPages.push({
+        url: `${SITE_URL}/compare/${topTools[i].slug}-vs-${topTools[j].slug}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.5,
+      });
     }
-  } catch (error) {
-    console.error("Sitemap: Failed to fetch tools", error);
   }
 
-  try {
-    // Category pages
-    const categories = await prisma.category.findMany({
-      select: { slug: true, updatedAt: true },
-    });
+  // Category pages
+  const categories = await prisma.category.findMany({
+    select: { slug: true, updatedAt: true },
+  });
 
-    categoryPages = categories.map((category) => ({
-      url: `${SITE_URL}/categories/${category.slug}`,
-      lastModified: category.updatedAt,
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    }));
+  const categoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${SITE_URL}/categories/${category.slug}`,
+    lastModified: category.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
 
-    // Best category pages (programmatic SEO)
-    bestCategoryPages = categories.map((category) => ({
-      url: `${SITE_URL}/best/${category.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.7,
-    }));
+  // Best category pages (programmatic SEO)
+  const bestCategoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${SITE_URL}/best/${category.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
 
-    // Compare category pages (programmatic SEO)
-    compareCategoryPages = categories.map((category) => ({
-      url: `${SITE_URL}/compare/category/${category.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.6,
-    }));
-  } catch (error) {
-    console.error("Sitemap: Failed to fetch categories", error);
-  }
+  // Compare category pages (programmatic SEO)
+  const compareCategoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${SITE_URL}/compare/category/${category.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
 
-  try {
-    // Company pages
-    const companies = await prisma.company.findMany({
-      where: { tools: { some: { status: "published" } } },
-      select: { slug: true, updatedAt: true },
-    });
+  // Company pages
+  const companies = await prisma.company.findMany({
+    where: { tools: { some: { status: "published" } } },
+    select: { slug: true, updatedAt: true },
+  });
 
-    companyPages = companies.map((company) => ({
-      url: `${SITE_URL}/companies/${company.slug}`,
-      lastModified: company.updatedAt,
-      changeFrequency: "weekly" as const,
-      priority: 0.6,
-    }));
-  } catch (error) {
-    console.error("Sitemap: Failed to fetch companies", error);
-  }
+  const companyPages: MetadataRoute.Sitemap = companies.map((company) => ({
+    url: `${SITE_URL}/companies/${company.slug}`,
+    lastModified: company.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.6,
+  }));
 
   return [
     ...staticPages,
