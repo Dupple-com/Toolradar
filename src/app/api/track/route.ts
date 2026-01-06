@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { cookies } from "next/headers";
 
 // Helper function to notify company owners (runs async)
 async function notifyCompanyOwnersAboutComparison(toolIds: string[]) {
@@ -95,13 +96,40 @@ export async function POST(request: NextRequest) {
 
     if (type === "view" && toolIds?.length === 1) {
       const toolId = toolIds[0];
+
+      // Check if this is a unique view using cookies
+      const cookieStore = await cookies();
+      const viewedCookieName = `viewed_${toolId}_${today.toISOString().split("T")[0]}`;
+      const hasViewedToday = cookieStore.get(viewedCookieName);
+
+      const isUniqueView = !hasViewedToday;
+
       await prisma.toolAnalytics.upsert({
         where: { toolId_date: { toolId, date: today } },
-        update: { views: { increment: 1 } },
-        create: { toolId, date: today, views: 1 },
+        update: {
+          views: { increment: 1 },
+          ...(isUniqueView && { uniqueViews: { increment: 1 } }),
+        },
+        create: {
+          toolId,
+          date: today,
+          views: 1,
+          uniqueViews: isUniqueView ? 1 : 0,
+        },
       });
 
-      return NextResponse.json({ success: true });
+      // Set cookie to mark this tool as viewed today
+      const response = NextResponse.json({ success: true });
+      if (isUniqueView) {
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        response.cookies.set(viewedCookieName, "1", {
+          expires: tomorrow,
+          httpOnly: true,
+          sameSite: "lax",
+        });
+      }
+      return response;
     }
 
     if (type === "click" && toolIds?.length === 1) {

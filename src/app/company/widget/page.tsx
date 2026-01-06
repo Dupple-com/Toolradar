@@ -52,45 +52,66 @@ export default async function CompanyWidgetPage() {
                 {/* Preview */}
                 <div className="mb-6">
                   <h3 className="text-sm font-medium text-muted-foreground mb-3">Preview</h3>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Default Style */}
                     <div>
                       <p className="text-xs text-muted-foreground mb-2">Default</p>
-                      <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={`https://toolradar.com/api/widget/${tool.slug}`}
-                          alt={`${tool.name} on Toolradar`}
-                          width={200}
-                          height={80}
-                        />
-                      </a>
+                      <div className="bg-gray-50 rounded-lg p-4 flex items-center justify-center">
+                        <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={`https://toolradar.com/api/widget/${tool.slug}`}
+                            alt={`${tool.name} on Toolradar`}
+                            width={280}
+                            height={100}
+                          />
+                        </a>
+                      </div>
                     </div>
                     {/* Dark Style */}
                     <div>
                       <p className="text-xs text-muted-foreground mb-2">Dark</p>
-                      <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={`https://toolradar.com/api/widget/${tool.slug}?style=dark`}
-                          alt={`${tool.name} on Toolradar`}
-                          width={200}
-                          height={80}
-                        />
-                      </a>
+                      <div className="bg-slate-800 rounded-lg p-4 flex items-center justify-center">
+                        <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={`https://toolradar.com/api/widget/${tool.slug}?style=dark`}
+                            alt={`${tool.name} on Toolradar`}
+                            width={280}
+                            height={100}
+                          />
+                        </a>
+                      </div>
+                    </div>
+                    {/* Blue Style */}
+                    <div>
+                      <p className="text-xs text-muted-foreground mb-2">Blue</p>
+                      <div className="bg-blue-900 rounded-lg p-4 flex items-center justify-center">
+                        <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={`https://toolradar.com/api/widget/${tool.slug}?style=blue`}
+                            alt={`${tool.name} on Toolradar`}
+                            width={280}
+                            height={100}
+                          />
+                        </a>
+                      </div>
                     </div>
                     {/* Minimal Style */}
                     <div>
                       <p className="text-xs text-muted-foreground mb-2">Minimal</p>
-                      <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={`https://toolradar.com/api/widget/${tool.slug}?style=minimal`}
-                          alt={`${tool.name} on Toolradar`}
-                          width={200}
-                          height={80}
-                        />
-                      </a>
+                      <div className="bg-white rounded-lg p-4 flex items-center justify-center border">
+                        <a href={`https://toolradar.com/tools/${tool.slug}`} target="_blank" rel="noopener">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={`https://toolradar.com/api/widget/${tool.slug}?style=minimal`}
+                            alt={`${tool.name} on Toolradar`}
+                            width={280}
+                            height={100}
+                          />
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

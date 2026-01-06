@@ -241,6 +241,66 @@ export default async function VendorsPage() {
         </div>
       </section>
 
+      {/* SEO Benefits */}
+      <section className="py-20 bg-gradient-to-b from-white to-green-50/30">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-4">
+              <Search size={14} />
+              SEO Benefits
+            </div>
+            <h2 className="text-3xl font-semibold text-slate-900 mb-4">
+              Boost Your Search Rankings
+            </h2>
+            <p className="text-slate-500 max-w-2xl mx-auto">
+              Every listing comes with powerful SEO benefits to help your software get discovered organically.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-xl border border-slate-200 p-6">
+              <div className="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4">
+                <Globe size={24} className="text-green-600" />
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Dofollow Backlink</h3>
+              <p className="text-sm text-slate-500">
+                Get a high-quality dofollow backlink from toolradar.com to your website. Boost your domain authority and search rankings.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-slate-200 p-6">
+              <div className="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4">
+                <Star size={24} className="text-blue-600" />
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Rich Snippets</h3>
+              <p className="text-sm text-slate-500">
+                Your tool appears with star ratings, review counts, and pricing in Google search results. Stand out from competitors.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl border border-slate-200 p-6">
+              <div className="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4">
+                <TrendingUp size={24} className="text-purple-600" />
+              </div>
+              <h3 className="font-semibold text-slate-900 mb-2">Comparison Pages</h3>
+              <p className="text-sm text-slate-500">
+                Appear on &quot;X vs Y&quot; comparison pages. Rank for competitor keywords and capture switchers.
+              </p>
+            </div>
+          </div>
+          <div className="mt-8 p-6 bg-white rounded-xl border border-green-200">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center shrink-0">
+                <CheckCircle size={20} className="text-green-600" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 mb-1">Embeddable Widget</h4>
+                <p className="text-sm text-slate-500">
+                  Display your Toolradar rating on your website with our embeddable widget. Show social proof and get a backlink to your listing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-6">

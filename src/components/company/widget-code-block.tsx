@@ -10,11 +10,11 @@ interface WidgetCodeBlockProps {
 
 export function WidgetCodeBlock({ toolSlug, toolName }: WidgetCodeBlockProps) {
   const [copied, setCopied] = useState(false);
-  const [style, setStyle] = useState<"default" | "dark" | "minimal">("default");
+  const [style, setStyle] = useState<"default" | "dark" | "blue" | "minimal">("default");
 
   const styleParam = style === "default" ? "" : `?style=${style}`;
   const code = `<a href="https://toolradar.com/tools/${toolSlug}" target="_blank" rel="noopener">
-  <img src="https://toolradar.com/api/widget/${toolSlug}${styleParam}" alt="${toolName} on Toolradar" width="200" height="80" />
+  <img src="https://toolradar.com/api/widget/${toolSlug}${styleParam}" alt="${toolName} on Toolradar" width="280" height="100" />
 </a>`;
 
   const handleCopy = async () => {
@@ -27,7 +27,7 @@ export function WidgetCodeBlock({ toolSlug, toolName }: WidgetCodeBlockProps) {
     <div className="space-y-3">
       {/* Style Selector */}
       <div className="flex gap-2">
-        {(["default", "dark", "minimal"] as const).map((s) => (
+        {(["default", "dark", "blue", "minimal"] as const).map((s) => (
           <button
             key={s}
             onClick={() => setStyle(s)}

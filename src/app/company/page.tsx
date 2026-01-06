@@ -5,6 +5,10 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { Pencil, ExternalLink } from "lucide-react";
 import { CompanySettingsForm } from "@/components/company/company-settings-form";
+import { ProfileCompletionCard } from "@/components/company/profile-completion-card";
+import { calculateToolProfileCompletion } from "@/lib/profile-completion";
+import { CategoryRankingCard } from "@/components/company/category-ranking-card";
+import { getCompanyToolsRankings } from "@/lib/category-ranking";
 
 export default async function CompanyDashboardPage() {
   const user = await getCurrentUser();
@@ -29,7 +33,23 @@ export default async function CompanyDashboardPage() {
       id: true,
       name: true,
       linkedinUrl: true,
-      tools: { select: { id: true, name: true, slug: true, upvotes: true, reviewCount: true } },
+      tools: {
+        select: {
+          id: true,
+          name: true,
+          slug: true,
+          upvotes: true,
+          reviewCount: true,
+          logo: true,
+          features: true,
+          pros: true,
+          cons: true,
+          tldr: true,
+          pricingDetails: true,
+          faqs: true,
+          categories: { select: { id: true } },
+        },
+      },
       submissions: { where: { status: "pending" }, select: { id: true } },
       badges: { select: { id: true } },
     },
@@ -40,6 +60,9 @@ export default async function CompanyDashboardPage() {
   }
 
   const totalUpvotes = company.tools.reduce((sum, t) => sum + t.upvotes, 0);
+
+  // Get category rankings for all tools
+  const toolsRankings = await getCompanyToolsRankings(company.id);
 
   return (
     <div className="space-y-8">
@@ -58,6 +81,57 @@ export default async function CompanyDashboardPage() {
           </div>
         ))}
       </div>
+
+      {/* Category Rankings */}
+      {toolsRankings.length > 0 && (
+        <div>
+          <h2 className="font-semibold mb-4">Category Rankings</h2>
+          <p className="text-sm text-muted-foreground mb-4">
+            See how your tools rank against competitors in each category
+          </p>
+          <div className="grid gap-4 md:grid-cols-2">
+            {toolsRankings.map((toolRanking) => (
+              <CategoryRankingCard
+                key={toolRanking.toolId}
+                toolId={toolRanking.toolId}
+                toolName={toolRanking.toolName}
+                toolSlug={toolRanking.toolSlug}
+                rankings={toolRanking.rankings}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Profile Completion */}
+      {company.tools.length > 0 && (
+        <div>
+          <h2 className="font-semibold mb-4">Profile Completion</h2>
+          <div className="space-y-3">
+            {company.tools.map((tool) => {
+              const completion = calculateToolProfileCompletion({
+                logo: tool.logo,
+                features: tool.features,
+                pros: tool.pros,
+                cons: tool.cons,
+                tldr: tool.tldr,
+                pricingDetails: tool.pricingDetails,
+                faqs: tool.faqs,
+                categories: tool.categories,
+              });
+              return (
+                <ProfileCompletionCard
+                  key={tool.id}
+                  toolId={tool.id}
+                  toolName={tool.name}
+                  score={completion.score}
+                  criteria={completion.criteria}
+                />
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       <div>
         <h2 className="font-semibold mb-4">Your Tools</h2>

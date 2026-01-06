@@ -3,7 +3,7 @@ import { getUserCompanies, getActiveCompany } from "@/lib/company-utils";
 import Link from "next/link";
 import { Header } from "@/components/layout/header";
 import { CompanySwitcher } from "@/components/company/company-switcher";
-import { LayoutDashboard, BarChart3, Award, PlusCircle, FileText, Code } from "lucide-react";
+import { LayoutDashboard, BarChart3, Award, PlusCircle, FileText, Code, MessageSquare } from "lucide-react";
 
 interface CompanyLayoutProps {
   children: React.ReactNode;
@@ -29,6 +29,7 @@ export default async function CompanyLayout({ children }: CompanyLayoutProps) {
   const navItems = [
     { href: "/company", label: "Overview", icon: LayoutDashboard },
     { href: "/company/submissions", label: "Submissions", icon: FileText },
+    { href: "/company/reviews", label: "Reviews", icon: MessageSquare },
     { href: "/company/analytics", label: "Analytics", icon: BarChart3 },
     { href: "/company/badges", label: "Badges", icon: Award },
     { href: "/company/widget", label: "Widget", icon: Code },
