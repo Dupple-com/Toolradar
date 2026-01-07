@@ -18998,1405 +18998,1405 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
     { question: "Thinkific vs Teachable?", answer: "Similar platforms. Thinkific better free tier. Teachable more features. Compare pricing." }
   ],
   "things-3": [
-    { question: "Is Things 3 free?", answer: "No free version. $50 Mac, $10 iPhone, $20 iPad. One-time purchase." },
-    { question: "What is Things 3?", answer: "Beautiful task manager for Apple. Award-winning design. GTD methodology." },
-    { question: "Things 3 vs Todoist?", answer: "Things Apple only, one payment. Todoist everywhere, subscription. Preference choice." }
+    { question: "Is Things 3 free?", answer: "No, Things 3 requires separate purchases for each platform: $50 for Mac, $10 for iPhone, and $20 for iPad. It's a one-time purchase with no subscription required." },
+    { question: "What is Things 3?", answer: "Things 3 is a beautifully designed task manager exclusive to Apple devices. It won an Apple Design Award and is built around the GTD (Getting Things Done) methodology." },
+    { question: "Things 3 vs Todoist?", answer: "Things 3 is Apple-only with one-time payments and a more polished design. Todoist works everywhere but requires a subscription. Choose based on your platform needs and payment preferences." }
   ],
   "reply-io": [
-    { question: "Is Reply.io free?", answer: "Free tier for limited contacts. Paid from $60/month. Sales engagement." },
-    { question: "What is Reply.io?", answer: "Sales engagement platform. Email sequences, LinkedIn automation. Outbound sales." },
-    { question: "Reply.io vs Outreach?", answer: "Reply.io more affordable. Outreach more enterprise. Reply for SMB sales." }
+    { question: "Is Reply.io free?", answer: "Reply.io offers a limited free tier for trying the platform. Paid plans start at $60/month, positioning it as a mid-market sales engagement tool." },
+    { question: "What is Reply.io?", answer: "Reply.io is a sales engagement platform for outbound sales teams. It handles email sequences, LinkedIn automation, and multichannel outreach to help sales teams scale their prospecting." },
+    { question: "Reply.io vs Outreach?", answer: "Reply.io is more affordable and accessible for SMB sales teams. Outreach is enterprise-focused with more features but higher pricing. Reply.io is a solid choice for growing sales teams." }
   ],
   "tettra": [
-    { question: "Is Tettra free?", answer: "Free for small teams. Scaling from $10/user/month. Knowledge management." },
-    { question: "What is Tettra?", answer: "Knowledge management for teams. Slack integration. Keep team aligned." },
-    { question: "Tettra vs Notion?", answer: "Tettra focused on team knowledge. Notion more flexible. Tettra for KB focus." }
+    { question: "Is Tettra free?", answer: "Tettra offers a free plan for small teams. Paid plans start at $10/user/month for larger teams with more advanced features." },
+    { question: "What is Tettra?", answer: "Tettra is a knowledge management platform designed for teams. It integrates tightly with Slack, making it easy to capture and share institutional knowledge." },
+    { question: "Tettra vs Notion?", answer: "Tettra is specifically focused on team knowledge bases with better Slack integration. Notion is more flexible for general docs. Tettra excels when knowledge management is your primary need." }
   ],
   "rescuetime": [
-    { question: "Is RescueTime free?", answer: "Lite version free. Premium at $12/month. Time tracking." },
-    { question: "What is RescueTime?", answer: "Automatic time tracking. See where your time goes. Productivity insights." },
-    { question: "RescueTime vs Toggl?", answer: "RescueTime automatic. Toggl manual. RescueTime for awareness; Toggl for billing." }
+    { question: "Is RescueTime free?", answer: "RescueTime Lite is free with basic tracking. Premium costs $12/month and adds features like goal setting, distraction blocking, and detailed reports." },
+    { question: "What is RescueTime?", answer: "RescueTime automatically tracks how you spend time on your computer and phone. It provides insights into your productivity patterns without requiring manual time tracking." },
+    { question: "RescueTime vs Toggl?", answer: "RescueTime runs automatically in the background to track everything. Toggl requires manual time tracking. Use RescueTime for awareness; Toggl for client billing and project tracking." }
   ],
   "testing-library": [
-    { question: "Is Testing Library free?", answer: "Free and open source. MIT license. Testing utilities." },
-    { question: "What is Testing Library?", answer: "DOM testing utilities. Test like users interact. Framework agnostic." },
-    { question: "Testing Library vs Enzyme?", answer: "Testing Library user-focused. Enzyme component internals. Testing Library now standard." }
+    { question: "Is Testing Library free?", answer: "Yes, Testing Library is completely free and open source under the MIT license. It's maintained by the community and widely used in the JavaScript ecosystem." },
+    { question: "What is Testing Library?", answer: "Testing Library is a collection of testing utilities that encourage testing your UI components the way users actually interact with them, not implementation details." },
+    { question: "Testing Library vs Enzyme?", answer: "Testing Library focuses on testing from a user's perspective - finding elements by text, role, or label. Enzyme tests component internals. Testing Library is now the recommended approach in the React community." }
   ],
   "owasp-zap": [
-    { question: "Is OWASP ZAP free?", answer: "Free and open source. OWASP project. Security testing." },
-    { question: "What is OWASP ZAP?", answer: "Web application security scanner. Find vulnerabilities. Industry standard tool." },
-    { question: "ZAP vs Burp Suite?", answer: "ZAP free and open source. Burp Suite paid with more features. ZAP for free option." }
+    { question: "Is OWASP ZAP free?", answer: "Yes, OWASP ZAP is completely free and open source. It's an official OWASP project, maintained by a global community of security professionals." },
+    { question: "What is OWASP ZAP?", answer: "OWASP ZAP (Zed Attack Proxy) is a web application security scanner. It helps find vulnerabilities in your web apps during development and testing. It's the world's most widely used web app scanner." },
+    { question: "ZAP vs Burp Suite?", answer: "ZAP is free and open source, making it accessible to everyone. Burp Suite has a paid professional edition with more advanced features. ZAP is excellent for getting started with security testing." }
   ],
   "publer": [
-    { question: "Is Publer free?", answer: "Free plan for 3 accounts. Pro from $12/month. Social media scheduling." },
-    { question: "What is Publer?", answer: "Social media scheduling tool. Plan and automate posts. Analytics included." },
-    { question: "Publer vs Buffer?", answer: "Publer more affordable. Buffer more established. Both work well." }
+    { question: "Is Publer free?", answer: "Publer has a free plan for up to 3 social accounts. Pro plans start at $12/month for more accounts and features like bulk scheduling and analytics." },
+    { question: "What is Publer?", answer: "Publer is a social media scheduling tool that lets you plan and automate posts across multiple platforms. It includes analytics and collaboration features for teams." },
+    { question: "Publer vs Buffer?", answer: "Publer is more affordable with comparable features. Buffer is more established with a larger user base. Both are solid choices for social media scheduling." }
   ],
   "habitica": [
-    { question: "Is Habitica free?", answer: "Free plan available. Subscription $5/month for extras. Habit tracker." },
-    { question: "What is Habitica?", answer: "Gamified habit tracker. RPG-style task management. Fun approach to productivity." },
-    { question: "Habitica vs Todoist?", answer: "Habitica is gamified. Todoist is traditional. Habitica if you like games." }
+    { question: "Is Habitica free?", answer: "Habitica has a generous free plan. The subscription costs $5/month and adds features like custom drop items and expanded customization options." },
+    { question: "What is Habitica?", answer: "Habitica is a gamified habit and task tracker that treats your life like an RPG. Complete tasks to level up your avatar, earn rewards, and join parties with friends for extra motivation." },
+    { question: "Habitica vs Todoist?", answer: "Habitica turns productivity into a game with RPG elements. Todoist is a traditional, powerful task manager. Choose Habitica if gamification motivates you; Todoist for serious task management." }
   ],
   "twist": [
-    { question: "Is Twist free?", answer: "Free plan available. Unlimited at $8/user/month. Team communication." },
-    { question: "What is Twist?", answer: "Async-first team communication. From Todoist makers. Alternative to Slack." },
-    { question: "Twist vs Slack?", answer: "Twist async-focused. Slack real-time. Twist for fewer interruptions." }
+    { question: "Is Twist free?", answer: "Twist has a free plan with basic features. Unlimited plans cost $8/user/month with full message history and advanced features." },
+    { question: "What is Twist?", answer: "Twist is an async-first team communication tool from the makers of Todoist. It's designed to reduce the constant interruptions of real-time chat while keeping teams aligned." },
+    { question: "Twist vs Slack?", answer: "Twist is designed for asynchronous communication - threads over channels, fewer notifications. Slack is real-time and faster-paced. Twist works better for distributed teams across time zones." }
   ],
   "tldv": [
-    { question: "Is tl;dv free?", answer: "Free plan available. Pro from $25/month. Meeting recorder." },
-    { question: "What is tl;dv?", answer: "AI meeting recorder. Record, transcribe, summarize. Zoom and Meet integration." },
-    { question: "tl;dv vs Otter?", answer: "tl;dv for meetings specifically. Otter more general. Both do transcription well." }
+    { question: "Is tl;dv free?", answer: "tl;dv has a free plan with basic recording and transcription. Pro plans start at $25/month for AI summaries, advanced search, and team features." },
+    { question: "What is tl;dv?", answer: "tl;dv is an AI meeting recorder that automatically records, transcribes, and summarizes your video meetings. It integrates with Zoom and Google Meet to capture important moments." },
+    { question: "tl;dv vs Otter?", answer: "tl;dv is specifically designed for video meetings with features like timestamped highlights. Otter is more general-purpose transcription. Both handle transcription well." }
   ],
   "iconify": [
-    { question: "Is Iconify free?", answer: "Free and open source. Access 200k+ icons. Framework agnostic." },
-    { question: "What is Iconify?", answer: "Unified icon framework. One syntax for all icon sets. Massive collection." },
-    { question: "Iconify vs Font Awesome?", answer: "Iconify more icons from many sets. Font Awesome one set. Iconify more flexible." }
+    { question: "Is Iconify free?", answer: "Yes, Iconify is free and open source. It provides access to over 200,000 icons from 150+ icon sets, all through a unified API." },
+    { question: "What is Iconify?", answer: "Iconify is a unified icon framework that lets you use icons from many different sets with one consistent syntax. It works with React, Vue, Svelte, and plain HTML." },
+    { question: "Iconify vs Font Awesome?", answer: "Iconify gives you access to 200,000+ icons from many different sets. Font Awesome is a single curated set. Iconify offers more variety and flexibility." }
   ],
   "tabler-icons": [
-    { question: "Is Tabler Icons free?", answer: "Free and open source. MIT license. 5000+ icons." },
-    { question: "What is Tabler Icons?", answer: "Free SVG icon set. Consistent design. Good for web projects." },
-    { question: "Tabler vs Heroicons?", answer: "Both free icon sets. Tabler more icons. Heroicons from Tailwind team. Both excellent." }
+    { question: "Is Tabler Icons free?", answer: "Yes, Tabler Icons is completely free and open source under the MIT license. There are over 5,000 icons available." },
+    { question: "What is Tabler Icons?", answer: "Tabler Icons is a free, open source SVG icon set with a consistent style. The icons are designed for web projects and available in multiple formats." },
+    { question: "Tabler vs Heroicons?", answer: "Both are excellent free icon sets. Tabler has more icons (5000+). Heroicons are from the Tailwind CSS team with fewer but well-designed icons. Both are great choices." }
   ],
   "rocket-chat": [
-    { question: "Is Rocket.Chat free?", answer: "Community version free. Cloud from $4/user/month. Team chat." },
-    { question: "What is Rocket.Chat?", answer: "Open source team chat. Self-hosted Slack alternative. Many features." },
-    { question: "Rocket.Chat vs Slack?", answer: "Rocket.Chat open source, self-host. Slack cloud only. Rocket.Chat for control." }
+    { question: "Is Rocket.Chat free?", answer: "The community edition is free and open source for self-hosting. Cloud-hosted plans start at $4/user/month if you prefer managed hosting." },
+    { question: "What is Rocket.Chat?", answer: "Rocket.Chat is an open source team chat platform you can self-host. It's often used as a self-hosted Slack alternative with channels, direct messages, and video calls." },
+    { question: "Rocket.Chat vs Slack?", answer: "Rocket.Chat is open source and can be self-hosted for complete data control. Slack is cloud-only but more polished. Choose Rocket.Chat for self-hosting; Slack for ease of use." }
   ],
   "rightfont": [
-    { question: "Is RightFont free?", answer: "Free trial. $39 one-time purchase. Font manager for Mac." },
-    { question: "What is RightFont?", answer: "Font manager for Mac. Preview and organize fonts. Auto-activate." },
-    { question: "RightFont vs FontBase?", answer: "RightFont Mac only. FontBase cross-platform. RightFont more polished on Mac." }
+    { question: "Is RightFont free?", answer: "RightFont offers a free trial. The full license is $39 as a one-time purchase, which is reasonable for a professional font management tool." },
+    { question: "What is RightFont?", answer: "RightFont is a font manager for Mac that lets you preview, organize, and auto-activate fonts. It syncs with iCloud and integrates with design apps." },
+    { question: "RightFont vs FontBase?", answer: "RightFont is Mac-only with iCloud sync and a more polished interface. FontBase works on Mac, Windows, and Linux. RightFont is the better choice for Mac-only designers." }
   ],
   "maya": [
-    { question: "Is Maya free?", answer: "No free version. $235/month or $1875/year. 3D animation." },
-    { question: "What is Maya?", answer: "Industry standard 3D animation. From Autodesk. Film and game production." },
-    { question: "Maya vs Blender?", answer: "Maya industry standard, expensive. Blender free and capable. Blender for most." }
+    { question: "Is Maya free?", answer: "No, Maya is professional software with professional pricing: $235/month or $1,875/year. Students can get a free educational license through Autodesk." },
+    { question: "What is Maya?", answer: "Maya is the industry standard 3D animation and modeling software from Autodesk. It's used extensively in film, TV, and game production for character animation and visual effects." },
+    { question: "Maya vs Blender?", answer: "Maya is the industry standard but expensive. Blender is free and increasingly capable. For most individuals and small studios, Blender is the practical choice." }
   ],
   "teamcity": [
-    { question: "Is TeamCity free?", answer: "Free for 100 builds/month. Cloud from $45/month. CI/CD." },
-    { question: "What is TeamCity?", answer: "CI/CD server from JetBrains. On-premise or cloud. Powerful configuration." },
-    { question: "TeamCity vs Jenkins?", answer: "TeamCity easier to use. Jenkins more flexible. TeamCity for JetBrains users." }
+    { question: "Is TeamCity free?", answer: "TeamCity offers a free tier with 100 build configurations. Cloud plans start at $45/month. It's generous enough for small teams to use professionally." },
+    { question: "What is TeamCity?", answer: "TeamCity is a CI/CD server from JetBrains. It's available as self-hosted or cloud, with powerful build configuration and excellent IDE integration." },
+    { question: "TeamCity vs Jenkins?", answer: "TeamCity has a better UI and is easier to configure. Jenkins is more flexible with its plugin ecosystem. TeamCity is particularly good if you use other JetBrains tools." }
   ],
   "zoho-creator": [
-    { question: "Is Zoho Creator free?", answer: "Free plan with limits. Standard from $10/user/month. Low-code platform." },
-    { question: "What is Zoho Creator?", answer: "Low-code app builder. Part of Zoho suite. Build business apps." },
-    { question: "Zoho Creator vs Retool?", answer: "Zoho Creator part of Zoho ecosystem. Retool standalone. Choose based on stack." }
+    { question: "Is Zoho Creator free?", answer: "Zoho Creator has a free plan with limited apps. Standard plans start at $10/user/month for more capacity and features." },
+    { question: "What is Zoho Creator?", answer: "Zoho Creator is a low-code platform for building business applications. It's part of the Zoho ecosystem, making it easy to integrate with other Zoho products." },
+    { question: "Zoho Creator vs Retool?", answer: "Zoho Creator integrates well with the Zoho ecosystem. Retool is standalone and more developer-focused. Choose based on your existing tools and technical preference." }
   ],
   "tailwind": [
-    { question: "Is Tailwind CSS free?", answer: "Free and open source. MIT license. CSS framework." },
-    { question: "What is Tailwind CSS?", answer: "Utility-first CSS framework. Build designs without custom CSS. Very popular." },
-    { question: "Tailwind vs Bootstrap?", answer: "Tailwind utility classes. Bootstrap components. Tailwind more flexible, steeper curve." }
+    { question: "Is Tailwind CSS free?", answer: "Yes, Tailwind CSS is completely free and open source under the MIT license. Tailwind UI (their component library) is paid, but the core framework is free." },
+    { question: "What is Tailwind CSS?", answer: "Tailwind is a utility-first CSS framework. Instead of pre-designed components, you build designs using utility classes like 'flex', 'pt-4', and 'text-center'. It's extremely popular." },
+    { question: "Tailwind vs Bootstrap?", answer: "Tailwind uses utility classes for maximum flexibility. Bootstrap provides pre-built components for faster prototyping. Tailwind has a steeper learning curve but offers more design freedom." }
   ],
   "vectornator": [
-    { question: "Is Vectornator free?", answer: "Completely free. Now called Linearity Curve. Vector design." },
-    { question: "What is Vectornator?", answer: "Free vector design app for Mac/iOS. Now Linearity Curve. Adobe Illustrator alternative." },
-    { question: "Vectornator vs Illustrator?", answer: "Vectornator free. Illustrator more powerful. Vectornator great for basics." }
+    { question: "Is Vectornator free?", answer: "Yes, Vectornator (now rebranded as Linearity Curve) is completely free to use. It's a professional vector design tool available at no cost." },
+    { question: "What is Vectornator?", answer: "Vectornator (Linearity Curve) is a free vector design application for Mac, iPad, and iPhone. It's often called a free Adobe Illustrator alternative with a modern interface." },
+    { question: "Vectornator vs Illustrator?", answer: "Vectornator is free while Illustrator requires a subscription. Illustrator is more powerful for professional work, but Vectornator handles most vector design tasks well." }
   ],
   "houdini": [
-    { question: "Is Houdini free?", answer: "Apprentice version free for learning. Indie from $269/year. 3D software." },
-    { question: "What is Houdini?", answer: "Procedural 3D software. VFX industry standard. Node-based workflow." },
-    { question: "Houdini vs Blender?", answer: "Houdini procedural specialist. Blender general purpose. Houdini for VFX." }
+    { question: "Is Houdini free?", answer: "Houdini Apprentice is free for learning and non-commercial work. Houdini Indie starts at $269/year for commercial projects under $100K revenue." },
+    { question: "What is Houdini?", answer: "Houdini is procedural 3D software from SideFX, considered the industry standard for VFX work. It uses a node-based workflow for creating complex effects and simulations." },
+    { question: "Houdini vs Blender?", answer: "Houdini specializes in procedural effects and simulations - it's the VFX industry standard. Blender is general-purpose and free. Use Houdini for serious VFX work." }
   ],
   "tracetest": [
-    { question: "Is Tracetest free?", answer: "Open source core free. Cloud from $99/month. Trace-based testing." },
-    { question: "What is Tracetest?", answer: "Trace-based testing tool. Test using OpenTelemetry traces. End-to-end testing." },
-    { question: "Why use Tracetest?", answer: "Tests based on actual traces. Catch issues in distributed systems. Modern approach." }
+    { question: "Is Tracetest free?", answer: "The open source core is free. Tracetest Cloud starts at $99/month for managed infrastructure and collaboration features." },
+    { question: "What is Tracetest?", answer: "Tracetest is a testing tool that uses OpenTelemetry traces to create end-to-end tests. Instead of mocking, you test against actual system behavior captured in traces." },
+    { question: "Why use Tracetest?", answer: "Tracetest catches issues in distributed systems by testing actual behavior through traces. It's a modern approach to testing microservices and complex systems." }
   ],
   "umso": [
-    { question: "Is Umso free?", answer: "7-day free trial. Plans from $24/month. AI website builder." },
-    { question: "What is Umso?", answer: "AI-powered website builder for startups. Generate site from description. Quick launch." },
-    { question: "Umso vs Framer?", answer: "Umso AI-generated. Framer more customizable. Umso for quick startup sites." }
+    { question: "Is Umso free?", answer: "Umso offers a 7-day free trial. Paid plans start at $24/month for hosting and full access to the AI website builder." },
+    { question: "What is Umso?", answer: "Umso is an AI-powered website builder designed for startups. You describe what you want, and AI generates a professional site. Great for launching quickly." },
+    { question: "Umso vs Framer?", answer: "Umso focuses on AI-generated sites for quick launches. Framer offers more design customization. Umso for speed; Framer for design control." }
   ],
   "unicorn-platform": [
-    { question: "Is Unicorn Platform free?", answer: "Free plan available. Pro from $8/month. Landing page builder." },
-    { question: "What is Unicorn Platform?", answer: "Simple landing page builder. For startups and makers. AI-assisted." },
-    { question: "Unicorn vs Carrd?", answer: "Both simple landing pages. Unicorn more features. Carrd cheaper. Both good." }
+    { question: "Is Unicorn Platform free?", answer: "Unicorn Platform has a free plan for basic use. Pro plans start at just $8/month, making it very affordable for indie makers." },
+    { question: "What is Unicorn Platform?", answer: "Unicorn Platform is a simple landing page builder aimed at startups and makers. It includes AI assistance for generating content and is designed for quick deployment." },
+    { question: "Unicorn vs Carrd?", answer: "Both are simple landing page builders. Unicorn has more features and AI assistance. Carrd is even simpler and cheaper. Both are great for quick landing pages." }
   ],
   "tilda": [
-    { question: "Is Tilda free?", answer: "Free plan with 50 pages. Personal from $12/month. Website builder." },
-    { question: "What is Tilda?", answer: "Block-based website builder. Beautiful templates. Content focused." },
-    { question: "Tilda vs Webflow?", answer: "Tilda simpler, faster. Webflow more powerful. Tilda for quick sites." }
+    { question: "Is Tilda free?", answer: "Tilda has a free plan with up to 50 pages. Personal plans start at $12/month for custom domains and more features." },
+    { question: "What is Tilda?", answer: "Tilda is a block-based website builder with beautiful templates. It's particularly good for content-focused sites like portfolios, blogs, and marketing pages." },
+    { question: "Tilda vs Webflow?", answer: "Tilda is simpler and faster to use with great templates. Webflow is more powerful for custom designs. Choose Tilda for quick, beautiful sites." }
   ],
   "teleporthq": [
-    { question: "Is TeleportHQ free?", answer: "Free plan available. Professional from $15/month. UI builder." },
-    { question: "What is TeleportHQ?", answer: "Low-code UI builder. Generate React, Vue code. Figma import." },
-    { question: "TeleportHQ vs Webflow?", answer: "TeleportHQ generates clean code. Webflow proprietary output. TeleportHQ for developers." }
+    { question: "Is TeleportHQ free?", answer: "TeleportHQ has a free plan for personal projects. Professional plans start at $15/month for team features and more exports." },
+    { question: "What is TeleportHQ?", answer: "TeleportHQ is a low-code UI builder that generates clean React, Vue, or Angular code. It can import Figma designs and export production-ready components." },
+    { question: "TeleportHQ vs Webflow?", answer: "TeleportHQ generates clean, portable code you can use anywhere. Webflow exports are more proprietary. TeleportHQ is better for developers who want usable code." }
   ],
   "juro": [
-    { question: "Is Juro free?", answer: "No free tier. Contact sales for pricing. Contract automation." },
-    { question: "What is Juro?", answer: "Contract automation platform. Create, sign, manage contracts. All-in-one legal." },
-    { question: "Juro vs Ironclad?", answer: "Both contract platforms. Similar features. Compare for your workflow." }
+    { question: "Is Juro free?", answer: "Juro doesn't offer a free tier - it's an enterprise product. Contact their sales team for pricing based on your contract volume and needs." },
+    { question: "What is Juro?", answer: "Juro is a contract automation platform that handles the entire contract lifecycle: creation, negotiation, signing, and management, all in one place." },
+    { question: "Juro vs Ironclad?", answer: "Both are contract lifecycle management platforms with similar capabilities. Compare them based on your specific workflow needs and integration requirements." }
   ],
   "vwo": [
-    { question: "Is VWO free?", answer: "Free trial available. Paid plans from sales. A/B testing." },
-    { question: "What is VWO?", answer: "Conversion optimization platform. A/B testing, heatmaps, surveys. Full suite." },
-    { question: "VWO vs Optimizely?", answer: "Both enterprise testing. VWO more affordable. Optimizely more features." }
+    { question: "Is VWO free?", answer: "VWO offers a free trial to test the platform. Pricing is custom based on traffic and features needed - contact sales for a quote." },
+    { question: "What is VWO?", answer: "VWO (Visual Website Optimizer) is a conversion optimization platform. It includes A/B testing, heatmaps, session recordings, and surveys for understanding user behavior." },
+    { question: "VWO vs Optimizely?", answer: "Both are enterprise A/B testing platforms. VWO is generally more affordable with an all-in-one approach. Optimizely has more advanced experimentation features." }
   ],
   "triple-whale": [
-    { question: "Is Triple Whale free?", answer: "Free tier available. Paid from $129/month. Ecommerce analytics." },
-    { question: "What is Triple Whale?", answer: "Ecommerce analytics and attribution. Track marketing spend. Popular with DTC brands." },
-    { question: "Triple Whale worth it?", answer: "Excellent for Shopify stores. Better attribution than native analytics. Worth for serious stores." }
+    { question: "Is Triple Whale free?", answer: "Triple Whale has a free tier with basic analytics. Paid plans start at $129/month for advanced attribution and analytics features." },
+    { question: "What is Triple Whale?", answer: "Triple Whale is an e-commerce analytics platform popular with DTC (direct-to-consumer) brands. It provides better marketing attribution than native Shopify analytics." },
+    { question: "Triple Whale worth it?", answer: "For serious Shopify stores, Triple Whale provides significantly better attribution insights than native analytics. If you're spending on ads, the improved visibility often pays for itself." }
   ],
   "statsig": [
-    { question: "Is Statsig free?", answer: "Generous free tier. Pro from $150/month. Feature flags and experiments." },
-    { question: "What is Statsig?", answer: "Feature flagging and experimentation platform. From ex-Facebook engineers. Enterprise grade." },
-    { question: "Statsig vs LaunchDarkly?", answer: "Statsig more experiments focused. LaunchDarkly enterprise flags. Statsig better free tier." }
+    { question: "Is Statsig free?", answer: "Statsig has a generous free tier that many companies can use indefinitely. Pro plans start at $150/month for additional features." },
+    { question: "What is Statsig?", answer: "Statsig is a feature flagging and experimentation platform built by ex-Facebook engineers. It combines feature flags with proper statistical analysis of experiments." },
+    { question: "Statsig vs LaunchDarkly?", answer: "Statsig is more focused on experiments and has a better free tier. LaunchDarkly is more established for enterprise feature flags. Statsig is great for data-driven teams." }
   ],
 
   "fliki": [
-    { question: "Is Fliki free?", answer: "Free plan with 5 mins/month. Standard from $28/month. AI video creation." },
-    { question: "What is Fliki?", answer: "Text to video and voiceover. AI voices in many languages. Quick video content." },
-    { question: "Fliki vs Synthesia?", answer: "Fliki more affordable. Synthesia better avatars. Fliki for voiceovers." }
+    { question: "Is Fliki free?", answer: "Fliki offers a free plan with 5 minutes of video creation per month. Paid plans start at $28/month for the Standard tier with more video time and higher quality exports." },
+    { question: "What is Fliki?", answer: "Fliki is an AI-powered platform that converts text to video and voiceover content. It supports AI voices in over 75 languages, making it easy to create video content without editing skills." },
+    { question: "Fliki vs Synthesia?", answer: "Fliki is more affordable and excels at voiceover-focused content. Synthesia offers higher quality AI avatars for presenter-style videos. Fliki is a great choice for social media content on a budget." }
   ],
   "flutterflow": [
-    { question: "Is FlutterFlow free?", answer: "Free plan available. Pro from $30/month. Visual Flutter builder." },
-    { question: "What is FlutterFlow?", answer: "Visual app builder for Flutter. No code mobile apps. Exports to Flutter code." },
-    { question: "FlutterFlow vs Bubble?", answer: "FlutterFlow exports native code. Bubble is web-based. FlutterFlow for mobile apps." }
+    { question: "Is FlutterFlow free?", answer: "FlutterFlow has a free plan for building and testing apps. Pro plans start at $30/month and include code export, custom domains, and team collaboration features." },
+    { question: "What is FlutterFlow?", answer: "FlutterFlow is a visual app builder that generates real Flutter code. You can build mobile apps without writing code and export the full source to customize or deploy independently." },
+    { question: "FlutterFlow vs Bubble?", answer: "FlutterFlow exports native Flutter code that runs as a real mobile app. Bubble builds web apps that run in browsers. Choose FlutterFlow for mobile-first apps that need native performance." }
   ],
   "fly-io": [
-    { question: "Is Fly.io free?", answer: "Generous free tier. Pay for what you use. Edge hosting platform." },
-    { question: "What is Fly.io?", answer: "Deploy apps close to users globally. Edge compute platform. Docker-based." },
-    { question: "Fly.io vs Vercel?", answer: "Fly.io for full-stack apps. Vercel for frontend. Fly.io more flexible." }
+    { question: "Is Fly.io free?", answer: "Fly.io has a generous free tier that includes shared CPU VMs, 3GB storage, and 160GB bandwidth per month. You only pay for resources beyond these free allowances." },
+    { question: "What is Fly.io?", answer: "Fly.io is a platform that deploys your applications close to users around the world. It runs Docker containers on servers in over 30 regions, giving users low latency wherever they are." },
+    { question: "Fly.io vs Vercel?", answer: "Fly.io is better for full-stack applications that need databases and persistent connections. Vercel excels at frontend and serverless deployments. Fly.io gives you more control over your infrastructure." }
   ],
   "folk": [
-    { question: "Is Folk free?", answer: "Free for personal use. Teams from $20/user/month. Lightweight CRM." },
-    { question: "What is Folk?", answer: "Simple CRM for relationships. Sync contacts from everywhere. Clean interface." },
-    { question: "Folk vs Attio?", answer: "Both modern CRMs. Folk simpler. Attio more powerful. Folk for simplicity." }
+    { question: "Is Folk free?", answer: "Folk is free for personal use with basic features. Team plans start at $20 per user per month and include collaboration features and integrations." },
+    { question: "What is Folk?", answer: "Folk is a lightweight CRM designed for managing relationships rather than just deals. It syncs contacts from email, LinkedIn, and other sources into a clean, unified interface." },
+    { question: "Folk vs Attio?", answer: "Both are modern CRMs built for the new way people work. Folk prioritizes simplicity while Attio offers more powerful features. Choose Folk if you want something minimal and fast." }
   ],
   "fontbase": [
-    { question: "Is FontBase free?", answer: "Free version available. Essential at $3/month. Font manager." },
-    { question: "What is FontBase?", answer: "Cross-platform font manager. Preview and organize fonts. Google Fonts integration." },
-    { question: "FontBase vs RightFont?", answer: "FontBase cross-platform. RightFont Mac only. FontBase for Windows/Linux users." }
+    { question: "Is FontBase free?", answer: "FontBase has a free version with core features. The Essential plan at $3/month adds cloud sync, font activation, and other professional features." },
+    { question: "What is FontBase?", answer: "FontBase is a cross-platform font manager that helps designers preview, organize, and activate fonts. It includes Google Fonts integration and works on Windows, Mac, and Linux." },
+    { question: "FontBase vs RightFont?", answer: "FontBase works on Windows, Mac, and Linux while RightFont is Mac-only. If you need cross-platform support or use Windows/Linux, FontBase is your only choice among the two." }
   ],
   "fontjoy": [
-    { question: "Is Fontjoy free?", answer: "Completely free to use. No paid version. Font pairing tool." },
-    { question: "What is Fontjoy?", answer: "AI-powered font pairing. Generate harmonious font combinations. Uses deep learning." },
-    { question: "How to use Fontjoy?", answer: "Click generate for new pairings. Lock fonts you like. Adjust similarity slider." }
+    { question: "Is Fontjoy free?", answer: "Fontjoy is completely free to use with no paid version. It's a web-based tool for generating font pairings at no cost." },
+    { question: "What is Fontjoy?", answer: "Fontjoy uses deep learning to generate harmonious font combinations. It helps designers quickly find fonts that work well together for headlines, body text, and accents." },
+    { question: "How to use Fontjoy?", answer: "Click the generate button to get new font pairings. Lock any fonts you like by clicking them, then generate again to find matches. Use the similarity slider to control how varied the suggestions are." }
   ],
   "fork": [
-    { question: "Is Fork free?", answer: "Free evaluation period. $49.99 one-time purchase. Git client." },
-    { question: "What is Fork?", answer: "Fast Git client for Mac and Windows. Visual branch management. Clean interface." },
-    { question: "Fork vs GitKraken?", answer: "Fork simpler and faster. GitKraken more features. Fork for focused Git work." }
+    { question: "Is Fork free?", answer: "Fork offers a free evaluation period with no time limit. If you continue using it, a license costs $49.99 as a one-time purchase with no subscription." },
+    { question: "What is Fork?", answer: "Fork is a fast and lightweight Git client for Mac and Windows. It features visual branch management, an interactive rebase tool, and a clean interface focused on productivity." },
+    { question: "Fork vs GitKraken?", answer: "Fork is simpler, faster, and cheaper with a one-time payment. GitKraken has more features but requires a subscription. Fork is ideal for developers who want focused Git functionality." }
   ],
   "formspark": [
-    { question: "Is Formspark free?", answer: "250 submissions free. Plans from $9/month. Form backend." },
-    { question: "What is Formspark?", answer: "Form backend for static sites. No server needed. Spam filtering included." },
-    { question: "Formspark vs Formspree?", answer: "Both form backends. Similar features. Compare pricing for your volume." }
+    { question: "Is Formspark free?", answer: "Formspark includes 250 free submissions. Paid plans start at $9/month for more submissions, file uploads, and advanced features." },
+    { question: "What is Formspark?", answer: "Formspark is a form backend service for static sites and JAMstack applications. It handles form submissions without requiring your own server and includes spam filtering." },
+    { question: "Formspark vs Formspree?", answer: "Both are excellent form backends with similar features. They have different pricing structures, so compare based on your expected submission volume to find the better value." }
   ],
   "formspree": [
-    { question: "Is Formspree free?", answer: "50 submissions/month free. Gold from $10/month. Form backend." },
-    { question: "What is Formspree?", answer: "HTML form backend. No JavaScript needed. Works with any site." },
-    { question: "Formspree vs Basin?", answer: "Both simple form backends. Formspree more established. Basin more affordable." }
+    { question: "Is Formspree free?", answer: "Formspree's free plan includes 50 form submissions per month. The Gold plan starts at $10/month for more submissions and features like file uploads." },
+    { question: "What is Formspree?", answer: "Formspree is a form backend that works with plain HTML forms. You point your form's action to Formspree's endpoint and it handles the rest, no JavaScript required." },
+    { question: "Formspree vs Basin?", answer: "Both are simple form backends for static sites. Formspree is more established with a larger community, while Basin offers more affordable pricing for higher volumes." }
   ],
   "formstack": [
-    { question: "Is Formstack free?", answer: "No free tier. Plans from $50/month. Enterprise forms." },
-    { question: "What is Formstack?", answer: "Enterprise form builder. Workflows, signatures, documents. HIPAA compliant." },
-    { question: "Formstack vs Typeform?", answer: "Formstack more enterprise. Typeform more beautiful. Formstack for compliance." }
+    { question: "Is Formstack free?", answer: "Formstack doesn't offer a free tier. Plans start at $50/month and are positioned for business and enterprise use cases that require compliance." },
+    { question: "What is Formstack?", answer: "Formstack is an enterprise form builder with workflows, electronic signatures, and document generation. It's HIPAA compliant and designed for organizations with strict data requirements." },
+    { question: "Formstack vs Typeform?", answer: "Formstack is built for enterprise compliance with features like HIPAA support and e-signatures. Typeform creates more engaging, conversational forms. Choose based on your compliance needs." }
   ],
   "freshping": [
-    { question: "Is Freshping free?", answer: "Free for 50 monitors. Paid for more features. Uptime monitoring." },
-    { question: "What is Freshping?", answer: "Free uptime monitoring. Check website availability. From Freshworks." },
-    { question: "Freshping vs UptimeRobot?", answer: "Both have free tiers. Similar features. Choose based on ecosystem preference." }
+    { question: "Is Freshping free?", answer: "Freshping is free for monitoring up to 50 URLs with 1-minute check intervals. This makes it one of the most generous free uptime monitoring solutions available." },
+    { question: "What is Freshping?", answer: "Freshping is a free website uptime monitoring service from Freshworks. It checks your sites regularly and alerts you via email, Slack, or other channels when something goes down." },
+    { question: "Freshping vs UptimeRobot?", answer: "Both offer generous free tiers for uptime monitoring. They have similar core features, so choose based on which ecosystem you prefer or which integrations you need." }
   ],
   "front": [
-    { question: "Is Front free?", answer: "No free tier. Starter from $19/user/month. Shared inbox." },
-    { question: "What is Front?", answer: "Shared inbox for teams. Collaborate on emails. Customer communication hub." },
-    { question: "Front vs Intercom?", answer: "Front email-focused. Intercom broader platform. Front for email-heavy teams." }
+    { question: "Is Front free?", answer: "Front doesn't have a free tier. The Starter plan begins at $19 per user per month for teams that need shared inbox functionality." },
+    { question: "What is Front?", answer: "Front is a shared inbox platform that helps teams collaborate on customer emails. Multiple team members can work together on messages, assign conversations, and track response times." },
+    { question: "Front vs Intercom?", answer: "Front is focused specifically on email collaboration and shared inboxes. Intercom is a broader customer platform with chat, help desk, and marketing features. Choose Front for email-heavy workflows." }
   ],
   "fusionauth": [
-    { question: "Is FusionAuth free?", answer: "Community edition free. Enterprise from $125/month. Auth platform." },
-    { question: "What is FusionAuth?", answer: "Customer identity platform. Self-hosted or cloud. Full-featured auth." },
-    { question: "FusionAuth vs Auth0?", answer: "FusionAuth can self-host. Auth0 cloud only. FusionAuth for control." }
+    { question: "Is FusionAuth free?", answer: "FusionAuth's Community edition is completely free with no user limits. The Enterprise edition starts at $125/month and adds premium features and support." },
+    { question: "What is FusionAuth?", answer: "FusionAuth is a customer identity and access management platform. You can self-host it for complete control or use their cloud offering for convenience." },
+    { question: "FusionAuth vs Auth0?", answer: "FusionAuth can be self-hosted giving you full control over your data. Auth0 is cloud-only but more polished. Choose FusionAuth if self-hosting or data sovereignty matters to you." }
   ],
   "gandi": [
-    { question: "Is Gandi free?", answer: "No free tier. Domains from $15/year. Domain registrar." },
-    { question: "What is Gandi?", answer: "Domain registrar and hosting. No upselling. Privacy included." },
-    { question: "Gandi vs Namecheap?", answer: "Gandi more ethical. Namecheap cheaper. Gandi for no-nonsense service." }
+    { question: "Is Gandi free?", answer: "Gandi doesn't have free services. Domain registrations start around $15/year depending on the TLD, with WHOIS privacy included at no extra cost." },
+    { question: "What is Gandi?", answer: "Gandi is a domain registrar known for its ethical approach and no-upsell policy. They include WHOIS privacy by default and offer straightforward pricing without hidden fees." },
+    { question: "Gandi vs Namecheap?", answer: "Gandi is known for ethical business practices and transparent pricing. Namecheap is generally cheaper but uses more aggressive marketing. Choose Gandi for a no-nonsense experience." }
   ],
   "gather": [
-    { question: "Is Gather free?", answer: "Free for up to 10 users. Premium from $7/user/month. Virtual office." },
-    { question: "What is Gather?", answer: "Virtual office space. Video chat by walking around. Fun remote culture." },
-    { question: "Gather vs Zoom?", answer: "Gather for ongoing presence. Zoom for meetings. Gather for remote offices." }
+    { question: "Is Gather free?", answer: "Gather is free for up to 10 concurrent users in a space. Premium plans start at $7 per user per month for larger teams and additional customization." },
+    { question: "What is Gather?", answer: "Gather creates virtual office spaces where your avatar walks around and video calls start automatically when you approach colleagues. It makes remote work feel more spontaneous and social." },
+    { question: "Gather vs Zoom?", answer: "Gather creates an always-on virtual office for casual interactions and presence. Zoom is better for scheduled meetings. Gather excels at recreating the spontaneity of physical offices." }
   ],
   "gatling": [
-    { question: "Is Gatling free?", answer: "Open source version free. Enterprise paid. Load testing." },
-    { question: "What is Gatling?", answer: "Load testing tool. Scala-based DSL. High performance testing." },
-    { question: "Gatling vs JMeter?", answer: "Gatling more modern. JMeter more GUI. Gatling for code-based tests." }
+    { question: "Is Gatling free?", answer: "Gatling's open source version is completely free for load testing. Enterprise plans are available for teams that need cloud execution and advanced reporting." },
+    { question: "What is Gatling?", answer: "Gatling is a load testing tool that uses a Scala-based DSL to define test scenarios. It's designed for high performance and can simulate thousands of users hitting your application." },
+    { question: "Gatling vs JMeter?", answer: "Gatling has a more modern architecture and better handles high loads. JMeter has a GUI and larger plugin ecosystem. Gatling is preferred for code-based, version-controlled test scenarios." }
   ],
   "getform": [
-    { question: "Is Getform free?", answer: "Free plan with 50 submissions. Pro from $9/month. Form backend." },
-    { question: "What is Getform?", answer: "Form backend for developers. File uploads, integrations. Easy setup." },
-    { question: "Getform vs Formspree?", answer: "Both form backends. Getform more integrations. Similar simplicity." }
+    { question: "Is Getform free?", answer: "Getform's free plan includes 50 submissions per month. Pro plans start at $9/month for more submissions, file uploads, and integrations." },
+    { question: "What is Getform?", answer: "Getform is a form backend designed for developers. It handles file uploads, integrates with tools like Zapier and Slack, and takes minutes to set up with any frontend." },
+    { question: "Getform vs Formspree?", answer: "Both are solid form backends with similar ease of use. Getform has more built-in integrations while Formspree is slightly simpler. Compare pricing based on your volume." }
   ],
   "getresponse": [
-    { question: "Is GetResponse free?", answer: "Free plan for up to 500 contacts. Email from $15.6/month." },
-    { question: "What is GetResponse?", answer: "Email marketing and automation. Landing pages, webinars. All-in-one marketing." },
-    { question: "GetResponse vs Mailchimp?", answer: "GetResponse more features. Mailchimp easier. GetResponse better value." }
+    { question: "Is GetResponse free?", answer: "GetResponse offers a free plan for up to 500 contacts with basic email features. Paid plans start at $15.60/month for automation and landing pages." },
+    { question: "What is GetResponse?", answer: "GetResponse is an all-in-one marketing platform that includes email marketing, automation, landing pages, and even webinar hosting. It's designed to handle your entire marketing funnel." },
+    { question: "GetResponse vs Mailchimp?", answer: "GetResponse includes more features like webinars and conversion funnels. Mailchimp is easier to learn. GetResponse often provides better value for growing businesses." }
   ],
   "gimp": [
-    { question: "Is GIMP free?", answer: "Completely free and open source. No paid version. Image editor." },
-    { question: "What is GIMP?", answer: "Free Photoshop alternative. Full-featured image editor. Cross-platform." },
-    { question: "GIMP vs Photoshop?", answer: "GIMP free. Photoshop professional standard. GIMP for budget-conscious users." }
+    { question: "Is GIMP free?", answer: "GIMP is completely free and open source under the GPL license. There's no paid version, and it will always remain free for everyone to use." },
+    { question: "What is GIMP?", answer: "GIMP (GNU Image Manipulation Program) is a free alternative to Photoshop. It's a full-featured image editor that handles everything from photo retouching to digital art creation." },
+    { question: "GIMP vs Photoshop?", answer: "GIMP is free while Photoshop requires a subscription. Photoshop is the professional industry standard with more polish. GIMP is excellent for users who can't justify the subscription cost." }
   ],
   "gitbook": [
-    { question: "Is GitBook free?", answer: "Free for public docs. Team plans from $8/user/month. Documentation." },
-    { question: "What is GitBook?", answer: "Documentation platform. Git-backed, beautiful output. Great for technical docs." },
-    { question: "GitBook vs Notion?", answer: "GitBook for public docs. Notion for internal wiki. GitBook for developer docs." }
+    { question: "Is GitBook free?", answer: "GitBook is free for public documentation. Team plans start at $8 per user per month for private docs and collaboration features." },
+    { question: "What is GitBook?", answer: "GitBook is a documentation platform that creates beautiful docs backed by Git. It's popular for technical documentation, API docs, and knowledge bases." },
+    { question: "GitBook vs Notion?", answer: "GitBook excels at public-facing documentation with versioning. Notion is better for internal wikis and flexible workspaces. Use GitBook for developer docs and API documentation." }
   ],
   "gitea": [
-    { question: "Is Gitea free?", answer: "Open source and free. Self-host at no cost. Git hosting." },
-    { question: "What is Gitea?", answer: "Lightweight Git service. Self-hosted GitHub alternative. Written in Go." },
-    { question: "Gitea vs GitLab?", answer: "Gitea much lighter. GitLab more features. Gitea for simple needs." }
+    { question: "Is Gitea free?", answer: "Gitea is completely free and open source. You can self-host it at no cost on your own servers with no user or repository limits." },
+    { question: "What is Gitea?", answer: "Gitea is a lightweight, self-hosted Git service written in Go. It's a GitHub alternative you can run on your own infrastructure with minimal resources." },
+    { question: "Gitea vs GitLab?", answer: "Gitea is much lighter and easier to self-host, requiring fewer resources. GitLab has more features like CI/CD built in. Choose Gitea for simple, resource-efficient Git hosting." }
   ],
   "gitguardian": [
-    { question: "Is GitGuardian free?", answer: "Free for individuals. Teams from $38/developer/month. Secret scanning." },
-    { question: "What is GitGuardian?", answer: "Detect secrets in code. Real-time scanning. Prevent leaks." },
-    { question: "GitGuardian vs TruffleHog?", answer: "GitGuardian managed service. TruffleHog self-hosted. GitGuardian easier." }
+    { question: "Is GitGuardian free?", answer: "GitGuardian is free for individual developers scanning personal repos. Team plans start at $38 per developer per month for organization-wide secret detection." },
+    { question: "What is GitGuardian?", answer: "GitGuardian scans your code repositories in real-time to detect leaked secrets like API keys and passwords. It helps prevent credential leaks before they become security incidents." },
+    { question: "GitGuardian vs TruffleHog?", answer: "GitGuardian is a managed service with a dashboard and team features. TruffleHog is open source and self-hosted. GitGuardian is easier to set up and maintain for teams." }
   ],
   "github-actions": [
-    { question: "Is GitHub Actions free?", answer: "Free for public repos. 2000 mins/month for private. CI/CD." },
-    { question: "What is GitHub Actions?", answer: "CI/CD built into GitHub. Workflow automation. Huge marketplace." },
-    { question: "GitHub Actions vs CircleCI?", answer: "Actions native to GitHub. CircleCI dedicated CI. Actions for convenience." }
+    { question: "Is GitHub Actions free?", answer: "GitHub Actions is free for public repositories. Private repos get 2,000 minutes per month on the free tier, with additional minutes available for purchase." },
+    { question: "What is GitHub Actions?", answer: "GitHub Actions is a CI/CD platform built directly into GitHub. You can automate builds, tests, and deployments using workflow files in your repository." },
+    { question: "GitHub Actions vs CircleCI?", answer: "Actions is native to GitHub with seamless integration. CircleCI is a dedicated CI platform with some advanced features. Actions is usually the simpler choice for GitHub-hosted projects." }
   ],
   "github-desktop": [
-    { question: "Is GitHub Desktop free?", answer: "Completely free. Open source. Git GUI client." },
-    { question: "What is GitHub Desktop?", answer: "Simple Git GUI from GitHub. Easy commits and branches. Good for beginners." },
-    { question: "GitHub Desktop vs GitKraken?", answer: "Desktop simpler. GitKraken more features. Desktop for basics." }
+    { question: "Is GitHub Desktop free?", answer: "GitHub Desktop is completely free and open source. You can use it with any Git repository, not just those hosted on GitHub." },
+    { question: "What is GitHub Desktop?", answer: "GitHub Desktop is a simple Git GUI that makes version control accessible to beginners. It handles commits, branches, and syncing without needing to touch the command line." },
+    { question: "GitHub Desktop vs GitKraken?", answer: "GitHub Desktop is simpler and free for all uses. GitKraken has more features but requires payment for private repos. Desktop is great for those who want basic Git in a clean interface." }
   ],
   "github-pages": [
-    { question: "Is GitHub Pages free?", answer: "Free for public repos. Static site hosting. Custom domains supported." },
-    { question: "What is GitHub Pages?", answer: "Free static site hosting from GitHub. Jekyll support. Great for docs." },
-    { question: "GitHub Pages vs Netlify?", answer: "Pages simpler. Netlify more features. Pages for basic static sites." }
+    { question: "Is GitHub Pages free?", answer: "GitHub Pages is completely free for public repositories. You can host static sites with custom domains and HTTPS at no cost." },
+    { question: "What is GitHub Pages?", answer: "GitHub Pages is free static site hosting directly from your GitHub repository. It supports Jekyll for static site generation and is great for documentation, portfolios, and blogs." },
+    { question: "GitHub Pages vs Netlify?", answer: "Pages is simpler with basic static hosting. Netlify offers more features like forms, serverless functions, and better build customization. Use Pages for simple sites, Netlify for more complex needs." }
   ],
   "gitkraken": [
-    { question: "Is GitKraken free?", answer: "Free for public repos. Pro from $4.95/month. Git GUI." },
-    { question: "What is GitKraken?", answer: "Powerful Git GUI. Visual branch management. Cross-platform." },
-    { question: "GitKraken vs Sourcetree?", answer: "GitKraken paid but polished. Sourcetree free. GitKraken for better UX." }
+    { question: "Is GitKraken free?", answer: "GitKraken is free for public repositories. Pro plans start at $4.95/month for private repo support and team features." },
+    { question: "What is GitKraken?", answer: "GitKraken is a powerful cross-platform Git GUI with visual branch management, merge conflict tools, and integrations with major Git hosting services." },
+    { question: "GitKraken vs Sourcetree?", answer: "GitKraken is paid but has a more polished interface and better performance. Sourcetree is free but can feel cluttered. GitKraken is worth it if you value a premium experience." }
   ],
   "gitleaks": [
-    { question: "Is Gitleaks free?", answer: "Open source and free. MIT license. Secret detection." },
-    { question: "What is Gitleaks?", answer: "Detect secrets in git repos. Pre-commit hooks. Fast scanning." },
-    { question: "Gitleaks vs TruffleHog?", answer: "Both open source secret scanners. Similar functionality. Try both." }
+    { question: "Is Gitleaks free?", answer: "Gitleaks is completely free and open source under the MIT license. You can use it in CI pipelines and pre-commit hooks at no cost." },
+    { question: "What is Gitleaks?", answer: "Gitleaks is an open source tool that scans Git repositories for hardcoded secrets and credentials. It catches API keys and passwords before they get committed." },
+    { question: "Gitleaks vs TruffleHog?", answer: "Both are excellent open source secret scanners with similar capabilities. Gitleaks is written in Go while TruffleHog is Python. Try both and see which fits your workflow better." }
   ],
   "gladly": [
-    { question: "Is Gladly free?", answer: "No free tier. Enterprise pricing only. Customer service." },
-    { question: "What is Gladly?", answer: "Customer service platform. People-centered approach. Unified conversations." },
-    { question: "Gladly vs Zendesk?", answer: "Gladly more personal approach. Zendesk more traditional. Gladly for experience focus." }
+    { question: "Is Gladly free?", answer: "Gladly doesn't offer a free tier. It uses enterprise pricing based on the size and needs of your support organization." },
+    { question: "What is Gladly?", answer: "Gladly is a customer service platform built around people rather than tickets. It shows a complete customer history across all channels in one continuous conversation." },
+    { question: "Gladly vs Zendesk?", answer: "Gladly takes a more personal, people-first approach versus Zendesk's ticket-based model. Zendesk has more features but Gladly creates better customer experiences." }
   ],
   "glide": [
-    { question: "Is Glide free?", answer: "Free to build. Pro from $25/month. No-code apps." },
-    { question: "What is Glide?", answer: "Build apps from spreadsheets. No code needed. Mobile-first." },
-    { question: "Glide vs Adalo?", answer: "Glide spreadsheet-based. Adalo more traditional builder. Glide for data-driven apps." }
+    { question: "Is Glide free?", answer: "Glide is free to build and test apps. Pro plans start at $25/month when you're ready to publish and need features like custom domains." },
+    { question: "What is Glide?", answer: "Glide lets you build mobile apps directly from spreadsheets. Connect a Google Sheet or Airtable, and Glide generates a functional app without any coding required." },
+    { question: "Glide vs Adalo?", answer: "Glide is spreadsheet-based and great for data-driven apps. Adalo uses a more traditional visual builder. Choose Glide if your app is essentially an interface over structured data." }
   ],
   "goatcounter": [
-    { question: "Is GoatCounter free?", answer: "Free for non-commercial. Paid from €15/month. Privacy-friendly analytics." },
-    { question: "What is GoatCounter?", answer: "Simple web analytics. No cookies needed. Privacy focused." },
-    { question: "GoatCounter vs Plausible?", answer: "Both privacy-focused. GoatCounter self-hostable free. Plausible paid cloud." }
+    { question: "Is GoatCounter free?", answer: "GoatCounter is free for non-commercial use. Commercial sites can pay from €15/month, or self-host the open source version for free." },
+    { question: "What is GoatCounter?", answer: "GoatCounter is privacy-friendly web analytics that doesn't use cookies or collect personal data. It provides useful insights while respecting visitor privacy." },
+    { question: "GoatCounter vs Plausible?", answer: "Both are privacy-focused alternatives to Google Analytics. GoatCounter can be self-hosted for free while Plausible is paid cloud-only. GoatCounter is more budget-friendly." }
   ],
   "gocd": [
-    { question: "Is GoCD free?", answer: "Open source and free. Enterprise support available. CI/CD server." },
-    { question: "What is GoCD?", answer: "CI/CD server from ThoughtWorks. Pipeline-first design. Complex workflow support." },
-    { question: "GoCD vs Jenkins?", answer: "GoCD better pipeline visualization. Jenkins more plugins. GoCD for complex pipelines." }
+    { question: "Is GoCD free?", answer: "GoCD is completely free and open source. Enterprise support subscriptions are available but the software itself has no licensing costs." },
+    { question: "What is GoCD?", answer: "GoCD is a CI/CD server from ThoughtWorks with a pipeline-first design. It excels at modeling complex deployment pipelines with dependencies between stages." },
+    { question: "GoCD vs Jenkins?", answer: "GoCD has better built-in pipeline visualization and modeling for complex workflows. Jenkins has a larger plugin ecosystem. Choose GoCD for sophisticated deployment pipelines." }
   ],
   "gogs": [
-    { question: "Is Gogs free?", answer: "Open source and free. Self-hosted Git. Lightweight." },
-    { question: "What is Gogs?", answer: "Lightweight Git service. Single binary deployment. Very low resource usage." },
-    { question: "Gogs vs Gitea?", answer: "Gitea is Gogs fork with more features. Gogs more stable. Gitea more active." }
+    { question: "Is Gogs free?", answer: "Gogs is completely free and open source. You can self-host it with minimal resources as it's designed to run even on a Raspberry Pi." },
+    { question: "What is Gogs?", answer: "Gogs is an extremely lightweight self-hosted Git service. It's a single binary with minimal dependencies, making it perfect for resource-constrained environments." },
+    { question: "Gogs vs Gitea?", answer: "Gitea is a fork of Gogs with more active development and features. Gogs is more stable but receives fewer updates. Most new users should consider Gitea first." }
   ],
   "goland": [
-    { question: "Is GoLand free?", answer: "30-day trial. $199/year for individuals. Go IDE." },
-    { question: "What is GoLand?", answer: "JetBrains IDE for Go. Full-featured Go development. Excellent debugging." },
-    { question: "GoLand vs VS Code?", answer: "GoLand more integrated. VS Code free with extensions. GoLand for dedicated Go dev." }
+    { question: "Is GoLand free?", answer: "GoLand offers a 30-day free trial. After that, individual licenses cost $199/year for the first year with discounts for continued subscriptions." },
+    { question: "What is GoLand?", answer: "GoLand is JetBrains' IDE specifically designed for Go development. It offers intelligent code completion, refactoring, debugging, and testing tools tailored for Go." },
+    { question: "GoLand vs VS Code?", answer: "GoLand provides more integrated Go-specific features out of the box. VS Code is free and works well with the Go extension. GoLand is worth the cost for dedicated Go developers." }
   ],
   "google-analytics": [
-    { question: "Is Google Analytics free?", answer: "Free version available. GA360 for enterprise. Web analytics." },
-    { question: "What is Google Analytics?", answer: "Web analytics from Google. Track visitors and behavior. Industry standard." },
-    { question: "GA4 vs Universal Analytics?", answer: "GA4 is current version. Event-based model. UA deprecated. Migrate to GA4." }
+    { question: "Is Google Analytics free?", answer: "Google Analytics is free for most websites. GA360 is the enterprise version with higher data limits and costs $150,000+ annually." },
+    { question: "What is Google Analytics?", answer: "Google Analytics is the industry-standard web analytics platform. It tracks website visitors, their behavior, conversions, and provides insights to improve your online presence." },
+    { question: "GA4 vs Universal Analytics?", answer: "GA4 is Google's current analytics platform using an event-based model. Universal Analytics was deprecated in 2023. All new implementations should use GA4." }
   ],
   "google-cloud-dns": [
-    { question: "Is Google Cloud DNS free?", answer: "Pay per zone and queries. Very affordable. Managed DNS." },
-    { question: "What is Google Cloud DNS?", answer: "Managed DNS from Google. High availability. Global anycast." },
-    { question: "Cloud DNS vs Cloudflare DNS?", answer: "Cloudflare has free tier. Cloud DNS integrates with GCP. Cloudflare for most." }
+    { question: "Is Google Cloud DNS free?", answer: "Google Cloud DNS charges per managed zone (about $0.20/month) plus a small fee per million queries. It's very affordable for most use cases." },
+    { question: "What is Google Cloud DNS?", answer: "Google Cloud DNS is a managed DNS service running on Google's global infrastructure. It provides high availability and low latency DNS resolution worldwide." },
+    { question: "Cloud DNS vs Cloudflare DNS?", answer: "Cloudflare has a generous free tier while Cloud DNS charges per zone. Cloudflare is better for most users unless you're deeply integrated with Google Cloud Platform." }
   ],
   "google-cloud-functions": [
-    { question: "Is Cloud Functions free?", answer: "2 million invocations/month free. Pay per use after. Serverless." },
-    { question: "What is Cloud Functions?", answer: "Serverless functions on GCP. Event-driven compute. Multiple runtimes." },
-    { question: "Cloud Functions vs AWS Lambda?", answer: "Similar offerings. Lambda more mature. Functions for GCP ecosystem." }
+    { question: "Is Cloud Functions free?", answer: "Cloud Functions includes 2 million free invocations per month plus free compute time. You only pay for usage beyond the free tier." },
+    { question: "What is Cloud Functions?", answer: "Cloud Functions is Google's serverless compute platform. You write functions that run in response to events like HTTP requests, file uploads, or database changes." },
+    { question: "Cloud Functions vs AWS Lambda?", answer: "Both are mature serverless platforms with similar capabilities. Lambda has a larger ecosystem while Functions integrates better with GCP services. Choose based on your cloud provider." }
   ],
   "google-cloud-source": [
-    { question: "Is Cloud Source free?", answer: "Free for small teams. Git hosting on GCP. Private repos." },
-    { question: "What is Cloud Source Repositories?", answer: "Git hosting on Google Cloud. Integrates with GCP services. Private repos." },
-    { question: "Cloud Source vs GitHub?", answer: "GitHub more popular. Cloud Source for GCP integration. GitHub for community." }
+    { question: "Is Cloud Source free?", answer: "Cloud Source Repositories is free for up to 5 users and 50GB of storage. It's included at no cost for small teams on Google Cloud." },
+    { question: "What is Cloud Source Repositories?", answer: "Cloud Source Repositories provides private Git hosting on Google Cloud. It integrates with other GCP services like Cloud Build for CI/CD pipelines." },
+    { question: "Cloud Source vs GitHub?", answer: "GitHub has a much larger community and ecosystem. Cloud Source is best for teams already on GCP who want tight integration with their cloud infrastructure." }
   ],
   "google-forms": [
-    { question: "Is Google Forms free?", answer: "Free with Google account. Part of Google Workspace. Form builder." },
-    { question: "What is Google Forms?", answer: "Free form builder. Integrates with Sheets. Simple surveys." },
-    { question: "Google Forms vs Typeform?", answer: "Forms free and simple. Typeform more beautiful. Forms for basic needs." }
+    { question: "Is Google Forms free?", answer: "Google Forms is completely free for anyone with a Google account. There are no premium features or paid tiers for the consumer version." },
+    { question: "What is Google Forms?", answer: "Google Forms is a free form and survey builder that integrates seamlessly with Google Sheets. It's great for quick surveys, quizzes, and data collection." },
+    { question: "Google Forms vs Typeform?", answer: "Google Forms is free and functional but basic-looking. Typeform creates more engaging, conversational forms but costs money. Use Forms for utility, Typeform for experience." }
   ],
   "google-gemini": [
-    { question: "Is Google Gemini free?", answer: "Free tier available. Paid API usage. AI assistant." },
-    { question: "What is Google Gemini?", answer: "Google's AI assistant. Multimodal capabilities. Integrated with Google services." },
-    { question: "Gemini vs ChatGPT?", answer: "Both powerful AI. Gemini integrated with Google. ChatGPT more established." }
+    { question: "Is Google Gemini free?", answer: "The Gemini app is free to use with basic features. Gemini Advanced with the most capable model is part of Google One AI Premium at $20/month." },
+    { question: "What is Google Gemini?", answer: "Google Gemini is Google's AI assistant powered by their Gemini family of models. It's multimodal, meaning it can understand and work with text, images, code, and more." },
+    { question: "Gemini vs ChatGPT?", answer: "Both are powerful AI assistants. Gemini integrates deeply with Google services and can access current information. ChatGPT has a larger user base and plugin ecosystem." }
   ],
   "google-meet": [
-    { question: "Is Google Meet free?", answer: "Free for 60-minute meetings. Longer with Workspace. Video meetings." },
-    { question: "What is Google Meet?", answer: "Video conferencing from Google. Browser-based. Integrates with Calendar." },
-    { question: "Meet vs Zoom?", answer: "Meet simpler and browser-based. Zoom more features. Meet for Google users." }
+    { question: "Is Google Meet free?", answer: "Google Meet is free for meetings up to 60 minutes with up to 100 participants. Longer meetings and more features require a Google Workspace subscription." },
+    { question: "What is Google Meet?", answer: "Google Meet is Google's video conferencing platform. It works directly in browsers with no download required and integrates with Google Calendar for easy scheduling." },
+    { question: "Meet vs Zoom?", answer: "Meet is simpler and browser-based with no app needed. Zoom has more features and better handles large meetings. Meet is convenient for teams already in the Google ecosystem." }
   ],
   "google-vertex-ai": [
-    { question: "Is Vertex AI free?", answer: "Free tier with credits. Pay per use. ML platform." },
-    { question: "What is Vertex AI?", answer: "Google's unified ML platform. Train and deploy models. AutoML included." },
-    { question: "Vertex vs SageMaker?", answer: "Both full ML platforms. Vertex for GCP. SageMaker for AWS. Ecosystem choice." }
+    { question: "Is Vertex AI free?", answer: "Vertex AI offers free trial credits for new users. Ongoing costs are usage-based depending on compute, storage, and model inference volumes." },
+    { question: "What is Vertex AI?", answer: "Vertex AI is Google Cloud's unified machine learning platform. It provides tools for training, deploying, and managing ML models, including AutoML for automated model building." },
+    { question: "Vertex vs SageMaker?", answer: "Both are comprehensive ML platforms from major cloud providers. Vertex AI integrates with GCP while SageMaker is for AWS. Choose based on your existing cloud infrastructure." }
   ],
   "gorgias": [
-    { question: "Is Gorgias free?", answer: "No free tier. Plans from $10/month. Ecommerce helpdesk." },
-    { question: "What is Gorgias?", answer: "Helpdesk for ecommerce. Shopify integration. Automated responses." },
-    { question: "Gorgias vs Zendesk?", answer: "Gorgias ecommerce-focused. Zendesk general purpose. Gorgias for Shopify stores." }
+    { question: "Is Gorgias free?", answer: "Gorgias doesn't have a free tier. Plans start at $10/month for the Starter plan designed for small e-commerce stores." },
+    { question: "What is Gorgias?", answer: "Gorgias is a helpdesk platform built specifically for e-commerce. It integrates deeply with Shopify, showing order data alongside support tickets for faster resolution." },
+    { question: "Gorgias vs Zendesk?", answer: "Gorgias is purpose-built for e-commerce with native Shopify integration. Zendesk is a general-purpose helpdesk. Choose Gorgias if you run an online store." }
   ],
   "goto-meeting": [
-    { question: "Is GoTo Meeting free?", answer: "Free trial available. Professional from $12/month. Video conferencing." },
-    { question: "What is GoTo Meeting?", answer: "Video conferencing software. Enterprise meetings. Long-established." },
-    { question: "GoTo vs Zoom?", answer: "Zoom more popular. GoTo still reliable. Most choose Zoom now." }
+    { question: "Is GoTo Meeting free?", answer: "GoTo Meeting offers a free trial but no permanent free tier. Professional plans start at $12/month per organizer for small team meetings." },
+    { question: "What is GoTo Meeting?", answer: "GoTo Meeting is a long-established video conferencing platform for business meetings. It offers reliable audio and video quality with features for enterprise use." },
+    { question: "GoTo vs Zoom?", answer: "Zoom has become the more popular choice with a free tier and larger ecosystem. GoTo Meeting is still reliable but most companies have switched to Zoom or Teams." }
   ],
   "gpt4all": [
-    { question: "Is GPT4All free?", answer: "Free and open source. Run AI locally. No API costs." },
-    { question: "What is GPT4All?", answer: "Run LLMs locally. Privacy-focused AI. Multiple model support." },
-    { question: "GPT4All vs Ollama?", answer: "Both run local LLMs. Ollama easier setup. Both free and excellent." }
+    { question: "Is GPT4All free?", answer: "GPT4All is completely free and open source. You can run AI language models locally on your computer without any API costs or data leaving your device." },
+    { question: "What is GPT4All?", answer: "GPT4All lets you run large language models locally on your own computer. It supports multiple open source models and keeps everything private on your machine." },
+    { question: "GPT4All vs Ollama?", answer: "Both let you run local LLMs for free. Ollama has an easier setup process while GPT4All has a more polished GUI. Both are excellent choices for private AI." }
   ],
   "hasura": [
-    { question: "Is Hasura free?", answer: "Community edition free. Cloud from $99/month. GraphQL engine." },
-    { question: "What is Hasura?", answer: "Instant GraphQL APIs on databases. Real-time subscriptions. Auto-generated." },
-    { question: "Hasura vs Apollo?", answer: "Hasura auto-generates API. Apollo for custom GraphQL. Hasura for speed." }
+    { question: "Is Hasura free?", answer: "Hasura's Community Edition is free forever. Hasura Cloud starts at $99/month for teams that want managed hosting with additional features." },
+    { question: "What is Hasura?", answer: "Hasura instantly generates a GraphQL API on top of your existing databases. It auto-creates queries, mutations, and real-time subscriptions without writing backend code." },
+    { question: "Hasura vs Apollo?", answer: "Hasura auto-generates your GraphQL API from databases. Apollo is for building custom GraphQL servers. Use Hasura for speed, Apollo for full control over your schema." }
   ],
   "hoppscotch": [
-    { question: "Is Hoppscotch free?", answer: "Open source and free. Self-host or use cloud. API testing." },
-    { question: "What is Hoppscotch?", answer: "Open source API testing. Postman alternative. Browser-based." },
-    { question: "Hoppscotch vs Postman?", answer: "Hoppscotch free and lighter. Postman more features. Hoppscotch for simple needs." }
+    { question: "Is Hoppscotch free?", answer: "Hoppscotch is free and open source. You can use the hosted version at hoppscotch.io or self-host it on your own infrastructure." },
+    { question: "What is Hoppscotch?", answer: "Hoppscotch is an open source API development ecosystem. It's a lightweight, browser-based alternative to Postman for testing REST, GraphQL, and WebSocket APIs." },
+    { question: "Hoppscotch vs Postman?", answer: "Hoppscotch is free, lighter, and runs entirely in the browser. Postman has more features but has become heavier and restricts free usage. Hoppscotch is great for simple API testing." }
   ],
   "hootsuite": [
-    { question: "Is Hootsuite free?", answer: "No free tier anymore. Professional from $99/month. Social media management." },
-    { question: "What is Hootsuite?", answer: "Social media management platform. Schedule posts, analytics. Enterprise features." },
-    { question: "Hootsuite vs Buffer?", answer: "Hootsuite more enterprise. Buffer simpler and cheaper. Buffer for small teams." }
+    { question: "Is Hootsuite free?", answer: "Hootsuite discontinued its free plan. Professional plans now start at $99/month, positioning it for businesses rather than individual users." },
+    { question: "What is Hootsuite?", answer: "Hootsuite is a social media management platform for scheduling posts, monitoring mentions, and analyzing performance across multiple social networks from one dashboard." },
+    { question: "Hootsuite vs Buffer?", answer: "Hootsuite is more enterprise-focused with comprehensive features and higher pricing. Buffer is simpler and more affordable for small teams. Most small businesses find Buffer sufficient." }
   ],
   "hostgator": [
-    { question: "Is HostGator cheap?", answer: "Plans from $2.75/month intro. Renewal prices higher. Web hosting." },
-    { question: "What is HostGator?", answer: "Web hosting provider. Shared, VPS, dedicated. Long-established." },
-    { question: "HostGator vs Bluehost?", answer: "Similar budget hosts. Both owned by EIG. Compare current deals." }
+    { question: "Is HostGator cheap?", answer: "HostGator advertises introductory rates starting at $2.75/month, but renewal prices are significantly higher. Factor in the actual renewal cost when comparing." },
+    { question: "What is HostGator?", answer: "HostGator is a web hosting provider offering shared, VPS, and dedicated hosting. They've been in the business for over 20 years and host millions of websites." },
+    { question: "HostGator vs Bluehost?", answer: "Both are budget hosting providers owned by the same parent company (EIG). They offer similar services at similar prices. Compare current promotions to decide." }
   ],
   "hcaptcha": [
-    { question: "Is hCaptcha free?", answer: "Free tier available. Enterprise paid. Bot detection." },
-    { question: "What is hCaptcha?", answer: "Privacy-first captcha. Alternative to reCAPTCHA. Earns revenue for sites." },
-    { question: "hCaptcha vs reCAPTCHA?", answer: "hCaptcha more privacy-focused. reCAPTCHA from Google. hCaptcha for privacy." }
+    { question: "Is hCaptcha free?", answer: "hCaptcha is free for most websites and actually pays publishers a small amount. Enterprise plans with additional features are available for larger sites." },
+    { question: "What is hCaptcha?", answer: "hCaptcha is a privacy-focused bot detection service and CAPTCHA alternative. Unlike Google's reCAPTCHA, it doesn't track users or use their data for advertising." },
+    { question: "hCaptcha vs reCAPTCHA?", answer: "hCaptcha is more privacy-focused and doesn't feed Google's data machine. reCAPTCHA may have slightly better detection. Choose hCaptcha if privacy matters to you or your users." }
   ],
   "heap": [
-    { question: "Is Heap free?", answer: "Free tier available. Growth pricing varies. Product analytics." },
-    { question: "What is Heap?", answer: "Auto-capture product analytics. Retroactive analysis. No code tagging." },
-    { question: "Heap vs Mixpanel?", answer: "Heap auto-captures. Mixpanel manual tracking. Heap for retroactive analysis." }
+    { question: "Is Heap free?", answer: "Heap has a free tier for getting started with product analytics. Growth pricing varies based on your monthly tracked users and data needs." },
+    { question: "What is Heap?", answer: "Heap automatically captures all user interactions on your website or app without manual tracking code. You can analyze any event retroactively without having to set it up first." },
+    { question: "Heap vs Mixpanel?", answer: "Heap auto-captures everything for retroactive analysis. Mixpanel requires manual event tracking but gives you more control. Heap is easier to start; Mixpanel is more intentional." }
   ],
   "helpscout": [
-    { question: "Is Help Scout free?", answer: "No free tier. Standard from $20/user/month. Help desk." },
-    { question: "What is Help Scout?", answer: "Customer service platform. Shared inbox, knowledge base. Human-focused support." },
-    { question: "Help Scout vs Zendesk?", answer: "Help Scout simpler. Zendesk more features. Help Scout for simplicity." }
+    { question: "Is Help Scout free?", answer: "Help Scout doesn't offer a free tier. The Standard plan starts at $20 per user per month for core helpdesk features." },
+    { question: "What is Help Scout?", answer: "Help Scout is a customer service platform focused on human, personal support. It includes a shared inbox, knowledge base, and customer management without the complexity of enterprise tools." },
+    { question: "Help Scout vs Zendesk?", answer: "Help Scout is simpler and more focused on email-based support. Zendesk has more features but can be overwhelming. Help Scout is great for teams that want simplicity over complexity." }
   ],
   "imgix": [
-    { question: "Is imgix free?", answer: "Free tier with limits. Paid from $10/month. Image CDN." },
-    { question: "What is imgix?", answer: "Real-time image processing CDN. Resize, crop, optimize on-the-fly." },
-    { question: "imgix vs Cloudinary?", answer: "Both image CDNs. Cloudinary more features. imgix more focused on images." }
+    { question: "Is imgix free?", answer: "imgix has a free tier with usage limits. Paid plans start at $10/month for higher volumes and additional features like custom domains." },
+    { question: "What is imgix?", answer: "imgix is a real-time image processing CDN. It resizes, crops, and optimizes images on-the-fly through URL parameters, so you never need to pre-generate image variants." },
+    { question: "imgix vs Cloudinary?", answer: "Both are image CDNs with real-time processing. Cloudinary handles both images and videos with more features. imgix is more focused on image optimization specifically." }
   ],
   "inoreader": [
-    { question: "Is Inoreader free?", answer: "Free plan available. Pro from $6/month. RSS reader." },
-    { question: "What is Inoreader?", answer: "RSS feed reader. Power user features. Rules and filtering." },
-    { question: "Inoreader vs Feedly?", answer: "Both RSS readers. Inoreader more power features. Feedly cleaner UI." }
+    { question: "Is Inoreader free?", answer: "Inoreader has a free plan with up to 150 feeds. Pro plans start at $6/month for unlimited feeds and advanced features like rules and filtering." },
+    { question: "What is Inoreader?", answer: "Inoreader is a powerful RSS feed reader for news junkies and researchers. It offers advanced filtering, rules automation, and the ability to follow newsletters and social feeds." },
+    { question: "Inoreader vs Feedly?", answer: "Both are excellent RSS readers. Inoreader has more power user features like rules and better search. Feedly has a cleaner interface. Power users often prefer Inoreader." }
   ],
   "instatus": [
-    { question: "Is Instatus free?", answer: "Free plan available. Pro from $20/month. Status pages." },
-    { question: "What is Instatus?", answer: "Beautiful status pages. Quick setup. Multiple integrations." },
-    { question: "Instatus vs Statuspage?", answer: "Instatus more affordable. Statuspage from Atlassian. Instatus for startups." }
+    { question: "Is Instatus free?", answer: "Instatus has a free plan for a single status page. Pro plans start at $20/month for multiple pages and more customization options." },
+    { question: "What is Instatus?", answer: "Instatus lets you create beautiful status pages to communicate service availability to your users. It integrates with monitoring tools to automatically update status based on incidents." },
+    { question: "Instatus vs Statuspage?", answer: "Instatus is more affordable and faster to set up. Statuspage from Atlassian is more established but pricier. Instatus is excellent for startups and smaller companies." }
   ],
   "ionic": [
-    { question: "Is Ionic free?", answer: "Open source framework free. Enterprise services paid. Mobile framework." },
-    { question: "What is Ionic?", answer: "Cross-platform mobile framework. Web technologies for native apps. Large ecosystem." },
-    { question: "Ionic vs React Native?", answer: "Ionic uses web views. React Native native components. React Native more performant." }
+    { question: "Is Ionic free?", answer: "The Ionic framework is free and open source. Ionic offers paid services like Appflow for builds and CI/CD, but the framework itself costs nothing." },
+    { question: "What is Ionic?", answer: "Ionic is a framework for building cross-platform mobile apps using web technologies like HTML, CSS, and JavaScript. One codebase can target iOS, Android, and web." },
+    { question: "Ionic vs React Native?", answer: "Ionic uses web views while React Native compiles to native components. React Native typically offers better performance. Ionic is easier for web developers to pick up." }
   ],
   "iterm2": [
-    { question: "Is iTerm2 free?", answer: "Completely free. Open source. Mac terminal." },
-    { question: "What is iTerm2?", answer: "Terminal emulator for Mac. Split panes, search, profiles. Mac developer essential." },
-    { question: "iTerm2 vs Terminal?", answer: "iTerm2 far more features. Terminal is built-in. iTerm2 for serious use." }
+    { question: "Is iTerm2 free?", answer: "iTerm2 is completely free and open source. It's been the go-to terminal replacement for Mac users for many years with no cost." },
+    { question: "What is iTerm2?", answer: "iTerm2 is a terminal emulator for macOS that replaces the built-in Terminal app. It adds split panes, search, autocomplete, and extensive customization for power users." },
+    { question: "iTerm2 vs Terminal?", answer: "iTerm2 offers far more features than the built-in Terminal app. Split panes, better search, profiles, and triggers make it essential for developers and sysadmins on Mac." }
   ],
   "jam": [
-    { question: "Is Jam free?", answer: "Free plan available. Pro plans for teams. Bug reporting." },
-    { question: "What is Jam?", answer: "Bug reporting tool. One-click capture with all context. Developer friendly." },
-    { question: "Jam vs Loom?", answer: "Jam for bug reports. Loom for general video. Jam for developer context." }
+    { question: "Is Jam free?", answer: "Jam has a free plan for individuals and small teams. Pro plans unlock team features and integrations for bug reporting workflows." },
+    { question: "What is Jam?", answer: "Jam is a bug reporting tool that captures everything developers need in one click: console logs, network requests, device info, and a video replay of what happened." },
+    { question: "Jam vs Loom?", answer: "Jam is specifically designed for bug reports with automatic technical context. Loom is for general video communication. Use Jam when filing bugs, Loom for explaining things." }
   ],
   "jotform": [
-    { question: "Is Jotform free?", answer: "Free plan with 5 forms. Bronze from $34/month. Form builder." },
-    { question: "What is Jotform?", answer: "Online form builder. Many templates. Integrations and payments." },
-    { question: "Jotform vs Typeform?", answer: "Jotform more traditional. Typeform more conversational. Jotform for complex forms." }
+    { question: "Is Jotform free?", answer: "Jotform's free plan includes 5 forms with up to 100 monthly submissions. Bronze plans start at $34/month for more forms and submissions." },
+    { question: "What is Jotform?", answer: "Jotform is an online form builder with thousands of templates and a drag-and-drop interface. It handles payments, integrations, and can generate PDFs from submissions." },
+    { question: "Jotform vs Typeform?", answer: "Jotform offers more traditional multi-field forms while Typeform focuses on one-question-at-a-time conversational forms. Jotform is better for complex forms with many fields." }
   ],
   "jsonbin": [
-    { question: "Is JSONbin free?", answer: "Free tier available. Pro from $5/month. JSON storage." },
-    { question: "What is JSONbin?", answer: "Simple JSON storage API. Store and retrieve JSON. Good for prototypes." },
-    { question: "JSONbin alternatives?", answer: "Firebase, Supabase for more features. JSONbin for simple storage." }
+    { question: "Is JSONbin free?", answer: "JSONbin has a free tier for small projects. Pro plans start at $5/month for more storage and API requests." },
+    { question: "What is JSONbin?", answer: "JSONbin is a simple JSON storage service with a REST API. It's great for prototypes, small projects, and tutorials where you need a quick backend without setting up a database." },
+    { question: "JSONbin alternatives?", answer: "For more robust needs, consider Firebase or Supabase which offer real databases. JSONbin is perfect for quick prototypes but you'll outgrow it for production applications." }
   ],
   "jupyter": [
-    { question: "Is Jupyter free?", answer: "Open source and free. MIT license. Computational notebooks." },
-    { question: "What is Jupyter?", answer: "Interactive notebooks for code. Data science standard. Many language kernels." },
-    { question: "Jupyter vs VS Code?", answer: "Jupyter for notebooks. VS Code for files. VS Code has notebook support too." }
+    { question: "Is Jupyter free?", answer: "Jupyter is completely free and open source. You can install it locally or use free hosted versions like Google Colab at no cost." },
+    { question: "What is Jupyter?", answer: "Jupyter provides interactive notebooks that combine code, visualizations, and narrative text. It's the standard tool for data science, research, and exploratory programming." },
+    { question: "Jupyter vs VS Code?", answer: "Jupyter is purpose-built for notebooks and interactive exploration. VS Code is a general editor that also supports notebooks. Use Jupyter for data science, VS Code for software development." }
   ],
   "k3s": [
-    { question: "Is K3s free?", answer: "Open source and free. From Rancher. Lightweight Kubernetes." },
-    { question: "What is K3s?", answer: "Lightweight Kubernetes distribution. Edge and IoT focused. Easy installation." },
-    { question: "K3s vs K8s?", answer: "K3s much lighter. Full K8s for complex needs. K3s for simplicity." }
+    { question: "Is K3s free?", answer: "K3s is completely free and open source from Rancher (now SUSE). You can run it on any infrastructure without licensing costs." },
+    { question: "What is K3s?", answer: "K3s is a lightweight Kubernetes distribution designed for edge computing and IoT. It has a smaller footprint than full Kubernetes while remaining fully certified and compatible." },
+    { question: "K3s vs K8s?", answer: "K3s is a lighter version of Kubernetes with a smaller binary and lower resource requirements. Use K3s for edge, IoT, or simple deployments. Use full K8s for complex enterprise needs." }
   ],
   "kanbanize": [
-    { question: "Is Kanbanize free?", answer: "Free trial available. Plans from $149/month. Kanban software." },
-    { question: "What is Kanbanize?", answer: "Enterprise Kanban platform. Portfolio management. Scaled agile." },
-    { question: "Kanbanize vs Trello?", answer: "Kanbanize more enterprise. Trello simpler. Kanbanize for scaling." }
+    { question: "Is Kanbanize free?", answer: "Kanbanize offers a free trial but no permanent free tier. Plans start at $149/month for teams that need enterprise Kanban management." },
+    { question: "What is Kanbanize?", answer: "Kanbanize is an enterprise Kanban platform for portfolio and project management. It supports scaled agile with features like portfolio Kanban, forecasting, and workflow analytics." },
+    { question: "Kanbanize vs Trello?", answer: "Kanbanize is designed for scaling Kanban across organizations. Trello is simpler and free for basic use. Choose Kanbanize when you need enterprise features and analytics." }
   ],
   "kartra": [
-    { question: "Is Kartra free?", answer: "14-day trial for $1. Plans from $119/month. All-in-one marketing." },
-    { question: "What is Kartra?", answer: "All-in-one marketing platform. Funnels, email, memberships. For online businesses." },
-    { question: "Kartra vs ClickFunnels?", answer: "Both funnel builders. Kartra more all-in-one. Compare feature sets." }
+    { question: "Is Kartra free?", answer: "Kartra offers a 14-day trial for $1. Regular plans start at $119/month for the all-in-one marketing platform." },
+    { question: "What is Kartra?", answer: "Kartra is an all-in-one marketing platform that combines sales funnels, email marketing, membership sites, and affiliate management in one system for online businesses." },
+    { question: "Kartra vs ClickFunnels?", answer: "Both are funnel builders for online businesses. Kartra includes more built-in features like email and memberships. Compare based on which features you actually need." }
   ],
   "kinde": [
-    { question: "Is Kinde free?", answer: "Free up to 7,500 MAU. Scalable pricing after. Auth platform." },
-    { question: "What is Kinde?", answer: "Modern auth platform. Feature flags included. Developer friendly." },
-    { question: "Kinde vs Clerk?", answer: "Both modern auth. Similar offerings. Compare free tiers and features." }
+    { question: "Is Kinde free?", answer: "Kinde is free for up to 7,500 monthly active users, which is one of the most generous free tiers in the auth space." },
+    { question: "What is Kinde?", answer: "Kinde is a modern authentication platform that includes feature flags as a built-in feature. It's designed to be developer-friendly with quick integration." },
+    { question: "Kinde vs Clerk?", answer: "Both are modern auth platforms competing for the same market. Compare their free tier limits, UI components, and specific features for your needs." }
   ],
   "kissmetrics": [
-    { question: "Is Kissmetrics free?", answer: "No free tier. Plans from $299/month. Customer analytics." },
-    { question: "What is Kissmetrics?", answer: "Behavioral analytics platform. Track customer journeys. Conversion focused." },
-    { question: "Kissmetrics vs Mixpanel?", answer: "Both behavioral analytics. Mixpanel more popular. Compare pricing." }
+    { question: "Is Kissmetrics free?", answer: "Kissmetrics doesn't have a free tier. Plans start at $299/month, positioning it for mid-market and enterprise companies." },
+    { question: "What is Kissmetrics?", answer: "Kissmetrics is a behavioral analytics platform focused on tracking customer journeys and conversions. It ties analytics to individual users rather than anonymous sessions." },
+    { question: "Kissmetrics vs Mixpanel?", answer: "Both are behavioral analytics tools. Mixpanel is more popular with a better free tier. Compare pricing and specific features for your conversion tracking needs." }
   ],
   "kodeco": [
-    { question: "Is Kodeco free?", answer: "Some free content. Pro from $19.99/month. Mobile dev tutorials." },
-    { question: "What is Kodeco?", answer: "Mobile development tutorials. Formerly raywenderlich.com. iOS, Android, Flutter." },
-    { question: "Kodeco worth it?", answer: "High quality tutorials. Great for mobile developers. Worth for mobile focus." }
+    { question: "Is Kodeco free?", answer: "Kodeco offers some free tutorials, but most content requires a Pro subscription starting at $19.99/month for full access to all courses and books." },
+    { question: "What is Kodeco?", answer: "Kodeco (formerly raywenderlich.com) is a learning platform for mobile developers. It offers high-quality tutorials and courses for iOS, Android, and Flutter development." },
+    { question: "Kodeco worth it?", answer: "Kodeco produces some of the highest quality mobile development tutorials available. If you're serious about iOS, Android, or Flutter development, the subscription is well worth it." }
   ],
   "komodo": [
-    { question: "Is Komodo Edit free?", answer: "Komodo Edit is free. IDE version paid. Code editor." },
-    { question: "What is Komodo?", answer: "Code editor and IDE. Multi-language support. From ActiveState." },
-    { question: "Komodo vs VS Code?", answer: "VS Code more popular and extensible. Komodo still capable. Most choose VS Code." }
+    { question: "Is Komodo Edit free?", answer: "Komodo Edit is completely free. Komodo IDE with advanced features requires a paid license, but the basic editor costs nothing." },
+    { question: "What is Komodo?", answer: "Komodo is a code editor and IDE from ActiveState that supports multiple programming languages. It offers syntax highlighting, autocompletion, and debugging tools." },
+    { question: "Komodo vs VS Code?", answer: "VS Code has become the dominant free editor with a massive extension ecosystem. Komodo is still capable but most developers have migrated to VS Code." }
   ],
   "komodor": [
-    { question: "Is Komodor free?", answer: "Free tier for small clusters. Paid for more. Kubernetes troubleshooting." },
-    { question: "What is Komodor?", answer: "Kubernetes troubleshooting platform. Track changes, debug issues. Visual timeline." },
-    { question: "Komodor worth it?", answer: "Great for K8s teams. Reduces debugging time. Worth for production clusters." }
+    { question: "Is Komodor free?", answer: "Komodor has a free tier for small Kubernetes clusters. Paid plans unlock more features for larger production environments." },
+    { question: "What is Komodor?", answer: "Komodor is a Kubernetes troubleshooting platform that tracks changes, correlates events, and helps you quickly identify why something broke in your cluster." },
+    { question: "Komodor worth it?", answer: "For teams running Kubernetes in production, Komodor can significantly reduce debugging time. It's worth it for teams that spend too much time on K8s troubleshooting." }
   ],
   "koyeb": [
-    { question: "Is Koyeb free?", answer: "Free tier available. Pay as you go. Serverless platform." },
-    { question: "What is Koyeb?", answer: "Serverless platform. Deploy anywhere globally. Docker and buildpacks." },
-    { question: "Koyeb vs Railway?", answer: "Both modern PaaS. Similar simplicity. Compare pricing and features." }
+    { question: "Is Koyeb free?", answer: "Koyeb has a free tier that includes one nano service. Paid plans use pay-as-you-go pricing based on actual resource consumption." },
+    { question: "What is Koyeb?", answer: "Koyeb is a serverless platform for deploying apps globally. It supports Docker containers and buildpacks, deploying your code to edge locations close to users." },
+    { question: "Koyeb vs Railway?", answer: "Both are modern PaaS platforms with simple deployment experiences. Compare their free tiers and pricing to see which works better for your specific app." }
   ],
   "ktlint": [
-    { question: "Is ktlint free?", answer: "Open source and free. MIT license. Kotlin linter." },
-    { question: "What is ktlint?", answer: "Kotlin linter and formatter. Code style enforcement. Gradle integration." },
-    { question: "ktlint vs detekt?", answer: "ktlint for formatting. detekt for code analysis. Often used together." }
+    { question: "Is ktlint free?", answer: "ktlint is completely free and open source under the MIT license. You can use it in any project without cost." },
+    { question: "What is ktlint?", answer: "ktlint is a Kotlin linter and formatter that enforces code style consistency. It integrates with Gradle, Maven, and Git hooks to keep your Kotlin code clean." },
+    { question: "ktlint vs detekt?", answer: "ktlint focuses on formatting and style. detekt does deeper code analysis for bugs and code smells. Many Kotlin projects use both tools together." }
   ],
   "lando": [
-    { question: "Is Lando free?", answer: "Open source and free. Paid support available. Local dev environment." },
-    { question: "What is Lando?", answer: "Local development environment. Docker-based. Multi-framework support." },
-    { question: "Lando vs Docker Compose?", answer: "Lando is simpler. Docker Compose more flexible. Lando for convenience." }
+    { question: "Is Lando free?", answer: "Lando is free and open source. Paid support subscriptions are available but the tool itself costs nothing to use." },
+    { question: "What is Lando?", answer: "Lando is a local development environment tool that uses Docker containers. It supports many frameworks and makes it easy to spin up consistent dev environments." },
+    { question: "Lando vs Docker Compose?", answer: "Lando provides higher-level abstractions over Docker with sensible defaults for common frameworks. Docker Compose offers more flexibility but requires more configuration." }
   ],
   "launchdarkly": [
-    { question: "Is LaunchDarkly free?", answer: "Free tier for small projects. Pro from $10/seat/month. Feature flags." },
-    { question: "What is LaunchDarkly?", answer: "Feature flag management. Controlled rollouts. A/B testing." },
-    { question: "LaunchDarkly vs Statsig?", answer: "LaunchDarkly more established. Statsig better free tier. Both excellent." }
+    { question: "Is LaunchDarkly free?", answer: "LaunchDarkly has a free tier for small projects with limited feature flags. Pro plans start at $10 per seat per month for teams." },
+    { question: "What is LaunchDarkly?", answer: "LaunchDarkly is the leading feature flag management platform. It lets you control feature releases, run experiments, and gradually roll out changes without deploying new code." },
+    { question: "LaunchDarkly vs Statsig?", answer: "LaunchDarkly is more established with stronger enterprise features. Statsig has a more generous free tier and better experiment analytics. Both are excellent choices." }
   ],
   "letterboxd": [
-    { question: "Is Letterboxd free?", answer: "Free plan available. Pro from $19/year. Movie social network." },
-    { question: "What is Letterboxd?", answer: "Social network for film lovers. Track, rate, review movies. Lists and stats." },
-    { question: "Letterboxd Pro worth it?", answer: "Removes ads, adds features. Worth for movie enthusiasts." }
+    { question: "Is Letterboxd free?", answer: "Letterboxd is free to use for logging and reviewing films. Pro subscriptions starting at $19/year remove ads and add stats features." },
+    { question: "What is Letterboxd?", answer: "Letterboxd is a social network for film lovers. You can log movies you've watched, rate them, write reviews, create lists, and see what friends are watching." },
+    { question: "Letterboxd Pro worth it?", answer: "Pro removes ads and adds detailed statistics about your viewing habits. If you're a movie enthusiast who uses the platform regularly, the annual fee is very reasonable." }
   ],
   "liveblocks": [
-    { question: "Is Liveblocks free?", answer: "Free tier available. Pro from $99/month. Real-time collaboration." },
-    { question: "What is Liveblocks?", answer: "Real-time collaboration infrastructure. Presence, storage, comments. Build collaborative apps." },
-    { question: "Liveblocks vs PartyKit?", answer: "Liveblocks higher level. PartyKit more flexible. Liveblocks for quick integration." }
+    { question: "Is Liveblocks free?", answer: "Liveblocks has a free tier for getting started. Pro plans start at $99/month for production applications with higher usage limits." },
+    { question: "What is Liveblocks?", answer: "Liveblocks provides infrastructure for building real-time collaborative applications. It handles presence, storage, and comments so you can add multiplayer features to your app." },
+    { question: "Liveblocks vs PartyKit?", answer: "Liveblocks offers higher-level collaborative primitives out of the box. PartyKit gives you more flexibility with lower-level WebSocket infrastructure. Liveblocks is faster to integrate." }
   ],
   "logflare": [
-    { question: "Is Logflare free?", answer: "Free tier available. Pro from $12/month. Log management." },
-    { question: "What is Logflare?", answer: "Log management platform. BigQuery backend. Real-time search." },
-    { question: "Logflare vs Datadog?", answer: "Logflare much cheaper. Datadog more features. Logflare for cost savings." }
+    { question: "Is Logflare free?", answer: "Logflare has a free tier for small projects. Pro plans start at $12/month for more data retention and features." },
+    { question: "What is Logflare?", answer: "Logflare is a log management platform backed by BigQuery. It provides real-time log search and long-term storage with SQL querying capabilities." },
+    { question: "Logflare vs Datadog?", answer: "Logflare is significantly cheaper than Datadog. Datadog offers more features and broader observability. Logflare is great for teams focused on cost savings." }
   ],
   "logseq": [
-    { question: "Is Logseq free?", answer: "Open source and free. Sync service paid. Knowledge management." },
-    { question: "What is Logseq?", answer: "Outliner for knowledge. Local-first, privacy focused. Graph view included." },
-    { question: "Logseq vs Obsidian?", answer: "Logseq outliner-based. Obsidian document-based. Personal preference." }
+    { question: "Is Logseq free?", answer: "Logseq is free and open source. A paid sync service is available, but you can use the app completely free with local or your own sync solution." },
+    { question: "What is Logseq?", answer: "Logseq is a local-first outliner for knowledge management. It stores everything as plain Markdown files, offers bidirectional linking, and includes a graph view of your notes." },
+    { question: "Logseq vs Obsidian?", answer: "Logseq uses an outliner format while Obsidian uses documents. Both are local-first with graph views. Try both to see which thinking style matches yours." }
   ],
   "looker": [
-    { question: "Is Looker free?", answer: "No free tier. Enterprise pricing only. BI platform." },
-    { question: "What is Looker?", answer: "Enterprise BI platform. Now Google Cloud. Semantic layer approach." },
-    { question: "Looker vs Tableau?", answer: "Looker more data modeling focused. Tableau more visualization. Enterprise choice." }
+    { question: "Is Looker free?", answer: "Looker doesn't have a free tier. It uses enterprise pricing based on users and data volume, typically starting at thousands per month." },
+    { question: "What is Looker?", answer: "Looker is an enterprise BI platform now part of Google Cloud. It uses LookML to create a semantic data layer that ensures consistent metrics across an organization." },
+    { question: "Looker vs Tableau?", answer: "Looker emphasizes governed data modeling while Tableau focuses on visualization flexibility. Looker is better for data consistency; Tableau for visual exploration." }
   ],
   "loqate": [
-    { question: "Is Loqate free?", answer: "Free trial. Pay per lookup. Address verification." },
-    { question: "What is Loqate?", answer: "Address verification API. Global coverage. Data quality service." },
-    { question: "Loqate vs SmartyStreets?", answer: "Both address verification. Compare coverage and pricing for your markets." }
+    { question: "Is Loqate free?", answer: "Loqate offers a free trial with limited lookups. Production pricing is pay-per-lookup based on your verification volume." },
+    { question: "What is Loqate?", answer: "Loqate provides address verification and geocoding APIs with global coverage. It validates, corrects, and standardizes addresses to improve data quality and delivery success." },
+    { question: "Loqate vs SmartyStreets?", answer: "Both are address verification services. Compare their coverage for your target markets and pricing for your expected volume to determine the better fit." }
   ],
   "lottie": [
-    { question: "Is Lottie free?", answer: "Open source and free. From Airbnb. Animation format." },
-    { question: "What is Lottie?", answer: "Animation format for apps. Export from After Effects. Small file sizes." },
-    { question: "Lottie vs GIF?", answer: "Lottie much smaller. Vector-based scaling. Lottie for animations." }
+    { question: "Is Lottie free?", answer: "Lottie is free and open source, originally created by Airbnb. You can use the libraries and format without any licensing costs." },
+    { question: "What is Lottie?", answer: "Lottie is an animation format that renders After Effects animations in real-time on web and mobile. It produces much smaller files than GIFs or videos with perfect quality at any size." },
+    { question: "Lottie vs GIF?", answer: "Lottie files are much smaller than GIFs, scale perfectly to any resolution, and support interactivity. Use Lottie for UI animations and illustrations instead of GIFs whenever possible." }
   ],
   "mailspring": [
-    { question: "Is Mailspring free?", answer: "Free version available. Pro at $8/month. Email client." },
-    { question: "What is Mailspring?", answer: "Modern email client. Multi-account support. Open source base." },
-    { question: "Mailspring vs Thunderbird?", answer: "Mailspring more modern. Thunderbird more established. Both free options." }
+    { question: "Is Mailspring free?", answer: "Mailspring has a free version with core features. Mailspring Pro at $8/month adds snooze, send later, and read receipts." },
+    { question: "What is Mailspring?", answer: "Mailspring is a modern email client built on an open source foundation. It supports multiple accounts, unified inbox, and works on Mac, Windows, and Linux." },
+    { question: "Mailspring vs Thunderbird?", answer: "Mailspring has a more modern interface and faster performance. Thunderbird is fully open source with more extensions. Both are solid free email clients." }
   ],
   "mailtrap": [
-    { question: "Is Mailtrap free?", answer: "Free plan available. Pro from $15/month. Email testing." },
-    { question: "What is Mailtrap?", answer: "Email testing platform. Capture test emails. Preview before sending." },
-    { question: "Mailtrap vs Mailhog?", answer: "Mailtrap cloud hosted. Mailhog self-hosted free. Mailtrap for convenience." }
+    { question: "Is Mailtrap free?", answer: "Mailtrap has a free plan for testing with 100 emails per month. Pro plans start at $15/month for higher volumes and email sending." },
+    { question: "What is Mailtrap?", answer: "Mailtrap is an email testing platform that captures emails from your staging environment. You can preview how emails render before sending them to real users." },
+    { question: "Mailtrap vs Mailhog?", answer: "Mailtrap is cloud-hosted with a nice UI and team features. Mailhog is free and self-hosted. Use Mailtrap for convenience, Mailhog for complete control." }
   ],
   "mantine": [
-    { question: "Is Mantine free?", answer: "Open source and free. MIT license. React components." },
-    { question: "What is Mantine?", answer: "React component library. Full-featured, well-designed. Many hooks included." },
-    { question: "Mantine vs Chakra UI?", answer: "Both React component libraries. Mantine more batteries-included. Both excellent." }
+    { question: "Is Mantine free?", answer: "Mantine is completely free and open source under the MIT license. You can use it in any project without cost." },
+    { question: "What is Mantine?", answer: "Mantine is a comprehensive React component library with over 100 components and 50 hooks. It's well-designed, fully accessible, and includes dark mode support." },
+    { question: "Mantine vs Chakra UI?", answer: "Both are excellent React component libraries. Mantine comes with more components and hooks out of the box while Chakra is more minimal. Both have great developer experience." }
   ],
   "mapbox": [
-    { question: "Is Mapbox free?", answer: "Generous free tier. Pay as you go after. Mapping platform." },
-    { question: "What is Mapbox?", answer: "Custom maps platform. Beautiful styles, navigation. Developer focused." },
-    { question: "Mapbox vs Google Maps?", answer: "Mapbox more customizable. Google Maps more data. Mapbox for design control." }
+    { question: "Is Mapbox free?", answer: "Mapbox has a generous free tier that includes 50,000 map loads per month. After that, you pay based on usage with volume discounts." },
+    { question: "What is Mapbox?", answer: "Mapbox is a mapping platform for developers who want custom, beautiful maps. It offers navigation, geocoding, and highly customizable map styles." },
+    { question: "Mapbox vs Google Maps?", answer: "Mapbox offers more customization and better pricing for high-volume use. Google Maps has more POI data and street view. Choose Mapbox when design control matters." }
   ],
   "marketo": [
-    { question: "Is Marketo free?", answer: "No free tier. Enterprise pricing only. Marketing automation." },
-    { question: "What is Marketo?", answer: "Enterprise marketing automation. Part of Adobe. Lead management." },
-    { question: "Marketo vs HubSpot?", answer: "Marketo more enterprise. HubSpot easier to use. Marketo for complex needs." }
+    { question: "Is Marketo free?", answer: "Marketo doesn't offer a free tier. It's an enterprise product with pricing that typically starts in the thousands per month." },
+    { question: "What is Marketo?", answer: "Marketo is an enterprise marketing automation platform now part of Adobe. It handles lead management, email marketing, and revenue attribution at scale." },
+    { question: "Marketo vs HubSpot?", answer: "Marketo is more complex and powerful for enterprise needs. HubSpot is easier to use and better for SMBs. Choose based on your team's size and technical capacity." }
   ],
   "matomo": [
-    { question: "Is Matomo free?", answer: "On-premise is free. Cloud from $19/month. Web analytics." },
-    { question: "What is Matomo?", answer: "Privacy-focused analytics. Self-hosted option. Google Analytics alternative." },
-    { question: "Matomo vs Google Analytics?", answer: "Matomo privacy-focused. GA more features. Matomo for GDPR compliance." }
+    { question: "Is Matomo free?", answer: "Matomo On-Premise is completely free to self-host. Matomo Cloud starts at $19/month for managed hosting with no data limits." },
+    { question: "What is Matomo?", answer: "Matomo is a privacy-focused web analytics platform and the leading open source alternative to Google Analytics. You own all your data." },
+    { question: "Matomo vs Google Analytics?", answer: "Matomo gives you full data ownership and GDPR compliance by design. Google Analytics has more features but shares data with Google. Matomo for privacy, GA for convenience." }
   ],
   "mattermost": [
-    { question: "Is Mattermost free?", answer: "Team Edition free. Enterprise from $10/user/month. Team chat." },
-    { question: "What is Mattermost?", answer: "Open source team chat. Self-hosted Slack alternative. Enterprise features." },
-    { question: "Mattermost vs Slack?", answer: "Mattermost self-hosted. Slack cloud only. Mattermost for control." }
+    { question: "Is Mattermost free?", answer: "Mattermost Team Edition is free and open source for unlimited users. Enterprise plans start at $10 per user per month." },
+    { question: "What is Mattermost?", answer: "Mattermost is a self-hosted team collaboration platform. It's an open source alternative to Slack that you can run on your own servers for complete data control." },
+    { question: "Mattermost vs Slack?", answer: "Mattermost can be self-hosted giving you data sovereignty. Slack is cloud-only but more polished. Choose Mattermost if you need on-premises deployment or strict compliance." }
   ],
   "maven": [
-    { question: "Is Maven free?", answer: "Open source and free. Apache project. Java build tool." },
-    { question: "What is Maven?", answer: "Java build automation. Dependency management. Standard in Java world." },
-    { question: "Maven vs Gradle?", answer: "Maven XML-based. Gradle more flexible. Gradle growing in popularity." }
+    { question: "Is Maven free?", answer: "Maven is completely free and open source as an Apache Software Foundation project. It's been free for over 20 years." },
+    { question: "What is Maven?", answer: "Maven is the standard build automation tool for Java projects. It handles dependency management, project structure, and the entire build lifecycle." },
+    { question: "Maven vs Gradle?", answer: "Maven uses XML configuration and is more standardized. Gradle is more flexible with Groovy/Kotlin DSL. Gradle is growing in popularity but Maven remains the safer choice." }
   ],
   "medusa": [
-    { question: "Is Medusa free?", answer: "Open source and free. Self-hosted commerce. Cloud coming." },
-    { question: "What is Medusa?", answer: "Open source headless commerce. Shopify alternative. Node.js based." },
-    { question: "Medusa vs Shopify?", answer: "Medusa free and flexible. Shopify hosted and easier. Medusa for customization." }
+    { question: "Is Medusa free?", answer: "Medusa is completely free and open source. You self-host it at no cost. A managed cloud service is in development." },
+    { question: "What is Medusa?", answer: "Medusa is an open source headless commerce platform built with Node.js. It's a developer-friendly alternative to Shopify that you can fully customize." },
+    { question: "Medusa vs Shopify?", answer: "Medusa is free and gives you complete customization control. Shopify is hosted and easier but costs money. Choose Medusa for unique commerce experiences." }
   ],
   "memberstack": [
-    { question: "Is Memberstack free?", answer: "No free tier. Plans from $29/month. Membership solution." },
-    { question: "What is Memberstack?", answer: "Add memberships to any site. Webflow integration. Gated content." },
-    { question: "Memberstack vs Memberful?", answer: "Memberstack for Webflow. Memberful more general. Choose based on site builder." }
+    { question: "Is Memberstack free?", answer: "Memberstack doesn't have a free tier. Plans start at $29/month plus a small percentage of membership revenue." },
+    { question: "What is Memberstack?", answer: "Memberstack adds membership functionality to any website, especially Webflow. It handles user authentication, gated content, and payment processing." },
+    { question: "Memberstack vs Memberful?", answer: "Memberstack integrates deeply with Webflow and no-code tools. Memberful is more general purpose. Choose based on your website platform." }
   ],
   "mentimeter": [
-    { question: "Is Mentimeter free?", answer: "Free plan with 2 question slides. Pro from $11.99/month. Interactive presentations." },
-    { question: "What is Mentimeter?", answer: "Interactive presentation tool. Live polls, Q&A, quizzes. Engage audiences." },
-    { question: "Mentimeter vs Slido?", answer: "Both interactive tools. Similar features. Compare pricing and UI." }
+    { question: "Is Mentimeter free?", answer: "Mentimeter's free plan allows 2 question slides per presentation. Pro plans start at $11.99/month for unlimited questions." },
+    { question: "What is Mentimeter?", answer: "Mentimeter makes presentations interactive with live polls, Q&A, quizzes, and word clouds. Audiences participate using their phones in real-time." },
+    { question: "Mentimeter vs Slido?", answer: "Both make presentations interactive with similar features. Compare their pricing and UI to see which feels better for your presentation style." }
   ],
   "metabase": [
-    { question: "Is Metabase free?", answer: "Open source version free. Cloud from $85/month. BI tool." },
-    { question: "What is Metabase?", answer: "Open source BI tool. Query without SQL. Beautiful dashboards." },
-    { question: "Metabase vs Looker?", answer: "Metabase simpler and cheaper. Looker more enterprise. Metabase for startups." }
+    { question: "Is Metabase free?", answer: "Metabase Open Source is completely free to self-host. Metabase Cloud starts at $85/month for managed hosting." },
+    { question: "What is Metabase?", answer: "Metabase is an open source business intelligence tool that lets anyone query data without writing SQL. It creates beautiful dashboards anyone can build." },
+    { question: "Metabase vs Looker?", answer: "Metabase is simpler and much more affordable for small teams. Looker is more powerful for enterprise data modeling. Metabase is perfect for startups." }
   ],
   "otter": [
-    { question: "Is Otter free?", answer: "Basic plan free with 300 mins/month. Pro from $10/month. AI meeting transcription." },
-    { question: "What is Otter?", answer: "AI meeting transcription and notes. Records, transcribes, summarizes meetings automatically." },
-    { question: "Otter vs Fireflies?", answer: "Both AI transcription. Otter better UX. Fireflies more integrations. Similar pricing." }
+    { question: "Is Otter free?", answer: "Otter's free plan includes 300 transcription minutes per month. Pro plans start at $10/month for more minutes and features." },
+    { question: "What is Otter?", answer: "Otter.ai is an AI meeting assistant that records, transcribes, and summarizes your meetings automatically. It integrates with Zoom, Google Meet, and Teams." },
+    { question: "Otter vs Fireflies?", answer: "Both are AI transcription services with similar core features. Otter has a cleaner interface while Fireflies has more integrations. Similar pricing makes either a good choice." }
   ],
   "userpilot": [
-    { question: "Is Userpilot free?", answer: "14-day free trial. Starter from $249/month. Product adoption platform." },
-    { question: "What is Userpilot?", answer: "Product adoption and onboarding platform. In-app guides, surveys, analytics. No code." },
-    { question: "Userpilot vs Appcues?", answer: "Similar features. Userpilot more affordable. Both excellent for user onboarding." }
+    { question: "Is Userpilot free?", answer: "Userpilot offers a 14-day free trial. Starter plans begin at $249/month, positioning it for growth-stage companies." },
+    { question: "What is Userpilot?", answer: "Userpilot is a product adoption platform for building in-app experiences without code. It handles onboarding flows, feature announcements, and user surveys." },
+    { question: "Userpilot vs Appcues?", answer: "Both platforms offer similar user onboarding features. Userpilot tends to be more affordable. Either is excellent for improving user activation." }
   ],
   "semaphore": [
-    { question: "Is Semaphore free?", answer: "Free tier available. Pro from $29/month. CI/CD platform." },
-    { question: "What is Semaphore?", answer: "Fast CI/CD platform. Parallel execution, Docker support. Test and deploy code." },
-    { question: "Semaphore vs CircleCI?", answer: "Semaphore faster parallelization. CircleCI more popular. Both solid CI/CD." }
+    { question: "Is Semaphore free?", answer: "Semaphore has a free tier for open source projects. Pro plans start at $29/month with parallel execution and faster builds." },
+    { question: "What is Semaphore?", answer: "Semaphore is a fast CI/CD platform known for excellent parallelization. It runs your tests and deployments with minimal configuration." },
+    { question: "Semaphore vs CircleCI?", answer: "Semaphore often runs builds faster due to better parallelization. CircleCI is more popular with a larger ecosystem. Both are solid CI/CD choices." }
   ],
   "shortcut": [
-    { question: "Is Shortcut free?", answer: "Free for up to 10 users. Pro from $8.50/user/month. Project management." },
-    { question: "What is Shortcut?", answer: "Project management for software teams. Stories, epics, iterations. Built for devs." },
-    { question: "Shortcut vs Jira?", answer: "Shortcut simpler and faster. Jira more features. Shortcut for small-medium teams." }
+    { question: "Is Shortcut free?", answer: "Shortcut is free for teams up to 10 members. Pro plans start at $8.50 per user per month for larger teams." },
+    { question: "What is Shortcut?", answer: "Shortcut (formerly Clubhouse) is project management built specifically for software teams. It uses stories, epics, and iterations in a developer-friendly interface." },
+    { question: "Shortcut vs Jira?", answer: "Shortcut is simpler and faster with less configuration overhead. Jira has more features but can be overwhelming. Shortcut works well for small to medium teams." }
   ],
   "singlestore": [
-    { question: "Is SingleStore free?", answer: "Free tier available. Pay-per-use pricing. Distributed SQL database." },
-    { question: "What is SingleStore?", answer: "Unified database for transactions and analytics. Real-time processing. Scales horizontally." },
-    { question: "SingleStore vs MySQL?", answer: "SingleStore for real-time analytics. MySQL general purpose. SingleStore for scale." }
+    { question: "Is SingleStore free?", answer: "SingleStore has a free tier for development and small workloads. Production pricing is pay-per-use based on compute consumption." },
+    { question: "What is SingleStore?", answer: "SingleStore is a distributed SQL database that handles both transactions and analytics in real-time. It scales horizontally for massive workloads." },
+    { question: "SingleStore vs MySQL?", answer: "SingleStore is designed for real-time analytics at scale while MySQL is a general-purpose database. Use SingleStore when you need high-speed analytics on live data." }
   ],
   "sourcetree": [
-    { question: "Is Sourcetree free?", answer: "Yes, completely free. By Atlassian. Git GUI client." },
-    { question: "What is Sourcetree?", answer: "Free Git GUI client by Atlassian. Visual Git management. Mac and Windows." },
-    { question: "Sourcetree vs GitKraken?", answer: "Sourcetree free, GitKraken freemium. Both great GUIs. GitKraken more polished." }
+    { question: "Is Sourcetree free?", answer: "Sourcetree is completely free for everyone. Atlassian makes it available at no cost with no premium tier." },
+    { question: "What is Sourcetree?", answer: "Sourcetree is a free Git GUI client from Atlassian for Mac and Windows. It provides visual branch management and integrates well with Bitbucket and GitHub." },
+    { question: "Sourcetree vs GitKraken?", answer: "Sourcetree is completely free while GitKraken charges for private repos. GitKraken has a more polished interface but Sourcetree does the job well." }
   ],
   "invideo-ai": [
-    { question: "Is InVideo AI free?", answer: "Free tier with watermark. Plus from $25/month. AI video creation." },
-    { question: "What is InVideo AI?", answer: "AI video generator from text prompts. Create videos in minutes. Templates included." },
-    { question: "InVideo AI vs Synthesia?", answer: "InVideo for general videos. Synthesia for avatars. Different use cases." }
+    { question: "Is InVideo AI free?", answer: "InVideo AI has a free tier with watermarked exports. Plus plans start at $25/month for watermark-free videos and more features." },
+    { question: "What is InVideo AI?", answer: "InVideo AI generates videos from text prompts. Describe what you want, and it creates a complete video with footage, music, and narration in minutes." },
+    { question: "InVideo AI vs Synthesia?", answer: "InVideo AI creates general video content from stock footage. Synthesia specializes in AI avatar presenters. Choose based on your video style needs." }
   ],
   "stoplight": [
-    { question: "Is Stoplight free?", answer: "Free for individuals. Team from $99/month. API design platform." },
-    { question: "What is Stoplight?", answer: "API design and documentation platform. OpenAPI editor. Style guides and mocking." },
-    { question: "Stoplight vs Swagger?", answer: "Stoplight more design-focused. Swagger more established. Both OpenAPI tools." }
+    { question: "Is Stoplight free?", answer: "Stoplight is free for individual developers. Team plans start at $99/month for collaboration and governance features." },
+    { question: "What is Stoplight?", answer: "Stoplight is an API design and documentation platform. It provides a visual editor for OpenAPI specs, style guides, and mock servers." },
+    { question: "Stoplight vs Swagger?", answer: "Stoplight offers a more design-first approach with better collaboration tools. Swagger/OpenAPI is the underlying spec that both tools support." }
   ],
   "storyblok": [
-    { question: "Is Storyblok free?", answer: "Free tier available. Pro from $99/month. Headless CMS." },
-    { question: "What is Storyblok?", answer: "Visual headless CMS. Drag and drop editing. Component-based content." },
-    { question: "Storyblok vs Contentful?", answer: "Storyblok more visual editing. Contentful more established. Both great headless CMS." }
+    { question: "Is Storyblok free?", answer: "Storyblok has a free tier for small projects. Pro plans start at $99/month for more users and features." },
+    { question: "What is Storyblok?", answer: "Storyblok is a headless CMS with a visual editor. Content creators can see exactly how their content will look while editing using the visual composer." },
+    { question: "Storyblok vs Contentful?", answer: "Storyblok's visual editing experience is more intuitive for non-developers. Contentful is more established with a larger ecosystem. Both are excellent headless CMS options." }
   ],
   "neptune-ai": [
-    { question: "Is Neptune AI free?", answer: "Free tier for individuals. Team from $49/month. ML experiment tracking." },
-    { question: "What is Neptune AI?", answer: "ML experiment tracking and model registry. Compare experiments. Collaborate on models." },
-    { question: "Neptune AI vs MLflow?", answer: "Neptune better UI and collaboration. MLflow open source. Neptune for teams." }
+    { question: "Is Neptune AI free?", answer: "Neptune has a free tier for individual researchers. Team plans start at $49/month for collaboration and more storage." },
+    { question: "What is Neptune AI?", answer: "Neptune.ai is an experiment tracking and model registry platform for machine learning teams. It logs experiments, compares runs, and manages model versions." },
+    { question: "Neptune AI vs MLflow?", answer: "Neptune offers a better UI and easier collaboration for teams. MLflow is open source and free to self-host. Neptune is worth paying for if you value the experience." }
   ],
   "junit": [
-    { question: "Is JUnit free?", answer: "Yes, completely free and open source. Java testing framework." },
-    { question: "What is JUnit?", answer: "Standard Java unit testing framework. Write and run tests. Essential for Java." },
-    { question: "JUnit 4 vs JUnit 5?", answer: "JUnit 5 modern with extensions. JUnit 4 legacy. Use JUnit 5 for new projects." }
+    { question: "Is JUnit free?", answer: "JUnit is completely free and open source under the Eclipse Public License. It's been the standard Java testing framework for decades." },
+    { question: "What is JUnit?", answer: "JUnit is the standard unit testing framework for Java. It provides annotations, assertions, and test runners that form the foundation of Java testing." },
+    { question: "JUnit 4 vs JUnit 5?", answer: "JUnit 5 is the modern version with a new extension model and better features. JUnit 4 is legacy but still works. Use JUnit 5 for all new projects." }
   ],
   "lightstep": [
-    { question: "Is Lightstep free?", answer: "Free tier available. Pro pricing varies. Observability platform." },
-    { question: "What is Lightstep?", answer: "Observability platform by ServiceNow. Distributed tracing. Performance monitoring." },
-    { question: "Lightstep vs Datadog?", answer: "Lightstep focuses on tracing. Datadog broader platform. Both excellent observability." }
+    { question: "Is Lightstep free?", answer: "Lightstep has a free tier for small-scale observability. Pro pricing varies based on data volume and is now part of ServiceNow." },
+    { question: "What is Lightstep?", answer: "Lightstep is an observability platform focused on distributed tracing and performance monitoring. It was acquired by ServiceNow and integrated into their platform." },
+    { question: "Lightstep vs Datadog?", answer: "Lightstep specializes in deep distributed tracing. Datadog offers broader observability across metrics, logs, and traces. Both are excellent for different needs." }
   ],
   "tinacms": [
-    { question: "Is TinaCMS free?", answer: "Open source and free. Cloud from $29/month. Git-backed CMS." },
-    { question: "What is TinaCMS?", answer: "Git-backed headless CMS. Visual editing in context. Works with static sites." },
-    { question: "TinaCMS vs Contentful?", answer: "TinaCMS Git-native. Contentful cloud-native. TinaCMS for static site generators." }
+    { question: "Is TinaCMS free?", answer: "TinaCMS is open source and free to self-host. TinaCloud starts at $29/month for managed backend and collaboration features." },
+    { question: "What is TinaCMS?", answer: "TinaCMS is a Git-backed headless CMS that enables visual editing for static sites. Changes commit directly to your repository for full version control." },
+    { question: "TinaCMS vs Contentful?", answer: "TinaCMS stores content in Git with your code. Contentful is a cloud-native CMS with its own database. TinaCMS is ideal for static site generators." }
   ],
   "uptime-kuma": [
-    { question: "Is Uptime Kuma free?", answer: "Yes, completely free and open source. Self-hosted monitoring." },
-    { question: "What is Uptime Kuma?", answer: "Self-hosted monitoring tool. Beautiful dashboard. Supports HTTP, TCP, ping, etc." },
-    { question: "Uptime Kuma vs Better Stack?", answer: "Uptime Kuma self-hosted and free. Better Stack cloud-managed. Kuma for DIY." }
+    { question: "Is Uptime Kuma free?", answer: "Uptime Kuma is completely free and open source. You self-host it with no licensing costs or premium tiers." },
+    { question: "What is Uptime Kuma?", answer: "Uptime Kuma is a self-hosted monitoring tool with a beautiful dashboard. It monitors HTTP, TCP, DNS, and more with notifications to Slack, Discord, and many other services." },
+    { question: "Uptime Kuma vs Better Stack?", answer: "Uptime Kuma is free and self-hosted giving you full control. Better Stack is managed with more features. Choose Kuma if you're comfortable running your own monitoring." }
   ],
   "spike-sh": [
-    { question: "Is Spike.sh free?", answer: "Free tier available. Pro from $9/month. Incident management." },
-    { question: "What is Spike.sh?", answer: "Incident management and alerting. On-call schedules. Alert routing and escalation." },
-    { question: "Spike.sh vs PagerDuty?", answer: "Spike.sh more affordable. PagerDuty more enterprise. Spike for startups." }
+    { question: "Is Spike.sh free?", answer: "Spike.sh has a free tier for small teams. Pro plans start at $9/month per user for advanced on-call features." },
+    { question: "What is Spike.sh?", answer: "Spike.sh is an incident management platform with on-call scheduling, alert routing, and escalation policies. It helps teams respond to outages quickly." },
+    { question: "Spike.sh vs PagerDuty?", answer: "Spike.sh is significantly more affordable than PagerDuty while offering similar core features. PagerDuty has more enterprise features. Spike is great for startups." }
   ],
   "incident-io": [
-    { question: "Is Incident.io free?", answer: "Free tier available. Pro from $16/user/month. Incident management." },
-    { question: "What is Incident.io?", answer: "Modern incident management in Slack. Automate workflows. Post-mortems built-in." },
-    { question: "Incident.io vs Opsgenie?", answer: "Incident.io Slack-native. Opsgenie more traditional. Choose based on workflow." }
+    { question: "Is Incident.io free?", answer: "Incident.io has a free tier for small teams. Pro plans start at $16 per user per month for advanced workflows." },
+    { question: "What is Incident.io?", answer: "Incident.io is a modern incident management platform that lives in Slack. It automates incident workflows, roles, and post-mortems without leaving your chat." },
+    { question: "Incident.io vs Opsgenie?", answer: "Incident.io is Slack-native with a modern feel. Opsgenie is more traditional but feature-rich. Choose based on whether you want incidents managed in Slack." }
   ],
   "surveymonkey": [
-    { question: "Is SurveyMonkey free?", answer: "Basic free plan. Individual from $39/month. Survey tool." },
-    { question: "What is SurveyMonkey?", answer: "Popular online survey tool. Create surveys, collect responses, analyze data." },
-    { question: "SurveyMonkey vs Typeform?", answer: "SurveyMonkey more traditional. Typeform more engaging UX. Both excellent." }
+    { question: "Is SurveyMonkey free?", answer: "SurveyMonkey's basic free plan has limited features and responses. Individual plans start at $39/month for more power." },
+    { question: "What is SurveyMonkey?", answer: "SurveyMonkey is one of the most popular online survey tools. It helps you create surveys, collect responses, and analyze results with templates and question types for any need." },
+    { question: "SurveyMonkey vs Typeform?", answer: "SurveyMonkey uses traditional multi-question forms. Typeform creates more engaging one-question-at-a-time experiences. Both work well for surveys." }
   ],
   "oh-dear": [
-    { question: "Is Oh Dear free?", answer: "Free trial. Plans from $29/month. Website monitoring." },
-    { question: "What is Oh Dear?", answer: "All-in-one website monitoring. Uptime, performance, SSL, broken links, mixed content." },
-    { question: "Oh Dear vs Better Uptime?", answer: "Similar features. Oh Dear more checks. Both great website monitoring." }
+    { question: "Is Oh Dear free?", answer: "Oh Dear offers a free trial to test the service. Paid plans start at $29/month with no per-check pricing." },
+    { question: "What is Oh Dear?", answer: "Oh Dear is comprehensive website monitoring that checks uptime, performance, SSL certificates, broken links, mixed content, and more in one service." },
+    { question: "Oh Dear vs Better Uptime?", answer: "Both offer similar monitoring capabilities with clean interfaces. Oh Dear includes more check types like mixed content. Compare pricing for your specific needs." }
   ],
   "pingdom": [
-    { question: "Is Pingdom free?", answer: "Free trial. Synthetic from $15/month. Uptime monitoring." },
-    { question: "What is Pingdom?", answer: "Uptime and performance monitoring by SolarWinds. Global testing locations." },
-    { question: "Pingdom vs UptimeRobot?", answer: "Pingdom more features and expensive. UptimeRobot simpler and cheaper." }
+    { question: "Is Pingdom free?", answer: "Pingdom offers a free trial but no permanent free tier. Synthetic monitoring starts at $15/month." },
+    { question: "What is Pingdom?", answer: "Pingdom is an uptime and performance monitoring service by SolarWinds. It tests your site from multiple global locations and alerts you when issues occur." },
+    { question: "Pingdom vs UptimeRobot?", answer: "Pingdom has more features and testing locations but costs more. UptimeRobot is simpler and has a generous free tier. Choose based on your monitoring needs." }
   ],
   "talkjs": [
-    { question: "Is TalkJS free?", answer: "Free tier available. Pro from $79/month. Chat API." },
-    { question: "What is TalkJS?", answer: "Chat API for apps and websites. Pre-built UI. Real-time messaging." },
-    { question: "TalkJS vs Stream?", answer: "TalkJS simpler to integrate. Stream more customizable. Both chat APIs." }
+    { question: "Is TalkJS free?", answer: "TalkJS has a free tier for getting started. Pro plans start at $79/month for higher message volumes and features." },
+    { question: "What is TalkJS?", answer: "TalkJS is a chat API with pre-built UI components. You can add real-time messaging to your app or website with minimal development effort." },
+    { question: "TalkJS vs Stream?", answer: "TalkJS is simpler to integrate with ready-made UI. Stream is more customizable but requires more development work. Choose based on how custom you need chat to be." }
   ],
   "ory": [
-    { question: "Is Ory free?", answer: "Open source and free. Cloud from $29/month. Identity infrastructure." },
-    { question: "What is Ory?", answer: "Open source identity and access management. OAuth2, OpenID Connect, authentication." },
-    { question: "Ory vs Keycloak?", answer: "Both open source IAM. Ory more modern. Keycloak more features. Ory for developers." }
+    { question: "Is Ory free?", answer: "Ory's open source tools (Kratos, Hydra, Oathkeeper) are completely free. Ory Cloud starts at $29/month for managed services." },
+    { question: "What is Ory?", answer: "Ory provides open source identity infrastructure including OAuth2, OpenID Connect, user management, and access control. It's designed for developers who want control." },
+    { question: "Ory vs Keycloak?", answer: "Both are open source identity solutions. Ory is more modern and cloud-native. Keycloak has more features but is more complex. Ory is easier for developers." }
   ],
   "remove-bg": [
-    { question: "Is Remove.bg free?", answer: "One free preview. Pay per image from $0.20. Background removal." },
-    { question: "What is Remove.bg?", answer: "AI background removal tool. Upload image, get transparent background. Instant results." },
-    { question: "Remove.bg vs Canva?", answer: "Remove.bg specialized. Canva has built-in remover. Remove.bg for bulk/API." }
+    { question: "Is Remove.bg free?", answer: "Remove.bg lets you preview results for free but charges from $0.20 per image for high-resolution downloads. They offer credits and subscriptions." },
+    { question: "What is Remove.bg?", answer: "Remove.bg is an AI service that removes image backgrounds instantly. Upload a photo and get a transparent PNG in seconds with impressive accuracy." },
+    { question: "Remove.bg vs Canva?", answer: "Remove.bg specializes in background removal with an API for automation. Canva includes background removal as one of many features. Use Remove.bg for bulk processing." }
   ],
   "runbook": [
-    { question: "Is Runbook free?", answer: "Free tier available. Pro from $9/month. Automation platform." },
-    { question: "What is Runbook?", answer: "IT process automation platform. Create and run operational runbooks." },
-    { question: "Runbook vs PagerDuty?", answer: "Runbook for automation. PagerDuty for alerting. Complementary tools." }
+    { question: "Is Runbook free?", answer: "Runbook has a free tier for getting started. Pro plans start at $9/month for more automation capabilities." },
+    { question: "What is Runbook?", answer: "Runbook is an IT process automation platform. You create operational runbooks that can be executed manually or automatically in response to events." },
+    { question: "Runbook vs PagerDuty?", answer: "Runbook focuses on automated remediation while PagerDuty focuses on alerting and on-call management. They complement each other well." }
   ],
   "tekton": [
-    { question: "Is Tekton free?", answer: "Yes, open source and free. Cloud-native CI/CD framework." },
-    { question: "What is Tekton?", answer: "Kubernetes-native CI/CD framework. Pipelines as code. Portable and flexible." },
-    { question: "Tekton vs Jenkins?", answer: "Tekton Kubernetes-native. Jenkins more traditional. Tekton for cloud-native." }
+    { question: "Is Tekton free?", answer: "Tekton is completely free and open source as a Linux Foundation project. You run it on your own Kubernetes cluster." },
+    { question: "What is Tekton?", answer: "Tekton is a Kubernetes-native CI/CD framework. It defines pipelines as Kubernetes resources, making them portable and flexible across any Kubernetes environment." },
+    { question: "Tekton vs Jenkins?", answer: "Tekton is designed for cloud-native Kubernetes deployments. Jenkins is more traditional but has a larger ecosystem. Tekton is ideal for Kubernetes-first teams." }
   ],
   "kling-ai": [
-    { question: "Is Kling AI free?", answer: "Free tier with daily credits. Pro from $19.90/month. AI video generation." },
-    { question: "What is Kling AI?", answer: "AI video generation by Kuaishou. Text and image to video. High quality output." },
-    { question: "Kling AI vs Runway?", answer: "Both AI video. Kling newer. Runway more established. Both impressive quality." }
+    { question: "Is Kling AI free?", answer: "Kling AI offers daily free credits for video generation. Pro plans start at $19.90/month for more generation credits." },
+    { question: "What is Kling AI?", answer: "Kling AI is a video generation model from Kuaishou that creates videos from text or images. It produces surprisingly realistic motion and high-quality output." },
+    { question: "Kling AI vs Runway?", answer: "Both produce impressive AI-generated video. Kling is newer with competitive quality. Runway is more established with a broader toolset. Both are worth trying." }
   ],
   "lancedb": [
-    { question: "Is LanceDB free?", answer: "Open source and free. Cloud pricing varies. Vector database." },
-    { question: "What is LanceDB?", answer: "Embedded vector database for AI. No server needed. Fast similarity search." },
-    { question: "LanceDB vs Pinecone?", answer: "LanceDB embedded, Pinecone managed. LanceDB for local/embedded use." }
+    { question: "Is LanceDB free?", answer: "LanceDB is open source and free to use. Cloud hosting options have their own pricing tiers." },
+    { question: "What is LanceDB?", answer: "LanceDB is an embedded vector database designed for AI applications. It runs locally without a server, making it perfect for edge AI and desktop applications." },
+    { question: "LanceDB vs Pinecone?", answer: "LanceDB runs embedded without a server while Pinecone is a managed cloud service. Use LanceDB for local-first apps, Pinecone for cloud-native workloads." }
   ],
   "steve-ai": [
-    { question: "Is Steve AI free?", answer: "Free tier with watermark. Basic from $36/month. AI video creation." },
-    { question: "What is Steve AI?", answer: "AI video maker. Text to animated videos. Templates and characters." },
-    { question: "Steve AI vs Synthesia?", answer: "Steve AI for animation. Synthesia for realistic avatars. Different styles." }
+    { question: "Is Steve AI free?", answer: "Steve AI has a free tier with watermarked videos. Basic plans start at $36/month for watermark-free exports." },
+    { question: "What is Steve AI?", answer: "Steve AI creates animated videos from text prompts. It generates videos with animated characters and scenes, ideal for explainer videos and marketing content." },
+    { question: "Steve AI vs Synthesia?", answer: "Steve AI creates animated videos while Synthesia uses realistic AI avatars. Choose based on whether you want animated or realistic presenter style." }
   ],
   "zilliz": [
-    { question: "Is Zilliz free?", answer: "Free tier available. Standard from $0.08/CU-hour. Managed Milvus." },
-    { question: "What is Zilliz?", answer: "Managed Milvus cloud service. Vector database for AI. Enterprise features." },
-    { question: "Zilliz vs Pinecone?", answer: "Zilliz based on Milvus. Both vector DBs. Compare features and pricing." }
+    { question: "Is Zilliz free?", answer: "Zilliz Cloud has a free tier for getting started. Standard pricing starts at $0.08 per CU-hour for production workloads." },
+    { question: "What is Zilliz?", answer: "Zilliz is the managed cloud service for Milvus, the popular open source vector database. It handles infrastructure so you can focus on building AI applications." },
+    { question: "Zilliz vs Pinecone?", answer: "Zilliz is built on open source Milvus giving you more flexibility. Pinecone is purpose-built and simpler. Compare features and pricing for your specific needs." }
   ],
   "graylog": [
-    { question: "Is Graylog free?", answer: "Open source free. Cloud from $1/GB. Log management." },
-    { question: "What is Graylog?", answer: "Log management and SIEM platform. Centralize, analyze, alert on logs." },
-    { question: "Graylog vs Elasticsearch?", answer: "Graylog uses Elasticsearch underneath. Graylog adds UI and alerting." }
+    { question: "Is Graylog free?", answer: "Graylog Open Source is free to self-host. Graylog Cloud starts at around $1 per GB of log data ingested." },
+    { question: "What is Graylog?", answer: "Graylog is a log management and SIEM platform. It centralizes logs from all your systems, enables powerful search, and alerts you to important events." },
+    { question: "Graylog vs Elasticsearch?", answer: "Graylog uses Elasticsearch as its search backend but adds a log-focused UI, alerting, and access control on top. Think of Graylog as a complete log solution." }
   ],
   "keycdn": [
-    { question: "Is KeyCDN free?", answer: "Pay as you go from $0.04/GB. No monthly fees. CDN." },
-    { question: "What is KeyCDN?", answer: "High-performance CDN. Simple pricing. HTTP/2 and WebP support." },
-    { question: "KeyCDN vs Cloudflare?", answer: "KeyCDN pure CDN. Cloudflare full platform. KeyCDN for simple CDN needs." }
+    { question: "Is KeyCDN free?", answer: "KeyCDN uses pay-as-you-go pricing starting at $0.04 per GB with no monthly minimums. You only pay for what you use." },
+    { question: "What is KeyCDN?", answer: "KeyCDN is a high-performance content delivery network with simple, transparent pricing. It supports HTTP/2, WebP, and modern optimization features." },
+    { question: "KeyCDN vs Cloudflare?", answer: "KeyCDN is a pure CDN with simple pricing. Cloudflare offers a full platform with security features and a free tier. KeyCDN is straightforward if you just need CDN." }
   ],
   "stytch": [
-    { question: "Is Stytch free?", answer: "Free up to 5,000 MAUs. Growth from $100/month. Authentication API." },
-    { question: "What is Stytch?", answer: "Passwordless authentication API. Email magic links, SMS, OAuth. Modern auth." },
-    { question: "Stytch vs Auth0?", answer: "Stytch passwordless-focused. Auth0 full-featured. Stytch for modern auth patterns." }
+    { question: "Is Stytch free?", answer: "Stytch is free up to 5,000 monthly active users. Growth plans start at $100/month for higher volumes and enterprise features." },
+    { question: "What is Stytch?", answer: "Stytch is an authentication API specializing in passwordless methods. It supports email magic links, SMS passcodes, and OAuth with a developer-friendly experience." },
+    { question: "Stytch vs Auth0?", answer: "Stytch focuses on modern passwordless authentication patterns. Auth0 offers more traditional auth methods too. Choose Stytch if you're going passwordless-first." }
   ],
   "groq": [
-    { question: "Is Groq free?", answer: "Free tier available. Pay per token after. AI inference." },
-    { question: "What is Groq?", answer: "Ultra-fast AI inference with LPU chips. Run LLMs at incredible speeds." },
-    { question: "Groq vs OpenAI?", answer: "Groq fastest inference. OpenAI best models. Use Groq for speed." }
+    { question: "Is Groq free?", answer: "Groq offers a generous free tier for API access. Paid tiers charge per token for higher rate limits and volumes." },
+    { question: "What is Groq?", answer: "Groq provides ultra-fast AI inference using custom LPU (Language Processing Unit) chips. It runs open source LLMs at speeds that feel instant." },
+    { question: "Groq vs OpenAI?", answer: "Groq offers the fastest inference speeds available. OpenAI has the most capable models. Use Groq when response speed is critical for your use case." }
   ],
   "hanko": [
-    { question: "Is Hanko free?", answer: "Open source free. Cloud from $29/month. Passkey authentication." },
-    { question: "What is Hanko?", answer: "Passkey and WebAuthn authentication. Passwordless by default. Open source." },
-    { question: "Hanko vs Auth0?", answer: "Hanko passkey-focused. Auth0 traditional auth. Hanko for passwordless-first." }
+    { question: "Is Hanko free?", answer: "Hanko is open source and free to self-host. Hanko Cloud starts at $29/month for managed passkey authentication." },
+    { question: "What is Hanko?", answer: "Hanko is a passkey and WebAuthn authentication solution. It makes passwordless login the default with support for biometrics and security keys." },
+    { question: "Hanko vs Auth0?", answer: "Hanko is built around passkeys and passwordless by default. Auth0 is a more traditional auth platform that also supports passkeys. Hanko for a passwordless-first approach." }
   ],
   "text-generation-inference": [
-    { question: "Is TGI free?", answer: "Yes, open source by HuggingFace. Self-host for free." },
-    { question: "What is TGI?", answer: "HuggingFace's text generation server. Deploy LLMs efficiently. Production ready." },
-    { question: "TGI vs vLLM?", answer: "Both LLM serving. TGI by HuggingFace. vLLM higher throughput. Both excellent." }
+    { question: "Is TGI free?", answer: "Text Generation Inference is completely free and open source from Hugging Face. You self-host it on your own infrastructure." },
+    { question: "What is TGI?", answer: "TGI (Text Generation Inference) is Hugging Face's production-ready server for deploying large language models. It handles batching, quantization, and optimized inference." },
+    { question: "TGI vs vLLM?", answer: "Both are excellent LLM serving solutions. vLLM often achieves higher throughput. TGI integrates well with the Hugging Face ecosystem. Both are production-ready." }
   ],
   "rapid7-insightidr": [
-    { question: "Is InsightIDR free?", answer: "Free trial. Pricing per asset. SIEM platform." },
-    { question: "What is InsightIDR?", answer: "Cloud SIEM by Rapid7. Threat detection, investigation, response." },
-    { question: "InsightIDR vs Splunk?", answer: "InsightIDR easier setup. Splunk more powerful. InsightIDR for mid-market." }
+    { question: "Is InsightIDR free?", answer: "InsightIDR offers a free trial. Production pricing is based on the number of assets monitored, typically enterprise-level pricing." },
+    { question: "What is InsightIDR?", answer: "InsightIDR is a cloud SIEM platform from Rapid7. It provides threat detection, investigation capabilities, and response automation for security teams." },
+    { question: "InsightIDR vs Splunk?", answer: "InsightIDR is easier to set up and manage for mid-market companies. Splunk is more powerful but complex. InsightIDR works well for teams without dedicated SIEM expertise." }
   ],
   "starlight": [
-    { question: "Is Starlight free?", answer: "Yes, open source by Astro. Free documentation framework." },
-    { question: "What is Starlight?", answer: "Documentation website framework by Astro. Beautiful docs sites fast." },
-    { question: "Starlight vs Docusaurus?", answer: "Starlight faster, Docusaurus more features. Both great for docs." }
+    { question: "Is Starlight free?", answer: "Starlight is completely free and open source, built by the Astro team. You host the generated site anywhere." },
+    { question: "What is Starlight?", answer: "Starlight is a documentation website framework built on Astro. It generates fast, beautiful documentation sites with built-in search, navigation, and i18n support." },
+    { question: "Starlight vs Docusaurus?", answer: "Starlight generates faster sites with less JavaScript. Docusaurus has more features and a larger plugin ecosystem. Starlight is great for performance-focused docs." }
   ],
   "wellsaid-labs": [
-    { question: "Is WellSaid Labs free?", answer: "Free trial available. Pro from $49/month. AI voice generation." },
-    { question: "What is WellSaid Labs?", answer: "AI voice platform. Create realistic voiceovers. Commercial use voices." },
-    { question: "WellSaid vs ElevenLabs?", answer: "Both AI voices. ElevenLabs more voices. WellSaid more enterprise." }
+    { question: "Is WellSaid Labs free?", answer: "WellSaid offers a free trial to test voices. Pro plans start at $49/month for commercial voiceover generation." },
+    { question: "What is WellSaid Labs?", answer: "WellSaid Labs creates realistic AI voiceovers for commercial use. It offers studio-quality voices designed for professional video, training, and marketing content." },
+    { question: "WellSaid vs ElevenLabs?", answer: "Both produce high-quality AI voices. ElevenLabs offers more voice variety and cloning. WellSaid focuses on enterprise-ready commercial voices." }
   ],
   "smartlook": [
-    { question: "Is Smartlook free?", answer: "Free tier available. Pro from $55/month. Session recording." },
-    { question: "What is Smartlook?", answer: "Session recording and product analytics. See how users interact. Heatmaps included." },
-    { question: "Smartlook vs Hotjar?", answer: "Similar features. Smartlook for mobile apps too. Compare pricing." }
+    { question: "Is Smartlook free?", answer: "Smartlook has a free tier with limited sessions. Pro plans start at $55/month for more recordings and features." },
+    { question: "What is Smartlook?", answer: "Smartlook provides session recording and product analytics to see how users interact with your website or mobile app. It includes heatmaps and event tracking." },
+    { question: "Smartlook vs Hotjar?", answer: "Both offer session recording and heatmaps. Smartlook supports mobile apps while Hotjar is web-focused. Compare pricing based on your traffic volume." }
   ],
   "sophos": [
-    { question: "Is Sophos free?", answer: "Home version free. Business pricing varies. Cybersecurity." },
-    { question: "What is Sophos?", answer: "Cybersecurity company. Antivirus, firewalls, endpoint protection." },
-    { question: "Sophos vs CrowdStrike?", answer: "Sophos traditional AV. CrowdStrike cloud-native EDR. Different approaches." }
+    { question: "Is Sophos free?", answer: "Sophos Home is free for personal use. Business products require commercial licensing with pricing based on endpoints." },
+    { question: "What is Sophos?", answer: "Sophos is a cybersecurity company offering antivirus, firewalls, and endpoint protection. They serve both home users and enterprises with comprehensive security." },
+    { question: "Sophos vs CrowdStrike?", answer: "Sophos offers traditional endpoint protection. CrowdStrike is cloud-native EDR focused on threat detection. They represent different generations of security approaches." }
   ],
   "hex": [
-    { question: "Is Hex free?", answer: "Free for individuals. Team from $40/user/month. Data platform." },
-    { question: "What is Hex?", answer: "Collaborative data workspace. SQL, Python, notebooks. Build data apps." },
-    { question: "Hex vs Mode?", answer: "Hex more collaborative. Mode more traditional BI. Hex for modern data teams." }
+    { question: "Is Hex free?", answer: "Hex is free for individual use. Team plans start at $40 per user per month for collaboration features." },
+    { question: "What is Hex?", answer: "Hex is a collaborative data workspace where you can write SQL and Python, build notebooks, and create shareable data apps all in one place." },
+    { question: "Hex vs Mode?", answer: "Hex feels more modern and collaborative. Mode is more traditional BI-focused. Hex is popular with data teams that want a modern notebook experience." }
   ],
   "textexpander": [
-    { question: "Is TextExpander free?", answer: "Free trial. Plans from $3.33/month. Text expansion tool." },
-    { question: "What is TextExpander?", answer: "Text expansion and snippets tool. Type abbreviations, expand to full text." },
-    { question: "TextExpander vs Raycast?", answer: "TextExpander snippets focused. Raycast broader launcher. Both useful." }
+    { question: "Is TextExpander free?", answer: "TextExpander offers a free trial. Individual plans start at $3.33/month for unlimited snippets and expansion." },
+    { question: "What is TextExpander?", answer: "TextExpander lets you type short abbreviations that expand to full text snippets. It's great for email templates, code snippets, and repetitive typing." },
+    { question: "TextExpander vs Raycast?", answer: "TextExpander specializes in text expansion with team sharing. Raycast is a broader productivity launcher with snippet features. Both are useful for different purposes." }
   ],
   "tigergraph": [
-    { question: "Is TigerGraph free?", answer: "Free tier available. Enterprise pricing varies. Graph database." },
-    { question: "What is TigerGraph?", answer: "Graph analytics platform. Handle massive connected data. Real-time queries." },
-    { question: "TigerGraph vs Neo4j?", answer: "TigerGraph for scale. Neo4j more popular. TigerGraph for enterprise graphs." }
+    { question: "Is TigerGraph free?", answer: "TigerGraph has a free tier for development. Enterprise pricing varies based on deployment size and features." },
+    { question: "What is TigerGraph?", answer: "TigerGraph is a graph analytics platform designed for massive scale. It handles billions of vertices and edges for real-time graph queries and analytics." },
+    { question: "TigerGraph vs Neo4j?", answer: "TigerGraph is designed for larger scale graph analytics. Neo4j is more popular with a larger community. Choose TigerGraph for enterprise-scale graph processing." }
   ],
   "weweb": [
-    { question: "Is WeWeb free?", answer: "Free to start. Pro from $19/month. No-code frontend." },
-    { question: "What is WeWeb?", answer: "No-code frontend builder. Connect to any backend. Build custom web apps." },
-    { question: "WeWeb vs Webflow?", answer: "WeWeb connects to backends. Webflow has built-in CMS. Different use cases." }
+    { question: "Is WeWeb free?", answer: "WeWeb is free to start building. Pro plans start at $19/month when you're ready to publish." },
+    { question: "What is WeWeb?", answer: "WeWeb is a no-code frontend builder that connects to any backend. You design your UI visually and wire it up to Supabase, Xano, or any API." },
+    { question: "WeWeb vs Webflow?", answer: "WeWeb is designed to connect to external backends while Webflow has its own CMS. Use WeWeb when you need a custom backend or complex data relationships." }
   ],
   "reflect": [
-    { question: "Is Reflect free?", answer: "7-day trial. Plans from $10/month. Note-taking app." },
-    { question: "What is Reflect?", answer: "Networked note-taking app. AI assistant built-in. End-to-end encrypted." },
-    { question: "Reflect vs Notion?", answer: "Reflect more personal. Notion more collaborative. Reflect for privacy." }
+    { question: "Is Reflect free?", answer: "Reflect offers a 7-day trial. After that, plans start at $10/month for unlimited notes." },
+    { question: "What is Reflect?", answer: "Reflect is a networked note-taking app with AI built in. Notes are end-to-end encrypted and linked together for knowledge management." },
+    { question: "Reflect vs Notion?", answer: "Reflect is more personal and privacy-focused with encryption. Notion is more collaborative and feature-rich. Reflect for private notes, Notion for team workspaces." }
   ],
   "screaming-frog": [
-    { question: "Is Screaming Frog free?", answer: "Free up to 500 URLs. Paid from £199/year. SEO spider." },
-    { question: "What is Screaming Frog?", answer: "SEO spider tool. Crawl websites for SEO audits. Find broken links, duplicates." },
-    { question: "Screaming Frog vs Ahrefs?", answer: "Screaming Frog for crawling. Ahrefs for backlinks. Complementary tools." }
+    { question: "Is Screaming Frog free?", answer: "Screaming Frog is free for crawling up to 500 URLs. A paid license at £199/year removes this limit and adds features." },
+    { question: "What is Screaming Frog?", answer: "Screaming Frog SEO Spider is a desktop crawler for SEO audits. It finds broken links, duplicate content, and technical SEO issues across your site." },
+    { question: "Screaming Frog vs Ahrefs?", answer: "Screaming Frog crawls your own site for technical audits. Ahrefs is for backlink analysis and competitive research. They're complementary SEO tools." }
   ],
   "hygraph": [
-    { question: "Is Hygraph free?", answer: "Free tier available. Pro from $299/month. Headless CMS." },
-    { question: "What is Hygraph?", answer: "GraphQL-native headless CMS. Content federation. Formerly GraphCMS." },
-    { question: "Hygraph vs Contentful?", answer: "Hygraph GraphQL-native. Contentful REST-first. Hygraph for GraphQL lovers." }
+    { question: "Is Hygraph free?", answer: "Hygraph has a free tier for small projects. Pro plans start at $299/month for teams and advanced features." },
+    { question: "What is Hygraph?", answer: "Hygraph (formerly GraphCMS) is a GraphQL-native headless CMS. It specializes in content federation, letting you unify content from multiple sources." },
+    { question: "Hygraph vs Contentful?", answer: "Hygraph is GraphQL-native while Contentful is REST-first. Choose Hygraph if your frontend team prefers GraphQL queries." }
   ],
   "imperva": [
-    { question: "Is Imperva free?", answer: "Free trial. Enterprise pricing. Application security." },
-    { question: "What is Imperva?", answer: "Application and data security. WAF, DDoS protection, database security." },
-    { question: "Imperva vs Cloudflare?", answer: "Both WAF providers. Imperva enterprise focus. Cloudflare broader platform." }
+    { question: "Is Imperva free?", answer: "Imperva offers free trials for their services. Production pricing is enterprise-level based on traffic and features." },
+    { question: "What is Imperva?", answer: "Imperva provides application and data security including web application firewall, DDoS protection, API security, and database monitoring." },
+    { question: "Imperva vs Cloudflare?", answer: "Both offer WAF and DDoS protection. Imperva focuses more on enterprise security. Cloudflare has a broader platform with a free tier." }
   ],
   "nebula": [
-    { question: "Is Nebula free?", answer: "Open source and free. Scalable overlay networking." },
-    { question: "What is Nebula?", answer: "Scalable overlay networking by Slack. Create secure networks. Cross-platform." },
-    { question: "Nebula vs Tailscale?", answer: "Nebula self-hosted. Tailscale managed. Both excellent VPN alternatives." }
+    { question: "Is Nebula free?", answer: "Nebula is completely free and open source, created by Slack. You can build secure overlay networks at no cost." },
+    { question: "What is Nebula?", answer: "Nebula is a scalable overlay networking tool for creating secure networks across distributed hosts. It was open sourced by Slack for their infrastructure." },
+    { question: "Nebula vs Tailscale?", answer: "Nebula is self-hosted giving you full control. Tailscale is a managed service that's easier to set up. Both create secure mesh networks." }
   ],
   "returnly": [
-    { question: "Is Returnly free?", answer: "No free tier. Pricing based on returns. E-commerce returns." },
-    { question: "What is Returnly?", answer: "Returns management for e-commerce. Instant credit, exchanges. Acquired by Affirm." },
-    { question: "Returnly vs Loop?", answer: "Both returns platforms. Compare features and pricing. Loop independent." }
+    { question: "Is Returnly free?", answer: "Returnly doesn't have a free tier. Pricing is based on return volume and features, now part of Affirm." },
+    { question: "What is Returnly?", answer: "Returnly is a returns management platform for e-commerce that offers instant credit to shoppers. It was acquired by Affirm." },
+    { question: "Returnly vs Loop?", answer: "Both are returns management platforms for e-commerce. Loop remains independent while Returnly is part of Affirm. Compare features and pricing." }
   ],
   "grype": [
-    { question: "Is Grype free?", answer: "Yes, open source by Anchore. Container vulnerability scanner." },
-    { question: "What is Grype?", answer: "Container image vulnerability scanner. Scan for CVEs. Fast and lightweight." },
-    { question: "Grype vs Trivy?", answer: "Both container scanners. Grype by Anchore. Trivy by Aqua. Both excellent." }
+    { question: "Is Grype free?", answer: "Grype is completely free and open source from Anchore. You can scan unlimited container images at no cost." },
+    { question: "What is Grype?", answer: "Grype is a vulnerability scanner for container images and filesystems. It's fast, lightweight, and catches known CVEs in your dependencies." },
+    { question: "Grype vs Trivy?", answer: "Both are excellent open source container scanners. Grype is from Anchore, Trivy from Aqua. Both work well, so try each and pick your preference." }
   ],
   "squadcast": [
-    { question: "Is Squadcast free?", answer: "Free tier available. Pro from $9/user/month. Incident management." },
-    { question: "What is Squadcast?", answer: "Incident management and on-call platform. SRE workflows. Runbooks." },
-    { question: "Squadcast vs PagerDuty?", answer: "Squadcast more affordable. PagerDuty more established. Both good." }
+    { question: "Is Squadcast free?", answer: "Squadcast has a free tier for small teams. Pro plans start at $9 per user per month for full incident management." },
+    { question: "What is Squadcast?", answer: "Squadcast is an incident management and on-call platform. It handles alerting, scheduling, escalations, and runbooks for SRE teams." },
+    { question: "Squadcast vs PagerDuty?", answer: "Squadcast is more affordable while offering similar core features. PagerDuty is more established with enterprise features. Squadcast is great value for growing teams." }
   ],
   "informatica": [
-    { question: "Is Informatica free?", answer: "Free trial. Enterprise pricing. Data integration." },
-    { question: "What is Informatica?", answer: "Enterprise data management and integration. ETL, data quality, MDM." },
-    { question: "Informatica vs Fivetran?", answer: "Informatica enterprise ETL. Fivetran modern ELT. Different generations." }
+    { question: "Is Informatica free?", answer: "Informatica offers free trials and a free cloud tier with limits. Enterprise pricing is custom based on data volume and features." },
+    { question: "What is Informatica?", answer: "Informatica is an enterprise data management platform covering data integration, quality, governance, and master data management at scale." },
+    { question: "Informatica vs Fivetran?", answer: "Informatica is traditional enterprise ETL with broad capabilities. Fivetran is modern ELT focused on simplicity. They serve different eras of data architecture." }
   ],
   "pumble": [
-    { question: "Is Pumble free?", answer: "Free unlimited history. Pro from $2.49/user/month. Team chat." },
-    { question: "What is Pumble?", answer: "Team messaging app by Clockify. Slack alternative. Unlimited message history free." },
-    { question: "Pumble vs Slack?", answer: "Pumble free unlimited history. Slack limited free. Pumble for budget teams." }
+    { question: "Is Pumble free?", answer: "Pumble is free with unlimited message history, rare for team chat apps. Pro plans start at $2.49 per user per month." },
+    { question: "What is Pumble?", answer: "Pumble is a team messaging app from the makers of Clockify. It's a Slack alternative that notably includes unlimited message history even on the free plan." },
+    { question: "Pumble vs Slack?", answer: "Pumble offers unlimited free message history while Slack limits free users to 90 days. If history matters and budget is tight, Pumble is a great alternative." }
   ],
   "remember-the-milk": [
-    { question: "Is Remember The Milk free?", answer: "Free plan available. Pro $40/year. Task manager." },
-    { question: "What is Remember The Milk?", answer: "Classic task management app. Smart lists, reminders. Cross-platform." },
-    { question: "Remember The Milk vs Todoist?", answer: "RTM simpler and older. Todoist more modern. Both solid task apps." }
+    { question: "Is Remember The Milk free?", answer: "Remember The Milk has a free plan with core features. Pro at $40/year adds subtasks, priority colors, and widgets." },
+    { question: "What is Remember The Milk?", answer: "Remember The Milk is a classic task management app with smart lists, reminders, and cross-platform sync. It's been helping people organize tasks since 2004." },
+    { question: "Remember The Milk vs Todoist?", answer: "Remember The Milk is simpler and has been around longer. Todoist is more modern with better design. Both are solid task managers." }
   ],
   "inkscape": [
-    { question: "Is Inkscape free?", answer: "Yes, completely free and open source. Vector graphics editor." },
-    { question: "What is Inkscape?", answer: "Free vector graphics editor. Illustrator alternative. SVG native format." },
-    { question: "Inkscape vs Illustrator?", answer: "Inkscape free. Illustrator professional. Inkscape for budget or learning." }
+    { question: "Is Inkscape free?", answer: "Inkscape is completely free and open source under the GPL. It's developed by volunteers and will always be free." },
+    { question: "What is Inkscape?", answer: "Inkscape is a free vector graphics editor that works like Adobe Illustrator. It uses SVG as its native format and runs on Windows, Mac, and Linux." },
+    { question: "Inkscape vs Illustrator?", answer: "Inkscape is free while Illustrator requires a subscription. Illustrator is the professional standard, but Inkscape is capable enough for many design needs." }
   ],
   "toggl-track": [
-    { question: "Is Toggl Track free?", answer: "Free for up to 5 users. Starter from $9/user/month. Time tracking." },
-    { question: "What is Toggl Track?", answer: "Simple time tracking tool. One-click timer. Detailed reports." },
-    { question: "Toggl vs Clockify?", answer: "Both time trackers. Clockify more generous free. Toggl better UX." }
+    { question: "Is Toggl Track free?", answer: "Toggl Track is free for up to 5 users with basic time tracking. Starter plans start at $9 per user per month." },
+    { question: "What is Toggl Track?", answer: "Toggl Track is a simple time tracking tool with one-click timers. It generates detailed reports showing where your time goes." },
+    { question: "Toggl vs Clockify?", answer: "Both are excellent time trackers. Clockify has a more generous free tier while Toggl has a better user experience. Try both to see which clicks." }
   ],
   "inngest": [
-    { question: "Is Inngest free?", answer: "Free tier available. Pro from $20/month. Background jobs." },
-    { question: "What is Inngest?", answer: "Event-driven background jobs. Durable functions. Built for serverless." },
-    { question: "Inngest vs Trigger.dev?", answer: "Both background jobs. Compare features and hosting options." }
+    { question: "Is Inngest free?", answer: "Inngest has a free tier for getting started. Pro plans start at $20/month for higher volumes and advanced features." },
+    { question: "What is Inngest?", answer: "Inngest provides durable event-driven functions and background jobs. It's designed for serverless environments where you need reliable async processing." },
+    { question: "Inngest vs Trigger.dev?", answer: "Both handle background jobs for modern apps. Compare their features, hosting options, and pricing to see which fits your stack better." }
   ],
   "sora": [
-    { question: "Is Sora free?", answer: "Not publicly available yet. OpenAI video model." },
-    { question: "What is Sora?", answer: "OpenAI's text-to-video AI model. Generate realistic videos from text prompts." },
-    { question: "Sora vs Runway?", answer: "Sora not public yet. Runway available now. Sora expected to be more powerful." }
+    { question: "Is Sora free?", answer: "Sora is not yet publicly available. OpenAI is gradually rolling it out, and pricing has not been announced." },
+    { question: "What is Sora?", answer: "Sora is OpenAI's text-to-video AI model that generates realistic videos from text descriptions. It represents a significant leap in AI video generation." },
+    { question: "Sora vs Runway?", answer: "Sora is not publicly available yet while Runway is usable now. Based on demos, Sora appears more capable, but Runway is the practical choice today." }
   ],
   "tower": [
-    { question: "Is Tower free?", answer: "Free trial. $69/user/year. Git GUI client." },
-    { question: "What is Tower?", answer: "Premium Git client for Mac and Windows. Beautiful UI. Professional features." },
-    { question: "Tower vs GitKraken?", answer: "Both premium Git GUIs. Tower one-time feel. GitKraken subscription." }
+    { question: "Is Tower free?", answer: "Tower offers a free trial. Individual licenses are $69 per year for a premium Git experience." },
+    { question: "What is Tower?", answer: "Tower is a premium Git client for Mac and Windows with a polished interface. It includes advanced features like interactive rebase and conflict resolution." },
+    { question: "Tower vs GitKraken?", answer: "Both are premium Git GUIs. Tower uses yearly pricing while GitKraken is subscription-based. Both offer excellent Git experiences." }
   ],
   "transloadit": [
-    { question: "Is Transloadit free?", answer: "Free tier available. Startup from $49/month. File processing." },
-    { question: "What is Transloadit?", answer: "File uploading and processing API. Video encoding, image resizing, document conversion." },
-    { question: "Transloadit vs Cloudinary?", answer: "Both media processing. Transloadit more flexible. Cloudinary easier start." }
+    { question: "Is Transloadit free?", answer: "Transloadit has a free tier for testing. Startup plans start at $49/month for production file processing." },
+    { question: "What is Transloadit?", answer: "Transloadit is a file uploading and processing API. It handles video encoding, image resizing, document conversion, and more through simple API calls." },
+    { question: "Transloadit vs Cloudinary?", answer: "Both handle media processing. Transloadit is more flexible with complex pipelines. Cloudinary is easier to start with. Both are solid choices." }
   ],
   "tray-io": [
-    { question: "Is Tray.io free?", answer: "No free tier. Custom pricing. Enterprise automation." },
-    { question: "What is Tray.io?", answer: "Enterprise automation platform. Complex workflows. Extensive integrations." },
-    { question: "Tray.io vs Workato?", answer: "Both enterprise automation. Compare features, pricing, and support." }
+    { question: "Is Tray.io free?", answer: "Tray.io doesn't offer a free tier. It uses custom enterprise pricing based on workflow complexity and volume." },
+    { question: "What is Tray.io?", answer: "Tray.io is an enterprise automation platform for building complex integration workflows. It connects hundreds of apps with sophisticated logic and transformations." },
+    { question: "Tray.io vs Workato?", answer: "Both are enterprise automation platforms with similar capabilities. Compare pricing, specific integrations, and support to find the better fit for your needs." }
   ],
   "tuple": [
-    { question: "Is Tuple free?", answer: "14-day trial. Plans from $25/user/month. Pair programming." },
-    { question: "What is Tuple?", answer: "Pair programming tool for developers. Low latency screen sharing. Built for pairing." },
-    { question: "Tuple vs Zoom?", answer: "Tuple for pairing. Zoom general video. Tuple optimized for coding." }
+    { question: "Is Tuple free?", answer: "Tuple offers a 14-day free trial. Plans start at $25 per user per month for unlimited pair programming." },
+    { question: "What is Tuple?", answer: "Tuple is a pair programming tool designed specifically for developers. It offers low-latency screen sharing with drawing tools optimized for coding together." },
+    { question: "Tuple vs Zoom?", answer: "Tuple is purpose-built for pair programming with better latency and developer features. Zoom is general video conferencing. Use Tuple for coding sessions." }
   ],
   "tana": [
-    { question: "Is Tana free?", answer: "Free plan available. Pro from $10/month. Note-taking workspace." },
-    { question: "What is Tana?", answer: "Superlist meets note-taking. Supertags, AI features. Powerful data structuring." },
-    { question: "Tana vs Notion?", answer: "Tana more structured data. Notion more flexible. Tana for power users." }
+    { question: "Is Tana free?", answer: "Tana has a free plan with core features. Pro plans start at $10/month for AI features and more capacity." },
+    { question: "What is Tana?", answer: "Tana is a powerful note-taking workspace that uses supertags to structure information. It blends notes, tasks, and databases in a unique outliner format." },
+    { question: "Tana vs Notion?", answer: "Tana offers more structured data with supertags. Notion is more flexible and easier to learn. Tana appeals to power users who want more control." }
   ],
   "typedream": [
-    { question: "Is Typedream free?", answer: "Free to start. Pro from $15/month. Website builder." },
-    { question: "What is Typedream?", answer: "No-code website builder. Notion-like editing. Fast and simple." },
-    { question: "Typedream vs Webflow?", answer: "Typedream simpler. Webflow more powerful. Typedream for quick sites." }
+    { question: "Is Typedream free?", answer: "Typedream is free to start building. Pro plans start at $15/month for custom domains and publishing." },
+    { question: "What is Typedream?", answer: "Typedream is a no-code website builder with Notion-like editing. It makes creating simple, beautiful websites fast and intuitive." },
+    { question: "Typedream vs Webflow?", answer: "Typedream is simpler and faster for basic sites. Webflow is more powerful for complex designs. Choose Typedream for quick landing pages." }
   ],
   "testcafe": [
-    { question: "Is TestCafe free?", answer: "Open source free. Studio from $300/year. E2E testing." },
-    { question: "What is TestCafe?", answer: "End-to-end testing framework. No WebDriver needed. JavaScript tests." },
-    { question: "TestCafe vs Playwright?", answer: "Playwright more popular now. TestCafe simpler setup. Both solid E2E." }
+    { question: "Is TestCafe free?", answer: "TestCafe's open source framework is free. TestCafe Studio for visual test creation starts at $300/year." },
+    { question: "What is TestCafe?", answer: "TestCafe is an end-to-end testing framework that doesn't need WebDriver. You write tests in JavaScript that run directly in browsers." },
+    { question: "TestCafe vs Playwright?", answer: "Playwright has become more popular with better cross-browser support. TestCafe was simpler to set up. Both are valid E2E testing choices." }
   ],
   "kustomer": [
-    { question: "Is Kustomer free?", answer: "No free tier. Enterprise from $89/user/month. Customer service." },
-    { question: "What is Kustomer?", answer: "Customer service CRM platform. Omnichannel support. AI features." },
-    { question: "Kustomer vs Zendesk?", answer: "Both customer service. Kustomer CRM-first. Zendesk tickets-first." }
+    { question: "Is Kustomer free?", answer: "Kustomer doesn't offer a free tier. Enterprise plans start at $89 per user per month." },
+    { question: "What is Kustomer?", answer: "Kustomer is a customer service CRM platform that unifies customer data with support conversations. It provides a complete view of each customer." },
+    { question: "Kustomer vs Zendesk?", answer: "Kustomer is CRM-first showing customer context alongside tickets. Zendesk is ticket-first. Choose based on how much customer data matters in your support." }
   ],
   "vercel-edge-functions": [
-    { question: "Is Vercel Edge free?", answer: "Included in Vercel plans. Edge compute on hobby free." },
-    { question: "What is Vercel Edge Functions?", answer: "Edge computing on Vercel. Run code at the edge. Low latency." },
-    { question: "Vercel Edge vs Cloudflare Workers?", answer: "Both edge compute. Vercel integrated. Workers standalone." }
+    { question: "Is Vercel Edge free?", answer: "Edge Functions are included in Vercel plans. The Hobby tier includes free edge compute with usage limits." },
+    { question: "What is Vercel Edge Functions?", answer: "Edge Functions run your code at the edge of Vercel's network, close to users. They enable low-latency personalization and A/B testing." },
+    { question: "Vercel Edge vs Cloudflare Workers?", answer: "Both run code at the edge. Vercel Edge integrates seamlessly with Vercel deployments. Workers is more standalone. Choose based on your hosting." }
   ],
   "vespa": [
-    { question: "Is Vespa free?", answer: "Open source free. Cloud has free tier. Search and AI." },
-    { question: "What is Vespa?", answer: "Big data serving engine by Yahoo. Search, recommendation, AI inference." },
-    { question: "Vespa vs Elasticsearch?", answer: "Vespa for AI/ML serving. Elasticsearch for search. Different focus." }
+    { question: "Is Vespa free?", answer: "Vespa is open source and free to self-host. Vespa Cloud has a free tier for experimentation." },
+    { question: "What is Vespa?", answer: "Vespa is a big data serving engine originally from Yahoo. It handles search, recommendation, personalization, and real-time AI inference at scale." },
+    { question: "Vespa vs Elasticsearch?", answer: "Vespa excels at AI and ML serving alongside search. Elasticsearch is better for traditional text search. Vespa for AI-heavy applications." }
   ],
   "wave": [
-    { question: "Is Wave free?", answer: "Core accounting free. Payroll additional. Small business accounting." },
-    { question: "What is Wave?", answer: "Free accounting software for small businesses. Invoicing, receipts, reports." },
-    { question: "Wave vs QuickBooks?", answer: "Wave free, QuickBooks paid. QuickBooks more features. Wave for small budgets." }
+    { question: "Is Wave free?", answer: "Wave's core accounting, invoicing, and receipt scanning features are completely free. You only pay for optional payroll services or payment processing fees." },
+    { question: "What is Wave?", answer: "Wave is free accounting software designed for small businesses and freelancers. It handles invoicing, expense tracking, financial reports, and connects to your bank accounts." },
+    { question: "Wave vs QuickBooks?", answer: "Wave is free while QuickBooks requires a subscription. QuickBooks has more advanced features for growing businesses. Wave is perfect if you need basic accounting without spending money." }
   ],
   "whalesync": [
-    { question: "Is Whalesync free?", answer: "Free tier available. Pro from $49/month. Two-way data sync." },
-    { question: "What is Whalesync?", answer: "Two-way database sync. Airtable to PostgreSQL, etc. Keep data in sync." },
-    { question: "Whalesync vs Airbyte?", answer: "Whalesync two-way. Airbyte one-way. Different sync needs." }
+    { question: "Is Whalesync free?", answer: "Whalesync has a free tier with limited syncs. Pro plans start at $49/month for more sync jobs and higher data volumes." },
+    { question: "What is Whalesync?", answer: "Whalesync provides two-way data synchronization between databases. It keeps Airtable, PostgreSQL, Supabase, and other data sources in sync bidirectionally in real-time." },
+    { question: "Whalesync vs Airbyte?", answer: "Whalesync specializes in two-way sync while Airbyte is one-way ELT. Use Whalesync when you need data to flow both directions between sources." }
   ],
   "statuspage": [
-    { question: "Is Statuspage free?", answer: "Free tier available. Pro from $29/month. Status page service." },
-    { question: "What is Statuspage?", answer: "Hosted status pages by Atlassian. Communicate incidents to users." },
-    { question: "Statuspage vs Better Stack?", answer: "Both status pages. Atlassian integration vs independent. Compare features." }
+    { question: "Is Statuspage free?", answer: "Statuspage has a free tier for basic status pages. Pro plans start at $29/month for more features and customization." },
+    { question: "What is Statuspage?", answer: "Statuspage by Atlassian lets you create hosted status pages to communicate service health and incidents to your users. It integrates with your monitoring tools." },
+    { question: "Statuspage vs Better Stack?", answer: "Both offer status page hosting. Statuspage integrates with Atlassian tools while Better Stack is independent. Compare based on your existing tooling." }
   ],
   "openrouter": [
-    { question: "Is OpenRouter free?", answer: "Pay per token. No monthly fees. AI model routing." },
-    { question: "What is OpenRouter?", answer: "Unified API for AI models. Access OpenAI, Claude, etc. Single API." },
-    { question: "OpenRouter vs direct APIs?", answer: "OpenRouter simpler access. Direct APIs more control. Router for convenience." }
+    { question: "Is OpenRouter free?", answer: "OpenRouter has no monthly fees. You pay per token based on which model you use, often at lower rates than going directly to providers." },
+    { question: "What is OpenRouter?", answer: "OpenRouter is a unified API that gives you access to multiple AI models including OpenAI, Claude, and open source models through a single integration." },
+    { question: "OpenRouter vs direct APIs?", answer: "OpenRouter simplifies access to multiple models with one API key. Direct APIs give you more control and features. OpenRouter is great for experimenting with different models." }
   ],
   "stacker": [
-    { question: "Is Stacker free?", answer: "Free tier available. Pro from $59/month. No-code portals." },
-    { question: "What is Stacker?", answer: "Build portals on top of your data. Airtable, Google Sheets, databases." },
-    { question: "Stacker vs Glide?", answer: "Similar no-code app builders. Compare features and data sources." }
+    { question: "Is Stacker free?", answer: "Stacker has a free tier for personal projects. Pro plans start at $59/month for business use and more features." },
+    { question: "What is Stacker?", answer: "Stacker lets you build web portals and apps on top of your existing data in Airtable, Google Sheets, or databases. No coding required to create professional interfaces." },
+    { question: "Stacker vs Glide?", answer: "Both are no-code app builders that connect to your data. Compare their supported data sources and UI capabilities to see which fits your needs better." }
   ],
   "wrike": [
-    { question: "Is Wrike free?", answer: "Free plan available. Team from $9.80/user/month. Project management." },
-    { question: "What is Wrike?", answer: "Work management platform. Projects, tasks, Gantt charts. Enterprise focus." },
-    { question: "Wrike vs Asana?", answer: "Both project management. Wrike more enterprise. Asana more modern UX." }
+    { question: "Is Wrike free?", answer: "Wrike offers a free plan for small teams with basic features. Team plans start at $9.80 per user per month for more capabilities." },
+    { question: "What is Wrike?", answer: "Wrike is a work management platform that handles projects, tasks, Gantt charts, and team collaboration. It's built for enterprise teams with complex workflows." },
+    { question: "Wrike vs Asana?", answer: "Wrike is more enterprise-focused with deeper project management features. Asana has a more modern, intuitive interface. Both are excellent depending on team size and complexity." }
   ],
   "origami-studio": [
-    { question: "Is Origami Studio free?", answer: "Yes, completely free by Meta. Prototyping tool." },
-    { question: "What is Origami Studio?", answer: "Free prototyping tool by Meta. Complex interactions. Used for Facebook/Instagram." },
-    { question: "Origami vs Framer?", answer: "Origami free and powerful. Framer more intuitive. Origami for complex prototypes." }
+    { question: "Is Origami Studio free?", answer: "Origami Studio is completely free, created by Meta. You can use it without any cost for even commercial projects." },
+    { question: "What is Origami Studio?", answer: "Origami Studio is a prototyping tool from Meta designed for complex, interactive prototypes. It's the same tool used to prototype features for Facebook and Instagram." },
+    { question: "Origami vs Framer?", answer: "Origami is free and powerful for complex interactions. Framer is more intuitive with better handoff features. Origami excels at advanced prototypes with custom logic." }
   ],
   "plasmic": [
-    { question: "Is Plasmic free?", answer: "Free tier available. Pro from $20/user/month. Visual builder." },
-    { question: "What is Plasmic?", answer: "Visual page builder for React. Designers build, developers integrate." },
-    { question: "Plasmic vs Builder.io?", answer: "Both visual builders. Plasmic React-focused. Compare framework support." }
+    { question: "Is Plasmic free?", answer: "Plasmic has a free tier for personal use. Pro plans start at $20 per user per month for team features and more projects." },
+    { question: "What is Plasmic?", answer: "Plasmic is a visual page builder that outputs real React code. Designers can build pages visually while developers integrate them into their codebase." },
+    { question: "Plasmic vs Builder.io?", answer: "Both are visual builders for developers. Plasmic is more React-focused while Builder.io supports multiple frameworks. Compare based on your tech stack." }
   ],
   "intellij-idea": [
-    { question: "Is IntelliJ free?", answer: "Community Edition free. Ultimate from $169/year. Java IDE." },
-    { question: "What is IntelliJ IDEA?", answer: "Leading Java IDE by JetBrains. Code completion, refactoring, debugging." },
-    { question: "IntelliJ vs VS Code?", answer: "IntelliJ for Java/JVM. VS Code lighter and flexible. IntelliJ for enterprise Java." }
+    { question: "Is IntelliJ free?", answer: "IntelliJ IDEA Community Edition is free and open source. The Ultimate edition starts at $169/year with additional features for enterprise development." },
+    { question: "What is IntelliJ IDEA?", answer: "IntelliJ IDEA is the leading Java IDE from JetBrains. It provides intelligent code completion, refactoring tools, and deep integration with frameworks like Spring." },
+    { question: "IntelliJ vs VS Code?", answer: "IntelliJ is purpose-built for Java/JVM development with more integrated features. VS Code is lighter and more flexible. IntelliJ is the standard for serious Java development." }
   ],
   "june": [
-    { question: "Is June free?", answer: "Free up to 1,000 users. Pro from $49/month. Product analytics." },
-    { question: "What is June?", answer: "Product analytics for B2B SaaS. Auto-generated reports. Quick setup." },
-    { question: "June vs Amplitude?", answer: "June simpler B2B focus. Amplitude more powerful. June for startups." }
+    { question: "Is June free?", answer: "June is free for up to 1,000 monthly active users. Pro plans start at $49/month for higher volumes and advanced analytics." },
+    { question: "What is June?", answer: "June is product analytics designed specifically for B2B SaaS companies. It auto-generates reports and insights so you spend less time building dashboards." },
+    { question: "June vs Amplitude?", answer: "June is simpler with a B2B focus and auto-generated insights. Amplitude is more powerful but requires more setup. June is ideal for startups wanting quick analytics." }
   ],
   "lambdatest": [
-    { question: "Is LambdaTest free?", answer: "Free tier available. Live from $19/month. Cross-browser testing." },
-    { question: "What is LambdaTest?", answer: "Cross-browser testing platform. Test on real browsers and devices." },
-    { question: "LambdaTest vs BrowserStack?", answer: "Both cross-browser testing. Compare pricing and browser coverage." }
+    { question: "Is LambdaTest free?", answer: "LambdaTest has a free tier with limited testing minutes. Live plans start at $19/month for more access to real browsers and devices." },
+    { question: "What is LambdaTest?", answer: "LambdaTest is a cross-browser testing platform. You can test websites on thousands of real browsers and operating system combinations without maintaining your own device lab." },
+    { question: "LambdaTest vs BrowserStack?", answer: "Both offer cross-browser testing on real devices. Compare their specific browser coverage, pricing, and integrations to find the better fit for your testing needs." }
   ],
   "zoho-books": [
-    { question: "Is Zoho Books free?", answer: "Free up to $50K revenue. Standard from $15/month. Accounting." },
-    { question: "What is Zoho Books?", answer: "Online accounting software. Invoicing, expenses, inventory, bank reconciliation." },
-    { question: "Zoho Books vs QuickBooks?", answer: "Zoho Books more affordable. QuickBooks more popular. Both solid accounting." }
+    { question: "Is Zoho Books free?", answer: "Zoho Books is free for businesses with revenue under $50,000. Standard plans start at $15/month for growing businesses." },
+    { question: "What is Zoho Books?", answer: "Zoho Books is online accounting software that handles invoicing, expense tracking, inventory, and bank reconciliation. It integrates with other Zoho apps and popular payment gateways." },
+    { question: "Zoho Books vs QuickBooks?", answer: "Zoho Books is more affordable and integrates well with the Zoho ecosystem. QuickBooks is more widely used with more accountant familiarity. Both are solid accounting choices." }
   ],
   "kajabi": [
-    { question: "Is Kajabi free?", answer: "14-day trial. Plans from $149/month. Course platform." },
-    { question: "What is Kajabi?", answer: "All-in-one platform for online courses. Website, courses, email, payments." },
-    { question: "Kajabi vs Teachable?", answer: "Kajabi all-in-one expensive. Teachable just courses cheaper. Kajabi for serious creators." }
+    { question: "Is Kajabi free?", answer: "Kajabi offers a 14-day free trial. Plans start at $149/month, which positions it as a premium option for serious course creators." },
+    { question: "What is Kajabi?", answer: "Kajabi is an all-in-one platform for online courses and digital products. It combines your website, course hosting, email marketing, and payment processing in one system." },
+    { question: "Kajabi vs Teachable?", answer: "Kajabi is more expensive but truly all-in-one with marketing tools included. Teachable focuses just on course hosting at lower prices. Kajabi makes sense if you want one platform for everything." }
   ],
   "keystonejs": [
-    { question: "Is KeystoneJS free?", answer: "Yes, open source and free. Headless CMS framework." },
-    { question: "What is KeystoneJS?", answer: "Headless CMS and application framework. GraphQL API. Built on Node.js." },
-    { question: "KeystoneJS vs Strapi?", answer: "Both open source CMS. Strapi more popular. Compare features and community." }
+    { question: "Is KeystoneJS free?", answer: "KeystoneJS is completely free and open source. You can use it to build any project without licensing costs." },
+    { question: "What is KeystoneJS?", answer: "KeystoneJS is a headless CMS and application framework built on Node.js. It generates a GraphQL API and admin UI from your schema definition." },
+    { question: "KeystoneJS vs Strapi?", answer: "Both are open source headless CMS options. Strapi is more popular with a larger community. KeystoneJS offers more flexibility if you're comfortable with code-first approaches." }
   ],
   "krisp": [
-    { question: "Is Krisp free?", answer: "Free 60 mins/day. Pro from $8/month. Noise cancellation." },
-    { question: "What is Krisp?", answer: "AI noise cancellation for calls. Remove background noise from any app." },
-    { question: "Krisp vs native solutions?", answer: "Krisp works everywhere. Native tied to one app. Krisp for universal noise cancellation." }
+    { question: "Is Krisp free?", answer: "Krisp's free plan includes 60 minutes per day of noise cancellation. Pro plans start at $8/month for unlimited usage." },
+    { question: "What is Krisp?", answer: "Krisp is AI-powered noise cancellation that works with any communication app. It removes background noise from your microphone and speaker in real-time." },
+    { question: "Krisp vs native solutions?", answer: "Krisp works across all apps while native solutions like Zoom's are app-specific. Use Krisp if you need noise cancellation everywhere, not just in one application." }
   ],
   "lattice": [
-    { question: "Is Lattice free?", answer: "Free trial. Pricing varies. Performance management." },
-    { question: "What is Lattice?", answer: "People management platform. Performance reviews, goals, engagement surveys." },
-    { question: "Lattice vs 15Five?", answer: "Both performance tools. Compare features and company size fit." }
+    { question: "Is Lattice free?", answer: "Lattice offers free trials. Pricing varies based on company size and selected modules, typically aimed at mid-size and enterprise companies." },
+    { question: "What is Lattice?", answer: "Lattice is a people management platform that handles performance reviews, goal setting, employee engagement surveys, and career development tracking." },
+    { question: "Lattice vs 15Five?", answer: "Both are performance management tools. Compare their specific features like goal frameworks, review cycles, and engagement tools to find the better fit for your culture." }
   ],
   "trend-micro": [
-    { question: "Is Trend Micro free?", answer: "Free tools available. Full suite pricing varies. Cybersecurity." },
-    { question: "What is Trend Micro?", answer: "Cybersecurity company. Antivirus, cloud security, endpoint protection." },
-    { question: "Trend Micro vs CrowdStrike?", answer: "Both cybersecurity. Different approaches. Compare based on needs." }
+    { question: "Is Trend Micro free?", answer: "Trend Micro offers some free security tools. Their full security suites have pricing that varies based on features and number of devices protected." },
+    { question: "What is Trend Micro?", answer: "Trend Micro is a cybersecurity company providing antivirus, cloud security, and endpoint protection. They serve both consumers and enterprises with comprehensive security solutions." },
+    { question: "Trend Micro vs CrowdStrike?", answer: "Trend Micro offers traditional security products while CrowdStrike is cloud-native EDR. They take different approaches to security, so compare based on your specific needs." }
   ],
   "mouseflow": [
-    { question: "Is Mouseflow free?", answer: "Free tier available. Growth from $29/month. Session recording." },
-    { question: "What is Mouseflow?", answer: "Session replay and heatmaps. See how users interact. Form analytics." },
-    { question: "Mouseflow vs Hotjar?", answer: "Similar features. Compare pricing and specific features needed." }
+    { question: "Is Mouseflow free?", answer: "Mouseflow has a free tier with limited recordings. Growth plans start at $29/month for more sessions and features." },
+    { question: "What is Mouseflow?", answer: "Mouseflow provides session replay and heatmaps to show how users interact with your website. It also includes form analytics to identify where users abandon your forms." },
+    { question: "Mouseflow vs Hotjar?", answer: "Both offer session recording and heatmaps with similar feature sets. Compare pricing based on your traffic volume and specific features like form analytics." }
   ],
   "openfaas": [
-    { question: "Is OpenFaaS free?", answer: "Open source free. Pro from $25/month. Serverless platform." },
-    { question: "What is OpenFaaS?", answer: "Serverless functions on Kubernetes. Deploy functions easily. Any language." },
-    { question: "OpenFaaS vs AWS Lambda?", answer: "OpenFaaS self-hosted. Lambda managed. OpenFaaS for Kubernetes." }
+    { question: "Is OpenFaaS free?", answer: "OpenFaaS is open source and free to self-host. OpenFaaS Pro starts at $25/month for additional features and support." },
+    { question: "What is OpenFaaS?", answer: "OpenFaaS lets you deploy serverless functions on Kubernetes. You can write functions in any language and deploy them with simple commands." },
+    { question: "OpenFaaS vs AWS Lambda?", answer: "OpenFaaS is self-hosted on your Kubernetes cluster. Lambda is fully managed by AWS. Use OpenFaaS if you want serverless with infrastructure control." }
   ],
   "lightdash": [
-    { question: "Is Lightdash free?", answer: "Open source free. Cloud from $100/month. BI for dbt." },
-    { question: "What is Lightdash?", answer: "BI tool built for dbt. Explore and visualize dbt models." },
-    { question: "Lightdash vs Metabase?", answer: "Lightdash dbt-native. Metabase general purpose. Lightdash for dbt shops." }
+    { question: "Is Lightdash free?", answer: "Lightdash is open source and free to self-host. Lightdash Cloud starts at $100/month for managed hosting." },
+    { question: "What is Lightdash?", answer: "Lightdash is a BI tool built specifically for dbt users. It lets you explore and visualize your dbt models without duplicating metric definitions." },
+    { question: "Lightdash vs Metabase?", answer: "Lightdash is dbt-native, understanding your models and metrics directly. Metabase is general purpose and connects to any database. Use Lightdash if dbt is central to your data stack." }
   ],
   "harvest": [
-    { question: "Is Harvest free?", answer: "Free for 1 user. Pro from $10.80/user/month. Time tracking." },
-    { question: "What is Harvest?", answer: "Time tracking and invoicing. Track billable hours. Send invoices." },
-    { question: "Harvest vs Toggl?", answer: "Both time tracking. Harvest has invoicing. Toggl simpler tracking." }
+    { question: "Is Harvest free?", answer: "Harvest is free for one user tracking time on two projects. Pro plans start at $10.80 per user per month for full features." },
+    { question: "What is Harvest?", answer: "Harvest is a time tracking and invoicing tool for freelancers and teams. You track billable hours and can generate invoices directly from your time entries." },
+    { question: "Harvest vs Toggl?", answer: "Harvest includes invoicing while Toggl focuses purely on time tracking. Choose Harvest if you need to bill clients directly from your tracked time." }
   ],
   "headscale": [
-    { question: "Is Headscale free?", answer: "Yes, open source and free. Self-hosted Tailscale." },
-    { question: "What is Headscale?", answer: "Self-hosted Tailscale control server. Create your own mesh VPN." },
-    { question: "Headscale vs Tailscale?", answer: "Headscale self-hosted. Tailscale managed. Headscale for full control." }
+    { question: "Is Headscale free?", answer: "Headscale is completely free and open source. You can run your own Tailscale-compatible network without any cost." },
+    { question: "What is Headscale?", answer: "Headscale is a self-hosted implementation of the Tailscale control server. It lets you create your own WireGuard-based mesh VPN with full control." },
+    { question: "Headscale vs Tailscale?", answer: "Headscale is self-hosted giving you complete control. Tailscale is managed and easier. Use Headscale if you need self-hosted or have specific compliance requirements." }
   ],
   "height": [
-    { question: "Is Height free?", answer: "Free for small teams. Team from $8.33/user/month. Project management." },
-    { question: "What is Height?", answer: "AI-powered project management. Autonomous workflows. Built for product teams." },
-    { question: "Height vs Linear?", answer: "Both modern PM tools. Height more AI. Linear more established." }
+    { question: "Is Height free?", answer: "Height is free for small teams. Team plans start at $8.33 per user per month for advanced features and AI capabilities." },
+    { question: "What is Height?", answer: "Height is an AI-powered project management tool that automates routine work. It can create tasks, update statuses, and manage workflows autonomously." },
+    { question: "Height vs Linear?", answer: "Both are modern project management tools. Height leans more heavily into AI automation. Linear is more established with a loyal developer following." }
   ],
   "helix": [
-    { question: "Is Helix free?", answer: "Yes, open source and free. Modal text editor." },
-    { question: "What is Helix?", answer: "Post-modern text editor. Vim-like with built-in LSP. Written in Rust." },
-    { question: "Helix vs Neovim?", answer: "Helix batteries included. Neovim configurable. Helix for less setup." }
+    { question: "Is Helix free?", answer: "Helix is completely free and open source. It's written in Rust and designed to be fast and modern." },
+    { question: "What is Helix?", answer: "Helix is a post-modern text editor with modal editing similar to Vim. It has built-in LSP support, tree-sitter syntax highlighting, and multiple cursors out of the box." },
+    { question: "Helix vs Neovim?", answer: "Helix comes with batteries included while Neovim requires configuration. Helix is great if you want Vim-style editing without spending time on setup." }
   ],
   "help-scout": [
-    { question: "Is Help Scout free?", answer: "Free trial. Standard from $20/user/month. Help desk." },
-    { question: "What is Help Scout?", answer: "Customer support platform. Shared inbox, knowledge base, chat." },
-    { question: "Help Scout vs Zendesk?", answer: "Help Scout simpler. Zendesk more features. Help Scout for small teams." }
+    { question: "Is Help Scout free?", answer: "Help Scout offers a free trial. Standard plans start at $20 per user per month for full helpdesk functionality." },
+    { question: "What is Help Scout?", answer: "Help Scout is a customer support platform with shared inboxes, a knowledge base, and live chat. It's designed to feel personal rather than ticket-based." },
+    { question: "Help Scout vs Zendesk?", answer: "Help Scout is simpler and more human-feeling. Zendesk has more features for complex support operations. Help Scout works well for small to medium support teams." }
   ],
   "hetzner": [
-    { question: "Is Hetzner free?", answer: "No free tier. VPS from €4.51/month. Cloud hosting." },
-    { question: "What is Hetzner?", answer: "German cloud provider. Excellent value VPS and dedicated servers." },
-    { question: "Hetzner vs DigitalOcean?", answer: "Hetzner cheaper in Europe. DigitalOcean more locations. Both good value." }
+    { question: "Is Hetzner free?", answer: "Hetzner doesn't have a free tier. Cloud VPS starts at €4.51/month, offering some of the best value in the industry." },
+    { question: "What is Hetzner?", answer: "Hetzner is a German cloud provider known for excellent value on VPS and dedicated servers. Their data centers are in Germany and Finland with great performance." },
+    { question: "Hetzner vs DigitalOcean?", answer: "Hetzner is significantly cheaper, especially in Europe. DigitalOcean has more data center locations and a more polished experience. Both offer great value hosting." }
   ],
   "httpie": [
-    { question: "Is HTTPie free?", answer: "CLI free. Desktop app free. API testing tool." },
-    { question: "What is HTTPie?", answer: "User-friendly HTTP client. Beautiful CLI and desktop app for API testing." },
-    { question: "HTTPie vs curl?", answer: "HTTPie more readable. curl more universal. HTTPie for humans." }
+    { question: "Is HTTPie free?", answer: "HTTPie CLI is free and open source. The desktop app is also free to use, making it accessible for all developers." },
+    { question: "What is HTTPie?", answer: "HTTPie is a user-friendly HTTP client for the terminal and desktop. It makes API testing readable with syntax highlighting and intuitive command structure." },
+    { question: "HTTPie vs curl?", answer: "HTTPie is more human-readable and easier to use. curl is more universal and available everywhere by default. HTTPie is great for development, curl for scripts." }
   ],
   "unpkg": [
-    { question: "Is unpkg free?", answer: "Yes, completely free CDN for npm packages." },
-    { question: "What is unpkg?", answer: "Fast CDN for npm packages. Load any package via URL." },
-    { question: "unpkg vs jsDelivr?", answer: "Both npm CDNs. jsDelivr more features. unpkg simpler URLs." }
+    { question: "Is unpkg free?", answer: "unpkg is completely free. It's a CDN that serves any package published to npm at no cost to users." },
+    { question: "What is unpkg?", answer: "unpkg is a fast CDN for npm packages. You can load any npm package directly in the browser via a simple URL without installing anything." },
+    { question: "unpkg vs jsDelivr?", answer: "Both serve npm packages via CDN for free. jsDelivr has more features like automatic minification. unpkg has simpler, more predictable URLs." }
   ],
   "hostinger-builder": [
-    { question: "Is Hostinger Builder free?", answer: "Included with hosting from $2.99/month. Website builder." },
-    { question: "What is Hostinger Builder?", answer: "AI website builder by Hostinger. Create sites quickly with AI." },
-    { question: "Hostinger Builder vs Wix?", answer: "Hostinger cheaper. Wix more features. Hostinger for budget." }
+    { question: "Is Hostinger Builder free?", answer: "Hostinger Builder is included with hosting plans starting at $2.99/month. You don't pay separately for the builder tool." },
+    { question: "What is Hostinger Builder?", answer: "Hostinger Builder is an AI-powered website builder included with Hostinger hosting. It uses AI to generate sites quickly from your description." },
+    { question: "Hostinger Builder vs Wix?", answer: "Hostinger is much cheaper when bundled with hosting. Wix has more features and templates. Hostinger works well for budget-conscious projects." }
   ],
   "veracode": [
-    { question: "Is Veracode free?", answer: "Free trial. Enterprise pricing. Application security." },
-    { question: "What is Veracode?", answer: "Application security platform. SAST, DAST, SCA. Enterprise focus." },
-    { question: "Veracode vs Snyk?", answer: "Both app security. Veracode enterprise. Snyk developer-friendly." }
+    { question: "Is Veracode free?", answer: "Veracode offers free trials. Production pricing is enterprise-level based on application portfolio size and features needed." },
+    { question: "What is Veracode?", answer: "Veracode is an application security platform that performs static analysis, dynamic testing, and software composition analysis to find vulnerabilities." },
+    { question: "Veracode vs Snyk?", answer: "Veracode is more enterprise-oriented with comprehensive security testing. Snyk is more developer-friendly and focused on dependencies. Choose based on your security maturity." }
   ],
   "stitch": [
-    { question: "Is Stitch free?", answer: "Free tier available. Standard from $100/month. Data pipeline." },
-    { question: "What is Stitch?", answer: "Cloud ETL service by Talend. Replicate data to warehouses." },
-    { question: "Stitch vs Fivetran?", answer: "Both data pipelines. Fivetran more connectors. Compare pricing." }
+    { question: "Is Stitch free?", answer: "Stitch has a free tier with limited rows. Standard plans start at $100/month for production data volumes." },
+    { question: "What is Stitch?", answer: "Stitch is a cloud ETL service now part of Talend. It replicates data from various sources to your data warehouse with minimal configuration." },
+    { question: "Stitch vs Fivetran?", answer: "Both are ELT data pipeline tools. Fivetran has more connectors while Stitch is more affordable. Compare their connector coverage for your specific sources." }
   ],
   "lazygit": [
-    { question: "Is lazygit free?", answer: "Yes, open source and free. Git TUI client." },
-    { question: "What is lazygit?", answer: "Terminal UI for git. Visual git operations in terminal. Fast and efficient." },
-    { question: "lazygit vs GitKraken?", answer: "lazygit terminal-based. GitKraken GUI. lazygit for terminal lovers." }
+    { question: "Is lazygit free?", answer: "lazygit is completely free and open source. It's a community project you can use without any cost." },
+    { question: "What is lazygit?", answer: "lazygit is a terminal UI for git that makes complex git operations visual and easy. You can stage files, resolve conflicts, and manage branches all from your terminal." },
+    { question: "lazygit vs GitKraken?", answer: "lazygit runs in the terminal while GitKraken is a full GUI. lazygit is perfect for developers who live in the terminal and want fast git operations." }
   ],
   "lovable": [
-    { question: "Is Lovable free?", answer: "Free tier available. Pro from $20/month. AI app builder." },
-    { question: "What is Lovable?", answer: "AI-powered full-stack app builder. Describe app, AI builds it." },
-    { question: "Lovable vs v0?", answer: "Both AI builders. Lovable full apps. v0 for UI components." }
+    { question: "Is Lovable free?", answer: "Lovable has a free tier for trying out the platform. Pro plans start at $20/month for more AI generation credits." },
+    { question: "What is Lovable?", answer: "Lovable is an AI-powered full-stack app builder. You describe what you want in natural language, and it generates a complete working application." },
+    { question: "Lovable vs v0?", answer: "Lovable builds full applications while v0 focuses on UI components. Use Lovable for complete apps, v0 when you just need frontend components." }
   ],
   "starrocks": [
-    { question: "Is StarRocks free?", answer: "Open source free. Cloud pricing varies. Analytics database." },
-    { question: "What is StarRocks?", answer: "Real-time analytics database. Sub-second queries. MySQL compatible." },
-    { question: "StarRocks vs ClickHouse?", answer: "Both analytics DBs. StarRocks easier ops. ClickHouse more mature." }
+    { question: "Is StarRocks free?", answer: "StarRocks is open source and free to self-host. Cloud managed versions have their own pricing based on compute and storage." },
+    { question: "What is StarRocks?", answer: "StarRocks is a real-time analytics database delivering sub-second query performance. It's MySQL-compatible and designed for high-concurrency analytics workloads." },
+    { question: "StarRocks vs ClickHouse?", answer: "Both are fast analytics databases. StarRocks is easier to operate while ClickHouse is more mature. StarRocks excels at complex joins and real-time updates." }
   ],
   "hugging-face": [
-    { question: "Is Hugging Face free?", answer: "Free tier generous. Pro from $9/month. AI platform." },
-    { question: "What is Hugging Face?", answer: "AI model hub and platform. Host, share, deploy ML models. Community-driven." },
-    { question: "Hugging Face vs OpenAI?", answer: "HF open models. OpenAI proprietary. HF for open-source AI." }
+    { question: "Is Hugging Face free?", answer: "Hugging Face has a generous free tier for model hosting and inference. Pro plans start at $9/month for more compute and features." },
+    { question: "What is Hugging Face?", answer: "Hugging Face is the leading platform for open source AI. It hosts models, datasets, and spaces where you can share and deploy machine learning projects." },
+    { question: "Hugging Face vs OpenAI?", answer: "Hugging Face focuses on open source models you can run anywhere. OpenAI provides proprietary models via API. Use Hugging Face for open, customizable AI." }
   ],
   "microk8s": [
-    { question: "Is MicroK8s free?", answer: "Yes, free and open source by Canonical. Lightweight Kubernetes." },
-    { question: "What is MicroK8s?", answer: "Lightweight Kubernetes for workstations and edge. Single command install." },
-    { question: "MicroK8s vs k3s?", answer: "Both lightweight K8s. MicroK8s by Canonical. k3s by Rancher. Similar use cases." }
+    { question: "Is MicroK8s free?", answer: "MicroK8s is completely free and open source from Canonical. You can run full Kubernetes without any licensing costs." },
+    { question: "What is MicroK8s?", answer: "MicroK8s is a lightweight Kubernetes distribution that installs with a single command. It's great for development, edge computing, and IoT deployments." },
+    { question: "MicroK8s vs k3s?", answer: "Both are lightweight Kubernetes distributions. MicroK8s is from Canonical using snaps, k3s is from Rancher. Both work well for similar use cases." }
   ],
   "integromat": [
-    { question: "Is Integromat free?", answer: "Now Make. Free tier available. Automation platform." },
-    { question: "What is Integromat?", answer: "Rebranded to Make. Visual automation platform. Connect apps and automate." },
-    { question: "Integromat vs Zapier?", answer: "Integromat is now Make. More visual. Zapier simpler. Compare pricing." }
+    { question: "Is Integromat free?", answer: "Integromat has rebranded to Make. It offers a free tier with limited operations. Paid plans provide more automation capacity." },
+    { question: "What is Integromat?", answer: "Integromat is now called Make. It's a visual automation platform that connects apps and automates workflows with a more powerful interface than most alternatives." },
+    { question: "Integromat vs Zapier?", answer: "Make (Integromat) offers more visual workflow building and is often more affordable. Zapier is simpler to start with. Make handles complex automations better." }
   ],
   "xcode": [
-    { question: "Is Xcode free?", answer: "Yes, free from Apple. Required for iOS development." },
-    { question: "What is Xcode?", answer: "Apple's IDE for macOS, iOS, etc. Swift and Objective-C development." },
-    { question: "Xcode vs VS Code?", answer: "Xcode required for iOS. VS Code cross-platform. Use both for different needs." }
+    { question: "Is Xcode free?", answer: "Xcode is completely free from Apple. You need it to develop apps for Apple platforms, and there's no paid version." },
+    { question: "What is Xcode?", answer: "Xcode is Apple's IDE for developing apps for macOS, iOS, iPadOS, watchOS, and tvOS. It includes everything needed to build and submit apps to the App Store." },
+    { question: "Xcode vs VS Code?", answer: "Xcode is required for iOS/Mac development with Apple's toolchain. VS Code works for cross-platform development. You'll need Xcode for any native Apple app development." }
   ],
   "wireguard": [
-    { question: "Is WireGuard free?", answer: "Yes, open source and free. Modern VPN protocol." },
-    { question: "What is WireGuard?", answer: "Modern VPN protocol. Fast, secure, simple. Built into Linux kernel." },
-    { question: "WireGuard vs OpenVPN?", answer: "WireGuard faster and simpler. OpenVPN more features. WireGuard for most." }
+    { question: "Is WireGuard free?", answer: "WireGuard is completely free and open source. It's built into the Linux kernel and available on all major platforms." },
+    { question: "What is WireGuard?", answer: "WireGuard is a modern VPN protocol that's faster and simpler than alternatives. It uses state-of-the-art cryptography and has a minimal attack surface." },
+    { question: "WireGuard vs OpenVPN?", answer: "WireGuard is faster and simpler with better performance. OpenVPN is more battle-tested with more features. WireGuard is the better choice for most new deployments." }
   ],
   "jaeger": [
-    { question: "Is Jaeger free?", answer: "Yes, open source by CNCF. Distributed tracing." },
-    { question: "What is Jaeger?", answer: "Distributed tracing system. Monitor and troubleshoot microservices." },
-    { question: "Jaeger vs Zipkin?", answer: "Both tracing systems. Jaeger by Uber/CNCF. Similar functionality." }
+    { question: "Is Jaeger free?", answer: "Jaeger is completely free and open source, graduated from the CNCF. You can run it in production without licensing costs." },
+    { question: "What is Jaeger?", answer: "Jaeger is a distributed tracing system originally developed by Uber. It helps you monitor and troubleshoot microservices by showing how requests flow through your system." },
+    { question: "Jaeger vs Zipkin?", answer: "Both are open source distributed tracing systems with similar functionality. Jaeger is CNCF graduated with more features. Either works well for observability." }
   ],
   "jan": [
-    { question: "Is Jan free?", answer: "Yes, open source and free. Local AI assistant." },
-    { question: "What is Jan?", answer: "Open source AI assistant. Run LLMs locally. Privacy-focused." },
-    { question: "Jan vs LM Studio?", answer: "Both local LLM runners. Compare UI and model support." }
+    { question: "Is Jan free?", answer: "Jan is completely free and open source. You can run AI models locally on your computer without any cost or API fees." },
+    { question: "What is Jan?", answer: "Jan is an open source AI assistant that runs locally on your computer. It downloads and runs language models privately without sending data to external servers." },
+    { question: "Jan vs LM Studio?", answer: "Both let you run LLMs locally for free. They have different interfaces and model management approaches. Try both to see which workflow you prefer." }
   ],
   "magic": [
-    { question: "Is Magic free?", answer: "Free tier available. Pay per login after. Authentication." },
-    { question: "What is Magic?", answer: "Passwordless authentication. Email links, WebAuthn. Simple integration." },
-    { question: "Magic vs Auth0?", answer: "Magic passwordless-focused. Auth0 full-featured. Magic for simplicity." }
+    { question: "Is Magic free?", answer: "Magic has a free tier with limited logins. You pay per authentication after that, making it affordable for projects of all sizes." },
+    { question: "What is Magic?", answer: "Magic provides passwordless authentication using email magic links and WebAuthn. It's designed to be simple to integrate while providing modern, secure authentication." },
+    { question: "Magic vs Auth0?", answer: "Magic focuses specifically on passwordless authentication. Auth0 is a full-featured identity platform. Choose Magic for simple passwordless, Auth0 for comprehensive identity." }
   ],
   "photoroom": [
-    { question: "Is PhotoRoom free?", answer: "Free with watermark. Pro from $9.99/month. Photo editing." },
-    { question: "What is PhotoRoom?", answer: "AI photo editor. Remove backgrounds, create product photos. E-commerce focus." },
-    { question: "PhotoRoom vs Remove.bg?", answer: "PhotoRoom more features. Remove.bg just backgrounds. PhotoRoom for product photos." }
+    { question: "Is PhotoRoom free?", answer: "PhotoRoom has a free tier with watermarked exports. Pro plans start at $9.99/month for clean exports and advanced features." },
+    { question: "What is PhotoRoom?", answer: "PhotoRoom is an AI photo editing app focused on product photography. It removes backgrounds, creates professional product shots, and handles batch editing for e-commerce." },
+    { question: "PhotoRoom vs Remove.bg?", answer: "PhotoRoom offers more editing features beyond just background removal. Remove.bg specializes in backgrounds only. PhotoRoom is better for complete product photo workflows." }
   ],
   "huntress": [
-    { question: "Is Huntress free?", answer: "Free trial. Pricing varies. Endpoint security." },
-    { question: "What is Huntress?", answer: "Managed EDR for SMBs. Threat hunting, incident response. MSP-focused." },
-    { question: "Huntress vs CrowdStrike?", answer: "Huntress for SMBs. CrowdStrike for enterprise. Different markets." }
+    { question: "Is Huntress free?", answer: "Huntress offers a free trial for evaluation. Pricing varies based on the number of endpoints protected, targeting the SMB market." },
+    { question: "What is Huntress?", answer: "Huntress is a managed detection and response (MDR) platform designed for SMBs and MSPs. It provides threat hunting and incident response with a human-led approach." },
+    { question: "Huntress vs CrowdStrike?", answer: "Huntress is designed for smaller businesses and MSPs. CrowdStrike targets enterprise customers. They serve different market segments with different pricing models." }
   ],
   "malwarebytes": [
-    { question: "Is Malwarebytes free?", answer: "Free version available. Premium from $3.75/month. Antimalware." },
-    { question: "What is Malwarebytes?", answer: "Anti-malware software. Real-time protection. Ransomware defense." },
-    { question: "Malwarebytes vs Windows Defender?", answer: "Malwarebytes more specialized. Defender built-in. Use together for best protection." }
+    { question: "Is Malwarebytes free?", answer: "Malwarebytes has a free version for on-demand scanning. Premium plans with real-time protection start at $3.75/month." },
+    { question: "What is Malwarebytes?", answer: "Malwarebytes is anti-malware software that finds and removes threats that traditional antivirus misses. It specializes in zero-day malware and ransomware protection." },
+    { question: "Malwarebytes vs Windows Defender?", answer: "Malwarebytes specializes in catching what traditional antivirus misses. Windows Defender is built-in and covers basics. Many users run both together for layered protection." }
   ],
   "scylladb": [
-    { question: "Is ScyllaDB free?", answer: "Open source free. Cloud pricing varies. NoSQL database." },
-    { question: "What is ScyllaDB?", answer: "High-performance NoSQL database. Cassandra-compatible. Written in C++." },
-    { question: "ScyllaDB vs Cassandra?", answer: "ScyllaDB faster. Cassandra more mature. ScyllaDB for performance." }
+    { question: "Is ScyllaDB free?", answer: "ScyllaDB Open Source is free to use. ScyllaDB Cloud has pricing based on compute and storage consumption." },
+    { question: "What is ScyllaDB?", answer: "ScyllaDB is a high-performance NoSQL database compatible with Apache Cassandra. It's written in C++ and designed for low-latency, high-throughput workloads." },
+    { question: "ScyllaDB vs Cassandra?", answer: "ScyllaDB is significantly faster than Cassandra while maintaining API compatibility. Cassandra has a larger community. ScyllaDB wins on raw performance." }
   ],
   "ibm-cloud": [
-    { question: "Is IBM Cloud free?", answer: "Free tier available. Pay as you go after. Enterprise cloud." },
-    { question: "What is IBM Cloud?", answer: "Enterprise cloud platform. AI, blockchain, Kubernetes. Hybrid cloud focus." },
-    { question: "IBM Cloud vs AWS?", answer: "AWS larger ecosystem. IBM enterprise focus. Compare specific services." }
+    { question: "Is IBM Cloud free?", answer: "IBM Cloud has a free tier with credits for many services. Pay-as-you-go pricing applies after free tier limits are exceeded." },
+    { question: "What is IBM Cloud?", answer: "IBM Cloud is an enterprise cloud platform with a focus on AI, hybrid cloud, and blockchain. It integrates well with existing enterprise systems and IBM services." },
+    { question: "IBM Cloud vs AWS?", answer: "AWS has a larger ecosystem and more services. IBM Cloud excels in hybrid cloud and enterprise integration. Choose based on your specific enterprise requirements." }
   ],
   "kameleoon": [
-    { question: "Is Kameleoon free?", answer: "Free trial. Enterprise pricing. A/B testing." },
-    { question: "What is Kameleoon?", answer: "AI-powered A/B testing and personalization. Enterprise experimentation platform." },
-    { question: "Kameleoon vs Optimizely?", answer: "Both experimentation platforms. Compare features and AI capabilities." }
+    { question: "Is Kameleoon free?", answer: "Kameleoon offers a free trial. Full platform pricing is enterprise-level based on traffic and features needed." },
+    { question: "What is Kameleoon?", answer: "Kameleoon is an AI-powered experimentation platform for A/B testing and personalization. It uses machine learning to optimize experiences in real-time." },
+    { question: "Kameleoon vs Optimizely?", answer: "Both are enterprise experimentation platforms. Compare their AI capabilities, personalization features, and pricing to find the better fit for your testing program." }
   ],
   "mem": [
-    { question: "Is Mem free?", answer: "Free tier available. Pro from $10/month. AI note-taking." },
-    { question: "What is Mem?", answer: "AI-powered note-taking. Automatic organization. Search everything." },
-    { question: "Mem vs Notion?", answer: "Mem AI-first. Notion more structured. Mem for quick capture." }
+    { question: "Is Mem free?", answer: "Mem has a free tier with basic features. Pro plans start at $10/month for full AI capabilities and unlimited notes." },
+    { question: "What is Mem?", answer: "Mem is an AI-powered note-taking app that automatically organizes your notes. It uses AI to surface relevant information and answer questions about your knowledge." },
+    { question: "Mem vs Notion?", answer: "Mem is AI-first with automatic organization. Notion requires manual structure but is more powerful. Mem excels at quick capture and AI-powered retrieval." }
   ],
   "mentat": [
-    { question: "Is Mentat free?", answer: "Yes, open source and free. AI coding assistant." },
-    { question: "What is Mentat?", answer: "AI coding assistant in terminal. Context-aware code changes." },
-    { question: "Mentat vs Aider?", answer: "Both terminal AI coders. Compare features and model support." }
+    { question: "Is Mentat free?", answer: "Mentat is completely free and open source. You'll need your own API keys for the AI models it connects to." },
+    { question: "What is Mentat?", answer: "Mentat is an AI coding assistant that works in your terminal. It understands your codebase context and can make changes across multiple files." },
+    { question: "Mentat vs Aider?", answer: "Both are terminal-based AI coding assistants. Compare their context handling, model support, and workflows to see which fits your development style." }
   ],
   "keeper": [
-    { question: "Is Keeper free?", answer: "Free tier available. Personal from $2.92/month. Password manager." },
-    { question: "What is Keeper?", answer: "Password manager and vault. Secure storage, sharing, breach alerts." },
-    { question: "Keeper vs 1Password?", answer: "Both password managers. Compare features, pricing, and UX." }
+    { question: "Is Keeper free?", answer: "Keeper has a free tier with limited features. Personal plans start at $2.92/month for full password management capabilities." },
+    { question: "What is Keeper?", answer: "Keeper is a password manager and digital vault. It securely stores passwords, files, and sensitive information with breach monitoring and secure sharing." },
+    { question: "Keeper vs 1Password?", answer: "Both are excellent password managers with similar features. Compare their interfaces, family plans, and specific features to find your preference." }
   ],
   "landen": [
-    { question: "Is Landen free?", answer: "Free to start. Pro from $12/month. Landing page builder." },
-    { question: "What is Landen?", answer: "Landing page builder. Beautiful templates. Quick launch pages." },
-    { question: "Landen vs Carrd?", answer: "Both simple builders. Carrd cheaper. Landen more features." }
+    { question: "Is Landen free?", answer: "Landen is free to start building. Pro plans start at $12/month when you're ready to launch with a custom domain." },
+    { question: "What is Landen?", answer: "Landen is a landing page builder with beautiful templates designed for startups. You can create professional landing pages quickly without design skills." },
+    { question: "Landen vs Carrd?", answer: "Both are simple landing page builders. Carrd is cheaper for basic pages. Landen offers more templates and features for startup-style pages." }
   ],
   "gravit-designer": [
-    { question: "Is Gravit Designer free?", answer: "Free version available. Pro from $49/year. Vector design." },
-    { question: "What is Gravit Designer?", answer: "Vector design app. Now Corel Vector. Browser and desktop." },
-    { question: "Gravit vs Figma?", answer: "Gravit for illustration. Figma for UI design. Different strengths." }
+    { question: "Is Gravit Designer free?", answer: "Gravit Designer has a free version. Pro plans start at $49/year for offline access and additional features." },
+    { question: "What is Gravit Designer?", answer: "Gravit Designer is a vector design tool now known as Corel Vector. It works in browsers and as a desktop app for illustration and UI design." },
+    { question: "Gravit vs Figma?", answer: "Gravit excels at illustration and vector work. Figma is built for UI design and collaboration. Choose based on whether you're doing illustration or interface design." }
   ],
   "kissflow": [
-    { question: "Is Kissflow free?", answer: "Free trial. Basic from $15/user/month. Workflow automation." },
-    { question: "What is Kissflow?", answer: "Low-code work platform. Workflows, apps, process automation." },
-    { question: "Kissflow vs Monday?", answer: "Kissflow more workflow focus. Monday project management. Different strengths." }
+    { question: "Is Kissflow free?", answer: "Kissflow offers a free trial. Basic plans start at $15 per user per month for workflow automation and app building." },
+    { question: "What is Kissflow?", answer: "Kissflow is a low-code work platform for building workflows, apps, and automating processes. It's designed for business users without coding skills." },
+    { question: "Kissflow vs Monday?", answer: "Kissflow focuses more on workflow automation and process management. Monday.com is more project management oriented. Choose based on your primary use case." }
   ],
   "zerotier": [
-    { question: "Is ZeroTier free?", answer: "Free for up to 25 devices. Pro from $5/month. Virtual networking." },
-    { question: "What is ZeroTier?", answer: "Virtual networking platform. Create secure networks. Peer-to-peer." },
-    { question: "ZeroTier vs Tailscale?", answer: "Both mesh VPNs. ZeroTier more DIY. Tailscale more managed." }
+    { question: "Is ZeroTier free?", answer: "ZeroTier is free for up to 25 devices on your network. Pro plans start at $5/month for more devices and admin features." },
+    { question: "What is ZeroTier?", answer: "ZeroTier creates secure peer-to-peer networks that work anywhere. You can connect devices across the internet as if they were on the same local network." },
+    { question: "ZeroTier vs Tailscale?", answer: "Both create mesh VPN networks. ZeroTier is more DIY with more configuration options. Tailscale is more managed and easier. Both work well for different preferences." }
   ],
   "knative": [
-    { question: "Is Knative free?", answer: "Yes, open source by CNCF. Serverless on Kubernetes." },
-    { question: "What is Knative?", answer: "Kubernetes-based serverless platform. Serving and eventing. Cloud-native." },
-    { question: "Knative vs OpenFaaS?", answer: "Knative more complex. OpenFaaS simpler. Both K8s serverless." }
+    { question: "Is Knative free?", answer: "Knative is completely free and open source, a CNCF project. You run it on your own Kubernetes cluster." },
+    { question: "What is Knative?", answer: "Knative adds serverless capabilities to Kubernetes. It handles request-based autoscaling, event-driven workloads, and simplified deployments on top of K8s." },
+    { question: "Knative vs OpenFaaS?", answer: "Knative is more feature-rich but complex. OpenFaaS is simpler to get started with. Both bring serverless to Kubernetes in different ways." }
   ],
   "kochava": [
-    { question: "Is Kochava free?", answer: "Free tier available. Enterprise pricing. Mobile attribution." },
-    { question: "What is Kochava?", answer: "Mobile attribution and analytics. Measure campaign performance. Fraud prevention." },
-    { question: "Kochava vs Adjust?", answer: "Both mobile attribution. Compare features and pricing." }
+    { question: "Is Kochava free?", answer: "Kochava has a free tier for getting started. Enterprise pricing scales based on your attribution and analytics needs." },
+    { question: "What is Kochava?", answer: "Kochava is a mobile attribution and analytics platform. It tracks which marketing campaigns drive app installs and includes fraud prevention." },
+    { question: "Kochava vs Adjust?", answer: "Both are mobile measurement partners for attribution. Compare their fraud prevention, integrations, and pricing for your specific attribution needs." }
   ],
   "krea-ai": [
-    { question: "Is Krea AI free?", answer: "Free tier available. Pro from $24/month. AI image generation." },
-    { question: "What is Krea AI?", answer: "Real-time AI image generation. Create and edit images. Unique interface." },
-    { question: "Krea AI vs Midjourney?", answer: "Krea real-time. Midjourney higher quality. Krea for quick iterations." }
+    { question: "Is Krea AI free?", answer: "Krea AI has a free tier with limited generations. Pro plans start at $24/month for more AI image creation." },
+    { question: "What is Krea AI?", answer: "Krea AI is a real-time AI image generation platform. It has a unique interface where you see images generate live as you draw or adjust prompts." },
+    { question: "Krea AI vs Midjourney?", answer: "Krea AI generates images in real-time with an interactive canvas. Midjourney produces higher quality final images. Krea excels at rapid iteration and exploration." }
   ],
   "lastpass": [
-    { question: "Is LastPass free?", answer: "Free tier available. Premium from $3/month. Password manager." },
-    { question: "What is LastPass?", answer: "Password manager. Store, generate, autofill passwords. Cross-platform." },
-    { question: "LastPass vs 1Password?", answer: "LastPass had breaches. 1Password better security reputation. Consider alternatives." }
+    { question: "Is LastPass free?", answer: "LastPass has a free tier limited to one device type. Premium plans start at $3/month for multi-device access." },
+    { question: "What is LastPass?", answer: "LastPass is a password manager that stores and autofills your passwords across devices. It generates strong passwords and syncs them securely." },
+    { question: "LastPass vs 1Password?", answer: "LastPass has had security breaches that damaged its reputation. 1Password has maintained a better security track record. Many have switched to 1Password or Bitwarden." }
   ],
   "microsoft-sentinel": [
-    { question: "Is Sentinel free?", answer: "Free tier available. Pay per GB ingested. Cloud SIEM." },
-    { question: "What is Microsoft Sentinel?", answer: "Cloud-native SIEM by Microsoft. Security analytics. Azure integrated." },
-    { question: "Sentinel vs Splunk?", answer: "Sentinel Azure-native. Splunk platform-agnostic. Choose based on stack." }
+    { question: "Is Sentinel free?", answer: "Microsoft Sentinel has a free trial and some free data ingestion. Production pricing is based on the volume of data analyzed." },
+    { question: "What is Microsoft Sentinel?", answer: "Microsoft Sentinel is a cloud-native SIEM and SOAR solution built on Azure. It uses AI to detect threats and automate responses across your environment." },
+    { question: "Sentinel vs Splunk?", answer: "Sentinel is Azure-native and works best in Microsoft environments. Splunk is platform-agnostic but expensive. Choose based on your existing infrastructure." }
   ],
   "sentinelone": [
-    { question: "Is SentinelOne free?", answer: "Free trial. Enterprise pricing. Endpoint security." },
-    { question: "What is SentinelOne?", answer: "AI-powered endpoint security. EDR, XDR. Autonomous response." },
-    { question: "SentinelOne vs CrowdStrike?", answer: "Both leading EDR. Compare detection, response, and pricing." }
+    { question: "Is SentinelOne free?", answer: "SentinelOne offers free trials for evaluation. Enterprise pricing is based on the number of endpoints protected." },
+    { question: "What is SentinelOne?", answer: "SentinelOne is an AI-powered endpoint security platform. It provides EDR, XDR, and autonomous threat response without requiring human intervention for many attacks." },
+    { question: "SentinelOne vs CrowdStrike?", answer: "Both are leading endpoint security platforms with AI-powered detection. Compare their autonomous response capabilities, pricing, and specific detection techniques." }
   ],
   "minikube": [
-    { question: "Is Minikube free?", answer: "Yes, open source and free. Local Kubernetes." },
-    { question: "What is Minikube?", answer: "Run Kubernetes locally. Single-node cluster. Development and testing." },
-    { question: "Minikube vs Docker Desktop?", answer: "Both local K8s. Docker Desktop simpler. Minikube more configurable." }
+    { question: "Is Minikube free?", answer: "Minikube is completely free and open source. It's the official way to run Kubernetes locally for development and testing." },
+    { question: "What is Minikube?", answer: "Minikube runs a single-node Kubernetes cluster on your local machine. It's perfect for learning Kubernetes and developing applications before deploying to production." },
+    { question: "Minikube vs Docker Desktop?", answer: "Both can run local Kubernetes. Docker Desktop is simpler but has licensing restrictions. Minikube is more configurable and always free." }
   ],
   "lens": [
-    { question: "Is Lens free?", answer: "Personal free. Pro from $199/year. Kubernetes IDE." },
-    { question: "What is Lens?", answer: "Kubernetes IDE. Manage clusters visually. Multi-cluster support." },
-    { question: "Lens vs Rancher?", answer: "Lens desktop app. Rancher web-based. Both K8s management." }
+    { question: "Is Lens free?", answer: "Lens has a free personal tier. Pro subscriptions start at $199/year for team features and enterprise capabilities." },
+    { question: "What is Lens?", answer: "Lens is a Kubernetes IDE that lets you manage clusters visually. It provides a desktop interface for viewing, editing, and debugging Kubernetes resources." },
+    { question: "Lens vs Rancher?", answer: "Lens is a desktop application for managing clusters. Rancher is a web-based platform for provisioning and managing multiple clusters. Both serve Kubernetes management differently." }
   ],
   "power-bi": [
-    { question: "Is Power BI free?", answer: "Desktop free. Pro from $10/user/month. Business intelligence." },
-    { question: "What is Power BI?", answer: "Microsoft BI tool. Dashboards, reports, data visualization. Excel integration." },
-    { question: "Power BI vs Tableau?", answer: "Power BI cheaper, Microsoft integrated. Tableau more powerful visualization." }
+    { question: "Is Power BI free?", answer: "Power BI Desktop is free to download and use. Power BI Pro for sharing dashboards costs $10 per user per month." },
+    { question: "What is Power BI?", answer: "Power BI is Microsoft's business intelligence tool. It creates interactive dashboards and reports, connecting to hundreds of data sources with strong Excel integration." },
+    { question: "Power BI vs Tableau?", answer: "Power BI is more affordable and integrates well with Microsoft products. Tableau has more powerful visualization options. Power BI wins on price, Tableau on visual sophistication." }
   ],
   "lets-encrypt": [
-    { question: "Is Let's Encrypt free?", answer: "Yes, completely free. SSL certificates for everyone." },
-    { question: "What is Let's Encrypt?", answer: "Free SSL certificate authority. Automated HTTPS. Non-profit." },
-    { question: "Let's Encrypt vs paid SSL?", answer: "Same encryption. Paid adds warranty, validation. Let's Encrypt for most." }
+    { question: "Is Let's Encrypt free?", answer: "Let's Encrypt is completely free. Their mission is to make HTTPS available to everyone, so certificates will always be free." },
+    { question: "What is Let's Encrypt?", answer: "Let's Encrypt is a free certificate authority that provides SSL/TLS certificates. It automates the certificate issuance and renewal process." },
+    { question: "Let's Encrypt vs paid SSL?", answer: "Let's Encrypt certificates provide the same encryption as paid ones. Paid certificates add warranties and extended validation. Let's Encrypt is perfect for most websites." }
   ],
   "mocha": [
-    { question: "Is Mocha free?", answer: "Yes, open source and free. JavaScript test framework." },
-    { question: "What is Mocha?", answer: "JavaScript test framework. Flexible testing. Node.js and browser." },
-    { question: "Mocha vs Jest?", answer: "Jest more batteries-included. Mocha more flexible. Jest more popular now." }
+    { question: "Is Mocha free?", answer: "Mocha is completely free and open source. It's one of the most popular JavaScript testing frameworks at no cost." },
+    { question: "What is Mocha?", answer: "Mocha is a flexible JavaScript test framework that runs on Node.js and in browsers. It supports various assertion libraries and testing styles." },
+    { question: "Mocha vs Jest?", answer: "Jest includes more features out of the box like mocking and snapshots. Mocha is more flexible but requires more setup. Jest has become more popular for most projects." }
   ],
   "listnr": [
-    { question: "Is Listnr free?", answer: "Free tier available. Pro from $9/month. AI voiceover." },
-    { question: "What is Listnr?", answer: "AI text to speech. Multiple voices. Podcast and content creation." },
-    { question: "Listnr vs ElevenLabs?", answer: "Both AI TTS. ElevenLabs more natural. Compare pricing." }
+    { question: "Is Listnr free?", answer: "Listnr has a free tier with limited generation. Pro plans start at $9/month for more voice generation credits." },
+    { question: "What is Listnr?", answer: "Listnr is an AI text-to-speech platform with multiple voices and languages. It's popular for podcasts, videos, and content creation." },
+    { question: "Listnr vs ElevenLabs?", answer: "Both create AI voiceovers. ElevenLabs produces more natural-sounding voices but costs more. Listnr is more affordable for high-volume needs." }
   ],
   "noodl": [
-    { question: "Is Noodl free?", answer: "Open source free. Cloud pricing varies. Visual programming." },
-    { question: "What is Noodl?", answer: "Visual programming platform. Build full-stack apps visually." },
-    { question: "Noodl vs Bubble?", answer: "Noodl more developer-friendly. Bubble more no-code. Different approaches." }
+    { question: "Is Noodl free?", answer: "Noodl is open source and free to use. Cloud hosting options have their own pricing." },
+    { question: "What is Noodl?", answer: "Noodl is a visual programming platform for building full-stack applications. You connect nodes visually to create both frontend and backend logic." },
+    { question: "Noodl vs Bubble?", answer: "Noodl gives developers more control with visual programming. Bubble is more no-code focused. Noodl bridges the gap between visual building and coding." }
   ],
   "llama-cpp": [
-    { question: "Is llama.cpp free?", answer: "Yes, open source and free. Local LLM inference." },
-    { question: "What is llama.cpp?", answer: "Run LLMs locally in C++. Efficient CPU inference. Many model formats." },
-    { question: "llama.cpp vs Ollama?", answer: "llama.cpp is the engine. Ollama adds easy UI. Ollama uses llama.cpp." }
+    { question: "Is llama.cpp free?", answer: "llama.cpp is completely free and open source. It powers many local AI applications without any cost." },
+    { question: "What is llama.cpp?", answer: "llama.cpp is a C/C++ implementation for running large language models locally. It enables efficient CPU inference and is the engine behind many local AI tools." },
+    { question: "llama.cpp vs Ollama?", answer: "llama.cpp is the underlying inference engine. Ollama is a user-friendly tool built on top of it. Most users should use Ollama while llama.cpp is for advanced customization." }
   ],
   "lm-studio": [
-    { question: "Is LM Studio free?", answer: "Yes, completely free. Local LLM runner." },
-    { question: "What is LM Studio?", answer: "Desktop app to run LLMs locally. Download models, chat interface." },
-    { question: "LM Studio vs Ollama?", answer: "LM Studio GUI focused. Ollama CLI focused. Both excellent local LLM tools." }
+    { question: "Is LM Studio free?", answer: "LM Studio is completely free for personal use. You can download and run models without any subscription or API costs." },
+    { question: "What is LM Studio?", answer: "LM Studio is a desktop application for running large language models locally. It provides a nice interface for downloading models and chatting with them privately." },
+    { question: "LM Studio vs Ollama?", answer: "LM Studio focuses on a polished GUI experience. Ollama is more CLI-oriented with API access. Both are excellent for running local LLMs with different interaction styles." }
   ],
   "motion": [
-    { question: "Is Motion free?", answer: "7-day trial. Plans from $19/month. AI calendar." },
-    { question: "What is Motion?", answer: "AI-powered calendar and task manager. Auto-schedules tasks. Prioritization." },
-    { question: "Motion vs Reclaim?", answer: "Both AI calendars. Similar features. Compare pricing and UX." }
+    { question: "Is Motion free?", answer: "Motion offers a 7-day free trial. Plans start at $19/month for AI-powered calendar and task management." },
+    { question: "What is Motion?", answer: "Motion is an AI calendar that automatically schedules your tasks and meetings. It optimizes your day based on priorities, deadlines, and energy levels." },
+    { question: "Motion vs Reclaim?", answer: "Both are AI calendar assistants with similar automatic scheduling features. Compare their interfaces, pricing, and specific productivity features to find your preference." }
   ],
   "talend": [
-    { question: "Is Talend free?", answer: "Open source free. Cloud pricing varies. Data integration." },
-    { question: "What is Talend?", answer: "Data integration platform. ETL, data quality. Part of Qlik." },
-    { question: "Talend vs Informatica?", answer: "Both enterprise ETL. Compare specific features and pricing." }
+    { question: "Is Talend free?", answer: "Talend Open Studio is free and open source. Talend Cloud has pricing based on data volume and features needed." },
+    { question: "What is Talend?", answer: "Talend is a data integration platform that handles ETL, data quality, and data governance. It's now part of Qlik after their acquisition." },
+    { question: "Talend vs Informatica?", answer: "Both are enterprise data integration platforms. Compare their specific connectors, transformation capabilities, and pricing for your data infrastructure needs." }
   ],
   "logstash": [
-    { question: "Is Logstash free?", answer: "Yes, open source by Elastic. Log pipeline." },
-    { question: "What is Logstash?", answer: "Server-side data processing pipeline. Collect, transform, send logs." },
-    { question: "Logstash vs Fluentd?", answer: "Both log processors. Logstash richer plugins. Fluentd lighter." }
+    { question: "Is Logstash free?", answer: "Logstash is free and open source from Elastic. It's part of the ELK stack that many organizations run without licensing costs." },
+    { question: "What is Logstash?", answer: "Logstash is a data processing pipeline that collects, transforms, and sends logs to various destinations. It's the 'L' in the ELK (Elasticsearch, Logstash, Kibana) stack." },
+    { question: "Logstash vs Fluentd?", answer: "Logstash has richer transformation plugins. Fluentd is lighter and more efficient on resources. Both are excellent log processing tools." }
   ],
   "loki": [
-    { question: "Is Loki free?", answer: "Open source free. Grafana Cloud has free tier. Log aggregation." },
-    { question: "What is Loki?", answer: "Log aggregation by Grafana. Like Prometheus for logs. Label-based." },
-    { question: "Loki vs Elasticsearch?", answer: "Loki simpler, cheaper. Elasticsearch more features. Loki for Grafana users." }
+    { question: "Is Loki free?", answer: "Loki is free and open source from Grafana Labs. Grafana Cloud includes a free tier for Loki logs." },
+    { question: "What is Loki?", answer: "Loki is a log aggregation system designed to work with Grafana. Unlike Elasticsearch, it only indexes labels making it much cheaper to run at scale." },
+    { question: "Loki vs Elasticsearch?", answer: "Loki is simpler and more cost-effective, indexing only labels. Elasticsearch offers full-text search but costs more. Loki is great for Grafana users who want affordable logging." }
   ],
   "moz": [
-    { question: "Is Moz free?", answer: "Free tools available. Pro from $99/month. SEO platform." },
-    { question: "What is Moz?", answer: "SEO software and data. Domain authority, keyword research, link analysis." },
-    { question: "Moz vs Ahrefs?", answer: "Ahrefs better backlinks. Moz good DA metric. Both solid SEO tools." }
+    { question: "Is Moz free?", answer: "Moz offers free tools like MozBar and Link Explorer with limits. Moz Pro starts at $99/month for full SEO capabilities." },
+    { question: "What is Moz?", answer: "Moz is an SEO software company known for Domain Authority, keyword research, and link analysis. They've been a leader in SEO tools for many years." },
+    { question: "Moz vs Ahrefs?", answer: "Ahrefs has better backlink data and crawling. Moz pioneered Domain Authority which is still widely used. Both are valuable SEO tools with different strengths." }
   ],
   "loomly": [
-    { question: "Is Loomly free?", answer: "15-day trial. Base from $35/month. Social media management." },
-    { question: "What is Loomly?", answer: "Social media calendar and management. Schedule posts, collaborate, analytics." },
-    { question: "Loomly vs Buffer?", answer: "Similar features. Loomly more collaboration. Buffer simpler scheduling." }
+    { question: "Is Loomly free?", answer: "Loomly offers a 15-day free trial. Base plans start at $35/month for social media management and scheduling." },
+    { question: "What is Loomly?", answer: "Loomly is a social media management platform with a calendar interface. It handles scheduling, collaboration, content ideas, and analytics across social networks." },
+    { question: "Loomly vs Buffer?", answer: "Loomly has more collaboration features for teams. Buffer is simpler for scheduling. Choose Loomly if you need team workflows and approval processes." }
   ],
   "murf-ai": [
-    { question: "Is Murf AI free?", answer: "Free tier available. Pro from $29/month. AI voiceover." },
-    { question: "What is Murf AI?", answer: "AI voice generator. Studio-quality voiceovers. Multiple languages." },
-    { question: "Murf vs ElevenLabs?", answer: "Both AI voices. ElevenLabs more realistic. Compare voice options." }
+    { question: "Is Murf AI free?", answer: "Murf AI has a free tier with limited generation. Pro plans start at $29/month for more voices and higher quality output." },
+    { question: "What is Murf AI?", answer: "Murf AI is a text-to-speech platform that creates studio-quality voiceovers. It offers multiple voices in various languages for videos, presentations, and more." },
+    { question: "Murf vs ElevenLabs?", answer: "Both produce AI voiceovers. ElevenLabs voices sound more natural. Murf has a wider selection of professional voices. Compare voice quality for your specific needs." }
   ],
   "pycharm": [
-    { question: "Is PyCharm free?", answer: "Community Edition free. Professional from $199/year. Python IDE." },
-    { question: "What is PyCharm?", answer: "Python IDE by JetBrains. Code completion, debugging, testing." },
-    { question: "PyCharm vs VS Code?", answer: "PyCharm Python-specific. VS Code general purpose. PyCharm for dedicated Python." }
+    { question: "Is PyCharm free?", answer: "PyCharm Community Edition is free and open source. Professional edition starts at $199/year with additional features for web development and databases." },
+    { question: "What is PyCharm?", answer: "PyCharm is JetBrains' Python IDE with intelligent code completion, debugging, testing, and framework support. It's the most popular dedicated Python development environment." },
+    { question: "PyCharm vs VS Code?", answer: "PyCharm offers deeper Python-specific features out of the box. VS Code is lighter and more general purpose with Python support via extensions. PyCharm is better for dedicated Python work." }
   ],
   "k9s": [
-    { question: "Is K9s free?", answer: "Yes, open source and free. Kubernetes TUI." },
-    { question: "What is K9s?", answer: "Terminal UI for Kubernetes. Manage clusters from terminal. Fast navigation." },
-    { question: "K9s vs Lens?", answer: "K9s terminal. Lens GUI. K9s for terminal lovers." }
+    { question: "Is K9s free?", answer: "K9s is completely free and open source. It's a community project for Kubernetes users who prefer terminal interfaces." },
+    { question: "What is K9s?", answer: "K9s is a terminal UI for managing Kubernetes clusters. It lets you view, navigate, and manipulate resources efficiently from your command line." },
+    { question: "K9s vs Lens?", answer: "K9s is terminal-based for keyboard-driven workflows. Lens is a full GUI application. K9s is perfect for developers who live in the terminal." }
   ],
   "luma-ai": [
-    { question: "Is Luma AI free?", answer: "Free tier available. Pro pricing varies. AI video and 3D." },
-    { question: "What is Luma AI?", answer: "AI for video and 3D. Dream Machine for video generation. Gaussian splatting." },
-    { question: "Luma AI vs Runway?", answer: "Both AI video. Different strengths. Compare quality and features." }
+    { question: "Is Luma AI free?", answer: "Luma AI offers a free tier with daily generation limits. Pro pricing varies based on usage and features needed." },
+    { question: "What is Luma AI?", answer: "Luma AI creates AI-generated video with their Dream Machine and does 3D capture with Neural Radiance Fields. They're pushing the boundaries of AI visual content." },
+    { question: "Luma AI vs Runway?", answer: "Both create AI video with different strengths. Compare their generation quality, speed, and pricing for your specific video creation needs." }
   ],
   "nessus": [
-    { question: "Is Nessus free?", answer: "Essentials free for 16 IPs. Pro from $2,790/year. Vulnerability scanner." },
-    { question: "What is Nessus?", answer: "Vulnerability scanner by Tenable. Find security issues. Compliance checking." },
-    { question: "Nessus vs Qualys?", answer: "Both vulnerability scanners. Compare features and deployment options." }
+    { question: "Is Nessus free?", answer: "Nessus Essentials is free for up to 16 IPs. Nessus Professional for unlimited scanning starts at $2,790/year." },
+    { question: "What is Nessus?", answer: "Nessus is a vulnerability scanner from Tenable. It finds security issues in your network, systems, and applications with comprehensive compliance checking." },
+    { question: "Nessus vs Qualys?", answer: "Both are enterprise vulnerability scanners. Nessus is often deployed on-premises while Qualys is cloud-native. Compare their specific detection capabilities and deployment models." }
   ],
   "lunacy": [
-    { question: "Is Lunacy free?", answer: "Yes, completely free. Design tool by Icons8." },
-    { question: "What is Lunacy?", answer: "Free design tool by Icons8. Sketch-compatible. Built-in assets." },
-    { question: "Lunacy vs Figma?", answer: "Lunacy free desktop. Figma collaborative cloud. Different strengths." }
+    { question: "Is Lunacy free?", answer: "Lunacy is completely free for everyone, including commercial use. Icons8 provides it as a free design tool with built-in assets." },
+    { question: "What is Lunacy?", answer: "Lunacy is a free graphic design application from Icons8. It's compatible with Sketch files and includes built-in icons, photos, and illustrations." },
+    { question: "Lunacy vs Figma?", answer: "Lunacy is a free desktop app with built-in assets. Figma is cloud-based with better collaboration. Lunacy is great for solo designers who want a free, capable tool." }
   ],
   "northbeam": [
-    { question: "Is Northbeam free?", answer: "No free tier. Custom pricing. Marketing attribution." },
-    { question: "What is Northbeam?", answer: "Marketing attribution for e-commerce. Multi-touch attribution. Media mix modeling." },
-    { question: "Northbeam vs Triple Whale?", answer: "Both e-commerce attribution. Compare features and pricing." }
+    { question: "Is Northbeam free?", answer: "Northbeam doesn't offer a free tier. It uses custom pricing based on your marketing spend and attribution needs." },
+    { question: "What is Northbeam?", answer: "Northbeam is a marketing attribution platform for e-commerce brands. It provides multi-touch attribution and media mix modeling to optimize ad spend." },
+    { question: "Northbeam vs Triple Whale?", answer: "Both are e-commerce attribution platforms targeting DTC brands. Compare their attribution models, integrations, and pricing to find the better fit for your marketing stack." }
   ],
   "notepad-plus-plus": [
-    { question: "Is Notepad++ free?", answer: "Yes, completely free and open source. Text editor." },
-    { question: "What is Notepad++?", answer: "Free text editor for Windows. Syntax highlighting. Plugin support." },
-    { question: "Notepad++ vs VS Code?", answer: "Notepad++ lightweight. VS Code full IDE. Notepad++ for quick edits." }
+    { question: "Is Notepad++ free?", answer: "Notepad++ is completely free and open source. It's been a free tool for Windows users for nearly two decades." },
+    { question: "What is Notepad++?", answer: "Notepad++ is a free text editor for Windows with syntax highlighting for many programming languages. It's lightweight, fast, and supports plugins for extended functionality." },
+    { question: "Notepad++ vs VS Code?", answer: "Notepad++ is much lighter and faster for quick edits. VS Code is a full IDE with more features. Use Notepad++ for quick text editing, VS Code for development." }
   ],
   "marketmuse": [
-    { question: "Is MarketMuse free?", answer: "Free tier available. Standard from $149/month. Content optimization." },
-    { question: "What is MarketMuse?", answer: "AI content planning and optimization. Topic modeling. Content scoring." },
-    { question: "MarketMuse vs Clearscope?", answer: "Both content optimization. MarketMuse more AI. Compare features." }
+    { question: "Is MarketMuse free?", answer: "MarketMuse has a free tier with limited analyses. Standard plans start at $149/month for full content optimization capabilities." },
+    { question: "What is MarketMuse?", answer: "MarketMuse uses AI to analyze content and suggest improvements for SEO. It helps plan content strategy, optimize existing pages, and identify topic gaps." },
+    { question: "MarketMuse vs Clearscope?", answer: "Both are AI content optimization tools. MarketMuse has more AI-driven insights while Clearscope focuses on competitor analysis. Compare their specific optimization approaches." }
   ],
   "qualys": [
-    { question: "Is Qualys free?", answer: "Free tier available. Enterprise pricing. Security platform." },
-    { question: "What is Qualys?", answer: "Cloud security and compliance platform. Vulnerability management, CSPM." },
-    { question: "Qualys vs Nessus?", answer: "Qualys cloud-native. Nessus on-prem focus. Both vulnerability scanning." }
+    { question: "Is Qualys free?", answer: "Qualys has a free Community Edition with limited scanning. Enterprise pricing is based on assets and modules selected." },
+    { question: "What is Qualys?", answer: "Qualys is a cloud security and compliance platform. It provides vulnerability management, web application scanning, and cloud security posture management." },
+    { question: "Qualys vs Nessus?", answer: "Qualys is cloud-native and browser-based. Nessus can be deployed on-premises. Both are excellent vulnerability scanners with different deployment models." }
   ],
   "jasmine": [
-    { question: "Is Jasmine free?", answer: "Yes, open source and free. JavaScript testing framework." },
-    { question: "What is Jasmine?", answer: "Behavior-driven JavaScript testing. No dependencies. Clean syntax." },
-    { question: "Jasmine vs Jest?", answer: "Jest more features. Jasmine simpler. Jest more popular now." }
+    { question: "Is Jasmine free?", answer: "Jasmine is completely free and open source. It's a pure JavaScript testing framework with no external dependencies." },
+    { question: "What is Jasmine?", answer: "Jasmine is a behavior-driven development testing framework for JavaScript. It runs in browsers and Node.js with a clean syntax for writing tests." },
+    { question: "Jasmine vs Jest?", answer: "Jest has more features built-in like mocking and snapshots. Jasmine is simpler with no dependencies. Jest has become more popular but Jasmine remains solid." }
   ],
   "phpunit": [
-    { question: "Is PHPUnit free?", answer: "Yes, open source and free. PHP testing framework." },
-    { question: "What is PHPUnit?", answer: "Standard testing framework for PHP. Unit testing. Assertions and mocks." },
-    { question: "PHPUnit vs Pest?", answer: "Pest newer, cleaner syntax. PHPUnit standard. Pest for modern PHP." }
+    { question: "Is PHPUnit free?", answer: "PHPUnit is completely free and open source. It's the standard testing framework that comes with most PHP frameworks." },
+    { question: "What is PHPUnit?", answer: "PHPUnit is the de facto unit testing framework for PHP. It provides assertions, mocks, and test organization for testing PHP applications." },
+    { question: "PHPUnit vs Pest?", answer: "Pest offers cleaner, more expressive syntax built on PHPUnit. PHPUnit is the established standard. Pest is popular for new projects wanting modern testing ergonomics." }
   ],
   "rspec": [
-    { question: "Is RSpec free?", answer: "Yes, open source and free. Ruby testing framework." },
-    { question: "What is RSpec?", answer: "Behavior-driven testing for Ruby. Readable specs. Rails integration." },
-    { question: "RSpec vs Minitest?", answer: "RSpec more expressive. Minitest simpler. RSpec for BDD style." }
+    { question: "Is RSpec free?", answer: "RSpec is completely free and open source. It's the most popular testing framework in the Ruby ecosystem." },
+    { question: "What is RSpec?", answer: "RSpec is a behavior-driven development framework for Ruby. It provides readable, expressive syntax for writing tests and integrates seamlessly with Rails." },
+    { question: "RSpec vs Minitest?", answer: "RSpec offers more expressive, English-like syntax. Minitest is simpler and ships with Ruby. RSpec is preferred for BDD-style testing in the Ruby community." }
   ],
   "omnifocus": [
-    { question: "Is OmniFocus free?", answer: "14-day trial. Plans from $9.99/month. Task manager." },
-    { question: "What is OmniFocus?", answer: "Powerful task manager for Apple devices. GTD methodology. Projects and contexts." },
-    { question: "OmniFocus vs Things?", answer: "OmniFocus more powerful. Things simpler. Both excellent Apple task apps." }
+    { question: "Is OmniFocus free?", answer: "OmniFocus offers a 14-day trial. Subscriptions start at $9.99/month or you can purchase outright for a higher one-time cost." },
+    { question: "What is OmniFocus?", answer: "OmniFocus is a powerful task manager for Apple devices built around the GTD (Getting Things Done) methodology. It handles complex project hierarchies and perspectives." },
+    { question: "OmniFocus vs Things?", answer: "OmniFocus is more powerful with more organizational options. Things is simpler and more beautifully designed. Choose based on whether you need GTD complexity or elegant simplicity." }
   ],
   "sauce-labs": [
-    { question: "Is Sauce Labs free?", answer: "Free tier available. Pro from $19/month. Cross-browser testing." },
-    { question: "What is Sauce Labs?", answer: "Cross-browser and mobile testing. Real devices and browsers. CI/CD integration." },
-    { question: "Sauce Labs vs BrowserStack?", answer: "Both testing platforms. Compare device coverage and pricing." }
+    { question: "Is Sauce Labs free?", answer: "Sauce Labs has a free tier with limited testing minutes. Pro plans start at $19/month for more access to their testing platform." },
+    { question: "What is Sauce Labs?", answer: "Sauce Labs is a cloud testing platform for cross-browser and mobile testing. It provides access to thousands of browser and device combinations for automated testing." },
+    { question: "Sauce Labs vs BrowserStack?", answer: "Both are leading cloud testing platforms with similar capabilities. Compare their specific browser coverage, mobile device selection, and pricing for your testing requirements." }
   ],
   "sweep": [
-    { question: "Is Sweep free?", answer: "Free for open source. Pro pricing varies. AI code assistant." },
-    { question: "What is Sweep?", answer: "AI junior developer. Turns issues into pull requests. GitHub integration." },
-    { question: "Sweep vs Devin?", answer: "Both AI developers. Devin more autonomous. Sweep issue-focused." }
+    { question: "Is Sweep free?", answer: "Sweep is free for open source projects. Pricing for private repositories varies based on usage and team size." },
+    { question: "What is Sweep?", answer: "Sweep is an AI that acts as a junior developer. Point it at a GitHub issue, and it creates a pull request with the implementation, handling code across multiple files." },
+    { question: "Sweep vs Devin?", answer: "Sweep turns specific issues into PRs. Devin aims to be a more autonomous AI engineer. Sweep is focused and practical while Devin is more ambitious." }
   ],
   "rootly": [
     { question: "Is Rootly free?", answer: "Rootly offers a free tier for small teams. Pro plans start at $15/user/month, which unlocks advanced incident management features and integrations." },
