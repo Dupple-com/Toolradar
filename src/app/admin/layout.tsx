@@ -17,7 +17,7 @@ export default async function AdminLayout({
             <div className="flex items-center gap-8">
               <Link href="/admin" className="flex items-center gap-2">
                 <RadarLogo className="w-8 h-8" color="#2563EB" />
-                <span className="font-bold text-xl text-slate-800">Toolradar</span>
+                <span className="font-normal text-xl text-slate-800" style={{ fontFamily: '"Funnel Display", sans-serif' }}>Toolradar</span>
                 <span className="text-xs px-2 py-1 bg-yellow-100 text-yellow-700 rounded font-medium">Admin</span>
               </Link>
               <div className="flex gap-6">

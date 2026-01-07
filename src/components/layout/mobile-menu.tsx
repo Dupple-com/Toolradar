@@ -46,7 +46,7 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
       <div className="flex items-center justify-between h-16 px-4 border-b border-gray-100 bg-white">
         <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
           <RadarLogo className="w-8 h-8" color="#2563EB" />
-          <span className="font-bold text-xl text-slate-800">Toolradar</span>
+          <span className="font-normal text-xl text-slate-800" style={{ fontFamily: '"Funnel Display", sans-serif' }}>Toolradar</span>
         </Link>
         <button
           onClick={() => setIsOpen(false)}

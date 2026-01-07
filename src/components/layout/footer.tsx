@@ -180,7 +180,7 @@ export function Footer() {
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2.5 mb-4">
               <RadarLogo className="w-9 h-9" color="white" />
-              <span className="font-bold text-xl">Toolradar</span>
+              <span className="font-normal text-xl" style={{ fontFamily: '"Funnel Display", sans-serif' }}>Toolradar</span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
               The community-driven platform for discovering and reviewing the best software tools for your business.
