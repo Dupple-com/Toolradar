@@ -20799,284 +20799,284 @@ const TOOL_FAQS: Record<string, Array<{ question: string; answer: string }>> = {
     { question: "TickTick vs Todoist?", answer: "TickTick includes more features built-in (calendar, habits, timer). Todoist is simpler and more focused on tasks. TickTick for all-in-one; Todoist for task purity." }
   ],
   "simple-analytics": [
-    { question: "Is Simple Analytics free?", answer: "Free tier available. Starter from $9/month. Privacy analytics." },
-    { question: "What is Simple Analytics?", answer: "Privacy-friendly web analytics. No cookies. GDPR compliant." },
-    { question: "Simple Analytics vs Plausible?", answer: "Both privacy analytics. Similar features. Compare pricing." }
+    { question: "Is Simple Analytics free?", answer: "Simple Analytics offers a limited free tier for trying out the service. Paid plans start at $9/month for the Starter tier, which includes more pageviews and features for privacy-focused analytics." },
+    { question: "What is Simple Analytics?", answer: "Simple Analytics is a privacy-friendly web analytics tool that doesn't use cookies or collect personal data. It's fully GDPR compliant out of the box and provides clean, simple insights without compromising visitor privacy." },
+    { question: "Simple Analytics vs Plausible?", answer: "Both are excellent privacy-focused analytics alternatives. They offer similar features and both are GDPR compliant without cookies. The main differences are in pricing tiers and minor UI preferences." }
   ],
   "loggly": [
-    { question: "Is Loggly free?", answer: "Free tier available. Pro from $49/month. Log management." },
-    { question: "What is Loggly?", answer: "Cloud log management by SolarWinds. Search, analyze, alert on logs." },
-    { question: "Loggly vs Papertrail?", answer: "Same company. Loggly more features. Papertrail simpler and cheaper." }
+    { question: "Is Loggly free?", answer: "Loggly offers a free Lite tier with limited data retention and volume. Paid Pro plans start at $49/month and include more storage, longer retention, and advanced alerting features for log management." },
+    { question: "What is Loggly?", answer: "Loggly is a cloud-based log management platform owned by SolarWinds. It helps you collect, search, and analyze logs from your applications and infrastructure with powerful query capabilities and alerting." },
+    { question: "Loggly vs Papertrail?", answer: "Both are owned by SolarWinds and serve similar purposes. Loggly offers more advanced features like parsing and dashboards, while Papertrail is simpler and more affordable for basic log searching needs." }
   ],
   "rubocop": [
-    { question: "Is RuboCop free?", answer: "Yes, open source and free. Ruby linter." },
-    { question: "What is RuboCop?", answer: "Ruby static code analyzer. Style guide enforcement. Auto-correction." },
-    { question: "RuboCop vs Standard?", answer: "RuboCop configurable. Standard zero-config. Standard for simplicity." }
+    { question: "Is RuboCop free?", answer: "RuboCop is completely free and open source. It's the standard Ruby linter used by the community to enforce code style and catch potential issues in Ruby projects." },
+    { question: "What is RuboCop?", answer: "RuboCop is a static code analyzer and formatter for Ruby. It enforces the Ruby Style Guide, catches bugs and code smells, and can automatically correct many issues to maintain consistent code quality." },
+    { question: "RuboCop vs Standard?", answer: "RuboCop is highly configurable with many rules you can adjust. Standard Ruby is a zero-config wrapper around RuboCop that picks sensible defaults so you don't have to configure anything." }
   ],
   "proton-pass": [
-    { question: "Is Proton Pass free?", answer: "Free plan available. Plus from $1/month. Password manager." },
-    { question: "What is Proton Pass?", answer: "Privacy-focused password manager by Proton. End-to-end encrypted." },
-    { question: "Proton Pass vs 1Password?", answer: "Proton Pass privacy-first. 1Password more features. Different priorities." }
+    { question: "Is Proton Pass free?", answer: "Proton Pass offers a generous free plan with unlimited passwords and devices. The Plus plan starts at just $1/month for additional features like unlimited aliases and integrated 2FA." },
+    { question: "What is Proton Pass?", answer: "Proton Pass is an end-to-end encrypted password manager from the makers of ProtonMail. It prioritizes privacy and security, storing passwords locally encrypted and syncing across your devices." },
+    { question: "Proton Pass vs 1Password?", answer: "Proton Pass is built with a privacy-first approach and open source code. 1Password has more features and longer track record. Choose Proton for privacy focus, 1Password for mature feature set." }
   ],
   "sysdig": [
-    { question: "Is Sysdig free?", answer: "Free tier available. Enterprise pricing varies. Container security." },
-    { question: "What is Sysdig?", answer: "Container security and monitoring. Runtime protection. Kubernetes-native." },
-    { question: "Sysdig vs Datadog?", answer: "Sysdig security-focused. Datadog broader monitoring. Different primary use." }
+    { question: "Is Sysdig free?", answer: "Sysdig offers a free tier for getting started with container visibility. Enterprise pricing varies based on your infrastructure size and feature requirements for full container security and monitoring." },
+    { question: "What is Sysdig?", answer: "Sysdig is a container security and monitoring platform that provides runtime threat detection, vulnerability scanning, and compliance monitoring natively for Kubernetes and cloud environments." },
+    { question: "Sysdig vs Datadog?", answer: "Sysdig specializes in container security and runtime protection, while Datadog focuses on broader observability and monitoring. Sysdig is better for security-first needs, Datadog for general monitoring." }
   ],
   "logtail": [
-    { question: "Is Logtail free?", answer: "Free tier available. Pro from $30/month. Log management." },
-    { question: "What is Logtail?", answer: "Log management by Better Stack. Tail logs in real-time. SQL queries." },
-    { question: "Logtail vs Better Stack?", answer: "Logtail is Better Stack's logging product. Part of their suite." }
+    { question: "Is Logtail free?", answer: "Logtail offers a free tier for low-volume log ingestion. Paid Pro plans start at $30/month and include more data volume, longer retention, and advanced querying features." },
+    { question: "What is Logtail?", answer: "Logtail is the log management product from Better Stack. It lets you tail logs in real-time, run SQL queries against your log data, and set up alerts when issues occur." },
+    { question: "Logtail vs Better Stack?", answer: "Logtail is the logging component of Better Stack's suite. Better Stack combines Logtail with uptime monitoring and status pages for a complete incident response platform." }
   ],
   "lucide": [
-    { question: "Is Lucide free?", answer: "Yes, open source and free. Icon library." },
-    { question: "What is Lucide?", answer: "Beautiful, consistent icon library. Fork of Feather icons. Many frameworks." },
-    { question: "Lucide vs Heroicons?", answer: "Both open source icons. Different styles. Personal preference." }
+    { question: "Is Lucide free?", answer: "Lucide is completely free and open source under the ISC license. You can use all 1,400+ icons in any project, commercial or personal, without restrictions." },
+    { question: "What is Lucide?", answer: "Lucide is a beautiful, consistent icon library that originated as a fork of Feather Icons. It offers official packages for React, Vue, Svelte, Angular, and other frameworks." },
+    { question: "Lucide vs Heroicons?", answer: "Both are excellent open source icon libraries. Lucide has more icons and a fork of Feather's style, while Heroicons is made by Tailwind Labs with a slightly different aesthetic." }
   ],
   "socialbee": [
-    { question: "Is SocialBee free?", answer: "14-day trial. Bootstrap from $19/month. Social media management." },
-    { question: "What is SocialBee?", answer: "Social media scheduling and management. Content categories. AI captions." },
-    { question: "SocialBee vs Buffer?", answer: "SocialBee more content features. Buffer simpler. Compare pricing." }
+    { question: "Is SocialBee free?", answer: "SocialBee offers a 14-day free trial to test all features. Paid plans start at $19/month for the Bootstrap tier, which includes basic scheduling and content management features." },
+    { question: "What is SocialBee?", answer: "SocialBee is a social media scheduling and management platform. It features content categories to organize posts, AI-powered caption generation, and recycling evergreen content automatically." },
+    { question: "SocialBee vs Buffer?", answer: "SocialBee offers more advanced content organization with categories and recycling features. Buffer is simpler and more straightforward. Compare their pricing and features for your specific needs." }
   ],
   "softr": [
-    { question: "Is Softr free?", answer: "Free plan available. Basic from $49/month. No-code app builder." },
-    { question: "What is Softr?", answer: "No-code app builder on Airtable. Portals, marketplaces, directories." },
-    { question: "Softr vs Stacker?", answer: "Both Airtable builders. Similar features. Compare templates and pricing." }
+    { question: "Is Softr free?", answer: "Softr offers a free plan to build and test your app with basic features. Paid plans start at $49/month for the Basic tier with more records, custom domains, and additional functionality." },
+    { question: "What is Softr?", answer: "Softr is a no-code app builder that connects to Airtable as its database. You can build client portals, internal tools, marketplaces, and directories without writing any code." },
+    { question: "Softr vs Stacker?", answer: "Both let you build apps on top of Airtable data. They have similar capabilities, so compare their template libraries, specific features, and pricing to choose the right fit." }
   ],
   "sonarcloud": [
-    { question: "Is SonarCloud free?", answer: "Free for public repos. Plans from $10/month. Code quality." },
-    { question: "What is SonarCloud?", answer: "Cloud code quality service. Bugs, vulnerabilities, code smells." },
-    { question: "SonarCloud vs SonarQube?", answer: "SonarCloud hosted. SonarQube self-hosted. Same features." }
+    { question: "Is SonarCloud free?", answer: "SonarCloud is free for public and open source repositories. Private repository analysis starts at $10/month, scaling based on the number of lines of code you analyze." },
+    { question: "What is SonarCloud?", answer: "SonarCloud is a cloud-hosted code quality service that automatically detects bugs, vulnerabilities, and code smells in your codebase. It integrates with GitHub, GitLab, and Azure DevOps." },
+    { question: "SonarCloud vs SonarQube?", answer: "SonarCloud is the hosted version that SonarSource manages for you. SonarQube is the self-hosted option you run on your own servers. Both use the same analysis engine and rules." }
   ],
   "ovhcloud": [
-    { question: "Is OVHcloud free?", answer: "No free tier. VPS from $3.50/month. European cloud." },
-    { question: "What is OVHcloud?", answer: "European cloud provider. Compute, storage, Kubernetes. Competitive pricing." },
-    { question: "OVHcloud vs Scaleway?", answer: "Both European clouds. OVH more established. Compare specific services." }
+    { question: "Is OVHcloud free?", answer: "OVHcloud doesn't offer a free tier, but their pricing is very competitive. VPS instances start at just $3.50/month, making it one of the more affordable European cloud providers." },
+    { question: "What is OVHcloud?", answer: "OVHcloud is a major European cloud provider offering compute, storage, and managed Kubernetes services. They have data centers across Europe and competitive pricing for cloud infrastructure." },
+    { question: "OVHcloud vs Scaleway?", answer: "Both are European cloud providers with data sovereignty focus. OVHcloud is more established with a broader service range. Scaleway targets developers with simpler offerings. Compare specific services." }
   ],
   "speechify": [
-    { question: "Is Speechify free?", answer: "Free tier available. Premium from $11.58/month. Text to speech." },
-    { question: "What is Speechify?", answer: "Text to speech app. Listen to documents. Celebrity voices." },
-    { question: "Speechify vs ElevenLabs?", answer: "Speechify for reading. ElevenLabs for creating. Different use cases." }
+    { question: "Is Speechify free?", answer: "Speechify offers a free tier with limited features for text-to-speech. Premium plans start at $11.58/month and include more voices, faster speeds, and additional features like celebrity voices." },
+    { question: "What is Speechify?", answer: "Speechify is a text-to-speech app that reads documents, articles, and books aloud. It features natural-sounding AI voices, including celebrity voices, and syncs across your devices." },
+    { question: "Speechify vs ElevenLabs?", answer: "Speechify is designed for listening to existing content like documents and articles. ElevenLabs is for creating and cloning voices for content creation. They serve different use cases." }
   ],
   "vector": [
-    { question: "Is Vector free?", answer: "Yes, open source by Datadog. Data pipeline." },
-    { question: "What is Vector?", answer: "High-performance observability data pipeline. Collect, transform, route logs." },
-    { question: "Vector vs Fluentd?", answer: "Vector faster. Fluentd more mature. Vector for performance." }
+    { question: "Is Vector free?", answer: "Vector is completely free and open source, originally created by Timber and now maintained by Datadog. You can run it without any licensing costs." },
+    { question: "What is Vector?", answer: "Vector is a high-performance observability data pipeline written in Rust. It collects, transforms, and routes logs, metrics, and traces from your infrastructure with excellent performance." },
+    { question: "Vector vs Fluentd?", answer: "Vector is significantly faster due to its Rust implementation and handles high throughput better. Fluentd is more mature with a larger plugin ecosystem. Choose Vector when performance matters." }
   ],
   "spinnaker": [
-    { question: "Is Spinnaker free?", answer: "Yes, open source by Netflix. Continuous delivery." },
-    { question: "What is Spinnaker?", answer: "Multi-cloud continuous delivery platform. Netflix-created. Production deployments." },
-    { question: "Spinnaker vs Argo CD?", answer: "Spinnaker multi-cloud. Argo CD Kubernetes-native. Different deployment models." }
+    { question: "Is Spinnaker free?", answer: "Spinnaker is completely free and open source, created by Netflix. You can deploy and run it on your own infrastructure without any licensing costs." },
+    { question: "What is Spinnaker?", answer: "Spinnaker is a multi-cloud continuous delivery platform originally developed at Netflix. It handles deployment pipelines, canary releases, and manages production deployments across cloud providers." },
+    { question: "Spinnaker vs Argo CD?", answer: "Spinnaker is designed for multi-cloud deployments with sophisticated deployment strategies. Argo CD is Kubernetes-native and follows GitOps principles. Spinnaker for multi-cloud, Argo CD for pure Kubernetes." }
   ],
   "victorops": [
-    { question: "Is VictorOps free?", answer: "Now Splunk On-Call. Free tier available. Incident management." },
-    { question: "What is VictorOps?", answer: "Incident management, now Splunk On-Call. On-call scheduling. Alerting." },
-    { question: "VictorOps vs PagerDuty?", answer: "Both incident management. Now part of Splunk. Compare current Splunk offering." }
+    { question: "Is VictorOps free?", answer: "VictorOps, now rebranded as Splunk On-Call, offers a free tier for small teams. Paid plans provide more users, integrations, and advanced incident management features." },
+    { question: "What is VictorOps?", answer: "VictorOps is an incident management platform now called Splunk On-Call. It handles on-call scheduling, alert routing, and helps teams respond to incidents faster with collaborative features." },
+    { question: "VictorOps vs PagerDuty?", answer: "Both are leading incident management platforms. VictorOps is now part of Splunk's observability suite. PagerDuty is the market leader. Compare Splunk On-Call's current features with PagerDuty's offerings." }
   ],
   "seq": [
-    { question: "Is Seq free?", answer: "Free single user. Teams from $52/month. Log server." },
-    { question: "What is Seq?", answer: "Structured log server. Search and analyze logs. .NET ecosystem popular." },
-    { question: "Seq vs Elastic Stack?", answer: "Seq simpler setup. Elastic more scalable. Seq for smaller teams." }
+    { question: "Is Seq free?", answer: "Seq offers a free single-user license for development. Team licenses start at $52/month for production use with multiple users and advanced features." },
+    { question: "What is Seq?", answer: "Seq is a structured log server designed for searching and analyzing application logs. It's particularly popular in the .NET ecosystem and supports structured logging formats natively." },
+    { question: "Seq vs Elastic Stack?", answer: "Seq is simpler to set up and maintain, perfect for smaller teams. Elastic Stack (ELK) scales better for massive log volumes but requires more operational overhead." }
   ],
   "sourcegraph-cody": [
-    { question: "Is Cody free?", answer: "Free tier available. Pro from $9/month. AI coding assistant." },
-    { question: "What is Cody?", answer: "AI coding assistant by Sourcegraph. Code context aware. Multiple LLMs." },
-    { question: "Cody vs Copilot?", answer: "Cody uses code context. Copilot GitHub-integrated. Compare model support." }
+    { question: "Is Cody free?", answer: "Cody offers a free tier with limited usage for individual developers. Pro plans start at $9/month and include more completions, chat messages, and access to advanced models." },
+    { question: "What is Cody?", answer: "Cody is an AI coding assistant from Sourcegraph that understands your entire codebase context. It can answer questions about your code, write functions, and help with complex refactoring across repositories." },
+    { question: "Cody vs Copilot?", answer: "Cody's main strength is understanding your full codebase context through Sourcegraph's code intelligence. Copilot integrates tightly with GitHub. Compare model options and context capabilities." }
   ],
   "printful": [
-    { question: "Is Printful free?", answer: "Free to use. Pay per order. Print on demand." },
-    { question: "What is Printful?", answer: "Print on demand and dropshipping. Custom products. E-commerce integration." },
-    { question: "Printful vs Printify?", answer: "Printful higher quality. Printify more providers. Compare pricing." }
+    { question: "Is Printful free?", answer: "Printful is free to use with no monthly fees. You only pay for products when orders come in, plus shipping costs. This makes it zero-risk to start a print-on-demand business." },
+    { question: "What is Printful?", answer: "Printful is a print-on-demand and dropshipping service. You design custom products like t-shirts, mugs, and posters, and they print and ship directly to your customers when orders come in." },
+    { question: "Printful vs Printify?", answer: "Printful handles production in-house for higher quality control. Printify connects to a network of print providers for more options and sometimes lower prices. Compare quality and pricing for your products." }
   ],
   "localai": [
-    { question: "Is LocalAI free?", answer: "Yes, open source and free. Local LLM inference." },
-    { question: "What is LocalAI?", answer: "OpenAI-compatible local AI server. Run LLMs privately. REST API." },
-    { question: "LocalAI vs Ollama?", answer: "LocalAI API-compatible. Ollama simpler CLI. Both run local LLMs." }
+    { question: "Is LocalAI free?", answer: "LocalAI is completely free and open source. You can run it on your own hardware to host LLMs privately without any licensing costs or API fees." },
+    { question: "What is LocalAI?", answer: "LocalAI is an OpenAI-compatible server for running large language models locally. It provides a REST API that matches OpenAI's format, so you can use existing tools with local models." },
+    { question: "LocalAI vs Ollama?", answer: "LocalAI provides OpenAI API compatibility for drop-in replacement of OpenAI endpoints. Ollama offers a simpler CLI experience for running models locally. Both run LLMs on your own hardware." }
   ],
   "spline": [
-    { question: "Is Spline free?", answer: "Free tier available. Pro from $7/month. 3D design tool." },
-    { question: "What is Spline?", answer: "Web-based 3D design tool. Real-time collaboration. Export for web." },
-    { question: "Spline vs Three.js?", answer: "Spline visual design. Three.js code library. Spline for designers." }
+    { question: "Is Spline free?", answer: "Spline offers a generous free tier for creating and exporting 3D designs. Pro plans start at $7/month and include more exports, custom domains, and advanced features." },
+    { question: "What is Spline?", answer: "Spline is a web-based 3D design tool that makes 3D accessible to designers. It supports real-time collaboration and exports interactive 3D content that can be embedded directly in websites." },
+    { question: "Spline vs Three.js?", answer: "Spline is a visual design tool for creating 3D without code. Three.js is a JavaScript library for coding 3D experiences. Spline is for designers, Three.js for developers who want full control." }
   ],
   "xmatters": [
-    { question: "Is xMatters free?", answer: "Free tier available. Pro from $9/user/month. Incident management." },
-    { question: "What is xMatters?", answer: "Incident management and communication. On-call management. Everbridge company." },
-    { question: "xMatters vs PagerDuty?", answer: "Both incident management. xMatters more communication focus. Compare features." }
+    { question: "Is xMatters free?", answer: "xMatters offers a free tier for small teams to get started with incident communication. Pro plans start at $9/user/month with more features for larger teams." },
+    { question: "What is xMatters?", answer: "xMatters is an incident management and communication platform owned by Everbridge. It handles on-call management, alert routing, and ensures the right people are notified during incidents." },
+    { question: "xMatters vs PagerDuty?", answer: "Both are incident management platforms. xMatters has a stronger focus on communication and notification workflows. PagerDuty is more widely adopted. Compare specific features for your needs." }
   ],
   "sprout-social": [
-    { question: "Is Sprout Social free?", answer: "30-day trial. Standard from $249/month. Social media management." },
-    { question: "What is Sprout Social?", answer: "Enterprise social media management. Publishing, analytics, engagement." },
-    { question: "Sprout Social vs Hootsuite?", answer: "Both enterprise social. Sprout better analytics. Compare pricing." }
+    { question: "Is Sprout Social free?", answer: "Sprout Social offers a 30-day free trial but no permanent free plan. The Standard plan starts at $249/month, positioning it as an enterprise social media management solution." },
+    { question: "What is Sprout Social?", answer: "Sprout Social is an enterprise-grade social media management platform. It provides scheduling, publishing, engagement tools, and detailed analytics for brands managing multiple social channels." },
+    { question: "Sprout Social vs Hootsuite?", answer: "Both serve enterprise social media needs. Sprout Social is known for better analytics and reporting. Hootsuite has broader integrations. Compare pricing and features for your team size." }
   ],
   "mutable-ai": [
-    { question: "Is Mutable AI free?", answer: "Free tier available. Pro from $20/month. AI code assistant." },
-    { question: "What is Mutable AI?", answer: "AI-powered code documentation. Generate docs from code. IDE integration." },
-    { question: "Mutable AI vs Mintlify?", answer: "Both AI docs. Different approaches. Compare output quality." }
+    { question: "Is Mutable AI free?", answer: "Mutable AI offers a free tier with basic features. Pro plans start at $20/month and include more AI-generated documentation, better models, and advanced customization options." },
+    { question: "What is Mutable AI?", answer: "Mutable AI automatically generates documentation from your code. It analyzes your codebase and creates meaningful documentation, integrating with your IDE for seamless workflow." },
+    { question: "Mutable AI vs Mintlify?", answer: "Both use AI for documentation but take different approaches. Mutable focuses on auto-generating docs from code. Mintlify helps you write and publish beautiful documentation. Compare output quality." }
   ],
   "playground-ai": [
-    { question: "Is Playground AI free?", answer: "Free tier available. Pro from $12/month. AI image generation." },
-    { question: "What is Playground AI?", answer: "AI image generator. Multiple models. Edit and create images." },
-    { question: "Playground vs Midjourney?", answer: "Playground web-based. Midjourney Discord-based. Different workflows." }
+    { question: "Is Playground AI free?", answer: "Playground AI offers a free tier with limited daily generations. Pro plans start at $12/month and include more generations, faster processing, and access to premium models." },
+    { question: "What is Playground AI?", answer: "Playground AI is an AI image generation platform that supports multiple models. You can generate, edit, and enhance images through a web interface with various artistic styles." },
+    { question: "Playground vs Midjourney?", answer: "Playground AI is entirely web-based with a straightforward interface. Midjourney operates through Discord and generally produces higher quality results. Different workflows suit different users." }
   ],
   "hyperping": [
-    { question: "Is Hyperping free?", answer: "Free tier available. Starter from $9/month. Uptime monitoring." },
-    { question: "What is Hyperping?", answer: "Uptime and performance monitoring. Status pages. Global checks." },
-    { question: "Hyperping vs Better Uptime?", answer: "Both uptime monitoring. Similar features. Compare pricing." }
+    { question: "Is Hyperping free?", answer: "Hyperping offers a free tier for basic monitoring needs. Starter plans begin at $9/month and include more monitors, faster check intervals, and status page features." },
+    { question: "What is Hyperping?", answer: "Hyperping is an uptime and performance monitoring service. It checks your websites from global locations, alerts you to downtime, and provides beautiful status pages for your customers." },
+    { question: "Hyperping vs Better Uptime?", answer: "Both are modern uptime monitoring solutions with similar feature sets. Compare their pricing tiers, status page designs, and specific integrations to find the better fit." }
   ],
   "lexica": [
-    { question: "Is Lexica free?", answer: "Free tier available. Pro from $10/month. AI image search and generation." },
-    { question: "What is Lexica?", answer: "AI image search engine. Find and generate images. Stable Diffusion based." },
-    { question: "Lexica vs Midjourney?", answer: "Lexica includes search. Midjourney better generation. Different strengths." }
+    { question: "Is Lexica free?", answer: "Lexica offers a free tier for searching and generating AI images. Pro plans start at $10/month and include more generations, higher resolution outputs, and commercial usage rights." },
+    { question: "What is Lexica?", answer: "Lexica is both an AI image search engine and generator. You can search millions of AI-generated images for inspiration or create your own using Stable Diffusion-based models." },
+    { question: "Lexica vs Midjourney?", answer: "Lexica uniquely combines image search with generation. Midjourney focuses purely on generation with generally higher quality results. Lexica's search feature is excellent for finding inspiration." }
   ],
   "nightcafe": [
-    { question: "Is NightCafe free?", answer: "Free credits daily. Pro from $5.99/month. AI art generator." },
-    { question: "What is NightCafe?", answer: "AI art generator. Multiple styles and models. Community features." },
-    { question: "NightCafe vs Midjourney?", answer: "Both AI art. NightCafe more accessible. Midjourney higher quality." }
+    { question: "Is NightCafe free?", answer: "NightCafe gives you free credits daily to generate AI art. Pro plans start at $5.99/month for more credits, faster generation, and access to all AI models and styles." },
+    { question: "What is NightCafe?", answer: "NightCafe is an AI art generator that supports multiple generation algorithms and artistic styles. It features a community gallery, challenges, and social features for AI artists." },
+    { question: "NightCafe vs Midjourney?", answer: "Both generate AI art but NightCafe is more accessible with its web interface and free credits. Midjourney generally produces higher quality images but requires Discord. Different accessibility levels." }
   ],
   "statuscake": [
-    { question: "Is StatusCake free?", answer: "Free tier available. Superior from $20/month. Uptime monitoring." },
-    { question: "What is StatusCake?", answer: "Website monitoring service. Uptime, speed, SSL checks. Status pages." },
-    { question: "StatusCake vs UptimeRobot?", answer: "Similar monitoring. StatusCake more features. Compare free tiers." }
+    { question: "Is StatusCake free?", answer: "StatusCake offers a free tier with basic uptime monitoring. Superior plans start at $20/month and include more tests, faster intervals, and advanced monitoring features like page speed testing." },
+    { question: "What is StatusCake?", answer: "StatusCake is a website monitoring service that tracks uptime, page speed, SSL certificates, and server health. It alerts you to issues and provides status pages to communicate with users." },
+    { question: "StatusCake vs UptimeRobot?", answer: "Both offer solid uptime monitoring. StatusCake has more features like page speed testing and domain monitoring. UptimeRobot is simpler. Compare their free tier limits for your needs." }
   ],
   "uptimerobot": [
-    { question: "Is UptimeRobot free?", answer: "Free tier with 50 monitors. Pro from $7/month. Uptime monitoring." },
-    { question: "What is UptimeRobot?", answer: "Simple uptime monitoring. 50 free monitors. 5-minute checks." },
-    { question: "UptimeRobot vs Better Uptime?", answer: "UptimeRobot simpler, cheaper. Better Uptime more features." }
+    { question: "Is UptimeRobot free?", answer: "UptimeRobot offers a generous free tier with 50 monitors and 5-minute check intervals. Pro plans start at $7/month for 1-minute intervals and additional features." },
+    { question: "What is UptimeRobot?", answer: "UptimeRobot is one of the most popular simple uptime monitoring services. It checks your websites every 5 minutes on the free plan and alerts you via email, SMS, or webhook when they go down." },
+    { question: "UptimeRobot vs Better Uptime?", answer: "UptimeRobot is simpler and more affordable with a generous free tier. Better Uptime offers more features like incident management and better status pages. Choose based on your needs." }
   ],
   "square": [
-    { question: "Is Square free?", answer: "Free to start. Transaction fees 2.6% + $0.10. Payment processing." },
-    { question: "What is Square?", answer: "Payment processing and POS. Hardware and software. Small business focus." },
-    { question: "Square vs Stripe?", answer: "Square for in-person. Stripe for online. Different primary use cases." }
+    { question: "Is Square free?", answer: "Square is free to get started with no monthly fees. You pay transaction fees of 2.6% + $0.10 per swipe, dip, or tap. There's no commitment or contract required." },
+    { question: "What is Square?", answer: "Square is a payment processing platform with hardware and software for accepting payments. It's designed for small businesses and offers POS systems, invoicing, online payments, and business banking." },
+    { question: "Square vs Stripe?", answer: "Square excels at in-person payments with its hardware ecosystem. Stripe is optimized for online payments and developer integration. Use Square for retail, Stripe for e-commerce and apps." }
   ],
   "grit": [
-    { question: "Is Grit free?", answer: "Free for open source. Enterprise pricing varies. Code migration." },
-    { question: "What is Grit?", answer: "Automated code migrations. Pattern matching. Upgrade dependencies safely." },
-    { question: "Grit vs manual migrations?", answer: "Grit automates tedious changes. Faster, less error-prone." }
+    { question: "Is Grit free?", answer: "Grit is free for open source projects. Enterprise pricing varies based on codebase size and migration complexity. Contact them for custom pricing on commercial projects." },
+    { question: "What is Grit?", answer: "Grit automates large-scale code migrations and dependency upgrades. It uses pattern matching to safely transform code across your entire codebase, reducing manual migration work significantly." },
+    { question: "Grit vs manual migrations?", answer: "Grit automates tedious code transformations that would take days or weeks manually. It's faster, more consistent, and less error-prone than manually updating code across large codebases." }
   ],
   "healthchecks-io": [
-    { question: "Is Healthchecks.io free?", answer: "Free tier available. Pro from $17/month. Cron job monitoring." },
-    { question: "What is Healthchecks.io?", answer: "Cron job monitoring. Know when scheduled tasks fail. Simple and effective." },
-    { question: "Healthchecks.io vs Cronitor?", answer: "Both cron monitoring. Healthchecks.io simpler. Cronitor more features." }
+    { question: "Is Healthchecks.io free?", answer: "Healthchecks.io offers a free tier for monitoring up to 20 checks. Pro plans start at $17/month for more checks, team members, and extended data retention." },
+    { question: "What is Healthchecks.io?", answer: "Healthchecks.io monitors your cron jobs and scheduled tasks. It alerts you when jobs don't run on time, helping you catch silent failures before they become problems." },
+    { question: "Healthchecks.io vs Cronitor?", answer: "Both monitor scheduled jobs effectively. Healthchecks.io is simpler and more affordable. Cronitor offers more features like job telemetry and performance metrics." }
   ],
   "stackpath": [
-    { question: "Is StackPath free?", answer: "No free tier. Pay as you go pricing. Edge platform." },
-    { question: "What is StackPath?", answer: "Edge computing and CDN. Serverless at edge. Security services." },
-    { question: "StackPath vs Cloudflare?", answer: "Cloudflare more popular. StackPath competitive pricing. Compare features." }
+    { question: "Is StackPath free?", answer: "StackPath doesn't offer a free tier. They use pay-as-you-go pricing for their edge computing and CDN services, making it accessible for various workload sizes." },
+    { question: "What is StackPath?", answer: "StackPath is an edge computing and CDN platform. It provides serverless computing at the edge, content delivery, and security services for applications that need low-latency global delivery." },
+    { question: "StackPath vs Cloudflare?", answer: "Cloudflare is more widely adopted with a generous free tier. StackPath offers competitive pricing and focuses on edge compute workloads. Compare specific features and pricing for your use case." }
   ],
   "trackjs": [
-    { question: "Is TrackJS free?", answer: "14-day trial. Team from $99/month. JavaScript error tracking." },
-    { question: "What is TrackJS?", answer: "JavaScript error tracking. Browser errors, telemetry. User session context." },
-    { question: "TrackJS vs Sentry?", answer: "TrackJS JavaScript-focused. Sentry multi-language. Sentry more popular." }
+    { question: "Is TrackJS free?", answer: "TrackJS offers a 14-day free trial. Paid Team plans start at $99/month for JavaScript error tracking with session context and detailed telemetry." },
+    { question: "What is TrackJS?", answer: "TrackJS specializes in JavaScript error tracking for browsers. It captures errors with full context including user session information, network requests, and console logs to help you debug issues." },
+    { question: "TrackJS vs Sentry?", answer: "TrackJS focuses exclusively on JavaScript and provides excellent browser error context. Sentry supports many languages and has broader adoption. Sentry is more popular, TrackJS more specialized." }
   ],
   "uptrends": [
-    { question: "Is Uptrends free?", answer: "30-day trial. Starter from €14/month. Website monitoring." },
-    { question: "What is Uptrends?", answer: "Website monitoring and performance. Real user monitoring. Global checkpoints." },
-    { question: "Uptrends vs Pingdom?", answer: "Both monitoring. Similar features. Compare pricing and locations." }
+    { question: "Is Uptrends free?", answer: "Uptrends offers a 30-day free trial. Starter plans begin at €14/month for basic website monitoring with global checkpoints and alerting." },
+    { question: "What is Uptrends?", answer: "Uptrends is a website and API monitoring platform. It offers synthetic monitoring, real user monitoring, and performance tracking from checkpoints around the world." },
+    { question: "Uptrends vs Pingdom?", answer: "Both provide comprehensive website monitoring. They have similar feature sets and global checkpoint networks. Compare pricing and specific features like RUM capabilities." }
   ],
   "observable": [
-    { question: "Is Observable free?", answer: "Free tier available. Pro from $14/month. Data notebooks." },
-    { question: "What is Observable?", answer: "JavaScript notebooks for data visualization. D3 integration. Collaborative." },
-    { question: "Observable vs Jupyter?", answer: "Observable JavaScript. Jupyter Python. Different ecosystems." }
+    { question: "Is Observable free?", answer: "Observable offers a free tier for public notebooks. Pro plans start at $14/month for private notebooks, team collaboration, and publishing features." },
+    { question: "What is Observable?", answer: "Observable is a JavaScript notebook platform for data visualization and analysis. It features reactive programming, deep D3.js integration, and makes creating interactive visualizations straightforward." },
+    { question: "Observable vs Jupyter?", answer: "Observable is JavaScript-based and runs in the browser with reactive updates. Jupyter is Python-focused and runs locally or on servers. Choose based on your language preference and workflow." }
   ],
   "wise": [
-    { question: "Is Wise free?", answer: "Account free. Transaction fees vary. International transfers." },
-    { question: "What is Wise?", answer: "International money transfers. Multi-currency account. Mid-market rates." },
-    { question: "Wise vs PayPal?", answer: "Wise better FX rates. PayPal more merchants. Wise for transfers." }
+    { question: "Is Wise free?", answer: "Opening a Wise account is free. You pay small fees per transaction when sending money internationally. Wise uses mid-market exchange rates with no markup, making transfers very cost-effective." },
+    { question: "What is Wise?", answer: "Wise (formerly TransferWise) is an international money transfer service. It offers multi-currency accounts, debit cards, and significantly cheaper international transfers using real exchange rates." },
+    { question: "Wise vs PayPal?", answer: "Wise offers much better exchange rates with lower, transparent fees for international transfers. PayPal is more widely accepted for merchant payments. Use Wise for transfers, PayPal for purchases." }
   ],
   "site24x7": [
-    { question: "Is Site24x7 free?", answer: "Free tier available. Pro from $9/month. Full-stack monitoring." },
-    { question: "What is Site24x7?", answer: "Full-stack monitoring by Zoho. Servers, apps, cloud. All-in-one." },
-    { question: "Site24x7 vs Datadog?", answer: "Site24x7 more affordable. Datadog more powerful. Different scales." }
+    { question: "Is Site24x7 free?", answer: "Site24x7 offers a free tier with limited monitors. Pro plans start at $9/month and include more monitors, synthetic testing, and full-stack monitoring capabilities." },
+    { question: "What is Site24x7?", answer: "Site24x7 is a full-stack monitoring platform by Zoho. It monitors websites, servers, applications, and cloud infrastructure in one place with alerting and dashboards." },
+    { question: "Site24x7 vs Datadog?", answer: "Site24x7 is more affordable and provides good coverage for small to medium teams. Datadog is more powerful and scalable for large enterprises. Choose based on your scale and budget." }
   ],
   "streaks": [
-    { question: "Is Streaks free?", answer: "$4.99 one-time. iOS habit tracker." },
-    { question: "What is Streaks?", answer: "Habit tracker for iOS. Apple Design Award winner. Health app integration." },
-    { question: "Streaks vs Habitica?", answer: "Streaks simple tracking. Habitica gamified. Different approaches." }
+    { question: "Is Streaks free?", answer: "Streaks is a one-time purchase of $4.99 on iOS. There's no subscription required - you buy it once and own it forever." },
+    { question: "What is Streaks?", answer: "Streaks is an Apple Design Award-winning habit tracker for iOS. It integrates with Apple Health, supports up to 24 habits, and uses a simple interface to help you build consistent habits." },
+    { question: "Streaks vs Habitica?", answer: "Streaks is minimal and focused on simple habit tracking. Habitica gamifies habits with RPG elements and community features. Streaks for simplicity, Habitica for gamification motivation." }
   ],
   "workos": [
-    { question: "Is WorkOS free?", answer: "Free up to 1M MAUs. Enterprise pricing varies. SSO and directory sync." },
-    { question: "What is WorkOS?", answer: "Enterprise-ready auth features. SSO, directory sync, admin portal." },
-    { question: "WorkOS vs Auth0?", answer: "WorkOS enterprise features. Auth0 full auth. WorkOS for B2B SaaS." }
+    { question: "Is WorkOS free?", answer: "WorkOS offers generous free tiers - up to 1 million monthly active users for some products. Enterprise features like SSO and directory sync have usage-based pricing." },
+    { question: "What is WorkOS?", answer: "WorkOS provides enterprise-ready authentication features for SaaS apps. It handles SSO (SAML, OIDC), directory sync (SCIM), and admin portals so you don't have to build them yourself." },
+    { question: "WorkOS vs Auth0?", answer: "WorkOS focuses specifically on enterprise features like SSO and directory sync. Auth0 is a complete authentication solution. WorkOS is ideal for B2B SaaS needing enterprise sales features." }
   ],
   "scope": [
-    { question: "Is Scope free?", answer: "Plans vary. Check specific Scope product." },
-    { question: "What is Scope?", answer: "Multiple products share this name. Research your specific use case." },
-    { question: "Scope alternatives?", answer: "Depends on specific product. Research your use case." }
+    { question: "Is Scope free?", answer: "Pricing varies depending on which specific Scope product you're referring to, as multiple products share this name. Check the specific product's website for accurate pricing." },
+    { question: "What is Scope?", answer: "Multiple products share the name 'Scope' across different domains. Research the specific Scope product relevant to your use case for accurate information." },
+    { question: "Scope alternatives?", answer: "Alternatives depend on which Scope product you're considering. Research your specific use case to find relevant competing products and comparisons." }
   ],
   "lovo": [
-    { question: "Is Lovo free?", answer: "Free tier available. Pro from $25/month. AI voice generation." },
-    { question: "What is Lovo?", answer: "AI voice generator. 500+ voices. Video creation included." },
-    { question: "Lovo vs ElevenLabs?", answer: "Both AI voices. ElevenLabs more realistic. Lovo includes video." }
+    { question: "Is Lovo free?", answer: "Lovo offers a free tier with limited voice generation. Pro plans start at $25/month and include more voice credits, access to 500+ voices, and video creation features." },
+    { question: "What is Lovo?", answer: "Lovo is an AI voice generator with over 500 realistic voices in multiple languages. It also includes video creation tools, making it a complete solution for content creators." },
+    { question: "Lovo vs ElevenLabs?", answer: "Both generate high-quality AI voices. ElevenLabs is known for more realistic voice cloning. Lovo includes video creation features. Compare voice quality and specific feature needs." }
   ],
   "topaz-labs": [
-    { question: "Is Topaz Labs free?", answer: "Free trial. Products from $99. AI image/video enhancement." },
-    { question: "What is Topaz Labs?", answer: "AI photo and video enhancement. Upscaling, noise reduction. Desktop apps." },
-    { question: "Topaz vs Magnific?", answer: "Topaz desktop. Magnific web. Topaz more control." }
+    { question: "Is Topaz Labs free?", answer: "Topaz Labs offers free trials for their products. Individual apps start at $99 as one-time purchases. They also offer bundles for better value on multiple products." },
+    { question: "What is Topaz Labs?", answer: "Topaz Labs makes AI-powered photo and video enhancement software. Their desktop apps handle upscaling, noise reduction, sharpening, and video enhancement with professional-quality results." },
+    { question: "Topaz vs Magnific?", answer: "Topaz Labs is desktop software with more control and processing options. Magnific is web-based for quick upscaling. Topaz offers more features and local processing for professionals." }
   ],
   "vitess": [
-    { question: "Is Vitess free?", answer: "Yes, open source by PlanetScale. MySQL scaling." },
-    { question: "What is Vitess?", answer: "Database clustering for MySQL. Horizontal scaling. YouTube-created." },
-    { question: "Vitess vs MySQL?", answer: "Vitess scales MySQL. Same queries. Vitess for massive scale." }
+    { question: "Is Vitess free?", answer: "Vitess is completely free and open source, originally created by YouTube and now a CNCF project. You can run it on your own infrastructure without licensing costs." },
+    { question: "What is Vitess?", answer: "Vitess is a database clustering system for horizontal scaling of MySQL. Originally developed at YouTube to scale their databases, it's now used by many large-scale applications." },
+    { question: "Vitess vs MySQL?", answer: "Vitess adds horizontal scaling capabilities to MySQL. You use the same MySQL queries, but Vitess handles sharding and routing automatically. Use Vitess when you need massive MySQL scale." }
   ],
   "lumen5": [
-    { question: "Is Lumen5 free?", answer: "Free tier with watermark. Basic from $29/month. Video creation." },
-    { question: "What is Lumen5?", answer: "AI-powered video creator. Turn blog posts to videos. Templates included." },
-    { question: "Lumen5 vs InVideo?", answer: "Both AI video. Similar features. Compare pricing and templates." }
+    { question: "Is Lumen5 free?", answer: "Lumen5 offers a free tier with watermarked videos. The Basic plan starts at $29/month and removes watermarks while adding more templates and features." },
+    { question: "What is Lumen5?", answer: "Lumen5 is an AI-powered video creation platform. It can transform blog posts into videos automatically, and includes templates and stock media to create professional-looking videos quickly." },
+    { question: "Lumen5 vs InVideo?", answer: "Both are AI video creation platforms with similar capabilities. Compare their template libraries, AI features, pricing tiers, and try both to see which workflow suits you better." }
   ],
   "uploadcare": [
-    { question: "Is Uploadcare free?", answer: "Free tier available. Growth from $55/month. File handling." },
-    { question: "What is Uploadcare?", answer: "File upload and delivery platform. Image optimization. CDN included." },
-    { question: "Uploadcare vs Cloudinary?", answer: "Similar features. Uploadcare simpler pricing. Compare CDN performance." }
+    { question: "Is Uploadcare free?", answer: "Uploadcare offers a free tier for getting started. Growth plans begin at $55/month and include more storage, bandwidth, and advanced transformation features." },
+    { question: "What is Uploadcare?", answer: "Uploadcare is a file upload and delivery platform. It handles uploads, image optimization, transformations, and CDN delivery, taking the complexity out of media handling for developers." },
+    { question: "Uploadcare vs Cloudinary?", answer: "Both handle media uploads and transformations. Uploadcare has simpler pricing. Cloudinary offers more transformation options. Compare specific features and CDN performance for your needs." }
   ],
   "ossec": [
-    { question: "Is OSSEC free?", answer: "Yes, open source and free. Host intrusion detection." },
-    { question: "What is OSSEC?", answer: "Host-based intrusion detection. Log analysis, rootkit detection. Security monitoring." },
-    { question: "OSSEC vs Wazuh?", answer: "Wazuh is OSSEC fork. Wazuh more features. Wazuh more active." }
+    { question: "Is OSSEC free?", answer: "OSSEC is completely free and open source. You can run it on your own infrastructure for host-based intrusion detection without any licensing costs." },
+    { question: "What is OSSEC?", answer: "OSSEC is a host-based intrusion detection system (HIDS). It performs log analysis, file integrity monitoring, rootkit detection, and real-time alerting for security monitoring." },
+    { question: "OSSEC vs Wazuh?", answer: "Wazuh is a fork of OSSEC with more active development and additional features. Wazuh is recommended for new deployments as it's more feature-rich and better maintained." }
   ],
   "yugabytedb": [
-    { question: "Is YugabyteDB free?", answer: "Open source free. Cloud has free tier. Distributed SQL." },
-    { question: "What is YugabyteDB?", answer: "Distributed SQL database. PostgreSQL-compatible. High availability." },
-    { question: "YugabyteDB vs CockroachDB?", answer: "Both distributed SQL. PostgreSQL vs custom wire. Compare compatibility." }
+    { question: "Is YugabyteDB free?", answer: "YugabyteDB is open source and free to self-host. Their managed cloud service, YugabyteDB Managed, offers a free tier for getting started with distributed SQL." },
+    { question: "What is YugabyteDB?", answer: "YugabyteDB is a distributed SQL database that's PostgreSQL-compatible. It provides high availability, horizontal scaling, and geo-distribution while maintaining SQL compatibility." },
+    { question: "YugabyteDB vs CockroachDB?", answer: "Both are distributed SQL databases. YugabyteDB is PostgreSQL-compatible while CockroachDB uses a custom wire protocol. Choose based on your PostgreSQL compatibility requirements." }
   ],
   "logrhythm": [
-    { question: "Is LogRhythm free?", answer: "Free trial. Enterprise pricing. SIEM platform." },
-    { question: "What is LogRhythm?", answer: "SIEM and SOAR platform. Security analytics. Threat detection." },
-    { question: "LogRhythm vs Splunk?", answer: "Both SIEM. LogRhythm all-in-one. Splunk more flexible." }
+    { question: "Is LogRhythm free?", answer: "LogRhythm offers free trials but no permanent free tier. It's an enterprise SIEM platform with pricing based on deployment size and requirements." },
+    { question: "What is LogRhythm?", answer: "LogRhythm is an enterprise SIEM (Security Information and Event Management) platform. It combines log management, security analytics, and SOAR capabilities for threat detection and response." },
+    { question: "LogRhythm vs Splunk?", answer: "Both are enterprise SIEM solutions. LogRhythm is more of an all-in-one platform. Splunk offers more flexibility and a larger ecosystem. Compare based on your specific security needs." }
   ],
   "sumo-logic": [
-    { question: "Is Sumo Logic free?", answer: "Free tier available. Pro from $270/month. Log analytics." },
-    { question: "What is Sumo Logic?", answer: "Cloud-native log analytics. Machine learning insights. Security and observability." },
-    { question: "Sumo Logic vs Splunk?", answer: "Both log analytics. Sumo Logic cloud-native. Splunk more established." }
+    { question: "Is Sumo Logic free?", answer: "Sumo Logic offers a free tier with limited daily data volume. Pro plans start at $270/month for higher ingest limits and advanced analytics features." },
+    { question: "What is Sumo Logic?", answer: "Sumo Logic is a cloud-native log analytics and SIEM platform. It uses machine learning to provide insights from your logs and supports security monitoring and compliance use cases." },
+    { question: "Sumo Logic vs Splunk?", answer: "Sumo Logic is cloud-native and simpler to get started with. Splunk is more established with a larger ecosystem. Sumo Logic often has better pricing for cloud workloads." }
   ],
   "logto": [
-    { question: "Is Logto free?", answer: "Open source free. Cloud from $16/month. Auth platform." },
-    { question: "What is Logto?", answer: "Open source auth platform. User management. Social sign-in." },
-    { question: "Logto vs Auth0?", answer: "Logto open source. Auth0 more mature. Logto for self-hosting." }
+    { question: "Is Logto free?", answer: "Logto is open source and free to self-host. Their managed cloud service starts at $16/month for production use with more users and features." },
+    { question: "What is Logto?", answer: "Logto is an open source authentication platform for managing user sign-up, sign-in, and identity. It supports social login, passwordless auth, and provides a beautiful UI out of the box." },
+    { question: "Logto vs Auth0?", answer: "Logto is open source so you can self-host it. Auth0 is more mature with more features and integrations. Choose Logto for self-hosting control, Auth0 for a fully managed solution." }
   ],
   "tidb": [
-    { question: "Is TiDB free?", answer: "Open source free. Cloud has free tier. Distributed database." },
-    { question: "What is TiDB?", answer: "Distributed SQL database. MySQL-compatible. Real-time analytics." },
-    { question: "TiDB vs CockroachDB?", answer: "TiDB MySQL-compatible. CockroachDB PostgreSQL. Choose by ecosystem." }
+    { question: "Is TiDB free?", answer: "TiDB is open source and free to self-host. TiDB Cloud, their managed service, offers a free tier for development and small workloads." },
+    { question: "What is TiDB?", answer: "TiDB is a distributed SQL database that's MySQL-compatible. It combines OLTP and OLAP workloads, providing real-time analytics alongside transactional operations." },
+    { question: "TiDB vs CockroachDB?", answer: "TiDB is MySQL-compatible while CockroachDB is PostgreSQL-compatible. Choose based on which SQL ecosystem you're already using and need compatibility with." }
   ],
   "janusgraph": [
-    { question: "Is JanusGraph free?", answer: "Yes, open source and free. Graph database." },
-    { question: "What is JanusGraph?", answer: "Scalable graph database. Supports various backends. Linux Foundation project." },
-    { question: "JanusGraph vs Neo4j?", answer: "JanusGraph more scalable. Neo4j more features. JanusGraph for massive graphs." }
+    { question: "Is JanusGraph free?", answer: "JanusGraph is completely free and open source under the Apache 2.0 license. It's a Linux Foundation project with no licensing costs." },
+    { question: "What is JanusGraph?", answer: "JanusGraph is a scalable graph database that supports various storage backends including Cassandra, HBase, and Bigtable. It handles massive graphs with billions of vertices and edges." },
+    { question: "JanusGraph vs Neo4j?", answer: "JanusGraph scales better for massive graphs and is fully open source. Neo4j has more features and better developer experience. JanusGraph for scale, Neo4j for features and ease of use." }
   ],
   "lucky-orange": [
-    { question: "Is Lucky Orange free?", answer: "7-day trial. Build from $32/month. Session recording." },
-    { question: "What is Lucky Orange?", answer: "Conversion optimization suite. Session recordings, heatmaps, surveys." },
-    { question: "Lucky Orange vs Hotjar?", answer: "Similar features. Lucky Orange includes chat. Compare pricing." }
+    { question: "Is Lucky Orange free?", answer: "Lucky Orange offers a 7-day free trial. The Build plan starts at $32/month and includes session recordings, heatmaps, and conversion optimization tools." },
+    { question: "What is Lucky Orange?", answer: "Lucky Orange is a conversion optimization suite that includes session recordings, heatmaps, form analytics, surveys, and live chat. It helps you understand how visitors interact with your website." },
+    { question: "Lucky Orange vs Hotjar?", answer: "Both offer similar features for understanding user behavior. Lucky Orange uniquely includes live chat functionality. Compare pricing and specific feature needs for your use case." }
   ],
   "singular": [
-    { question: "Is Singular free?", answer: "Free tier available. Growth pricing varies. Mobile attribution." },
-    { question: "What is Singular?", answer: "Marketing analytics and attribution. ROI measurement. Fraud prevention." },
-    { question: "Singular vs Adjust?", answer: "Both mobile attribution. Compare data integrations and pricing." }
+    { question: "Is Singular free?", answer: "Singular offers a free tier for getting started with mobile attribution. Growth plans have custom pricing based on your app's scale and feature requirements." },
+    { question: "What is Singular?", answer: "Singular is a marketing analytics and mobile attribution platform. It measures campaign ROI, provides attribution data, and includes fraud prevention to protect your ad spend." },
+    { question: "Singular vs Adjust?", answer: "Both are leading mobile attribution platforms. Compare their specific data integrations, fraud detection capabilities, and pricing structures to find the best fit." }
   ],
   "oxlint": [
-    { question: "Is Oxlint free?", answer: "Yes, open source and free. Fast JavaScript linter." },
-    { question: "What is Oxlint?", answer: "Rust-based JavaScript/TypeScript linter. 50-100x faster than ESLint." },
-    { question: "Oxlint vs ESLint?", answer: "Oxlint much faster. ESLint more rules. Can use both." }
+    { question: "Is Oxlint free?", answer: "Oxlint is completely free and open source. It's part of the Oxc project, building fast JavaScript tooling in Rust with no licensing costs." },
+    { question: "What is Oxlint?", answer: "Oxlint is a blazing-fast JavaScript and TypeScript linter written in Rust. It's 50-100x faster than ESLint, making it practical to run on every keystroke in large codebases." },
+    { question: "Oxlint vs ESLint?", answer: "Oxlint is dramatically faster but has fewer rules currently. ESLint has a massive plugin ecosystem. Many teams use Oxlint for speed on common rules and ESLint for specialized rules." }
   ]
 };
 
