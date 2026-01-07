@@ -22,7 +22,7 @@ export default function LoginPage() {
         <div className="text-center">
           <Link href="/" className="inline-flex items-center justify-center gap-2">
             <RadarLogo className="w-8 h-8" color="#2563EB" />
-            <span className="text-xl font-normal text-slate-800" style={{ fontFamily: '"Funnel Display", sans-serif' }}>Toolradar</span>
+            <span className="text-xl font-bold text-slate-800" style={{ fontFamily: '"Funnel Display", sans-serif' }}>Toolradar</span>
           </Link>
           <p className="text-slate-500 mt-3">Sign in to your account</p>
         </div>
