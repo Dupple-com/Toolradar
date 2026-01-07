@@ -151,8 +151,8 @@ export default async function ToolPage({ params }: { params: { slug: string } })
     },
   ];
 
-  // Combine: custom FAQs first, then auto-generated
-  const faqs = [...customFaqs, ...autoFaqs];
+  // Use custom FAQs if available, otherwise fall back to auto-generated
+  const faqs = customFaqs.length > 0 ? customFaqs : autoFaqs;
 
   const faqJsonLd = generateFaqJsonLd(faqs);
 
