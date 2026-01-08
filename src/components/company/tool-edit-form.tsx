@@ -15,11 +15,25 @@ import {
   ThumbsDown,
   HelpCircle,
   Wand2,
+  DollarSign,
 } from "lucide-react";
 
 interface FAQ {
   question: string;
   answer: string;
+}
+
+interface PricingTier {
+  name: string;
+  price: number | string;
+  period?: string;
+  features: string[];
+}
+
+interface PricingDetails {
+  hasFreeTrial?: boolean;
+  freeTrialDays?: number;
+  tiers?: PricingTier[];
 }
 
 interface ToolEditFormProps {
@@ -31,6 +45,7 @@ interface ToolEditFormProps {
     website: string;
     logo: string | null;
     pricing: string;
+    pricingDetails: PricingDetails | null;
     tldr: string[];
     features: string[];
     pros: string[];
@@ -72,6 +87,15 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
     tool.faqs && tool.faqs.length > 0
       ? tool.faqs
       : [{ question: "", answer: "" }]
+  );
+
+  // Pricing details
+  const [hasFreeTrial, setHasFreeTrial] = useState(tool.pricingDetails?.hasFreeTrial ?? false);
+  const [freeTrialDays, setFreeTrialDays] = useState(tool.pricingDetails?.freeTrialDays ?? 14);
+  const [pricingTiers, setPricingTiers] = useState<PricingTier[]>(
+    tool.pricingDetails?.tiers && tool.pricingDetails.tiers.length > 0
+      ? tool.pricingDetails.tiers
+      : [{ name: "Free", price: 0, period: "month", features: [""] }]
   );
 
   const handleAiAutofill = async () => {
@@ -139,6 +163,18 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
     setIsLoading(true);
 
     try {
+      // Build pricingDetails only for non-free products
+      const pricingDetailsData = pricing !== "free" ? {
+        hasFreeTrial,
+        freeTrialDays: hasFreeTrial ? freeTrialDays : undefined,
+        tiers: pricingTiers
+          .filter(t => t.name.trim())
+          .map(t => ({
+            ...t,
+            features: t.features.filter(f => f.trim()),
+          })),
+      } : null;
+
       const res = await fetch(`/api/company/tools/${tool.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -149,6 +185,7 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
           website,
           logo: logo || null,
           pricing,
+          pricingDetails: pricingDetailsData,
           categoryIds: selectedCategories,
           tldr: tldr.filter((t) => t.trim()),
           features: features.filter((f) => f.trim()),
@@ -584,6 +621,168 @@ export function ToolEditForm({ tool, categories }: ToolEditFormProps) {
           </button>
         </div>
       </section>
+
+      {/* Pricing Details Section - Only for freemium/paid */}
+      {pricing !== "free" && (
+        <section className="bg-card rounded-xl border p-6">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 rounded-lg bg-emerald-100">
+              <DollarSign className="w-5 h-5 text-emerald-600" />
+            </div>
+            <div>
+              <h2 className="font-semibold text-lg">Pricing Details</h2>
+              <p className="text-sm text-muted-foreground">
+                Add pricing tiers to help users compare plans
+              </p>
+            </div>
+          </div>
+
+          {/* Free Trial Toggle */}
+          <div className="flex items-center gap-4 mb-6 p-4 bg-muted/50 rounded-xl">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={hasFreeTrial}
+                onChange={(e) => setHasFreeTrial(e.target.checked)}
+                className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary"
+              />
+              <span className="text-sm font-medium">Offers free trial</span>
+            </label>
+            {hasFreeTrial && (
+              <div className="flex items-center gap-2">
+                <input
+                  type="number"
+                  value={freeTrialDays}
+                  onChange={(e) => setFreeTrialDays(parseInt(e.target.value) || 0)}
+                  min={1}
+                  max={365}
+                  className="w-20 px-3 py-1.5 border rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none"
+                />
+                <span className="text-sm text-muted-foreground">days</span>
+              </div>
+            )}
+          </div>
+
+          {/* Pricing Tiers */}
+          <div className="space-y-4">
+            {pricingTiers.map((tier, tierIndex) => (
+              <div key={tierIndex} className="p-4 bg-muted/50 rounded-xl space-y-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-medium text-muted-foreground">
+                    Tier {tierIndex + 1}
+                  </span>
+                  {pricingTiers.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={() => setPricingTiers(prev => prev.filter((_, i) => i !== tierIndex))}
+                      className="p-1.5 text-muted-foreground hover:text-red-500 transition-colors"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-xs text-muted-foreground mb-1">Plan Name</label>
+                    <input
+                      type="text"
+                      value={tier.name}
+                      onChange={(e) => setPricingTiers(prev => prev.map((t, i) =>
+                        i === tierIndex ? { ...t, name: e.target.value } : t
+                      ))}
+                      placeholder="e.g., Pro, Business"
+                      className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-muted-foreground mb-1">Price ($)</label>
+                    <input
+                      type="number"
+                      value={typeof tier.price === 'number' ? tier.price : 0}
+                      onChange={(e) => setPricingTiers(prev => prev.map((t, i) =>
+                        i === tierIndex ? { ...t, price: parseFloat(e.target.value) || 0 } : t
+                      ))}
+                      min={0}
+                      className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-muted-foreground mb-1">Period</label>
+                    <select
+                      value={tier.period || "month"}
+                      onChange={(e) => setPricingTiers(prev => prev.map((t, i) =>
+                        i === tierIndex ? { ...t, period: e.target.value } : t
+                      ))}
+                      className="w-full px-3 py-2 border rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white"
+                    >
+                      <option value="month">/ month</option>
+                      <option value="year">/ year</option>
+                      <option value="one-time">one-time</option>
+                    </select>
+                  </div>
+                </div>
+
+                {/* Tier Features */}
+                <div>
+                  <label className="block text-xs text-muted-foreground mb-2">Features included</label>
+                  <div className="space-y-2">
+                    {tier.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center gap-2">
+                        <input
+                          type="text"
+                          value={feature}
+                          onChange={(e) => setPricingTiers(prev => prev.map((t, i) =>
+                            i === tierIndex ? {
+                              ...t,
+                              features: t.features.map((f, fi) => fi === featureIndex ? e.target.value : f)
+                            } : t
+                          ))}
+                          placeholder="Feature..."
+                          className="flex-1 px-3 py-1.5 border rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white"
+                        />
+                        {tier.features.length > 1 && (
+                          <button
+                            type="button"
+                            onClick={() => setPricingTiers(prev => prev.map((t, i) =>
+                              i === tierIndex ? {
+                                ...t,
+                                features: t.features.filter((_, fi) => fi !== featureIndex)
+                              } : t
+                            ))}
+                            className="p-1 text-muted-foreground hover:text-red-500"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
+                    ))}
+                    <button
+                      type="button"
+                      onClick={() => setPricingTiers(prev => prev.map((t, i) =>
+                        i === tierIndex ? { ...t, features: [...t.features, ""] } : t
+                      ))}
+                      className="flex items-center gap-1 text-xs text-primary hover:underline"
+                    >
+                      <Plus className="w-3 h-3" />
+                      Add feature
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <button
+              type="button"
+              onClick={() => setPricingTiers(prev => [...prev, { name: "", price: 0, period: "month", features: [""] }])}
+              className="flex items-center gap-2 text-sm text-primary hover:underline"
+            >
+              <Plus className="w-4 h-4" />
+              Add pricing tier
+            </button>
+          </div>
+        </section>
+      )}
 
       {/* Submit Button */}
       <div className="flex justify-end gap-4">

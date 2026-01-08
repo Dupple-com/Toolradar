@@ -82,6 +82,11 @@ export default async function EditToolPage({
           website: tool.website,
           logo: tool.logo,
           pricing: tool.pricing,
+          pricingDetails: tool.pricingDetails as {
+            hasFreeTrial?: boolean;
+            freeTrialDays?: number;
+            tiers?: { name: string; price: number | string; period?: string; features: string[] }[];
+          } | null,
           tldr: tool.tldr,
           features: tool.features,
           pros: tool.pros,

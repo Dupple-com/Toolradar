@@ -41,6 +41,7 @@ export default async function CompanyDashboardPage() {
           upvotes: true,
           reviewCount: true,
           logo: true,
+          pricing: true,
           features: true,
           pros: true,
           cons: true,
@@ -111,6 +112,7 @@ export default async function CompanyDashboardPage() {
             {company.tools.map((tool) => {
               const completion = calculateToolProfileCompletion({
                 logo: tool.logo,
+                pricing: tool.pricing,
                 features: tool.features,
                 pros: tool.pros,
                 cons: tool.cons,

@@ -18,10 +18,14 @@ export function calculateToolProfileCompletion(tool: {
   pros?: string[];
   cons?: string[];
   tldr?: string[];
+  pricing?: string;
   pricingDetails?: unknown;
   faqs?: unknown;
   categories?: unknown[];
 }): ProfileCompletionResult {
+  // For free products, pricing details are considered complete
+  const hasPricingDetails = tool.pricing === "free" || !!tool.pricingDetails;
+
   const criteria: CompletionCriteria[] = [
     {
       name: "Logo",
@@ -55,9 +59,9 @@ export function calculateToolProfileCompletion(tool: {
     },
     {
       name: "Pricing Details",
-      completed: !!tool.pricingDetails,
+      completed: hasPricingDetails,
       weight: 10,
-      tip: "Detailed pricing helps users make decisions",
+      tip: tool.pricing === "free" ? "Free products are auto-completed" : "Add pricing tiers and details",
     },
     {
       name: "FAQs",
