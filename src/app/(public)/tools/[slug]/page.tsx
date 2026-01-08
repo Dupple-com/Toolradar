@@ -16,9 +16,10 @@ import { CheckCircle, ExternalLink, Star, Scale, ArrowRight } from "lucide-react
 // Force dynamic rendering - all tool pages rendered on demand
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
   const tool = await prisma.tool.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     select: {
       name: true,
       tagline: true,
@@ -38,9 +39,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return generateToolMetadata(tool);
 }
 
-export default async function ToolPage({ params }: { params: { slug: string } }) {
+export default async function ToolPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const tool = await prisma.tool.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     include: {
       categories: { include: { category: true } },
       alternatives: {

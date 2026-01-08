@@ -79,8 +79,9 @@ export async function generateStaticParams() {
   return USE_CASE_KEYS.map((usecase) => ({ usecase }));
 }
 
-export async function generateMetadata({ params }: { params: { usecase: string } }): Promise<Metadata> {
-  const useCase = USE_CASES[params.usecase];
+export async function generateMetadata({ params }: { params: Promise<{ usecase: string }> }): Promise<Metadata> {
+  const { usecase } = await params;
+  const useCase = USE_CASES[usecase];
   if (!useCase) return { title: "Not found" };
 
   const year = new Date().getFullYear();
@@ -94,7 +95,7 @@ export async function generateMetadata({ params }: { params: { usecase: string }
     openGraph: {
       title,
       description,
-      url: `https://toolradar.com/tools/for/${params.usecase}`,
+      url: `https://toolradar.com/tools/for/${usecase}`,
       siteName: "Toolradar",
       type: "website",
     },
@@ -104,13 +105,14 @@ export async function generateMetadata({ params }: { params: { usecase: string }
       description,
     },
     alternates: {
-      canonical: `https://toolradar.com/tools/for/${params.usecase}`,
+      canonical: `https://toolradar.com/tools/for/${usecase}`,
     },
   };
 }
 
-export default async function UseCasePage({ params }: { params: { usecase: string } }) {
-  const useCase = USE_CASES[params.usecase];
+export default async function UseCasePage({ params }: { params: Promise<{ usecase: string }> }) {
+  const { usecase } = await params;
+  const useCase = USE_CASES[usecase];
 
   if (!useCase) {
     notFound();
@@ -165,7 +167,7 @@ export default async function UseCasePage({ params }: { params: { usecase: strin
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Tools", url: "/tools" },
-    { name: `For ${useCase.title}`, url: `/tools/for/${params.usecase}` },
+    { name: `For ${useCase.title}`, url: `/tools/for/${usecase}` },
   ]);
 
   const itemListJsonLd = {
@@ -315,7 +317,7 @@ export default async function UseCasePage({ params }: { params: { usecase: strin
         <section className="max-w-6xl mx-auto px-4 pb-16">
           <h2 className="text-lg font-bold mb-4">Explore Other Use Cases</h2>
           <div className="flex flex-wrap gap-3">
-            {Object.entries(USE_CASES).filter(([key]) => key !== params.usecase).map(([key, uc]) => {
+            {Object.entries(USE_CASES).filter(([key]) => key !== usecase).map(([key, uc]) => {
               const UCIcon = uc.icon;
               return (
                 <Link
