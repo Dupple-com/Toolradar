@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth-utils";
 import { indexTool } from "@/lib/meilisearch";
+import { submitUrlsToIndexNow } from "@/lib/indexnow";
 
 export async function POST(request: NextRequest) {
   const auth = await requireAdmin();
@@ -45,6 +46,18 @@ export async function POST(request: NextRequest) {
       await indexTool(tool);
     } catch (error) {
       console.error("Failed to index tool:", error);
+    }
+
+    // Submit to IndexNow for instant indexing
+    try {
+      await submitUrlsToIndexNow([
+        `/tools/${tool.slug}`,
+        `/tools/${tool.slug}/alternatives`,
+        `/tools/${tool.slug}/pricing`,
+        `/tools/${tool.slug}/reviews`,
+      ]);
+    } catch (error) {
+      console.error("Failed to submit to IndexNow:", error);
     }
   }
 

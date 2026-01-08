@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
-import { Star, ArrowRight, Building2, Users, TrendingUp } from "lucide-react";
+import { Star, ArrowRight, Building2, Users, TrendingUp, CheckCircle, AlertTriangle, Shield, Zap } from "lucide-react";
+import { getIndustryContent } from "@/content/industry-content";
 
 export const dynamic = 'force-dynamic';
 
@@ -128,7 +129,12 @@ export async function generateMetadata({ params }: { params: { industry: string 
 
   const year = new Date().getFullYear();
   const title = `Best Software for ${industryConfig.name} ${year}`;
-  const description = `${industryConfig.description} Find the best tools for ${industryConfig.name.toLowerCase()} businesses.`;
+
+  // Get expert content for enhanced description
+  const expertContent = getIndustryContent(industry);
+  const description = expertContent
+    ? `${expertContent.expertIntro.slice(0, 150)}... Find the best tools for ${industryConfig.name.toLowerCase()} in ${year}.`
+    : `${industryConfig.description} Find the best tools for ${industryConfig.name.toLowerCase()} businesses.`;
 
   return {
     title: `${title} | Toolradar`,
@@ -195,6 +201,9 @@ export default async function SoftwareForIndustryPage({
 
   const year = new Date().getFullYear();
 
+  // Get expert content for enhanced page
+  const expertContent = getIndustryContent(industry);
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Software For", url: "/software-for" },
@@ -215,22 +224,25 @@ export default async function SoftwareForIndustryPage({
     })),
   };
 
-  const faqJsonLd = generateFaqJsonLd([
-    {
-      question: `What software do ${industryConfig.name.toLowerCase()} companies need?`,
-      answer: `${industryConfig.name} companies typically need tools for ${industryConfig.relevantCategories.slice(0, 3).join(", ").replace(/-/g, " ")}. Top choices include ${tools.slice(0, 3).map(t => t.name).join(", ")}.`,
-    },
-    {
-      question: `What is the best software for ${industryConfig.name.toLowerCase()}?`,
-      answer: `Based on our analysis, ${tools[0]?.name} is highly rated for ${industryConfig.name.toLowerCase()} use cases with a score of ${tools[0]?.editorialScore}/100. Other excellent options include ${tools.slice(1, 4).map(t => t.name).join(", ")}.`,
-    },
-    {
-      question: `Are there free software options for ${industryConfig.name.toLowerCase()}?`,
-      answer: tools.filter(t => t.pricing === "free" || t.pricing === "freemium").length > 0
-        ? `Yes! Free or freemium options for ${industryConfig.name.toLowerCase()} include ${tools.filter(t => t.pricing === "free" || t.pricing === "freemium").slice(0, 3).map(t => t.name).join(", ")}.`
-        : `Most enterprise ${industryConfig.name.toLowerCase()} software is paid, but many offer free trials to test before committing.`,
-    },
-  ]);
+  // FAQ JSON-LD - use expert FAQs when available
+  const faqJsonLd = expertContent
+    ? generateFaqJsonLd(expertContent.faqs)
+    : generateFaqJsonLd([
+        {
+          question: `What software do ${industryConfig.name.toLowerCase()} companies need?`,
+          answer: `${industryConfig.name} companies typically need tools for ${industryConfig.relevantCategories.slice(0, 3).join(", ").replace(/-/g, " ")}. Top choices include ${tools.slice(0, 3).map(t => t.name).join(", ")}.`,
+        },
+        {
+          question: `What is the best software for ${industryConfig.name.toLowerCase()}?`,
+          answer: `Based on our analysis, ${tools[0]?.name} is highly rated for ${industryConfig.name.toLowerCase()} use cases with a score of ${tools[0]?.editorialScore}/100. Other excellent options include ${tools.slice(1, 4).map(t => t.name).join(", ")}.`,
+        },
+        {
+          question: `Are there free software options for ${industryConfig.name.toLowerCase()}?`,
+          answer: tools.filter(t => t.pricing === "free" || t.pricing === "freemium").length > 0
+            ? `Yes! Free or freemium options for ${industryConfig.name.toLowerCase()} include ${tools.filter(t => t.pricing === "free" || t.pricing === "freemium").slice(0, 3).map(t => t.name).join(", ")}.`
+            : `Most enterprise ${industryConfig.name.toLowerCase()} software is paid, but many offer free trials to test before committing.`,
+        },
+      ]);
 
   // Get other industries
   const otherIndustries = Object.entries(INDUSTRIES)
@@ -268,7 +280,7 @@ export default async function SoftwareForIndustryPage({
             </div>
 
             <p className="text-lg text-muted-foreground max-w-3xl">
-              {industryConfig.description}
+              {expertContent ? expertContent.expertIntro : industryConfig.description}
             </p>
 
             {/* Industry Stats */}
@@ -350,35 +362,126 @@ export default async function SoftwareForIndustryPage({
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="max-w-5xl mx-auto px-4 pb-8">
-          <div className="bg-white rounded-xl border p-6 md:p-8">
-            <h2 className="text-xl font-semibold mb-6">FAQ: Software for {industryConfig.name}</h2>
-            <div className="space-y-6">
-              <div>
-                <h3 className="font-medium mb-2">What software do {industryConfig.name.toLowerCase()} companies use?</h3>
-                <p className="text-muted-foreground">
-                  {industryConfig.name} companies typically use a combination of {industryConfig.relevantCategories.slice(0, 3).join(", ").replace(/-/g, " ")} tools.
-                  Popular choices include {tools.slice(0, 4).map(t => t.name).join(", ")}.
-                </p>
+        {/* Expert Content Sections */}
+        {expertContent && (
+          <>
+            {/* Key Requirements */}
+            <section className="max-w-5xl mx-auto px-4 py-8">
+              <h2 className="text-xl font-bold mb-6">{industryConfig.name} Software Requirements</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {expertContent.requirements.map((req, index) => (
+                  <div key={index} className="bg-white rounded-xl border p-5">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h3 className="font-semibold mb-1">{req.requirement}</h3>
+                        <p className="text-sm text-muted-foreground">{req.explanation}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <div>
-                <h3 className="font-medium mb-2">What is the best software for {industryConfig.name.toLowerCase()} in {year}?</h3>
-                <p className="text-muted-foreground">
-                  Based on our analysis, {tools[0]?.name} is a top choice for {industryConfig.name.toLowerCase()} businesses,
-                  scoring {tools[0]?.editorialScore}/100. The best choice depends on your specific needs and budget.
-                </p>
+            </section>
+
+            {/* Key Software Categories */}
+            <section className="max-w-5xl mx-auto px-4 py-8">
+              <h2 className="text-xl font-bold mb-6">Essential Software Categories for {industryConfig.name}</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {expertContent.keyCategories.map((cat, index) => (
+                  <div key={index} className="bg-white rounded-xl border p-5">
+                    <h3 className="font-semibold mb-2">{cat.category}</h3>
+                    <p className="text-sm text-muted-foreground">{cat.importance}</p>
+                  </div>
+                ))}
               </div>
-              <div>
-                <h3 className="font-medium mb-2">How do I choose software for my {industryConfig.name.toLowerCase()} business?</h3>
-                <p className="text-muted-foreground">
-                  Consider your team size, specific workflows, compliance requirements, and budget.
-                  Many tools offer free trials - we recommend testing 2-3 options before committing.
-                </p>
+            </section>
+
+            {/* Considerations */}
+            <section className="max-w-5xl mx-auto px-4 py-8">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                  <AlertTriangle className="w-5 h-5 text-amber-600" />
+                  Key Considerations When Evaluating {industryConfig.name} Software
+                </h2>
+                <ul className="space-y-3">
+                  {expertContent.considerations.map((consideration, index) => (
+                    <li key={index} className="flex items-start gap-2 text-amber-800">
+                      <span className="text-amber-500 mt-1">•</span>
+                      {consideration}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* Compliance Notes */}
+            <section className="max-w-5xl mx-auto px-4 py-8">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h2 className="text-lg font-bold mb-3 flex items-center gap-2">
+                  <Shield className="w-5 h-5 text-blue-600" />
+                  Compliance & Regulatory Considerations
+                </h2>
+                <p className="text-blue-800">{expertContent.complianceNotes}</p>
+              </div>
+            </section>
+
+            {/* Digital Trends */}
+            <section className="max-w-5xl mx-auto px-4 py-8">
+              <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
+                <h2 className="text-lg font-bold mb-3 flex items-center gap-2">
+                  <Zap className="w-5 h-5 text-purple-600" />
+                  Digital Trends in {industryConfig.name}
+                </h2>
+                <p className="text-purple-800">{expertContent.digitalTrends}</p>
+              </div>
+            </section>
+
+            {/* Expert FAQ Section */}
+            <section className="max-w-5xl mx-auto px-4 py-8">
+              <h2 className="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                {expertContent.faqs.map((faq, index) => (
+                  <div key={index} className="bg-white rounded-xl border p-5">
+                    <h3 className="font-semibold mb-2">{faq.question}</h3>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
+
+        {/* Generic FAQ (when no expert content) */}
+        {!expertContent && (
+          <section className="max-w-5xl mx-auto px-4 pb-8">
+            <div className="bg-white rounded-xl border p-6 md:p-8">
+              <h2 className="text-xl font-semibold mb-6">FAQ: Software for {industryConfig.name}</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-medium mb-2">What software do {industryConfig.name.toLowerCase()} companies use?</h3>
+                  <p className="text-muted-foreground">
+                    {industryConfig.name} companies typically use a combination of {industryConfig.relevantCategories.slice(0, 3).join(", ").replace(/-/g, " ")} tools.
+                    Popular choices include {tools.slice(0, 4).map(t => t.name).join(", ")}.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-medium mb-2">What is the best software for {industryConfig.name.toLowerCase()} in {year}?</h3>
+                  <p className="text-muted-foreground">
+                    Based on our analysis, {tools[0]?.name} is a top choice for {industryConfig.name.toLowerCase()} businesses,
+                    scoring {tools[0]?.editorialScore}/100. The best choice depends on your specific needs and budget.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-medium mb-2">How do I choose software for my {industryConfig.name.toLowerCase()} business?</h3>
+                  <p className="text-muted-foreground">
+                    Consider your team size, specific workflows, compliance requirements, and budget.
+                    Many tools offer free trials - we recommend testing 2-3 options before committing.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* Other Industries */}
         <section className="max-w-5xl mx-auto px-4 pb-16">

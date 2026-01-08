@@ -6,7 +6,8 @@ import { ToolCard } from "@/components/tools/tool-card";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateMetadata as generateSeoMetadata, generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
-import { ArrowLeft, Star, DollarSign, Users, ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowLeft, Star, DollarSign, Users, ArrowRight, CheckCircle, XCircle, Lightbulb, AlertTriangle, Search } from "lucide-react";
+import { getAlternativesContent, type AlternativeExpertContent } from "@/content/alternatives-content";
 
 
 export const dynamic = 'force-dynamic';
@@ -23,9 +24,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     return { title: "Tool not found" };
   }
 
+  // Get expert content for enhanced description
+  const expertContent = getAlternativesContent(slug);
+  const description = expertContent
+    ? `${expertContent.expertIntro.slice(0, 150)}... Compare the best ${tool.name} alternatives in ${year}.`
+    : `Looking for ${tool.name} alternatives? Compare the top ${tool.name} competitors with real user reviews, pricing, and features. Find the best alternative for your needs.`;
+
   return generateSeoMetadata({
     title: `Best ${tool.name} Alternatives & Competitors in ${year}`,
-    description: `Looking for ${tool.name} alternatives? Compare the top ${tool.name} competitors with real user reviews, pricing, and features. Find the best alternative for your needs.`,
+    description,
     path: `/tools/${slug}/alternatives`,
     keywords: [
       `${tool.name} alternatives`,
@@ -93,6 +100,9 @@ export default async function AlternativesPage({ params }: { params: { slug: str
   const topAlternative = alternatives[0];
   const freeAlternatives = alternatives.filter(a => a.pricing === "free" || a.pricing === "freemium");
 
+  // Get expert content for enhanced alternatives page
+  const expertContent = getAlternativesContent(slug);
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Tools", url: "/tools" },
@@ -115,29 +125,31 @@ export default async function AlternativesPage({ params }: { params: { slug: str
     })),
   };
 
-  // FAQ for SEO and GEO
-  const faqJsonLd = generateFaqJsonLd([
-    {
-      question: `What is the best ${tool.name} alternative?`,
-      answer: topAlternative
-        ? `Based on our analysis, ${topAlternative.name} is the top-rated ${tool.name} alternative with a score of ${topAlternative.editorialScore || "high"}/100. However, the best choice depends on your specific needs, budget, and use case.`
-        : `There are several strong ${tool.name} alternatives available. The best choice depends on your specific needs, budget, and use case.`,
-    },
-    {
-      question: `Is there a free alternative to ${tool.name}?`,
-      answer: freeAlternatives.length > 0
-        ? `Yes, there are free alternatives to ${tool.name}. ${freeAlternatives.slice(0, 3).map(a => a.name).join(", ")} ${freeAlternatives.length > 1 ? "are" : "is"} available with free or freemium pricing.`
-        : `While most ${tool.name} alternatives are paid, many offer free trials or freemium tiers. Check each tool's pricing page for current offers.`,
-    },
-    {
-      question: `How do I switch from ${tool.name} to an alternative?`,
-      answer: `Switching from ${tool.name} typically involves: 1) Exporting your data from ${tool.name}, 2) Creating an account with the new tool, 3) Importing your data (if supported), and 4) Training your team on the new platform. Most alternatives offer migration guides or support.`,
-    },
-    {
-      question: `What should I look for in a ${tool.name} alternative?`,
-      answer: `When evaluating ${tool.name} alternatives, consider: feature parity with what you currently use, pricing and scalability, integration capabilities, user interface and learning curve, customer support quality, and data migration options.`,
-    },
-  ]);
+  // FAQ for SEO and GEO - use expert FAQs when available
+  const faqJsonLd = expertContent
+    ? generateFaqJsonLd(expertContent.faqs)
+    : generateFaqJsonLd([
+        {
+          question: `What is the best ${tool.name} alternative?`,
+          answer: topAlternative
+            ? `Based on our analysis, ${topAlternative.name} is the top-rated ${tool.name} alternative with a score of ${topAlternative.editorialScore || "high"}/100. However, the best choice depends on your specific needs, budget, and use case.`
+            : `There are several strong ${tool.name} alternatives available. The best choice depends on your specific needs, budget, and use case.`,
+        },
+        {
+          question: `Is there a free alternative to ${tool.name}?`,
+          answer: freeAlternatives.length > 0
+            ? `Yes, there are free alternatives to ${tool.name}. ${freeAlternatives.slice(0, 3).map(a => a.name).join(", ")} ${freeAlternatives.length > 1 ? "are" : "is"} available with free or freemium pricing.`
+            : `While most ${tool.name} alternatives are paid, many offer free trials or freemium tiers. Check each tool's pricing page for current offers.`,
+        },
+        {
+          question: `How do I switch from ${tool.name} to an alternative?`,
+          answer: `Switching from ${tool.name} typically involves: 1) Exporting your data from ${tool.name}, 2) Creating an account with the new tool, 3) Importing your data (if supported), and 4) Training your team on the new platform. Most alternatives offer migration guides or support.`,
+        },
+        {
+          question: `What should I look for in a ${tool.name} alternative?`,
+          answer: `When evaluating ${tool.name} alternatives, consider: feature parity with what you currently use, pricing and scalability, integration capabilities, user interface and learning curve, customer support quality, and data migration options.`,
+        },
+      ]);
 
   return (
     <>
@@ -183,10 +195,12 @@ export default async function AlternativesPage({ params }: { params: { slug: str
             </div>
 
             <p className="text-muted-foreground max-w-3xl">
-              Whether you're exploring your options or actively looking to switch from {tool.name},
-              this guide covers the best alternatives available in {year}. We've evaluated each
-              option based on features, pricing, user reviews, and overall value to help you
-              make an informed decision.
+              {expertContent
+                ? expertContent.expertIntro
+                : `Whether you're exploring your options or actively looking to switch from ${tool.name},
+                  this guide covers the best alternatives available in ${year}. We've evaluated each
+                  option based on features, pricing, user reviews, and overall value to help you
+                  make an informed decision.`}
             </p>
           </header>
 
@@ -241,76 +255,160 @@ export default async function AlternativesPage({ params }: { params: { slug: str
           </div>
         )}
 
-        {/* SEO Content Section */}
-        <section className="mt-12 bg-white rounded-xl border p-6 sm:p-8">
-          <h2 className="text-xl font-semibold mb-4">
-            Why Look for {tool.name} Alternatives?
-          </h2>
-          <div className="prose prose-slate max-w-none text-muted-foreground">
-            <p>
-              There are plenty of reasons why you might be exploring {tool.name} alternatives.
-              Maybe the pricing doesn't fit your budget anymore, or you've outgrown the feature set.
-              Perhaps you need better integrations with tools you already use, or you're simply
-              curious about what else is available in the market. Whatever the reason, it's smart
-              to regularly evaluate your software stack to ensure you're getting the best value.
-            </p>
-            <p className="mt-4">
-              Our list of {tool.name} alternatives is built from real user feedback and comprehensive
-              analysis. We look at features, pricing, ease of use, customer support, and overall
-              user satisfaction to help you find a tool that genuinely fits your needs better than
-              what you're currently using.
-            </p>
-          </div>
-        </section>
+        {/* SEO Content Section - Expert or Generic */}
+        {expertContent ? (
+          <>
+            {/* Why Switch Section */}
+            <section className="mt-12 bg-white rounded-xl border p-6 sm:p-8">
+              <h2 className="text-xl font-semibold mb-4">
+                {expertContent.whySwitch.title}
+              </h2>
+              <div className="space-y-4">
+                {expertContent.whySwitch.reasons.map((item, i) => (
+                  <div key={i} className="flex gap-3">
+                    <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-medium mb-1">{item.reason}</h3>
+                      <p className="text-sm text-muted-foreground">{item.explanation}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-        {/* What to Consider Section */}
-        <section className="mt-8 bg-white rounded-xl border p-6 sm:p-8">
-          <h2 className="text-xl font-semibold mb-4">
-            What to Consider When Switching from {tool.name}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="flex gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-medium mb-1">Feature Parity</h3>
-                <p className="text-sm text-muted-foreground">
-                  Make sure the alternative covers the features you actually use. You don't need
-                  every feature—just the ones that matter to your workflow.
+            {/* Strengths and Weaknesses */}
+            <section className="mt-8 grid md:grid-cols-2 gap-6">
+              <div className="bg-white rounded-xl border p-6">
+                <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  What {tool.name} Does Well
+                </h2>
+                <ul className="space-y-2">
+                  {expertContent.toolStrengths.map((strength, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                      <span className="text-green-500 mt-0.5">+</span>
+                      {strength}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-white rounded-xl border p-6">
+                <h2 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                  <XCircle className="w-5 h-5 text-red-500" />
+                  Common Pain Points
+                </h2>
+                <ul className="space-y-2">
+                  {expertContent.toolWeaknesses.map((weakness, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                      <span className="text-red-500 mt-0.5">-</span>
+                      {weakness}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* What to Look For */}
+            <section className="mt-8 bg-white rounded-xl border p-6 sm:p-8">
+              <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+                <Search className="w-5 h-5 text-primary" />
+                What to Look For in a {tool.name} Alternative
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {expertContent.whatToLookFor.map((item, i) => (
+                  <div key={i} className="flex gap-3">
+                    <Lightbulb className="w-5 h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="font-medium mb-1">{item.factor}</h3>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Migration Tips */}
+            <section className="mt-8 bg-amber-50 border border-amber-200 rounded-xl p-6">
+              <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                <AlertTriangle className="w-5 h-5 text-amber-600" />
+                Migration Considerations
+              </h2>
+              <p className="text-amber-800">{expertContent.migrationTips}</p>
+            </section>
+          </>
+        ) : (
+          <>
+            <section className="mt-12 bg-white rounded-xl border p-6 sm:p-8">
+              <h2 className="text-xl font-semibold mb-4">
+                Why Look for {tool.name} Alternatives?
+              </h2>
+              <div className="prose prose-slate max-w-none text-muted-foreground">
+                <p>
+                  There are plenty of reasons why you might be exploring {tool.name} alternatives.
+                  Maybe the pricing doesn&apos;t fit your budget anymore, or you&apos;ve outgrown the feature set.
+                  Perhaps you need better integrations with tools you already use, or you&apos;re simply
+                  curious about what else is available in the market. Whatever the reason, it&apos;s smart
+                  to regularly evaluate your software stack to ensure you&apos;re getting the best value.
+                </p>
+                <p className="mt-4">
+                  Our list of {tool.name} alternatives is built from real user feedback and comprehensive
+                  analysis. We look at features, pricing, ease of use, customer support, and overall
+                  user satisfaction to help you find a tool that genuinely fits your needs better than
+                  what you&apos;re currently using.
                 </p>
               </div>
-            </div>
-            <div className="flex gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-medium mb-1">Data Migration</h3>
-                <p className="text-sm text-muted-foreground">
-                  Check how easy it is to export your data from {tool.name} and import it into
-                  the new tool. Some alternatives offer migration assistance.
-                </p>
+            </section>
+
+            {/* What to Consider Section */}
+            <section className="mt-8 bg-white rounded-xl border p-6 sm:p-8">
+              <h2 className="text-xl font-semibold mb-4">
+                What to Consider When Switching from {tool.name}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-medium mb-1">Feature Parity</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Make sure the alternative covers the features you actually use. You don&apos;t need
+                      every feature—just the ones that matter to your workflow.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-medium mb-1">Data Migration</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Check how easy it is to export your data from {tool.name} and import it into
+                      the new tool. Some alternatives offer migration assistance.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-medium mb-1">Team Adoption</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Consider the learning curve for your team. A slightly less powerful tool that
+                      your team will actually use is better than a feature-rich one they won&apos;t.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <h3 className="font-medium mb-1">Total Cost</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Look beyond the sticker price. Consider implementation time, training costs,
+                      and any add-ons you might need.
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="flex gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-medium mb-1">Team Adoption</h3>
-                <p className="text-sm text-muted-foreground">
-                  Consider the learning curve for your team. A slightly less powerful tool that
-                  your team will actually use is better than a feature-rich one they won't.
-                </p>
-              </div>
-            </div>
-            <div className="flex gap-3">
-              <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-              <div>
-                <h3 className="font-medium mb-1">Total Cost</h3>
-                <p className="text-sm text-muted-foreground">
-                  Look beyond the sticker price. Consider implementation time, training costs,
-                  and any add-ons you might need.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          </>
+        )}
 
         {/* FAQ Section */}
         <section className="mt-8">

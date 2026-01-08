@@ -5,7 +5,8 @@ import Link from "next/link";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
-import { BookOpen, CheckCircle, Star, ArrowRight, Users, DollarSign, Zap } from "lucide-react";
+import { BookOpen, CheckCircle, Star, ArrowRight, Users, DollarSign, Zap, AlertTriangle, XCircle, Lightbulb } from "lucide-react";
+import { getGuideContent } from "@/content/guide-content";
 
 export const dynamic = 'force-dynamic';
 
@@ -18,8 +19,11 @@ export async function generateMetadata({ params }: { params: { topic: string } }
 
   if (!category) return { title: "Guide Not Found" };
 
+  const expertContent = getGuideContent(topic);
   const title = `${category.name} Software Guide ${new Date().getFullYear()} | How to Choose the Best Tool`;
-  const description = `Complete guide to ${category.name.toLowerCase()} software. Learn what features matter, compare pricing models, and discover which tools work best for your needs.`;
+  const description = expertContent
+    ? `${expertContent.intro.slice(0, 150)}... Complete ${category.name.toLowerCase()} buying guide.`
+    : `Complete guide to ${category.name.toLowerCase()} software. Learn what features matter, compare pricing models, and discover which tools work best for your needs.`;
 
   return {
     title,
@@ -85,7 +89,10 @@ export default async function GuidePage({ params }: { params: { topic: string } 
   const categoryName = category.name;
   const categoryNameLower = category.name.toLowerCase();
 
-  // Generate human-like content based on category
+  // Get expert content if available
+  const expertContent = getGuideContent(topic);
+
+  // Generate human-like content based on category (fallback)
   const guideContent = generateGuideContent(categoryName, categoryNameLower, tools.length, year);
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
@@ -113,10 +120,12 @@ export default async function GuidePage({ params }: { params: { topic: string } 
     },
   };
 
+  // Use expert FAQs when available
+  const faqItems = expertContent ? expertContent.faqs : guideContent.faqs;
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: guideContent.faqs.map((faq) => ({
+    mainEntity: faqItems.map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -154,7 +163,7 @@ export default async function GuidePage({ params }: { params: { topic: string } 
               {categoryName} Software Guide {year}
             </h1>
             <p className="text-lg text-muted-foreground">
-              {guideContent.intro}
+              {expertContent ? expertContent.intro : guideContent.intro}
             </p>
           </div>
         </section>
@@ -193,6 +202,7 @@ export default async function GuidePage({ params }: { params: { topic: string } 
               <a href="#features" className="text-primary hover:underline">Essential Features to Look For</a>
               <a href="#pricing" className="text-primary hover:underline">Pricing & Budget Considerations</a>
               <a href="#how-to-choose" className="text-primary hover:underline">How to Choose the Right Tool</a>
+              {expertContent && <a href="#implementation-tips" className="text-primary hover:underline">Implementation Tips</a>}
               <a href="#faq" className="text-primary hover:underline">Frequently Asked Questions</a>
             </div>
           </div>
@@ -202,8 +212,8 @@ export default async function GuidePage({ params }: { params: { topic: string } 
         <section id="what-is" className="max-w-4xl mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-4">What is {categoryName} Software?</h2>
           <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground">{guideContent.whatIs}</p>
-            <p className="text-muted-foreground">{guideContent.whyMatters}</p>
+            <p className="text-muted-foreground">{expertContent ? expertContent.whatIs : guideContent.whatIs}</p>
+            <p className="text-muted-foreground mt-4">{expertContent ? expertContent.whyMatters : guideContent.whyMatters}</p>
           </div>
         </section>
 
@@ -269,21 +279,38 @@ export default async function GuidePage({ params }: { params: { topic: string } 
         {/* Essential Features */}
         <section id="features" className="max-w-4xl mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-4">Essential Features to Look For</h2>
-          <p className="text-muted-foreground mb-6">
-            {guideContent.featuresIntro}
-          </p>
+          {!expertContent && (
+            <p className="text-muted-foreground mb-6">
+              {guideContent.featuresIntro}
+            </p>
+          )}
           <div className="grid md:grid-cols-2 gap-4">
-            {guideContent.features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-lg border p-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-medium mb-1">{feature.name}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+            {expertContent ? (
+              expertContent.features.map((feature, index) => (
+                <div key={index} className="bg-white rounded-lg border p-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-medium mb-1">{feature.name}</h3>
+                      <p className="text-sm text-muted-foreground mb-2">{feature.description}</p>
+                      <p className="text-xs text-primary italic">{feature.whyItMatters}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))
+            ) : (
+              guideContent.features.map((feature, index) => (
+                <div key={index} className="bg-white rounded-lg border p-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-medium mb-1">{feature.name}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
         </section>
 
@@ -291,8 +318,23 @@ export default async function GuidePage({ params }: { params: { topic: string } 
         <section id="pricing" className="max-w-4xl mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-4">Pricing & Budget Considerations</h2>
           <div className="prose prose-slate max-w-none mb-6">
-            <p className="text-muted-foreground">{guideContent.pricingIntro}</p>
+            <p className="text-muted-foreground">
+              {expertContent ? expertContent.pricingGuide.overview : guideContent.pricingIntro}
+            </p>
           </div>
+
+          {/* Expert Pricing Tiers */}
+          {expertContent && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              {expertContent.pricingGuide.tiers.map((tier, index) => (
+                <div key={index} className="bg-white rounded-xl border p-4">
+                  <h3 className="font-semibold text-sm text-muted-foreground">{tier.tier}</h3>
+                  <p className="text-xl font-bold text-primary mt-1">{tier.priceRange}</p>
+                  <p className="text-sm text-muted-foreground mt-2">{tier.bestFor}</p>
+                </div>
+              ))}
+            </div>
+          )}
 
           <div className="grid md:grid-cols-2 gap-6">
             {/* Free Options */}
@@ -353,27 +395,67 @@ export default async function GuidePage({ params }: { params: { topic: string } 
           <div className="bg-white rounded-xl border p-6">
             <div className="prose prose-slate max-w-none">
               <p className="text-muted-foreground">{guideContent.howToChoose}</p>
-              <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">Questions to Ask Yourself</h3>
+
+              {expertContent ? (
+                <>
+                  <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground flex items-center gap-2">
+                    <CheckCircle className="w-5 h-5 text-green-500" />
+                    Evaluation Criteria
+                  </h3>
+                  <ul className="space-y-2">
+                    {expertContent.evaluationCriteria.map((criteria, index) => (
+                      <li key={index} className="text-muted-foreground">{criteria}</li>
+                    ))}
+                  </ul>
+                </>
+              ) : (
+                <>
+                  <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">Questions to Ask Yourself</h3>
+                  <ul className="space-y-2">
+                    {guideContent.questions.map((question, index) => (
+                      <li key={index} className="text-muted-foreground">{question}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
+
+              <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground flex items-center gap-2">
+                <XCircle className="w-5 h-5 text-red-500" />
+                {expertContent ? "Common Pitfalls to Avoid" : "Red Flags to Watch For"}
+              </h3>
               <ul className="space-y-2">
-                {guideContent.questions.map((question, index) => (
-                  <li key={index} className="text-muted-foreground">{question}</li>
-                ))}
-              </ul>
-              <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">Red Flags to Watch For</h3>
-              <ul className="space-y-2">
-                {guideContent.redFlags.map((flag, index) => (
-                  <li key={index} className="text-muted-foreground">{flag}</li>
-                ))}
+                {expertContent ? (
+                  expertContent.pitfalls.map((pitfall, index) => (
+                    <li key={index} className="text-muted-foreground">{pitfall}</li>
+                  ))
+                ) : (
+                  guideContent.redFlags.map((flag, index) => (
+                    <li key={index} className="text-muted-foreground">{flag}</li>
+                  ))
+                )}
               </ul>
             </div>
           </div>
         </section>
 
+        {/* Implementation Tips - Expert Only */}
+        {expertContent && (
+          <section id="implementation-tips" className="max-w-4xl mx-auto px-4 py-8">
+            <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
+              <Lightbulb className="w-6 h-6 text-yellow-500" />
+              Implementation Tips
+            </h2>
+            <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl border border-yellow-200 p-6">
+              <p className="text-muted-foreground">{expertContent.implementationTips}</p>
+            </div>
+          </section>
+        )}
+
         {/* FAQ Section */}
         <section id="faq" className="max-w-4xl mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
-            {guideContent.faqs.map((faq, index) => (
+            {faqItems.map((faq, index) => (
               <div key={index} className="bg-white rounded-lg border p-5">
                 <h3 className="font-semibold mb-2">{faq.question}</h3>
                 <p className="text-muted-foreground">{faq.answer}</p>

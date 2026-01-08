@@ -6,7 +6,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { ToolLogo } from "@/components/tools/tool-logo";
 import { KeyTakeaways } from "@/components/seo/key-takeaways";
-import { Users, Building2, Rocket, Briefcase, GraduationCap, Home, Star, ArrowRight } from "lucide-react";
+import { Users, Building2, Rocket, Briefcase, GraduationCap, Home, Star, ArrowRight, AlertTriangle, CheckCircle, XCircle, DollarSign, Lightbulb } from "lucide-react";
+import { getUseCaseContent } from "@/content/usecase-content";
 
 
 export const revalidate = 3600;
@@ -86,7 +87,12 @@ export async function generateMetadata({ params }: { params: { usecase: string }
 
   const year = new Date().getFullYear();
   const title = `Best Tools for ${useCase.title} ${year}`;
-  const description = `${useCase.description}. Discover top-rated software solutions perfect for ${useCase.title.toLowerCase()} in ${year}.`;
+
+  // Get expert content for enhanced description
+  const expertContent = getUseCaseContent(usecase);
+  const description = expertContent
+    ? `${expertContent.expertIntro.slice(0, 150)}... Discover the best tools for ${useCase.title.toLowerCase()} in ${year}.`
+    : `${useCase.description}. Discover top-rated software solutions perfect for ${useCase.title.toLowerCase()} in ${year}.`;
 
   return {
     title: `${title} | Toolradar`,
@@ -164,6 +170,9 @@ export default async function UseCasePage({ params }: { params: { usecase: strin
   const Icon = useCase.icon;
   const freeTools = tools.filter(t => t.pricing === "free" || t.pricing === "freemium");
 
+  // Get expert content for enhanced page
+  const expertContent = getUseCaseContent(usecase);
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Tools", url: "/tools" },
@@ -184,18 +193,21 @@ export default async function UseCasePage({ params }: { params: { usecase: strin
     })),
   };
 
-  const faqJsonLd = generateFaqJsonLd([
-    {
-      question: `What are the best tools for ${useCase.title.toLowerCase()} in ${year}?`,
-      answer: `Top tools for ${useCase.title.toLowerCase()} include ${tools.slice(0, 5).map(t => t.name).join(", ")}. These are selected based on features, pricing, and user reviews suitable for ${useCase.title.toLowerCase()}.`,
-    },
-    {
-      question: `Are there free tools for ${useCase.title.toLowerCase()}?`,
-      answer: freeTools.length > 0
-        ? `Yes! ${freeTools.slice(0, 3).map(t => t.name).join(", ")} offer free plans perfect for ${useCase.title.toLowerCase()}. ${freeTools.length} tools in our list have free or freemium options.`
-        : `Most professional tools require payment, but many offer free trials suitable for ${useCase.title.toLowerCase()}.`,
-    },
-  ]);
+  // FAQ JSON-LD - use expert FAQs when available
+  const faqJsonLd = expertContent
+    ? generateFaqJsonLd(expertContent.faqs)
+    : generateFaqJsonLd([
+        {
+          question: `What are the best tools for ${useCase.title.toLowerCase()} in ${year}?`,
+          answer: `Top tools for ${useCase.title.toLowerCase()} include ${tools.slice(0, 5).map(t => t.name).join(", ")}. These are selected based on features, pricing, and user reviews suitable for ${useCase.title.toLowerCase()}.`,
+        },
+        {
+          question: `Are there free tools for ${useCase.title.toLowerCase()}?`,
+          answer: freeTools.length > 0
+            ? `Yes! ${freeTools.slice(0, 3).map(t => t.name).join(", ")} offer free plans perfect for ${useCase.title.toLowerCase()}. ${freeTools.length} tools in our list have free or freemium options.`
+            : `Most professional tools require payment, but many offer free trials suitable for ${useCase.title.toLowerCase()}.`,
+        },
+      ]);
 
   return (
     <>
@@ -228,7 +240,9 @@ export default async function UseCasePage({ params }: { params: { usecase: strin
             </div>
 
             <p className="text-lg text-muted-foreground max-w-2xl">
-              {useCase.description}. We've curated {tools.length} tools specifically suited for {useCase.title.toLowerCase()}.
+              {expertContent
+                ? expertContent.expertIntro
+                : `${useCase.description}. We've curated ${tools.length} tools specifically suited for ${useCase.title.toLowerCase()}.`}
             </p>
           </div>
         </section>
@@ -312,6 +326,100 @@ export default async function UseCasePage({ params }: { params: { usecase: strin
             ))}
           </div>
         </section>
+
+        {/* Expert Content Sections */}
+        {expertContent && (
+          <>
+            {/* Key Challenges */}
+            <section className="max-w-6xl mx-auto px-4 py-8">
+              <h2 className="text-xl font-bold mb-6">Key Challenges for {useCase.title}</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {expertContent.challenges.map((challenge, index) => (
+                  <div key={index} className="bg-white rounded-xl border p-5">
+                    <div className="flex items-start gap-3">
+                      <AlertTriangle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h3 className="font-semibold mb-1">{challenge.title}</h3>
+                        <p className="text-sm text-muted-foreground">{challenge.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* What to Prioritize */}
+            <section className="max-w-6xl mx-auto px-4 py-8">
+              <h2 className="text-xl font-bold mb-6">What to Prioritize When Choosing Tools</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {expertContent.priorities.map((item, index) => (
+                  <div key={index} className="bg-white rounded-xl border p-5">
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <h3 className="font-semibold mb-1">{item.priority}</h3>
+                        <p className="text-sm text-muted-foreground">{item.explanation}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Common Mistakes */}
+            <section className="max-w-6xl mx-auto px-4 py-8">
+              <div className="bg-red-50 border border-red-200 rounded-xl p-6">
+                <h2 className="text-lg font-bold mb-4 flex items-center gap-2">
+                  <XCircle className="w-5 h-5 text-red-500" />
+                  Common Mistakes to Avoid
+                </h2>
+                <ul className="space-y-3">
+                  {expertContent.mistakes.map((mistake, index) => (
+                    <li key={index} className="flex items-start gap-2 text-red-800">
+                      <span className="text-red-400 mt-1">•</span>
+                      {mistake}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* Budget Advice */}
+            <section className="max-w-6xl mx-auto px-4 py-8">
+              <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+                <h2 className="text-lg font-bold mb-3 flex items-center gap-2">
+                  <DollarSign className="w-5 h-5 text-green-600" />
+                  Budget Guidance
+                </h2>
+                <p className="text-green-800">{expertContent.budgetAdvice}</p>
+              </div>
+            </section>
+
+            {/* Getting Started */}
+            <section className="max-w-6xl mx-auto px-4 py-8">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                <h2 className="text-lg font-bold mb-3 flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5 text-blue-600" />
+                  Getting Started
+                </h2>
+                <p className="text-blue-800">{expertContent.gettingStartedTips}</p>
+              </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="max-w-6xl mx-auto px-4 py-8">
+              <h2 className="text-xl font-bold mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                {expertContent.faqs.map((faq, index) => (
+                  <div key={index} className="bg-white rounded-xl border p-5">
+                    <h3 className="font-semibold mb-2">{faq.question}</h3>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
 
         {/* Other Use Cases */}
         <section className="max-w-6xl mx-auto px-4 pb-16">

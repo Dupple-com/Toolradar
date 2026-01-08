@@ -5,7 +5,8 @@ import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { ComparisonTracker } from "@/components/tracking/comparison-tracker";
-import { CheckCircle, XCircle, ArrowRight, Users, DollarSign, Zap } from "lucide-react";
+import { CheckCircle, XCircle, ArrowRight, Users, DollarSign, Zap, Trophy, AlertCircle, Target } from "lucide-react";
+import { getComparisonContent, type ComparisonExpertContent } from "@/content/comparison-content";
 
 
 export const revalidate = 3600;
@@ -46,7 +47,12 @@ export async function generateMetadata({ params }: { params: { slugs: string } }
   const names = sortedTools.map(t => t!.name);
   const year = new Date().getFullYear();
   const title = `${names.join(" vs ")}: Which is Better in ${year}?`;
-  const description = `Compare ${names.join(" and ")} side by side. See features, pricing, ratings, and user reviews to help you choose the best option for your needs.`;
+
+  // Get expert content for enhanced description
+  const expertContent = getComparisonContent(slugsParam);
+  const description = expertContent
+    ? `${expertContent.expertIntro.slice(0, 150)}... Compare features, pricing, strengths and weaknesses.`
+    : `Compare ${names.join(" and ")} side by side. See features, pricing, ratings, and user reviews to help you choose the best option for your needs.`;
 
   return {
     title: `${title} | Toolradar`,
@@ -113,6 +119,9 @@ export default async function CompareResultPage({
   const toolNames = sortedTools.map(t => t.name);
   const year = new Date().getFullYear();
 
+  // Get expert content for enhanced comparison
+  const expertContent = getComparisonContent(slugsParam);
+
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     { name: "Home", url: "/" },
     { name: "Compare", url: "/compare" },
@@ -141,30 +150,33 @@ export default async function CompareResultPage({
   const winnerName = winner.name;
   const winnerScore = winner.editorialScore || "high";
 
-  const faqJsonLd = generateFaqJsonLd([
-    {
-      question: `Is ${tool1.name} or ${tool2.name} better?`,
-      answer: `Based on our analysis, ${winnerName} scores higher with ${winnerScore}/100. ${tool1.name} is ${tool1.pricing} while ${tool2.name} is ${tool2.pricing}. The best choice depends on your specific needs and budget.`,
-    },
-    {
-      question: `What is the difference between ${tool1.name} and ${tool2.name}?`,
-      answer: `${tool1.name}: ${tool1.tagline}. ${tool2.name}: ${tool2.tagline}. ${tool1.name} is ${tool1.pricing} and ${tool2.name} is ${tool2.pricing}. Compare detailed features on Toolradar.`,
-    },
-    {
-      question: `Which is cheaper, ${tool1.name} or ${tool2.name}?`,
-      answer: tool1.pricing === "free" && tool2.pricing !== "free"
-        ? `${tool1.name} is free while ${tool2.name} is ${tool2.pricing}.`
-        : tool2.pricing === "free" && tool1.pricing !== "free"
-        ? `${tool2.name} is free while ${tool1.name} is ${tool1.pricing}.`
-        : tool1.pricing === tool2.pricing
-        ? `Both ${tool1.name} and ${tool2.name} have ${tool1.pricing} pricing. Visit their websites for detailed pricing.`
-        : `${tool1.name} is ${tool1.pricing} and ${tool2.name} is ${tool2.pricing}. Compare specific plans on their websites.`,
-    },
-    {
-      question: `Should I switch from ${tool1.name} to ${tool2.name}?`,
-      answer: `Consider switching if ${tool2.name}'s features better match your needs. ${winnerName} scores higher overall (${winnerScore}/100). Read user reviews on Toolradar to see what users think about each tool.`,
-    },
-  ]);
+  // Use expert FAQs when available, otherwise use generic ones
+  const faqJsonLd = expertContent
+    ? generateFaqJsonLd(expertContent.faqs)
+    : generateFaqJsonLd([
+        {
+          question: `Is ${tool1.name} or ${tool2.name} better?`,
+          answer: `Based on our analysis, ${winnerName} scores higher with ${winnerScore}/100. ${tool1.name} is ${tool1.pricing} while ${tool2.name} is ${tool2.pricing}. The best choice depends on your specific needs and budget.`,
+        },
+        {
+          question: `What is the difference between ${tool1.name} and ${tool2.name}?`,
+          answer: `${tool1.name}: ${tool1.tagline}. ${tool2.name}: ${tool2.tagline}. ${tool1.name} is ${tool1.pricing} and ${tool2.name} is ${tool2.pricing}. Compare detailed features on Toolradar.`,
+        },
+        {
+          question: `Which is cheaper, ${tool1.name} or ${tool2.name}?`,
+          answer: tool1.pricing === "free" && tool2.pricing !== "free"
+            ? `${tool1.name} is free while ${tool2.name} is ${tool2.pricing}.`
+            : tool2.pricing === "free" && tool1.pricing !== "free"
+            ? `${tool2.name} is free while ${tool1.name} is ${tool1.pricing}.`
+            : tool1.pricing === tool2.pricing
+            ? `Both ${tool1.name} and ${tool2.name} have ${tool1.pricing} pricing. Visit their websites for detailed pricing.`
+            : `${tool1.name} is ${tool1.pricing} and ${tool2.name} is ${tool2.pricing}. Compare specific plans on their websites.`,
+        },
+        {
+          question: `Should I switch from ${tool1.name} to ${tool2.name}?`,
+          answer: `Consider switching if ${tool2.name}'s features better match your needs. ${winnerName} scores higher overall (${winnerScore}/100). Read user reviews on Toolradar to see what users think about each tool.`,
+        },
+      ]);
 
   return (
     <>
@@ -188,9 +200,11 @@ export default async function CompareResultPage({
             {sortedTools.map((t) => t.name).join(" vs ")}: Which Should You Choose in {year}?
           </h1>
           <p className="text-muted-foreground max-w-3xl">
-            Choosing between {sortedTools.map((t) => t.name).join(" and ")} comes down to understanding
-            what each tool does best. This comparison breaks down the key differences so you can make
-            an informed decision based on your specific needs, not marketing claims.
+            {expertContent
+              ? expertContent.expertIntro
+              : `Choosing between ${sortedTools.map((t) => t.name).join(" and ")} comes down to understanding
+                what each tool does best. This comparison breaks down the key differences so you can make
+                an informed decision based on your specific needs, not marketing claims.`}
           </p>
         </div>
       </section>
@@ -387,41 +401,202 @@ export default async function CompareResultPage({
       </section>
 
       {/* Deep Dive Analysis */}
-      <section className="max-w-6xl mx-auto px-4 pb-8">
-        <h2 className="text-xl font-bold mb-4">Understanding the Differences</h2>
-        <div className="bg-white rounded-xl border p-6">
-          <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground">
-              Both {tool1.name} and {tool2.name} solve similar problems, but they approach them differently.
-              {tool1.name} positions itself as "{tool1.tagline?.toLowerCase()}" while {tool2.name}
-              focuses on "{tool2.tagline?.toLowerCase()}". These differences matter depending on what
-              you're trying to accomplish.
-            </p>
+      {expertContent ? (
+        <>
+          {/* Expert Tool Analysis */}
+          <section className="max-w-6xl mx-auto px-4 pb-8">
+            <h2 className="text-xl font-bold mb-4">In-Depth Analysis</h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Tool 1 Analysis */}
+              <div className="bg-white rounded-xl border p-6">
+                <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
+                  {tool1.logo ? (
+                    <img src={tool1.logo} alt={tool1.name} className="w-6 h-6 rounded" />
+                  ) : (
+                    <div className="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
+                      {tool1.name[0]}
+                    </div>
+                  )}
+                  {tool1.name}
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4" />
+                      Strengths
+                    </h4>
+                    <ul className="space-y-1">
+                      {expertContent.tool1Analysis.strengths.map((strength, i) => (
+                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className="text-green-500 mt-1">+</span>
+                          {strength}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                      <XCircle className="w-4 h-4" />
+                      Weaknesses
+                    </h4>
+                    <ul className="space-y-1">
+                      {expertContent.tool1Analysis.weaknesses.map((weakness, i) => (
+                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className="text-red-500 mt-1">-</span>
+                          {weakness}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="pt-3 border-t">
+                    <h4 className="font-semibold text-primary mb-2 flex items-center gap-2">
+                      <Target className="w-4 h-4" />
+                      Best For
+                    </h4>
+                    <p className="text-sm text-muted-foreground">{expertContent.tool1Analysis.bestFor}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-sm text-muted-foreground italic">{expertContent.tool1Analysis.verdict}</p>
+                  </div>
+                </div>
+              </div>
 
-            <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">When to Choose {tool1.name}</h3>
-            <p className="text-muted-foreground">
-              {tool1.name} makes sense if you're looking for a {tool1.pricing === "free" ? "completely free" :
-              tool1.pricing === "freemium" ? "budget-friendly option with a free tier" :
-              "comprehensive paid"} solution.
-              {tool1.editorialScore && tool1.editorialScore > (tool2.editorialScore || 0)
-                ? ` With a score of ${tool1.editorialScore}/100, it's our top pick in this comparison.`
-                : ""}
-              {tool1._count.reviews > 0 && ` It has ${tool1._count.reviews} user reviews that can help you understand real-world experiences.`}
-            </p>
+              {/* Tool 2 Analysis */}
+              <div className="bg-white rounded-xl border p-6">
+                <h3 className="font-bold text-lg mb-4 flex items-center gap-2">
+                  {tool2.logo ? (
+                    <img src={tool2.logo} alt={tool2.name} className="w-6 h-6 rounded" />
+                  ) : (
+                    <div className="w-6 h-6 rounded bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
+                      {tool2.name[0]}
+                    </div>
+                  )}
+                  {tool2.name}
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-green-700 mb-2 flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4" />
+                      Strengths
+                    </h4>
+                    <ul className="space-y-1">
+                      {expertContent.tool2Analysis.strengths.map((strength, i) => (
+                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className="text-green-500 mt-1">+</span>
+                          {strength}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-red-700 mb-2 flex items-center gap-2">
+                      <XCircle className="w-4 h-4" />
+                      Weaknesses
+                    </h4>
+                    <ul className="space-y-1">
+                      {expertContent.tool2Analysis.weaknesses.map((weakness, i) => (
+                        <li key={i} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className="text-red-500 mt-1">-</span>
+                          {weakness}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="pt-3 border-t">
+                    <h4 className="font-semibold text-primary mb-2 flex items-center gap-2">
+                      <Target className="w-4 h-4" />
+                      Best For
+                    </h4>
+                    <p className="text-sm text-muted-foreground">{expertContent.tool2Analysis.bestFor}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-3">
+                    <p className="text-sm text-muted-foreground italic">{expertContent.tool2Analysis.verdict}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
-            <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">When to Choose {tool2.name}</h3>
-            <p className="text-muted-foreground">
-              {tool2.name} is worth considering if you need a {tool2.pricing === "free" ? "free" :
-              tool2.pricing === "freemium" ? "flexible option with both free and paid tiers" :
-              "professional-grade"} tool.
-              {tool2.editorialScore && tool2.editorialScore > (tool1.editorialScore || 0)
-                ? ` Scoring ${tool2.editorialScore}/100, it edges ahead in our evaluation.`
-                : ""}
-              {tool2._count.reviews > 0 && ` The ${tool2._count.reviews} reviews give insight into what actual users think.`}
-            </p>
+          {/* Head-to-Head Comparisons */}
+          <section className="max-w-6xl mx-auto px-4 pb-8">
+            <h2 className="text-xl font-bold mb-4">Head-to-Head Comparison</h2>
+            <div className="bg-white rounded-xl border overflow-hidden">
+              <div className="divide-y">
+                {expertContent.headToHead.map((comparison, i) => (
+                  <div key={i} className="p-4 hover:bg-gray-50/50">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-semibold">{comparison.category}</h3>
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                        comparison.winner === "tool1"
+                          ? "bg-blue-50 text-blue-700"
+                          : comparison.winner === "tool2"
+                          ? "bg-purple-50 text-purple-700"
+                          : "bg-gray-100 text-gray-600"
+                      }`}>
+                        {comparison.winner === "tool1"
+                          ? `${tool1.name} wins`
+                          : comparison.winner === "tool2"
+                          ? `${tool2.name} wins`
+                          : "Tie"}
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">{comparison.analysis}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Migration Advice */}
+          {expertContent.migrationAdvice && (
+            <section className="max-w-6xl mx-auto px-4 pb-8">
+              <h2 className="text-xl font-bold mb-4">Migration Considerations</h2>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                  <p className="text-amber-800">{expertContent.migrationAdvice}</p>
+                </div>
+              </div>
+            </section>
+          )}
+        </>
+      ) : (
+        <section className="max-w-6xl mx-auto px-4 pb-8">
+          <h2 className="text-xl font-bold mb-4">Understanding the Differences</h2>
+          <div className="bg-white rounded-xl border p-6">
+            <div className="prose prose-slate max-w-none">
+              <p className="text-muted-foreground">
+                Both {tool1.name} and {tool2.name} solve similar problems, but they approach them differently.
+                {tool1.name} positions itself as &quot;{tool1.tagline?.toLowerCase()}&quot; while {tool2.name}
+                focuses on &quot;{tool2.tagline?.toLowerCase()}&quot;. These differences matter depending on what
+                you&apos;re trying to accomplish.
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">When to Choose {tool1.name}</h3>
+              <p className="text-muted-foreground">
+                {tool1.name} makes sense if you&apos;re looking for a {tool1.pricing === "free" ? "completely free" :
+                tool1.pricing === "freemium" ? "budget-friendly option with a free tier" :
+                "comprehensive paid"} solution.
+                {tool1.editorialScore && tool1.editorialScore > (tool2.editorialScore || 0)
+                  ? ` With a score of ${tool1.editorialScore}/100, it&apos;s our top pick in this comparison.`
+                  : ""}
+                {tool1._count.reviews > 0 && ` It has ${tool1._count.reviews} user reviews that can help you understand real-world experiences.`}
+              </p>
+
+              <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">When to Choose {tool2.name}</h3>
+              <p className="text-muted-foreground">
+                {tool2.name} is worth considering if you need a {tool2.pricing === "free" ? "free" :
+                tool2.pricing === "freemium" ? "flexible option with both free and paid tiers" :
+                "professional-grade"} tool.
+                {tool2.editorialScore && tool2.editorialScore > (tool1.editorialScore || 0)
+                  ? ` Scoring ${tool2.editorialScore}/100, it edges ahead in our evaluation.`
+                  : ""}
+                {tool2._count.reviews > 0 && ` The ${tool2._count.reviews} reviews give insight into what actual users think.`}
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Key Takeaways */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
@@ -468,21 +643,27 @@ export default async function CompareResultPage({
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20 p-6">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
-              🏆
+            <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center flex-shrink-0">
+              <Trophy className="w-6 h-6 text-primary" />
             </div>
             <div>
               <h3 className="font-bold text-lg mb-2">The Bottom Line</h3>
               <p className="text-muted-foreground">
-                If we had to pick one, we'd go with{" "}
-                <Link href={`/tools/${winner.slug}`} className="font-semibold text-primary hover:underline">
-                  {winner.name}
-                </Link>
-                {winner.editorialScore && ` (${winner.editorialScore}/100)`}. But the honest answer is that
-                "better" depends on your situation. {winner.name} scores higher in our analysis, but
-                {winner.id === tool1.id ? ` ${tool2.name}` : ` ${tool1.name}`} might be the right choice
-                if its specific strengths align with what you need most. Take advantage of free trials
-                to test both before committing.
+                {expertContent ? (
+                  expertContent.expertVerdict
+                ) : (
+                  <>
+                    If we had to pick one, we&apos;d go with{" "}
+                    <Link href={`/tools/${winner.slug}`} className="font-semibold text-primary hover:underline">
+                      {winner.name}
+                    </Link>
+                    {winner.editorialScore && ` (${winner.editorialScore}/100)`}. But the honest answer is that
+                    &quot;better&quot; depends on your situation. {winner.name} scores higher in our analysis, but
+                    {winner.id === tool1.id ? ` ${tool2.name}` : ` ${tool1.name}`} might be the right choice
+                    if its specific strengths align with what you need most. Take advantage of free trials
+                    to test both before committing.
+                  </>
+                )}
               </p>
             </div>
           </div>
@@ -531,32 +712,43 @@ export default async function CompareResultPage({
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
         <div className="space-y-4">
-          <div className="bg-white rounded-lg border p-5">
-            <h3 className="font-semibold mb-2">Is {tool1.name} or {tool2.name} better?</h3>
-            <p className="text-muted-foreground text-sm">
-              Based on our analysis, {winnerName} scores higher with {winnerScore}/100. {tool1.name} is
-              {tool1.pricing} while {tool2.name} is {tool2.pricing}. The best choice depends on your
-              specific needs and budget. We recommend testing both with free trials if available.
-            </p>
-          </div>
-          <div className="bg-white rounded-lg border p-5">
-            <h3 className="font-semibold mb-2">Can I switch from {tool1.name} to {tool2.name} easily?</h3>
-            <p className="text-muted-foreground text-sm">
-              Migration difficulty varies. Check if both tools support data export/import in compatible
-              formats. Some tools offer migration assistance or have integration partners who can help
-              with the transition.
-            </p>
-          </div>
-          <div className="bg-white rounded-lg border p-5">
-            <h3 className="font-semibold mb-2">Do {tool1.name} and {tool2.name} offer free trials?</h3>
-            <p className="text-muted-foreground text-sm">
-              Most software in this category offers free trials or free tiers. {tool1.name} is
-              {tool1.pricing === "free" ? " completely free" : tool1.pricing === "freemium" ? " freemium with a free tier" : " paid with potential trial"}.
-              {tool2.name} is
-              {tool2.pricing === "free" ? " completely free" : tool2.pricing === "freemium" ? " freemium with a free tier" : " paid with potential trial"}.
-              Visit their websites for current trial offers.
-            </p>
-          </div>
+          {expertContent ? (
+            expertContent.faqs.map((faq, i) => (
+              <div key={i} className="bg-white rounded-lg border p-5">
+                <h3 className="font-semibold mb-2">{faq.question}</h3>
+                <p className="text-muted-foreground text-sm">{faq.answer}</p>
+              </div>
+            ))
+          ) : (
+            <>
+              <div className="bg-white rounded-lg border p-5">
+                <h3 className="font-semibold mb-2">Is {tool1.name} or {tool2.name} better?</h3>
+                <p className="text-muted-foreground text-sm">
+                  Based on our analysis, {winnerName} scores higher with {winnerScore}/100. {tool1.name} is
+                  {tool1.pricing} while {tool2.name} is {tool2.pricing}. The best choice depends on your
+                  specific needs and budget. We recommend testing both with free trials if available.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg border p-5">
+                <h3 className="font-semibold mb-2">Can I switch from {tool1.name} to {tool2.name} easily?</h3>
+                <p className="text-muted-foreground text-sm">
+                  Migration difficulty varies. Check if both tools support data export/import in compatible
+                  formats. Some tools offer migration assistance or have integration partners who can help
+                  with the transition.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg border p-5">
+                <h3 className="font-semibold mb-2">Do {tool1.name} and {tool2.name} offer free trials?</h3>
+                <p className="text-muted-foreground text-sm">
+                  Most software in this category offers free trials or free tiers. {tool1.name} is
+                  {tool1.pricing === "free" ? " completely free" : tool1.pricing === "freemium" ? " freemium with a free tier" : " paid with potential trial"}.
+                  {tool2.name} is
+                  {tool2.pricing === "free" ? " completely free" : tool2.pricing === "freemium" ? " freemium with a free tier" : " paid with potential trial"}.
+                  Visit their websites for current trial offers.
+                </p>
+              </div>
+            </>
+          )}
         </div>
       </section>
 
