@@ -91,6 +91,10 @@ model Category {
   description String?
   icon        String?
 
+  // SEO Content (G2-style rich content)
+  // Structure: { definition, features[], benefits[], buyersGuide, faqs[{q,a}] }
+  seoContent  Json?
+
   parentId String?
   parent   Category?  @relation("SubCategories", fields: [parentId], references: [id])
   children Category[] @relation("SubCategories")

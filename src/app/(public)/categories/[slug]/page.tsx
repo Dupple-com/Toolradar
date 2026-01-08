@@ -6,7 +6,8 @@ import Link from "next/link";
 import { CategoryIcon } from "@/components/categories/category-icon";
 import { SortSelect } from "@/components/filters/sort-select";
 import { JsonLd } from "@/components/seo/json-ld";
-import { generateCategoryMetadata, generateBreadcrumbJsonLd } from "@/lib/seo";
+import { generateCategoryMetadata, generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
+import { CategorySEOContent } from "@/components/seo/category-seo-content";
 
 
 export const revalidate = 3600;
@@ -128,10 +129,35 @@ export default async function CategoryPage({
     })),
   };
 
+  // Generate FAQ Schema for rich snippets
+  const year = new Date().getFullYear();
+  const topTool = tools[0];
+  const freeToolsCount = stats.freeTools;
+
+  const faqJsonLd = generateFaqJsonLd([
+    {
+      question: `What is the best ${category.name.toLowerCase()} software in ${year}?`,
+      answer: topTool
+        ? `Based on user reviews and our editorial analysis, ${topTool.name} is currently the top-rated ${category.name.toLowerCase()} software with a score of ${topTool.editorialScore || "high"}/100. Other popular options include ${tools.slice(1, 4).map(t => t.name).join(", ")}.`
+        : `We have ${tools.length} ${category.name.toLowerCase()} tools available. Browse our curated list above to find the best option for your needs.`,
+    },
+    {
+      question: `Are there free ${category.name.toLowerCase()} tools?`,
+      answer: freeToolsCount > 0
+        ? `Yes! We have ${freeToolsCount} free ${category.name.toLowerCase()} tools available. Many also offer freemium plans where you can start free and upgrade as your needs grow.`
+        : `Most ${category.name.toLowerCase()} tools require payment, but many offer free trials. Check individual tool pages for current pricing and trial options.`,
+    },
+    {
+      question: `How do I choose the right ${category.name.toLowerCase()} software?`,
+      answer: `Consider your specific needs, team size, and budget. Look at user reviews, compare features, and take advantage of free trials when available. Our comparison tools can help you evaluate multiple options side by side.`,
+    },
+  ]);
+
   return (
     <>
       <JsonLd data={breadcrumbJsonLd} />
       <JsonLd data={itemListJsonLd} />
+      <JsonLd data={faqJsonLd} />
 
       <div className="min-h-screen bg-gray-50/50">
         {/* Breadcrumb & Header */}
@@ -303,7 +329,7 @@ export default async function CategoryPage({
       )}
 
       {/* Explore More - Internal Linking */}
-      <section className="max-w-7xl mx-auto px-4 pb-16">
+      <section className="max-w-7xl mx-auto px-4 pb-8">
         <div className="bg-white rounded-xl border p-6">
           <h2 className="text-lg font-bold mb-4">Explore {category.name}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -348,6 +374,16 @@ export default async function CategoryPage({
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* SEO Content Section - G2 Style */}
+      <section className="max-w-7xl mx-auto px-4 pb-16">
+        <CategorySEOContent
+          categoryName={category.name}
+          seoContent={(category as { seoContent?: { definition?: string; features?: string[]; benefits?: string[]; buyersGuide?: string; faqs?: Array<{ question: string; answer: string }> } }).seoContent || null}
+          toolCount={stats.totalTools}
+          topToolName={topTool?.name}
+        />
       </section>
       </div>
     </>
