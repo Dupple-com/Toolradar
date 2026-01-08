@@ -7,12 +7,34 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
 import { BookOpen, CheckCircle, Star, ArrowRight, Users, DollarSign, Zap, AlertTriangle, XCircle, Lightbulb } from "lucide-react";
 import { getGuideContent } from "@/content/guide-content";
+import { getExpertGuide } from "@/content/expert-guides";
+import { ExpertGuidePage } from "@/components/guides/expert-guide-page";
 
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: { topic: string } }): Promise<Metadata> {
   const { topic } = params;
 
+  // First check for expert guide
+  const expertGuide = getExpertGuide(topic);
+  if (expertGuide) {
+    return {
+      title: expertGuide.metaTitle,
+      description: expertGuide.metaDescription,
+      openGraph: {
+        title: expertGuide.metaTitle,
+        description: expertGuide.metaDescription,
+        url: `https://toolradar.com/guides/${topic}`,
+        siteName: "Toolradar",
+        type: "article",
+      },
+      alternates: {
+        canonical: `https://toolradar.com/guides/${topic}`,
+      },
+    };
+  }
+
+  // Fall back to category-based guide
   const category = await prisma.category.findUnique({
     where: { slug: topic },
   });
@@ -44,6 +66,13 @@ export async function generateMetadata({ params }: { params: { topic: string } }
 export default async function GuidePage({ params }: { params: { topic: string } }) {
   const { topic } = params;
 
+  // First check for expert guide
+  const expertGuide = getExpertGuide(topic);
+  if (expertGuide) {
+    return <ExpertGuidePage guide={expertGuide} />;
+  }
+
+  // Fall back to category-based guide
   const category = await prisma.category.findUnique({
     where: { slug: topic },
     include: {

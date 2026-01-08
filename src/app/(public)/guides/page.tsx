@@ -3,7 +3,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd } from "@/lib/seo";
-import { BookOpen, ArrowRight, Users, TrendingUp } from "lucide-react";
+import { BookOpen, ArrowRight, Users, TrendingUp, Sparkles } from "lucide-react";
+import { expertGuides } from "@/content/expert-guides";
 
 export const metadata: Metadata = {
   title: "Software Buying Guides | Expert Reviews & Comparisons | Toolradar",
@@ -122,6 +123,48 @@ export default async function GuidesPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Expert Guides Section */}
+        <section className="max-w-5xl mx-auto px-4 pb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-primary" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold">Expert Buying Guides</h2>
+              <p className="text-sm text-muted-foreground">{expertGuides.length} in-depth guides</p>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {expertGuides.slice(0, 12).map((guide) => (
+              <Link
+                key={guide.slug}
+                href={`/guides/${guide.slug}`}
+                className="bg-white rounded-xl border p-5 hover:shadow-lg hover:border-primary/50 transition group"
+              >
+                <h3 className="font-semibold text-lg mb-2 group-hover:text-primary transition flex items-center gap-2">
+                  {guide.title}
+                  <ArrowRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                </h3>
+                <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+                  {guide.heroSubtitle}
+                </p>
+                <span className="text-xs text-primary capitalize">
+                  {guide.category.replace(/-/g, ' ')}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <Link
+              href="/guides/all"
+              className="inline-flex items-center gap-2 text-primary hover:underline"
+            >
+              View all {expertGuides.length} expert guides
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </section>
 
