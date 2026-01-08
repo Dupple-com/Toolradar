@@ -130,8 +130,8 @@ export function ExpertGuidePage({ guide }: ExpertGuidePageProps) {
         </section>
 
         {/* TL;DR Section - Critical for GEO */}
-        <section className="max-w-4xl mx-auto px-4 py-8">
-          <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/20 p-6 -mt-8 relative z-10 shadow-lg">
+        <section className="max-w-4xl mx-auto px-4 pt-6 pb-8">
+          <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-xl border border-primary/20 p-6 relative z-10 shadow-lg">
             <div className="flex items-center gap-2 mb-4">
               <Zap className="w-5 h-5 text-primary" />
               <h2 className="font-bold text-lg">TL;DR</h2>
