@@ -204,8 +204,9 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Legal</h4>
+            <h4 className="font-semibold text-white mb-4 text-sm uppercase tracking-wider">Company</h4>
             <ul className="space-y-3 text-sm text-slate-400">
+              <li><Link href="/contact" className="hover:text-white transition-colors">Contact Us</Link></li>
               <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
