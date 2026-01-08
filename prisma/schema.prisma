@@ -90,10 +90,7 @@ model Category {
   slug        String  @unique
   description String?
   icon        String?
-
-  // SEO Content (G2-style rich content)
-  // Structure: { definition, features[], benefits[], buyersGuide, faqs[{q,a}] }
-  seoContent  Json?
+  // Note: seoContent Json? field to be added after DB migration
 
   parentId String?
   parent   Category?  @relation("SubCategories", fields: [parentId], references: [id])

@@ -380,7 +380,7 @@ export default async function CategoryPage({
       <section className="max-w-7xl mx-auto px-4 pb-16">
         <CategorySEOContent
           categoryName={category.name}
-          seoContent={(category as { seoContent?: { definition?: string; features?: string[]; benefits?: string[]; buyersGuide?: string; faqs?: Array<{ question: string; answer: string }> } }).seoContent || null}
+          seoContent={null}
           toolCount={stats.totalTools}
           topToolName={topTool?.name}
         />
