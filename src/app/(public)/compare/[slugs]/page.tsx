@@ -5,6 +5,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { ComparisonTracker } from "@/components/tracking/comparison-tracker";
+import { CheckCircle, XCircle, ArrowRight, Users, DollarSign, Zap } from "lucide-react";
 
 
 export const revalidate = 3600;
@@ -184,10 +185,12 @@ export default async function CompareResultPage({
           </nav>
 
           <h1 className="text-2xl md:text-3xl font-bold mb-2">
-            {sortedTools.map((t) => t.name).join(" vs ")}
+            {sortedTools.map((t) => t.name).join(" vs ")}: Which Should You Choose in {year}?
           </h1>
-          <p className="text-muted-foreground">
-            Detailed comparison of {sortedTools.length} tools - features, pricing, and community reviews
+          <p className="text-muted-foreground max-w-3xl">
+            Choosing between {sortedTools.map((t) => t.name).join(" and ")} comes down to understanding
+            what each tool does best. This comparison breaks down the key differences so you can make
+            an informed decision based on your specific needs, not marketing claims.
           </p>
         </div>
       </section>
@@ -383,6 +386,84 @@ export default async function CompareResultPage({
         </div>
       </section>
 
+      {/* Deep Dive Analysis */}
+      <section className="max-w-6xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold mb-4">Understanding the Differences</h2>
+        <div className="bg-white rounded-xl border p-6">
+          <div className="prose prose-slate max-w-none">
+            <p className="text-muted-foreground">
+              Both {tool1.name} and {tool2.name} solve similar problems, but they approach them differently.
+              {tool1.name} positions itself as "{tool1.tagline?.toLowerCase()}" while {tool2.name}
+              focuses on "{tool2.tagline?.toLowerCase()}". These differences matter depending on what
+              you're trying to accomplish.
+            </p>
+
+            <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">When to Choose {tool1.name}</h3>
+            <p className="text-muted-foreground">
+              {tool1.name} makes sense if you're looking for a {tool1.pricing === "free" ? "completely free" :
+              tool1.pricing === "freemium" ? "budget-friendly option with a free tier" :
+              "comprehensive paid"} solution.
+              {tool1.editorialScore && tool1.editorialScore > (tool2.editorialScore || 0)
+                ? ` With a score of ${tool1.editorialScore}/100, it's our top pick in this comparison.`
+                : ""}
+              {tool1._count.reviews > 0 && ` It has ${tool1._count.reviews} user reviews that can help you understand real-world experiences.`}
+            </p>
+
+            <h3 className="text-lg font-semibold mt-6 mb-3 text-foreground">When to Choose {tool2.name}</h3>
+            <p className="text-muted-foreground">
+              {tool2.name} is worth considering if you need a {tool2.pricing === "free" ? "free" :
+              tool2.pricing === "freemium" ? "flexible option with both free and paid tiers" :
+              "professional-grade"} tool.
+              {tool2.editorialScore && tool2.editorialScore > (tool1.editorialScore || 0)
+                ? ` Scoring ${tool2.editorialScore}/100, it edges ahead in our evaluation.`
+                : ""}
+              {tool2._count.reviews > 0 && ` The ${tool2._count.reviews} reviews give insight into what actual users think.`}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Takeaways */}
+      <section className="max-w-6xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold mb-4">Key Takeaways</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-green-50 rounded-xl border border-green-200 p-5">
+            <h3 className="font-semibold text-green-800 mb-3 flex items-center gap-2">
+              <CheckCircle className="w-5 h-5" />
+              What {winner.name} Does Better
+            </h3>
+            <ul className="space-y-2 text-sm text-green-700">
+              {winner.editorialScore && winner.editorialScore > ((winner.id === tool1.id ? tool2 : tool1).editorialScore || 0) && (
+                <li>Higher overall score ({winner.editorialScore}/100)</li>
+              )}
+              {winner._count.reviews > (winner.id === tool1.id ? tool2 : tool1)._count.reviews && (
+                <li>More user reviews ({winner._count.reviews} reviews)</li>
+              )}
+              {winner.upvotes > (winner.id === tool1.id ? tool2 : tool1).upvotes && (
+                <li>More community upvotes</li>
+              )}
+              <li>Our recommendation for most use cases</li>
+            </ul>
+          </div>
+          <div className="bg-blue-50 rounded-xl border border-blue-200 p-5">
+            <h3 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+              <Zap className="w-5 h-5" />
+              Consider {winner.id === tool1.id ? tool2.name : tool1.name} If
+            </h3>
+            <ul className="space-y-2 text-sm text-blue-700">
+              {(winner.id === tool1.id ? tool2 : tool1).pricing === "free" && (
+                <li>You need a completely free solution</li>
+              )}
+              {(winner.id === tool1.id ? tool2 : tool1).pricing === "freemium" && (
+                <li>You want to start free and scale later</li>
+              )}
+              <li>Its specific features better match your workflow</li>
+              <li>You prefer its interface or design approach</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* Verdict */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl border border-primary/20 p-6">
@@ -391,16 +472,17 @@ export default async function CompareResultPage({
               🏆
             </div>
             <div>
-              <h3 className="font-bold text-lg mb-2">Our Recommendation</h3>
+              <h3 className="font-bold text-lg mb-2">The Bottom Line</h3>
               <p className="text-muted-foreground">
-                Based on our editorial analysis and community feedback,{" "}
+                If we had to pick one, we'd go with{" "}
                 <Link href={`/tools/${winner.slug}`} className="font-semibold text-primary hover:underline">
                   {winner.name}
                 </Link>
-                {" "}scores highest in our comparison
-                {winner.editorialScore && ` with a score of ${winner.editorialScore}/100`}.
-                However, the best choice depends on your specific requirements, budget, and use case.
-                We recommend trying the free trials when available.
+                {winner.editorialScore && ` (${winner.editorialScore}/100)`}. But the honest answer is that
+                "better" depends on your situation. {winner.name} scores higher in our analysis, but
+                {winner.id === tool1.id ? ` ${tool2.name}` : ` ${tool1.name}`} might be the right choice
+                if its specific strengths align with what you need most. Take advantage of free trials
+                to test both before committing.
               </p>
             </div>
           </div>
@@ -444,6 +526,74 @@ export default async function CompareResultPage({
           </div>
         </section>
       )}
+
+      {/* FAQ Section */}
+      <section className="max-w-6xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold mb-4">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          <div className="bg-white rounded-lg border p-5">
+            <h3 className="font-semibold mb-2">Is {tool1.name} or {tool2.name} better?</h3>
+            <p className="text-muted-foreground text-sm">
+              Based on our analysis, {winnerName} scores higher with {winnerScore}/100. {tool1.name} is
+              {tool1.pricing} while {tool2.name} is {tool2.pricing}. The best choice depends on your
+              specific needs and budget. We recommend testing both with free trials if available.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg border p-5">
+            <h3 className="font-semibold mb-2">Can I switch from {tool1.name} to {tool2.name} easily?</h3>
+            <p className="text-muted-foreground text-sm">
+              Migration difficulty varies. Check if both tools support data export/import in compatible
+              formats. Some tools offer migration assistance or have integration partners who can help
+              with the transition.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg border p-5">
+            <h3 className="font-semibold mb-2">Do {tool1.name} and {tool2.name} offer free trials?</h3>
+            <p className="text-muted-foreground text-sm">
+              Most software in this category offers free trials or free tiers. {tool1.name} is
+              {tool1.pricing === "free" ? " completely free" : tool1.pricing === "freemium" ? " freemium with a free tier" : " paid with potential trial"}.
+              {tool2.name} is
+              {tool2.pricing === "free" ? " completely free" : tool2.pricing === "freemium" ? " freemium with a free tier" : " paid with potential trial"}.
+              Visit their websites for current trial offers.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Links */}
+      <section className="max-w-6xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold mb-4">Related Comparisons & Resources</h2>
+        <div className="grid md:grid-cols-2 gap-4">
+          <Link
+            href={`/tools/${tool1.slug}/alternatives`}
+            className="bg-white rounded-lg border p-4 hover:border-primary transition flex items-center justify-between group"
+          >
+            <span className="font-medium">{tool1.name} Alternatives</span>
+            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition" />
+          </Link>
+          <Link
+            href={`/tools/${tool2.slug}/alternatives`}
+            className="bg-white rounded-lg border p-4 hover:border-primary transition flex items-center justify-between group"
+          >
+            <span className="font-medium">{tool2.name} Alternatives</span>
+            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition" />
+          </Link>
+          <Link
+            href={`/tools/${tool1.slug}`}
+            className="bg-white rounded-lg border p-4 hover:border-primary transition flex items-center justify-between group"
+          >
+            <span className="font-medium">{tool1.name} Full Review</span>
+            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition" />
+          </Link>
+          <Link
+            href={`/tools/${tool2.slug}`}
+            className="bg-white rounded-lg border p-4 hover:border-primary transition flex items-center justify-between group"
+          >
+            <span className="font-medium">{tool2.name} Full Review</span>
+            <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition" />
+          </Link>
+        </div>
+      </section>
 
       {/* Back link */}
       <section className="max-w-6xl mx-auto px-4 pb-12">

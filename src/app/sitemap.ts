@@ -89,7 +89,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${SITE_URL}/guides`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/software-for`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
+
+  // Industry pages (programmatic SEO)
+  const industryPages: MetadataRoute.Sitemap = [
+    "healthcare", "finance", "ecommerce", "education",
+    "real-estate", "marketing", "technology", "consulting"
+  ].map((industry) => ({
+    url: `${SITE_URL}/software-for/${industry}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
 
   // Pricing filter pages (programmatic SEO) - static, no DB needed
   const pricingPages: MetadataRoute.Sitemap = ["free", "freemium", "paid"].map((pricing) => ({
@@ -139,6 +162,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  // Pricing pages - all tools (programmatic SEO)
+  const toolPricingPages: MetadataRoute.Sitemap = tools.map((tool) => ({
+    url: `${SITE_URL}/tools/${tool.slug}/pricing`,
+    lastModified: tool.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
+  }));
+
   // Comparison pages (programmatic SEO) - Top 50 tools = 1225 comparisons
   const comparisonPages: MetadataRoute.Sitemap = [];
   const topTools = tools.slice(0, 50);
@@ -173,6 +204,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Listicle pages - best/[category]/for/[usecase] (programmatic SEO)
+  const useCases = ["small-business", "startups", "enterprise", "freelancers", "teams", "marketing", "developers", "agencies"];
+  const listiclePages: MetadataRoute.Sitemap = [];
+  for (const category of categories) {
+    for (const useCase of useCases) {
+      listiclePages.push({
+        url: `${SITE_URL}/best/${category.slug}/for/${useCase}`,
+        lastModified: new Date(),
+        changeFrequency: "weekly" as const,
+        priority: 0.6,
+      });
+    }
+  }
+
+  // Guides pages (programmatic SEO)
+  const guidePages: MetadataRoute.Sitemap = categories.map((category) => ({
+    url: `${SITE_URL}/guides/${category.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   // Compare category pages (programmatic SEO)
   const compareCategoryPages: MetadataRoute.Sitemap = categories.map((category) => ({
     url: `${SITE_URL}/compare/category/${category.slug}`,
@@ -196,14 +249,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticPages,
+    ...industryPages,
     ...pricingPages,
     ...useCasePages,
     ...toolPages,
     ...toolReviewPages,
+    ...toolPricingPages,
     ...categoryPages,
     ...companyPages,
     ...alternativePages,
     ...bestCategoryPages,
+    ...listiclePages,
+    ...guidePages,
     ...compareCategoryPages,
     ...comparisonPages, // ~1225 comparison pages for top 50 tools
   ];
