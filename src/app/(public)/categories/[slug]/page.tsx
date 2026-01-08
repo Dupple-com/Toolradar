@@ -10,19 +10,8 @@ import { generateCategoryMetadata, generateBreadcrumbJsonLd, generateFaqJsonLd }
 import { CategorySEOContent } from "@/components/seo/category-seo-content";
 
 
-export const revalidate = 3600;
-
-// Generate static params for all categories
-export async function generateStaticParams() {
-  try {
-    const categories = await prisma.category.findMany({
-      select: { slug: true },
-    });
-    return categories.map((c) => ({ slug: c.slug }));
-  } catch {
-    return [];
-  }
-}
+// Force dynamic rendering due to searchParams usage
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const { slug } = params;
