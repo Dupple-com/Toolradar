@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateFaqJsonLd } from "@/lib/seo";
 import { CategoryIcon } from "@/components/categories/category-icon";
 import { KeyTakeaways } from "@/components/seo/key-takeaways";
+import { BestCategorySEO } from "@/components/seo/best-category-seo";
 import { Star, ExternalLink, ArrowRight } from "lucide-react";
 
 // Force dynamic rendering for reliable database access
@@ -325,37 +326,21 @@ export default async function BestCategoryPage({ params }: { params: { category:
           </section>
         )}
 
-        {/* SEO Content */}
+        {/* SEO Content - G2 Style */}
         <section className="max-w-4xl mx-auto px-4 pb-16">
-          <div className="bg-white rounded-xl border p-6 md:p-8">
-            <h2 className="text-xl font-semibold mb-4">
-              How We Rank {category.name} Tools
-            </h2>
-            <div className="prose prose-slate max-w-none text-muted-foreground">
-              <p>
-                Our ranking of the best {category.name.toLowerCase()} tools is based on multiple factors:
-              </p>
-              <ul className="mt-4 space-y-2">
-                <li><strong>Editorial Score:</strong> Our team evaluates features, ease of use, and value for money.</li>
-                <li><strong>Community Reviews:</strong> Real feedback from users who have used these tools.</li>
-                <li><strong>Feature Analysis:</strong> Comprehensive comparison of capabilities and integrations.</li>
-                <li><strong>Pricing Value:</strong> How well the pricing aligns with the features offered.</li>
-              </ul>
-              <p className="mt-4">
-                We regularly update this list to ensure you have access to the most current and accurate information
-                about the best {category.name.toLowerCase()} software available in {year}.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-6 border-t">
-              <Link
-                href={`/categories/${category.slug}`}
-                className="inline-flex items-center gap-2 text-primary hover:underline"
-              >
-                View all {category.name} tools <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
+          <BestCategorySEO
+            categoryName={category.name}
+            categorySlug={category.slug}
+            categoryDescription={category.description}
+            tools={topTools.map(t => ({
+              name: t.name,
+              slug: t.slug,
+              tagline: t.tagline,
+              pricing: t.pricing,
+              editorialScore: t.editorialScore,
+            }))}
+            childCategories={category.children}
+          />
         </section>
       </div>
     </>
