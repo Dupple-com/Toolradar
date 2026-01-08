@@ -14,7 +14,7 @@ export default function TermsOfServicePage() {
           <ScrollText className="w-8 h-8 text-blue-600" />
         </div>
         <h1 className="text-4xl font-bold text-slate-900 mb-3">Terms of Service</h1>
-        <p className="text-slate-500">Last updated: December 18, 2025</p>
+        <p className="text-slate-500">Last updated: December 18, 2026</p>
       </div>
 
       <div className="bg-white rounded-2xl border border-slate-200 p-8 md:p-12">

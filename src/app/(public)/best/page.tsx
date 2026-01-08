@@ -14,7 +14,7 @@ const year = new Date().getFullYear();
 export const metadata: Metadata = {
   title: `Best Software Tools in ${year} | Top Rated by Category | Toolradar`,
   description: `Discover the best software tools in ${year}. Browse our curated lists of top-rated tools across all categories - from project management to AI, design to development.`,
-  keywords: "best software tools, top software, best tools 2025, software rankings, top rated software, best apps",
+  keywords: "best software tools, top software, best tools 2026, software rankings, top rated software, best apps",
   openGraph: {
     title: `Best Software Tools in ${year} | Toolradar`,
     description: `Discover the best software tools in ${year}. Curated lists of top-rated tools across all categories.`,
