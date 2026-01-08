@@ -6,9 +6,51 @@ import {
   DollarSign, Zap, Lightbulb, AlertTriangle, Users
 } from "lucide-react";
 import { ExpertGuide } from "@/content/expert-guides";
+import { MarkdownContent } from "@/components/ui/markdown-content";
 
 interface ExpertGuidePageProps {
   guide: ExpertGuide;
+}
+
+// Helper functions to handle both string and object formats
+function getWhatItIsTitle(whatItIs: ExpertGuide['whatItIs']): string {
+  return typeof whatItIs === 'string' ? 'What It Is' : whatItIs.title;
+}
+
+function getWhatItIsContent(whatItIs: ExpertGuide['whatItIs']): string {
+  return typeof whatItIs === 'string' ? whatItIs : whatItIs.content;
+}
+
+function getWhyItMattersTitle(whyItMatters: ExpertGuide['whyItMatters']): string {
+  return typeof whyItMatters === 'string' ? 'Why It Matters' : whyItMatters.title;
+}
+
+function getWhyItMattersContent(whyItMatters: ExpertGuide['whyItMatters']): string {
+  return typeof whyItMatters === 'string' ? whyItMatters : whyItMatters.content;
+}
+
+function isStructuredFeature(feature: string | { name: string; description: string; importance: "essential" | "important" | "nice-to-have" }): feature is { name: string; description: string; importance: "essential" | "important" | "nice-to-have" } {
+  return typeof feature !== 'string';
+}
+
+function getBuyingConsiderationsTitle(bc: ExpertGuide['buyingConsiderations']): string {
+  if (!bc) return 'What to Consider';
+  return Array.isArray(bc) ? 'What to Consider' : bc.title;
+}
+
+function getBuyingConsiderationsPoints(bc: ExpertGuide['buyingConsiderations']): string[] {
+  if (!bc) return [];
+  return Array.isArray(bc) ? bc : bc.points;
+}
+
+function getPricingOverviewSummary(po: ExpertGuide['pricingOverview']): string | null {
+  if (!po) return null;
+  return typeof po === 'string' ? po : po.summary;
+}
+
+function getPricingOverviewTiers(po: ExpertGuide['pricingOverview']): { name: string; priceRange: string; bestFor: string }[] | null {
+  if (!po || typeof po === 'string') return null;
+  return po.tiers;
 }
 
 export function ExpertGuidePage({ guide }: ExpertGuidePageProps) {
@@ -94,7 +136,7 @@ export function ExpertGuidePage({ guide }: ExpertGuidePageProps) {
               <Zap className="w-5 h-5 text-primary" />
               <h2 className="font-bold text-lg">TL;DR</h2>
             </div>
-            <p className="text-muted-foreground">{guide.tldr}</p>
+            <MarkdownContent content={guide.tldr} />
           </div>
         </section>
 
@@ -103,8 +145,8 @@ export function ExpertGuidePage({ guide }: ExpertGuidePageProps) {
           <div className="bg-slate-50 rounded-lg p-4 border">
             <h2 className="font-semibold mb-3">In This Guide</h2>
             <div className="grid md:grid-cols-2 gap-2 text-sm">
-              <a href="#what-it-is" className="text-primary hover:underline">{guide.whatItIs.title}</a>
-              <a href="#why-it-matters" className="text-primary hover:underline">{guide.whyItMatters.title}</a>
+              <a href="#what-it-is" className="text-primary hover:underline">{getWhatItIsTitle(guide.whatItIs)}</a>
+              <a href="#why-it-matters" className="text-primary hover:underline">{getWhyItMattersTitle(guide.whyItMatters)}</a>
               <a href="#features" className="text-primary hover:underline">Key Features to Look For</a>
               <a href="#top-picks" className="text-primary hover:underline">Top Picks</a>
               <a href="#pricing" className="text-primary hover:underline">Pricing Overview</a>
@@ -117,94 +159,109 @@ export function ExpertGuidePage({ guide }: ExpertGuidePageProps) {
 
         {/* Introduction */}
         <section className="max-w-4xl mx-auto px-4 py-8">
-          <div className="prose prose-slate max-w-none">
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              {guide.introduction}
-            </p>
-          </div>
+          <MarkdownContent content={guide.introduction} className="text-lg leading-relaxed" />
         </section>
 
         {/* What It Is */}
         <section id="what-it-is" className="max-w-4xl mx-auto px-4 py-8">
-          <h2 className="text-2xl font-bold mb-4">{guide.whatItIs.title}</h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground">{guide.whatItIs.content}</p>
-          </div>
+          <h2 className="text-2xl font-bold mb-4">{getWhatItIsTitle(guide.whatItIs)}</h2>
+          <MarkdownContent content={getWhatItIsContent(guide.whatItIs)} />
         </section>
 
         {/* Why It Matters */}
         <section id="why-it-matters" className="max-w-4xl mx-auto px-4 py-8">
-          <h2 className="text-2xl font-bold mb-4">{guide.whyItMatters.title}</h2>
-          <div className="prose prose-slate max-w-none">
-            <p className="text-muted-foreground">{guide.whyItMatters.content}</p>
-          </div>
+          <h2 className="text-2xl font-bold mb-4">{getWhyItMattersTitle(guide.whyItMatters)}</h2>
+          <MarkdownContent content={getWhyItMattersContent(guide.whyItMatters)} />
         </section>
 
         {/* Key Features */}
         <section id="features" className="max-w-4xl mx-auto px-4 py-8">
           <h2 className="text-2xl font-bold mb-6">Key Features to Look For</h2>
           <div className="space-y-4">
-            {guide.keyFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className={`bg-white rounded-lg border p-4 ${
-                  feature.importance === 'essential' ? 'border-l-4 border-l-green-500' :
-                  feature.importance === 'important' ? 'border-l-4 border-l-blue-500' :
-                  'border-l-4 border-l-slate-300'
-                }`}
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-medium">{feature.name}</h3>
-                      <span className={`text-xs px-2 py-0.5 rounded-full ${
-                        feature.importance === 'essential' ? 'bg-green-100 text-green-700' :
-                        feature.importance === 'important' ? 'bg-blue-100 text-blue-700' :
-                        'bg-slate-100 text-slate-600'
-                      }`}>
-                        {feature.importance}
-                      </span>
+            {guide.keyFeatures.map((feature, index) => {
+              if (isStructuredFeature(feature)) {
+                return (
+                  <div
+                    key={index}
+                    className={`bg-white rounded-lg border p-4 ${
+                      feature.importance === 'essential' ? 'border-l-4 border-l-green-500' :
+                      feature.importance === 'important' ? 'border-l-4 border-l-blue-500' :
+                      'border-l-4 border-l-slate-300'
+                    }`}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className="font-medium">{feature.name}</h3>
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${
+                            feature.importance === 'essential' ? 'bg-green-100 text-green-700' :
+                            feature.importance === 'important' ? 'bg-blue-100 text-blue-700' :
+                            'bg-slate-100 text-slate-600'
+                          }`}>
+                            {feature.importance}
+                          </span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">{feature.description}</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
+                );
+              }
+              // Simple string format
+              return (
+                <div key={index} className="bg-white rounded-lg border p-4 border-l-4 border-l-blue-500">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
+                    <p className="text-muted-foreground">{feature}</p>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
         {/* Buying Considerations */}
-        <section className="max-w-4xl mx-auto px-4 py-8">
-          <h2 className="text-2xl font-bold mb-4">{guide.buyingConsiderations.title}</h2>
-          <div className="bg-white rounded-xl border p-6">
-            <ul className="space-y-3">
-              {guide.buyingConsiderations.points.map((point, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span className="text-muted-foreground">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+        {guide.buyingConsiderations && getBuyingConsiderationsPoints(guide.buyingConsiderations).length > 0 && (
+          <section className="max-w-4xl mx-auto px-4 py-8">
+            <h2 className="text-2xl font-bold mb-4">{getBuyingConsiderationsTitle(guide.buyingConsiderations)}</h2>
+            <div className="bg-white rounded-xl border p-6">
+              <ul className="space-y-3">
+                {getBuyingConsiderationsPoints(guide.buyingConsiderations).map((point, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* Pricing Overview */}
-        <section id="pricing" className="max-w-4xl mx-auto px-4 py-8">
-          <h2 className="text-2xl font-bold mb-4">Pricing Overview</h2>
-          <p className="text-muted-foreground mb-6">{guide.pricingOverview.summary}</p>
-          <div className="grid md:grid-cols-3 gap-4">
-            {guide.pricingOverview.tiers.map((tier, index) => (
-              <div key={index} className="bg-white rounded-xl border p-5">
-                <div className="flex items-center gap-2 mb-2">
-                  <DollarSign className="w-5 h-5 text-green-600" />
-                  <h3 className="font-semibold">{tier.name}</h3>
-                </div>
-                <p className="text-xl font-bold text-primary mb-2">{tier.priceRange}</p>
-                <p className="text-sm text-muted-foreground">{tier.bestFor}</p>
+        {guide.pricingOverview && (
+          <section id="pricing" className="max-w-4xl mx-auto px-4 py-8">
+            <h2 className="text-2xl font-bold mb-4">Pricing Overview</h2>
+            {getPricingOverviewSummary(guide.pricingOverview) && (
+              <div className="mb-6">
+                <MarkdownContent content={getPricingOverviewSummary(guide.pricingOverview)!} />
               </div>
-            ))}
-          </div>
-        </section>
+            )}
+            {getPricingOverviewTiers(guide.pricingOverview) && (
+              <div className="grid md:grid-cols-3 gap-4">
+                {getPricingOverviewTiers(guide.pricingOverview)!.map((tier, index) => (
+                  <div key={index} className="bg-white rounded-xl border p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <DollarSign className="w-5 h-5 text-green-600" />
+                      <h3 className="font-semibold">{tier.name}</h3>
+                    </div>
+                    <p className="text-xl font-bold text-primary mb-2">{tier.priceRange}</p>
+                    <p className="text-sm text-muted-foreground">{tier.bestFor}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
 
         {/* Top Picks */}
         <section id="top-picks" className="max-w-4xl mx-auto px-4 py-8">
@@ -326,9 +383,7 @@ export function ExpertGuidePage({ guide }: ExpertGuidePageProps) {
               <Star className="w-5 h-5 text-primary fill-primary" />
               The Bottom Line
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              {guide.bottomLine}
-            </p>
+            <MarkdownContent content={guide.bottomLine} className="text-lg leading-relaxed" />
           </div>
         </section>
 
@@ -339,7 +394,7 @@ export function ExpertGuidePage({ guide }: ExpertGuidePageProps) {
             {guide.faqs.map((faq, index) => (
               <div key={index} className="bg-white rounded-lg border p-5">
                 <h3 className="font-semibold mb-2">{faq.question}</h3>
-                <p className="text-muted-foreground">{faq.answer}</p>
+                <MarkdownContent content={faq.answer} />
               </div>
             ))}
           </div>
