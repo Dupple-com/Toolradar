@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
+import { expertGuides } from "@/content/expert-guides";
 
 // Force dynamic generation at runtime (not build time)
 export const dynamic = "force-dynamic";
@@ -96,10 +97,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/guides/all`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
       url: `${SITE_URL}/software-for`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/contact`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.5,
     },
   ];
 
@@ -218,12 +231,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  // Guides pages (programmatic SEO)
-  const guidePages: MetadataRoute.Sitemap = categories.map((category) => ({
-    url: `${SITE_URL}/guides/${category.slug}`,
+  // Expert guide pages - all guides from content
+  const guidePages: MetadataRoute.Sitemap = expertGuides.map((guide) => ({
+    url: `${SITE_URL}/guides/${guide.slug}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
   }));
 
   // Compare category pages (programmatic SEO)
