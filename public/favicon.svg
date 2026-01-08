@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#2563EB" stop-opacity="0.02" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="50" cy="50" r="50" fill="#ffffff"/>
+
+  <!-- Background glow -->
+  <circle cx="50" cy="50" r="46" fill="url(#radarGlow)" />
+
+  <!-- Sweep effect -->
+  <path d="M50 50 L81.8 18.2 A45 45 0 0 0 18.2 81.8 Z" fill="#2563EB" opacity="0.15"/>
+  <path d="M50 50 L75.9 24.1 A45 45 0 0 0 24.1 75.9 Z" fill="#2563EB" opacity="0.2"/>
+  <path d="M50 50 L68.2 31.8 A45 45 0 0 0 31.8 68.2 Z" fill="#2563EB" opacity="0.25"/>
+
+  <!-- Concentric circles -->
+  <circle cx="50" cy="50" r="44" stroke="#2563EB" stroke-width="5" fill="none" />
+  <circle cx="50" cy="50" r="28" stroke="#2563EB" stroke-width="3" fill="none" opacity="0.5" />
+  <circle cx="50" cy="50" r="12" stroke="#2563EB" stroke-width="2.5" fill="none" opacity="0.35" />
+
+  <!-- Needle -->
+  <line x1="50" y1="50" x2="82" y2="18" stroke="#2563EB" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Center dot -->
+  <circle cx="50" cy="50" r="6" fill="#2563EB" />
+</svg>

@@ -9,6 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Toolradar - Discover the best tools",
   description: "Community-driven tool discovery platform. Find, compare, and review the best software tools.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
