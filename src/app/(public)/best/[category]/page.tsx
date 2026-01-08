@@ -9,22 +9,8 @@ import { CategoryIcon } from "@/components/categories/category-icon";
 import { KeyTakeaways } from "@/components/seo/key-takeaways";
 import { Star, ExternalLink, ArrowRight } from "lucide-react";
 
-
-export const revalidate = 3600;
-
-export async function generateStaticParams() {
-  try {
-    const categories = await prisma.category.findMany({
-      where: {
-        tools: { some: { tool: { status: "published" } } },
-      },
-      select: { slug: true },
-    });
-    return categories.map((c) => ({ category: c.slug }));
-  } catch {
-    return [];
-  }
-}
+// Force dynamic rendering for reliable database access
+export const dynamic = 'force-dynamic';
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const { category: categorySlug } = params;
