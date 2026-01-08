@@ -156,8 +156,8 @@ export const guideExpertContent: Record<string, GuideExpertContent> = {
     ]
   },
 
-  "crm": {
-    slug: "crm",
+  "crm-software": {
+    slug: "crm-software",
 
     intro: "CRM software is the most oversold, underutilized category in business software. Companies buy sophisticated platforms and use them as expensive contact databases. This guide helps you understand what CRM actually does, whether you need it, and how to choose one that your team will actually use.",
 
@@ -263,8 +263,8 @@ export const guideExpertContent: Record<string, GuideExpertContent> = {
     ]
   },
 
-  "marketing": {
-    slug: "marketing",
+  "marketing-sales": {
+    slug: "marketing-sales",
 
     intro: "Marketing software has exploded into a confusing landscape of overlapping tools. Email marketing, automation, social media, analytics, advertising—the average marketing team uses 12+ tools. This guide helps you build a coherent stack without redundancy, integration nightmares, or tools that collect dust after the initial enthusiasm fades.",
 
@@ -370,8 +370,8 @@ export const guideExpertContent: Record<string, GuideExpertContent> = {
     ]
   },
 
-  "communication": {
-    slug: "communication",
+  "team-communication": {
+    slug: "team-communication",
 
     intro: "The average knowledge worker checks email 74 times a day and gets interrupted by messages every 6 minutes. Communication tools are supposed to help, but often just add more channels to monitor. This guide helps you choose tools that actually improve how your team communicates—not just adds more places for messages to get lost.",
 
@@ -477,8 +477,8 @@ export const guideExpertContent: Record<string, GuideExpertContent> = {
     ]
   },
 
-  "design": {
-    slug: "design",
+  "design-creative": {
+    slug: "design-creative",
 
     intro: "Design software has undergone a revolution. What once required expensive desktop applications and specialized skills now happens in the browser with collaborative real-time editing. The challenge isn't finding capable tools—it's choosing from an overwhelming array of options without creating workflow chaos.",
 
@@ -584,8 +584,8 @@ export const guideExpertContent: Record<string, GuideExpertContent> = {
     ]
   },
 
-  "analytics": {
-    slug: "analytics",
+  "analytics-attribution": {
+    slug: "analytics-attribution",
 
     intro: "Every company claims to be 'data-driven,' but most are drowning in data while starving for insight. The challenge isn't collecting data—it's making it actionable. This guide helps you choose analytics tools that turn information into decisions, not just dashboards that look impressive in screenshots.",
 
@@ -691,8 +691,8 @@ export const guideExpertContent: Record<string, GuideExpertContent> = {
     ]
   },
 
-  "automation": {
-    slug: "automation",
+  "marketing-automation": {
+    slug: "marketing-automation",
 
     intro: "Automation promises to eliminate drudgery, but poorly implemented automation creates different problems—brittle processes, debugging nightmares, and the creeping fear of touching 'the workflow.' This guide helps you automate thoughtfully, focusing on workflows that genuinely benefit from automation rather than automating everything possible.",
 
@@ -798,8 +798,8 @@ export const guideExpertContent: Record<string, GuideExpertContent> = {
     ]
   },
 
-  "developer-tools": {
-    slug: "developer-tools",
+  "development-it": {
+    slug: "development-it",
 
     intro: "Developer tools are where engineers live—their productivity directly translates to product velocity. The right tooling creates leverage; the wrong tooling creates friction that compounds across every task. This guide helps engineering leaders and developers choose tools that accelerate development without creating maintenance burden.",
 

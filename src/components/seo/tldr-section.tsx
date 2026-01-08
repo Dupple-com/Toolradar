@@ -48,7 +48,7 @@ export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDR
       <ul className="text-muted-foreground space-y-2 mb-4">
         {keyPoints.map((point, i) => (
           <li key={i} className="flex items-start gap-2">
-            <span className="text-primary mt-1">•</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
             <span>{point}</span>
           </li>
         ))}
@@ -90,7 +90,10 @@ export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDR
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
                 {topPros.slice(0, 3).map((pro, i) => (
-                  <li key={i}>• {pro}</li>
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="w-1 h-1 rounded-full bg-green-600 mt-1.5 flex-shrink-0" />
+                    <span>{pro}</span>
+                  </li>
                 ))}
               </ul>
             </div>
@@ -102,7 +105,10 @@ export function TLDRSection({ tool, category, topPros = [], topCons = [] }: TLDR
               </p>
               <ul className="text-sm text-muted-foreground space-y-1">
                 {topCons.slice(0, 3).map((con, i) => (
-                  <li key={i}>• {con}</li>
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="w-1 h-1 rounded-full bg-red-600 mt-1.5 flex-shrink-0" />
+                    <span>{con}</span>
+                  </li>
                 ))}
               </ul>
             </div>
