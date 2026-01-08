@@ -5,8 +5,8 @@ import { ClaimForm } from "@/components/company/claim-form";
 import { Building2, CheckCircle } from "lucide-react";
 import Link from "next/link";
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const company = await prisma.company.findUnique({
     where: { slug },
     select: { name: true },
@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ClaimCompanyPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function ClaimCompanyPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const user = await requireAuth();
 
   const company = await prisma.company.findUnique({

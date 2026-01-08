@@ -6,14 +6,14 @@ import { prisma } from "@/lib/prisma";
 // PUT /api/notifications/[id] - Mark single notification as read
 export async function PUT(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id } = await params;
+  const { id } = params;
 
   // Verify notification belongs to user
   const notification = await prisma.notification.findFirst({
@@ -41,14 +41,14 @@ export async function PUT(
 // DELETE /api/notifications/[id] - Delete a notification
 export async function DELETE(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
   const session = await getServerSession(authOptions);
   if (!session?.user?.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { id } = await params;
+  const { id } = params;
 
   // Verify notification belongs to user
   const notification = await prisma.notification.findFirst({

@@ -16,9 +16,9 @@ export const revalidate = 3600;
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug } = params;
   try {
     const tool = await prisma.tool.findUnique({
       where: { slug, status: "published" },
@@ -58,11 +58,11 @@ export default async function ToolReviewsPage({
   params,
   searchParams,
 }: {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ sort?: string }>;
+  params: { slug: string };
+  searchParams: { sort?: string };
 }) {
-  const { slug } = await params;
-  const { sort = "recent" } = await searchParams;
+  const { slug } = params;
+  const { sort = "recent" } = searchParams;
 
   // Define sort order based on param
   const orderBy = sort === "highest" ? { overallRating: "desc" as const } :

@@ -31,8 +31,8 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slugs: string }> }): Promise<Metadata> {
-  const { slugs: slugsParam } = await params;
+export async function generateMetadata({ params }: { params: { slugs: string } }): Promise<Metadata> {
+  const { slugs: slugsParam } = params;
   const slugs = slugsParam.split("-vs-");
   const tools = await prisma.tool.findMany({
     where: { slug: { in: slugs }, status: "published" },
@@ -72,9 +72,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slugs: st
 export default async function CompareResultPage({
   params,
 }: {
-  params: Promise<{ slugs: string }>;
+  params: { slugs: string };
 }) {
-  const { slugs: slugsParam } = await params;
+  const { slugs: slugsParam } = params;
   const slugs = slugsParam.split("-vs-");
 
   if (slugs.length < 2 || slugs.length > 4) {

@@ -9,12 +9,12 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 export default async function EditToolPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
-  const { id } = await params;
+  const { id } = params;
 
   const company = await getActiveCompany(user.id);
 

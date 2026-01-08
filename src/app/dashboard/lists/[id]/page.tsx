@@ -10,9 +10,9 @@ import { RemoveFromListButton } from "@/components/dashboard/remove-from-list-bu
 export default async function ListDetailPage({
   params,
 }: {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }) {
-  const { id } = await params;
+  const { id } = params;
   const user = await getCurrentUser();
   if (!user) return null;
 

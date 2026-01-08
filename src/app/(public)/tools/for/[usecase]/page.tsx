@@ -79,8 +79,8 @@ export async function generateStaticParams() {
   return USE_CASE_KEYS.map((usecase) => ({ usecase }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ usecase: string }> }): Promise<Metadata> {
-  const { usecase } = await params;
+export async function generateMetadata({ params }: { params: { usecase: string } }): Promise<Metadata> {
+  const { usecase } = params;
   const useCase = USE_CASES[usecase];
   if (!useCase) return { title: "Not found" };
 
@@ -110,8 +110,8 @@ export async function generateMetadata({ params }: { params: Promise<{ usecase: 
   };
 }
 
-export default async function UseCasePage({ params }: { params: Promise<{ usecase: string }> }) {
-  const { usecase } = await params;
+export default async function UseCasePage({ params }: { params: { usecase: string } }) {
+  const { usecase } = params;
   const useCase = USE_CASES[usecase];
 
   if (!useCase) {

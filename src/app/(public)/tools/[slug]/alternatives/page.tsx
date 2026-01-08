@@ -26,8 +26,8 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params;
   const tool = await prisma.tool.findUnique({
     where: { slug },
     select: { name: true, tagline: true },
@@ -51,8 +51,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-export default async function AlternativesPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function AlternativesPage({ params }: { params: { slug: string } }) {
+  const { slug } = params;
   const tool = await prisma.tool.findUnique({
     where: { slug },
     include: {

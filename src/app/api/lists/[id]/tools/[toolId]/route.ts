@@ -5,9 +5,9 @@ import { getCurrentUser } from "@/lib/auth-utils";
 // POST /api/lists/[id]/tools/[toolId] - Add tool to list
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string; toolId: string }> }
+  { params }: { params: { id: string; toolId: string } }
 ) {
-  const { id, toolId } = await params;
+  const { id, toolId } = params;
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -61,9 +61,9 @@ export async function POST(
 // DELETE /api/lists/[id]/tools/[toolId] - Remove tool from list
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string; toolId: string }> }
+  { params }: { params: { id: string; toolId: string } }
 ) {
-  const { id, toolId } = await params;
+  const { id, toolId } = params;
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

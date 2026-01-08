@@ -26,8 +26,8 @@ export async function generateStaticParams() {
   }
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
-  const { category: categorySlug } = await params;
+export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
+  const { category: categorySlug } = params;
   const category = await prisma.category.findUnique({
     where: { slug: categorySlug },
     select: { name: true, description: true },
@@ -63,8 +63,8 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   };
 }
 
-export default async function BestCategoryPage({ params }: { params: Promise<{ category: string }> }) {
-  const { category: categorySlug } = await params;
+export default async function BestCategoryPage({ params }: { params: { category: string } }) {
+  const { category: categorySlug } = params;
   const category = await prisma.category.findUnique({
     where: { slug: categorySlug },
     include: {

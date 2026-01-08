@@ -6,9 +6,9 @@ import { createNotification } from "@/lib/notifications";
 // GET /api/reviews/[id]/replies - Get replies for a review
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
-  const { id } = await params;
+  const { id } = params;
 
   const replies = await prisma.reviewReply.findMany({
     where: { reviewId: id },
@@ -26,9 +26,9 @@ export async function GET(
 // POST /api/reviews/[id]/replies - Add a reply to a review
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: { id: string } }
 ) {
-  const { id } = await params;
+  const { id } = params;
   const user = await getCurrentUser();
   if (!user) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

@@ -35,8 +35,8 @@ export async function generateStaticParams() {
   return VALID_PRICING.map((type) => ({ type }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ type: string }> }): Promise<Metadata> {
-  const { type } = await params;
+export async function generateMetadata({ params }: { params: { type: string } }): Promise<Metadata> {
+  const { type } = params;
   const pricing = type as PricingType;
   if (!VALID_PRICING.includes(pricing)) {
     return { title: "Not found" };
@@ -67,8 +67,8 @@ export async function generateMetadata({ params }: { params: Promise<{ type: str
   };
 }
 
-export default async function PricingTypePage({ params }: { params: Promise<{ type: string }> }) {
-  const { type } = await params;
+export default async function PricingTypePage({ params }: { params: { type: string } }) {
+  const { type } = params;
   const pricing = type as PricingType;
 
   if (!VALID_PRICING.includes(pricing)) {
