@@ -34,6 +34,7 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
     { href: "/tools", label: "Browse" },
     { href: "/trending", label: "Trending" },
     { href: "/categories", label: "Categories" },
+    { href: "/guides", label: "Guides" },
     { href: "/compare", label: "Compare" },
   ];
 

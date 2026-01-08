@@ -38,6 +38,9 @@ export async function Header() {
               <Link href="/categories" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
                 Categories
               </Link>
+              <Link href="/guides" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
+                Guides
+              </Link>
             </nav>
           </div>
 
