@@ -5,6 +5,20 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
+    // Get ALL posts (including drafts) for debugging
+    const allPosts = await prisma.blogPost.findMany({
+      orderBy: { createdAt: "desc" },
+      take: 20,
+      select: {
+        id: true,
+        title: true,
+        slug: true,
+        status: true,
+        createdAt: true,
+        externalSource: true,
+      },
+    });
+
     // Replicate exact query from blog page
     const [posts, categories, featuredPost] = await Promise.all([
       prisma.blogPost.findMany({
@@ -29,11 +43,11 @@ export async function GET() {
       : posts;
 
     return NextResponse.json({
-      postsCount: posts.length,
+      allPostsCount: allPosts.length,
+      allPosts,
+      publishedCount: posts.length,
       categoriesCount: categories.length,
       featuredPost: featuredPost ? { id: featuredPost.id, title: featuredPost.title, slug: featuredPost.slug } : null,
-      regularPostsCount: regularPosts.length,
-      posts: posts.map(p => ({ id: p.id, title: p.title, slug: p.slug, publishedAt: p.publishedAt })),
     });
   } catch (error) {
     return NextResponse.json({
