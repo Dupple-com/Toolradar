@@ -150,7 +150,7 @@ export default async function BlogPostPage({ params }: Props) {
         <header className="bg-white border-b">
           <div className="max-w-4xl mx-auto px-4 py-8 md:py-12">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
+            <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6 mt-2">
               <Link href="/blog" className="hover:text-primary transition flex items-center gap-1">
                 <ArrowLeft className="w-4 h-4" />
                 Blog
