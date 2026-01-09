@@ -222,25 +222,6 @@ export default async function BlogPage() {
           )}
         </section>
 
-        {/* Newsletter CTA */}
-        <section className="max-w-7xl mx-auto px-4 py-12">
-          <div className="bg-gradient-to-br from-primary to-primary/80 rounded-2xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">
-              Stay in the loop
-            </h2>
-            <p className="text-white/80 mb-6 max-w-xl mx-auto">
-              Get the latest software insights, tool recommendations, and industry trends
-              delivered to your inbox weekly.
-            </p>
-            <Link
-              href="/newsletter"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white text-primary rounded-lg font-medium hover:bg-white/90 transition"
-            >
-              Subscribe to newsletter
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </section>
       </div>
     </>
   );
