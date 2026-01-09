@@ -43,37 +43,62 @@ export async function POST(request: NextRequest) {
     // Log incoming webhook for debugging
     console.log("Outrank webhook received:", JSON.stringify(body, null, 2));
 
+    // Handle test/ping requests from Outrank
+    if (body.test === true || body.type === "test" || body.event === "test") {
+      return NextResponse.json({
+        success: true,
+        message: "Webhook test successful",
+        received: body,
+      });
+    }
+
     // Extract fields from Outrank payload
-    // Outrank typically sends: title, content, excerpt/description, category, tags, image
+    // Outrank sends articles with various field names
     const {
       title,
       content,
+      body: bodyContent, // Alternative field name for content
+      html, // Another alternative
       excerpt,
-      description, // Alternative field name
+      description,
+      summary, // Alternative field name
       category,
       tags,
+      keywords, // Alternative for tags
       image,
+      featuredImage: featuredImg,
       imageAlt,
       author,
+      authorName: authorNameAlt,
       authorBio,
       authorImage,
       slug: providedSlug,
       metaTitle,
+      seoTitle, // Alternative
       metaDescription,
+      seoDescription, // Alternative
       externalId,
+      id: externalIdAlt, // Alternative
       status: providedStatus,
     } = body;
 
-    // Validate required fields
-    if (!title || !content) {
-      return NextResponse.json(
-        { error: "Missing required fields: title and content are required" },
-        { status: 400 }
-      );
+    // Use first available value for content
+    const articleContent = content || bodyContent || html;
+    const articleTitle = title || metaTitle || seoTitle;
+
+    // Validate required fields - be lenient, return success even without content for testing
+    if (!articleTitle || !articleContent) {
+      // If no title/content but we got data, it might be a test or different event
+      return NextResponse.json({
+        success: true,
+        message: "Webhook received but no article data to process",
+        hint: "Send title and content fields to create a blog post",
+        received: Object.keys(body),
+      });
     }
 
     // Generate slug if not provided
-    const slug = providedSlug || generateSlug(title);
+    const slug = providedSlug || generateSlug(articleTitle);
 
     // Check if post already exists (by externalId or slug)
     let existingPost = null;
@@ -108,16 +133,17 @@ export async function POST(request: NextRequest) {
       categoryId = blogCategory.id;
     }
 
-    // Parse tags
-    const parsedTags: string[] = Array.isArray(tags)
-      ? tags
-      : typeof tags === "string"
-      ? tags.split(",").map((t: string) => t.trim())
+    // Parse tags (support multiple field names)
+    const tagSource = tags || keywords;
+    const parsedTags: string[] = Array.isArray(tagSource)
+      ? tagSource
+      : typeof tagSource === "string"
+      ? tagSource.split(",").map((t: string) => t.trim())
       : [];
 
     // Calculate metadata
-    const readingTime = calculateReadingTime(content);
-    const wordCount = countWords(content);
+    const readingTime = calculateReadingTime(articleContent);
+    const wordCount = countWords(articleContent);
 
     // Determine status (default to draft for review)
     const status = providedStatus === "published" ? "published" : "draft";
@@ -125,25 +151,25 @@ export async function POST(request: NextRequest) {
 
     // Post data
     const postData = {
-      title,
+      title: articleTitle,
       slug,
-      excerpt: excerpt || description || title,
-      content,
-      metaTitle: metaTitle || title,
-      metaDescription: metaDescription || excerpt || description,
-      featuredImage: image || null,
-      featuredImageAlt: imageAlt || title,
+      excerpt: excerpt || description || summary || articleTitle,
+      content: articleContent,
+      metaTitle: metaTitle || seoTitle || articleTitle,
+      metaDescription: metaDescription || seoDescription || excerpt || description || summary,
+      featuredImage: image || featuredImg || null,
+      featuredImageAlt: imageAlt || articleTitle,
       categoryId,
       tags: parsedTags,
       readingTime,
       wordCount,
-      authorName: author || null,
+      authorName: author || authorNameAlt || null,
       authorBio: authorBio || null,
       authorImage: authorImage || null,
       status,
       publishedAt,
       externalSource: "outrank",
-      externalId: externalId || null,
+      externalId: externalId || externalIdAlt || null,
     };
 
     let post;
