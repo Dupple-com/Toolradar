@@ -114,6 +114,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    {
+      url: `${SITE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.9,
+    },
   ];
 
   // Industry pages (programmatic SEO)
@@ -260,6 +266,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  // Blog posts
+  const blogPosts = await prisma.blogPost.findMany({
+    where: { status: "published" },
+    select: { slug: true, updatedAt: true, publishedAt: true },
+    orderBy: { publishedAt: "desc" },
+  });
+
+  const blogPostPages: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: post.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  // Blog categories
+  const blogCategories = await prisma.blogCategory.findMany({
+    select: { slug: true, updatedAt: true },
+  });
+
+  const blogCategoryPages: MetadataRoute.Sitemap = blogCategories.map((cat) => ({
+    url: `${SITE_URL}/blog/category/${cat.slug}`,
+    lastModified: cat.updatedAt,
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
   return [
     ...staticPages,
     ...industryPages,
@@ -276,5 +308,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...guidePages,
     ...compareCategoryPages,
     ...comparisonPages, // ~1225 comparison pages for top 50 tools
+    ...blogPostPages,
+    ...blogCategoryPages,
   ];
 }

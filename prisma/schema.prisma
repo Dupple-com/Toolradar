@@ -585,3 +585,74 @@ model Subscriber {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+// === BLOG ===
+model BlogPost {
+  id          String   @id @default(cuid())
+  title       String
+  slug        String   @unique
+  excerpt     String   @db.Text // Short description for listings/SEO
+  content     String   @db.Text // Full markdown content
+
+  // SEO
+  metaTitle       String?
+  metaDescription String?
+  canonicalUrl    String?
+
+  // Media
+  featuredImage   String?
+  featuredImageAlt String?
+
+  // Organization
+  category   BlogCategory? @relation(fields: [categoryId], references: [id])
+  categoryId String?
+  tags       String[]
+
+  // Content metadata
+  readingTime Int?    // Minutes to read
+  wordCount   Int?
+
+  // Author (optional - for AI generated content)
+  authorName  String?
+  authorImage String?
+  authorBio   String?
+
+  // Publishing
+  status      String   @default("draft") // draft, published, scheduled, archived
+  publishedAt DateTime?
+  scheduledAt DateTime?
+
+  // External source tracking (for Outrank integration)
+  externalSource String?  // outrank, manual, etc.
+  externalId     String?  // ID from external system
+
+  // Engagement
+  views      Int @default(0)
+
+  // Related tools (optional)
+  relatedTools String[] // Array of tool slugs
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+  @@index([categoryId])
+  @@index([publishedAt])
+  @@index([slug])
+}
+
+model BlogCategory {
+  id          String  @id @default(cuid())
+  name        String
+  slug        String  @unique
+  description String?
+  color       String? // For UI styling (hex color)
+  icon        String? // Lucide icon name
+
+  posts BlogPost[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([slug])
+}
