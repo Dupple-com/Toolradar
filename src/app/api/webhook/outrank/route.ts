@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { prisma } from "@/lib/prisma";
 
 // Webhook secret for verification
@@ -245,6 +246,26 @@ export async function POST(request: NextRequest) {
     } catch (dbError) {
       console.error("Database error while saving post:", dbError);
       throw dbError;
+    }
+
+    // Revalidate blog pages to show the new/updated post immediately
+    try {
+      revalidatePath("/blog");
+      revalidatePath(`/blog/${post.slug}`);
+      if (post.categoryId) {
+        // Also revalidate the category page if applicable
+        const category = await prisma.blogCategory.findUnique({
+          where: { id: post.categoryId },
+          select: { slug: true },
+        });
+        if (category) {
+          revalidatePath(`/blog/category/${category.slug}`);
+        }
+      }
+      console.log("Revalidated blog paths");
+    } catch (revalidateError) {
+      console.error("Error revalidating paths:", revalidateError);
+      // Don't fail the webhook if revalidation fails
     }
 
     return NextResponse.json({
