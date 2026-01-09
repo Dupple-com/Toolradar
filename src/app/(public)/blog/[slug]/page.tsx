@@ -346,21 +346,6 @@ export default async function BlogPostPage({ params }: Props) {
           </section>
         )}
 
-        {/* Newsletter CTA */}
-        <section className="border-t bg-white">
-          <div className="max-w-3xl mx-auto px-4 py-12 text-center">
-            <h2 className="text-2xl font-bold mb-3">Enjoyed this article?</h2>
-            <p className="text-muted-foreground mb-6">
-              Subscribe to our newsletter for more software insights delivered weekly.
-            </p>
-            <Link
-              href="/newsletter"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition"
-            >
-              Subscribe to newsletter
-            </Link>
-          </div>
-        </section>
       </article>
     </>
   );

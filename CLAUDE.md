@@ -87,3 +87,21 @@ const { user } = result;
 2. Users submit ClaimRequest via `/companies/[slug]/claim`
 3. Admin approves/rejects at `/admin/claims`
 4. On approval: CompanyMember created with role="owner"
+
+### Product Hunt Import (from DupplePublishing)
+Automatic tool import from DupplePublishing's Product Hunt radar watcher.
+
+**Endpoint**: `GET /api/cron/import-producthunt?secret=CRON_SECRET`
+
+**Environment variables**:
+- `CRON_SECRET` - Secret for cron authentication
+- `PRODUCTHUNT_RSS_FEED_URL` - Full RSS feed URL with token
+
+**Flow**:
+1. Fetches RSS feed from DupplePublishing
+2. Parses items with custom radar namespace (score, metadata, etc.)
+3. Creates Company from tool domain (if not exists)
+4. Creates Tool in `draft` status for admin review
+5. Auto-assigns to "AI & Automation" category
+
+**RSS Feed URL format**: `https://publishing.dupple.com/feed/watcher/techpresso-producthunt/?token=YOUR_TOKEN`
