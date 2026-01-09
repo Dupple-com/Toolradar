@@ -57,16 +57,20 @@ export async function POST(request: NextRequest) {
     const {
       title,
       content,
-      body: bodyContent, // Alternative field name for content
-      html, // Another alternative
+      content_markdown, // Outrank specific
+      content_html, // Outrank specific
+      body: bodyContent,
+      html,
       excerpt,
       description,
-      summary, // Alternative field name
+      meta_description, // Outrank specific (snake_case)
+      summary,
       category,
       tags,
-      keywords, // Alternative for tags
+      keywords,
       image,
       featuredImage: featuredImg,
+      featured_image, // Outrank specific (snake_case)
       imageAlt,
       author,
       authorName: authorNameAlt,
@@ -74,17 +78,19 @@ export async function POST(request: NextRequest) {
       authorImage,
       slug: providedSlug,
       metaTitle,
-      seoTitle, // Alternative
+      meta_title, // Outrank specific (snake_case)
+      seoTitle,
       metaDescription,
-      seoDescription, // Alternative
+      seoDescription,
       externalId,
-      id: externalIdAlt, // Alternative
+      id: externalIdAlt,
+      article_id, // Outrank specific
       status: providedStatus,
     } = body;
 
-    // Use first available value for content
-    const articleContent = content || bodyContent || html;
-    const articleTitle = title || metaTitle || seoTitle;
+    // Use first available value for content (prefer markdown for better formatting)
+    const articleContent = content_markdown || content || bodyContent || content_html || html;
+    const articleTitle = title || meta_title || metaTitle || seoTitle;
 
     // Validate required fields - be lenient, return success even without content for testing
     if (!articleTitle || !articleContent) {
@@ -153,11 +159,11 @@ export async function POST(request: NextRequest) {
     const postData = {
       title: articleTitle,
       slug,
-      excerpt: excerpt || description || summary || articleTitle,
+      excerpt: excerpt || description || meta_description || summary || articleTitle.substring(0, 200),
       content: articleContent,
-      metaTitle: metaTitle || seoTitle || articleTitle,
-      metaDescription: metaDescription || seoDescription || excerpt || description || summary,
-      featuredImage: image || featuredImg || null,
+      metaTitle: meta_title || metaTitle || seoTitle || articleTitle,
+      metaDescription: meta_description || metaDescription || seoDescription || excerpt || description || summary,
+      featuredImage: image || featuredImg || featured_image || null,
       featuredImageAlt: imageAlt || articleTitle,
       categoryId,
       tags: parsedTags,
@@ -169,7 +175,7 @@ export async function POST(request: NextRequest) {
       status,
       publishedAt,
       externalSource: "outrank",
-      externalId: externalId || externalIdAlt || null,
+      externalId: externalId || externalIdAlt || article_id || null,
     };
 
     let post;
