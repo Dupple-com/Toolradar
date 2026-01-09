@@ -38,24 +38,37 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body = await request.json();
+    const rawBody = await request.json();
 
     // Log incoming webhook for debugging
-    console.log("Outrank webhook received:", JSON.stringify(body, null, 2));
+    console.log("Outrank webhook received:", JSON.stringify(rawBody, null, 2));
 
     // Handle test/ping requests from Outrank
-    if (body.test === true || body.type === "test" || body.event === "test") {
+    if (rawBody.test === true || rawBody.type === "test" || rawBody.event === "test") {
       return NextResponse.json({
         success: true,
         message: "Webhook test successful",
-        received: body,
+        received: rawBody,
       });
     }
+
+    // Outrank might nest the article data under different keys
+    // Try to extract the actual article data (only if it's an object, not a string)
+    const body =
+      (typeof rawBody.article === "object" && rawBody.article) ||
+      (typeof rawBody.data === "object" && rawBody.data) ||
+      (typeof rawBody.post === "object" && rawBody.post) ||
+      rawBody;
+
+    console.log("Extracted body keys:", Object.keys(body));
 
     // Extract fields from Outrank payload
     // Outrank sends articles with various field names
     const {
       title,
+      headline, // Common alternative
+      name, // Common alternative
+      article_title, // Outrank specific (snake_case)
       content,
       content_markdown, // Outrank specific
       content_html, // Outrank specific
@@ -72,17 +85,24 @@ export async function POST(request: NextRequest) {
       featuredImage: featuredImg,
       featured_image, // Outrank specific (snake_case)
       imageAlt,
+      image_alt, // Outrank specific (snake_case)
       author,
       authorName: authorNameAlt,
+      author_name, // Outrank specific (snake_case)
       authorBio,
+      author_bio, // Outrank specific (snake_case)
       authorImage,
+      author_image, // Outrank specific (snake_case)
       slug: providedSlug,
       metaTitle,
       meta_title, // Outrank specific (snake_case)
       seoTitle,
+      seo_title, // Outrank specific (snake_case)
       metaDescription,
       seoDescription,
+      seo_description, // Outrank specific (snake_case)
       externalId,
+      external_id, // Outrank specific (snake_case)
       id: externalIdAlt,
       article_id, // Outrank specific
       status: providedStatus,
@@ -90,16 +110,36 @@ export async function POST(request: NextRequest) {
 
     // Use first available value for content (prefer markdown for better formatting)
     const articleContent = content_markdown || content || bodyContent || content_html || html;
-    const articleTitle = title || meta_title || metaTitle || seoTitle;
+    const articleTitle = title || headline || name || article_title || meta_title || metaTitle || seo_title || seoTitle;
+
+    // Log what we found for debugging
+    console.log("Parsed article data:", {
+      hasTitle: !!articleTitle,
+      titleValue: articleTitle?.substring(0, 50),
+      hasContent: !!articleContent,
+      contentLength: articleContent?.length,
+      fieldsReceived: Object.keys(body),
+    });
 
     // Validate required fields - be lenient, return success even without content for testing
     if (!articleTitle || !articleContent) {
       // If no title/content but we got data, it might be a test or different event
+      console.log("Missing required fields:", {
+        hasTitle: !!articleTitle,
+        hasContent: !!articleContent,
+        bodyKeys: Object.keys(body),
+        rawBodyKeys: Object.keys(rawBody),
+      });
       return NextResponse.json({
         success: true,
         message: "Webhook received but no article data to process",
         hint: "Send title and content fields to create a blog post",
         received: Object.keys(body),
+        rawReceived: Object.keys(rawBody),
+        debug: {
+          titleFound: articleTitle || null,
+          contentFound: articleContent ? `${articleContent.length} chars` : null,
+        },
       });
     }
 
@@ -161,37 +201,50 @@ export async function POST(request: NextRequest) {
       slug,
       excerpt: excerpt || description || meta_description || summary || articleTitle.substring(0, 200),
       content: articleContent,
-      metaTitle: meta_title || metaTitle || seoTitle || articleTitle,
-      metaDescription: meta_description || metaDescription || seoDescription || excerpt || description || summary,
+      metaTitle: meta_title || metaTitle || seo_title || seoTitle || articleTitle,
+      metaDescription: meta_description || metaDescription || seo_description || seoDescription || excerpt || description || summary,
       featuredImage: image || featuredImg || featured_image || null,
-      featuredImageAlt: imageAlt || articleTitle,
+      featuredImageAlt: imageAlt || image_alt || articleTitle,
       categoryId,
       tags: parsedTags,
       readingTime,
       wordCount,
-      authorName: author || authorNameAlt || null,
-      authorBio: authorBio || null,
-      authorImage: authorImage || null,
+      authorName: author || authorNameAlt || author_name || null,
+      authorBio: authorBio || author_bio || null,
+      authorImage: authorImage || author_image || null,
       status,
       publishedAt,
       externalSource: "outrank",
-      externalId: externalId || externalIdAlt || article_id || null,
+      externalId: externalId || external_id || externalIdAlt || article_id || null,
     };
 
+    console.log("Attempting to save post with data:", {
+      title: postData.title,
+      slug: postData.slug,
+      status: postData.status,
+      contentLength: postData.content.length,
+      hasCategory: !!postData.categoryId,
+    });
+
     let post;
-    if (existingPost) {
-      // Update existing post
-      post = await prisma.blogPost.update({
-        where: { id: existingPost.id },
-        data: postData,
-      });
-      console.log(`Updated blog post: ${post.slug}`);
-    } else {
-      // Create new post
-      post = await prisma.blogPost.create({
-        data: postData,
-      });
-      console.log(`Created blog post: ${post.slug}`);
+    try {
+      if (existingPost) {
+        // Update existing post
+        post = await prisma.blogPost.update({
+          where: { id: existingPost.id },
+          data: postData,
+        });
+        console.log(`Updated blog post: ${post.slug}`);
+      } else {
+        // Create new post
+        post = await prisma.blogPost.create({
+          data: postData,
+        });
+        console.log(`Created blog post: ${post.slug}`);
+      }
+    } catch (dbError) {
+      console.error("Database error while saving post:", dbError);
+      throw dbError;
     }
 
     return NextResponse.json({
