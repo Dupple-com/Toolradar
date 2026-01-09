@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { getCurrentUser } from "@/lib/auth-utils";
 import { notifyAdminNewSubmission } from "@/lib/notifications";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 export async function POST(request: NextRequest) {
   const user = await getCurrentUser();
@@ -10,6 +11,22 @@ export async function POST(request: NextRequest) {
   }
 
   const data = await request.json();
+
+  // Verify Turnstile token
+  if (!data.turnstileToken) {
+    return NextResponse.json(
+      { error: "Please complete the verification" },
+      { status: 400 }
+    );
+  }
+
+  const isValidToken = await verifyTurnstile(data.turnstileToken);
+  if (!isValidToken) {
+    return NextResponse.json(
+      { error: "Verification failed. Please try again." },
+      { status: 400 }
+    );
+  }
 
   // Get or create company
   let company = await prisma.company.findUnique({ where: { userId: user.id } });

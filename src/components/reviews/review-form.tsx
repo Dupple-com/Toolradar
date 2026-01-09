@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 
 interface ReviewFormProps {
   toolId: string;
@@ -12,6 +13,8 @@ interface ReviewFormProps {
 export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
   const [formData, setFormData] = useState({
     overallRating: 5,
     easeOfUse: 5,
@@ -26,12 +29,18 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      toast.error("Please complete the verification");
+      return;
+    }
+
     setIsLoading(true);
 
     const res = await fetch("/api/reviews", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, toolId }),
+      body: JSON.stringify({ ...formData, toolId, turnstileToken }),
     });
 
     if (res.ok) {
@@ -39,6 +48,8 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
       router.push(`/tools/${toolSlug}?review=submitted`);
     } else {
       toast.error("Error submitting review");
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
     }
     setIsLoading(false);
   };
@@ -146,6 +157,15 @@ export function ReviewForm({ toolId, toolSlug }: ReviewFormProps) {
           <li>Verified users get a badge on their reviews</li>
         </ul>
       </div>
+
+      <Turnstile
+        ref={turnstileRef}
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
+        onSuccess={(token) => setTurnstileToken(token)}
+        onError={() => setTurnstileToken(null)}
+        onExpire={() => setTurnstileToken(null)}
+        options={{ theme: "light" }}
+      />
 
       <button
         type="submit"

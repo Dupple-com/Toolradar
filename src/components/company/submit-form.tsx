@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Loader2, Sparkles } from "lucide-react";
+import { Turnstile, TurnstileInstance } from "@marsidev/react-turnstile";
 
 export function SubmitToolForm() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [isFetching, setIsFetching] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
   const [formData, setFormData] = useState({
     name: "",
     website: "",
@@ -54,12 +57,18 @@ export function SubmitToolForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!turnstileToken) {
+      toast.error("Please complete the verification");
+      return;
+    }
+
     setIsLoading(true);
 
     const res = await fetch("/api/submissions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify({ ...formData, turnstileToken }),
     });
 
     if (res.ok) {
@@ -67,6 +76,8 @@ export function SubmitToolForm() {
       setSubmitted(true);
     } else {
       toast.error("Error submitting tool");
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
     }
     setIsLoading(false);
   };
@@ -172,6 +183,15 @@ export function SubmitToolForm() {
           className="w-full px-4 py-2.5 border rounded-lg focus:ring-2 focus:ring-primary outline-none"
         />
       </div>
+
+      <Turnstile
+        ref={turnstileRef}
+        siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
+        onSuccess={(token) => setTurnstileToken(token)}
+        onError={() => setTurnstileToken(null)}
+        onExpire={() => setTurnstileToken(null)}
+        options={{ theme: "light" }}
+      />
 
       <button
         type="submit"
