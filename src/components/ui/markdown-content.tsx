@@ -62,7 +62,7 @@ export function MarkdownContent({ content, className = "" }: MarkdownContentProp
           ),
         }}
       >
-        {content}
+        {processedContent}
       </ReactMarkdown>
     </div>
   );
