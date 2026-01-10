@@ -70,7 +70,9 @@ export function MarkdownContent({ content, className = "" }: MarkdownContentProp
             <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-6">{children}</blockquote>
           ),
           hr: () => (
-            <hr className="my-8 border-gray-200" />
+            <div className="my-10 flex items-center justify-center">
+              <div className="w-16 h-1 bg-gray-200 rounded-full" />
+            </div>
           ),
           table: ({ children }) => (
             <div className="overflow-x-auto my-6">
