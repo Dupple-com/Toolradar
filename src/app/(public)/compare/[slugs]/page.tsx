@@ -10,6 +10,7 @@ import { getComparisonContent, type ComparisonExpertContent } from "@/content/co
 
 
 export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 // Generate static params for popular comparisons
 export async function generateStaticParams() {
