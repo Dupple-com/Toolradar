@@ -72,6 +72,26 @@ export function MarkdownContent({ content, className = "" }: MarkdownContentProp
           hr: () => (
             <hr className="my-8 border-gray-200" />
           ),
+          table: ({ children }) => (
+            <div className="overflow-x-auto my-6">
+              <table className="w-full border-collapse rounded-lg overflow-hidden">{children}</table>
+            </div>
+          ),
+          thead: ({ children }) => (
+            <thead className="bg-gray-50">{children}</thead>
+          ),
+          tbody: ({ children }) => (
+            <tbody className="divide-y divide-gray-200">{children}</tbody>
+          ),
+          tr: ({ children }) => (
+            <tr className="hover:bg-gray-50 transition-colors">{children}</tr>
+          ),
+          th: ({ children }) => (
+            <th className="px-4 py-3 text-left text-sm font-semibold text-gray-900 border-b border-gray-200">{children}</th>
+          ),
+          td: ({ children }) => (
+            <td className="px-4 py-3 text-sm text-gray-700 border-b border-gray-100">{children}</td>
+          ),
         }}
       >
         {processedContent}
