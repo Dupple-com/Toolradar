@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
-import { Clock, Calendar, ArrowLeft, ChevronRight, User, Tag } from "lucide-react";
+import { Clock, Calendar, ArrowLeft, ChevronRight } from "lucide-react";
 
 export const revalidate = 3600;
 
@@ -106,25 +106,8 @@ export default async function BlogPostPage({ params }: Props) {
 
       <div className="max-w-4xl mx-auto px-4 py-12">
         <div className="bg-white rounded-2xl border p-6 md:p-10">
-          <div
-            className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }}
-          />
+          <p>Content length: {post.content?.length || 0} characters</p>
         </div>
-
-        {post.tags && post.tags.length > 0 && (
-          <div className="mt-8 flex flex-wrap items-center gap-2">
-            <Tag className="w-4 h-4 text-muted-foreground" />
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
       </div>
     </article>
   );
