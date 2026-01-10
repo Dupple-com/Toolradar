@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${title} | Toolradar Blog`,
     description,
-    keywords: post.tags.join(", "),
+    keywords: post.tags?.join(", ") || "",
     authors: post.authorName ? [{ name: post.authorName }] : undefined,
     openGraph: {
       title,
@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }: Props) {
     },
     wordCount: post.wordCount,
     articleSection: post.category?.name,
-    keywords: post.tags.join(", "),
+    keywords: post.tags?.join(", ") || "",
   };
 
   return (
@@ -258,7 +258,7 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
 
               {/* Tags */}
-              {post.tags.length > 0 && (
+              {post.tags && post.tags.length > 0 && (
                 <div className="mt-8 flex flex-wrap items-center gap-2">
                   <Tag className="w-4 h-4 text-muted-foreground" />
                   {post.tags.map((tag) => (
