@@ -365,10 +365,10 @@ export default async function CompareResultPage({
                       <p className="text-xs text-muted-foreground">Score</p>
                     </div>
                   )}
-                  {tool.communityScore && tool.communityScore > 0 && (
+                  {(tool.communityScore ?? 0) > 0 && (
                     <div className="text-center">
                       <p className="text-xl font-bold">
-                        <span className="text-yellow-500">★</span> {tool.communityScore.toFixed(1)}
+                        <span className="text-yellow-500">★</span> {tool.communityScore!.toFixed(1)}
                       </p>
                       <p className="text-xs text-muted-foreground">{tool._count.reviews} reviews</p>
                     </div>
