@@ -34,31 +34,43 @@ export function MarkdownContent({ content, className = "" }: MarkdownContentProp
         remarkPlugins={[remarkGfm, remarkBreaks]}
         components={{
           p: ({ children }) => (
-            <p className="text-muted-foreground mb-4 last:mb-0">{children}</p>
+            <p className="text-gray-700 mb-5 leading-relaxed">{children}</p>
           ),
           strong: ({ children }) => (
-            <strong className="font-semibold text-foreground">{children}</strong>
+            <strong className="font-semibold text-gray-900">{children}</strong>
           ),
           em: ({ children }) => (
             <em className="italic">{children}</em>
           ),
           ul: ({ children }) => (
-            <ul className="list-disc list-inside space-y-2 text-muted-foreground mb-4">{children}</ul>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 mb-5">{children}</ul>
           ),
           ol: ({ children }) => (
-            <ol className="list-decimal list-inside space-y-2 text-muted-foreground mb-4">{children}</ol>
+            <ol className="list-decimal pl-6 space-y-2 text-gray-700 mb-5">{children}</ol>
           ),
           li: ({ children }) => (
-            <li>{children}</li>
+            <li className="leading-relaxed">{children}</li>
           ),
           a: ({ href, children }) => (
-            <a href={href} className="text-primary hover:underline">{children}</a>
+            <a href={href} className="text-blue-600 hover:text-blue-800 underline underline-offset-2">{children}</a>
+          ),
+          h1: ({ children }) => (
+            <h1 className="text-3xl font-bold text-gray-900 mt-10 mb-4 first:mt-0">{children}</h1>
+          ),
+          h2: ({ children }) => (
+            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4 first:mt-0">{children}</h2>
           ),
           h3: ({ children }) => (
-            <h3 className="font-semibold text-foreground mt-4 mb-2">{children}</h3>
+            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">{children}</h3>
           ),
           h4: ({ children }) => (
-            <h4 className="font-medium text-foreground mt-3 mb-2">{children}</h4>
+            <h4 className="text-lg font-semibold text-gray-900 mt-6 mb-2">{children}</h4>
+          ),
+          blockquote: ({ children }) => (
+            <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-6">{children}</blockquote>
+          ),
+          hr: () => (
+            <hr className="my-8 border-gray-200" />
           ),
         }}
       >
