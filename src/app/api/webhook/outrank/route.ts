@@ -111,6 +111,7 @@ export async function POST(request: NextRequest) {
           publishedAt: new Date(),
           externalSource: "outrank",
           externalId: externalId || null,
+          relatedTools: [],
         };
 
         let post;

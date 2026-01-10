@@ -77,20 +77,27 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post) notFound();
 
-  // Get related posts
-  const relatedPosts = await prisma.blogPost.findMany({
-    where: {
-      status: "published",
-      id: { not: post.id },
-      OR: [
-        { categoryId: post.categoryId },
-        { tags: { hasSome: post.tags } },
-      ],
-    },
-    take: 3,
-    orderBy: { publishedAt: "desc" },
-    include: { category: true },
-  });
+  // Get related posts - build OR conditions dynamically to avoid empty array issues
+  const orConditions = [];
+  if (post.categoryId) {
+    orConditions.push({ categoryId: post.categoryId });
+  }
+  if (post.tags && post.tags.length > 0) {
+    orConditions.push({ tags: { hasSome: post.tags } });
+  }
+
+  const relatedPosts = orConditions.length > 0
+    ? await prisma.blogPost.findMany({
+        where: {
+          status: "published",
+          id: { not: post.id },
+          OR: orConditions,
+        },
+        take: 3,
+        orderBy: { publishedAt: "desc" },
+        include: { category: true },
+      })
+    : [];
 
   // Increment view count
   prisma.blogPost.update({
@@ -311,7 +318,7 @@ export default async function BlogPostPage({ params }: Props) {
                 <TableOfContents content={post.content} />
 
                 {/* Related Tools */}
-                {post.relatedTools.length > 0 && (
+                {post.relatedTools && post.relatedTools.length > 0 && (
                   <div className="bg-white rounded-xl border p-5">
                     <h3 className="font-semibold mb-4">Tools mentioned</h3>
                     <div className="space-y-2">
