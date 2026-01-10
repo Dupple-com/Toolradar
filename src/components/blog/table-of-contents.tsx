@@ -59,26 +59,32 @@ export function TableOfContents({ content }: TableOfContentsProps) {
 
   if (headings.length === 0) return null;
 
+  // Only show h2 headings for cleaner TOC
+  const mainHeadings = headings.filter(h => h.level === 2);
+
   return (
     <nav className="bg-white rounded-xl border p-5">
-      <h3 className="font-semibold mb-4 flex items-center gap-2">
+      <h3 className="font-semibold mb-4 flex items-center gap-2 text-gray-900">
         <List className="w-4 h-4" />
         Table of Contents
       </h3>
-      <ul className="space-y-2 text-sm">
-        {headings.map(({ id, text, level }) => (
+      <ul className="space-y-1 text-sm">
+        {mainHeadings.map(({ id, text }, index) => (
           <li key={id}>
             <a
               href={`#${id}`}
-              className={`block py-1 transition-colors ${
-                level === 3 ? "pl-4" : ""
-              } ${
+              className={`flex items-start gap-2 py-1.5 px-2 rounded-md transition-colors ${
                 activeId === id
-                  ? "text-primary font-medium"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "bg-blue-50 text-blue-700 font-medium"
+                  : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
               }`}
             >
-              {text}
+              <span className={`flex-shrink-0 w-5 h-5 rounded text-xs flex items-center justify-center ${
+                activeId === id ? "bg-blue-100 text-blue-700" : "bg-gray-100 text-gray-500"
+              }`}>
+                {index + 1}
+              </span>
+              <span className="line-clamp-2">{text}</span>
             </a>
           </li>
         ))}
