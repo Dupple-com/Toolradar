@@ -11,9 +11,12 @@ export const metadata: Metadata = {
   description: "Community-driven tool discovery platform. Find, compare, and review the best software tools.",
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
-    apple: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
 };
 
