@@ -10,6 +10,7 @@ import { Users, Building2, Rocket, Briefcase, GraduationCap, Home, Star, ArrowRi
 import { getUseCaseContent } from "@/content/usecase-content";
 
 
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 // Define criteria interface

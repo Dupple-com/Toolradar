@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbJsonLd, generateCompanyMetadata } from "@/lib/seo";
 
 
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 // Generate static params for companies with published tools

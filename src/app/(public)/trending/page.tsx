@@ -7,6 +7,7 @@ import { generateBreadcrumbJsonLd } from "@/lib/seo";
 
 // Force dynamic rendering to avoid build-time DB access
 
+export const dynamic = "force-dynamic";
 export const revalidate = 1800; // 30 minutes for trending data
 
 export const metadata: Metadata = {

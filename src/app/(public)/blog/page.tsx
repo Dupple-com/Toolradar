@@ -7,6 +7,7 @@ import { BookOpen, TrendingUp, Clock, ArrowRight, Tag } from "lucide-react";
 import { BlogPostCard } from "@/components/blog/blog-post-card";
 import { BlogCategoryBadge } from "@/components/blog/blog-category-badge";
 
+export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
