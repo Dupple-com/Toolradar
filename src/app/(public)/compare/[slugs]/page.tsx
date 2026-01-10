@@ -212,27 +212,32 @@ export default async function CompareResultPage({
       {/* Quick Recommendation - TL;DR */}
       <section className="max-w-6xl mx-auto px-4 py-6">
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100 p-6">
-          <h2 className="font-bold text-lg mb-4 flex items-center gap-2">
+          <h2 className="font-bold text-lg mb-3 flex items-center gap-2">
             <Zap className="w-5 h-5 text-blue-600" />
-            Quick Recommendation
+            Short on time? Here&apos;s the quick answer
           </h2>
+          <p className="text-sm text-gray-600 mb-4">
+            We&apos;ve tested both tools. Here&apos;s who should pick what:
+          </p>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white rounded-lg p-4 border border-blue-100">
-              <p className="font-semibold text-blue-700 mb-2">Choose {tool1.name} if:</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                {tool1.pricing === "free" && <li>• You need a completely free solution</li>}
-                {tool1.pricing === "freemium" && <li>• You want to start free and upgrade later</li>}
-                {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) && <li>• You want the highest-rated option</li>}
-                <li>• You prefer: {tool1.tagline?.slice(0, 50)}...</li>
+              <p className="font-semibold text-blue-700 mb-2">Go with {tool1.name} if you...</p>
+              <ul className="text-sm text-gray-600 space-y-1.5">
+                {tool1.pricing === "free" && <li>• Don&apos;t want to spend a dime</li>}
+                {tool1.pricing === "freemium" && <li>• Want to try before you buy</li>}
+                {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) && <li>• Want our top-rated pick</li>}
+                {tool1._count.reviews > tool2._count.reviews && <li>• Trust what other users say</li>}
+                <li>• Need {tool1.categories[0]?.category.name?.toLowerCase() || "general"} features</li>
               </ul>
             </div>
             <div className="bg-white rounded-lg p-4 border border-blue-100">
-              <p className="font-semibold text-indigo-700 mb-2">Choose {tool2.name} if:</p>
-              <ul className="text-sm text-gray-600 space-y-1">
-                {tool2.pricing === "free" && <li>• You need a completely free solution</li>}
-                {tool2.pricing === "freemium" && <li>• You want to start free and upgrade later</li>}
-                {(tool2.editorialScore || 0) > (tool1.editorialScore || 0) && <li>• You want the highest-rated option</li>}
-                <li>• You prefer: {tool2.tagline?.slice(0, 50)}...</li>
+              <p className="font-semibold text-indigo-700 mb-2">Go with {tool2.name} if you...</p>
+              <ul className="text-sm text-gray-600 space-y-1.5">
+                {tool2.pricing === "free" && <li>• Don&apos;t want to spend a dime</li>}
+                {tool2.pricing === "freemium" && <li>• Want to try before you buy</li>}
+                {(tool2.editorialScore || 0) > (tool1.editorialScore || 0) && <li>• Want our top-rated pick</li>}
+                {tool2._count.reviews > tool1._count.reviews && <li>• Trust what other users say</li>}
+                <li>• Need {tool2.categories[0]?.category.name?.toLowerCase() || "general"} features</li>
               </ul>
             </div>
           </div>
@@ -709,54 +714,54 @@ export default async function CompareResultPage({
 
       {/* Use Case Scenarios */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
-        <h2 className="text-xl font-bold mb-4">Which Tool Fits Your Situation?</h2>
+        <h2 className="text-xl font-bold mb-4">Who Should Use What?</h2>
         <div className="grid md:grid-cols-3 gap-4">
           <div className="bg-white rounded-xl border p-5">
             <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
               <Users className="w-5 h-5 text-green-600" />
             </div>
-            <h3 className="font-semibold mb-2">For Startups & Small Teams</h3>
+            <h3 className="font-semibold mb-2">Bootstrapped or small team?</h3>
             <p className="text-sm text-muted-foreground mb-3">
               {tool1.pricing === "free" || tool1.pricing === "freemium"
-                ? `${tool1.name} offers a generous free tier, perfect for teams watching their budget.`
+                ? `When every dollar counts, ${tool1.name} lets you get started without pulling out your credit card.`
                 : tool2.pricing === "free" || tool2.pricing === "freemium"
-                ? `${tool2.name} has free options that work well for small teams getting started.`
-                : `Both tools are paid, but consider which offers better value for smaller teams.`}
+                ? `${tool2.name} won't cost you anything to start, which is exactly what early-stage teams need.`
+                : `Neither is free, but both have their value. Test them both and see which clicks.`}
             </p>
             <p className="text-sm font-medium text-green-700">
-              Our pick: {(tool1.pricing === "free" || tool1.pricing === "freemium") ? tool1.name : tool2.name}
+              We&apos;d pick: {(tool1.pricing === "free" || tool1.pricing === "freemium") ? tool1.name : tool2.name}
             </p>
           </div>
           <div className="bg-white rounded-xl border p-5">
             <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
               <Zap className="w-5 h-5 text-blue-600" />
             </div>
-            <h3 className="font-semibold mb-2">For Growing Businesses</h3>
+            <h3 className="font-semibold mb-2">Growing fast?</h3>
             <p className="text-sm text-muted-foreground mb-3">
-              As your team scales, you need a tool that grows with you.
+              Your team doubled last quarter and you need tools that won&apos;t break when you add 50 more people.
               {(tool1.editorialScore || 0) > (tool2.editorialScore || 0)
-                ? ` ${tool1.name} scores higher overall and typically handles growth better.`
-                : ` ${tool2.name} has the edge in our ratings for scaling teams.`}
+                ? ` ${tool1.name} handles scale better in our testing.`
+                : ` ${tool2.name} is built for teams that are leveling up.`}
             </p>
             <p className="text-sm font-medium text-blue-700">
-              Our pick: {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) ? tool1.name : tool2.name}
+              We&apos;d pick: {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) ? tool1.name : tool2.name}
             </p>
           </div>
           <div className="bg-white rounded-xl border p-5">
             <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
               <Trophy className="w-5 h-5 text-purple-600" />
             </div>
-            <h3 className="font-semibold mb-2">For Enterprise Teams</h3>
+            <h3 className="font-semibold mb-2">Enterprise with complex needs?</h3>
             <p className="text-sm text-muted-foreground mb-3">
-              Large organizations need robust features, security, and support.
+              You need SSO, compliance certifications, and a support team that picks up the phone.
               {tool1.pricing === "paid"
-                ? ` ${tool1.name}'s paid model often means better enterprise support.`
+                ? ` ${tool1.name} is built for organizations like yours.`
                 : tool2.pricing === "paid"
-                ? ` ${tool2.name}'s paid model typically includes enterprise-grade features.`
-                : ` Both offer paid tiers with enterprise features worth comparing.`}
+                ? ` ${tool2.name} takes enterprise seriously.`
+                : ` Both have enterprise tiers—compare their security features.`}
             </p>
             <p className="text-sm font-medium text-purple-700">
-              Our pick: {tool1.pricing === "paid" ? tool1.name : tool2.pricing === "paid" ? tool2.name : winner.name}
+              We&apos;d pick: {tool1.pricing === "paid" ? tool1.name : tool2.pricing === "paid" ? tool2.name : winner.name}
             </p>
           </div>
         </div>
@@ -764,47 +769,51 @@ export default async function CompareResultPage({
 
       {/* Decision Helper Checklist */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
-        <h2 className="text-xl font-bold mb-4">Quick Decision Checklist</h2>
+        <h2 className="text-xl font-bold mb-4">Still not sure? Answer these 3 questions</h2>
         <div className="bg-white rounded-xl border p-6">
-          <p className="text-muted-foreground mb-4">Answer these questions to find your best fit:</p>
-          <div className="space-y-3">
-            <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-xs font-bold text-primary">1</span>
+          <div className="space-y-4">
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">
+                1
               </div>
               <div>
-                <p className="font-medium">What&apos;s your budget?</p>
+                <p className="font-medium mb-1">How much can you spend?</p>
                 <p className="text-sm text-muted-foreground">
-                  {tool1.pricing === "free" ? `Free → ${tool1.name}` : tool2.pricing === "free" ? `Free → ${tool2.name}` : "Both require payment"} •
-                  {tool1.pricing === "freemium" ? ` Limited budget → ${tool1.name}` : tool2.pricing === "freemium" ? ` Limited budget → ${tool2.name}` : ""} •
-                  Flexible budget → {winner.name}
+                  {tool1.pricing === "free"
+                    ? `Nothing at all? ${tool1.name} is completely free.`
+                    : tool2.pricing === "free"
+                    ? `Zero budget? ${tool2.name} won't cost you anything.`
+                    : tool1.pricing === "freemium"
+                    ? `Tight budget? Start free with ${tool1.name}, upgrade when you're ready.`
+                    : tool2.pricing === "freemium"
+                    ? `Want to test first? ${tool2.name} has a free tier to get you started.`
+                    : `Both are paid tools. If money isn't the issue, go with ${winner.name}—it scored higher.`}
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-xs font-bold text-primary">2</span>
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">
+                2
               </div>
               <div>
-                <p className="font-medium">How important are user reviews?</p>
+                <p className="font-medium mb-1">Do you care what other users think?</p>
                 <p className="text-sm text-muted-foreground">
                   {tool1._count.reviews > tool2._count.reviews
-                    ? `${tool1.name} has more reviews (${tool1._count.reviews}) for social proof`
+                    ? `${tool1.name} has ${tool1._count.reviews} reviews from real users. That's more social proof to help you decide.`
                     : tool2._count.reviews > tool1._count.reviews
-                    ? `${tool2.name} has more reviews (${tool2._count.reviews}) for social proof`
-                    : "Both have similar review counts"}
+                    ? `${tool2.name} has ${tool2._count.reviews} user reviews, so you can see what people actually think.`
+                    : `Both have similar review counts. Read a few before you commit.`}
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
-              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <span className="text-xs font-bold text-primary">3</span>
+            <div className="flex items-start gap-3 p-4 bg-gray-50 rounded-lg">
+              <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 font-bold">
+                3
               </div>
               <div>
-                <p className="font-medium">Do you prioritize expert ratings or community opinion?</p>
+                <p className="font-medium mb-1">Expert opinion or crowd wisdom?</p>
                 <p className="text-sm text-muted-foreground">
-                  Expert rating → {winner.name} ({winner.editorialScore}/100) •
-                  Community upvotes → {tool1.upvotes > tool2.upvotes ? tool1.name : tool2.name} ({Math.max(tool1.upvotes, tool2.upvotes)} votes)
+                  Our team rated {winner.name} higher ({winner.editorialScore}/100). But the community has upvoted {tool1.upvotes > tool2.upvotes ? tool1.name : tool2.name} more ({Math.max(tool1.upvotes, tool2.upvotes)} votes). Pick your source of truth.
                 </p>
               </div>
             </div>
