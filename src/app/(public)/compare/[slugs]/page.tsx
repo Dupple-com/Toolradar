@@ -209,6 +209,115 @@ export default async function CompareResultPage({
         </div>
       </section>
 
+      {/* Quick Recommendation - TL;DR */}
+      <section className="max-w-6xl mx-auto px-4 py-6">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-100 p-6">
+          <h2 className="font-bold text-lg mb-4 flex items-center gap-2">
+            <Zap className="w-5 h-5 text-blue-600" />
+            Quick Recommendation
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-lg p-4 border border-blue-100">
+              <p className="font-semibold text-blue-700 mb-2">Choose {tool1.name} if:</p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                {tool1.pricing === "free" && <li>• You need a completely free solution</li>}
+                {tool1.pricing === "freemium" && <li>• You want to start free and upgrade later</li>}
+                {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) && <li>• You want the highest-rated option</li>}
+                <li>• You prefer: {tool1.tagline?.slice(0, 50)}...</li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-lg p-4 border border-blue-100">
+              <p className="font-semibold text-indigo-700 mb-2">Choose {tool2.name} if:</p>
+              <ul className="text-sm text-gray-600 space-y-1">
+                {tool2.pricing === "free" && <li>• You need a completely free solution</li>}
+                {tool2.pricing === "freemium" && <li>• You want to start free and upgrade later</li>}
+                {(tool2.editorialScore || 0) > (tool1.editorialScore || 0) && <li>• You want the highest-rated option</li>}
+                <li>• You prefer: {tool2.tagline?.slice(0, 50)}...</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hook Comparison Table - Immediate Value */}
+      <section className="max-w-6xl mx-auto px-4 pb-6">
+        <div className="bg-white rounded-xl border overflow-hidden">
+          <table className="w-full">
+            <thead>
+              <tr className="bg-gray-50 border-b">
+                <th className="text-left px-6 py-4 font-semibold text-gray-600">At a Glance</th>
+                {sortedTools.map((tool) => (
+                  <th key={tool.id} className="text-center px-6 py-4">
+                    <div className="flex flex-col items-center gap-2">
+                      {tool.logo ? (
+                        <img src={tool.logo} alt={tool.name} className="w-10 h-10 rounded-lg object-cover" />
+                      ) : (
+                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-lg font-bold text-primary">
+                          {tool.name[0]}
+                        </div>
+                      )}
+                      <span className="font-semibold">{tool.name}</span>
+                    </div>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y">
+              <tr className="hover:bg-gray-50/50">
+                <td className="px-6 py-4 font-medium text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <DollarSign className="w-4 h-4 text-gray-400" />
+                    Price
+                  </div>
+                </td>
+                {sortedTools.map((tool) => (
+                  <td key={tool.id} className="px-6 py-4 text-center">
+                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      tool.pricing === "free" ? "bg-green-50 text-green-700" :
+                      tool.pricing === "freemium" ? "bg-blue-50 text-blue-700" :
+                      "bg-orange-50 text-orange-700"
+                    }`}>
+                      {tool.pricing === "free" ? "Free" : tool.pricing === "freemium" ? "Free + Paid" : "Paid"}
+                    </span>
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-50/50">
+                <td className="px-6 py-4 font-medium text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <Users className="w-4 h-4 text-gray-400" />
+                    Best For
+                  </div>
+                </td>
+                {sortedTools.map((tool) => (
+                  <td key={tool.id} className="px-6 py-4 text-center text-sm text-gray-600">
+                    {tool.categories[0]?.category.name || "General"}
+                  </td>
+                ))}
+              </tr>
+              <tr className="hover:bg-gray-50/50">
+                <td className="px-6 py-4 font-medium text-gray-700">
+                  <div className="flex items-center gap-2">
+                    <Trophy className="w-4 h-4 text-gray-400" />
+                    Rating
+                  </div>
+                </td>
+                {sortedTools.map((tool) => {
+                  const isHighest = tool.editorialScore === Math.max(...sortedTools.map(t => t.editorialScore || 0));
+                  return (
+                    <td key={tool.id} className="px-6 py-4 text-center">
+                      <span className={`text-lg font-bold ${isHighest ? "text-primary" : "text-gray-600"}`}>
+                        {tool.editorialScore || "—"}/100
+                      </span>
+                    </td>
+                  );
+                })}
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Tools Overview Cards */}
       <section className="max-w-6xl mx-auto px-4 py-8">
         <div className="grid gap-4" style={{ gridTemplateColumns: `repeat(${sortedTools.length}, 1fr)` }}>
@@ -597,6 +706,111 @@ export default async function CompareResultPage({
           </div>
         </section>
       )}
+
+      {/* Use Case Scenarios */}
+      <section className="max-w-6xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold mb-4">Which Tool Fits Your Situation?</h2>
+        <div className="grid md:grid-cols-3 gap-4">
+          <div className="bg-white rounded-xl border p-5">
+            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
+              <Users className="w-5 h-5 text-green-600" />
+            </div>
+            <h3 className="font-semibold mb-2">For Startups & Small Teams</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              {tool1.pricing === "free" || tool1.pricing === "freemium"
+                ? `${tool1.name} offers a generous free tier, perfect for teams watching their budget.`
+                : tool2.pricing === "free" || tool2.pricing === "freemium"
+                ? `${tool2.name} has free options that work well for small teams getting started.`
+                : `Both tools are paid, but consider which offers better value for smaller teams.`}
+            </p>
+            <p className="text-sm font-medium text-green-700">
+              Our pick: {(tool1.pricing === "free" || tool1.pricing === "freemium") ? tool1.name : tool2.name}
+            </p>
+          </div>
+          <div className="bg-white rounded-xl border p-5">
+            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3">
+              <Zap className="w-5 h-5 text-blue-600" />
+            </div>
+            <h3 className="font-semibold mb-2">For Growing Businesses</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              As your team scales, you need a tool that grows with you.
+              {(tool1.editorialScore || 0) > (tool2.editorialScore || 0)
+                ? ` ${tool1.name} scores higher overall and typically handles growth better.`
+                : ` ${tool2.name} has the edge in our ratings for scaling teams.`}
+            </p>
+            <p className="text-sm font-medium text-blue-700">
+              Our pick: {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) ? tool1.name : tool2.name}
+            </p>
+          </div>
+          <div className="bg-white rounded-xl border p-5">
+            <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-3">
+              <Trophy className="w-5 h-5 text-purple-600" />
+            </div>
+            <h3 className="font-semibold mb-2">For Enterprise Teams</h3>
+            <p className="text-sm text-muted-foreground mb-3">
+              Large organizations need robust features, security, and support.
+              {tool1.pricing === "paid"
+                ? ` ${tool1.name}'s paid model often means better enterprise support.`
+                : tool2.pricing === "paid"
+                ? ` ${tool2.name}'s paid model typically includes enterprise-grade features.`
+                : ` Both offer paid tiers with enterprise features worth comparing.`}
+            </p>
+            <p className="text-sm font-medium text-purple-700">
+              Our pick: {tool1.pricing === "paid" ? tool1.name : tool2.pricing === "paid" ? tool2.name : winner.name}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Decision Helper Checklist */}
+      <section className="max-w-6xl mx-auto px-4 pb-8">
+        <h2 className="text-xl font-bold mb-4">Quick Decision Checklist</h2>
+        <div className="bg-white rounded-xl border p-6">
+          <p className="text-muted-foreground mb-4">Answer these questions to find your best fit:</p>
+          <div className="space-y-3">
+            <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-xs font-bold text-primary">1</span>
+              </div>
+              <div>
+                <p className="font-medium">What&apos;s your budget?</p>
+                <p className="text-sm text-muted-foreground">
+                  {tool1.pricing === "free" ? `Free → ${tool1.name}` : tool2.pricing === "free" ? `Free → ${tool2.name}` : "Both require payment"} •
+                  {tool1.pricing === "freemium" ? ` Limited budget → ${tool1.name}` : tool2.pricing === "freemium" ? ` Limited budget → ${tool2.name}` : ""} •
+                  Flexible budget → {winner.name}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-xs font-bold text-primary">2</span>
+              </div>
+              <div>
+                <p className="font-medium">How important are user reviews?</p>
+                <p className="text-sm text-muted-foreground">
+                  {tool1._count.reviews > tool2._count.reviews
+                    ? `${tool1.name} has more reviews (${tool1._count.reviews}) for social proof`
+                    : tool2._count.reviews > tool1._count.reviews
+                    ? `${tool2.name} has more reviews (${tool2._count.reviews}) for social proof`
+                    : "Both have similar review counts"}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg">
+              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span className="text-xs font-bold text-primary">3</span>
+              </div>
+              <div>
+                <p className="font-medium">Do you prioritize expert ratings or community opinion?</p>
+                <p className="text-sm text-muted-foreground">
+                  Expert rating → {winner.name} ({winner.editorialScore}/100) •
+                  Community upvotes → {tool1.upvotes > tool2.upvotes ? tool1.name : tool2.name} ({Math.max(tool1.upvotes, tool2.upvotes)} votes)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Key Takeaways */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
