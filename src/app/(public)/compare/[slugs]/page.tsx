@@ -359,7 +359,7 @@ export default async function CompareResultPage({
 
                 {/* Quick stats */}
                 <div className="flex justify-center gap-4 mt-4 pt-4 border-t">
-                  {tool.editorialScore && (
+                  {(tool.editorialScore ?? 0) > 0 && (
                     <div className="text-center">
                       <p className="text-xl font-bold text-primary">{tool.editorialScore}</p>
                       <p className="text-xs text-muted-foreground">Score</p>

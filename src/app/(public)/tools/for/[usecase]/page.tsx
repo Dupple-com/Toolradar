@@ -300,7 +300,7 @@ export default async function UseCasePage({ params }: { params: { usecase: strin
                     }`}>
                       {tool.pricing.charAt(0).toUpperCase() + tool.pricing.slice(1)}
                     </span>
-                    {tool.editorialScore && tool.editorialScore > 0 && (
+                    {(tool.editorialScore ?? 0) > 0 && (
                       <span className="flex items-center gap-1 text-muted-foreground">
                         <Star className="w-3 h-3" />
                         {tool.editorialScore}/100

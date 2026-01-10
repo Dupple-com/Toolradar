@@ -157,7 +157,7 @@ export function PricingToolsPage({
                     </span>
                   )}
                 </div>
-                {tool.editorialScore && (
+                {(tool.editorialScore ?? 0) > 0 && (
                   <div className="flex items-center gap-1 text-sm text-yellow-600">
                     <Star className="w-4 h-4 fill-current" />
                     <span>{tool.editorialScore}</span>

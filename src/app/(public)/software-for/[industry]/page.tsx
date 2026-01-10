@@ -350,7 +350,7 @@ export default async function SoftwareForIndustryPage({
                   }`}>
                     {tool.pricing.charAt(0).toUpperCase() + tool.pricing.slice(1)}
                   </span>
-                  {tool.editorialScore && (
+                  {(tool.editorialScore ?? 0) > 0 && (
                     <div className="flex items-center gap-1 text-sm">
                       <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                       <span className="font-medium">{tool.editorialScore}/100</span>

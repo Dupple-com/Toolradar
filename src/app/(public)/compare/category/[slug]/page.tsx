@@ -197,7 +197,7 @@ export default async function CategoryComparisonPage({ params }: { params: { slu
                       }`}>
                         {tool.pricing}
                       </span>
-                      {tool.editorialScore && (
+                      {(tool.editorialScore ?? 0) > 0 && (
                         <span className="text-muted-foreground">
                           Score: {tool.editorialScore}/100
                         </span>

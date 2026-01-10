@@ -9,7 +9,7 @@ export function ToolScore({ editorialScore, communityScore, reviewCount }: ToolS
     <div className="bg-card rounded-xl border p-6 space-y-4">
       <h3 className="font-semibold">Scores</h3>
       
-      {editorialScore && (
+      {(editorialScore ?? 0) > 0 && (
         <div>
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm text-muted-foreground">Editorial Score</span>
@@ -37,7 +37,7 @@ export function ToolScore({ editorialScore, communityScore, reviewCount }: ToolS
         </div>
       )}
 
-      {!editorialScore && (!communityScore || communityScore === 0) && (
+      {(editorialScore ?? 0) === 0 && (communityScore ?? 0) === 0 && (
         <p className="text-muted-foreground text-sm">No scores yet</p>
       )}
     </div>

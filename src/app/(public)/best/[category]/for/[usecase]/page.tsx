@@ -318,7 +318,7 @@ export default async function BestCategoryForUsecasePage({
                         </div>
 
                         {/* Score Badge */}
-                        {tool.editorialScore && tool.editorialScore > 0 && (
+                        {(tool.editorialScore ?? 0) > 0 && (
                           <div className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full flex-shrink-0">
                             <Star className="w-4 h-4 fill-current" />
                             <span className="font-semibold">{tool.editorialScore}/100</span>

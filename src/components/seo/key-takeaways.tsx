@@ -26,7 +26,7 @@ export function KeyTakeaways({ category, topTool, totalTools, freeToolsCount, av
           <Trophy className="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5" />
           <span>
             <strong>{topTool.name}</strong> is our #1 pick for {category.toLowerCase()} in {year}
-            {topTool.editorialScore && `, scoring ${topTool.editorialScore}/100`}.
+            {(topTool.editorialScore ?? 0) > 0 && `, scoring ${topTool.editorialScore}/100`}.
           </span>
         </li>
 

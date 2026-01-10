@@ -244,7 +244,7 @@ export default async function BestCategoryPage({ params }: { params: { category:
                         </div>
 
                         {/* Score Badge */}
-                        {tool.editorialScore && tool.editorialScore > 0 && (
+                        {(tool.editorialScore ?? 0) > 0 && (
                           <div className="flex items-center gap-1 px-3 py-1 bg-primary/10 text-primary rounded-full flex-shrink-0">
                             <Star className="w-4 h-4 fill-current" />
                             <span className="font-semibold">{tool.editorialScore}/100</span>
@@ -266,10 +266,10 @@ export default async function BestCategoryPage({ params }: { params: { category:
                             {tool._count.reviews} {tool._count.reviews === 1 ? "review" : "reviews"}
                           </span>
                         )}
-                        {tool.communityScore && tool.communityScore > 0 && (
+                        {(tool.communityScore ?? 0) > 0 && (
                           <span className="flex items-center gap-1 text-muted-foreground">
                             <Star className="w-3.5 h-3.5 text-yellow-500 fill-yellow-500" />
-                            {tool.communityScore.toFixed(1)} community score
+                            {tool.communityScore!.toFixed(1)} community score
                           </span>
                         )}
                       </div>

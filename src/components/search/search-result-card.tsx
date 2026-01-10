@@ -66,7 +66,7 @@ export function SearchResultCard({ tool }: SearchResultCardProps) {
         <span className={`px-2 py-1 rounded text-xs font-medium ${pricingColors[tool.pricing] || "bg-gray-100 text-gray-700"}`}>
           {tool.pricing}
         </span>
-        {tool.editorialScore && (
+        {(tool.editorialScore ?? 0) > 0 && (
           <span className="text-muted-foreground">
             Score: <span className="text-foreground font-medium">{tool.editorialScore}/100</span>
           </span>
