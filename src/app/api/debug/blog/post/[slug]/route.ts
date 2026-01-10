@@ -18,8 +18,8 @@ export async function GET(
     }
 
     // Test the related posts query
-    let relatedPostsError = null;
-    let relatedPosts = [];
+    let relatedPostsError: string | null = null;
+    let relatedPosts: { id: string; title: string; slug: string }[] = [];
     try {
       const orConditions = [];
       if (post.categoryId) {
