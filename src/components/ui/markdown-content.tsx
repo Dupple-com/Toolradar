@@ -54,18 +54,26 @@ export function MarkdownContent({ content, className = "" }: MarkdownContentProp
           a: ({ href, children }) => (
             <a href={href} className="text-blue-600 hover:text-blue-800 underline underline-offset-2">{children}</a>
           ),
-          h1: ({ children }) => (
-            <h1 className="text-3xl font-bold text-gray-900 mt-10 mb-4 first:mt-0">{children}</h1>
-          ),
-          h2: ({ children }) => (
-            <h2 className="text-2xl font-bold text-gray-900 mt-10 mb-4 first:mt-0">{children}</h2>
-          ),
-          h3: ({ children }) => (
-            <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">{children}</h3>
-          ),
-          h4: ({ children }) => (
-            <h4 className="text-lg font-semibold text-gray-900 mt-6 mb-2">{children}</h4>
-          ),
+          h1: ({ children }) => {
+            const text = String(children);
+            const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+            return <h1 id={id} className="text-3xl font-bold text-gray-900 mt-10 mb-4 first:mt-0 scroll-mt-24">{children}</h1>;
+          },
+          h2: ({ children }) => {
+            const text = String(children);
+            const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+            return <h2 id={id} className="text-2xl font-bold text-gray-900 mt-10 mb-4 first:mt-0 scroll-mt-24">{children}</h2>;
+          },
+          h3: ({ children }) => {
+            const text = String(children);
+            const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+            return <h3 id={id} className="text-xl font-semibold text-gray-900 mt-8 mb-3 scroll-mt-24">{children}</h3>;
+          },
+          h4: ({ children }) => {
+            const text = String(children);
+            const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+            return <h4 id={id} className="text-lg font-semibold text-gray-900 mt-6 mb-2 scroll-mt-24">{children}</h4>;
+          },
           blockquote: ({ children }) => (
             <blockquote className="border-l-4 border-blue-500 pl-4 italic text-gray-600 my-6">{children}</blockquote>
           ),
