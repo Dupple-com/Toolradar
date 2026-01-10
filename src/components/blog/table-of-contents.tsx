@@ -84,7 +84,7 @@ export function TableOfContents({ content }: TableOfContentsProps) {
               }`}>
                 {index + 1}
               </span>
-              <span className="line-clamp-2">{text}</span>
+              <span className="line-clamp-2">{text.replace(/^\d+\.\s*/, '')}</span>
             </a>
           </li>
         ))}
