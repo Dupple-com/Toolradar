@@ -7,8 +7,12 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
-  const result = await requireAdmin();
-  if ("error" in result) return result.error;
+  // Allow deletion via secret or admin session
+  const secret = request.nextUrl.searchParams.get("secret");
+  if (secret !== process.env.SEED_SECRET) {
+    const result = await requireAdmin();
+    if ("error" in result) return result.error;
+  }
 
   try {
     const post = await prisma.blogPost.delete({
