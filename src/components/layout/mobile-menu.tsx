@@ -33,7 +33,6 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
   const navLinks = [
     { href: "/tools", label: "Browse" },
     { href: "/trending", label: "Trending" },
-    { href: "/categories", label: "Categories" },
     { href: "/guides", label: "Guides" },
     { href: "/compare", label: "Compare" },
   ];
@@ -99,18 +98,11 @@ export function MobileMenu({ isLoggedIn, isAdmin }: MobileMenuProps) {
       {/* Footer */}
       <div className="px-4 py-6 border-t border-gray-200 space-y-3 bg-white">
         <Link
-          href="/review"
+          href="/vendors"
           onClick={() => setIsOpen(false)}
           className="block w-full px-4 py-3 text-center bg-slate-900 text-white rounded-lg hover:bg-slate-800 font-medium"
         >
-          Leave a Review
-        </Link>
-        <Link
-          href="/vendors"
-          onClick={() => setIsOpen(false)}
-          className="block w-full px-4 py-3 text-center border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 font-medium"
-        >
-          For Software Companies
+          List Your Product
         </Link>
         {isLoggedIn ? (
           <Link

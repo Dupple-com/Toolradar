@@ -35,9 +35,6 @@ export async function Header() {
               <Link href="/trending" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
                 Trending
               </Link>
-              <Link href="/categories" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
-                Categories
-              </Link>
               <Link href="/guides" className="px-3 py-2 text-gray-600 hover:text-blue-600 hover:bg-gray-100 rounded-lg transition-all duration-100 font-medium text-sm">
                 Guides
               </Link>
@@ -50,14 +47,8 @@ export async function Header() {
           {/* Right: CTAs */}
           <div className="flex items-center gap-2 flex-shrink-0 ml-auto">
             <Link
-              href="/review"
-              className="hidden md:block px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors duration-100 text-sm font-medium"
-            >
-              Leave a Review
-            </Link>
-            <Link
               href="/vendors"
-              className="hidden lg:block px-4 py-2 border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-100 text-sm font-medium"
+              className="hidden md:block px-4 py-2 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors duration-100 text-sm font-medium"
             >
               List Your Product
             </Link>
