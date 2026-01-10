@@ -132,7 +132,7 @@ export default async function BlogPage() {
 
         {/* Featured Post */}
         {featuredPost && (
-          <section className="max-w-7xl mx-auto px-4 pb-8">
+          <section className="max-w-7xl mx-auto px-4 py-8">
             <div className="flex items-center gap-2 mb-4">
               <TrendingUp className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">Featured</span>
