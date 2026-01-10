@@ -224,21 +224,21 @@ export default async function CompareResultPage({
             <div className="bg-white rounded-lg p-4 border border-blue-100">
               <p className="font-semibold text-blue-700 mb-2">Go with {tool1.name} if you...</p>
               <ul className="text-sm text-gray-600 space-y-1.5">
-                {tool1.pricing === "free" && <li>• Don&apos;t want to spend a dime</li>}
-                {tool1.pricing === "freemium" && <li>• Want to try before you buy</li>}
-                {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) && <li>• Want our top-rated pick</li>}
-                {tool1._count.reviews > tool2._count.reviews && <li>• Trust what other users say</li>}
-                <li>• Need {tool1.categories[0]?.category.name?.toLowerCase() || "general"} features</li>
+                <li>• {tool1.tagline || `Want a solid ${tool1.categories[0]?.category.name?.toLowerCase() || "productivity"} tool`}</li>
+                {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) && <li>• Want the higher-rated option ({tool1.editorialScore}/10 vs {tool2.editorialScore}/10)</li>}
+                {(tool2.editorialScore || 0) > (tool1.editorialScore || 0) && <li>• Prefer the more established brand</li>}
+                {tool1.pricing === "free" && tool2.pricing !== "free" && <li>• Need something 100% free</li>}
+                {tool1._count.reviews > tool2._count.reviews && <li>• Want more community feedback ({tool1._count.reviews} reviews)</li>}
               </ul>
             </div>
             <div className="bg-white rounded-lg p-4 border border-blue-100">
               <p className="font-semibold text-indigo-700 mb-2">Go with {tool2.name} if you...</p>
               <ul className="text-sm text-gray-600 space-y-1.5">
-                {tool2.pricing === "free" && <li>• Don&apos;t want to spend a dime</li>}
-                {tool2.pricing === "freemium" && <li>• Want to try before you buy</li>}
-                {(tool2.editorialScore || 0) > (tool1.editorialScore || 0) && <li>• Want our top-rated pick</li>}
-                {tool2._count.reviews > tool1._count.reviews && <li>• Trust what other users say</li>}
-                <li>• Need {tool2.categories[0]?.category.name?.toLowerCase() || "general"} features</li>
+                <li>• {tool2.tagline || `Want a solid ${tool2.categories[0]?.category.name?.toLowerCase() || "productivity"} tool`}</li>
+                {(tool2.editorialScore || 0) > (tool1.editorialScore || 0) && <li>• Want the higher-rated option ({tool2.editorialScore}/10 vs {tool1.editorialScore}/10)</li>}
+                {(tool1.editorialScore || 0) > (tool2.editorialScore || 0) && <li>• Prefer the more established brand</li>}
+                {tool2.pricing === "free" && tool1.pricing !== "free" && <li>• Need something 100% free</li>}
+                {tool2._count.reviews > tool1._count.reviews && <li>• Want more community feedback ({tool2._count.reviews} reviews)</li>}
               </ul>
             </div>
           </div>
